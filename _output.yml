@@ -1,0 +1,24 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">Mesures de la Biodiversité</a></li>
+      after: |
+        <li><a href="https://github.com/EricMarcon/MesuresBioDiv" target="blank">Publié avec bookdown</a></li>
+    download: null
+bookdown::pdf_book:
+  template: latex/template.tex
+  pandoc_args: --top-level-division=chapter
+  includes:
+    in_header: latex/preamble.tex
+    before_body: latex/before_body.tex
+    after_body: latex/after_body.tex
+  latex_engine: xelatex
+  citation_package: biblatex
+  keep_tex: yes
+bookdown::epub_book: default
+bookdown::html_book:
+  theme: sandstone
+  toc: yes
+  css: toc.css
