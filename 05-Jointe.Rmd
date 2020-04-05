@@ -1,0 +1,319 @@
+# (PART) Diversité jointe, diversité structurelle {-}
+
+# Cadre
+
+```{r, echo=FALSE, message=FALSE}
+library("tidyverse")
+```
+
+Gregorius [@Gregorius2010, Gregorius2014] argumente en faveur de la prise en compte de ce qu'il définit comme la "diversité jointe" dans le cadre classique où les classes sont des communautés pour des raisons fondamentales de définition de la diversité. 
+Son approche consiste à traiter de façon symétrique l'appartenance à une classe ou à une espèce: contrairement aux chapitres précédents où l'échantillonnage des individus avait lieu séparément dans chaque communauté, l'échantillonnage a lieu ici globalement dans la méta-communauté et l'appartenance d'un individu à une communauté apporte autant d'information que son appartenance à une espèce. 
+Cette approche convient bien à des questions de choix de localisation traités en économie (voir par exemple la définition de la localisation globale [@Cutrini2010], qui traite de façon symétrique le secteur d'activité et la région d'implantation des firmes). 
+L'entropie des lignes est alors la diversité de localisation des firmes; son complément à la valeur maximale est une mesure de concentration spatiale (l'indice de Theil pour $q=1$). 
+En écologie, cette entropie permet par exemple de caractériser le niveau de spécialisation d'une espèce si les communautés sont de même taille (plus précisément de même probabilité de choix *a priori*) et situées dans des environnements différents.
+
+La décomposition de la diversité jointe apporte en plus de la décomposition de la diversité $\gamma$ une information sur l'ubiquité des espèces. 
+La décomposition de @Chiu2014 se situe en réalité dans ce cadre.
+
+La notion de diversité structurelle a été définie par les forestiers [@Bacaro2013]. 
+En plus des espèces, d'autres critères (par exemple les classes de diamètres) sont pris en compte pour définir la structure forestière. 
+Une revue des approches utilisées pour décrire cette structure, et plus particulièrement sa complexité, est fournie par Bacaro et al. Certaines se sont attachées à définir une mesure de diversité structurelle : notamment, @Das2004 définissent un indice qui prend en compte la variabilité des diamètres.
+
+Bacaro et al. suggèrent d'utiliser l'entropie de Shannon pour mesurer la diversité structurelle. 
+Cette idée est explorée ici pour définir une mesure de diversité bidimensionnelle (croisant par exemple les espèces et les classes de diamètres) et étendue à la diversité HCDT.
+
+
+Pour la suite, les données sont organisées comme dans le tableau&nbsp;\@ref(table:Notations2) : les individus appartiennent à l'espèce $s$ et à la classe $i$ avec la probabilité $p_{s,i}$ telle que $\sum_s{\sum_i{p_{s,i}}}=1$ (au lieu de $\sum_i{p_{s|i}}=1$ dans les chapitres précédents).
+
+\tableFW{table:Notations2}
+{Notations des effectifs, tableau espèces-classes.}
+{
+  \begin{tabularx}{\textwidth}{p{2cm} p{7cm} p{1cm} X}
+  \toprule
+  & Classe $i$ & $\dots$ & Total: communauté \\
+  
+  \midrule
+  Espèce $s$ 
+  & $n_{s,i}$: nombre d'individus de l'espèce $s$ dans la classe $i$. 
+  \newline
+  $\hat{p}_{s,i}=n_{s,i}/n$ est l'estimateur de la probabilité $p_{s,i}$ qu'un individu soit de la classe $i$ et de l'espèce $s$.
+  &
+  & $n_{s+}=\sum_i{n_{s,i}}$ \newline
+  $p_s=\sum_i{w_{i}p_{s|i}}$ \\
+  
+  $\dots$
+  &
+  &
+  & \\
+  
+  Total
+  & $n_{+i}$: nombre d'individus de la classe.\newline 
+  ${n_{+i}}/{n}=w_i$: poids de la classe
+  &
+  & $n$: nombre total d'individus échantillonnés \\
+  
+  \bottomrule
+  \end{tabularx}
+}
+
+
+
+# Information mutuelle
+
+```{block, type='Essentiel'}
+La récursivité est une propriété importante de l'entropie de Shannon qui permet d'envisager la diversité de façon multidimensionnelle, par exemple la diversité des espèces et des classes de diamètre des arbres d'une forêt (appelée diversité structurelle). La récursivité apporte des résultats nettement moins intéressants quand l'entropie HCDT est considérée.
+  
+  Le nombre effectif d'habitats occupés par une espèce peut être interprété comme la taille de sa niche écologique: la mesure de la diversité des communautés peut apporter une information aussi intéressante que la diversité des espèces.
+```
+
+
+Plusieurs mesures de diversité ont été construite autour de l'information mutuelle.
+Elles sont présentées ici après leur propriété mathématique fondamentale: la récursivité de l'entropie.
+
+## Récursivité de l'entropie
+
+### Entropie de Shannon
+
+L'entropie de Shannon (et ses multiples) sont les seules fonctions $H$ telles que 
+
+\begin{equation}
+\label{eq:Recursivite1}
+H\left(\{p_{s,i}\}\right)-H\left(\{p_i\}\right) 
+= \sum_i{p_i H\left(\{\frac{p_{s,i}}{p_i}\}\right)}
+\end{equation}
+et
+\begin{equation}
+\label{eq:Recursivite2}
+H\left(\{p_{s,i}\}\right)-H\left(\{p_s\}\right) 
+= \sum_s{p_s H\left(\{\frac{p_{s,i}}{p_s}\}\right)}.
+\end{equation}
+
+Cette propriété est appelée récursivité [@Bacaro2013]. 
+Le premier terme de chaque équation est la différence entre l'entropie de la distribution complète ($p_{s,i}$), c'est-à-dire la diversité jointe de Gregorius qui sera appelée plutôt entropie jointe ici, et celle de la distribution marginale (l'entropie de la distribution des classes ou celle des espèces). 
+Une démonstration rigoureuse est fournie par @Baez2011 d'après @Faddeev1956, mais il s'agit d'un résultat assez répandu dans la littérature, sous des formes diverses[@Aczel1975, Renyi1961, Bourguignon1979]. 
+$H(\{p_{s,i}\})-H(\{p_i\})-H(\{p_s\})$ est l'information mutuelle, vue page~\@ref(InfoMutuelle).
+
+Le terme de droite de l'équation&nbsp;\@ref(eq:Recursivite1) est l'entropie $\alpha$ de l'ensemble des classes si on les pondère par $p_i$ car $\frac{p_{s,i}}{p_i}=p_{s|i}$. 
+Par ailleurs, $H(\{p_s\})$ est l'entropie $\gamma$. 
+En combinant les équations \@ref(eq:Recursivite1) et \@ref(eq:Recursivite2), on voit que l'entropie $\beta$ est l'opposée de l'information mutuelle. 
+L'information mutuelle est nulle quand les distributions des lignes et des colonnes sont indépendantes ($p_{s,i}=p_{s}p_{i}$), autrement dit quand les distributions marginales $\{p_s\}$ et $\{p_i\}$ suffisent à décrire la méta-communauté: l'information contenue par chaque communauté se limite à son poids. 
+L'écart à l'indépendance implique que les distributions de probabilités sont différentes dans les communautés, ce qui définit la diversité $\beta$.
+
+Si les colonnes sont les classes de diamètre par exemple, les informations fournies par la décomposition de la diversité sont nombreuses:
+
+* Les diversités des colonnes sont les classiques diversités spécifiques, par classe de diamètre ($\alpha$), globale ($\gamma$), et inter-classes ($\beta$);
+
+* La diversité des lignes renseigne sur l'homogénéité des diamètres de chaque espèce et globalement;
+
+* La diversité jointe est le nombre effectif de catégories (espèces $\times$ classes de diamètre) de la communauté.
+
+
+### Entropie HCDT
+
+@Baez2011 généralisent la récursivité à l'entropie HCDT et montrent que
+
+\begin{equation}
+^{q}\!H\left(\{p_{s,i}\}\right)-^{q}\!H\left(\{p_i\}\right) 
+= \sum_i{{p_i^q} ^{q}\!H\left(\{\frac{p_{s,i}}{p_i}\}\right)}
+\end{equation}
+et
+\begin{equation}
+^{q}\!H\left(\{p_{s,i}\}\right)-^{q}\!H\left(\{p_s\}\right) 
+= \sum_s{{p_s^q} ^{q}\!H\left(\{\frac{p_{s,i}}{p_s}\}\right)}.
+\end{equation}
+
+Ce résultat avait déjà été obtenu par @Suyari2004, corrigé par @Ilic2013.
+Par le même raisonnement que pour l'entropie de Shannon, on trouve donc que l'entropie entre les classes est l'opposée de l'information mutuelle calculée dans le cadre de l'entropie HCDT, à condition de définir les poids des classes égaux à $p_i$ et l'entropie intraclasse comme la somme des entropies des classes pondérées par leur poids à la puissance $q$.
+
+### Intérêt de l'information mutuelle
+
+Si les individus sont classés dans une matrice selon deux critères, et non dans un simple vecteur d'espèces, l'entropie HCDT de la distribution appelée *entropie jointe* est calculée par $^{q}\!H(\{p_{s,i}\})$.
+
+L'entropie jointe peut être décomposée en la somme des entropies marginales et de l'information mutuelle. 
+L'entropie intra-lignes (respectivement intra-colonnes) est définie comme la moyenne pondérée par le poids des lignes (resp. des colonnes) à la puissance $q$ de l'entropie de chaque ligne (resp. colonne). 
+Les lignes et les colonnes jouent un rôle interchangeable.
+
+\begin{equation}
+\xq{H}{q}{}{\mathit{intra}}{} = \sum_i{p^q_{i}^{q}\!H(\{p_{s,i}\})},
+\end{equation}
+
+\begin{equation}
+\xq{H}{q}{}{\mathit{inter}}{}
+=-\left[^{q}\!H\left(\{p_{s,i}\}\right) - ^{q}\!H\left(\{p_{s}\}\right) - ^{q}\!H\left(\{p_{i}\}\right)\right]
+\end{equation}
+et
+\begin{equation}
+\xq{H}{q}{}{\mathit{marginale}}{} = ^{q}\!H\left(\{p_{s}\}\right).
+\end{equation}
+
+
+Le rôle symétrique des lignes et des colonnes signifie que la taille des communautés n'est pas un choix arbitraire d'échantillonnage: la distribution des poids des communautés est équivalente à celle des probabilités des espèces. 
+De la même façon que l'ordre de la diversité, $q$, donne plus ou moins d'importance aux espèces rares dans le calcul de la diversité intra et marginale, il donne plus ou moins d'importance aux communautés de petite taille dans le calcul des diversités intra et inter.
+
+L'entropie ne peut être transformée en diversité que pour $q=1$ (diversité de Shannon). 
+Pour $q \ne 1$, l'entropie intra-classes n'est pas une entropie $\alpha$ (elle n'est pas égale à l'entropie de chacune des classes si toutes les classes sont identiques), le nombre effectif d'espèces correspondant n'est pas défini. 
+L'information mutuelle de l'entropie HCDT n'a donc qu'un intérêt limité pour mesurer la diversité.
+
+
+## Taille de niche
+
+@Allan1975 présente plusieurs décompositions de l'entropie jointe (de Shannon) fondées sur l'information mutuelle, dans une matrice en trois dimensions: microhabitats $\times$ sites $\times$ espèces.
+
+Après @Levins1968, @Colwell1971 et @Pielou1972, Allan s'intéresse notamment à la taille de la niche (*niche width*) des espèces.
+Si les classes de la matrice espèces-classes (Table \@ref(table:Notations2)) sont des habitats distincts les uns des autres, la diversité des habitats occupés par une espèce est la taille de sa niche, et la diversité $\gamma$ mesurée sur l'ensemble des habitats peut être comprise comme le chevauchement des niches [@Pielou1972].
+La taille de la niche peut être mesurée par l'entropie de Shannon, mais aussi le nombre de Hill d'ordre 2, qui est donc le nombre effectif d'habitats de Simpson [@Levins1968].
+
+Cette approche est très similaire à celle des économistes qui utilisent l'indice de Theil comme mesure de concentration spatiale, en intégrant une signification écologique si les localisations possibles correspondent à des habitats différents: une espèce présente dans tous les habitats avec la même probabilité est aussi généraliste que possible.
+
+@Colwell1971 traitent le problème posé par le fait que les habitats pris en compte dans l'échantillonnage ne sont pas totalement distincts.
+Si les habitats étaient tous identiques, la distribution des espèces serait proportionnelle à la taille de chaque habitat et l'information mutuelle serait nulle.
+Elle ne l'est pas, et sa valeur peut être décomposée en somme des contributions de chaque habitat.
+Ces contributions sont utilisées pour pondérer les habitats: un habitat original (contribuant plus à l'information mutuelle) a un poids plus grand.
+Pour revenir au cas simple dans lequel les habitats ont des poids égaux, les colonnes de la matrice sont dupliquées un nombre de fois proportionnel à leur poids, suffisamment grand pour les proportions des nombres de colonnes (forcément entiers) soient identiques ou très proches des poids.
+
+
+
+# Décomposition de la diversité jointe
+\label{sec:DiversiteJointe}
+
+```{block, type='Essentiel'}
+  La diversité jointe peut être décomposée en diversité $\gamma$ (elle-même décomposable en diversités $\alpha$ et $\beta$) et réplication, égale au nombre effectif de répétitions de l'assemblage des communautés nécessaire pour obtenir la diversité jointe réelle.
+```
+
+
+La décomposition de la diversité jointe [@Gregorius2009a, Gregorius2010] complète celle de la diversité $\gamma$ vue dans les parties précédentes.
+On se place dans le cadre d'un échantillonnage global de la méta-communauté, dans lequel le poids de chaque communauté est égal à la probabilité qu'un individu lui appartienne, et non un choix arbitraire.
+
+
+## Définitions
+
+La diversité $\beta$ mesure la divergence entre la distribution moyenne des espèces dans les communautés et leur distribution dans la méta-communauté. 
+Gregorius la qualifie de "diversité de répartition" (*apportionment*) [@Gregorius2014]. 
+L'exemple suivant mesure la diversité $\beta$ dans une méta-communauté très simple (Figure&nbsp;\@ref(fig:Repartition1Fig)):
+```{r Repartition1}
+q <- 2
+df1 <- data.frame(Co1=c(10,20,30,10), Co2=c(50,20,20,5), 
+row.names=c("S1", "S2", "S3", "S4"))
+library("entropart")
+MC1 <- MetaCommunity(df1)
+```
+
+```{r Repartition1Fig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='Repartition1Code', fig.cap="Méta-communauté simple."}
+```
+
+Le code R nécessaire pour réaliser la figure est:
+```{r Repartition1Code, eval=FALSE}
+plot(MC1)
+```
+
+
+
+```{r Repartition1fin}
+summary(DivPart(q, MC1)->dp1)
+```
+
+Répliquer les communautés à l'identique n'a aucun effet sur la diversité: la diversité $\alpha$ est la moyenne des diversités des communautés et la diversité $\gamma$ est celle de leur assemblage dont les proportions ne changent pas. 
+L'exemple suivant concerne une méta-communauté contenant les mêmes communautés, mais en double (Figure&nbsp;\@ref(Repartition2Fig)):
+
+```{r Repartition2}
+df2 <- cbind(df1, df1)
+MC2 <- MetaCommunity(df2)
+```
+
+```{r Repartition2Fig, echo=FALSE, results='hide', out.width='\\textwidth', fig.cap="Méta-communauté doublant les communautés de la précédente."}
+plot(MC2)
+```
+
+```{r Repartition2fin}
+summary(DivPart(q, MC2)->dp2)
+```
+
+La diversité jointe $^{q}\!D_{j}=^{q}\!D(\{p_{s,i}\})$ est en revanche doublée au cours de l'opération: elle mesure le nombre effectif de catégories (combinaison de l'espèce et de la communauté) du tableau de données:
+
+```{r DivJointe}
+# Méta-communauté simple
+Diversity(as.ProbaVector(df1), q)
+# Méta-communauté double
+Diversity(as.ProbaVector(df2), q)
+```
+
+La distribution de référence pour définir ce nombre effectif correspond à l'équitabilité maximale: $S$ espèces équiprobables sont réparties dans $I$ communautés équiprobables. 
+Le nombre effectif est alors $SI$. 
+Si nombre effectif d'espèces est égal à la diversité $\gamma$, le rapport entre la diversité jointe et la diversité $\gamma$, noté $^{q}\!R_{c}$, est le nombre effectif de méta-communautés identiques produisant la diversité jointe observée. 
+Il mesure la *réplication des communautés* et complète la diversité $\gamma$ en fournissant un niveau d'information supplémentaire. 
+Gregorius le qualifie de "diversité de différenciation" (*differentiation*) parce que $^{q}\!R_{c}$ compare la distribution réelle à une distribution de référence, et pas seulement les distributions des communautés entre elles. 
+En résumé:
+
+* Le nombre effectif d'espèces $^{q}_{i}\!D$ de la communauté {i} est le nombre d'espèces équifréquentes nécessaires pour obtenir la diversité observée dans la communauté. 
+La diversité $\alpha$ est le nombre d'espèces équifréquentes nécessaires dans chaque communauté pour obtenir la diversité observée;
+
+* La diversité $\beta$ est le nombre de communautés totalement distinctes (chaque espèce n'est présente que dans une seule communauté), de même poids et de même diversité (cette diversité étant égale à la diversité $\alpha$), égal au rapport entre la diversité $\gamma$ et la diversité $\alpha$;
+
+* La diversité $\gamma$ est le nombre effectif d'espèces de l'assemblage des communautés;
+
+* La réplication des communautés est le nombre effectif d'assemblages identiques constituant la méta-communauté.
+
+La décomposition complète de la diversité jointe s'écrit
+\begin{equation}
+\label{eq:DecJointe}
+^{q}\!D_{j}= ^{q}\!D_{\alpha} ^{q}\!D_{\beta} ^{q}\!R_{c}.
+\end{equation}
+
+La méta-communauté suivante illustre cette décomposition: elle contient $R_c=3$ répliques identiques de $D_{\beta}=2$ communautés équiprobables totalement distinctes, comprenant chacune $D_{\alpha}=2$ espèces équiprobables (Figure&nbsp;\@ref(DifferentiationFig)). 
+Sa diversité jointe est 12 (le nombre de cellules non nulles dans la matrice) :
+
+```{r Differentiation}
+q <- 2  # Peu importe q
+df1 <- data.frame(Co1=c(10,10,0,0), Co2=c(0,0,10,10), 
+row.names=c("S1", "S2", "S3", "S4"))
+df3 <- cbind(df1, df1, df1)
+MC <- MetaCommunity(df3)
+```
+
+
+```{r DifferentiationFig, echo=FALSE, results='hide', out.width='\\textwidth', fig.cap="{Méta-communauté illustrant la décomposition complète de la diversité jointe."}
+plot(MC)
+```
+
+```{r Differentiationfin}
+summary(DivPart(q, MC)->dp)
+(Diversity(as.ProbaVector(df3), q) -> Djointe)
+(Dis <- Djointe/dp$GammaDiversity)
+```
+
+La définition de la diversité $\alpha$ de @Chiu2014 (page~\@ref(ChiuAlpha)) est la diversité jointe, normalisée par le nombre de communautés:
+
+\begin{equation}
+^{q}\!D_{\alpha}
+= \frac{1}{I} {\left(\sum_s{\sum_i{{\left(w_i p_{s|i}\right)}^q}}\right)}^{{1}/{\left(1-q\right)}}
+= \frac{1}{I} ^{q}\!D_{j}.
+\end{equation}
+
+
+## Relations avec d'autres mesures de diversité
+
+En introduisant la définition précédente dans la décomposition de la diversité jointe, équation&nbsp;\@ref(eq:DecJointe), il vient
+
+\begin{equation}
+^{q}\!D_{\beta}
+= \frac{^{q}\!D_{\gamma}}{^{q}\!D_{\alpha}}
+= \frac{I}{^{q}\!R_{c}}.
+\end{equation}
+
+La définition de la diversité $\alpha$ de Chiu et al. implique que la diversité $\beta$ soit le rapport entre le nombre de communautés et leur réplication.
+Ce n'est pas une mesure de diversité $\beta$ de répartition.
+
+En inversant le rôle des lignes et des colonnes de la matrice $\{p_{s,i}\}$, on peut calculer la réplication des espèces en divisant la diversité jointe par la diversité des poids des communautés:
+
+\begin{equation}
+^{q}\!R_{s}
+= \frac{^{q}\!D_{j}}{^{q}\!D\left(\{p_{i}\}\right)}.
+\end{equation}
+
+Gregorius montre que $^{q}\!R_{s}$ égale la diversité $\alpha$ selon Jost (page~\@ref(JostAlpha)):
+
+\begin{equation}
+^{q}\!R_{s}
+= {\left(\sum_s{\sum_i{\frac{p^q_i}{\sum_i{p^q_i}}p^q_{s|i}}}\right)}^{{1}/{\left(1-q\right)}}.
+\end{equation}
+
