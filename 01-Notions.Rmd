@@ -251,6 +251,7 @@ SADhist
 
 Code de la Figure&nbsp;\@ref(fig:SADRACFig):
 ```{r RACCode, eval=FALSE, tidy=FALSE, size='small'}
+library("entropart")
 autoplot(as.AbdVector(Ns), Distribution = "lnorm")
 ```
 
