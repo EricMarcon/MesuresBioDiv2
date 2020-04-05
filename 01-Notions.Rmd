@@ -49,7 +49,7 @@ La prise en compte de deux composantes de la diversité, appelées richesse et �
 
 ### Richesse
 
-La richesse (terme introduit par @Mcintosh1967) est le nombre (ou une fonction croissante du nombre) de classes différentes présentes dans le système étudié, par exemple le nombre d'espèces d'arbres dans une forêt.
+La richesse [terme introduit par @Mcintosh1967] est le nombre (ou une fonction croissante du nombre) de classes différentes présentes dans le système étudié, par exemple le nombre d'espèces d'arbres dans une forêt.
 
 Un certain nombre d'hypothèses sont assumées plus ou moins explicitement:
 
@@ -65,7 +65,7 @@ L'indice de richesse le plus simple et le plus utilisé est tout simplement le n
 
 La régularité de la distribution des espèces (équitabilité en Français, *evenness* ou *equitability* en anglais) est un élément important de la diversité. 
 Une espèce représentée abondamment ou par un seul individu n'apporte pas la même contribution à l'écosystème. 
-Sur la figure&nbsp;\@ref(fig:Composantes), la ligne du bas présente deux communautés de 4 espèces, mais celle de droite est beaucoup plus équitable de celle de gauche et semble intuitivement plus diverse.
+Sur la Figure&nbsp;\@ref(fig:Composantes), la ligne du bas présente deux communautés de 4 espèces, mais celle de droite est beaucoup plus équitable de celle de gauche et semble intuitivement plus diverse.
 À nombre d'espèces égal, la présence d'espèces très dominantes entraîne mathématiquement la rareté de certaines autres: on comprend donc assez intuitivement que le maximum de diversité sera atteint quand les espèces auront une répartition très régulière.
 
 Un indice d'équitabilité est indépendant du nombre d'espèces (donc de la richesse).
@@ -99,7 +99,7 @@ Cela ne signifie pas que les composantes contribuent indépendamment les unes de
 
 ## Niveaux de l'étude
 
-La diversité est classiquement estimée à plusieurs niveaux emboîtés, nommés $\alpha$, $\beta$ et $\gamma$ par  @Whittaker1960, page 320, qui a nommé $\alpha$ la diversité locale qu'il mesurait avec l'indice $\alpha$ de Fisher (voir page~\@ref(eq:AlphaFisher)) et a utilisé les lettres suivantes selon ses besoins.
+La diversité est classiquement estimée à plusieurs niveaux emboîtés, nommés $\alpha$, $\beta$ et $\gamma$ par  @Whittaker1960 [page 320] qui a nommé $\alpha$ la diversité locale qu'il mesurait avec l'indice $\alpha$ de Fisher (voir Section&nbsp;\@ref(chap:Fisher)) et a utilisé les lettres suivantes selon ses besoins.
 
 ### Diversité $\alpha$, $\beta$ et $\gamma$
 
@@ -147,13 +147,13 @@ Lorsque les populations d'une espèce sont isolées géographiquement, leur capa
 Des populations allopatriques n'ont pas de flux de gènes réels entre elles et peuvent être considérées comme des espèces distinctes selon le concept d'espèce *phylogénétique* : "le plus petit groupe identifiable d'individus avec un pattern commun d'ancêtres et de descendants" [@Cracraft1983].
 C'est l'unité génétique détectée par la méthode du coalescent pour la délimitation des espèces [@Sukumaran2017].
 Le nombre d'espèces phylogénétiques est bien supérieur au nombre d'espèces biologiques. 
-Enfin, @VanValen1976 définit les espèces par la niche écologique qu'elles occupent (à partir de l'exemple des chênes blancs européens) plutôt que par les flux de gènes (permanents entre les espèces distinctes): le concept *écologique* d'espèce est proche de celui de complexe d'espèces (ensemble d'espèces voisines échangeant des gènes [@Pernes1984]).
+Enfin, @VanValen1976 définit les espèces par la niche écologique qu'elles occupent (à partir de l'exemple des chênes blancs européens) plutôt que par les flux de gènes (permanents entre les espèces distinctes): le concept *écologique* d'espèce est proche de celui de complexe d'espèces [ensemble d'espèces voisines échangeant des gènes, @Pernes1984].
 
 Le choix de la définition modifie considérablement sur la quantification de la richesse [@Agapow2004]. 
 Des problèmes méthodologiques s'ajoutent aux problèmes conceptuels [@Hey2001] : la séparation ou le regroupement de plusieurs populations ou morphotypes en un nombre plus ou moins grand d'espèces est un choix qui reflète les connaissances du moment et peut évoluer [@Barberousse2014].
 
 L'impact du problème de l'espèce sur la mesure de la diversité reste sans solution à ce stade, si ce n'est d'utiliser les mêmes définitions si des communautés différentes doivent être comparées. 
-L'approche phylogénétique (page~\@ref(chap:Phyloentropie)) permet de contourner le problème : si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
+L'approche phylogénétique (Section&nbsp;\@ref(chap:Phyloentropie)) permet de contourner le problème : si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
 
 
 
@@ -183,7 +183,7 @@ La présentation des mesures de diversité est donnée avec un usage intensif du
 La liste des notations est fournie en préambule du document, on s'y référera autant que nécessaire.
 
 Les calculs sont réalisés dans R [@R], essentiellement avec le package *entropart* [@Marcon2014c]. 
-L'ensemble du code est disponible sur le site web^[<http://www.ecofog.gf/spip.php?article427>] où se trouvent les mises à jour de ce document.
+L'ensemble du code est disponible sur GitHub ^[<https://github.com/EricMarcon/MesuresBioDiv>] où se trouvent les mises à jour de ce document.
 
 Les données sont souvent celles de la parcelle 6 de Paracou en Guyane française [@Gourlet-Fleury2004], d'une surface de 6.25&nbsp;ha.
 Tous les arbres de plus de 10&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) y ont été inventoriés en 2016.
@@ -201,15 +201,14 @@ Le jeu de données utilisé pour les exemples est une version réduite aux arbre
 La courbe aire-espèces (SAR: *Species Area Relationship*) représente le nombre d'espèces observées en fonction de la surface échantillonnée (Figure&nbsp;\@ref(fig:Williamson2001).
 Il existe plusieurs façons de prendre en compte cette relation [@Scheiner2003], classables en deux grandes familles [@Dengler2009]:
 
-  * Dans une SAR au sens strict, chaque point représente une communauté. 
+* Dans une SAR au sens strict, chaque point représente une communauté. 
   La question traitée est la relation entre le nombre d'espèces et la taille de chaque communauté;
-
-  * Si les points représentent un effort d'échantillonnage différent dans même communauté, on parle de courbe d'accumulation (SAC: *Species Acumulation Curve*). Une courbe de raréfaction (*Rarefaction Curve*) peut être calculée en réduisant par des outils statistiques l'effort d'échantillonnage réel pour obtenir une SAC théorique, libérée des aléas de l'ordre de prise en compte des données.
+* Si les points représentent un effort d'échantillonnage différent dans même communauté, on parle de courbe d'accumulation (SAC: *Species Acumulation Curve*). Une courbe de raréfaction (*Rarefaction Curve*) peut être calculée en réduisant par des outils statistiques l'effort d'échantillonnage réel pour obtenir une SAC théorique, libérée des aléas de l'ordre de prise en compte des données.
 
 La Figure&nbsp;\@ref(fig:SARFig) montre l'accumulation des espèces pour les données de BCI.
 Une SAC peut être tracée en fonction de la surface, du nombre d'individus ou du nombres de placettes d'échantillonnage, selon les besoins.
 
-Code de la Figure&nbsp;\@ref(fig:SARFig):
+Code R pour réaliser la Figure&nbsp;\@ref(fig:SARFig) :
 ```{r SARCode, eval=FALSE, tidy=FALSE, size='small'}
 library("vegan")
 data(BCI)
@@ -249,7 +248,7 @@ SADhist <- ggplot(data.frame(Ns), aes(Ns)) +
 SADhist
 ```
 
-Code de la Figure&nbsp;\@ref(fig:SADRACFig):
+Code de la Figure&nbsp;\@ref(fig:RACFig):
 ```{r RACCode, eval=FALSE, tidy=FALSE, size='small'}
 library("entropart")
 autoplot(as.AbdVector(Ns), Distribution = "lnorm")
@@ -267,7 +266,11 @@ Les SAD nécessaires à la compréhension de la suite sont:
 ### Taux de couverture et déficit de couverture
 
 @Good1953 définit le taux de couverture (*sample coverage*) de l'échantillonnage comme la proportion des espèces découvertes,
-$$C=\sum^S_{s=1}{{\mathbf 1}\left(n_s>0\right)p_s},$$
+\begin{equation}
+  (#eq:C)
+  C=\sum^S_{s=1}{{\mathbf 1}\left(n_s>0\right)p_s},
+\end{equation}
+
 où ${\mathbf 1}(\cdot)$ est la fonction indicatrice. 
 Son complément à 1 est appelé déficit de couverture (*coverage deficit*).
 
@@ -279,13 +282,13 @@ Les estimateurs de la diversité développés plus loin reposent largement sur c
 L'estimateur du taux de couverture, que Good attribue à Turing, est selon la relation des fréquences vues plus haut :
 
 \begin{equation}
-  \label{eq:CGood}
+  (#eq:CGood)
   \hat{C} = 1-\frac{s^{n}_{1}}{n}.
 \end{equation}
 
 Cet estimateur est biaisé [@Zhang2007]. En réalité,
 \begin{equation}
-  \label{eq:CsansBiais}
+  (#eq:CsansBiais)
   C = 1-\frac{{\mathbb E}(S^{n}_{1}) - \pi_1}{n}.
 \end{equation}
 
@@ -294,7 +297,7 @@ Ce terme peut être estimé avec un biais plus petit.
 @Chao1988 puis @Zhang2007 proposent l'estimateur suivant, qui utilise toute l'information disponible et a le plus petit biais possible:
 
 \begin{equation}
-  \label{eq:CZhang}
+  (#eq:CZhang)
   \hat{C}=1-\sum^{n}_{\nu=1}{\left(-1\right)}^{\nu+1}{\binom{n}{\nu}}^{-1}s^{n}_{\nu}.
 \end{equation}
 
@@ -304,6 +307,7 @@ En se limitant à $\nu=1$, l'estimateur se réduit à celui de Good.
 @Esty1983, complété par @Zhang2009, a montré que l'estimateur était asymptotiquement normal et a calculé l'intervalle de confiance de $\hat{C}$:
 
 \begin{equation}
+  (#eq:hatC)
   C=\hat{C}\pm t^{n}_{1-\alpha/2} \frac{\sqrt{s^{n}_{1}\left(1-\frac{s^{n}_{1}}{n}\right)+2s^{n}_{2}}}{n}.
 \end{equation}
 
@@ -311,9 +315,10 @@ Où $t^{n}_{1-\alpha/2}$ est le quantile d'une loi de Student à $n$ degrés de 
 
 
 Un autre estimateur est utilisé dans le logiciel SPADE [@Chao2010a] et son portage sous R, le package *spadeR* [@Chao2016c].
-Il est la base des estimateurs d'entropie de Chao et Jost (page~\@ref(sec:BiaisHCDT)).
+Il est la base des estimateurs d'entropie de Chao et Jost (Section&nbsp;\@ref(sec:BiaisHCDT)).
 L'estimation de l'équation&nbsp;\@ref(eq:CsansBiais) donne la relation
 \begin{equation}
+  (#eq:hatC2)
   \hat{C} = 1-\frac{s^{n}_{1} - \hat{\pi}_1}{n}.
 \end{equation}
 
@@ -322,7 +327,7 @@ $\alpha_1$ peut être estimé par la relation de Good-Turing (\@ref(eq:GoodTurin
 Alors:
 
 \begin{equation} 
-  \label{eq:CChao}
+  (#eq:CChao)
   \hat{C} = 1-\frac{s^{n}_{1}}{n}(1 - \hat{\alpha}_1)
   = 1-\frac{s^{n}_{1}}{n}\left[\frac{\left(n-1\right)s^{n}_{1}}{\left(n-1\right)s^{n}_{1}+2s^{n}_{2}}\right].
 \end{equation}
@@ -344,9 +349,10 @@ Coverage(as.AbdVector(Paracou6))
 ```
 
 
-@Chao2012b montrent que la pente de la courbe d'accumulation donnant l'espérance du nombre d'espèces en fonction du nombre d'individus (courbe de raréfaction de la Figure&nbsp;\@ref(Gotelli2001)) est égale au déficit de couverture,
+@Chao2012b montrent que la pente de la courbe d'accumulation donnant l'espérance du nombre d'espèces en fonction du nombre d'individus (courbe de raréfaction de la Figure&nbsp;\@ref(fig:Gotelli2001)) est égale au déficit de couverture,
 
 \begin{equation}
+  (#eq:DefC)
   1-{\mathbb E}\left(C^{n}\right)={\mathbb E}\left(S^{n+1}\right)-{\mathbb E}\left(S^{n}\right),
 \end{equation}
 

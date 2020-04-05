@@ -29,7 +29,7 @@ L'entropie est transformée en diversité au sens strict par une fonction croiss
 @Chao2014a proposent un cadre fondé exclusivement sur les nombres de Hill sans référence à l'entropie. 
 Les principales différences avec celui présenté ici concernent la définition de la diversité $\alpha$ et donc celle de la diversité $\beta$.
 
-L'entropie phylogénétique généralise les indices de diversité classique (Figure&nbsp;\@ref(ConclusionFig)), intègre si nécessaire la distance entre espèces, peut être décomposée et corrigée des biais d'estimation. 
+L'entropie phylogénétique généralise les indices de diversité classique (Figure&nbsp;\@ref(fig:ConclusionFig)), intègre si nécessaire la distance entre espèces, peut être décomposée et corrigée des biais d'estimation. 
 Sa transformation en diversité au sens strict permet d'interpréter les valeurs sous une forme unique: un nombre équivalent d'espèces et un nombre équivalent de communautés. 
 La diversité de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet d'autres définitions de la distance entre espèces.
 Le paramétrage des mesures (l'ordre de la diversité) permet de donner plus ou moins d'importance aux espèces rares et de tracer des profils de diversité.

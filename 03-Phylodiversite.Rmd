@@ -69,7 +69,7 @@ Les distances obtenues en mesurant les longueurs des branches d'un dendrogramme 
 knitr::include_graphics('images/ArbreA.png')
 ```
 
-La façon exacte de mesurer les longueurs de branche est illustrée par la Figure&nbsp;\@ref(fig:ArbreA1): la distance entre les espèces 1 et 2 est $T_1+T_2$, elle est égale à $T_1$ entre les espèces 4 et 5. 
+La façon exacte de mesurer les longueurs de branche est illustrée par la figure&nbsp;\@ref(fig:ArbreA1): la distance entre les espèces 1 et 2 est $T_1+T_2$, elle est égale à $T_1$ entre les espèces 4 et 5. 
 La distance est la hauteur du premier noeud commun.
 
 ## Distance phylogénétique
@@ -90,7 +90,7 @@ Une méthode pour dater une phylogénie est fournie par @Chave2007
 Dans tous les cas, la distance est une mesure de la divergence évolutive. 
 Du point de vue de la biologie de la conservation, chaque espèce accumule une quantité d'évolution, interprétée comme une quantité d'information [@Crozier1997] dont le maximum doit être préservé.
 
-L'entropie phylogénétique (voir page~\@ref(chap:Phyloentropie)) utilise un arbre phylogénétique pour mesurer la diversité.
+L'entropie phylogénétique (voir Section&nbsp;\@ref(chap:Phyloentropie)) utilise un arbre phylogénétique pour mesurer la diversité.
 
 
 
@@ -165,7 +165,7 @@ knitr::include_graphics('images/Pavoine2011.png')
 
 La régularité mesure la façon dont les espèces occupent uniformément l'espace des niches [@Pavoine2011]. 
 Cette notion est simple dans un espace multidimensionnel (par exemple, l'espace des traits fonctionnels). 
-Dans un arbre phylogénétique (Figure&nbsp;\@ref(Pavoine2011), @Pavoine2011), la régularité de l'arbre [@Mooers1997] est un premier critère, complété éventuellement par les abondances. 
+Dans un arbre phylogénétique (Figure&nbsp;\@ref(fig:Pavoine2011), @Pavoine2011), la régularité de l'arbre [@Mooers1997] est un premier critère, complété éventuellement par les abondances. 
 Dans un arbre parfaitement régulier, la régularité se réduit à l'équitabilité.
 
 Les mesures de divergence sont des fonctions croissantes de la dissimilarité entre les espèces, généralement considérées par paires. 
@@ -245,7 +245,7 @@ Le volume de l'enveloppe convexe de l'espace des traits occupé par la communaut
 La prise en compte des trous, c'est-à-dire la restriction du volume à l'espace réellement occupé à l'intérieur de cette enveloppe, est possible grâce à une méthode d'estimation d'hypervolume plus élaborée, implémentée dans le package *hypervolume* pour R [@Blonder2014].
 
 De même que pour l'étendue fonctionnelle, Schleuter et al. développent une mesure proche, $\mathit{FR}_{Im}$, prenant en compte la variabilité intraspécifique et les espaces non occupés.
-Chaque espèce est supposée occuper un espace autour de sa position moyenne dans l'espace des traits, avec une fonction d'appartenance [@Zadeh1965] gaussienne multidimensionnelle (une représentation unidimensionnelle se trouve en figure&nbsp;\@ref(Schleuter2010), @Schleuter2010): la fonction d'appartenance, issue de la logique floue, peut être vue comme une densité de probabilité non normalisée.
+Chaque espèce est supposée occuper un espace autour de sa position moyenne dans l'espace des traits, avec une fonction d'appartenance [@Zadeh1965] gaussienne multidimensionnelle (une représentation unidimensionnelle se trouve en figure&nbsp;\@ref(fig:Schleuter2010), @Schleuter2010): la fonction d'appartenance, issue de la logique floue, peut être vue comme une densité de probabilité non normalisée.
 
 Les variances et covariances intraspécifiques des traits (rassemblés dans la matrice carrée $\mathbf{\Sigma}_s$ de dimension $t$ pour chaque espèce $s$) sont nécessaires.
 La fonction d'appartenance de l'espèce $s$ dans l'espace des traits est, pour le vecteur $\mathbf{T}$ de valeur de l'ensemble des traits:
@@ -375,7 +375,7 @@ La littérature de la diversité phylogénétique s'est intéressée tôt à l'o
 ### Mesures spécifiques d'originalité
 
 @Vane-Wright1991 définissent la distinction taxonomique (*taxonomic distinctness*) $\mathit{TD}_s$ de chaque espèce comme l'inverse du nombre de noeuds entre elle et la racine de l'arbre phylogénétique, normalisé pour que $\sum_s{\mathit{TD}_s} = 1$.
-Dans l'arbre de la figure&nbsp;\@ref(ArbreA4), les valeurs de TD non normalisées sont $\frac{1}{2}$ pour les deux premières espèces et $\frac{1}{3}$ pour les trois autres: la racine de l'arbre est comptabilisée dans le nombre de noeuds.
+Dans l'arbre de la figure&nbsp;\@ref(fig:ArbreA4), les valeurs de TD non normalisées sont $\frac{1}{2}$ pour les deux premières espèces et $\frac{1}{3}$ pour les trois autres: la racine de l'arbre est comptabilisée dans le nombre de noeuds.
 Les valeurs de $\mathit{TD}_s$ sont respectivement $\frac{1}{4}$ et $\frac{1}{6}$ après normalisation.
 
 ```{r ArbreA4, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. L'arbre comprend 5 espèces dont les probabilités sont notées $p_s$, 3 périodes de durées $T_k$ délimitées par les noeuds. Les branches sont notées $b$ et indicées par la période à laquelle elles se terminent et un numéro d'ordre. La légende complète se trouve en figure&nbsp;\\@ref(Arbre).", echo=FALSE}
@@ -384,7 +384,7 @@ knitr::include_graphics('images/ArbreA.png')
 
 
 La particularité évolutive [@Isaac2007] (*evolutive distinctiveness*, $\mathit{ED}_s$) de l'espèce $s$ est la somme de la longueur des branches qui la relient à la racine de l'arbre, partagées entre tous les descendants de chaque branche.
-Pour l'espèce 3 de la figure&nbsp;\@ref(ArbreA4), $\mathit{ED}_3$ est égal à $l(b_{1,3})$, la longueur de la branche terminale propre à l'espèce 3, plus un tiers de la longueur de la branche qui relie la racine de l'arbre à la polytomie dont l'espèce 3 est issue.
+Pour l'espèce 3 de la figure&nbsp;\@ref(fig:ArbreA4), $\mathit{ED}_3$ est égal à $l(b_{1,3})$, la longueur de la branche terminale propre à l'espèce 3, plus un tiers de la longueur de la branche qui relie la racine de l'arbre à la polytomie dont l'espèce 3 est issue.
 Clairement, la diversité phylogénétique PD (section&nbsp;\@ref(sec:PDFD)) est la somme des particularités évolutives de toutes les espèces de l'arbre.
 
 
@@ -488,7 +488,7 @@ Une valeur plus grande est obtenue quand les espèces sont concentrées au bout 
 #### Déséquilibre d'abondance
 
 L'équilibre d'abondance est défini par une distribution aléatoire des espèces par division de l'effectif total à partir de la racine de l'arbre phylogénétique.
-En figure&nbsp;\@ref(ArbreA3), en partant de la racine, la moitié des individus est supposée se répartir sur chaque branche.
+En figure&nbsp;\@ref(fig:ArbreA3), en partant de la racine, la moitié des individus est supposée se répartir sur chaque branche.
 À la période 2, les effectifs de la branche de gauche se partagent en deux parties égales.
 À partir du nombre total d'individus de la communauté, $n$, le nombre attendu d'individus $n_s^0$ de l'espèce $s$ est une fraction de $n$ correspondant au nombre de noeuds et au nombre de branches partant de chaque noeud.
 On note $y_{k,s}$ le nombre de branches partant du noeud ancestral de l'espèce $s$ à la période $k$, s'il existe, $y_{k,s}=1$ sinon:
@@ -550,7 +550,7 @@ La diversité spécifique est simplement $^{q}\!D$. Scheiner la note $^{q}\!D(A)
 La diversité phylogénétique $^{q}\!D(P)$ ne prend pas en compte les abondances mais mesure la diversité de la divergence évolutive des espèces. 
 La divergence totale dans un arbre phylogénétique (pas forcément ultramétrique) est la longueur totale des branches (c'est-à-dire FD). 
 Elle est répartie entre toutes les espèces: la longueur de chaque branche (représentant une quantité d'évolution) est partagée à parts égales entre les espèces qui en descendent.
-La divergence de l'espèce 1 de la Figure&nbsp;\@ref(Arbre), page~\@ref(Arbre), est $T1+T2$, la longueur de la branche terminale, plus $\frac{T3}{2}$, parce que la branche est partagée par les espèces 1 et 2. 
+La divergence de l'espèce 1 de la figure&nbsp;\@ref(fig:Arbre), page~\@ref(Arbre), est $T1+T2$, la longueur de la branche terminale, plus $\frac{T3}{2}$, parce que la branche est partagée par les espèces 1 et 2. 
 La divergence de l'espèce 1, est donc $L_1 = T1+T2+\frac{T3}{2}$. 
 La part de la divergence de l'espèce $s$ est $l_s = \frac{L_s}{FD}$.
 La diversité phylogénétique est le nombre de Hill des divergences:
@@ -585,7 +585,7 @@ Elle occupe un parallélépipède de dimensions $(p_s, l_s, f_s)$ dans le cube d
 Cette représentation ne donne pas d'importance particulière à l'abondance, et peut être appliquée à un nombre quelconque de dimensions.
 La mesure de biodiversité est la diversité des volumes occupés par les espèces, normalisés par leur somme (qui n'est pas égale à 1).
 
-En se limitant à deux dimensions pour la lisibilité, la figure&nbsp;\@ref(ScheinerPsfsFig) présente les rectangles correspondant à la diversité d'abondance et fonctionnelle occupés par les espèces de la méta-communauté `Paracou618`, classées par fréquences décroissantes.
+En se limitant à deux dimensions pour la lisibilité, la figure&nbsp;\@ref(fig:ScheinerPsfsFig) présente les rectangles correspondant à la diversité d'abondance et fonctionnelle occupés par les espèces de la méta-communauté `Paracou618`, classées par fréquences décroissantes.
 
 ```{r ScheinerPsfsFig, echo=FALSE, results='hide', fig.width=6, fig.height=6, ref.label='ScheinerPsfsCode', fig.cap="Rectangles de surface fréquence $\\times$ taille de niche des espèces de la méta-communauté `Paracou618`. La diversité de Scheiner $^{q}\\!D(AF)$ est la diversité de leur surface."}
 ```
@@ -626,7 +626,7 @@ Rs <- Surface/sum(Surface)
 Diversity(Rs, q=2)
 ```
 
-Le profil de diversité d'abondance et fonctionnelle est en figure&nbsp;\@ref(ProfilDqAFFig). 
+Le profil de diversité d'abondance et fonctionnelle est en figure&nbsp;\@ref(fig:ProfilDqAFFig). 
 
 ```{r ProfilDqAFFig, echo=FALSE, results='hide', ref.label='ProfilDqAFCode', fig.cap="Profil de diversité d'abondance et fonctionnelle de Scheiner de la méta-communauté `Paracou618`. Pointillés longs : diversité d'abondance; pointillés courts : diversité fonctionnelle; trait plein : diversité d'abondance et fonctionnelle."}
 ```
@@ -846,12 +846,12 @@ Code R pour la figure&nbsp;\@ref(fig:HclustFig):
 plot(hf, h=-1)
 ```
 
-Le résultat est en Figure&nbsp;\@ref(fig:PhylogRaoFig).
+Le résultat est en figure&nbsp;\@ref(fig:PhylogRaoFig).
 
 ```{r PhylogRaoFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='PhylogRaoCode', fig.cap="Présentation de l'arbre phylogénétique avec la contribution de chacune des variables."}
 ```
 
-Code R pour la Figure&nbsp;\@ref(fig:PhylogRaoFig):
+Code R pour la figure&nbsp;\@ref(fig:PhylogRaoFig):
 ```{r PhylogRaoCode, eval=FALSE}
 table.phylog(pcaf$tab[names (phyf$leaves),], phyf)
 ```
@@ -866,7 +866,7 @@ Le calcul de l'originalité des espèces utilise la fonction `originality` (Figu
 ```{r originalityFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='originalityCode', fig.cap="Originalité des espèces."}
 ```
 
-Code R pour la Figure&nbsp;\@ref(fig:originalityFig):
+Code R pour la figure&nbsp;\@ref(fig:originalityFig):
 ```{r originalityCode, eval=FALSE}
 dotchart.phylog(phyf, originality(phyf, 5))
 ```
@@ -960,7 +960,7 @@ La présentation de Allen et al. est donnée ici, celle de Pavoine et al., plus 
 knitr::include_graphics('images/ArbreA.png')
 ```
 
-Étant donné une phylogénie, comme celle de la Figure&nbsp;\@ref(fig:ArbreA2), on définit une branche $b_{k,l}$ comme un segment terminé par une feuille (au bas de l'arbre) ou un noeud (dans l'arbre). 
+Étant donné une phylogénie, comme celle de la figure&nbsp;\@ref(fig:ArbreA2), on définit une branche $b_{k,l}$ comme un segment terminé par une feuille (au bas de l'arbre) ou un noeud (dans l'arbre). 
 $k$ indique la période de l'arbre à laquelle la branche se termine, $l$ le numéro d'ordre.
 Une branche n'existe que si elle se termine effectivement par un noeud ou une feuille: il n'y a pas de branche $b_{2,1}$ par exemple. 
 Sa probabilité $p(b_{k,l})$ est la somme des probabilités des feuilles de la branche, c'est-à-dire $u_{k,l}$, et $l(b)$ est sa longueur. 
@@ -978,8 +978,7 @@ Dans un arbre parfaitement régulier, toutes les branches sont de longueur 1 et 
 
 
 
-# Entropie phylogénétique
-\label{chap:Phyloentropie}
+# Entropie phylogénétique {#chap:Phyloentropie}
 
 ```{block, type='Essentiel'}
   L'entropie phylogénétique est la moyenne de l'entropie HCDT le long d'un arbre phylogénétique.
@@ -1006,7 +1005,7 @@ knitr::include_graphics('images/ArbreA.png')
 ```
 
 L'entropie HCDT ($^{q}\!H$ de l'équation (\@ref(eq:HCDT))) est calculée à chaque période. 
-Figure&nbsp;\@ref(ArbreA5), à la deuxième période ($T_2$), l'arbre a trois feuilles, avec des probabilités égales à celle des espèces 1 et 2 et la somme de celles des espèces 3 à 5. 
+Figure&nbsp;\@ref(fig:ArbreA5), à la deuxième période ($T_2$), l'arbre a trois feuilles, avec des probabilités égales à celle des espèces 1 et 2 et la somme de celles des espèces 3 à 5. 
 $^{q}\!H$ peut être calculée avec ces valeurs de probabilités. 
 On notera cette valeur d'entropie $^{q}_{k}\!H$ où $k$ est le quantième de la période.
 
@@ -1026,7 +1025,7 @@ Les indices $^{q}\!\bar{H}(T)$ généralisent les mesures d'entropie classique �
 On peut les interpréter intuitivement comme une somme pondérée par la longueur des périodes des valeurs de l'entropie à chaque période. 
 À la dernière période (près des feuilles), toutes les classes sont présentes, la diversité est donc maximale. 
 En remontant dans l'arbre, les classes se confondent et la diversité diminue progressivement. 
-Deux classes peu distantes, comme les espèces 3 à 5 de la Figure&nbsp;\@ref(fig:ArbreA5), apportent peu de diversité supplémentaire par rapport à une situation où les deux espèces seraient confondues (et leurs effectifs ajoutés), contrairement aux espèces 1 et 2.
+Deux classes peu distantes, comme les espèces 3 à 5 de la figure&nbsp;\@ref(fig:ArbreA5), apportent peu de diversité supplémentaire par rapport à une situation où les deux espèces seraient confondues (et leurs effectifs ajoutés), contrairement aux espèces 1 et 2.
 
 ## Estimation
 
@@ -1103,7 +1102,7 @@ knitr::include_graphics('images/Chao2010.png')
 Dans ce cas, $T$ est remplacé par $\bar{T}$, la longueur moyenne des branches pondérée par la fréquence des espèces. 
 Cette généralisation est très discutable: son sens n'est pas clair sur le plan de la mesure de la diversité au-delà du parallélisme de la forme mathématique.
 
-L'arbre de la Figure&nbsp;\@ref(fig:Chao2010) [@Chao2010, figure 1b] peut être découpé en périodes mais les deux premières ($T_1$: seule l'espèce 2 est présente; $T_2$: les espèces 1 et 2 sont présentes) sont incomplètes au sens où la somme des probabilités n'y est pas égale à 1 donc ${\left(\sum{p^q_i}\right)}^{\frac{1}{1-q}}$ ne définit pas une diversité à ces périodes.
+L'arbre de la figure&nbsp;\@ref(fig:Chao2010) [@Chao2010, figure 1b] peut être découpé en périodes mais les deux premières ($T_1$: seule l'espèce 2 est présente; $T_2$: les espèces 1 et 2 sont présentes) sont incomplètes au sens où la somme des probabilités n'y est pas égale à 1 donc ${\left(\sum{p^q_i}\right)}^{\frac{1}{1-q}}$ ne définit pas une diversité à ces périodes.
 
 @Pavoine2009 traitent en détail les résultats aberrants que cause un arbre non ultramétrique dans le cas particulier de l'entropie de Rao. 
 @Leinster2012 montrent qu'un arbre non ultramétrique implique que la dissimilarité entre les espèces dépende de leur fréquence, ce qui est contradictoire avec le cadre dans lequel la diversité phylogénétique a été définie.
@@ -1287,7 +1286,7 @@ $$\sum_s{p_s{\left(\mathbf{Zp}\right)}^{q-1}_s} \approx [\sum_s{p_s{\left(\mathb
 La puissance $q-1$ disparaît donc dans le calcul de la diversité et l'équation&nbsp;\@ref(eq:Dqz) devient
 $$\xq{D}{q}{\mathbf{Z}}{}{} \approx \bar{z}$$
 où $\bar{z} = \sum_s{p_s (\mathbf{Zp})_s}$.
-Dans les faits, cette approximation vaut pour des valeurs de banalité assez éloignées de 1 (Figure&nbsp;\@ref(LineaireZpsqFig)).
+Dans les faits, cette approximation vaut pour des valeurs de banalité assez éloignées de 1 (Figure&nbsp;\@ref(fig:LineaireZpsqFig)).
 
 Si une majorité des espèces (au sens de la somme de leurs probabilités respectives) a une banalité supérieure à 0,5, l'approximation linéaire est assez bonne et la moyenne généralisée de la banalité est proche de sa moyenne arithmétique. 
 Ce n'est pas un problème pour la comparaison de profils de diversité de communautés différentes calculés à partir de la même matrice de similarité mais l'interprétation de la diversité en termes de nombres effectifs d'espèces dépendant de $q$ n'est pas très intuitive.
@@ -1431,7 +1430,7 @@ knitr::include_graphics('images/ArbreA.png')
 La diversité phylogénétique $^{q}\!\bar{D}(T)$ appliquée à un arbre ultramétrique est un cas particulier de $\xq{D}{q}{\mathbf{Z}}{}{}$ pour une matrice $\mathbf{Z}$ dont les lignes et colonnes sont la similarité des "espèces historiques", c'est-à-dire les couples (espèce actuelle; branche ancestrale)[@Leinster2012, proposition A7].
 
 
-La matrice de similarité correspondant à l'arbre phylogénétique de la figure&nbsp;\@ref(figArbreA6) est la suivante.
+La matrice de similarité correspondant à l'arbre phylogénétique de la figure&nbsp;\@ref(fig:figArbreA6) est la suivante.
 Les noms des lignes et colonnes sont les couples (espèce actuelle; branche ancestrale).
 
 $$
@@ -1467,7 +1466,7 @@ Les dimensions de la matrice de similarité et du vecteur de probabilités devie
 Cette équivalence de méthodes n'a donc pas d'intérêt pratique mais montre que la diversité de Leinster et Cobbold généralise la diversité phylogénétique.
 Cependant, le calcul de $\xq{\hat{D}}{q}{\mathbf{Z}}{}{}$ à partir d'une matrice $\mathbf{Z}$ qui serait la simple transformation des distances de l'arbre phylogénétique, c'est-à-dire 1 moins les distances normalisées par la hauteur de l'arbre, ne donne pas la valeur de la diversité phylogénétique $^{q}\!\bar{D}(T)$, sauf dans le cas particulier de la diversité de Rao, $q=2$.
 
-Pour un arbre non ultramétrique, il est possible de définir une matrice $\mathbf{Z}$ similaire à celle de la figure&nbsp;\@ref(MatricePhylo), mais ses valeurs non nulles ne sont pas égales à 1.
+Pour un arbre non ultramétrique, il est possible de définir une matrice $\mathbf{Z}$ similaire à celle de la figure&nbsp;\@ref(fig:MatricePhylo), mais ses valeurs non nulles ne sont pas égales à 1.
 Elles sont égales au rapport de $\bar{T}$, la longueur moyenne des branches pondérée par la fréquence des espèces, sur la longueur de la branche: elles dépendent donc des fréquences des espèces et empêchent par conséquent la comparaison de la diversité entre communautés différentes.
 
 
@@ -1587,7 +1586,7 @@ length(Ps)
 
 La valeur de la diversité des valeurs propres est légèrement différente de celle de la diversité de Leinster et Cobbold à cause des approximations numériques liées au calcul des valeurs propres (qui nécessitent l'inversion d'une matrice carrée de dimension $S$).
 
-Le profil de diversité se trouve en Figure&nbsp;\@ref(fig:DqZLambdaFig).
+Le profil de diversité se trouve en figure&nbsp;\@ref(fig:DqZLambdaFig).
 
 ```{r DqZLambdaFig, echo=FALSE, results='hide', ref.label='DqZLambdaCode', fig.cap="Profil de diversité des valeurs propres de la méta-communauté `Paracou618`."}
 ```
@@ -1627,7 +1626,7 @@ $\xq{D}{q}{\mathbf{Z}}{}{}$ est l'exponentielle d'ordre $q$ de l'entropie de Ric
 
 $\xq{D}{q}{\mathbf{Z}}{}{}$ et $^{q}\!D$ sont des nombres effectifs d'espèces, respectent toutes les propriétés demandées à une mesure de diversité dont le principe de réplication. 
 Leurs valeurs sont identiques pour $q=2$ (diversité de Rao). 
-$\xq{D}{q}{\mathbf{Z}}{}{}$ est moins sensible au paramètre $q$ que $^{q}\!D(T)$: la Figure&nbsp;\@ref(ComparaisonDqFig) compare les deux mesures.
+$\xq{D}{q}{\mathbf{Z}}{}{}$ est moins sensible au paramètre $q$ que $^{q}\!D(T)$: la figure&nbsp;\@ref(fig:ComparaisonDqFig) compare les deux mesures.
 
 Le rôle du paramètre est assez différent: dans $\xq{D}{q}{\mathbf{Z}}{}{}$, la banalité des espèces est à la puissance $q$ alors que leur probabilité est à la puissance 1.
 Le paramètre détermine l'importance donnée aux espèces *originales*, c'est-à-dire dont la banalité est petite, et non aux espèces *rares*.

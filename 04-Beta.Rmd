@@ -69,26 +69,26 @@ knitr::include_graphics('images/Anderson2011B.png')
 
 Les mesures de remplacement ne sont pas traitées en détail dans ce chapitre mais simplement présentées ici.
 
-La plus simple (Figure&nbsp;\@ref(Anderson2011a), T1) est la dissimilarité entre deux communautés notée $\Delta{y}$.
+La plus simple (Figure&nbsp;\@ref(fig:Anderson2011a), T1) est la dissimilarité entre deux communautés notée $\Delta{y}$.
 De nombreuses mesures de dissimilarité existent, elles sont détaillées dans le chapitre&nbsp;\@ref(chap:BetaPaires), à partir de la page~\@ref(chap:BetaPaires).
 Whittaker n'envisageait que la présence ou l'absence des espèces, mais leur abondance peut être prise en compte.
 
 Cette dissimilarité peut être analysée en fonction du gradient de référence. 
-La dissimilarité entre des paires de communautés présentant la même différence (par exemple ayant subi ou non un traitement) situées le long d'un gradient (par exemple la fertilité du sol) peut être analysée en fonction de ce gradient (Figure&nbsp;\@ref(Anderson2011a), T2).
+La dissimilarité entre des paires de communautés présentant la même différence (par exemple ayant subi ou non un traitement) situées le long d'un gradient (par exemple la fertilité du sol) peut être analysée en fonction de ce gradient (Figure&nbsp;\@ref(fig:Anderson2011a), T2).
 Plus classiquement, la diversité $\beta$ peut être régressée contre la valeur du gradient (T3).
 La dissimilarité de chaque paire de communautés est confrontée à son écart sur le gradient.
 Les deux analyses précédentes peuvent être combinées pour mesurer le remplacement des espèces selon deux gradients emboîtés (T6).
 
-Une variation sur le modèle T2 consiste à le représenter sous la forme d'un modèle de décroissance en fonction de la distance [@Nekola1999], éventuellement pour plusieurs groupes de communautés (Figure&nbsp;\@ref(Anderson2011a), T4 et T5). 
+Une variation sur le modèle T2 consiste à le représenter sous la forme d'un modèle de décroissance en fonction de la distance [@Nekola1999], éventuellement pour plusieurs groupes de communautés (Figure&nbsp;\@ref(fig:Anderson2011a), T4 et T5). 
 L'indice de Simpson spatialement explicite (page~\@ref(sec:SimpsonSpatial)) entre dans ce cadre bien qu'il soit construit différemment.
 
-Les mesures de variation (Figure&nbsp;\@ref(Anderson2011b), V1) concernent la dissimilarité entre plusieurs communautés ou entre chaque communauté et la méta-communauté.
+Les mesures de variation (Figure&nbsp;\@ref(fig:Anderson2011b), V1) concernent la dissimilarité entre plusieurs communautés ou entre chaque communauté et la méta-communauté.
 L'équivalence de ces deux concepts n'est pas évidente: elle a été montrée pour les mesures de dissimilarité entre paires de communautés par @Legendre1999, Legendre2001, Legendre2005 et pour l'entropie de Rao par @Pavoine2004 mais reste une question ouverte pour l'entropie HCDT en général.
 
 La diversité $\beta$ peut être mesurée pour un assemblage de communautés au choix comme la moyenne des dissimilarités entre les paires de communautés  ou à partir des diversités $\gamma$ et $\alpha$, c'est-à-dire en tant que mesure dérivée.
 Cette dernière approche est traitée dans ce chapitre, où il sera montré que la mesure dérivée est aussi une dissimilarité moyenne entre communautés et méta-communauté.
 
-Si la diversité est mesurée comme moyenne des dissimilarités, elle peut être analysée par des méthodes d'ordination indirectes (Figure&nbsp;\@ref(Anderson2011b), V2) ou directes (V3). Elle peut aussi être comparée entre méta-communautés ou modélisée en fonction d'un gradient environnemental (V4), de façon similaire au modèle T6.
+Si la diversité est mesurée comme moyenne des dissimilarités, elle peut être analysée par des méthodes d'ordination indirectes (Figure&nbsp;\@ref(fig:Anderson2011b), V2) ou directes (V3). Elle peut aussi être comparée entre méta-communautés ou modélisée en fonction d'un gradient environnemental (V4), de façon similaire au modèle T6.
 
 La diversité $\beta$ peut être décomposée en niveaux hiérarchiques emboîtés (V5). Des tests statistiques sont nécessaires pour comparer les niveaux: par exemple, montrer que la diversité (inter) entre des communautés supposées différentes est significativement plus grande que celle (intra) des placettes d'échantillonnage de chacune d'entre elles, à la manière d'une analyse de variance (V6).
 D'autres analyses sont bien sûr envisageables, comme la comparaison de la forme de la courbe de dissimilarité moyenne entre paires de communautés en fonction de la distance à des patrons connus, issus de simulation de processus à identifier [@Rejou-Mechain2011].
@@ -301,7 +301,7 @@ DistJaccard <- dist.binary(BCI, method = 1)
 ```{r JaccardFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='JaccardCode', fig.cap="Distribution des indices de Jaccard calculés pour les 50 carrés de BCI deux à deux."}
 ```
 
-La distribution des valeurs de l'indice de Jaccard $S_3=1-D_3^2$ est en figure&nbsp;\@ref(JaccardFig). 
+La distribution des valeurs de l'indice de Jaccard $S_3=1-D_3^2$ est en figure&nbsp;\@ref(fig:JaccardFig). 
 Le mode est proche de 0,5: la moitié des espèces sont communes entre deux carrés.
 
 Code R pour la figure:
@@ -387,7 +387,7 @@ ChaoJaccard <- sapply(1:50, function(i) {sapply(1:50, function(j) BCIjaccard(i,j
 BCIjaccard(1,2)
 ```
 
-La distribution des valeurs de l'indice corrigé se trouve en figure&nbsp;\@ref(ChaoJaccardFig). 
+La distribution des valeurs de l'indice corrigé se trouve en figure&nbsp;\@ref(fig:ChaoJaccardFig). 
 
 ```{r ChaoJaccardFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='ChaoJaccardCode', fig.cap="Distribution des indices de Jaccard corrigés du biais d'etimation pour les 50 carrés de BCI deux à deux."}
 ```
@@ -565,7 +565,7 @@ $\min{d_{t,1}}$ est la même notation pour l'espèce $t$ de la deuxième communa
 Ces valeurs sont nulles pour toutes les espèces communes.
 
 $\pi_{s(n)}$ désigne la contribution de l'espèce $s$ à l'indice de Hurlbert, déjà vue dans le cadre de l'originalité taxonomique (page~\@ref(sec:OrigTax)).
-La contribution des espèces rares augmente avec le paramètre $n$ (Figure&nbsp;\@ref(HurlbertCFig), page~\@ref(HurlbertCFig)).
+La contribution des espèces rares augmente avec le paramètre $n$ (Figure&nbsp;\@ref(fig:HurlbertCFig), page~\@ref(HurlbertCFig)).
 Pour chaque communauté, la moyenne des dissimilarités minimales entre chaque espèce et l'autre communauté est calculée, pondérée par la contribution de l'espèce à l'indice de Hurlbert.
 
 La dissimilarité pondérée (W pour *weighted*) entre les deux communautés (C pour *community*) en est la moyenne entre les deux communautés:
@@ -682,7 +682,7 @@ La représentation graphique de l'ACP (non centrée, non réduite) montre les co
 Ter Braak *définit* la diversité $\beta$ comme la distance entre deux communautés (et la moyenne des distances entre paires de communautés si leur nombre est supérieur à 2). 
 Cette "définition" est valide puisque cette distance est la composante inter de la décomposition de l'entropie $\beta$ de Simpson (page~\@ref(eq:SimpsonNei)).
 
-L'ACP non centrée des 50 carrés de BCI est en figure&nbsp;\@ref(BCIPCAFig).
+L'ACP non centrée des 50 carrés de BCI est en figure&nbsp;\@ref(fig:BCIPCAFig).
 
 Code R pour la figure:
 ```{r BCIPCACode, eval=FALSE}
@@ -694,7 +694,7 @@ pcaBCI <- dudi.pca(BCI/rowSums(BCI), scannf = FALSE, nf = 2, center = FALSE, sca
 ```
 
 
-L'ACP centrée (mais non réduite, figure&nbsp;\@ref(BCIPCA2Fig)) permet de mieux représenter la diversité $\beta$ : la distance de chaque carré au centre du repère est sa contribution.
+L'ACP centrée (mais non réduite, figure&nbsp;\@ref(fig:BCIPCA2Fig)) permet de mieux représenter la diversité $\beta$ : la distance de chaque carré au centre du repère est sa contribution.
 
 Code R:
 ```{r BCIPCA2Code, eval=FALSE}
@@ -752,7 +752,7 @@ La diversité $\beta$ exprimée de cette façon peut faire l'objet d'analyses pa
 ```{r BCICordeFig, echo=FALSE, message=FALSE, results='hide', out.width='\\textwidth', ref.label='BCICordeCode', fig.cap="PCoA appliquée à la distance de corde des 50 carrés de BCI pour visualiser la diversité $\beta$."}
 ```
 
-La diversité $\beta$ de BCI (Figure&nbsp;\@ref(fig:BCIPCA2Fig)) est mieux représentée par une analyse en coordonnées principales appliquée à la distance de corde entre les communautés (Figure&nbsp;\@ref(BCICordeFig)).
+La diversité $\beta$ de BCI (Figure&nbsp;\@ref(fig:BCIPCA2Fig)) est mieux représentée par une analyse en coordonnées principales appliquée à la distance de corde entre les communautés (Figure&nbsp;\@ref(fig:BCICordeFig)).
 La limite de la méthode est que l'origine du repère ne représente plus ici la méta-communauté: sa position correspond à la moyenne des probabilités des espèces transformées, $y_{s|i}$, pas à celle des $p_{s|i}$.
 
 Code R:
@@ -1032,7 +1032,7 @@ Pour $q$ différent de 1, l'entropie $\gamma$ est
 \label{eq:Hqgamma}
 \end{equation}
 
-Sa fonction d'information a été tracée Figure&nbsp;\@ref(IFig), page~\@ref(IFig).
+Sa fonction d'information a été tracée Figure&nbsp;\@ref(fig:IFig), page~\@ref(IFig).
 
 L'entropie $\beta$ est
 
@@ -1282,7 +1282,7 @@ L'entropie $\beta$ entre les échantillons de deux hectares est donc diminuée d
 ```{r BetaSampleFig1, echo=FALSE, results='hide', message=FALSE, ref.label='BetaSampleCode1', fig.cap="Estimation de la diversité $\beta$ entre carrés de BCI. La diversité est calculée à partir du nombre de carrés en abscisse, de 2 à 30, tirés aléatoirement. La valeur en ordonnée est la diversité d'ordre 2 moyenne sur 100 tirages, les barres représentent l'écart-type. Aux erreurs d'estimation près, la valeur de la diversité $\beta$ ne dépend pas du nombre de carrés."}
 ```
 
-La Figure&nbsp;\@ref(BetaSampleFig) présente les valeurs estimées de diversité neutre $\beta$ entre carrés de BCI tirés aléatoirement, en fonction du nombre de carrés.
+La figure&nbsp;\@ref(fig:BetaSampleFig) présente les valeurs estimées de diversité neutre $\beta$ entre carrés de BCI tirés aléatoirement, en fonction du nombre de carrés.
 
 Code pour réaliser la figure:
 ```{r BetaSampleCode1, eval=FALSE, tidy=FALSE}
@@ -1385,7 +1385,7 @@ L'entropie $\beta$ est
 &= \sum_i{w_i}\sum_k{\frac{T_k}{T}\sum_u{p^{q}_{k,u,i}\ln_q\frac{p_{k,u,i}}{p_{k,u}}}}
 \end{align}
 
-où $p_{k,u}$ est la probabilité d'observer une des espèces de la branche $u$ de l'arbre à la période $k$ (Figure&nbsp;\@ref(Arbre)) dans la méta-communauté, et $p_{k,u,i}$ la même probabilité dans la communauté $i$.
+où $p_{k,u}$ est la probabilité d'observer une des espèces de la branche $u$ de l'arbre à la période $k$ (Figure&nbsp;\@ref(fig:Arbre)) dans la méta-communauté, et $p_{k,u,i}$ la même probabilité dans la communauté $i$.
 
 La décomposition de l'entropie phylogénétique au sens d'@Allen2009, c'est-à-dire dans la cas particulier $q=1$, a été établie par @Mouchet2011.
 
@@ -1401,7 +1401,7 @@ summary(DivPart(q = 1, Paracou618.MC, Biased = FALSE,
 ```{r DivPartFig, echo=FALSE, results='hide', ref.label='DivPartCode', fig.cap="Représentation graphique de la diversité des deux parcelles du jeu de données `Paracou618`. Les rectangles transparents représentent la diversité neutre, les rectangles hachurés la diversité phylogénétique (l'arbre est la taxonomie des espèces, $q=1$). Dans chaque cas, le rectangle le plus large, de hauteur 1, représente la diversité $\\gamma$. Le rectangle plus haut a pour largeur et longueur les diversités $\\alpha$ et $\\beta$. Les surfaces des deux rectangles sont identiques."}
 ```
 
-La Figure&nbsp;\@ref(DivPartFig) donne une représentation graphique de la décomposition de la diversité. 
+La figure&nbsp;\@ref(fig:DivPartFig) donne une représentation graphique de la décomposition de la diversité. 
 La différence de taille entre les rectangles hachurés et les rectangles transparents est due à la prise en compte de la phylogénie. 
 La diversité $\gamma$ (rectangles de hauteur 1) est égale au produit des diversités $\alpha$ et $\beta$ (côtés du rectangle plus haut). 
 Si les communautés étaient de même poids et complètement différentes, c'est à dire contenant des espèces totalement dissimilaires entre communautés [@Pavoine2015a], la hauteur du rectangle serait égale à leur nombre (2 ici).
@@ -1533,7 +1533,7 @@ Si l'intervalle de confiance ne contient pas 0, l'égalité des distributions es
 ```{r DivestFig, echo=FALSE, results='hide', ref.label='DivestCode', fig.cap="Estimation de la diversité de la méta-communauté `Paracou618`."}
 ```
 
-Calcul sous R: la fonction `DivEst` produit un graphique avec l'intervalle de confiance (Figure&nbsp;\@ref(DivestFig)).
+Calcul sous R: la fonction `DivEst` produit un graphique avec l'intervalle de confiance (Figure&nbsp;\@ref(fig:DivestFig)).
 
 Code R:
 ```{r DivestCode, eval=FALSE}
