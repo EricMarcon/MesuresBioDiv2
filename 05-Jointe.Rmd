@@ -77,15 +77,15 @@ Elles sont présentées ici après leur propriété mathématique fondamentale: 
 L'entropie de Shannon (et ses multiples) sont les seules fonctions $H$ telles que 
 
 \begin{equation}
-\label{eq:Recursivite1}
-H\left(\{p_{s,i}\}\right)-H\left(\{p_i\}\right) 
-= \sum_i{p_i H\left(\{\frac{p_{s,i}}{p_i}\}\right)}
+  (#eq:Recursivite1)
+  H\left(\{p_{s,i}\}\right)-H\left(\{p_i\}\right) 
+  = \sum_i{p_i H\left(\{\frac{p_{s,i}}{p_i}\}\right)}
 \end{equation}
 et
 \begin{equation}
-\label{eq:Recursivite2}
-H\left(\{p_{s,i}\}\right)-H\left(\{p_s\}\right) 
-= \sum_s{p_s H\left(\{\frac{p_{s,i}}{p_s}\}\right)}.
+  (#eq:Recursivite2)
+  H\left(\{p_{s,i}\}\right)-H\left(\{p_s\}\right) 
+  = \sum_s{p_s H\left(\{\frac{p_{s,i}}{p_s}\}\right)}.
 \end{equation}
 
 Cette propriété est appelée récursivité [@Bacaro2013]. 
@@ -173,15 +173,14 @@ Pour revenir au cas simple dans lequel les habitats ont des poids égaux, les co
 
 
 
-# Décomposition de la diversité jointe
-\label{sec:DiversiteJointe}
+# Décomposition de la diversité jointe {#chap:DiversiteJointe}
 
 ```{block, type='Essentiel'}
   La diversité jointe peut être décomposée en diversité $\gamma$ (elle-même décomposable en diversités $\alpha$ et $\beta$) et réplication, égale au nombre effectif de répétitions de l'assemblage des communautés nécessaire pour obtenir la diversité jointe réelle.
 ```
 
 
-La décomposition de la diversité jointe [@Gregorius2009a, Gregorius2010] complète celle de la diversité $\gamma$ vue dans les parties précédentes.
+La décomposition de la diversité jointe [@Gregorius2009a; @Gregorius2010] complète celle de la diversité $\gamma$ vue dans les parties précédentes.
 On se place dans le cadre d'un échantillonnage global de la méta-communauté, dans lequel le poids de chaque communauté est égal à la probabilité qu'un individu lui appartienne, et non un choix arbitraire.
 
 
@@ -255,8 +254,8 @@ La diversité $\alpha$ est le nombre d'espèces équifréquentes nécessaires da
 
 La décomposition complète de la diversité jointe s'écrit
 \begin{equation}
-\label{eq:DecJointe}
-^{q}\!D_{j}= ^{q}\!D_{\alpha} ^{q}\!D_{\beta} ^{q}\!R_{c}.
+  (#eq:DecJointe)
+  ^{q}\!D_{j}= ^{q}\!D_{\alpha} ^{q}\!D_{\beta} ^{q}\!R_{c}.
 \end{equation}
 
 La méta-communauté suivante illustre cette décomposition: elle contient $R_c=3$ répliques identiques de $D_{\beta}=2$ communautés équiprobables totalement distinctes, comprenant chacune $D_{\alpha}=2$ espèces équiprobables (Figure&nbsp;\@ref(fig:DifferentiationFig)). 

@@ -72,8 +72,7 @@ knitr::include_graphics('images/ArbreA.png')
 La façon exacte de mesurer les longueurs de branche est illustrée par la figure&nbsp;\@ref(fig:ArbreA1): la distance entre les espèces 1 et 2 est $T_1+T_2$, elle est égale à $T_1$ entre les espèces 4 et 5. 
 La distance est la hauteur du premier noeud commun.
 
-## Distance phylogénétique
-\label{sec:Dphylo}
+## Distance phylogénétique {#sec:Dphylo}
 
 La façon la plus évidente de définir une distance entre espèces est d'utiliser la taxonomie [@Clarke2001, Warwick2001], en attribuant une distance arbitraire (par exemple 1) à deux espèces du même genre, une autre (par exemple 2) à deux espèces de la même famille, etc. 
 La distance définie est ultramétrique.
@@ -106,16 +105,12 @@ La première étape consiste donc à choisir un ensemble de traits pertinents et
 Toute la stratégie relative à la photosynthèse peut être par exemple assez bien résumée par la masse surfacique des feuilles [@Wright2004], mais, en forêt tropicale, ce trait est décorrélé de la densité du bois [@Baraloto2010]. 
 Les valeurs manquantes peuvent être complétées en utilisant toute l'information disponible par MICE (*multiple imputation by chained equations*) [@VanBuuren2006], disponible sous R dans le package `mice` [@VanBuuren2011].
 
-\label{Gower}
 La prise en compte de variables qualitatives ou de rang et la possibilité de données manquantes pose un problème pratique de construction de la matrice de dissimilarité, traité par @Gower1971. 
 La formule de Gower, étendue par @Podani1999 puis @Pavoine2009b à d'autres types de variables, calcule la dissimilarité entre deux espèces par la moyenne des dissimilarités calculées pour chaque trait, dont la valeur est comprise entre 0 et 1:
 
 * Pour une variable quantitative, la différence de valeur entre deux espèces est normalisée par l'étendue des valeurs de la variable;
-
 * Les variables ordonnées sont remplacées par leur rang et traitées comme les variables quantitatives;
-
 * Pour des variables qualitatives, la dissimilarité vaut 0 ou 1;
-
 * Les valeurs manquantes sont simplement ignorées et n'entrent pas dans la moyenne.
 
 Une matrice de distances entre espèces est construite de cette façon. 
@@ -388,8 +383,7 @@ Pour l'espèce 3 de la figure&nbsp;\@ref(fig:ArbreA4), $\mathit{ED}_3$ est égal
 Clairement, la diversité phylogénétique PD (section&nbsp;\@ref(sec:PDFD)) est la somme des particularités évolutives de toutes les espèces de l'arbre.
 
 
-### Originalité taxonomique de Ricotta
-\label{sec:OrigTax}
+### Originalité taxonomique de Ricotta {#sec:OrigTax}
 
 ```{r HurlbertCFig, echo=FALSE, results='hide', ref.label='HurlbertCCode', fig.cap="Contribution des espèces à l'indice de Hurlbert. Les contributions de 4 espèces d'une communauté à l'indice sont représentées en fonction de la taille de l'échantillon $n$. Les fréquences des espèces sont lisibles pour $n=1$: une espèce fréquente (probabilité égale à 0,7, supérieure à $\\frac{1}{S}$), deux espèces peu fréquentes (0,19 et 0,1), et une espèce rare (0,01). Quand $n$ est assez grand, toutes les contributions tendent vers $\\frac{1}{S}=\\frac{1}{4}$ (ligne horizontale)."}
 ```
@@ -667,8 +661,7 @@ Si les espèces sont infiniment éloignées les unes des autres, $\mathbf{Z}$ es
 À l'opposé, si toutes les espèces sont identiques, $\mathbf{Z}$ ne contient que des 1 et la diversité vaut 1.
 
 
-## FD et PD
-\label{sec:PDFD}
+## FD et PD {#sec:PDFD}
 
 ```{r Arbre, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. (a) Arbre complet. 5 espèces sont présentes ($S=5$). Une période de l'arbre est définie entre deux noeuds successifs: l'arbre contient $K=3$ périodes. Les hauteurs des périodes sont notées $T_k$. À chaque période correspond un arbre plus simple (b pour la période 2, c pour la période 3) dans lequel les espèces originales sont regroupées. Le nombre de feuilles de ces arbres est noté $L_k$. Les probabilités pour un individu d'appartenir à une feuille sont notées $u_{k,l}$.", echo=FALSE}
 knitr::include_graphics('images/Arbre.png')
@@ -710,8 +703,7 @@ Diverses optimisations économiques sont possibles, dont le choix des espèces �
 
 
 
-## Indice de Rao
-\label{sec:Rao}
+## Indice de Rao {#sec:Rao}
 
 L'indice de Rao est une mesure de divergence pondérée. Son utilisation s'est largement développée depuis le début des années 2000 [@Izsak2000; @Shimatani2001a;  @Botta-Dukat2005; @Escalas2013] en raison de ses propriétés particulièrement intéressantes.
 
@@ -732,8 +724,8 @@ $\mathbf{p}$ est le vecteur des probabilités dont $p_{s'}$ et $p_{s""}$ sont de
 L'indice de Rao est
 
 \begin{equation}
+  (#eq:Rao)
   H_{\mathbf{\Delta}}\left(\mathbf{p}\right)=\sum_{s'}{\sum_{s""}{p_{s'}}}p_{s""}\delta_{s's""}.
-  \label{eq:Rao}
 \end{equation}
 
 
@@ -784,8 +776,7 @@ divc(as.data.frame (Paracou618.MC$Psi), Paracou618.Taxonomy$Wdist)
 apply(Paracou618.MC$Psi, 2, Rao, Tree=Paracou618.Taxonomy)
 ```
 
-### Maximum théorique
-\label{MaxTheorique}
+### Maximum théorique {#sec:MaxTheorique}
 
 @Pavoine2005a ont défini l'originalité d'une espèce comme sa fréquence maximisant l'entropie quadratique, sachant la matrice de distances entre espèces. 
 Les espèces les plus originales sont celles ayant le moins d'espèces proches dans la classification.
@@ -914,7 +905,7 @@ $\mathbf{\Delta}$ est la matrice de dissimilarité dont les éléments sont $\de
 @Guiasu2011, @Guiasu2012 proposent l'indice $\mathit{{GS}_{D}}$ pour ses propriétés mathématiques et fournissent sa décomposition:
 
 \begin{equation}
-  \label{eq:Guiasu}
+  (#eq:Guiasu)
   \mathit{{GS}_{D}}=\sum_{s}{\sum_{t}{\delta_{s,t}p_{s}}}p_{t}\left(1-p_{s}p_{t}\right).
 \end{equation}
 
@@ -950,8 +941,7 @@ Enfin, cette définition de la diversité ne respecte pas le principe de @Solow1
 
 
 
-## $H_p$ et $I_1$
-\label{sec:HpI1}
+## $H_p$ et $I_1$ {#sec:HpI1}
 
 Simultanément, @Pavoine2009a et @Allen2009 ont proposé la généralisation de l'indice de Shannon à la diversité phylogénétique. 
 La présentation de Allen et al. est donnée ici, celle de Pavoine et al., plus générale, sera détaillée dans le paragraphe suivant.
@@ -1013,8 +1003,8 @@ L'indice $I_q$ de Pavoine et al. est la somme des $^{q}_{k}\!H$ pondérée par l
 Nous le normalisons par la hauteur totale de l'arbre ($T$) pour définir $^{q}\!\bar{H}(T)$:
 
 \begin{equation}
-  ^{q}\!\bar{H} \left( T \right)=\sum_{k=1}^K{\frac{T_k}{T}^{q}_{k}\!H}
-\label{eq:Hbarq}.
+  (#eq:Hbarq)
+  ^{q}\!\bar{H} \left( T \right)=\sum_{k=1}^K{\frac{T_k}{T}^{q}_{k}\!H}.
 \end{equation}
 
 Dans un arbre parfaitement régulier, toutes les branches sont de longueur 1, il n'y a qu'une seule période, et $I_q=^{q}\!H$.
@@ -1063,9 +1053,9 @@ Le nombre effectif d'espèces de l'entropie de Rao, $^{2}\!\bar{D}(T)=\frac{1}{[
 @Chao2010 obtiennent ce résultat sans recourir explicitement à l'entropie, mais en faisant le même calcul:
 
 \begin{equation}
+  (#eq:Dbarq)
   ^{q}\!\bar{D} \left( T \right)
   =\left( \sum_b{\frac{l(b)}{T} p(b)^q} \right)^{\frac{1}{1-q}}.
-\label{eq:Dbarq}
 \end{equation}
 
 La somme est sur l'ensemble des branches de l'arbre, défini de façon identique à celle de @Allen2009, page \@ref(sec:HpI1).
@@ -1112,8 +1102,7 @@ Dans l'état actuel des connaissances, aucune méthode n'est applicable de faço
 
 
 
-# Diversité de Leinster et Cobbold
-\label{sec:LeinsterCobbold}
+# Diversité de Leinster et Cobbold {#chap:LeinsterCobbold}
 
 
 ```{block, type='Essentiel'}
@@ -1123,7 +1112,7 @@ Dans l'état actuel des connaissances, aucune méthode n'est applicable de faço
 ```
 
 
-Àpartir de la théorie mathématique des catégories [@Leinster2013], @Leinster2012 ont proposé une mesure de diversité applicable à une communauté dont la position des espèces dans un espace multidimensionnel euclidien est connue.
+À partir de la théorie mathématique des catégories [@Leinster2013], @Leinster2012 ont proposé une mesure de diversité applicable à une communauté dont la position des espèces dans un espace multidimensionnel euclidien est connue.
 C'est donc une mesure applicable à la diversité fonctionnelle.
 
 ## Définitions
@@ -1175,8 +1164,8 @@ La banalité moyenne des espèces de la communauté est calculée en prenant $r=
 La diversité de la communauté est simplement l'inverse de la banalité moyenne des espèces:
 
 \begin{equation}
+  (#eq:Dqz)
   \xq{D}{q}{\mathbf{Z}}{}{}={\left(\sum_s{p_s{\left(\mathbf{Zp}\right)}^{q-1}_s}\right)}^{\frac{1}{1-q}}.
-  \label{eq:Dqz}
 \end{equation}
 
 $\xq{D}{q}{\mathbf{Z}}{}{}$ converge vers $\xq{D}{1}{\mathbf{Z}}{}{}$ quand $q$ tend vers 1:

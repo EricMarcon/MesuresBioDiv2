@@ -1,4 +1,4 @@
-# (PART) Diversité $\beta$ et décomposition {-}
+# (PART) Diversité beta et décomposition {-}
 
 # Cadre
 
@@ -132,8 +132,7 @@ Toutes ont en commun:
 L'utilisation des nombres de Hill, la mesure locale de la diversité $\alpha$ et la définition de la diversité $\beta$ comme rapport des diversités $\gamma$ et $\alpha$ permet de définir la "vraie diversité" [@Jost2006, Jost2007] $\beta$ qui est un nombre de communautés équivalentes (*compositionnal units*) similaire au nombre d'espèces équivalentes des diversités $\alpha$ et $\gamma$. 
 @Tuomisto2011 milite pour que le terme diversité soit réservé à la vraie diversité (homogène à un nombre d'espèces) et que les autres mesures soient appelées différemment: "entropie" de Shannon ou "probabilité" de Gini-Simpson notamment.
 
-### Le débat sur la décomposition
-\label{subseq:DebatDecomposition}
+### Le débat sur la décomposition {#sec:DebatDecomposition}
 
 L'objectif est de décomposer la diversité totale, notée $\gamma$ en une composante inter-groupes, notée $\beta$ et une composante intra-groupes notée $\alpha$.
 
@@ -162,8 +161,8 @@ Enfin, @Marcon2014a généralisent ce résultat à toutes les mesures de diversi
 @Jost2007 et @Chao2012a ont montré que la décomposition des nombres de Hill en éléments indépendants est multiplicative:
 
 \begin{equation}
+  (#eq:DecompDq)
   ^{q}\!D_{\gamma} = ^{q}\!D_{\alpha} ^{q}\!D_{\beta}.
-  \label{eq:DecompDq}
 \end{equation}
 
 $^{q}\!D_{\alpha}$ et $^{q}\!D_{\gamma}$ sont les nombres de Hill d'ordre $q$ égaux aux diversités $\alpha$ et $\gamma$. 
@@ -175,8 +174,7 @@ L'*indépendance* signifie que la valeur de $^{q}\!D_{\beta}$ n'est pas contrain
 Cette propriété est souvent considérée comme importante [@Wilson1984, Gregorius2010], et sera discutée largement ici.
 
 
-### Définitions de la diversité $\alpha$
-\label{sec:defalpha}
+### Définitions de la diversité $\alpha$ {#sec:defalpha}
 
 La diversité $\alpha$ est calculée pour chaque communauté, et notée $^q_iD_{\alpha}$ (l'entropie correspondante est notée $^{q}_{i}\!H_{\alpha}$). 
 La diversité $\alpha$ de la méta-communauté est intuitivement la moyenne de celle des communautés. 
@@ -194,7 +192,6 @@ La définition classique est selon @Routledge1979
   ^{q}\!D_{\alpha}={\left(\sum_s{\sum_i{w_ip^q_{s|i}}}\right)}^{1/{\left(1-q\right)}}.
 \end{equation}
 
-\label{JostAlpha}
 La pondération proposée par @Jost2007 est
 
 \begin{equation}
@@ -214,7 +211,6 @@ En revanche, cette pondération ne garantit pas que la diversité $\gamma$ soit 
 Jost conclut donc que la décomposition n'est possible que pour des communautés de même poids ou pour $q=0$ ou $q=1$.
 @Ricotta2009b contourne cette difficulté en proposant une méthode de ré-échantillonnage qui permet d'égaliser les poids.
 
-\label{ChiuAlpha}
 @Chiu2014 établissent une nouvelle définition de la diversité $\alpha$ qui permet d'assurer l'indépendance et garantit que la diversité $\beta$ est positive quels que soient les poids des communautés:
 
 \begin{equation}
@@ -229,8 +225,7 @@ La dépendance entre $^{q}\!D_{\beta}$ et $^{q}\!D_{\alpha}$ est le prix à paye
 
 
 
-# Diversité de différentiation
-\label{chap:BetaPaires}
+# Diversité de différentiation {#chap:BetaPaires}
 
 ```{block, type='Essentiel'}
   La diversité $\beta$ de différentiation mesure la dissimilarité entre communautés, généralement considérées par paires.
@@ -260,7 +255,7 @@ Précisément, notons $s_{1,1}$ les espèces observées dans les deux communaut�
 L'indice de Jaccard est le rapport entre le nombre d'espèces communes et le nombre d'espèces total:
 
 \begin{equation}
-  \label{eq:Jaccard}
+  (#eq:Jaccard)
   S_3 = \frac{s_{1,1}}{s_{1,1}+s_{1,0}+s_{0,1}}.
 \end{equation}
 
@@ -437,7 +432,7 @@ Son problème principal est qu'elle est très sensible aux ordres de grandeurs r
 La dissimilarité de Steinhaus [@Motyka1947], plus connue sous le nom de Bray-Curtis [@Odum1950, Bray1957] (voir l'analyse historique de  @Legendre2012, note de bas de page, eq. 7.58,), qui pourrait être attribuée à @Renkonen1938, est très utilisée (par défaut dans plusieurs analyses du package *vegan* par exemple):
 
 \begin{equation}
-  \label{BrayCurtis}
+  (#BrayCurtis)
   D_{8} = \frac{\sum_s{\left| n_{s,1}-n_{s,2} \right|}}{\sum_s{\left( n_{s,1}+n_{s,2}. \right)}}
 \end{equation}
 
@@ -467,14 +462,14 @@ Le nombre d'espèces communes aux deux sites $s_{1,1}$ est remplacé par le nomb
 La dissimilarité de Ružička [@Ruzicka1958] généralise celle de Jaccard :
 
 \begin{equation}
-  \label{eq:Ruzicka}
+  (#eq:Ruzicka)
   D_3 = 1-\frac{n_{1,1}}{n_{1,1}+n_{1,0}+n_{0,1}}.
 \end{equation}
 
 La différence de pourcentage (*percentage difference*) généralise la dissimilarité de Sørensen:
 
 \begin{equation}
-  \label{eq:percentdiff}
+  (#eq:percentdiff)
   D_7 = 1- \frac{2n_{1,1}}{2n_{1,1}+n_{1,0}+n_{0,1}}.
 \end{equation}
 
@@ -500,7 +495,7 @@ Le premier composant est l'indice de dissimilarité de @Simpson1943:
 Il vaut 0 quand les communautés sont emboîtées.
 Son complément $D_{nes}$ prend en compte la partie de la dissimilarité due à l'emboîtement:
 \begin{equation}
-\label{eq:DNesReplBS}
+  (#eq:DNesReplBS)
   D_{nes} 
   = \frac{s_{1,0} + s_{0,1}}{2s_{1,1} + s_{1,0} + s_{0,1}}
   - D_{sim}.
@@ -511,7 +506,7 @@ Ces mesures de dissimilarité sont généralisées au-delà de deux communautés
 @Baselga2012 étend cette décomposition à la dissimilarité de Jaccard:
 
 \begin{equation}
-\label{eq:DNesReplBJ}
+(#eq:DNesReplBJ)
 \begin{split}
   D_3
   & = D_{sim} + D_{nes} \\
@@ -533,7 +528,7 @@ Ainsi, le terme d'emboîtement comptabilise la différence de richesse entre les
 Après normalisation par le nombre total d'espèce, la décomposition est
 
 \begin{equation}
-\label{eq:DNesReplPJ}
+  (#eq:DNesReplPJ)
   D_3
   = \frac{2\min(s_{1,0},s_{0,1})}{s_{1,1} + s_{1,0} + s_{0,1}}
   + \frac{|s_{1,0}-s_{0,1}|}{s_{1,1} + s_{1,0} + s_{0,1}}.
@@ -729,8 +724,8 @@ knitr::include_graphics('images/Corde.png')
 La distance de corde (Figure \@ref(fig:Corde)) est obtenue par la transformation
 
 \begin{equation}
+  (#eq:Corde)
   y_{s|i} = \frac{p_{s|i}}{\sqrt{\sum_s{p_{s|i}^2}}}.
-  \label{eq:Corde}
 \end{equation}
 
 Les communautés sont représentées dans l'espace des espèces par un vecteur dont les composantes sont proportionnelles aux probabilités des espèces mais dont la norme est 1.
@@ -738,8 +733,8 @@ La distance entre communautés est donc la longueur de la corde qui relie les ex
 
 La distance de Hellinger est obtenue par
 \begin{equation}
+  (#eq:Hellinger)
   y_{s|i} = \sqrt{p_{s|i}}.
-  \label{eq:Hellinger}
 \end{equation}
 
 La distance euclidienne entre les profils de communautés ($y_{s|i} = p_{s|i}$) utilisée par @terBraak1983 n'est pas optimale parce qu'elle souffre des défauts de l'entropie de Simpson [@Jost2007] qu'elle représente.
@@ -765,8 +760,7 @@ scatter(pcoaBCI)
 
 
 
-## Tests de significativité
-\label{sec:TestBetaDiff}
+## Tests de significativité {#sec:TestBetaDiff}
 
 ### Test de non-nullité
 
@@ -812,8 +806,7 @@ La méthode de permutation originale est inappropriée et donc corrigée [@Bacar
 
 
 
-# Décomposition de l'entropie HCDT
-\label{chap:DedompHCDT}
+# Décomposition de l'entropie HCDT {#chap:DedompHCDT}
 
 
 ```{block, type='Essentiel'}
@@ -920,7 +913,6 @@ Calcul sous R: `BetaEntropy` applique cette correction:
 summary(BetaEntropy(Paracou618.MC, q=1, Correction="ChaoShen"))
 ```
 
-\label{InfoMutuelle}
 @Chao2013 utilisent une approche différente pour corriger le biais d'estimation: l'information mutuelle. 
 Les données sont organisées comme dans le tableau&nbsp;\@ref(table:Notations), mais les probabilités qu'un individu appartienne à la communauté $i$ et à l'espèce $s$ sont calculées pour que leur somme soit égale à 1 sur l'ensemble du tableau: $\sum_s{\sum_i{_{s,i}}}=1$ (au lieu de $\sum_i{p_{s|i}}=1$).
 
@@ -975,9 +967,9 @@ L'estimateur de Chao et Shen est apparemment le meilleur, la correction de celui
 
 La décomposition additive de l'entropie selon @Lande1996 doit être la suivante:
 
-\begin{equation} 
+\begin{equation}
+  (#eq:DecompHq)
   ^{q}\!H_{\gamma}=^{q}\!H_{\alpha} + ^{q}\!H_{\beta}.
-\label{eq:DecompHq}
 \end{equation}
 
 @Bourguignon1979 comme @Lande1996 définissent une mesure d'inégalité décomposable comme respectant les propriétés suivantes:
@@ -997,8 +989,8 @@ La remise en cause de ce postulat [@Marcon2014a] permet de décomposer la divers
 La décomposition de l'entropie est faite en écrivant le logarithme d'ordre $q$ de la décomposition de la diversité, équation (\@ref(eq:DecompDq)):
 
 \begin{equation}
+  (#eq:DecompJost)
   ^{q}\!H_{\gamma} = {^{q}\!H_{\alpha}}+\ln_q{^{q}\!D_{\beta}}-\left(q-1\right){^{q}\!H_{\alpha}}\ln_q{^{q}\!D_{\beta}}.
-\label{eq:DecompJost}
 \end{equation}
 
 Ceci est la décomposition de @Jost2007. 
@@ -1008,7 +1000,7 @@ La décomposition n'est pas additive, mais $H_B$ est indépendant de l'entropie 
 Les deux derniers termes peuvent être regroupés et réarrangés pour obtenir $^{q}\!H_{\beta}$ conformément à la décomposition additive de l'équation (\@ref(eq:DecompHq)):
 
 \begin{equation}
-\label{eq:ContributionBeta}
+  (#eq:ContributionBeta)
   ^{q}\!H_{\beta} = \sum_i{w_i\sum_s{p^q_{s|i}\ln_q\frac{p_{s|i}}{p_s}}}.
 \end{equation}
 
@@ -1026,10 +1018,10 @@ Il est intéressant d'écrire $^{q}_{i}\!H_{\beta}$ et $^{q}\!H_{\gamma}$ sous l
 Pour $q$ différent de 1, l'entropie $\gamma$ est
 
 \begin{equation}
+  (#eq:Hqgamma)
   ^{q}\!H_{\gamma} 
-= \sum_s{p_s\frac{1-p^{q-1}_s}{q-1}}
-= \sum_s{p_s\ln_q\frac{1}{p_s}}.
-\label{eq:Hqgamma}
+  = \sum_s{p_s\frac{1-p^{q-1}_s}{q-1}}
+  = \sum_s{p_s\ln_q\frac{1}{p_s}}.
 \end{equation}
 
 Sa fonction d'information a été tracée Figure&nbsp;\@ref(fig:IFig), page~\@ref(IFig).
@@ -1037,10 +1029,11 @@ Sa fonction d'information a été tracée Figure&nbsp;\@ref(fig:IFig), page~\@re
 L'entropie $\beta$ est
 
 \begin{equation}
+  (#eq:Hqbeta)
   ^{q}_{i}\!H_{\beta} 
   = \sum_s{p_{s|i}\frac{p^{q-1}_{s|i}-p^{q-1}_s}{q-1}}
   = \sum_s{p_{s|i}\left(\ln_q\frac{1}{p_s}-\ln_q\frac{1}{p_{s|i}}\right)}.
-\label{eq:Hqbeta}
+
 \end{equation}
 
 La forme de l'entropie $\beta$ évoque la divergence de puissance [@Cressie1984] qui est une statistique qui mesure la divergence entre deux distributions (déjà mentionnée page~\@ref(CressieRead)), dont les propriétés asymptotiques sont connues. 
@@ -1064,8 +1057,8 @@ L'entropie $\gamma$ est le nombre d'espèces de la méta-communauté moins un ($
 En termes de diversité,
 
 \begin{equation}
+  (#eq:D0beta)
   ^{0}\!D_{\beta}=\frac{S}{\bar{S}}.
-  \label{eq:D0beta}
 \end{equation}
 
 $^{0}\!D_{\beta}$ peut être supérieur au nombre de communautés [@Chao2012a] si les poids sont très inégaux, ce qui complique son interprétation. 
@@ -1097,8 +1090,8 @@ p_s\left(1-p_s\right)=\sum_i{w_i\left[p_{s|i}\left(1-p_{s|i}\right)+{\left(p_{s|
 Cette égalité peut être sommée sur toutes les espèces pour donner
 
 \begin{equation}
-\label{eq:SimpsonNei}
-E_{\gamma}=\sum_i{w_i E_{\alpha,i}}+\sum_i{w_i\sum_s{{\left(p_{s|i}-p_s\right)}^2}}=E_{\alpha}+E_{\beta}.
+  (#eq:SimpsonNei)
+  E_{\gamma}=\sum_i{w_i E_{\alpha,i}}+\sum_i{w_i\sum_s{{\left(p_{s|i}-p_s\right)}^2}}=E_{\alpha}+E_{\beta}.
 \end{equation}
 
 L'entropie $\gamma$ de Simpson peut être décomposée en sa diversité $\alpha$, somme pondérée des entropies $\alpha$ des communautés, et son entropie $\beta$, égale à la somme pondérée des distances $l^2$ entre la distribution des fréquences dans chaque communauté et celle de l'ensemble de la communauté.
@@ -1109,7 +1102,7 @@ $G_{s,t}={D_{s,t}}/{H_t}$ est la différenciation relative.
 
 L'entropie $E_{\beta}$ calculée de cette manière est égale à $^{2}\!H_{\beta}$ calculée à l'équation (\@ref(eq:Hqbeta)) pour le cas général, mais la contribution de chaque communauté est différente: la décomposition de la variance est une façon alternative de décomposer l'entropie, valable uniquement pour l'entropie de Simpson.
 
-Cette décomposition est remise en cause par @Jost2007, Jost2008, qui a généré le débat [@Heller2009, Ryman2009, Jost2009a, Whitlock2011]. 
+Cette décomposition est remise en cause par Jost [-@Jost2007, -@Jost2008] qui a généré le débat [@Heller200; @Ryman2009; @Jost2009a; @Whitlock2011]. 
 $E_{\gamma}$ étant inférieure ou égale à 1, $E_{\beta}$ n'est pas indépendante de $E_{\alpha}$: seule la décomposition multiplicative permet l'indépendance, et Jost propose d'utiliser une transformation de $^{2}\!D_{\beta}$ comme mesure de différenciation (voir page~\@ref(sec:Chevauchement)). @Gregorius2014 montre que ce problème n'est pas limité à l'entropie de Simpson mais s'applique à toutes les entropies HCDT d'ordre supérieur à 1.
 
 Jost postule que la diversité $\beta$ de Simpson a la même relation à $E_{\beta}$ que les diversités $\alpha$ et $\gamma$,
@@ -1147,8 +1140,7 @@ knitr::kable(Decomposition, caption="Entropie, diversité et décomposition. L'e
 
 Le nombre équivalent de communautés a une forme légèrement différente d'un nombre de Hill (Tableau&nbsp;\@ref(Decomposition)).
 
-## Décomposition de l'indice de Rao
-\label{sec:RaoDisc}
+## Décomposition de l'indice de Rao {#sec:RaoDisc}
 
 Les notations sont celles de la présentation de l'indice de Rao, page~\@ref(sec:Rao).
 
@@ -1164,13 +1156,12 @@ Elle est définie par Rao comme la différence entre l'entropie quadratique du m
 Elle peut être utilisée pour calculer un indice de diversité entre communautés, de la même façon qu'on calcule la diversité entre espèces d'une communauté:
 
 \begin{equation}
-H_{\Delta }\left(\mathbf{p}\right) = \sum_i{w_i H_{\Delta }\left({\mathbf{p}}_i\right)}+\sum_i{\sum_j{w_i w_j D_{H_{\Delta }}\left({\mathbf{p}}_i,{\mathbf{p}}_j\right)}}.
-\label{eq:Raobeta}
+  (#eq:Raobeta)
+  H_{\Delta }\left(\mathbf{p}\right) = \sum_i{w_i H_{\Delta }\left({\mathbf{p}}_i\right)}+\sum_i{\sum_j{w_i w_j D_{H_{\Delta }}\left({\mathbf{p}}_i,{\mathbf{p}}_j\right)}}.
 \end{equation}
 
-Le deuxième terme de la somme est la diversité inter-\break
-communautés. 
-C'est un indice de Rao: les poids des communautés sont équivalents aux tableaux de fréquences et les dissimilarités entre communautés sont équivalentes aux dissimilarités entre espèces de l'équation (\@ref(eq:Rao)). 
+Le deuxième terme de la somme est la diversité inter-communautés. 
+C'est un indice de Rao: les poids des communautés sont équivalents aux tableaux de fréquences et les dissimilarités entre communautés sont équivalentes aux dissimilarités entre espèces de l'équation \@ref(eq:Rao). 
 La divergence entre communautés est construite à partir des entropies de chacune: l'entropie $\beta$ est définie comme la différence entre les entropies $\gamma$ et $\alpha$.
 
 L'exemple suivant utilise les communautés du fichier\break
@@ -1321,8 +1312,7 @@ L'estimation de la diversité présente les difficultés classiques dues au biai
 
 La diversité $\beta$ ne doit donc pas être normalisée systématiquement, mais seulement dans le premier cas.
 
-### L'indice de chevauchement $C_{qN$}
-\label{sec:Chevauchement}
+### L'indice de chevauchement $C_{qN$} {#sec:Chevauchement}
 
 Plutôt qu'une simple normalisation, @Chao2008 définissent un indice de chevauchement, c'est-à-dire la proportion d'espèces partagées en moyenne par une communauté. 
 Si $N$ communautés (le nombre de communautés est noté $N$ ici et non $I$ pour conserver le nom de l'indice établi dans la littérature) de mêmes diversités $\alpha$ et $\gamma$ que les données, contenaient chacune $S$ espèces équifréquentes, dont $A$ seraient communes à toutes les communautés et les autres représentées dans une seule, $A/S$ serait cet indice de chevauchement.
@@ -1471,9 +1461,9 @@ L'inverse de $\xq{D}{q}{\mathbf{Z}}{\gamma}{}$ est la moyenne généralisée d'o
 Partant de $^{q}\!D_{\gamma} = {^{q}\!D_{\alpha}} {^{q}\!D_{\beta}}$ et de la définition de Routledge de la diversité $\alpha$, on obtient
 
 \begin{equation}
+  (#eq:Dbeta)
   \xq{D}{q}{\mathbf{Z}}{\beta}{}
-={\left[\sum_i{w_i}{\left(\frac{1/\xq[\,]{D}{q}{\mathbf{Z}}{\alpha}{i}}{1/\xq[\,]{D}{q}{\mathbf{Z}}{\gamma}{}}\right)}^{q-1}\right]}^{\frac{1}{q-1}}.
-\label{eq:Dbeta}
+  ={\left[\sum_i{w_i}{\left(\frac{1/\xq[\,]{D}{q}{\mathbf{Z}}{\alpha}{i}}{1/\xq[\,]{D}{q}{\mathbf{Z}}{\gamma}{}}\right)}^{q-1}\right]}^{\frac{1}{q-1}}.
 \end{equation}
 
 De la même façon que $1/\xq[\,]{D}{q}{\mathbf{Z}}{\gamma}{}$ est la banalité moyenne des espèces, $\xq{D}{q}{\mathbf{Z}}{\beta}{}$ est la banalité moyenne normalisée des communautés, où la banalité normalisée de la communauté $i$ est définie comme $\frac{\left(1/\xq[\,]{D}{q}{\mathbf{Z}}{\alpha}{i}\right)}{\left(1/\xq[\,]{D}{q}{\mathbf{Z}}{\gamma}{}\right)}$, c'est-à-dire la banalité moyenne de ses espèces divisée par celle de la méta-communauté.

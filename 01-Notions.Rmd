@@ -65,7 +65,7 @@ L'indice de richesse le plus simple et le plus utilisé est tout simplement le n
 
 La régularité de la distribution des espèces (équitabilité en Français, *evenness* ou *equitability* en anglais) est un élément important de la diversité. 
 Une espèce représentée abondamment ou par un seul individu n'apporte pas la même contribution à l'écosystème. 
-Sur la Figure&nbsp;\@ref(fig:Composantes), la ligne du bas présente deux communautés de 4 espèces, mais celle de droite est beaucoup plus équitable de celle de gauche et semble intuitivement plus diverse.
+Sur la figure&nbsp;\@ref(fig:Composantes), la ligne du bas présente deux communautés de 4 espèces, mais celle de droite est beaucoup plus équitable de celle de gauche et semble intuitivement plus diverse.
 À nombre d'espèces égal, la présence d'espèces très dominantes entraîne mathématiquement la rareté de certaines autres: on comprend donc assez intuitivement que le maximum de diversité sera atteint quand les espèces auront une répartition très régulière.
 
 Un indice d'équitabilité est indépendant du nombre d'espèces (donc de la richesse).
@@ -77,7 +77,7 @@ La plupart des indices courants, comme ceux de Simpson ou de Shannon, évaluent 
 
 Les mesures classiques de la diversité, dites mesures de diversité neutre (*species-neutral diversity*) ou taxonomique ne prennent pas en compte une quelconque distance entre classes. 
 Pourtant, deux espèces du même genre sont de toute évidence plus proches que deux espèces de familles différentes. 
-Les mesures de diversité phylogénétique et de diversité fonctionnelle prennent en compte cette notion, qui nécessite quelques définitions supplémentaires [@Mouillot2005, Ricotta2007].
+Les mesures de diversité phylogénétique et de diversité fonctionnelle prennent en compte cette notion, qui nécessite quelques définitions supplémentaires [@Mouillot2005; @Ricotta2007].
 
 La mesure de la différence entre deux classes est souvent une distance, mais parfois une mesure qui n'a pas toutes les propriétés d'une distance: une dissimilarité.
 Les mesures de *divergence* [@Pavoine2011] sont construites à partir de la dissimilarité entre les classes, avec ou sans pondération par la fréquence.
@@ -99,7 +99,7 @@ Cela ne signifie pas que les composantes contribuent indépendamment les unes de
 
 ## Niveaux de l'étude
 
-La diversité est classiquement estimée à plusieurs niveaux emboîtés, nommés $\alpha$, $\beta$ et $\gamma$ par  @Whittaker1960 [page 320] qui a nommé $\alpha$ la diversité locale qu'il mesurait avec l'indice $\alpha$ de Fisher (voir Section&nbsp;\@ref(chap:Fisher)) et a utilisé les lettres suivantes selon ses besoins.
+La diversité est classiquement estimée à plusieurs niveaux emboîtés, nommés $\alpha$, $\beta$ et $\gamma$ par  @Whittaker1960 [page 320] qui a nommé $\alpha$ la diversité locale qu'il mesurait avec l'indice $\alpha$ de Fisher (voir le chapitre \@ref(chap:Fisher)) et a utilisé les lettres suivantes selon ses besoins.
 
 ### Diversité $\alpha$, $\beta$ et $\gamma$
 
@@ -153,7 +153,7 @@ Le choix de la définition modifie considérablement sur la quantification de la
 Des problèmes méthodologiques s'ajoutent aux problèmes conceptuels [@Hey2001] : la séparation ou le regroupement de plusieurs populations ou morphotypes en un nombre plus ou moins grand d'espèces est un choix qui reflète les connaissances du moment et peut évoluer [@Barberousse2014].
 
 L'impact du problème de l'espèce sur la mesure de la diversité reste sans solution à ce stade, si ce n'est d'utiliser les mêmes définitions si des communautés différentes doivent être comparées. 
-L'approche phylogénétique (Section&nbsp;\@ref(chap:Phyloentropie)) permet de contourner le problème : si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
+L'approche phylogénétique (Chapitre \@ref(chap:Phyloentropie)) permet de contourner le problème : si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
 
 
 
@@ -232,11 +232,11 @@ Les espèces ne sont pas identifiées individuellement, mais par le nombre d'ind
 ```{r RACFig, echo=FALSE, results='hide', message=FALSE, ref.label='RACCode',  fig.cap="Diagramme rang-abondance (diagramme de Whittaker) des arbres du dispositif de Barro Colorado Island. Les points sont les données: en abscisse: le rang de l'espèce, à partir de la plus abondante; en ordonnée: l'abondance de l'espèce. La courbe est l'ajustement d'une distribution log-normale."}
 ```
 
-Elle peut être représentée sous la forme d'un histogramme des fréquences (diagramme de @Preston1948, Figure&nbsp;\@ref(fig:SADFig)) ou bien d'un diagramme rang-abondance (RAC: *Rank Abundance Curve* ou diagramme de @Whittaker1965, Figure&nbsp;\@ref(fig:RACFig)). 
+Elle peut être représentée sous la forme d'un histogramme des fréquences (diagramme de @Preston1948, figure&nbsp;\@ref(fig:SADFig)) ou bien d'un diagramme rang-abondance (RAC: *Rank Abundance Curve* ou diagramme de @Whittaker1965, figure&nbsp;\@ref(fig:RACFig)). 
 Le RAC est souvent utilisé pour reconnaître des distributions connues. 
 @Izsak2012 ont étudié les propriétés des RAC pour les principales SAD.
 
-Code de la Figure&nbsp;\@ref(fig:SADFig):
+Code de la figure&nbsp;\@ref(fig:SADFig):
 ```{r SADCode, eval=FALSE, tidy=FALSE, size='small'}
 Ns <- sort(colSums(BCI), decr = TRUE)
 N <- sum(Ns)
@@ -248,7 +248,7 @@ SADhist <- ggplot(data.frame(Ns), aes(Ns)) +
 SADhist
 ```
 
-Code de la Figure&nbsp;\@ref(fig:RACFig):
+Code de la figure&nbsp;\@ref(fig:RACFig):
 ```{r RACCode, eval=FALSE, tidy=FALSE, size='small'}
 library("entropart")
 autoplot(as.AbdVector(Ns), Distribution = "lnorm")
@@ -349,7 +349,7 @@ Coverage(as.AbdVector(Paracou6))
 ```
 
 
-@Chao2012b montrent que la pente de la courbe d'accumulation donnant l'espérance du nombre d'espèces en fonction du nombre d'individus (courbe de raréfaction de la Figure&nbsp;\@ref(fig:Gotelli2001)) est égale au déficit de couverture,
+@Chao2012b montrent que la pente de la courbe d'accumulation donnant l'espérance du nombre d'espèces en fonction du nombre d'individus (courbe de raréfaction de la figure&nbsp;\@ref(fig:Gotelli2001)) est égale au déficit de couverture,
 
 \begin{equation}
   (#eq:DefC)
@@ -366,7 +366,7 @@ Le cas des populations de taille finie est traité par @Chao2012 et @Hwang2014
 La complétude de l'échantillonnage est la proportion du nombre d'espèces observées: $s^{n}_{\ne 0}/{S}$.
 Elle compte simplement les espèces et ne doit pas être confondue avec la couverture qui somme leurs probabilités: le taux de complétude est toujours très inférieur au taux de couverture parce que les espèces non échantillonnées sont les plus rares.
 
-La complétude du même échantillon d'arbres de forêt tropicale que dans l'exemple précédent peut être estimée en divisant le nombre d'espèces observées par le nombre d'espèces estimées (voir page&nbsp;\@ref(sec:Richesse)):
+La complétude du même échantillon d'arbres de forêt tropicale que dans l'exemple précédent peut être estimée en divisant le nombre d'espèces observées par le nombre d'espèces estimées (voir section&nbsp;\@ref(sec:Richesse)):
 À BCI: 
 
 ```{r CompletenessBCI}

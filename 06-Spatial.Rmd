@@ -116,12 +116,13 @@ La valeur nulle de $k$ simplifie les calculs et permet de calculer pour une vale
 Dans ce cas, l'espérance du nombre d'espèces représentées par $\nu$ individus est, en posant $x=\frac{p}{p+1}$ et $\alpha$ une constante:
 
 \begin{equation}
-\label{eq:nalpha}
+  (#eq:nalpha)
   {\mathbb E}\left(S^{n}_{\nu}\right) = \frac{\alpha}{\nu} x^\nu.
 \end{equation}
 
 L'espérance du nombre d'espèces en est la somme pour toutes les valeurs de $\nu$:
 \begin{equation}
+  (#eq:EspSn)
   {\mathbb E}\left(S^{n}\right) 
   = \sum_{\nu=1}^{\infty}{{\mathbb E}\left(S^{n}_{\nu}\right)}
   = -\alpha \ln(1-x).
@@ -131,6 +132,7 @@ Le nombre d'espèces est obtenu par la somme du développement en série entièr
 
 De même, le nombre total d'individus est :
 \begin{equation}
+  (#eq:nlogserie)
   n = \sum_{\nu=1}^{\infty}{\nu {\mathbb E}\left(S^{n}_{\nu}\right)}
     = \sum_{\nu=1}^{\infty}{\alpha x^\nu} 
     = \frac{\alpha x}{1-x}.
@@ -139,8 +141,8 @@ De même, le nombre total d'individus est :
 La combinaison des deux équations permet d'éliminer $x$ et d'obtenir l'espérance du nombre d'espèces observées en fonction de la taille de l'échantillon:
 
 \begin{equation}
+  (#eq:AlphaFisher)
   {\mathbb E}\left( \xq{{S}}{}{n}{}{} \right) = \alpha\ln \left( 1 + \frac{n}{\alpha} \right).
-\label{eq:AlphaFisher}
 \end{equation}
 
 $\alpha$ est un indicateur de la biodiversité qui peut être interprété comme le nombre d'espèces nouvelles découvertes quand le nombre d'individus échantillonnés est multiplié par $e$: c'est en effet la pente de la courbe de $S^{n}$ en fonction de $\ln n$, qui se stabilise à partir d'une valeur de $n$ suffisante. 
@@ -179,13 +181,14 @@ Dans le cadre de l'approximation précédente, il est égal à $\alpha$.
 @Schulte2005 ont étendu le modèle de Fisher pour prendre en compte un nombre d'espèces fini $S$ et une distribution non indépendante des individus, prise en compte par un paramètre d'agrégation spatiale $c$ valable pour toutes les espèces:
 
 \begin{equation} 
+  (#eq:Schulte)
   S^{n} = \frac{\alpha}{c} \ln\left(\frac{1+ n^c\,q}{1+ n^c\,q\,e^{-cS/\alpha}}\right),
-\label{eq:Schulte}
 \end{equation}
 
 où
 
-\begin{equation} 
+\begin{equation}
+  (#eq:Schulteq)
   q =\frac{e^{c/\alpha}-1}{1-e^{c\left(1-S\right)/\alpha}}.
 \end{equation}
 
@@ -251,8 +254,7 @@ ggplot(data.frame(x = log(1:ncol(Inventaire)), y = nEspeces)) +
 
 
 
-# Accumulation de la diversité locale
-\label{chap:Accumulation}
+# Accumulation de la diversité locale {#chap:Accumulation}
 
 ```{block, type='Essentiel'}
   La courbe d'accumulation (SAC) décrit comment la richesse, ou la diversité, augmente en fonction de l'effort d'échantillonnage.
@@ -319,8 +321,7 @@ ggplot(data.frame(x = 0:(sum(Ns)-1), y = c(0, SAC)), aes(x = x, y = y)) +
 ```
 
 
-## Extrapolation
-\label{sec:Extrapolation}
+## Extrapolation {#sec:Extrapolation}
 
 L'extrapolation de la SAC est un cas particulier de celle de la diversité, déjà vue en section&nbsp;\@ref(sec:RarExtrapol), page~\@ref(sec:RarExtrapol).
 
@@ -334,7 +335,7 @@ La dérivée est en réalité plus grande: la pente de la SAC, qui est l'opposé
 De même, les dérivées successives, par exemple seconde, sont approchées par la variation de la dérivée d'ordre inférieur, par exemple première, entre $n-1$ et $n$.
 En combinant ces approximations avec l'espérance du nombre d'espèces observées $\nu$ fois dans un échantillon de taille $n$, équation&nbsp;\@ref(eq:Esnnu), page~\@ref(eq:Esnnu), on obtient:
 \begin{equation}
-\label{eq:Beguinot2014}
+  (#eq:Beguinot2014)
   {\mathbb E}\left( s^{n}_{\nu} \right) 
   = \left(-1 \right)^{\nu-1} \binom{n}{\nu} \frac{\partial^\nu s^{n}_{>0}}{\partial n^\nu}, \nu=1,2,\dots
 \end{equation}
@@ -436,7 +437,7 @@ ggplot(data.frame(richCommunities, eB, ei, eS)) +
 @Beguinot2015a propose également une forme analytique de la SAC extrapolée en combinant l'équation \@ref(eq:Beguinot2014) à l'estimateur jackknife d'ordre 2.
 Alors, dans le domaine de validité de l'estimateur jackknife 2, c'est-à-dire quand le nombre de singletons est supérieur à 0,6 fois le nombre de doubletons, la richesse pour $n$ individus est
 \begin{equation}
-\label{eq:Beguinot2015a}
+  (#eq:Beguinot2015a)
   s^{n}
   = s^{n_0}
   +2s^{n_0}_{1}-s^{n_0}_{2}
@@ -538,8 +539,8 @@ $F_s(r)$ est la fonction d'espace vide de l'espèce $s$, dont l'argument est la 
 Le nombre d'espèces peut être écrit comme la somme des fonctions $F_s$:
 
 \begin{equation}
-{\mathbb E}\left( \xq{{S}}{}{A}{}{} \right)  = \sum_s{F_s\left( r \right) }.
-\label{eq:SARF}
+  (#eq:SARF)
+  {\mathbb E}\left( \xq{{S}}{}{A}{}{} \right)  = \sum_s{F_s\left( r \right) }.
 \end{equation}
 
 La fonction $F_s(r)$ est connue pour les processus ponctuels courants [@Cressie1993, Stoyan1994].
@@ -548,8 +549,8 @@ Son seul paramètre est l'intensité $\lambda_s$, qui donne l'espérance du nomb
 Si toutes les espèces sont distribuées selon un processus de Poisson, la courbe aire-espèce est décrite par
 
 \begin{equation}
+  (#eq:SARPoisson)
   {\mathbb E}\left( \xq{{S}}{}{A}{}{} \right)  = S - \sum_s{e^{-\lambda_sA}}.
-\label{eq:SARPoisson}
 \end{equation}
 
 L'équation (\@ref(eq:SARPoisson)) est identique au modèle de distribution aléatoire de Coleman en remplaçant la distribution observée des effectifs par espèce par l'intensité du processus de Poisson.
@@ -598,8 +599,7 @@ Une revue historique des théories sur la forme de la SAR est fournie par @McGui
 
 
 
-## La relation d'Arrhenius
-\label{sec:Arrhenius}
+## La relation d'Arrhenius {#sec:Arrhenius}
 
 ```{r Williamson2001, fig.cap="Logarithme du nombre d'espèces en fonction du logarithme de la surface échantillonnée [@Williamson2001, fig.~1,]. Les données sont des relevés d'espèces natives sur 104 sites de taille variable à travers le monde. Les symboles correspondent à divers types d'habitats (îles ou continent, réserves ou non) sans intérêt ici. La valeur de $z$ est 0,27. Données de @Lonsdale1999.", echo=FALSE}
 knitr::include_graphics('images/Williamson2001.png')
@@ -687,8 +687,7 @@ Les auteurs ont établi que les paramètres $k$ et $z$ étaient très proches po
 La figure&nbsp;\@ref(fig:Plotkin2000b) compare les performances de cette méthode (*persistence method*), de la loi de puissance 0,25 (loi log-normale) et du modèle de Fisher.
 
 
-## Le modèle de Gleason
-\label{sec:Gleason}
+## Le modèle de Gleason {#sec:Gleason}
 
 @Gleason1922 réfute le travail d'@Arrhenius1921 à partir de l'argument selon lequel le nombre d'espèces doit se stabiliser quand la surface augmente, au risque de prévoir une richesse beaucoup trop élevée pour de grandes surfaces. 
 Les travaux ultérieurs lui donneront tort [@Williamson2001].
@@ -741,8 +740,8 @@ La relation d'Arrhenius est plus robuste que celle de Gleason, selon les résult
 Dans le modèle de Fisher, ce paramètre est l'inverse de la variabilité de l'espérance du nombre d'individus observés par espèce, qui tend vers 0 car la variabilité est très grande.
 Il perd son sens quand il devient négatif mais l'espérance du nombre d'espèces en fonction de la surface a une forme plus générale [@Engen1977]:
 \begin{equation}
+  (#eq:AlphaEngen)
   {\mathbb E}\left( \xq{{S}}{}{n}{}{} \right) = \frac{\alpha}{k} \left[ 1 - \left(\frac{\alpha}{\alpha + n}\right)^k \right].
-\label{eq:AlphaEngen}
 \end{equation}
 
 L'équation&nbsp;\@ref(eq:AlphaFisher) en est la limite pour $k \to 0$.
@@ -792,8 +791,8 @@ Enfin, quand l'échelle est encore plus grande, le nombre d'espèces augmente à
 Partant de la relation d'Arrhenius vue précédemment, le nombre d'espèces dans une surface $A_1$ est
 
 \begin{equation}
-S^{A_1} = \left({A_1}/{A_0}\right)^z{S^{A_0}},
-\label{eq:NsA1}
+  (#eq:NsA1)
+  S^{A_1} = \left({A_1}/{A_0}\right)^z{S^{A_0}},
 \end{equation}
 
 c'est-à-dire le nombre d'espèces dans la surface $A_0$ plus petite multipliée par le rapport des surfaces à la puissance $z$. 
@@ -803,11 +802,12 @@ Cette surface est ensuite prise pour référence pour une nouvelle extrapolation
 En indiçant les surfaces de 0 à $n$, on obtient
 
 \begin{equation}
-S^{A_n} = {\left({A_n}/{A_{n-1}}\right)}^{z_{n-1}}{\left({A_{n-1}}/{A_{n -2}}\right)}^{z_{n-2}} \dots{\left({A_1}/{A_0}\right)}^{z_0}S^{A_0}.
+  (#eq:NsAn)
+  S^{A_n} = {\left({A_n}/{A_{n-1}}\right)}^{z_{n-1}}{\left({A_{n-1}}/{A_{n -2}}\right)}^{z_{n-2}} \dots{\left({A_1}/{A_0}\right)}^{z_0}S^{A_0}.
 \end{equation}
 
 Il reste à évaluer les différentes valeurs de $z$. 
-À l'intérieur de chaque placette, l'équation (\@ref(eq:NsA1)) est suffisante. 
+À l'intérieur de chaque placette, l'équation \@ref(eq:NsA1) est suffisante. 
 À plus grande distance, les auteurs utilisent l'indice de Sørensen, c'est-à-dire deux fois la fraction d'espèces communes entre deux placettes: $\chi=2{\left(S^{1}\capS^{2}\right)}/{\left(S^{1}+S^{2}\right)}$. 
 L'indice dépend principalement de la surface des placettes $A$ et de leur éloignement $d$. 
 Pour chaque plage de distances, à conditions que les placettes soient éloignées ($d$ étant la distance entre deux placettes, ${A} \ll d^2$), $\chi$ est proportionnel à $(\frac{A}{d^2})^z$. 
@@ -817,8 +817,7 @@ Cette méthode permet l'extrapolation à de très grandes surfaces de mesures de
 
 
 
-# Diversité $\beta$ spatialement explicite
-\label{chap:betasp}
+# Diversité $\beta$ spatialement explicite {#chap:betasp}
 
 
 ```{block, type='Essentiel'}
@@ -830,8 +829,7 @@ La diversité $\beta$ de différentiation mesure à quel point deux communautés
 Elle peut être reliée à la distance entre les communautés pour définir une diversité $\beta$ spatialement explicite.
 
 
-## L'indice de Simpson spatialement explicite
-\label{sec:SimpsonSpatial}
+## L'indice de Simpson spatialement explicite {#sec:SimpsonSpatial}
 
 @Chave2002 écrivent un modèle neutre de dispersion des espèces forestières, appliqué à l'échelle de l'Amazonie occidentale[@Condit2002]. 
 Ils définissent dans ce cadre la fonction $F(r)$ égale à la probabilité que deux individus situés à distance $r$ l'un de l'autre soient de la même espèce, c'est-a-dire l'indice de concentration de Simpson (\@ref(eq:SimpsonD)), page~\@ref(eq:SimpsonD), appliqué à des paires d'individus distants. 
@@ -881,6 +879,7 @@ Le variogramme de la variable indicatrice est obtenue en traçant la valeur de $
 Ce variogramme univarié, classique en géostatistique, est généralisé aux données multivariées: le vecteur de présence des espèces $\mathbf{s_i}$ dont chaque terme est ${\mathbf 1}_{s|i}$.
 La semi-variance de ce vecteur de composition spécifique est
 \begin{equation}
+  (#eq:Estgammar)
   \hat{\gamma}(r) 
   = \frac{1}{2 n_r} \sum_{i,j;d(i,j)\approx r}{\| \mathbf{s_i}-\mathbf{s_j} \|^2}
   = \sum_{s}{\hat{\gamma}_{s}(r)}.
@@ -904,13 +903,15 @@ Le variogramme peut être standardisé en divisant toutes les valeurs par la val
 Le variogramme peut être complété par un covariogramme.
 La covariance entre les indicatrices de présence des espèces $s$ et $t$ est
 \begin{equation}
+  (#eq:Estgammast)
   \hat{\gamma}_{s,t}(r) = \frac{1}{2 n_r} \sum_{i,j;d(i,j)\approx r}{({\mathbf 1}_{s,i} - {\mathbf 1}_{s,j})({\mathbf 1}_{t,i} - {\mathbf 1}_{t,j})}.
 \end{equation}
 
 Wagner montre que l'estimateur de la variance de la richesse spécifique par parcelle est
 \begin{equation}
-  \hat{\Var}(S) = \sum_r{\frac{n_r}{\sum_r{n_r}}} \sum_{s,t}{\hat{\gamma}_{s,t}(r)}.
+  (#eq:VarS)
+  \hat{\operatorname{Var}}(S) = \sum_r{\frac{n_r}{\sum_r{n_r}}} \sum_{s,t}{\hat{\gamma}_{s,t}(r)}.
 \end{equation}
 
 Si les espèces sont distribuées indépendamment les unes des autres, la covariance est nulle pour toutes les paires d'espèces à toutes les distances.
-Le test d'égalité entre $\Var(S)$ et $\gamma_{s,t}(r)$ à chaque valeur de $r$ (obtenu par la méthode de Monte-Carlo en redistribuant aléatoirement la présence de chaque espèce sur le même nombre de parcelles que dans les données réelles) permet de rejeter l'indépendance entre les espèces.
+Le test d'égalité entre $\operatorname{Var}(S)$ et $\gamma_{s,t}(r)$ à chaque valeur de $r$ (obtenu par la méthode de Monte-Carlo en redistribuant aléatoirement la présence de chaque espèce sur le même nombre de parcelles que dans les données réelles) permet de rejeter l'indépendance entre les espèces.
