@@ -49,9 +49,9 @@ La diversité d'ordre 2 présente de nombreuses particularités et avantages qui
 
 ### Estimation
 
-Tous les estimateurs de $^{q}\!H$ sont biaisés, d'autant plus que $q$ est petit. 
-Seul l'estimateur de l'indice de Simpson, $\xq{\tilde{H}}{2}{}{}{}=(\frac{n}{n-1})(1-\sum_s{{\hat{p}}^{2}_{s}})$ est non biaisé.
-Comme l'entropie de Rao est la somme sur les périodes de l'arbre des entropies de Simpson, $\xq{\tilde{H}}{2}{}{}{}(T)=(\frac{n}{n-1})^{2}\!\bar{H}(T)$ est donc sans biais.
+Tous les estimateurs de $^q\!H$ sont biaisés, d'autant plus que $q$ est petit. 
+Seul l'estimateur de l'indice de Simpson, $^{2}\!\tilde{H}=(\frac{n}{n-1})(1-\sum_s{{\hat{p}}^{2}_{s}})$ est non biaisé.
+Comme l'entropie de Rao est la somme sur les périodes de l'arbre des entropies de Simpson, $^{2}\!\tilde{H}(T)=(\frac{n}{n-1})^{2}\!\tilde{H}(T)$ est donc sans biais.
   
 ### Partition
 

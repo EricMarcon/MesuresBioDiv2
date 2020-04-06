@@ -66,14 +66,14 @@ Une présentation détaillée du problème et des limites à sa résolution est 
 
 Dans un échantillon de taille $n$ résultant d'un tirage indépendant des individus, la probabilité que l'espèce $s$ soit observée $\nu$ fois est obtenue en écrivant la probabilité de tirer dans l'ordre $\nu$ fois l'espèce $s$ puis $n-\nu$ fois une autre espèce, multiplié par le nombre de combinaisons possible pour prendre en compte l'ordre des tirages:
 \begin{equation}
-  (#eq:psnu)
+  (\#eq:psnu)
   p^{n}_{s, \nu} = \binom{n}{\nu} {p_s^\nu \left( 1-p_s \right)^{n-\nu}}.
 \end{equation}
 
 
 L'espérance du nombre d'espèces observées $\nu$ fois, ${\mathbb E}(s^{n}_{\nu})$, est obtenue en sommant pour toutes les espèces la probabilité de les observer $\nu$ fois:
 \begin{equation}
-(#eq:Esnnu}
+(\#eq:Esnnu}
   {\mathbb E}\left( s^{n}_{\nu} \right) = \binom{n}{\nu} \sum_s{p_s^\nu \left( 1-p_s \right)^{n-\nu}}.
 \end{equation}
 
@@ -103,7 +103,7 @@ d'où
 L'estimateur est obtenu en remplaçant les espérances par les valeurs observées:
 
 \begin{equation}
-  (#eq:Chao1)
+  (\#eq:Chao1)
   {\hat{S}}_\mathit{Chao1} 
    = s^{n}_{\ne 0} + \frac{\left(n-1 \right){\left(s^{n}_{1}\right)}^2}{2n{s^{n}_{2}}},
 \end{equation}
@@ -114,7 +114,7 @@ Il s'agit d'un estimateur minimum: l'espérance du nombre d'espèces est supéri
 
 @Beguinot2014 a montré que l'estimateur est sans biais si le nombre d'espèces non observées décroît exponentiellement avec la taille de l'échantillon:
 \begin{equation}
-  (#eq:BiaisChao)
+  (\#eq:BiaisChao)
   s^{n}_{0} = S e^{-kn},
 \end{equation}
 où $k$ est un réel strictement positif.
@@ -122,7 +122,7 @@ Cette relation est cohérente avec un échantillonnage poissonien dans lequel la
 
 Si aucune espèce n'est observée deux fois, l'estimateur est remplacé par
 \begin{equation}
-  (#eq:Chao1sansf2)
+  (\#eq:Chao1sansf2)
   {\hat{S}}_\mathit{Chao1} = s^{n}_{\ne 0} + \frac{\left(n-1\right){s^{n}_{1}}\left(s^{n}_{1}-1\right)}{2n}.
 \end{equation}
 
@@ -220,7 +220,7 @@ Burnham et Overton [@Burnham1978, Burnham1979] ont utilisé cette technique pour
 Les estimateurs du premier et du deuxième ordre sont les plus utilisés en pratique:
 
 \begin{equation}
-  (#eq:Jack1)
+  (\#eq:Jack1)
   \hat{S}_\mathit{J1} = {s^{n}_{\ne 0}} + \frac{\left(n-1\right){s^{n}_{1}}}{n},
 \end{equation}
 
@@ -801,7 +801,7 @@ Deux autres formes de l'indice sont utilisées.
 Tout d'abord, la probabilité que deux individus soient de la même espèce, souvent appelée *indice de concentration de Simpson*, qui est celui défini dans l'article original de Simpson:
 
 \begin{equation}
- (#eq:SimpsonD)
+ (\#eq:SimpsonD)
   D =\sum^{S}_{s=1}{p^2_s}.
 \end{equation}
 
@@ -837,7 +837,7 @@ L'estimateur $\hat{E}$ est légèrement biaisé parce qu'il est calculé à part
 Un estimateur non biaisé est [@Good1953, Lande1996]
 
 \begin{equation} 
-  (#eq:BiaisSimpson)
+  (\#eq:BiaisSimpson)
   \tilde{E} = \left(\frac{n}{n-1}\right)\left(1-\sum^{s^{n}_{\ne 0}}_{s=1}{{\hat{p}}^2_s}\right).
 \end{equation}
 
@@ -868,7 +868,7 @@ Simpson(colSums(BCI))
 L'indice de Shannon [@Shannon1948; @Shannon1963], aussi appelé indice de Shannon-Weaver ou Shannon-Wiener, ou simplement *entropie* est dérivé de la théorie de l'information:
 
 \begin{equation}
-  (#eq:Shannon)
+  (\#eq:Shannon)
   H = -\sum^S_{s=1}{p_s\ln{p_s}}.
 \end{equation}
 
@@ -879,7 +879,7 @@ Si $n$ est suffisamment grand, le nombre de plantes de l'espèce $s$ est $np_s$.
 On note $L$ le nombre de listes respectant ces conditions:
 
 \begin{equation}
-  (#eq:ShannonL)
+  (\#eq:ShannonL)
   L = \frac{n!}{\prod^S_{i=1}{\left({np}_s\right)!}}.
 \end{equation}
 
@@ -895,7 +895,7 @@ $$\ln{n!}\approx n\ln{n}-n,$$
 pour obtenir après simplifications:
 
 \begin{equation}
-  (#eq:ShannonlnL)
+  (\#eq:ShannonlnL)
   \ln{L} = -n\sum^S_{s=1}{p_s \ln{p_s}}.
 \end{equation}
 
@@ -955,7 +955,7 @@ Comme le nombre d'espèces $S$ n'est pas observable, le biais réel est inconnu.
 
 L'estimateur de Miller-Madow [@Miller1955] utilise l'information disponible, en sous-estimant le nombre d'espèces et donc l'entropie:
 \begin{equation}
-  (#eq:MillerMadow)
+  (\#eq:MillerMadow)
   \tilde{H} = -\sum^{s^{n}_{\ne 0}}_{s=1}{\hat{p}_s \ln{\hat{p}_s}} + \frac{s^{n}_{\ne 0}-1}{2n}.
 \end{equation}
 
@@ -963,7 +963,7 @@ L'estimateur de Miller-Madow [@Miller1955] utilise l'information disponible, en 
 @Chao2003 établissent un estimateur moins biaisé à partir du taux de couverture de l'échantillonnage $\hat{C}$:
 
 \begin{equation}
-  (#eq:ChaoShen)
+  (\#eq:ChaoShen)
   \tilde{H} = -\sum_{s=1}^{s^{n}_{\ne 0}}{\frac{\hat{C}{\hat{p}}_s \ln\left(\hat{C}{\hat{p}}_s\right)}{1-\left(1-\hat{C}{\hat{p}}_s\right)^n}}.
 \end{equation}
 
@@ -977,7 +977,7 @@ Il tend vers 1 quand la taille de l'échantillon augmente.
 @Zhang2012 définit l'indice de Simpson généralisé:
 
 \begin{equation}
-  (#eq:zeta)
+  (\#eq:zeta)
   \zeta_{u,v} = \sum^S_{s=1}{p^u_s{\left(1-p_s\right)}^v},
 \end{equation}
 
@@ -985,14 +985,14 @@ où $\zeta_{u,v}$ est la somme sur toutes les espèces de la probabilité de ren
 L'indice de Shannon peut s'exprimer en fonction de $\zeta_{1,v}$:
 
 \begin{equation}
-  (#eq:HzetaInf)
+  (\#eq:HzetaInf)
   H = \sum^{\infty}_{v=1}{\frac{1}{v} \zeta_{1,v}}.
 \end{equation}
 
 Les premiers termes de la somme, jusqu'à $v=n-1$ peuvent être estimés à partir des données, les suivants constituent le biais de l'estimateur, qui est caculé en pratique par
 
 \begin{equation}
-  (#eq:Hzetanu)
+  (\#eq:Hzetanu)
   H_z = \sum^{n-1}_{v=1}{\frac{1}{v}\left\{\frac{n^{v+1}\left[n-\left(v+1\right)\right]!}{n!}\sum^{s^{n}_{\ne 0}}_{s=1}{p_s\prod^{v-1}_{j=0}{\left(1-{\hat{p}}_s-\frac{j}{n}\right)}}\right\}}.
 \end{equation}
 
@@ -1009,7 +1009,7 @@ Son espérance, estimée par sa moyenne calculée en ajoutant tous les relevés 
 @Chao2013 utilisent l'estimateur de la pente de la courbe de raréfaction, calculé précédemment [@Chao2012b] pour estimer la richesse spécifique, pour fournir un estimateur extrêmement performant:
 
 \begin{multline}
-  (#eq:Chao2013)
+  (\#eq:Chao2013)
   \tilde{H}
   = -\sum_{s=1}^{s^{n}_{\ne 0}}
     {\frac{n_s}{n}\left(\mathrm{\Psi}\left(n\right) - \mathrm{\Psi}\left(n_s\right)\right)} \\
@@ -1162,7 +1162,7 @@ L'augmentation de la valeur de $k$ permet de donner plus d'importance aux espèc
 L'indice peut être converti en nombre équivalent d'espèces [@Dauby2012] (c'est-à-dire le nombre d'espèces équiprobables nécessaire pour obtenir la même diversité) notés $_{k}\!D$ à partir de la relation
 
 \begin{equation}
-  (#eq:HurlbertD)
+  (\#eq:HurlbertD)
   _{k}\!S = _{k}\!D \left[1-{\left(1-\frac{1}{_{k}\!D}\right)}^k\right].
 \end{equation}
 
@@ -1173,7 +1173,7 @@ Dans deux cas particuliers, les nombres équivalents d'espèces de Hurlbert sont
 Pour les autres ordres entiers de diversité, il existe une correspondance parfaite entre les deux mesures [@Chao2014, Annexe S2] : la connaissance de l'une suffit permet d'obtenir l'autre. Pour $k>1$, on a [@Leinster2012]
 
 \begin{equation}
-  (#eq:HurlbertDq)
+  (\#eq:HurlbertDq)
   _{k}\!S = k + \sum_{q=2}^{k}{\binom{k}{q} (-1)^{q+1} (^{q}\!D)^{1-q}}.
 \end{equation}
 
@@ -1182,13 +1182,13 @@ On a vu que $^{0}\!D$ égale $_{\infty}\!D$, donc $_{\infty}\!S=^{0}\!D$ (équat
 Inversement, pour $q>1$:
 
 \begin{equation}
-  (#eq:DqHurlbert)
+  (\#eq:DqHurlbert)
   (^{q}\!D)^{1-q} = q + \sum_{k=2}^{q}{\binom{q}{k} (-1)^{k+1} _{k}\!S}.
 \end{equation}
 
 Pour $q=1$, la relation est [@Mao2007]
 \begin{equation}
-  (#eq:Mao2007)
+  (\#eq:Mao2007)
   ^{1}\!H = -1 + \sum_{k=2}^{\infty}{\frac{_{k}\!S}{k(k-1)}}.
 \end{equation}
 
@@ -1198,8 +1198,8 @@ Pour $q=1$, la relation est [@Mao2007]
 Hurlbert fournit un estimateur non biaisé de son indice ($n$ est la taille de l'échantillon, $n_s$ le nombre d'individus de l'espèce $s$):
 
 \begin{equation}
-  (#eq:EstHurlbert)
-  \xq{\tilde{S}}{}{}{}{k} 
+  (\#eq:EstHurlbert)
+  _k{\tilde{S}}
   = \sum_{s=1}^{s^{n}_{\ne 0}}{\left[1-{\binom{n-n_s}{k}}/{\binom{n}{k}}\right]}.
 \end{equation}
 
@@ -1318,14 +1318,14 @@ Quelques formes possibles de $H(\mathbf{q},\mathbf{p})$ sont:
 * La divergence de Kullback-Leibler [@Kullback1951] connue par les économistes comme l'indice de dissimilarité de @Theil1967 :
 
 \begin{equation}
-  (#eq:Theil)
+  (\#eq:Theil)
   T = \sum^S_{s=1}{q_{s}\ln\frac{q_s}{p_s}};
 \end{equation}
 
 * Sa proche parente, appelée parfois deuxième mesure de Theil [@Conceicao2000], qui inverse simplement les rôles de $p$ et $q$:
 
 \begin{equation}
-  (#eq:Theil2)
+  (\#eq:Theil2)
   L = \sum^S_{s=1}{p_{s}\ln\frac{p_s}{q_s}}.
 \end{equation}
 
@@ -1423,7 +1423,7 @@ Les auteurs montrent que leur mesure est la somme de l'entropie de Shannon et de
 @Tsallis1988 propose une classe de mesures appelée entropie généralisée, définie par @Havrda1967 pour la première fois et redécouverte plusieurs fois, notamment par @Daroczy1970, d'où son nom *entropie HCDT* (voir @Mendes2008, page 451, pour un historique complet):
 
 \begin{equation}
-  (#eq:HCDT)
+  (\#eq:HCDT)
   ^{q}\!H = \frac{1}{q-1}\left(1-\sum^S_{s=1}{p^q_s}\right).
 \end{equation}
 
@@ -1522,7 +1522,7 @@ Ces fonctions sont implémentées dans le package *entropart* : `lnq(x, q)` et `
 L'entropie d'ordre $q$ s'écrit
 
 \begin{equation}
-  (#eq:EntropieHCDT)
+  (\#eq:EntropieHCDT)
   ^{q}\!H = \frac{1}{q-1}\left(1-\sum^S_{s=1}{p^q_s}\right)=-\sum_s{p^q_s}\ln_q{p_s}=\sum_s{p_s}\ln_q\frac{1}{p_s}.
 \end{equation}
 
@@ -1657,8 +1657,8 @@ En revanche, il ne prend pas en compte les espèces non observées.
 
 $\tilde{h}_q$ peut ensuite être utilisé pour l'estimation de l'entropie HCDT:
 \begin{equation}
-  (#eq:HqZhang)
-  \xq{\tilde{H}}{q}{}{}{}
+  (\#eq:HqZhang)
+  ^q\!{\tilde{H}}
   = \frac{1-\tilde{h}_q}{q-1}.
 \end{equation}
 
@@ -1668,7 +1668,7 @@ $\tilde{h}_q$ n'est défini que pour $q\ne 1$.
 L'estimateur corrigé de $^{1}\!H$ est
 
 \begin{equation}
-  \xq{\tilde{H}}{1}{}{}{} =\sum^{s^{n}_{\ne 0}}_{s=1}{\frac{n_s}{n}\sum^{n-n_s}_{v=1}{\frac{1}{v}\left[\prod^v_{j=1}{1-\frac{n_s-1}{n-j}}\right]}}.
+  ^1\!{\tilde{H}} =\sum^{s^{n}_{\ne 0}}_{s=1}{\frac{n_s}{n}\sum^{n-n_s}_{v=1}{\frac{1}{v}\left[\prod^v_{j=1}{1-\frac{n_s-1}{n-j}}\right]}}.
 \end{equation}
 
 Cet estimateur est différent de $H_z$ [@Zhang2012].
@@ -1689,8 +1689,8 @@ $h_q$ s'écrit sous la forme de la somme infinie des entropies de Simpson géné
 Alors que l'estimateur de Zhang et Grabchak ne prend en compte que les $n-1$ premiers termes de la somme pour un estimateur sans biais,  @Chao2015, eqn 5, le complètent par une estimation, forcément biaisée, des termes suivants pour obtenir:
 
 \begin{multline}
-  (#eq:HqChaoJost)
-  \xq{\tilde{H}}{q}{}{}{}
+  (\#eq:HqChaoJost)
+  ^q\!{\tilde{H}}
   = \frac{1}{q-1} \\
   \left[ 1 -\tilde{h}_q -\frac{s_{1}}{n} {\left( 1-A \right)}^{1-n} \left( A^{q-1} -\sum^{n-1}_{r=0}{ \binom{q-1}{r} {\left(A-1\right)}^r} \right) \right].
 \end{multline}
@@ -1717,7 +1717,7 @@ Alors, $\sum_s{p_s}$ est estimé par $\hat{\alpha}_0 {s^{n}_{0}} = \frac{s^{n}_{
 Les deux estimateurs $\hat{\alpha}_1$ et $\hat{\alpha}_0$ sont égaux à $A$ si le nombre d'espèces non échantillonnées est estimé par l'estimateur Chao1. On obtient
 
 \begin{eqnarray} 
-  (#eq:Cnm)
+  (\#eq:Cnm)
   {\mathbb E}\left(C^{n+m} \right)
   & = & 1-\frac{s^{n}_{1}}{n} 
     \left[ \frac{\left(n-1\right)s^{n}_{1}}{\left(n-1\right)s^{n}_{1}+2s^{n}_{2}} \right]^{n+m} \\
@@ -1745,21 +1745,21 @@ Un compromis raisonnable consiste à utiliser le plus grand des deux estimateurs
 L'estimateur de Chao et Shen est
 
 \begin{equation}
-  \xq{\tilde{H}}{q}{}{}{} =-\sum^{s^{n}_{\ne 0}}_{s=1}{\frac{\hat{C}{\hat{p}}_s \ln_q\left(\hat{C}{\hat{p}}_s\right)}{1-{\left(1-\hat{C}{\hat{p}}_s\right)}^n}}.
+  ^q\!{\tilde{H}} =-\sum^{s^{n}_{\ne 0}}_{s=1}{\frac{\hat{C}{\hat{p}}_s \ln_q\left(\hat{C}{\hat{p}}_s\right)}{1-{\left(1-\hat{C}{\hat{p}}_s\right)}^n}}.
 \end{equation}
 
 Celui de Grassberger est
 
 \begin{equation}
-  (#eq:Grassberger)
-  \xq{\tilde{H}}{q}{}{}{}
+  (\#eq:Grassberger)
+  ^q\!{\tilde{H}}
   = \frac{1-\sum^{s^{n}_{\ne 0}}_{s=1}{\widetilde{p^q_s}}}{q-1},
 \end{equation}
 
 où
 
 \begin{equation}
-  (#eq:Estpqs)
+  (\#eq:Estpqs)
   \widetilde{p^q_s}
   = {n_s}^{-q} \left(
     \frac{\mathrm{\Gamma}\left(n_s +1\right)}{\mathrm{\Gamma}\left(n_s -q+1\right)}
@@ -1918,7 +1918,7 @@ Le package *iNEXT* [@Hsieh2014] implémente ces calculs dans R.
 L'entropie d'ordre $q$ de @Renyi1961 est
 
 \begin{equation}
-  (#eq:Renyi)
+  (\#eq:Renyi)
   ^{q}\!R =\frac{1}{1-q\ln\sum^S_{q=1}{p^q_s}}.
 \end{equation}
 
@@ -2174,7 +2174,7 @@ Si elle est dupliquée, les individus seront répartis dans deux espèces et non
 
 L'indice d'équitabilité de @Bulla1994 respecte les critères de Smith et Wilson:
 \begin{equation}
-  (#eq:Bulla)
+  (\#eq:Bulla)
   O = \sum_s{\min(p_s,\frac{1}{S})}.
 \end{equation}
 
@@ -2332,7 +2332,7 @@ L'estimation de l'équitabilité repose lourdement sur l'estimation du nombre d'
 La solution la plus évidente consiste à corriger le mieux possible le biais d'estimation du nombre d'espèces et celui de l'entropie d'ordre $q$:
 
 \begin{equation}
-  \xq{\tilde{J}}{q}{}{}{} = \frac{\ln\left(e^{\xq{\tilde{H}}{q}{}{}{}}_q\right)}{\ln\tilde{S}}.
+  ^q\!{\tilde{J}}= \frac{\ln\left(\right)}{\ln\tilde{S}}.
 \end{equation}
 
 

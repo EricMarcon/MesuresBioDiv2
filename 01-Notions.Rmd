@@ -267,7 +267,7 @@ Les SAD nécessaires à la compréhension de la suite sont:
 
 @Good1953 définit le taux de couverture (*sample coverage*) de l'échantillonnage comme la proportion des espèces découvertes,
 \begin{equation}
-  (#eq:C)
+  (\#eq:C)
   C=\sum^S_{s=1}{{\mathbf 1}\left(n_s>0\right)p_s},
 \end{equation}
 
@@ -282,13 +282,13 @@ Les estimateurs de la diversité développés plus loin reposent largement sur c
 L'estimateur du taux de couverture, que Good attribue à Turing, est selon la relation des fréquences vues plus haut :
 
 \begin{equation}
-  (#eq:CGood)
+  (\#eq:CGood)
   \hat{C} = 1-\frac{s^{n}_{1}}{n}.
 \end{equation}
 
 Cet estimateur est biaisé [@Zhang2007]. En réalité,
 \begin{equation}
-  (#eq:CsansBiais)
+  (\#eq:CsansBiais)
   C = 1-\frac{{\mathbb E}(S^{n}_{1}) - \pi_1}{n}.
 \end{equation}
 
@@ -297,7 +297,7 @@ Ce terme peut être estimé avec un biais plus petit.
 @Chao1988 puis @Zhang2007 proposent l'estimateur suivant, qui utilise toute l'information disponible et a le plus petit biais possible:
 
 \begin{equation}
-  (#eq:CZhang)
+  (\#eq:CZhang)
   \hat{C}=1-\sum^{n}_{\nu=1}{\left(-1\right)}^{\nu+1}{\binom{n}{\nu}}^{-1}s^{n}_{\nu}.
 \end{equation}
 
@@ -307,7 +307,7 @@ En se limitant à $\nu=1$, l'estimateur se réduit à celui de Good.
 @Esty1983, complété par @Zhang2009, a montré que l'estimateur était asymptotiquement normal et a calculé l'intervalle de confiance de $\hat{C}$:
 
 \begin{equation}
-  (#eq:hatC)
+  (\#eq:hatC)
   C=\hat{C}\pm t^{n}_{1-\alpha/2} \frac{\sqrt{s^{n}_{1}\left(1-\frac{s^{n}_{1}}{n}\right)+2s^{n}_{2}}}{n}.
 \end{equation}
 
@@ -318,7 +318,7 @@ Un autre estimateur est utilisé dans le logiciel SPADE [@Chao2010a] et son port
 Il est la base des estimateurs d'entropie de Chao et Jost (Section&nbsp;\@ref(sec:BiaisHCDT)).
 L'estimation de l'équation&nbsp;\@ref(eq:CsansBiais) donne la relation
 \begin{equation}
-  (#eq:hatC2)
+  (\#eq:hatC2)
   \hat{C} = 1-\frac{s^{n}_{1} - \hat{\pi}_1}{n}.
 \end{equation}
 
@@ -327,7 +327,7 @@ $\alpha_1$ peut être estimé par la relation de Good-Turing (\@ref(eq:GoodTurin
 Alors:
 
 \begin{equation} 
-  (#eq:CChao)
+  (\#eq:CChao)
   \hat{C} = 1-\frac{s^{n}_{1}}{n}(1 - \hat{\alpha}_1)
   = 1-\frac{s^{n}_{1}}{n}\left[\frac{\left(n-1\right)s^{n}_{1}}{\left(n-1\right)s^{n}_{1}+2s^{n}_{2}}\right].
 \end{equation}
@@ -352,7 +352,7 @@ Coverage(as.AbdVector(Paracou6))
 @Chao2012b montrent que la pente de la courbe d'accumulation donnant l'espérance du nombre d'espèces en fonction du nombre d'individus (courbe de raréfaction de la figure&nbsp;\@ref(fig:Gotelli2001)) est égale au déficit de couverture,
 
 \begin{equation}
-  (#eq:DefC)
+  (\#eq:DefC)
   1-{\mathbb E}\left(C^{n}\right)={\mathbb E}\left(S^{n+1}\right)-{\mathbb E}\left(S^{n}\right),
 \end{equation}
 
