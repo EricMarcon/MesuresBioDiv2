@@ -5,7 +5,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Mesures de la Biodiversité</a></li>
       after: |
-        <li><a href="https://github.com/EricMarcon/MesuresBioDiv" target="blank">Publié avec bookdown</a></li>
+        <li><a href="https://github.com/EricMarcon/MesuresBioDiv2" target="blank">Publié avec bookdown, hébergé sur GitHub</a></li>
     download: null
 bookdown::pdf_book:
   template: latex/template.tex
