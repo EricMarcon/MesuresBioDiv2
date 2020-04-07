@@ -87,30 +87,6 @@ $if(colorlinks)$
 \usepackage{xcolor}
 $endif$
 
-\usepackage{hyperref}
-\hypersetup{
-$if(title-meta)$
-            pdftitle={$title-meta$},
-$endif$
-$if(author-meta)$
-            pdfauthor={$author-meta$},
-$endif$
-$if(keywords)$
-            pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
-$endif$
-$if(colorlinks)$
-            colorlinks=true,
-            linkcolor=$if(linkcolor)$$linkcolor$$else$Maroon$endif$,
-            citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
-            urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
-$else$
-            pdfborder={0 0 0},
-$endif$
-            breaklinks=true}
-
-% Don't use monospace font for urls
-\urlstyle{same}
-
 $if(verbatim-in-note)$
   \VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
@@ -224,6 +200,31 @@ $endif$
 
 % Specific commands for EcoFoG style. Must come after biblatex.
 \usepackage{latex/BookTemplate}
+
+% Hyperref comes last
+\usepackage{hyperref}
+\hypersetup{
+$if(title-meta)$
+            pdftitle={$title-meta$},
+$endif$
+$if(author-meta)$
+            pdfauthor={$author-meta$},
+$endif$
+$if(keywords)$
+            pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
+$endif$
+$if(colorlinks)$
+            colorlinks=true,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$Maroon$endif$,
+            citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
+$else$
+            pdfborder={0 0 0},
+$endif$
+            breaklinks=true}
+
+% Don't use monospace font for urls
+\urlstyle{same}
 
 
 % Title, author, etc. from YAML to LaTeX
