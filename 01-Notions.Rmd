@@ -43,7 +43,7 @@ knitr::include_graphics('images/Composantes.png')
 ```
 
 
-Une communauté comprenant beaucoup d'espèces mais avec une espèce dominante n'est pas perçue intuitivement comme plus diverse qu'une communauté avec moins d'espèces, mais dont les effectifs sont proches (Figure&nbsp;\@ref(fig:Composantes), colonne de gauche). 
+Une communauté comprenant beaucoup d'espèces mais avec une espèce dominante n'est pas perçue intuitivement comme plus diverse qu'une communauté avec moins d'espèces, mais dont les effectifs sont proches (figure \@ref(fig:Composantes), colonne de gauche). 
 La prise en compte de deux composantes de la diversité, appelées richesse et équitabilité, est nécessaire [@Whittaker1965].
 
 
@@ -65,7 +65,7 @@ L'indice de richesse le plus simple et le plus utilisé est tout simplement le n
 
 La régularité de la distribution des espèces (équitabilité en Français, *evenness* ou *equitability* en anglais) est un élément important de la diversité. 
 Une espèce représentée abondamment ou par un seul individu n'apporte pas la même contribution à l'écosystème. 
-Sur la figure&nbsp;\@ref(fig:Composantes), la ligne du bas présente deux communautés de 4 espèces, mais celle de droite est beaucoup plus équitable de celle de gauche et semble intuitivement plus diverse.
+Sur la figure \@ref(fig:Composantes), la ligne du bas présente deux communautés de 4 espèces, mais celle de droite est beaucoup plus équitable de celle de gauche et semble intuitivement plus diverse.
 À nombre d'espèces égal, la présence d'espèces très dominantes entraîne mathématiquement la rareté de certaines autres: on comprend donc assez intuitivement que le maximum de diversité sera atteint quand les espèces auront une répartition très régulière.
 
 Un indice d'équitabilité est indépendant du nombre d'espèces (donc de la richesse).
@@ -111,7 +111,7 @@ knitr::include_graphics('images/Gaston2000.png')
 ```
 
 
-De façon générale [@Gaston2000], la richesse spécifique diminue avec la latitude (la diversité est plus grande dans les zones tropicales, et au sein de celles-ci, quand on se rapproche de l'équateur), voir figure&nbsp;\@ref(fig:Gaston2000) [@Gaston2000, figure 1].
+De façon générale [@Gaston2000], la richesse spécifique diminue avec la latitude (la diversité est plus grande dans les zones tropicales, et au sein de celles-ci, quand on se rapproche de l'équateur), voir figure \@ref(fig:Gaston2000) [@Gaston2000, figure 1].
 La tendance est la même pour la diversité génétique intraspécifique [@Miraldo2016].
 La richesse diminue avec l'altitude. 
 Elle est généralement plus faible sur les îles, où elle décroît avec la distance au continent, source de migrations.
@@ -198,17 +198,17 @@ Le jeu de données utilisé pour les exemples est une version réduite aux arbre
 ```{r SARFig, echo=FALSE, results='hide', message=FALSE, ref.label='SARCode',  fig.cap="Courbe d'accumulation des espèces d'arbres du dispositif de Barro Colorado Island. Le nombre d'espèces est cumulé dans l'ordre des carrés d'un hectare du dispositif."}
 ```
 
-La courbe aire-espèces (SAR: *Species Area Relationship*) représente le nombre d'espèces observées en fonction de la surface échantillonnée (Figure&nbsp;\@ref(fig:Williamson2001).
+La courbe aire-espèces (SAR: *Species Area Relationship*) représente le nombre d'espèces observées en fonction de la surface échantillonnée (figure \@ref(fig:Williamson2001).
 Il existe plusieurs façons de prendre en compte cette relation [@Scheiner2003], classables en deux grandes familles [@Dengler2009]:
 
 * Dans une SAR au sens strict, chaque point représente une communauté. 
   La question traitée est la relation entre le nombre d'espèces et la taille de chaque communauté;
 * Si les points représentent un effort d'échantillonnage différent dans même communauté, on parle de courbe d'accumulation (SAC: *Species Acumulation Curve*). Une courbe de raréfaction (*Rarefaction Curve*) peut être calculée en réduisant par des outils statistiques l'effort d'échantillonnage réel pour obtenir une SAC théorique, libérée des aléas de l'ordre de prise en compte des données.
 
-La Figure&nbsp;\@ref(fig:SARFig) montre l'accumulation des espèces pour les données de BCI.
+La figure \@ref(fig:SARFig) montre l'accumulation des espèces pour les données de BCI.
 Une SAC peut être tracée en fonction de la surface, du nombre d'individus ou du nombres de placettes d'échantillonnage, selon les besoins.
 
-Code R pour réaliser la Figure&nbsp;\@ref(fig:SARFig) :
+Code R pour réaliser la figure \@ref(fig:SARFig) :
 ```{r SARCode, eval=FALSE, tidy=FALSE, size='small'}
 library("vegan")
 data(BCI)
@@ -232,11 +232,11 @@ Les espèces ne sont pas identifiées individuellement, mais par le nombre d'ind
 ```{r RACFig, echo=FALSE, results='hide', message=FALSE, ref.label='RACCode',  fig.cap="Diagramme rang-abondance (diagramme de Whittaker) des arbres du dispositif de Barro Colorado Island. Les points sont les données: en abscisse: le rang de l'espèce, à partir de la plus abondante; en ordonnée: l'abondance de l'espèce. La courbe est l'ajustement d'une distribution log-normale."}
 ```
 
-Elle peut être représentée sous la forme d'un histogramme des fréquences (diagramme de @Preston1948, figure&nbsp;\@ref(fig:SADFig)) ou bien d'un diagramme rang-abondance (RAC: *Rank Abundance Curve* ou diagramme de @Whittaker1965, figure&nbsp;\@ref(fig:RACFig)). 
+Elle peut être représentée sous la forme d'un histogramme des fréquences (diagramme de @Preston1948, figure \@ref(fig:SADFig)) ou bien d'un diagramme rang-abondance (RAC: *Rank Abundance Curve* ou diagramme de @Whittaker1965, figure \@ref(fig:RACFig)). 
 Le RAC est souvent utilisé pour reconnaître des distributions connues. 
 @Izsak2012 ont étudié les propriétés des RAC pour les principales SAD.
 
-Code de la figure&nbsp;\@ref(fig:SADFig):
+Code de la figure \@ref(fig:SADFig) :
 ```{r SADCode, eval=FALSE, tidy=FALSE, size='small'}
 Ns <- sort(colSums(BCI), decr = TRUE)
 N <- sum(Ns)
@@ -248,7 +248,7 @@ SADhist <- ggplot(data.frame(Ns), aes(Ns)) +
 SADhist
 ```
 
-Code de la figure&nbsp;\@ref(fig:RACFig):
+Code de la figure \@ref(fig:RACFig) :
 ```{r RACCode, eval=FALSE, tidy=FALSE, size='small'}
 library("entropart")
 autoplot(as.AbdVector(Ns), Distribution = "lnorm")
@@ -315,15 +315,15 @@ Où $t^{n}_{1-\alpha/2}$ est le quantile d'une loi de Student à $n$ degrés de 
 
 
 Un autre estimateur est utilisé dans le logiciel SPADE [@Chao2010a] et son portage sous R, le package *spadeR* [@Chao2016c].
-Il est la base des estimateurs d'entropie de Chao et Jost (Section&nbsp;\@ref(sec:BiaisHCDT)).
-L'estimation de l'équation&nbsp;\@ref(eq:CsansBiais) donne la relation
+Il est la base des estimateurs d'entropie de Chao et Jost (section \@ref(sec:BiaisHCDT)).
+L'estimation de l'équation \@ref(eq:CsansBiais) donne la relation
 \begin{equation}
   (\#eq:hatC2)
   \hat{C} = 1-\frac{s^{n}_{1} - \hat{\pi}_1}{n}.
 \end{equation}
 
 Or, $\hat{\pi}_1 = s^{n}_{1} \hat{\alpha}_1$.
-$\alpha_1$ peut être estimé par la relation de Good-Turing (\@ref(eq:GoodTuring2014)), en remplaçant $s^{n}_{0}$ par l'estimateur Chao1 (équation&nbsp;\@ref(eq:Chao1)).
+$\alpha_1$ peut être estimé par la relation de Good-Turing \@ref(eq:GoodTuring2014), en remplaçant $s^{n}_{0}$ par l'estimateur Chao1 \@ref(eq:Chao1).
 Alors:
 
 \begin{equation} 
@@ -349,7 +349,7 @@ Coverage(as.AbdVector(Paracou6))
 ```
 
 
-@Chao2012b montrent que la pente de la courbe d'accumulation donnant l'espérance du nombre d'espèces en fonction du nombre d'individus (courbe de raréfaction de la figure&nbsp;\@ref(fig:Gotelli2001)) est égale au déficit de couverture,
+@Chao2012b montrent que la pente de la courbe d'accumulation donnant l'espérance du nombre d'espèces en fonction du nombre d'individus (courbe de raréfaction de la figure \@ref(fig:Gotelli2001)) est égale au déficit de couverture,
 
 \begin{equation}
   (\#eq:DefC)
@@ -366,7 +366,7 @@ Le cas des populations de taille finie est traité par @Chao2012 et @Hwang2014
 La complétude de l'échantillonnage est la proportion du nombre d'espèces observées: $s^{n}_{\ne 0}/{S}$.
 Elle compte simplement les espèces et ne doit pas être confondue avec la couverture qui somme leurs probabilités: le taux de complétude est toujours très inférieur au taux de couverture parce que les espèces non échantillonnées sont les plus rares.
 
-La complétude du même échantillon d'arbres de forêt tropicale que dans l'exemple précédent peut être estimée en divisant le nombre d'espèces observées par le nombre d'espèces estimées (voir section&nbsp;\@ref(sec:Richesse)):
+La complétude du même échantillon d'arbres de forêt tropicale que dans l'exemple précédent peut être estimée en divisant le nombre d'espèces observées par le nombre d'espèces estimées (voir section \@ref(sec:Richesse)):
 À BCI: 
 
 ```{r CompletenessBCI}
