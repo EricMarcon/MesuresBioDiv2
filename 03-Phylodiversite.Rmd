@@ -154,7 +154,7 @@ La richesse est l'accumulation de classes différentes dans les mesures classiqu
 Dans un arbre phylogénétique, la longueur des branches représente un temps d'évolution: la richesse en est la somme. 
 FD et PD sont des mesures de richesse.
 
-```{r Pavoine2011, fig.cap="Régularité contre irrégularité. Les arbres de A à D sont de plus en plus irréguliers. L'arbre A, parfaitement régulier, est le cadre des mesures classiques de la diversité. La phylogénie étant donnée, trois vecteurs d'abondance (P1 à P3) sont de moins en moins réguliers: dans les cas C et D, la régularité maximale n'est pas obtenue pour des effectifs identiques, mais en augmentant les effectifs des espèces originales. ", echo=FALSE}
+```{r Pavoine2011, fig.cap="Régularité contre irrégularité. Les arbres de A à D sont de plus en plus irréguliers. L'arbre A, parfaitement régulier, est le cadre des mesures classiques de la diversité. La phylogénie étant donnée, trois vecteurs d'abondance (P1 à P3) sont de moins en moins réguliers: dans les cas C et D, la régularité maximale n'est pas obtenue pour des effectifs identiques, mais en augmentant les effectifs des espèces originales.", echo=FALSE}
 knitr::include_graphics('images/Pavoine2011.png')
 ```
 
@@ -199,9 +199,7 @@ Les sections suivantes envisagent les espèces dans un arbre phylogénétique.
 @Mason2005 postulent que la diversité fonctionnelle peut être abordée dans trois dimensions indépendantes (@Jost2010 montrera que l'indépendance n'est pas assurée):
 
 * la richesse fonctionnelle, qui indique l'étendue de l'espace des niches fonctionnelles occupé par la communauté;
-
 * l'équitabilité de la distribution des espèces dans ces niches (appelée régularité par @Pavoine2011);
-
 * la divergence fonctionnelle, qui mesure comment la distribution des espèces dans l'espace des niches maximise la variabilité des caractéristiques fonctionnelles dans la communauté et combine richesse et équitabilité.
 
 @Schleuter2010 font une revue des mesures utilisées dans ce cadre.
@@ -217,6 +215,7 @@ On note $\mathbf{T}_s$ le vecteur des valeurs moyennes de chaque trait de l'esp�
 
 L'étendue fonctionnelle [@Mason2005] mesure l'étendue des valeurs d'un trait occupée par une communauté, normalisée par l'étendue maximale possible:
 \begin{equation}
+  (\#eq:FRR)
   \mathit{FR}_R = \dfrac{\max_s(x_{t,s}) - \min_s(x_{t,s})}{X_{t,max} - X_{t,min}},
 \end{equation}
 
@@ -250,6 +249,7 @@ La fonction d'appartenance de l'espèce $s$ dans l'espace des traits est, pour l
 
 La richesse fonctionnelle est l'intégrale des valeurs maximales de $f_s$ dans l'ensemble de l'espace des traits:
 \begin{equation}
+  (\#eq:FRIm)
   \mathit{FR}_{Im} = \int \max_s\left(f_s(\mathbf{T}) \right) \mathop{d\mathbf{T}}.
 \end{equation}
 
@@ -269,6 +269,7 @@ La statistique fondamentale est appelée équitabilité pondérée (*weighted ev
 Pour l'intervalle entre l'espèce $s$ et l'espèce $s+1$:
 
 \begin{equation}
+  (\#eq:EWs)
   \mathit{EW}_{s} = \frac{T_{s+1}-T_{s}}{N_{s+1}+N_{s}}.
 \end{equation}
 
@@ -277,6 +278,7 @@ Sa valeur de $\mathit{PEW}_{s}$ attendue pour le maximum d'équitabilité est $\
 L'indice est celui de Bulla, appliqué aux $S-1$ intervalles entre espèces:
 
 \begin{equation}
+  (\#eq:FEs)
   \mathit{FE}_{s} = \sum_{s=1}^{S-1}{\min(\mathit{PEW}_{s},\frac{1}{S-1})}.
 \end{equation}
 
@@ -288,6 +290,7 @@ La longueur des branches est ensuite traitée de la même façon que $\delta T_s
 Un autre indice, ${\Lambda}^+$ [@Clarke2001], mesure la variance des distances entre paires d'espèces:
 
 \begin{equation}
+  (\#eq:Clarke2001)
   {\Lambda}^+ =\frac{\sum_s{\sum_t{{\left(d_{s,t}-\hat{d}\right)}^2}}}{S\left(S-1\right)}.
 \end{equation}
 
@@ -310,6 +313,7 @@ FAD a été proposé par @Walker1999, à partir d'une matrice de distances dans 
 $d_{s,t}$ est la distance entre deux espèces indicées par $s$ et $t$, alors:
 
 \begin{equation}
+  (\#eq:FAD)
   \mathit{FAD}=\sum_s{\sum_t{d_{s,t}}}.
 \end{equation}
 
@@ -317,6 +321,7 @@ FAD est très sensible au nombre d'espèces.
 Sa version normalisée, MFAD [@Schmera2009] est
 
 \begin{equation}
+  (\#eq:MFAD)
   \mathit{MFAD}=\frac{\sum_s{\sum_t{d_{s,t}}}}{S}.
 \end{equation}
 
@@ -352,6 +357,7 @@ L'écart moyen absolu est $\Delta |d|=\sum_s{p_s|dG_s - \bar{dG}|}$
 
 L'indice est
 \begin{equation}
+  (\#eq:FDm)
   \mathit{FD}_{m} = \frac{\Delta d + \bar{dG}}{\Delta |d| +\bar{dG}}.
 \end{equation}
 
@@ -391,12 +397,14 @@ Clairement, la diversité phylogénétique PD (section \@ref(sec:PDFD)) est la s
 @Ricotta2004a construit un indice paramétrique (permettant de donner plus ou moins d'importance aux espèces rares) à partir de l'espérance du nombre d'espèces tirées dans un échantillon de taille $n$ fixée (l'indice de @Hurlbert1971):
 
 \begin{equation}
+  (\#eq:ESn)
   {\mathbb E}\left( S^n \right)
   = \sum_s{\left[ 1-\left( 1-p_s \right)^n  \right]}.
 \end{equation}
 
 Ricotta pondère cette espérance par l'originalité taxonomique de chaque espèce, notée $w_s$ et normalise la mesure:
 \begin{equation}
+  (\#eq:Ricotta2004a)
   ^n{T}
   = \frac{\sum_s{w_s \left[ 1-\left( 1-p_s \right)^n  \right]}}{{\mathbb E}\left( S^n \right)}.
 \end{equation}
@@ -421,7 +429,7 @@ Il baisse ensuite alors que les espèces rares atteignent à leur tour progressi
 Quand $n \to +\infty$, le numérateur tend vers FAD, et le dénominateur tend vers le nombre d'espèces: $^n{T}$ tend vers MFAD.
 
 Code R pour la figure \@ref(fig:HurlbertCFig):
-```{r HurlbertCCode, eval=FALSE, size='footnotesize'}
+```{r HurlbertCCode, eval=FALSE}
 Ps <- c(0.7, 0.19, 0.1, 0.01)
 S <- length(Ps)
 nRange <- 1:500
@@ -495,6 +503,7 @@ On s'attend donc à ce que l'espèce 3 soit représentée par un sixième des in
 
 L'indice de déséquilibre d'abondance mesure l'écart à cette distribution théorique:
 \begin{equation}
+  (\#eq:IAC)
   \mathit{IAC} = \frac{\sum_s{|n_s - n_s^0|}}{\nu}.
 \end{equation}
 
@@ -505,12 +514,14 @@ $\nu$ est le nombre de noeuds de l'arbre (3 dans l'exemple de la figure \@ref(fi
 
 L'entropie de Shannon peut être appliquée pour mesurer la diversité des particularités évolutives:
 \begin{equation}
+  (\#eq:HED)
   H_{\mathit{ED}} = -\sum_s{\frac{\mathit{ED}_s}{\mathit{PD}} \ln\frac{\mathit{ED}_s}{\mathit{PD}}}.
 \end{equation}
 
 L'équitabilité des particularités évolutives est celle de Pielou:
 
 \begin{equation}
+  (\#eq:EED)
   E_{\mathit{ED}} = \frac{H_{\mathit{ED}}}{\ln{S}}.
 \end{equation}
 
@@ -520,10 +531,12 @@ La particularité évolutive $\mathit{AED}_s$ des individus de l'espèce $s$, es
 Alors $\mathit{PD} = \sum_s{n_s \mathit{AED}_s}$.
 L'entropie devient
 \begin{equation}
+  (\#eq:HAED)
   H_{\mathit{AED}} = -\sum_s{\frac{n_s \mathit{AED}_s}{\mathit{PD}} \ln\frac{n_s \mathit{AED}_s}{\mathit{PD}}}
 \end{equation}
 et l'équitabilité correspondante est
 \begin{equation}
+  (\#eq:EAED)
   E_{\mathit{AED}} = \frac{H_{\mathit{AED}}}{\ln{N}}.
 \end{equation}
 
@@ -565,6 +578,7 @@ Une meilleure définition [@Presley2014] de la taille de la niche est la somme d
 La diversité peut prendre en compte plusieurs composantes, pas exemple l'abondance et la phylogénie pour définir
 
 \begin{equation}
+  (\#eq:qDAP)
   ^{q}\!D(AP) = {\left(\sum^S_{s=1}{\left(\frac{n_s L_s}{\sum^S_{t=1}{n_t L_t}}\right)^q}\right)}^{\frac{1}{1-q}}.
 \end{equation}
 
@@ -572,6 +586,7 @@ La diversité d'abondance et phylogénétique est la diversité des divergences 
 La mesure de biodiversité de Scheiner, incluant les trois composantes, est
 
 \begin{equation}
+  (\#eq:qDAF)
   ^{q}\!D(APF) = {\left(\sum^S_{s=1}{\left(\frac{n_s L_s t_s}{\sum^S_{t=1}{n_t L_t t_t}}\right)^q}\right)}^{\frac{1}{1-q}}.
 \end{equation}
 
@@ -587,7 +602,7 @@ En se limitant à deux dimensions pour la lisibilité, la figure \@ref(fig:Schei
 ```
 
 Code R:
-```{r ScheinerPsfsCode, eval=FALSE, size='footnotesize', tidy=FALSE}
+```{r ScheinerPsfsCode, eval=FALSE, tidy=FALSE}
 # Probabilités
 Ps <- Paracou618.MC$Ps[Paracou618.MC$Ps>0]
 Ps <- sort(Ps, decreasing = TRUE)
@@ -628,7 +643,7 @@ Le profil de diversité d'abondance et fonctionnelle est en figure \@ref(fig:Pro
 ```
 
   Code R:
-```{r ProfilDqAFCode, eval=FALSE, size='footnotesize', tidy=FALSE}
+```{r ProfilDqAFCode, eval=FALSE, tidy=FALSE}
 autoplot(CommunityProfile(Diversity, Rs), 
          xlab="Ordre de diversité", ylab="Diversité") +
 geom_line(data = as.data.frame.list(CommunityProfile(Diversity, Ps)), 
@@ -818,7 +833,7 @@ hf <- hclust(dist(pcaf$tab), "ward.D")
 ```
 
 Code R pour la figure \@ref(fig:PCAFFig):
-```{r PCAFCode, eval=FALSE, size='footnotesize'}
+```{r PCAFCode, eval=FALSE}
 scatter(pcaf)
 ```
 
@@ -835,7 +850,7 @@ phyf <- hclust2phylog(hf)
 ```
 
 Code R pour la figure \@ref(fig:HclustFig):
-```{r HclustCode, eval=FALSE, size='footnotesize'}
+```{r HclustCode, eval=FALSE}
 plot(hf, h=-1)
 ```
 
@@ -845,7 +860,7 @@ Le résultat est en figure \@ref(fig:PhylogRaoFig).
 ```
 
 Code R pour la figure \@ref(fig:PhylogRaoFig):
-```{r PhylogRaoCode, eval=FALSE, size='footnotesize'}
+```{r PhylogRaoCode, eval=FALSE}
 table.phylog(pcaf$tab[names (phyf$leaves),], phyf)
 ```
 
@@ -860,7 +875,7 @@ Le calcul de l'originalité des espèces utilise la fonction `originality` (figu
 ```
 
 Code R pour la figure \@ref(fig:originalityFig):
-```{r originalityCode, eval=FALSE, size='footnotesize'}
+```{r originalityCode, eval=FALSE}
 dotchart.phylog(phyf, originality(phyf, 5))
 ```
 
@@ -881,6 +896,7 @@ Plusieurs normalisations ont été proposées: par sa valeur maximale ou par la 
 @Garnier2004 définissent la moyenne pondérée d'un trait à l'échelle de la communauté (CWM: *Community Weigthed Mean*), simplement égal à la moyenne de la valeur du trait pondérée par la fréquence des espèces:
 
 \begin{equation}
+  (\#eq:CWM)
   \mathit{CWM} = \sum_s{p_s y_s}.
 \end{equation}
 
@@ -894,10 +910,12 @@ L'entropie quadratique de Rao mesure la dispersion des espèces autour de ce poi
 @Izsak2011 proposent deux variantes de l'indice de Rao dans lesquelles la distance entre espèces dépend de leurs probabilités:
 
 \begin{equation}
+  (\#eq:L1)
   L_1 = \sum_{s}{\sum_{t}{p_{s}p_{t}{\left(p_{s}-p_{t}\right)}^2}};
 \end{equation}
 
 \begin{equation}
+  (\#eq:L2)
   L_2=\sum_{s}{\sum_{t}{p_{s}p_{t}{\left(\ln{p_{s}}-\ln{p_{t}}\right)}^2}}.
 \end{equation}
 
@@ -917,11 +935,13 @@ $\mathbf{\Delta}$ est la matrice de dissimilarité dont les éléments sont $\de
 @Chiu2014b proposent de pondérer l'entropie quadratique par la distance entre les paires d'espèces et obtiennent un nombre de Hill permettant de mesurer la diversité fonctionnelle à partir d'une matrice de dissimilarité:
 
 \begin{equation}
+  (\#eq:Chiu2014bDq)
   ^{q}\!D\left(Q\right)
   = \left[\sum_s{\sum_t{\frac{\delta_{s,t}}{Q}\left(p_s p_t\right)^q}}\right]^\frac{1}{2\left(1-q\right)};
 \end{equation}
 
 \begin{equation}
+  (\#eq:Chiu2014bD1)
   ^{1}\!D\left(Q\right)
   = e^{\frac{1}{2}\left[\sum_s{\sum_t{p_s p_t\frac{\delta_{s,t}}{Q}\ln{p_s p_t}}}\right]}.
 \end{equation}
@@ -963,6 +983,7 @@ L'arbre possède 7 branches.
 L'indice d'entropie phylogénétique est
 
 \begin{equation}
+  (\#eq:Hp)
   H_p =-\sum_{b}{l(b)p(b)\ln{p}(b)}.
 \end{equation}
 
@@ -1047,6 +1068,7 @@ La possibilité de choisir comme distance de référence entre espèces une vale
 L'entropie $^{q}\!\bar{H}(T)$ peut être transformée en diversité [@Marcon2014a] de la même façon que $^{q}\!D = e^{^{q}\!H}$:
 
 \begin{equation}
+  (\#eq:DbarqT)
   ^{q}\!\bar{D}\left(T\right)=e^{^{q}\!\bar{H}\left(T\right)}_q.
 \end{equation}
 
@@ -1055,7 +1077,7 @@ Le nombre effectif d'espèces de l'entropie de Rao, $^{2}\!\bar{D}(T)=\frac{1}{[
 @Chao2010 obtiennent ce résultat sans recourir explicitement à l'entropie, mais en faisant le même calcul:
 
 \begin{equation}
-  (\#eq:Dbarq)
+  (\#eq:DbarqChao)
   ^{q}\!\bar{D} \left( T \right)
   =\left( \sum_b{\frac{l(b)}{T} p(b)^q} \right)^{\frac{1}{1-q}}.
 \end{equation}
@@ -1128,7 +1150,8 @@ Une espèce rare totalement différente des autres est peu banale.
 La moyenne généralisée d'ordre $r$ [@Hardy1952], *generalized mean* ou *power mean* en anglais, est définie pour une distribution de valeurs de $x_s$ dont la probabilité d'occurrence est $p_s$ par
 
 \begin{equation}
-\bar{x}={\left(\sum_s{p_s x^r_s}\right)}^{\frac{1}{r}}.
+  (\#eq:Hardy1952)
+  \bar{x}={\left(\sum_s{p_s x^r_s}\right)}^{\frac{1}{r}}.
 \end{equation}
 
 ```{r MoyenneHardyFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='MoyenneHardyCode', fig.cap="Moyenne généralisée d'ordre $r$ (en abscisse) d'une distribution uniforme de 100 valeurs tirées entre 0 et 1. La moyenne arithmétique 0,5 est obtenue pour $r=1$. La moyenne généralisée tend vers la plus petite valeur (près de 0) quand $r\\to -\\infty$, et vers la plus grande valeur (près de 1) quand $r\\to +\\infty$."}
@@ -1139,7 +1162,7 @@ La moyenne généralisée se réduit à la moyenne arithmétique pondérée pour
 Elle donne un fort poids aux petites valeurs de $x_s$ dans la moyenne pour les faibles valeurs de $r$ (qui peuvent être négatives), et un fort poids aux grandes valeurs quand $r$ est grand (figure \@ref(fig:MoyenneHardyFig)).
 
 Le code R nécessaire pour réaliser la figure est:
-```{r MoyenneHardyCode, eval=FALSE, size='footnotesize', tidy=FALSE}
+```{r MoyenneHardyCode, eval=FALSE, tidy=FALSE}
 X <- runif(100)
 # La moyenne n'est pas définie à r=0, décalage de 10^-8
 r <- seq(-5, 10, .1) + 1E-8
@@ -1231,6 +1254,7 @@ Mais ce n'est pas le cas en général.
 Tout d'abord en remarquant que la probabilité d'occurrence d'une espèce est 1 moins la somme de celle des autres, d'où
 
 \begin{equation}
+  (\#eq:Ricotta2006bH1)
   ^{1}\!H = -\sum_s{p_s\ln\left(1-\sum_{t\ne s}{p_t}\right)}.
 \end{equation}
 
@@ -1239,6 +1263,7 @@ De façon plus générale, ${(\mathbf{Zp})}_s$ peut exprimer cette banalité.
 Enfin, l'entropie HCDT peut généraliser l'entropie de Shannon pour définir une mesure $Q_{\alpha}$ que nous noterons $^q\!H^{\mathbf{Z}}$ pour la cohérence de nos notations ($q=\alpha$):
 
 \begin{equation}
+  (\#eq:Ricotta2006bHZ)
   ^q\!H^{\mathbf{Z}} = \sum_s{p_{s}\ln_q{\frac{1}{\left(\mathbf{Zp}\right)_s}}}.
 \end{equation}
 
@@ -1287,7 +1312,7 @@ Si une majorité des espèces (au sens de la somme de leurs probabilités respec
 Ce n'est pas un problème pour la comparaison de profils de diversité de communautés différentes calculés à partir de la même matrice de similarité mais l'interprétation de la diversité en termes de nombres effectifs d'espèces dépendant de $q$ n'est pas très intuitive.
 
 Le code R nécessaire pour réaliser la figure est:
-```{r LineaireZpsqCode, eval=FALSE, size='footnotesize'}
+```{r LineaireZpsqCode, eval=FALSE}
 r <- 0.5
 seqZp <- seq(0, 1, 0.001)
 ggplot(data.frame(r=seqZp, xr=seqZp^r), aes(r, xr)) +
@@ -1311,7 +1336,7 @@ Plus $u$ est grand, plus la transformation est convexe: les similarités sont ta
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r EchelleCode, eval=FALSE, size='footnotesize', tidy=FALSE}
+```{r EchelleCode, eval=FALSE, tidy=FALSE}
 ggplot(data.frame(x = seq(0, 1, by = .01)), aes(x)) + 
   stat_function(fun = function(x) exp(-x)) +
   stat_function(fun = function(x) exp(-2*x), lty = 2) +
@@ -1593,7 +1618,7 @@ Le profil de diversité se trouve en figure \@ref(fig:DqZLambdaFig).
 
 
 Code R pour la figure:
-```{r DqZLambdaCode, eval=FALSE, size='footnotesize'}
+```{r DqZLambdaCode, eval=FALSE}
 DqZLambda<- CommunityProfile(Diversity, Mu)
 Xlab <- "Ordre de diversité"
 Ylab <- "Diversité"
@@ -1636,7 +1661,7 @@ Les deux notions se confondent quand la diversité neutre est considérée: la b
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r ComparaisonDqCode, eval=FALSE, size='footnotesize'}
+```{r ComparaisonDqCode, eval=FALSE}
 q <- c(seq(0, 3, 0.1))
 # Réutilisation de Paracou618.Taxonomy au format phylog (cf. calcul de FAD)
 DistanceMatrix <- as.matrix(Tree$Wdist^2/2)
