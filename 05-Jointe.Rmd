@@ -192,11 +192,9 @@ MC1 <- MetaCommunity(df1)
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r Repartition1Code, eval=FALSE}
+```{r Repartition1Code, eval=FALSE, size='tiny'}
 plot(MC1)
 ```
-
-
 
 ```{r Repartition1fin}
 summary(DivPart(q, MC1)->dp1)
@@ -210,7 +208,11 @@ df2 <- cbind(df1, df1)
 MC2 <- MetaCommunity(df2)
 ```
 
-```{r Repartition2Fig, echo=FALSE, results='hide', out.width='\\textwidth', fig.cap="Méta-communauté doublant les communautés de la précédente."}
+```{r Repartition2Fig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='Repartition2Code', fig.cap="Méta-communauté doublant les communautés de la précédente."}
+```
+
+Le code R nécessaire pour réaliser la figure est:
+```{r Repartition2Code, eval=FALSE, size='tiny'}
 plot(MC2)
 ```
 
@@ -254,14 +256,17 @@ Sa diversité jointe est 12 (le nombre de cellules non nulles dans la matrice) :
 
 ```{r Differentiation}
 q <- 2  # Peu importe q
-df1 <- data.frame(Co1=c(10,10,0,0), Co2=c(0,0,10,10), 
-row.names=c("S1", "S2", "S3", "S4"))
+df1 <- data.frame(Co1=c(10,10,0,0), Co2=c(0,0,10,10), row.names=c("S1", "S2", "S3", "S4"))
 df3 <- cbind(df1, df1, df1)
 MC <- MetaCommunity(df3)
 ```
 
 
-```{r DifferentiationFig, echo=FALSE, results='hide', out.width='\\textwidth', fig.cap="{Méta-communauté illustrant la décomposition complète de la diversité jointe."}
+```{r DifferentiationFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='DifferentiationCode', fig.cap="Méta-communauté illustrant la décomposition complète de la diversité jointe."}
+```
+
+Le code R nécessaire pour réaliser la figure est:
+```{r DifferentiationCode, eval=FALSE, size='tiny'}
 plot(MC)
 ```
 

@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # (PART) Notions {-}
 
 # Notions de Diversité
@@ -38,7 +43,7 @@ La question est loin d'être épuisée, et fait toujours l'objet d'une recherche
 
 ## Composantes
 
-```{r Composantes, fig.cap="Importance de la richesse (en haut) et de l'équitabilité (en bas) pour la définition de la diversité. Ligne du haut: toutes choses égales par ailleurs, une communauté de 7 espèces semble plus diverse qu'une communauté de 2 espèces. Ligne du bas: à richesse égale, une communauté moins équitable (à gauche) semble moins diverse. Colonne de gauche: une communauté moins riche (en haut) peut sembler plus diverse si elle est plus équitable. Colonne de droite: *idem* pour la communauté du bas.", echo=FALSE}
+```{r Composantes, fig.cap="Importance de la richesse (en haut) et de l'équitabilité (en bas) pour la définition de la diversité. Ligne du haut: toutes choses égales par ailleurs, une communauté de 7 espèces semble plus diverse qu'une communauté de 2 espèces. Ligne du bas: à richesse égale, une communauté moins équitable (à gauche) semble moins diverse. Colonne de gauche: une communauté moins riche (en haut) peut sembler plus diverse si elle est plus équitable. Colonne de droite: idem pour la communauté du bas.", echo=FALSE, out.width='50%'}
 knitr::include_graphics('images/Composantes.png')
 ```
 
@@ -106,7 +111,7 @@ La diversité est classiquement estimée à plusieurs niveaux emboîtés, nommé
 La diversité $\alpha$ est la diversité locale, mesurée à l'intérieur d'un système délimité. 
 Plus précisément, il s'agit de la diversité dans un habitat uniforme de taille fixe.
 
-```{r Gaston2000, fig.cap="Patrons de biodiversité. (a) Le nombre d'espèces de vers de terre augmente en fonction de la surface échantillonnée, de 100 m² à plus de 500000 km² selon la relation d'Arrhenius). (b) Nombre d'espèces d'oiseaux en fonction de la latitude. (c) Relation entre la richesse régionale et la richesse locale. (d) Nombre d'espèces de chauves-souris en fonction de l'altitude dans une réserve au Pérou. (e) Nombre d'espèces de végétaux ligneux en fonction des précipitations en Afrique du Sud", echo=FALSE}
+```{r Gaston2000, fig.cap="Patrons de biodiversité. (a) Le nombre d'espèces de vers de terre augmente en fonction de la surface échantillonnée, de 100 m² à plus de 500000 km² selon la relation d'Arrhenius). (b) Nombre d'espèces d'oiseaux en fonction de la latitude. (c) Relation entre la richesse régionale et la richesse locale. (d) Nombre d'espèces de chauves-souris en fonction de l'altitude dans une réserve au Pérou. (e) Nombre d'espèces de végétaux ligneux en fonction des précipitations en Afrique du Sud.", echo=FALSE, out.width='90%'}
 knitr::include_graphics('images/Gaston2000.png')
 ```
 
@@ -183,7 +188,7 @@ La présentation des mesures de diversité est donnée avec un usage intensif du
 La liste des notations est fournie en préambule du document, on s'y référera autant que nécessaire.
 
 Les calculs sont réalisés dans R [@R], essentiellement avec le package *entropart* [@Marcon2014c]. 
-L'ensemble du code est disponible sur GitHub ^[<https://github.com/EricMarcon/MesuresBioDiv>] où se trouvent les mises à jour de ce document.
+L'ensemble du code est disponible sur GitHub^[<https://github.com/EricMarcon/MesuresBioDiv2/>] où se trouvent les mises à jour de ce document ^[<https://ericmarcon.github.io/MesuresBioDiv2/>].
 
 Les données sont souvent celles de la parcelle 6 de Paracou en Guyane française [@Gourlet-Fleury2004], d'une surface de 6.25&nbsp;ha.
 Tous les arbres de plus de 10&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) y ont été inventoriés en 2016.
@@ -209,7 +214,7 @@ La figure \@ref(fig:SARFig) montre l'accumulation des espèces pour les données
 Une SAC peut être tracée en fonction de la surface, du nombre d'individus ou du nombres de placettes d'échantillonnage, selon les besoins.
 
 Code R pour réaliser la figure \@ref(fig:SARFig) :
-```{r SARCode, eval=FALSE, tidy=FALSE, size='small'}
+```{r SARCode, eval=FALSE, tidy=FALSE, size='tiny'}
 library("vegan")
 data(BCI)
 Cumul <- apply(BCI, 2, cumsum)
@@ -228,28 +233,28 @@ Les espèces ne sont pas identifiées individuellement, mais par le nombre d'ind
 ```{r SADFig, echo=FALSE, results='hide', message=FALSE, ref.label='SADCode', fig.cap="Histogramme des fréquences (diagramme de Preston) des arbres du dispositif de Barro Colorado Island. En abscisse: le nombre d'arbres de chaque espèce (en logarithme); en ordonnée: le nombre d'espèces)"}
 ```
 
-
-```{r RACFig, echo=FALSE, results='hide', message=FALSE, ref.label='RACCode',  fig.cap="Diagramme rang-abondance (diagramme de Whittaker) des arbres du dispositif de Barro Colorado Island. Les points sont les données: en abscisse: le rang de l'espèce, à partir de la plus abondante; en ordonnée: l'abondance de l'espèce. La courbe est l'ajustement d'une distribution log-normale."}
-```
-
 Elle peut être représentée sous la forme d'un histogramme des fréquences (diagramme de @Preston1948, figure \@ref(fig:SADFig)) ou bien d'un diagramme rang-abondance (RAC: *Rank Abundance Curve* ou diagramme de @Whittaker1965, figure \@ref(fig:RACFig)). 
 Le RAC est souvent utilisé pour reconnaître des distributions connues. 
 @Izsak2012 ont étudié les propriétés des RAC pour les principales SAD.
 
+```{r RACFig, echo=FALSE, results='hide', message=FALSE, ref.label='RACCode',  fig.cap="Diagramme rang-abondance (diagramme de Whittaker) des arbres du dispositif de Barro Colorado Island. Les points sont les données: en abscisse: le rang de l'espèce, à partir de la plus abondante; en ordonnée: l'abondance de l'espèce. La courbe est l'ajustement d'une distribution log-normale."}
+```
+
 Code de la figure \@ref(fig:SADFig) :
-```{r SADCode, eval=FALSE, tidy=FALSE, size='small'}
+```{r SADCode, eval=FALSE, tidy=FALSE, size='tiny'}
 Ns <- sort(colSums(BCI), decr = TRUE)
 N <- sum(Ns)
 SADhist <- ggplot(data.frame(Ns), aes(Ns)) + 
   geom_histogram(bins=nclass.Sturges(log(Ns)), 
-                 color="black", fill="white", boundary = 0) +
+       color="black", fill="white", boundary = 0) +
   scale_x_log10() +
-  labs(x="Effectifs (échelle logarithmique)", y="Nombre d'espèces")
+  labs(x="Effectifs (échelle logarithmique)", 
+       y="Nombre d'espèces")
 SADhist
 ```
 
 Code de la figure \@ref(fig:RACFig) :
-```{r RACCode, eval=FALSE, tidy=FALSE, size='small'}
+```{r RACCode, eval=FALSE, tidy=FALSE, size='tiny'}
 library("entropart")
 autoplot(as.AbdVector(Ns), Distribution = "lnorm")
 ```
@@ -261,6 +266,34 @@ Les SAD nécessaires à la compréhension de la suite sont:
 * La distribution en log-séries de @Fisher1943;
 * La distribution log-normale [@Preston1948];
 * Le modèle Broken Stick [@MacArthur1957].
+
+
+## Taux de couverture {#sec:Couverture}
+
+### Formule des fréquences de Good-Turing
+
+La relation fondamentale entre les fréquences des espèces est due à Turing et a été publiée par @Good1953.
+En absence de toute information sur la loi de distribution des espèces, en supposant seulement que les individus sont tirés indépendamment les uns des autres selon une loi multinomiale respectant ces probabilités, la formule de Good-Turing relie la probabilité moyenne $\alpha_\nu$ d'une espèce représentée $\nu$ fois (c'est-à-dire par $\nu$ individus) au rapport entre les nombres d'espèces représentées $\nu+1$ fois et $\nu$ fois:
+
+\begin{equation}
+  (\#eq:alphanu)
+  \alpha_\nu \approx \frac{(\nu+1)}{n} \frac{s^{n}_{\nu+1}}{s^{n}_{\nu}}.
+\end{equation}
+
+Les singletons ($s^{n}_{1}$: le nombre d'espèces observées une seule fois) et les doubletons ($s^{n}_{2}$ : le nombre d'espèces observées deux fois) ont une importance centrale.
+Pour $\nu=1$, on a : $\alpha_1 = 2 s^{n}_{2}/(ns^{n}_{1})$ : la fréquence d'une espèce typiquement représentée par un singleton est proportionnelle au rapport entre le nombre des doubletons et des singletons.
+Pour $\nu=0$, l'ignorance du nombre d'espèces non échantillonnées $s^{n}_{0}$ pose problème mais le produit $\alpha_0 \times s^{n}_{0} = \pi_0$, la probabilité totale des espèces non représentées, peut être estimée par $s^{n}_{1}/n$.
+Ces relations sont le fondement des estimateurs de richesse de Chao présentées ci-dessous.
+
+La relation a été précisée [@Chiu2014a, eq. 6 et 7a] en limitant les approximations dans les calculs.
+La seule nécessaire est que les probabilités des espèces représentées le même nombre de fois $\nu$ varient peu et puissent être considérées toutes égales à $\alpha_\nu$.
+Alors, $\alpha_\nu$ est estimé par
+\begin{equation}
+  (\#eq:GoodTuring2014)
+  \hat{\alpha}_\nu = \frac{\left(\nu+1 \right) s^{n}_{\nu+1}}{\left(n-\nu \right) s^{n}_{\nu} + \left(\nu+1 \right) s^{n}_{\nu+1}}.
+\end{equation}
+
+Ce nouvel estimateur est à la base de l'estimateur de Chao amélioré et des estimateurs d'entropie de Chao et Jost (sections \@ref(sec:BiaisShannon) et \@ref(sec:BiaisHCDT)).
 
 
 ### Taux de couverture et déficit de couverture

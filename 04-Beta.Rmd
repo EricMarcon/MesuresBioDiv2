@@ -59,11 +59,11 @@ knitr::kable(Notations, caption="Notations des effectifs, tableau espèces-commu
 Deux types de diversité $\beta$ peuvent être définies [@Vellend2001] en accord avec les notions originales de Whittaker: le *remplacement* (*turnover*) des espèces le long d'un gradient environnemental, spatial ou temporel et la *variation* de la composition spécifique entre communautés, qui diffèrent de la méta-communauté et entre elles.
 Ces deux définitions sont présentées sur les figures \@ref(fig:Anderson2011a) et \@ref(fig:Anderson2011b)[@Anderson2011].
 
-```{r Anderson2011a, fig.cap="Diversité $\\beta$ liée au remplacement des espèces le long d'un gradient. $\\Delta{y}$ est la mesure de la dissimilarité entre deux communautés, voir page~\\@ref(chap:BetaPaires). $\\mathbf{x}$ est un gradient environnemental, spatial ou temporel. $\\Delta{x}$ est l'écart entre deux points du gradient.", echo=FALSE}
+```{r Anderson2011a, fig.cap="Diversité $\\beta$ liée au remplacement des espèces le long d'un gradient. $\\Delta{y}$ est la mesure de la dissimilarité entre deux communautés. $\\mathbf{x}$ est un gradient environnemental, spatial ou temporel. $\\Delta{x}$ est l'écart entre deux points du gradient.", echo=FALSE}
 knitr::include_graphics('images/Anderson2011a.png')
 ```
 
-```{r Anderson2011b, fig.cap="Diversité $\\beta$ liée à la variation de la composition spécifique. \\beta_W$ est le rapport entre la diversité $\\gamma$ et la diversité $\\alpha$, $\\beta_{Add}$ leur différence. $d_{ij}$ est la dissimilarité entre les communautés $i$ et $j$. $\\hat{\\sigma}^2$ est la variance de cette dissimilarité, $\\bar{d}$ sa moyenne. Si $d$ est une distance euclidienne, $\\bar{d}_{cen}$ est la distance moyenne des communautés à leur centre de gravité.", echo=FALSE}
+```{r Anderson2011b, fig.cap="Diversité $\\beta$ liée à la variation de la composition spécifique. $\\beta_W$ est le rapport entre la diversité $\\gamma$ et la diversité $\\alpha$, $\\beta_{Add}$ leur différence. $d_{ij}$ est la dissimilarité entre les communautés $i$ et $j$. $\\hat{\\sigma}^2$ est la variance de cette dissimilarité, $\\bar{d}$ sa moyenne. Si $d$ est une distance euclidienne, $\\bar{d}_{cen}$ est la distance moyenne des communautés à leur centre de gravité.", echo=FALSE}
 knitr::include_graphics('images/Anderson2011B.png')
 ```
 
@@ -305,7 +305,7 @@ La distribution des valeurs de l'indice de Jaccard $S_3=1-D_3^2$ est en figure \
 Le mode est proche de 0,5: la moitié des espèces sont communes entre deux carrés.
 
 Code R pour la figure:
-```{r JaccardCode, eval=FALSE}
+```{r JaccardCode, eval=FALSE, size='tiny'}
 ggplot(data.frame(Jaccard=as.numeric(1-DistJaccard^2))) +
   geom_density(aes(x=Jaccard))
 ```
@@ -395,7 +395,7 @@ La distribution des valeurs de l'indice corrigé se trouve en figure \@ref(fig:C
 La majorité des paires de carrés a une similarité supérieure à 0,8 après correction.
 
 Code R pour la figure:
-```{r ChaoJaccardCode, eval=FALSE, tidy=FALSE}
+```{r ChaoJaccardCode, eval=FALSE, size='tiny', tidy=FALSE}
 ggplot(data.frame(ChaoJaccard = as.numeric(ChaoJaccard))) +
   geom_density(aes(x=ChaoJaccard))
 ```
@@ -424,7 +424,7 @@ Les distances entre les points sont les valeurs de $\sqrt{D_3}$, projetées sur 
 La matrice de distances n'est pas euclidienne à cause des approximations de l'estimation mais les conséquences sont faibles sur les premiers axes.
 
 Code R pour la figure:
-```{r JaccardPCOCode, eval=FALSE}
+```{r JaccardPCOCode, eval=FALSE, size='tiny'}
 scatter(PcoChaoJaccard, posieig = "bottomright")
 ```
 
@@ -694,7 +694,7 @@ Cette "définition" est valide puisque cette distance est la composante inter de
 L'ACP non centrée des 50 carrés de BCI est en figure \@ref(fig:BCIPCAFig).
 
 Code R pour la figure:
-```{r BCIPCACode, eval=FALSE}
+```{r BCIPCACode, eval=FALSE, size='tiny'}
 pcaBCI <- dudi.pca(BCI/rowSums(BCI), scannf = FALSE, nf = 2, center = FALSE, scale = FALSE)
   scatter(pcaBCI, posieig = "bottomleft")
 ```
@@ -706,7 +706,7 @@ pcaBCI <- dudi.pca(BCI/rowSums(BCI), scannf = FALSE, nf = 2, center = FALSE, sca
 L'ACP centrée (mais non réduite, figure \@ref(fig:BCIPCA2Fig)) permet de mieux représenter la diversité $\beta$ : la distance de chaque carré au centre du repère est sa contribution.
 
 Code R:
-```{r BCIPCA2Code, eval=FALSE}
+```{r BCIPCA2Code, eval=FALSE, size='tiny'}
 pcaBCI <- dudi.pca(BCI/rowSums(BCI), scannf = FALSE, nf = 2, center = TRUE, scale = FALSE)
   scatter(pcaBCI, clab.col = 0)
 ```
@@ -765,7 +765,7 @@ La diversité $\beta$ de BCI (figure \@ref(fig:BCIPCA2Fig)) est mieux représent
 La limite de la méthode est que l'origine du repère ne représente plus ici la méta-communauté: sa position correspond à la moyenne des probabilités des espèces transformées, $y_{s|i}$, pas à celle des $p_{s|i}$.
 
 Code R:
-```{r BCICordeCode, eval=FALSE}
+```{r BCICordeCode, eval=FALSE, size='tiny'}
 library("adespatial")
 dCorde <- dist.ldc(BCI, method = "chord")
 pcoaBCI <- dudi.pco(dCorde, scannf = FALSE, nf = 2)
@@ -1085,7 +1085,7 @@ $G_{s,t}={D_{s,t}}/{H_t}$ est la différenciation relative.
 
 L'entropie $E_{\beta}$ calculée de cette manière est égale à $^{2}\!H_{\beta}$ calculée à l'équation \@ref(eq:Hqbeta) pour le cas général, mais la contribution de chaque communauté est différente: la décomposition de la variance est une façon alternative de décomposer l'entropie, valable uniquement pour l'entropie de Simpson.
 
-Cette décomposition est remise en cause par Jost [-@Jost2007, -@Jost2008] qui a généré le débat [@Heller2009; @Ryman2009; @Jost2009a; @Whitlock2011]. 
+Cette décomposition est remise en cause par Jost [@Jost2007; -@Jost2008] qui a généré le débat [@Heller2009; @Ryman2009; @Jost2009a; @Whitlock2011]. 
 $E_{\gamma}$ étant inférieure ou égale à 1, $E_{\beta}$ n'est pas indépendante de $E_{\alpha}$: seule la décomposition multiplicative permet l'indépendance, et Jost propose d'utiliser une transformation de $^{2}\!D_{\beta}$ comme mesure de différenciation (voir section \@ref(sec:Chevauchement)). @Gregorius2014 montre que ce problème n'est pas limité à l'entropie de Simpson mais s'applique à toutes les entropies HCDT d'ordre supérieur à 1.
 
 Jost postule que la diversité $\beta$ de Simpson a la même relation à $E_{\beta}$ que les diversités $\alpha$ et $\gamma$,
@@ -1261,7 +1261,7 @@ L'entropie $\beta$ entre les échantillons de deux hectares est donc diminuée d
 La figure \@ref(fig:BetaSampleFig) présente les valeurs estimées de diversité neutre $\beta$ entre carrés de BCI tirés aléatoirement, en fonction du nombre de carrés.
 
 Code pour réaliser la figure:
-```{r BetaSampleCode1, eval=FALSE, tidy=FALSE}
+```{r BetaSampleCode1, eval=FALSE, size='tiny', tidy=FALSE}
 library("gplots")
 MC <- MetaCommunity(as.data.frame(t(BCI)))
 
@@ -1386,7 +1386,7 @@ La diversité $\gamma$ (rectangles de hauteur 1) est égale au produit des diver
 Si les communautés étaient de même poids et complètement différentes, c'est à dire contenant des espèces totalement dissimilaires entre communautés [@Pavoine2015a], la hauteur du rectangle serait égale à leur nombre (2 ici).
 
 Code pour réaliser la figure:
-```{r DivPartCode, eval=FALSE, tidy=FALSE}
+```{r DivPartCode, eval=FALSE, size='tiny', tidy=FALSE}
 q <- 1
 Neutre <- DivPart(q, Paracou618.MC, Biased = FALSE)
 plot(c(0, Neutre$GammaDiversity), c(0, Paracou618.MC$Ncommunities),
@@ -1520,7 +1520,7 @@ Si l'intervalle de confiance ne contient pas 0, l'égalité des distributions es
 Calcul sous R: la fonction `DivEst` produit un graphique avec l'intervalle de confiance (figure \@ref(fig:DivestFig)).
 
 Code R:
-```{r DivestCode, eval=FALSE}
+```{r DivestCode, eval=FALSE, size='tiny'}
 de <- DivEst(q = 1, Paracou618.MC, Simulations = 1000)
 plot(de)
 ```

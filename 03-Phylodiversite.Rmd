@@ -65,7 +65,7 @@ Dans R, utiliser `is.euclid()` pour vérifier qu'une distance est euclidienne, e
 Enfin, une distance est ultramétrique si $d\left(k,m\right) \le \max\left(d\left(k,l\right),d\left(l,m\right)\right)$. 
 Les distances obtenues en mesurant les longueurs des branches d'un dendrogramme (arbre) résultant d'une classification hiérarchique sont ultramétriques.
 
-```{r ArbreA1, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. Rappel de la figure \\@ref(fig:Arbre)(a). 5 espèces sont présentes ($S=5$), leurs probabilités notées $p_1$ à $p_5$. Les noms des branches sont affichés.", echo=FALSE}
+```{r ArbreA1, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. 5 espèces sont présentes ($S=5$), leurs probabilités notées $p_1$ à $p_5$. Les noms des branches sont affichés.", echo=FALSE}
 knitr::include_graphics('images/ArbreA.png')
 ```
 
@@ -373,7 +373,7 @@ La littérature de la diversité phylogénétique s'est intéressée tôt à l'o
 Dans l'arbre de la figure \@ref(fig:ArbreA4), les valeurs de TD non normalisées sont $\frac{1}{2}$ pour les deux premières espèces et $\frac{1}{3}$ pour les trois autres: la racine de l'arbre est comptabilisée dans le nombre de noeuds.
 Les valeurs de $\mathit{TD}_s$ sont respectivement $\frac{1}{4}$ et $\frac{1}{6}$ après normalisation.
 
-```{r ArbreA4, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. L'arbre comprend 5 espèces dont les probabilités sont notées $p_s$, 3 périodes de durées $T_k$ délimitées par les noeuds. Les branches sont notées $b$ et indicées par la période à laquelle elles se terminent et un numéro d'ordre. La légende complète se trouve en figure \\@ref(fig:Arbre).", echo=FALSE}
+```{r ArbreA4, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. L'arbre comprend 5 espèces dont les probabilités sont notées $p_s$, 3 périodes de durées $T_k$ délimitées par les noeuds. Les branches sont notées $b$ et indicées par la période à laquelle elles se terminent et un numéro d'ordre.", echo=FALSE}
 knitr::include_graphics('images/ArbreA.png')
 ```
 
@@ -421,7 +421,7 @@ Il baisse ensuite alors que les espèces rares atteignent à leur tour progressi
 Quand $n \to +\infty$, le numérateur tend vers FAD, et le dénominateur tend vers le nombre d'espèces: $^n{T}$ tend vers MFAD.
 
 Code R pour la figure \@ref(fig:HurlbertCFig) :
-```{r HurlbertCCode, eval=FALSE}
+```{r HurlbertCCode, eval=FALSE, size='tiny'}
 Ps <- c(0.7, 0.19, 0.1, 0.01)
 S <- length(Ps)
 nRange <- 1:500
@@ -471,7 +471,7 @@ La mesure d'équitabilité est
   \mathit{PAE} = \frac{\mathit{PD} + \sum_s{l(b_{1,s})(n_s-1)}}{\mathit{PD} + (\frac{n}{S}-1)\sum_s{l(b_{1,s})} }.
 \end{equation}
 
-```{r ArbreA3, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. Rappel de la figure \\@ref(fig:ArbreA)(a).", echo=FALSE}
+```{r ArbreA3, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique.", echo=FALSE}
 knitr::include_graphics('images/ArbreA.png')
 ```
 
@@ -587,7 +587,7 @@ En se limitant à deux dimensions pour la lisibilité, la figure \@ref(fig:Schei
 ```
 
 Code R:
-```{r ScheinerPsfsCode, eval=FALSE, tidy=FALSE}
+```{r ScheinerPsfsCode, eval=FALSE, size='tiny', tidy=FALSE}
 # Probabilités
 Ps <- Paracou618.MC$Ps[Paracou618.MC$Ps>0]
 Ps <- sort(Ps, decreasing = TRUE)
@@ -628,7 +628,7 @@ Le profil de diversité d'abondance et fonctionnelle est en figure \@ref(fig:Pro
 ```
 
   Code R:
-```{r ProfilDqAFCode, eval=FALSE, tidy=FALSE}
+```{r ProfilDqAFCode, eval=FALSE, size='tiny', tidy=FALSE}
 autoplot(CommunityProfile(Diversity, Rs), 
          xlab="Ordre de diversité", ylab="Diversité") +
 geom_line(data = as.data.frame.list(CommunityProfile(Diversity, Ps)), 
@@ -818,7 +818,7 @@ hf <- hclust(dist(pcaf$tab), "ward.D")
 ```
 
 Code R pour la figure \@ref(fig:PCAFFig):
-```{r PCAFCode, eval=FALSE}
+```{r PCAFCode, eval=FALSE, size='tiny'}
 scatter(pcaf)
 ```
 
@@ -835,7 +835,7 @@ phyf <- hclust2phylog(hf)
 ```
 
 Code R pour la figure \@ref(fig:HclustFig):
-```{r HclustCode, eval=FALSE}
+```{r HclustCode, eval=FALSE, size='tiny'}
 plot(hf, h=-1)
 ```
 
@@ -845,7 +845,7 @@ Le résultat est en figure \@ref(fig:PhylogRaoFig).
 ```
 
 Code R pour la figure \@ref(fig:PhylogRaoFig):
-```{r PhylogRaoCode, eval=FALSE}
+```{r PhylogRaoCode, eval=FALSE, size='tiny'}
 table.phylog(pcaf$tab[names (phyf$leaves),], phyf)
 ```
 
@@ -860,7 +860,7 @@ Le calcul de l'originalité des espèces utilise la fonction `originality` (figu
 ```
 
 Code R pour la figure \@ref(fig:originalityFig):
-```{r originalityCode, eval=FALSE}
+```{r originalityCode, eval=FALSE, size='tiny'}
 dotchart.phylog(phyf, originality(phyf, 5))
 ```
 
@@ -948,7 +948,7 @@ Enfin, cette définition de la diversité ne respecte pas le principe de @Solow1
 Simultanément, @Pavoine2009a et @Allen2009 ont proposé la généralisation de l'indice de Shannon à la diversité phylogénétique. 
 La présentation de Allen et al. est donnée ici, celle de Pavoine et al., plus générale, sera détaillée dans le paragraphe suivant.
 
-```{r ArbreA2, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. Rappel de la figure \\@ref(fig:ArbreA)(a).", echo=FALSE}
+```{r ArbreA2, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique.", echo=FALSE}
 knitr::include_graphics('images/ArbreA.png')
 ```
 
@@ -992,7 +992,7 @@ Nous suivrons plutôt les notations de @Chao2010 en numérotant les périodes à
 Figure \@ref(fig:Arbre), la première période se termine quand les branches des espèces 3 à 5 se rejoignent. 
 L'arbre comprend $K=3$ périodes.
 
-```{r ArbreA5, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. Rappel de la figure \\@ref(fig:ArbreA)(a). 5 espèces sont présentes ($S=5$), leurs probabilités notées $p_1$ à $p_5$. Les noms des branches sont affichés.", echo=FALSE}
+```{r ArbreA5, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. 5 espèces sont présentes ($S=5$), leurs probabilités notées $p_1$ à $p_5$. Les noms des branches sont affichés.", echo=FALSE}
 knitr::include_graphics('images/ArbreA.png')
 ```
 
@@ -1139,7 +1139,7 @@ La moyenne généralisée se réduit à la moyenne arithmétique pondérée pour
 Elle donne un fort poids aux petites valeurs de $x_s$ dans la moyenne pour les faibles valeurs de $r$ (qui peuvent être négatives), et un fort poids aux grandes valeurs quand $r$ est grand (figure \@ref(fig:MoyenneHardyFig)).
 
 Le code R nécessaire pour réaliser la figure est:
-```{r MoyenneHardyCode, eval=FALSE, tidy=FALSE}
+```{r MoyenneHardyCode, eval=FALSE, size='tiny', tidy=FALSE}
 X <- runif(100)
 # La moyenne n'est pas définie à r=0, décalage de 10^-8
 r <- seq(-5, 10, .1) + 1E-8
@@ -1287,7 +1287,7 @@ Si une majorité des espèces (au sens de la somme de leurs probabilités respec
 Ce n'est pas un problème pour la comparaison de profils de diversité de communautés différentes calculés à partir de la même matrice de similarité mais l'interprétation de la diversité en termes de nombres effectifs d'espèces dépendant de $q$ n'est pas très intuitive.
 
 Le code R nécessaire pour réaliser la figure est:
-```{r LineaireZpsqCode, eval=FALSE}
+```{r LineaireZpsqCode, eval=FALSE, size='tiny'}
 r <- 0.5
 seqZp <- seq(0, 1, 0.001)
 ggplot(data.frame(r=seqZp, xr=seqZp^r), aes(r, xr)) +
@@ -1311,7 +1311,7 @@ Plus $u$ est grand, plus la transformation est convexe : les similarités sont t
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r EchelleCode, eval=FALSE, tidy=FALSE}
+```{r EchelleCode, eval=FALSE, size='tiny', tidy=FALSE}
 ggplot(data.frame(x = seq(0, 1, by = .01)), aes(x)) + 
   stat_function(fun = function(x) exp(-x)) +
   stat_function(fun = function(x) exp(-2*x), lty = 2) +
@@ -1426,7 +1426,7 @@ Dqz(Paracou618.MC$Ns, q=1, Z)
 
 ## Diversité phylogénétique
 
-```{r ArbreA6, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. Rappel de la figure \\@ref(fig:ArbreA)(a). 5 espèces sont présentes ($S=5$), leurs probabilités notées $p_1$ à $p_5$. Les noms des branches sont affichés.", echo=FALSE}
+```{r ArbreA6, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. 5 espèces sont présentes ($S=5$), leurs probabilités notées $p_1$ à $p_5$. Les noms des branches sont affichés.", echo=FALSE}
 knitr::include_graphics('images/ArbreA.png')
 ```
 
@@ -1448,7 +1448,7 @@ Matrice <- data.frame(
   b235 = c(0, 0, 0, 0, 0, 1, 0, 1, 1, 1)
 )
 names(Matrice) <- c("", "$(1;b_{1,1})$", "$(1;b_{3,1})$", "$(2;b_{1,2})$", "$(2;b_{3,1})$", "$(3;b_{1,3})$", "$(3;b_{2,3})$", "$(4;b_{1,4})$", "$(4;b_{2,3})$", "$(5;b_{1,5})$", "$(5;b_{2,3})$")
-knitr::kable(Matrice, caption="Matrice de similarité correspondant à l'arbre phylogénétique de la figure \\@ref(fig:figArbreA6). Les noms des lignes et colonnes sont les couples (espèce actuelle; branche ancestrale).", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
+knitr::kable(Matrice, caption="Matrice de similarité correspondant à l'arbre phylogénétique en exemple. Les noms des lignes et colonnes sont les couples (espèce actuelle; branche ancestrale).", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
   kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
 ```
 
@@ -1593,7 +1593,7 @@ Le profil de diversité se trouve en figure \@ref(fig:DqZLambdaFig).
 
 
 Code R pour la figure:
-```{r DqZLambdaCode, eval=FALSE}
+```{r DqZLambdaCode, eval=FALSE, size='tiny'}
 DqZLambda<- CommunityProfile(Diversity, Mu)
 Xlab <- "Ordre de diversité"
 Ylab <- "Diversité"
@@ -1636,7 +1636,7 @@ Les deux notions se confondent quand la diversité neutre est considérée: la b
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r ComparaisonDqCode, eval=FALSE}
+```{r ComparaisonDqCode, eval=FALSE, size='tiny'}
 q <- c(seq(0, 3, 0.1))
 # Réutilisation de Paracou618.Taxonomy au format phylog (cf. calcul de FAD)
 DistanceMatrix <- as.matrix(Tree$Wdist^2/2)

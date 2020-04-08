@@ -21,7 +21,7 @@ La diversité neutre est souvent appelée diversité taxonomique [@Devictor2010;
 Ce type de mesure n'a de sens qu'à l'intérieur d'un taxocène bien défini: sommer un nombre d'espèces d'insectes à un nombre d'espèces de mammifères a peu d'intérêt.
 Ces méthodes ne sont donc pas forcément les plus adaptées à la conservation: à grande échelle, des indicateurs de biodiversité [@Balmford2003] peuvent être plus pertinents. 
 D'autre part, les communautés sont considérées comme limitées, avec un nombre d'espèces fini: la courbe d'accumulation des espèces atteint donc théoriquement une asymptote quand l'effort d'inventaire est suffisant.
-Cette approche est opposée à celle, traitée dans les chapitres \@ref(#chap:Fisher) et suivants, qui considère que la diversité augmente indéfiniment avec la surface [@Williamson2001], que ce soit par changement d'échelle (élargir l'inventaire ajoute de nouvelles communautés) ou, plus théoriquement, parce que les communautés réelles sont considérées comme un tirage aléatoire parmi une infinités d'espèces [@Fisher1943].
+Cette approche est opposée à celle, traitée dans les chapitres \@ref(chap:Fisher) et suivants, qui considère que la diversité augmente indéfiniment avec la surface [@Williamson2001], que ce soit par changement d'échelle (élargir l'inventaire ajoute de nouvelles communautés) ou, plus théoriquement, parce que les communautés réelles sont considérées comme un tirage aléatoire parmi une infinités d'espèces [@Fisher1943].
 
 Les mesures présentées ici sont les plus utilisées: richesse, indices de Shannon et de Simpson, et l'indice de Hurlbert. 
 Elles sont sujettes à des biais d'estimation [@Mouillot1999], notamment (mais pas seulement) à cause des espèces non échantillonnées.
@@ -273,8 +273,8 @@ Ns <- rCommunity(1, size = N, NorP = Ps)
 
 L'échantillon est présenté en figure \@ref(fig:BiaisJack1Fig).
 
-Code de la figure \@ref(fig:BiaisJack1Fig):
-```{r BiaisJack1Code, eval=FALSE, size='small'}
+Code de la figure \@ref(fig:BiaisJack1Fig) :
+```{r BiaisJack1Code, eval=FALSE, size='tiny'}
 autoplot(Ns, Distribution="lnorm")
 ```
 
@@ -308,7 +308,7 @@ Bias <- sapply(n.seq, function(n) sum((1-Ps)^n))
 Le nombre d'espèces non observées, qui est le biais de l'estimateur de la richesse, est présenté en figure \@ref(fig:BiaisJack3Fig).
 
 Code de la figure \@ref(fig:BiaisJack3Fig):
-```{r BiaisJack3Code, eval=FALSE, tidy=FALSE}
+```{r BiaisJack3Code, eval=FALSE, tidy=FALSE, size='tiny'}
 ggplot(data.frame(n=n.seq, Biais=Bias, lm1=predict(lm1), 
         lm2=predict(lm2), lm4=predict(lm4)), aes(x=n)) +
   geom_line(aes(y=Biais), col="black", lty=1) +
@@ -500,7 +500,7 @@ Le taux de couverture de l'inventaire de BCI est très proche de 100\%, donc peu
 La courbe obtenue est en figure \@ref(fig:NonObserve).
 
 Le code R nécessaire pour réaliser la figure est:
-```{r NonObsN, eval=FALSE, tidy=FALSE}
+```{r NonObsN, eval=FALSE, tidy=FALSE, size='tiny'}
 # Nouvelles espèces en fonction du nombre de nouveaux individus
 Sprime <- function(Nprime) NonObs * (1 - (1 - (1 - C)/NonObs)^Nprime)
 ggplot(data.frame(x = c(1, 10000)), aes(x)) + 
@@ -533,7 +533,7 @@ veiledspec(mod.ll)
 ```
 
 Le code R nécessaire pour réaliser la figure est :
-```{r PrestonSansO2, eval=FALSE}
+```{r PrestonSansO2, eval=FALSE, size='tiny'}
 plot(mod.ll)
 ```
 
@@ -677,7 +677,7 @@ lm1 <- lm(y ~ x)
 On voit assez clairement que le modèle (figure \@ref(fig:LineweaverFig)) s'ajuste mal quand il est représenté sous cette forme [@Raaijmakers1987].
 
 Le code R nécessaire pour réaliser la figure est:
-```{r Lineweaver2, eval=FALSE, tidy = FALSE}
+```{r Lineweaver2, eval=FALSE, size='tiny', tidy = FALSE}
 ggplot(data.frame(x, y), aes(x, y)) + 
   geom_point() +
   stat_smooth(method = "lm", col = "red") +
@@ -1043,7 +1043,7 @@ L'indice de Shannon est concave (figure \@ref(fig:ShannonFig) donc son estimateu
 ```
 
 Code de la figure \@ref(fig:SARFig) :
-```{r ShannonCode, eval=FALSE, tidy=FALSE, size='small'}
+```{r ShannonCode, eval=FALSE, tidy=FALSE, size='tiny'}
 ggplot(data.frame(x = c(0.0001, 1)), aes(x)) + 
     stat_function(fun = function(x) -x*log(x)) +
     labs(x = "p", y = "H(p)")
@@ -1061,7 +1061,7 @@ Le biais de l'indice de Shannon est la somme des biais pour toutes les probabili
 ```
 
 Code de la figure \@ref(fig:ShannonBiaisfig):
-```{r ShannonBiaisCode, eval=FALSE, tidy=FALSE}
+```{r ShannonBiaisCode, eval=FALSE, size='tiny', tidy=FALSE}
 Biais.p <- function (p) {
     Ps <-rnorm(10000, p, 0.01)
     p * log(p) - mean(Ps * log(Ps))
@@ -1282,7 +1282,7 @@ Si $\mathbf{p}$ est la distribution des probabilité des espèces dans une commu
 Ces trois fonctions d'information sont représentées en figure \@ref(fig:IFig).
 
 Le code R nécessaire pour réaliser la figure est:
-```{r ICode, eval=FALSE}
+```{r ICode, eval=FALSE, size='tiny'}
 I0 <- function(p) (1-p)/p
 I1 <- function(p) -log(p)
 I2 <- function(p) 1-p
@@ -1302,7 +1302,7 @@ ggplot(data.frame(x=c(0, 1)), aes(x)) +
 La contribution de chaque espèce à la valeur totale de l'entropie est représentée figure \@ref(fig:EntropieFig).
 
 Code R:
-```{r EntropieCode, eval=FALSE}
+```{r EntropieCode, eval=FALSE, size='tiny'}
 H0 <- function(p) 1-p
 H1 <- function(p) -p*log(p)
 H2 <- function(p) p*(1-p)
@@ -1349,7 +1349,7 @@ En se limitant à la diversité $\alpha$, on peut remarquer que l'indice de Shan
 Les valeurs de chaque terme de la divergence sont représentées en figure \@ref(fig:KullbackLeiblerFig).
 
 Le code R nécessaire pour réaliser la figure est:
-```{r KullbackLeiblerCode, eval=FALSE, message=FALSE, fig.asp=1}
+```{r KullbackLeiblerCode, eval=FALSE, size='tiny', message=FALSE, fig.asp=1}
 p <- q <- seq(0.01, 1, .01)
 KB <- function(p, q) p*log(p/q)
 xyz <- t(outer(p, q, FUN = "KB"))
@@ -1461,7 +1461,7 @@ dont la forme est identique à la transformation de @Box1964 utilisée en statis
 Le logarithme déformé converge vers le logarithme naturel quand $q\to 1$ (figure \@ref(fig:lnqFig).
 
 Le code R nécessaire pour réaliser la figure est:
-```{r lnqCode, eval=FALSE, tidy=FALSE}
+```{r lnqCode, eval=FALSE, size='tiny', tidy=FALSE}
 ln0 <- function(p) lnq(p, 0)
 ln2 <- function(p) lnq(p, 2)
 lnm1 <- function(p) lnq(p, -1)
@@ -1610,7 +1610,7 @@ Si les courbes se croisent, il n'y a pas de relation d'ordre [@Tothmeresz1995].
   ```{r ProfilDivFig, echo=FALSE, results='hide', ref.label='ProfilDivCode', fig.cap="Profil de diversité calculé pour deux parcelles de Paracou (Parcelle 6: trait plein et Parcelle 18: trait pointillé). La correction du biais d'estimation est celle de Chao et Jost."}
 ```
 Code R pour réaliser la figure \@ref(fig:ProfilDivFig) :
-```{r ProfilDivCode, eval=FALSE, tidy=FALSE}
+```{r ProfilDivCode, eval=FALSE, size='tiny', tidy=FALSE}
 q.seq <- seq(0, 2, .1)
   P6D<- CommunityProfile(Diversity, Paracou618.MC$Nsi[, 1], q.seq)
   P18D<- CommunityProfile(Diversity, Paracou618.MC$Nsi[, 2], q.seq)
@@ -1629,7 +1629,7 @@ Le profil de la queue de distribution est construit en classant les espèces de 
 ```
 
 Code R :
-```{r ProfilQueueCode, eval=FALSE}
+```{r ProfilQueueCode, eval=FALSE, size='tiny'}
 # Elimination des espèces absentes des deux parcelles
   Psi <- as.data.frame(Paracou618.MC$Psi[Paracou618.MC$Ps>0,])
   Psi[,1] %<>% sort %>% cumsum %>% rev
@@ -2029,7 +2029,7 @@ S <- min(S6, S18)
 La diversité est donc estimée jusqu'à l'ordre 253.
 
 Code R pour réaliser la figure \@ref(fig:comProfilzeta) :
-```{r comProfilzetaCode, eval=FALSE, tidy=FALSE}
+```{r comProfilzetaCode, eval=FALSE, size='tiny', tidy=FALSE}
 # Profil P6
   library("EntropyEstimation")
   zeta6 <- CommunityProfile(GenSimpson, NsP6, 1:(S - 1))
@@ -2068,7 +2068,7 @@ En comparaison, la figure \@ref(fig:comProfilHCDT) montre les profils de diversi
 Ils se chevauchent pour les petits ordres de diversité, ce qui ne permet pas de conclure.
 
 Code R pour réaliser la figure :
-```{r comProfilHCDTCode, eval=FALSE, tidy=FALSE}
+```{r comProfilHCDTCode, eval=FALSE, size='tiny', tidy=FALSE}
 # Calcul des profils HCDT
   D6 <- CommunityProfile(Diversity, NsP6, NumberOfSimulations = 10,
   q.seq=q.seq, Correction = "UnveilJ")
@@ -2091,7 +2091,7 @@ Son intervalle de confiance ne contient jamais la valeur 0, ce qui permet de con
 ```
 
 Code R pour réaliser la figure:
-```{r zetaDiffCode, eval=FALSE, tidy=FALSE}
+```{r zetaDiffCode, eval=FALSE, size='tiny', tidy=FALSE}
 # Calcul de P18-P6 avec IC
   Difference <- list(x = zeta18$x, y = zeta18$y-zeta6$y)
   class(Difference) <- class(zeta18)
@@ -2318,7 +2318,7 @@ En revanche, la richesse peut être partitionnée de façon indépendante en div
 L'inéquitabilité $1/{^{q}\!E}$ (figure \@ref(fig:ProfilIneqFig)) est un nombre effectif d'espèces: c'est la richesse d'une communauté du même niveau d'équitabilité que la communauté réelle dans laquelle tous les individus (sauf un nombre négligeable) appartiendraient à une seule espèce.
 
 Code R pour la figure \@ref(fig:ProfilIneqFig):
-```{r ProfilIneqCode, eval=FALSE}
+```{r ProfilIneqCode, eval=FALSE, size='tiny'}
 # Estimation du nombre d'espèces
 Ns <- colSums(BCI)
 UBNs <- jackknife(AbdFreqCount(Ns), k=1)$Nhat
@@ -2354,14 +2354,14 @@ La solution la plus évidente consiste à corriger le mieux possible le biais d'
 \end{equation}
 
 
-```{r BCIEqFig, echo=FALSE, results='hide', ref.label='BCIEqCode', fig.cap="Profil d'équitabilité de BCI: représentation alternative de la figure \\@ref(fig:ProfilIneqFig). L'équitabilité est ici normalisée selon Jost."}
+```{r BCIEqFig, echo=FALSE, results='hide', ref.label='BCIEqCode', fig.cap="Profil d'équitabilité de BCI. L'équitabilité est ici normalisée selon Jost."}
 ```
 
 
-Un profil d'équitabilité calculé de cette façon est présenté en figure \@ref(fig:BCIEqFig).
+Un profil d'équitabilité calculé de cette façon est présenté en figure \@ref(fig:BCIEqFig), représentation alternative de la figure \@ref(fig:ProfilIneqFig).
 
 Code R supplémentaire :
-```{r BCIEqCode, eval=FALSE}
+```{r BCIEqCode, eval=FALSE, size='tiny'}
 Inq$y <- log(DivPrf$y)/log(UBNs)
   autoplot(Inq, xlab="Ordre de diversité", ylab="Indice de Pielou")
 ```
@@ -2415,7 +2415,7 @@ ggplot(data.frame(S, J2), aes(S, J2)) +
 
 
 Code R pour réaliser les figures:
-```{r SJLogNormaleHCode, eval=FALSE}
+```{r SJLogNormaleHCode, eval=FALSE, size='tiny'}
 # Communautés de 30 à 300 espèces
 S <- 30:300
 # Tirage de communautés log-normales de 10000 individus
@@ -2428,20 +2428,20 @@ ggplot(data.frame(S, H), aes(S, H)) +
   labs(y="S (échelle logarithmique)")
 ```
 
-```{r SJLogNormaleJCode, eval=FALSE}
+```{r SJLogNormaleJCode, eval=FALSE, size='tiny'}
 # Equitabilité de Pielou
 J <- H/log(S)
 ggplot(data.frame(S, J), aes(S, J)) +
   geom_point()
 ```
 
-```{r SJLogNormaleECode, eval=FALSE}
+```{r SJLogNormaleECode, eval=FALSE, size='tiny'}
 E <- sapply(rcl, Simpson)
 ggplot(data.frame(S, E), aes(S, E)) +
   geom_point()
 ```
 
-```{r SJLogNormaleJ2Code, eval=FALSE}
+```{r SJLogNormaleJ2Code, eval=FALSE, size='tiny'}
 J2 <- E/(1-1/S)
 ggplot(data.frame(S, J2), aes(S, J2)) +
   geom_point()
@@ -2475,7 +2475,7 @@ ggplot(data.frame(S, J2), aes(S, J2)) +
 
 
 Code R pour réaliser les figures:
-```{r NJLogNormaleHCode, eval=FALSE}
+```{r NJLogNormaleHCode, eval=FALSE, size='tiny'}
 # Communautés de taille 10 à 1000 individus; 300 sp.
 rmc <- MetaCommunity(sapply(10:1000, function(n) rCommunity(1, n)))
 # Richesse et Shannon
@@ -2485,18 +2485,18 @@ ggplot(data.frame(S, H), aes(S, H)) +
   geom_point() + scale_x_log10() + 
   labs(y="S (échelle logarithmique)")
 ```
-```{r NJLogNormaleJCode, eval=FALSE}
+```{r NJLogNormaleJCode, eval=FALSE, size='tiny'}
 # Equitabilité de Pielou
 J <- H/log(S)
 ggplot(data.frame(S, J), aes(S, J)) +
   geom_point()
 ```
-```{r NJLogNormaleECode, eval=FALSE}
+```{r NJLogNormaleECode, eval=FALSE, size='tiny'}
 E <- apply(rmc$Psi, 2, Simpson)
 ggplot(data.frame(S, E), aes(S, E)) +
   geom_point()
 ```
-```{r NJLogNormaleJ2Code, eval=FALSE}
+```{r NJLogNormaleJ2Code, eval=FALSE, size='tiny'}
 J2 <- E/(1-1/S)
 ggplot(data.frame(S, J2), aes(S, J2)) +
   geom_point()
