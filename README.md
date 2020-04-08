@@ -4,7 +4,7 @@
 
 Ouvrage de synthèse sur la mesure de la biodiversité.
 
-Cette version (GitBook et PDF) encore en cours d'écriture remplacera la version non accessible en ligne (https://github.com/EricMarcon/MesuresBioDiv/).
+Cette version (GitBook et PDF) encore en cours de correction remplacera la version non accessible en ligne (https://github.com/EricMarcon/MesuresBioDiv/).
 
 [Lire en ligne](https://EricMarcon.github.io/MesuresBioDiv2/) ou [télécharger](https://EricMarcon.github.io/MesuresBioDiv2/MesuresBD.pdf)
 

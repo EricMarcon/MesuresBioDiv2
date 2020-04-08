@@ -275,16 +275,23 @@ Ils suggèrent notamment de calculer la courbe de raréfaction (figure \@ref(fig
 La courbe de raréfaction est obtenue en sous-échantillonnant dans l'inventaire complet des effectifs de toutes tailles et en calculant le nombre moyen d'espèces trouvé pour chacun, ce qui permet de la lisser.
 La formulation exacte de la courbe de raréfaction et de sa variance est connue [@Ugland2003]. 
 
-```{r SACFig, fig.cap="Courbe d'accumulation des espèces d'arbres de Barro Colorado Island", fig.subcap=c("Calcul par `specaccum`: accumulation des 50 carrés avec permutations.", "Somme des entropies de Simpson généralisées."), out.width='.49\\linewidth', fig.asp=1, fig.ncol = 2, ref.label="SACCode"}
+```{r specaccumFig, fig.cap="Courbe d'accumulation des espèces d'arbres de Barro Colorado Island. Calcul par specaccum: accumulation des 50 carrés avec permutations.", ref.label="specaccumCode"}
 ```
 
-La fonction `specaccum` de la librairie *vegan* [@Oksanen2012] permet de tracer les SAC (figure \@ref(fig:SACFig)) selon différentes méthodes, avec un intervalle de confiance obtenu par permutation de l'ordre d'ajout des données ou à partir des formules de raréfaction.
+La fonction `specaccum` de la librairie *vegan* [@Oksanen2012] permet de tracer les SAC (figure \@ref(fig:specaccumFig)) selon différentes méthodes, avec un intervalle de confiance obtenu par permutation de l'ordre d'ajout des données ou à partir des formules de raréfaction.
+
+Le code R nécessaire pour réaliser la figure est:
+```{r specaccumCode, eval=FALSE}
+data(BCI)
+SAC <- specaccum(BCI, "random")
+plot(SAC, ci.type="poly", lwd=2, ci.lty=0, ci.col="lightgray")
+```
 
 Pour une surface donnée, le nombre d'individus est une variable aléatoire.
 Dans ce cas, la SAC (dépendant de la surface) est différente de la courbe de raréfaction (fonction du nombre d'individus) de Gotelli et Colwell, que @Coleman1981 nomme "courbe du collecteur ".
 
 La SAC théorique en fonction de la surface contient une incertitude concernant le nombre d'individus.
-Si la densité $\lambda_s$ (nombre d'individus par unité de surface) des espèces peut être connue (estimée en comptant les individus) ou si les probabilités $p_s$ sont issues d'un modèle (log-séries, log-normal...), le nombre d'individus observés de l'espèce $s$ suit une loi de Poisson d'espérance $A\hat{\lambda}_s$ ou, de façon équivalente [ @Pielou1969, pages 204-205,], $np_s$ (dans ce deuxième cas, $n$ est l'estimateur de $N$, la variable aléatoire correspondant à la taille de l'échantillon).
+Si la densité $\lambda_s$ (nombre d'individus par unité de surface) des espèces peut être connue (estimée en comptant les individus) ou si les probabilités $p_s$ sont issues d'un modèle (log-séries, log-normal...), le nombre d'individus observés de l'espèce $s$ suit une loi de Poisson d'espérance $A\hat{\lambda}_s$ ou, de façon équivalente [@Pielou1969, pages 204-205], $np_s$ (dans ce deuxième cas, $n$ est l'estimateur de $N$, la variable aléatoire correspondant à la taille de l'échantillon).
 
 La SAC théorique en fonction du nombre d'individus ne contient pas cet aléa.
 Le nombre d'individus de l'espèce $s$ suit alors une loi binomiale d'espérance $np_s$ et la distribution d'un échantillon de taille $n$ suit la loi multinomiale correspondante.
@@ -293,17 +300,17 @@ Les deux approches se réconcilient en fixant arbitrairement le nombre d'individ
 La SAC définie en fonction du nombre d'individus est au sens strict une succession de points (à chaque valeur de $n$), pas une courbe continue.
 Elle est toutefois toujours présentée comme une courbe lissée passant par les points pour être continue et dérivable.
 
+```{r SACzetaFig, fig.cap="Courbe d'accumulation des espèces d'arbres de Barro Colorado Island. Somme des entropies de Simpson généralisées.", ref.label="SACzetaCode"}
+```
+
 Une difficulté supplémentaire consiste à prendre en compte les espèces non échantillonnées en appliquant des techniques statistiques pour réduire le biais qu'elles induisent [@Colwell2012].
 Dans ce but, la SAC théorique peut être construite [@Chao2013] comme la somme des entropies de Simpson généralisées [@Zhang2010] (présentées en section \@ref(sec:SimpsonG)).
 
 La courbe obtenue (figure \@ref(fig:SACzetaFig)) est la même que par raréfaction, sans les problèmes d'estimation.
 Son intervalle de confiance n'est pas représenté: l'estimation est sans biais et a une variance très petite; d'autre part, la variabilité de l'échantillonnage prise en compte dans la figure \@ref(fig:specaccumFig) est ignorée ici. La fonction `GenSimp.z` est fournie par le package *EntropyEstimation* [@Cao2014].
 
-Le code R nécessaire pour réaliser la figure est:
-```{r specaccumCode, eval=FALSE}
-data(BCI)
-SAC <- specaccum(BCI, "random")
-plot(SAC, ci.type="poly", lwd=2, ci.lty=0, ci.col="lightgray")
+Code pour la figure:
+```{r SACzetaCode, eval=FALSE, tidy=FALSE}
 library("EntropyEstimation")
 data(BCI)
 Ns <- colSums(BCI)
@@ -317,7 +324,7 @@ ggplot(data.frame(x = 0:(sum(Ns)-1), y = c(0, SAC)), aes(x = x, y = y)) +
 
 ## Extrapolation {#sec:Extrapolation}
 
-L'extrapolation de la SAC est un cas particulier de celle de la diversité, déjà vue en section \@ref(sec:RarExtrapol), page~\@ref(sec:RarExtrapol).
+L'extrapolation de la SAC est un cas particulier de celle de la diversité, déjà vue en section \@ref(sec:RarExtrapol).
 
 @Beguinot2015 a une approche différente.
 Il considère la SAC comme une fonction continue et infiniment dérivable de la taille de l'échantillon.

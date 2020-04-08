@@ -625,7 +625,7 @@ Le résultat se trouve en figure \@ref(fig:SobLLorFig).
 L'estimation précédente utilise la méthode des moindres carrés, qui suppose l'indépendance des résidus, hypothèses évidemment violée par une courbe d'accumulation [@Colwell1994]. 
 L'estimation par le maximum de vraisemblance est plus convenable [@Raaijmakers1987].
 Elle utilise la totalité des points de la courbe d'accumulation.
-La courbe d'accumulation de BCI est présentée en figure \@ref(fig:SACFig).
+La courbe d'accumulation de BCI est présentée en figure \@ref(fig:specaccumFig).
 Ses données sont utilisées ici:
 
 ```{r Raaijmakers1}
@@ -1063,7 +1063,7 @@ Le biais de l'indice de Shannon est la somme des biais pour toutes les probabili
 ```{r ShannonBiaisFig, echo=FALSE, results='hide', message=FALSE, ref.label='ShannonBiaisCode',  fig.cap="Biais de $\\hat{p}_s \\ln\\hat{p}_s$ entre 0 et 1."}
 ```
 
-Code de la figure \@ref(fig:ShannonBiaisfig):
+Code de la figure \@ref(fig:ShannonBiaisFig):
 ```{r ShannonBiaisCode, eval=FALSE, tidy=FALSE}
 Biais.p <- function (p) {
     Ps <-rnorm(10000, p, 0.01)
