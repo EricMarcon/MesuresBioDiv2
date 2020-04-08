@@ -1,6 +1,6 @@
 # (PART) Diversité neutre d’une communauté {-}
 
-# Mesures neutres de la diversité $\alpha$ ou $\gamma$
+# Mesures neutres de la diversité $\alpha$ ou $\gamma$ {#chap:MesuresNeutres}
 
 ```{r, echo=FALSE, message=FALSE}
 library("tidyverse")
@@ -1158,7 +1158,7 @@ Appliqué à des données de biodiversité aquatique, l'estimateur de James-Stei
 
 
 
-## Indice de Hurlbert
+## Indice de Hurlbert {#sec:Hurlbert}
 
 ### Définition
 
@@ -2040,7 +2040,7 @@ Son nombre effectif d'espèces est
 
 L'existence d'un estimateur sans biais et d'un intervalle de confiance calculable analytiquement permet de comparer des profils de diversité de façon robuste quand l'échantillonnage est limité et la richesse élevée.
 
-La figure \@ref(fig:comProfilzeta) montre les profils de diversité (en nombre effectifs d'espèces) des deux parcelles 6 et 18 de Paracou: 1&nbsp;ha inventorié, respectivement 681 et 483 arbres, pour une richesse estimée à 254 et 309 espèces par les estimateurs jackknife d'ordres 2 et 3:
+La figure \@ref(fig:comProfilzetaFig) montre les profils de diversité (en nombre effectifs d'espèces) des deux parcelles 6 et 18 de Paracou: 1&nbsp;ha inventorié, respectivement 681 et 483 arbres, pour une richesse estimée à 254 et 309 espèces par les estimateurs jackknife d'ordres 2 et 3:
 ```{r Paracou618S}
 NsP6 <- as.AbdVector(Paracou618.MC$Nsi[, 1])
 (S6 <- Richness(NsP6, Correction="Jackknife"))

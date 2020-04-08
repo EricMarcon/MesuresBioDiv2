@@ -88,9 +88,7 @@ L'écart à l'indépendance implique que les distributions de probabilités sont
 Si les colonnes sont les classes de diamètre par exemple, les informations fournies par la décomposition de la diversité sont nombreuses:
 
 * Les diversités des colonnes sont les classiques diversités spécifiques, par classe de diamètre ($\alpha$), globale ($\gamma$), et inter-classes ($\beta$);
-
 * La diversité des lignes renseigne sur l'homogénéité des diamètres de chaque espèce et globalement;
-
 * La diversité jointe est le nombre effectif de catégories (espèces $\times$ classes de diamètre) de la communauté.
 
 
@@ -99,13 +97,15 @@ Si les colonnes sont les classes de diamètre par exemple, les informations four
 @Baez2011 généralisent la récursivité à l'entropie HCDT et montrent que
 
 \begin{equation}
-^{q}\!H\left(\{p_{s,i}\}\right)-^{q}\!H\left(\{p_i\}\right) 
-= \sum_i{{p_i^q} ^{q}\!H\left(\{\frac{p_{s,i}}{p_i}\}\right)}
+  (\#eq:Baez2011a)
+  ^{q}\!H\left(\{p_{s,i}\}\right)-^{q}\!H\left(\{p_i\}\right) 
+  = \sum_i{{p_i^q} ^{q}\!H\left(\{\frac{p_{s,i}}{p_i}\}\right)}
 \end{equation}
 et
 \begin{equation}
-^{q}\!H\left(\{p_{s,i}\}\right)-^{q}\!H\left(\{p_s\}\right) 
-= \sum_s{{p_s^q} ^{q}\!H\left(\{\frac{p_{s,i}}{p_s}\}\right)}.
+  (\#eq:Baez2011b)
+  ^{q}\!H\left(\{p_{s,i}\}\right)-^{q}\!H\left(\{p_s\}\right) 
+  = \sum_s{{p_s^q} ^{q}\!H\left(\{\frac{p_{s,i}}{p_s}\}\right)}.
 \end{equation}
 
 Ce résultat avait déjà été obtenu par @Suyari2004, corrigé par @Ilic2013.
@@ -192,7 +192,7 @@ MC1 <- MetaCommunity(df1)
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r Repartition1Code, eval=FALSE, size='footnotesize'}
+```{r Repartition1Code, eval=FALSE}
 plot(MC1)
 ```
 
@@ -212,7 +212,7 @@ MC2 <- MetaCommunity(df2)
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r Repartition2Code, eval=FALSE, size='footnotesize'}
+```{r Repartition2Code, eval=FALSE}
 plot(MC2)
 ```
 
@@ -266,7 +266,7 @@ MC <- MetaCommunity(df3)
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r DifferentiationCode, eval=FALSE, size='footnotesize'}
+```{r DifferentiationCode, eval=FALSE}
 plot(MC)
 ```
 

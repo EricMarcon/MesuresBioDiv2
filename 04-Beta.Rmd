@@ -121,7 +121,6 @@ Les éléments du débat sont présentés ici.
 Toutes ont en commun:
 
 * Une définition de la mesure de diversité, appliquée à la diversité $\gamma$, qui est généralement une des mesures vues dans le chapitre \@ref(chap:MesuresNeutres);
-
 * Une définition de la diversité $\alpha$, qui peut être par exemple:
     * La diversité locale mesurée dans chaque communauté, indépendamment de toute référence hors de la communauté;
     * De façon équivalente, le nombre d'espèces effectives dans les communautés.
@@ -144,7 +143,7 @@ De cette façon, il est possible de définir une diversité totale égale à la 
 Il note que "la partition serait plus facilement interprétable si les différentes composantes de la diversité pouvaient être exprimés au moyen de la même formule" (ce qui n'est en fait jamais le cas). 
 Une revue sur les avantages de la décomposition additive est proposée par @Veech2002.
 
-Un débat assez stérile a découlé de l'opposition entre les deux approches, principalement dû à la transformation logarithmique [@Ricotta2005a], à des définitions imprécises et des démonstrations empiriques remises en question [@Baselga2010a, Veech2010a]. 
+Un débat assez stérile a découlé de l'opposition entre les deux approches, principalement dû à la transformation logarithmique [@Ricotta2005a], à des définitions imprécises et des démonstrations empiriques remises en question [@Baselga2010a; @Veech2010a]. 
 Il reste que la décomposition multiplicative permet seule la définition de la diversité $\beta$ en tant que diversité au sens strict [@Chao2012a].
 
 
@@ -305,7 +304,7 @@ La distribution des valeurs de l'indice de Jaccard $S_3=1-D_3^2$ est en figure \
 Le mode est proche de 0,5: la moitié des espèces sont communes entre deux carrés.
 
 Code R pour la figure:
-```{r JaccardCode, eval=FALSE, size='footnotesize'}
+```{r JaccardCode, eval=FALSE}
 ggplot(data.frame(Jaccard=as.numeric(1-DistJaccard^2))) +
   geom_density(aes(x=Jaccard))
 ```
@@ -395,7 +394,7 @@ La distribution des valeurs de l'indice corrigé se trouve en figure \@ref(fig:C
 La majorité des paires de carrés a une similarité supérieure à 0,8 après correction.
 
 Code R pour la figure:
-```{r ChaoJaccardCode, eval=FALSE, size='footnotesize', tidy=FALSE}
+```{r ChaoJaccardCode, eval=FALSE, tidy=FALSE}
 ggplot(data.frame(ChaoJaccard = as.numeric(ChaoJaccard))) +
   geom_density(aes(x=ChaoJaccard))
 ```
@@ -424,7 +423,7 @@ Les distances entre les points sont les valeurs de $\sqrt{D_3}$, projetées sur 
 La matrice de distances n'est pas euclidienne à cause des approximations de l'estimation mais les conséquences sont faibles sur les premiers axes.
 
 Code R pour la figure:
-```{r JaccardPCOCode, eval=FALSE, size='footnotesize'}
+```{r JaccardPCOCode, eval=FALSE}
 scatter(PcoChaoJaccard, posieig = "bottomright")
 ```
 
@@ -524,7 +523,7 @@ Ces mesures de dissimilarité sont généralisées au-delà de deux communautés
 
 Le premier terme de la somme est le terme lié à la substitution et le second celui lié à l'emboîtement.
 
-```{r Podani2011, fig.cap="Triangle du simplex Similarité-Substitution-Emboîtement. (a) Similarité, emboîtement et substitution somment à 1 donc les trois composantes peuvent être représentées dans un triangle et combinées deux à deux. La dissimilarité est par exemple représentée par la proximité au côté gauche du triangle, somme de l'emboîtement et de la substitution (ses sommets adjacents) et complément à 1 de la dissimilarité (le sommet opposé). (b) Les formules de calcul dont données pour la similarité de Jaccard. Avec ces notations classiques, $a$ est le nombre d'espèces communes $s_{1,1}$, $b$ et $c$ sont les espèces propres à chaque communauté, $s_{0,1}$ et $s_{1,0}$, et $n$ est le nombre total d'espèces $a+b+c$.", echo=FALSE}
+```{r Podani2011, fig.cap="Triangle du simplex Similarité-Substitution-Emboîtement. (a) Similarité, emboîtement et substitution somment à 1 donc les trois composantes peuvent être représentées dans un triangle et combinées deux à deux. La dissimilarité est par exemple représentée par la proximité au côté gauche du triangle, somme de l'emboîtement et de la substitution (ses sommets adjacents) et complément à 1 de la dissimilarité (le sommet opposé). (b) Les formules de calcul dont données pour la similarité de Jaccard. Avec ces notations classiques, $a$ est le nombre d'espèces communes $s_{1,1}$, $b$ et $c$ sont les espèces propres à chaque communauté, $s_{0,1}$ et $s_{1,0}$, et $n$ est le nombre total d'espèces $a+b+c$.", echo=FALSE, out.width='100%'}
 knitr::include_graphics('images/Podani2011.png')
 ```
 
@@ -609,7 +608,7 @@ redécouvert et nommé *COMDISTNN* par @Webb2008.
 ### Similarité moyenne entre individus
 
 @Pavoine2014b définissent une famille de similarités entre communautés construite à partir de la similarité moyenne entre les paires d'individus de chaque communauté et les paires intercommunautaires. 
-Une matrice de similarité $\mathbf{Z}$ est définie entre les paires d'espèces: $z_{s,t}$ est la similarité entre l'espèce $s$ et l'espèce $t$, comprise entre 0 et 1 de la même façon que pour le calcul de la diversité $^q\!D^{\mathbf{Z}}$ (Section \@ref(sec:LeinsterCobbold)). 
+Une matrice de similarité $\mathbf{Z}$ est définie entre les paires d'espèces: $z_{s,t}$ est la similarité entre l'espèce $s$ et l'espèce $t$, comprise entre 0 et 1 de la même façon que pour le calcul de la diversité $^q\!D^{\mathbf{Z}}$ (chapitre \@ref(chap:LeinsterCobbold)). 
 La matrice $\mathbf{Z}$ doit de plus être semi-définie positive, ce qui implique que $\sqrt{1-\mathbf{Z}}$ est euclidienne: de cette façon, les espèces peuvent être représentées graphiquement par une PCoA. 
 Les fréquences des espèces dans les deux communautés sont $\mathbf{p}$ et $\mathbf{q}$. 
 La similarité moyenne dans chaque communauté est $\sum_{s,t}{p_s p_t z_{s,t}}$ et $\sum_{s,t}{q_s q_t z_{s,t}}$. 
@@ -628,7 +627,7 @@ Dans ce dernier cas, et  si $\mathbf{Z}$ est la matrice identité $\mathbf{I}$ (
 La généralisation de l'indice de Jaccard aux données d'abondances est
 
 \begin{equation}
-  (\#eq:Jaccard)
+  (\#eq:JaccardAbd)
   S_{\mathit{Jaccard}} = \frac{\sum_{s,t}{p_s q_t z_{s,t}}}{\sum_{s,t}{p_s p_t z_{s,t}} + \sum_{s,t}{q_s q_t z_{s,t}} - \sum_{s,t}{p_s q_t z_{s,t}}}.
 \end{equation}
 
@@ -694,7 +693,7 @@ Cette "définition" est valide puisque cette distance est la composante inter de
 L'ACP non centrée des 50 carrés de BCI est en figure \@ref(fig:BCIPCAFig).
 
 Code R pour la figure:
-```{r BCIPCACode, eval=FALSE, size='footnotesize'}
+```{r BCIPCACode, eval=FALSE}
 pcaBCI <- dudi.pca(BCI/rowSums(BCI), scannf = FALSE, nf = 2, center = FALSE, scale = FALSE)
   scatter(pcaBCI, posieig = "bottomleft")
 ```
@@ -706,7 +705,7 @@ pcaBCI <- dudi.pca(BCI/rowSums(BCI), scannf = FALSE, nf = 2, center = FALSE, sca
 L'ACP centrée (mais non réduite, figure \@ref(fig:BCIPCA2Fig)) permet de mieux représenter la diversité $\beta$ : la distance de chaque carré au centre du repère est sa contribution.
 
 Code R:
-```{r BCIPCA2Code, eval=FALSE, size='footnotesize'}
+```{r BCIPCA2Code, eval=FALSE}
 pcaBCI <- dudi.pca(BCI/rowSums(BCI), scannf = FALSE, nf = 2, center = TRUE, scale = FALSE)
   scatter(pcaBCI, clab.col = 0)
 ```
@@ -765,7 +764,7 @@ La diversité $\beta$ de BCI (figure \@ref(fig:BCIPCA2Fig)) est mieux représent
 La limite de la méthode est que l'origine du repère ne représente plus ici la méta-communauté: sa position correspond à la moyenne des probabilités des espèces transformées, $y_{s|i}$, pas à celle des $p_{s|i}$.
 
 Code R:
-```{r BCICordeCode, eval=FALSE, size='footnotesize'}
+```{r BCICordeCode, eval=FALSE}
 library("adespatial")
 dCorde <- dist.ldc(BCI, method = "chord")
 pcoaBCI <- dudi.pco(dCorde, scannf = FALSE, nf = 2)
@@ -959,9 +958,7 @@ La décomposition additive de l'entropie selon @Lande1996 doit être la suivante
 @Bourguignon1979 comme @Lande1996 définissent une mesure d'inégalité décomposable comme respectant les propriétés suivantes:
 
 * La population totale étant partitionnée, chaque partition recevant un poids $w_i$, la composante intra-groupe de la mesure $H_{\alpha}$ est égale à la somme pondérée des mesures dans chaque-groupe $H_{\alpha}=\sum_i{w_i {_{i}\!H_{\alpha}}}$;
-
 * La composante intergroupe $H_{\beta}$ est la mesure d'inégalité entre les groupes;
-
 * La mesure totale $H_{\gamma}$ est la somme des mesures intra et intergroupes.
 
 En passant par les nombres de Hill, @Jost2007 montre que l'indice de Shannon est le seul pouvant être décomposé de cette façon. 
@@ -1048,9 +1045,9 @@ $^{0}\!D_{\beta}$ peut être supérieur au nombre de communautés [@Chao2012a] s
 La pondération de Jost donne pour le nombre d'espèces le même poids à toutes les communautés et garantit $^{0}\!D_{\beta}\le I$, ce qui constitue pour Chao et al. un argument en faveur de son utilisation. 
 Un contre-argumentaire est fourni par @Marcon2014a.
 Quel que soit la distribution des poids des communautés, il est toujours possible de ramener les données à un ensemble de communautés de poids identiques, dont certaines sont répétées.
-La communauté dont le poids $w_{min}$ est le plus faible est représentée une seule fois, les autres $\frac{w_i}{w_{min}}$ fois.
+La communauté dont le poids $w_{min}$ est le plus faible est représentée une seule fois, les autres ${w_i}/{w_{min}}$ fois.
 L'indépendance entre les diversités $\alpha$ et $\beta$ est donc bien vérifiée.
-Le diversité $\beta$ maximale théorique est $\frac{1}{w_{min}}$ (et non $I$).
+Le diversité $\beta$ maximale théorique est ${1}/{w_{min}}$ (et non $I$).
 Elle n'est pas atteinte parce que plusieurs communautés sont identiques.
 
 La définition de la diversité $\beta$ par @Whittaker1960 s'appliquait aux données de présence-absence. 
@@ -1195,7 +1192,7 @@ disc(effectifs[names(phyf$leaves), ], phyf$Wdist)
 ```
 
 Une interprétation géométrique de la décomposition est la suivante [@Pavoine2004].
-Les espèces peuvent être placées dans un espace multidimensionnel construit par une Analyse en Coordonnées Principales [@Gower1966] de la matrice de dissimilarité $\mathbf{D}$ telle que $\mathbf{\Delta}=\dfrac{\mathbf{D}^{\circ2}}{2}$ (les distances dans l'espace multidimensionnel sont $\sqrt{2\delta_{s's""}}$; autrement dit: la dissimilarité entre deux espèces est la moitié du carré de la distance entre elles dans la représentation géométrique).
+Les espèces peuvent être placées dans un espace multidimensionnel construit par une Analyse en Coordonnées Principales [@Gower1966] de la matrice de dissimilarité $\mathbf{D}$ telle que $\mathbf{\Delta}={\mathbf{D}^{\circ2}}/{2}$ (les distances dans l'espace multidimensionnel sont $\sqrt{2\delta_{s's""}}$; autrement dit: la dissimilarité entre deux espèces est la moitié du carré de la distance entre elles dans la représentation géométrique).
 Chaque communauté se trouve au centre de gravité des espèces qu'elle contient, pondérées par leur fréquence.
 La moitié du carré de la distance entre deux communautés dans ce même espace est le coefficient de dissimilarité entre communautés de Rao.
 La distance entre communautés est donc interprétable directement comme une mesure de diversité $\beta$ [@Ricotta2015], dans la tradition de l'utilisation de la dissimilarité entre paires de communautés (chapitre \@ref(chap:BetaPaires)).
@@ -1255,13 +1252,13 @@ Pour une taille d'échantillon fixée (par exemple un hectare de forêt), la div
 Cette variabilité dépend de l'échelle de l'échantillonnage dans le sens où elle diminue si les échantillons sont de taille plus grande: l'entropie $\alpha$ de deux hectares de forêts est la diversité $\alpha$ moyenne de chacun des deux hectares plus l'entropie $\beta$ entre eux. 
 L'entropie $\beta$ entre les échantillons de deux hectares est donc diminuée de cette entropie $\beta$ "intra" qui est absorbée par la nouvelle entropie $\alpha$ quand la taille des échantillons augmente.
 
-```{r BetaSampleFig1, echo=FALSE, results='hide', message=FALSE, ref.label='BetaSampleCode1', fig.cap="Estimation de la diversité $\\beta$ entre carrés de BCI. La diversité est calculée à partir du nombre de carrés en abscisse, de 2 à 30, tirés aléatoirement. La valeur en ordonnée est la diversité d'ordre 2 moyenne sur 100 tirages, les barres représentent l'écart-type. Aux erreurs d'estimation près, la valeur de la diversité $\\beta$ ne dépend pas du nombre de carrés."}
+```{r BetaSampleFig, echo=FALSE, results='hide', message=FALSE, ref.label='BetaSampleCode', fig.cap="Estimation de la diversité $\\beta$ entre carrés de BCI. La diversité est calculée à partir du nombre de carrés en abscisse, de 2 à 30, tirés aléatoirement. La valeur en ordonnée est la diversité d'ordre 2 moyenne sur 100 tirages, les barres représentent l'écart-type. Aux erreurs d'estimation près, la valeur de la diversité $\\beta$ ne dépend pas du nombre de carrés."}
 ```
 
 La figure \@ref(fig:BetaSampleFig) présente les valeurs estimées de diversité neutre $\beta$ entre carrés de BCI tirés aléatoirement, en fonction du nombre de carrés.
 
 Code pour réaliser la figure:
-```{r BetaSampleCode1, eval=FALSE, size='footnotesize', tidy=FALSE}
+```{r BetaSampleCode, eval=FALSE, tidy=FALSE}
 library("gplots")
 MC <- MetaCommunity(as.data.frame(t(BCI)))
 
@@ -1386,7 +1383,7 @@ La diversité $\gamma$ (rectangles de hauteur 1) est égale au produit des diver
 Si les communautés étaient de même poids et complètement différentes, c'est à dire contenant des espèces totalement dissimilaires entre communautés [@Pavoine2015a], la hauteur du rectangle serait égale à leur nombre (2 ici).
 
 Code pour réaliser la figure:
-```{r DivPartCode, eval=FALSE, size='footnotesize', tidy=FALSE}
+```{r DivPartCode, eval=FALSE, tidy=FALSE}
 q <- 1
 Neutre <- DivPart(q, Paracou618.MC, Biased = FALSE)
 plot(c(0, Neutre$GammaDiversity), c(0, Paracou618.MC$Ncommunities),
@@ -1514,13 +1511,13 @@ L'intervalle de confiance de l'estimateur de $H_{\beta}$ [@Marcon2014a] peut êt
 
 Si l'intervalle de confiance ne contient pas 0, l'égalité des distributions est rejetée.
 
-```{r DivestFig, echo=FALSE, results='hide', ref.label='DivestCode', fig.cap="Estimation de la diversité de la méta-communauté `Paracou618`."}
+```{r DivestFig, echo=FALSE, results='hide', ref.label='DivestCode', out.width='100%', fig.cap="Estimation de la diversité de la méta-communauté `Paracou618`."}
 ```
 
 Calcul sous R: la fonction `DivEst` produit un graphique avec l'intervalle de confiance (figure \@ref(fig:DivestFig)).
 
 Code R:
-```{r DivestCode, eval=FALSE, size='footnotesize'}
+```{r DivestCode, eval=FALSE}
 de <- DivEst(q = 1, Paracou618.MC, Simulations = 1000)
 plot(de)
 ```

@@ -2,53 +2,67 @@
 title: "Mesures de la Biodiversité"
 author: "Eric Marcon"
 date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
-always_allow_html: yes
-description: "Modèle de livre écrit avec bookdown."
+biblio-style: authoryear-ibid
+bibliography: library.bib
+cite-style: verbose-inote
+classoption:
+- extrafontsizes
+- onecolumn
+- openright
+colorlinks: yes
+biblatexoptions:
+- backend=biber
+- citestyle=verbose-inote
+- pageref=true
+- isbn=false
+- backref=true
+- giveninits=true
+- uniquename=init
+- maxcitenames=2
+- maxbibnames=150
+- sorting=nyt
+- sortcites=false
+description: Mesures de la Biodiversité.
+documentclass: memoir
+fig_crop: yes
+fontsize: 11pt
+fourthpagefontsize: normalsize
+graphics: yes
+lang: fr
+link-citations: yes
 maintitlepage:
   epigraph: |
     Ce document est réalisé de façon dynamique et reproductible grâce à:
-
     \begin{itemize}
       \item \LaTeX, dans sa distribution Miktex (\url{http://miktex.org/}) et la classe memoir (\url{http://www.ctan.org/pkg/memoir}).
       \item R (\url{http://www.r-project.org/}) et RStudio (\url{http://www.rstudio.com/})
       \item bookdown (\url{http://bookdown.org/})
     \end{itemize}
-documentclass: memoir
-classoption:
-  - extrafontsizes
-  - onecolumn
-  - openright
+otherlangs:
+- en-US
+- en-GB
+- fr
 papersize: A4
-fontsize: 11pt
+resume: "La biodiversité peut être mesurée de nombreuses façons. \nLa dualité entropie-diversité
+  fournit un cadre clair et rigoureux pour le faire. L’entropie est la surprise moyenne
+  fournie par les individus d’une communauté. Le choix de la fonction d’information
+  qui mesure cette surprise à partir des probabilités d’occurence des espèces (ou
+  d’autres catégories) permet de définir les mesures de diversités neutres, fonctionnelles
+  ou phylogénétique présentées ici. \nL’entropie est transformée en diversité au sens
+  strict par une fonction croissante (l’exponentielle déformée), ce qui simplifie
+  son interprétation en tant que nombre équivalent d’espèces. L’entropie phylogénétique
+  généralise les indices de diversité classique, intègre si nécessaire la distance
+  entre espèces, peut être écomposée et corrigée des biais d’estimation. Sa transformation
+  un nombre équivalent d’espèces et un nombre équivalent de communautés. La diversité
+  de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet
+  d’autres définitions de la distance entre espèces. Le paramétrage des mesures (l’ordre
+  de la diversité) permet de donner plus ou moins d’importance aux espèces rares et
+  de tracer des profils de diversité. \nLa construction de ce cadre méthodologique
+  est présentée en détail ainsi que plusieurs approches différentes, qui constituent
+  l'état de l'art de la mesure de la biodiversité. \n"
+site: bookdown::bookdown_site
+always_allow_html: yes
 toc-depth: 3
-lang: fr
-otherlangs: [en-US, en-GB, fr]
-bibliography: library.bib
-biblio-style: authoryear-ibid
-cite-style: verbose-inote
-biblatexoptions:
-  - backend=biber
-  - citestyle=verbose-inote
-  - pageref=true
-  - isbn=false
-  - backref=true
-  - giveninits=true
-  - uniquename=init
-  - maxcitenames=2
-  - maxbibnames=150
-  - sorting=nyt
-  - sortcites=false
-link-citations: yes
-colorlinks: yes
-graphics: yes
-fig_crop: yes
-resume: |
-  La biodiversité peut être mesurée de nombreuses façons. 
-  La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire. L’entropie est la surprise moyenne fournie par les individus d’une communauté. Le choix de la fonction d’information qui mesure cette surprise à partir des probabilités d’occurence des espèces (ou d’autres catégories) permet de définir les mesures de diversités neutres, fonctionnelles ou phylogénétique présentées ici. 
-  L’entropie est transformée en diversité au sens strict par une fonction croissante (l’exponentielle déformée), ce qui simplifie son interprétation en tant que nombre équivalent d’espèces. L’entropie phylogénétique généralise les indices de diversité classique, intègre si nécessaire la distance entre espèces, peut être écomposée et corrigée des biais d’estimation. Sa transformation en diversité au sens strict permet d’interpréter les valeurs sous une forme unique: un nombre équivalent d’espèces et un nombre équivalent de communautés. La diversité de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet d’autres définitions de la distance entre espèces. Le paramétrage des mesures (l’ordre de la diversité) permet de donner plus ou moins d’importance aux espèces rares et de tracer des profils de diversité. 
-  La construction de ce cadre méthodologique est présentée en détail ainsi que plusieurs approches différentes, qui constituent l'état de l'art de la mesure de la biodiversité. 
-fourthpagefontsize: normalsize
 ---
 
 <!-- Commande nécessaire pour la copie de l'icône "Essentiel" en HTML--> 
@@ -80,7 +94,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 Packages <- c("bookdown", "kableExtra", "knitr", "rmarkdown", 
               "tidyverse", "magrittr", "devtools",
               "ade4", "adespatial", "devtools", "entropart", "entropy", "EntropyEstimation", 
-              "gplots", "GoFKernel", "iNEXT", "knitr", "sp", "SPECIES", "untb", "vegan")
+              "gplots", "GoFKernel", "gridExtra", "iNEXT", "knitr", "sp", "SPECIES", "untb", "vegan")
 if (!"SpatDiv" %in% installed.packages()[, 1]) {
   devtools::install_github("EricMarcon/SpatDiv")
 }
@@ -89,7 +103,7 @@ if (!"SpatDiv" %in% installed.packages()[, 1]) {
 knitr::opts_chunk$set(
   cache=TRUE, warning=FALSE, 
   fig.env='SCfigure', fig.asp=.75, fig.align='center', out.width='80%', 
-  tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=60),
+  tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=60), size="scriptsize",
   knitr.graphics.auto_pdf = TRUE)
 
 # ggplot style
@@ -99,6 +113,7 @@ theme_update(panel.background = element_rect(fill = "transparent", colour = NA),
              plot.background = element_rect(fill = "transparent", colour = NA))
 knitr::opts_chunk$set(dev.args=list(bg="transparent"))
 ```
+
 
 
 # Notations {-}

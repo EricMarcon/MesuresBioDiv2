@@ -71,7 +71,7 @@ Plus le paramètre de forme $k$ est proche de 0, plus la décroissance des proba
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r gammaCode, eval=FALSE, size='footnotesize', tidy=FALSE}
+```{r gammaCode, eval=FALSE, tidy=FALSE}
 library("GoFKernel")
 k <- 0.2
 p <- 100
@@ -91,7 +91,7 @@ La probabilité qu'une espèce soit représentée par $\nu$ individus, notée ${
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r nbinCode, eval=FALSE, size='footnotesize', tidy=FALSE}
+```{r nbinCode, eval=FALSE, tidy=FALSE}
 nbin <- rnbinom(10000, size = k, prob = 1/(p+1))
 ggplot(data.frame(nbin), aes(x = nbin, y = ..prop..)) + 
   geom_bar(width = 1, color = "black", fill = "white") +
@@ -235,7 +235,7 @@ La SAC correspondante est tracée en figure \@ref(fig:KemptonQFig).
 ```
 
 Code R pour réaliser la figure:
-```{r KemptonQCode, eval=FALSE, size='footnotesize', tidy=FALSE}
+```{r KemptonQCode, eval=FALSE, tidy=FALSE}
 ggplot(data.frame(x = log(1:ncol(Inventaire)), y = nEspeces)) +
   geom_line(aes(x = x, y = y)) +
   geom_vline(xintercept = log(nq1), lty = 3) +
@@ -300,7 +300,7 @@ La courbe obtenue (figure \@ref(fig:SACzetaFig)) est la même que par raréfacti
 Son intervalle de confiance n'est pas représenté: l'estimation est sans biais et a une variance très petite; d'autre part, la variabilité de l'échantillonnage prise en compte dans la figure \@ref(fig:specaccumFig) est ignorée ici. La fonction `GenSimp.z` est fournie par le package *EntropyEstimation* [@Cao2014].
 
 Le code R nécessaire pour réaliser la figure est:
-```{r specaccumCode, eval=FALSE, size='footnotesize'}
+```{r specaccumCode, eval=FALSE}
 data(BCI)
 SAC <- specaccum(BCI, "random")
 plot(SAC, ci.type="poly", lwd=2, ci.lty=0, ci.col="lightgray")
@@ -417,7 +417,7 @@ La figure \@ref(fig:Beguinot2015Fig) montre que les extrapolations sont bonnes e
 La distribution des 500 simulations d'extrapolation est proche de celle des 500 inventaires, avec une plus grande variabilité due à la quantiité plus faible de données disponibles.
 
 Le code R nécessaire pour réaliser la figure est:
-```{r Beguinot2015Code, eval=FALSE, size='footnotesize', tidy=FALSE}
+```{r Beguinot2015Code, eval=FALSE, tidy=FALSE}
 Xlab <- "Nombre d'espèces"
 Ylab <- "Densité de probabilité"
 ggplot(data.frame(richCommunities, eB, ei, eS)) +
@@ -495,7 +495,7 @@ Avec un inventaire de 5000 individus dans cet exemple, l'estimation de la riches
 En limitant l'inventaire à 1000 individus, l'information disponible est trop limitée.
 
 Le code R nécessaire pour réaliser la figure est:
-```{r Beguinot2015aCode, eval=FALSE, size='footnotesize', tidy=FALSE}
+```{r Beguinot2015aCode, eval=FALSE, tidy=FALSE}
 ggplot() +
   geom_ribbon(aes(x, ymin = Min, ymax = Max), 
               data.frame(x = n:Nmax, Min, Max), alpha = 0.3) +
