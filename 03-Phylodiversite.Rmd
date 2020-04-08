@@ -121,7 +121,7 @@ Un arbre consensus [@Felsenstein2004] est souvent plus proche de la matrice de d
 Un dendrogramme fonctionnel n'a pas d'interprétation aussi claire qu'un arbre phylogénétique qui représente le processus de l'évolution. 
 Il peut être interprété comme la représentation à des échelles de plus en plus grossières en allant vers le haut de l'arbre de regroupements fonctionnels dans des niches de plus en plus vastes.
 
-La transformation d'une matrice (non ultramétrique) en dendrogramme déforme la topologie des espèces [@Pavoine2005a; @Podani2007] : une mesure de diversité qui utilise directement la matrice est préférable, c'est un intérêt de la  diversité de Leinster et Cobbold (voir section \@ref(sec:LeinsterCobbold)).
+La transformation d'une matrice (non ultramétrique) en dendrogramme déforme la topologie des espèces [@Pavoine2005a; @Podani2007]: une mesure de diversité qui utilise directement la matrice est préférable, c'est un intérêt de la  diversité de Leinster et Cobbold (voir section \@ref(sec:LeinsterCobbold)).
 @Maire2015 ont défini une mesure de qualité d'un espace fonctionnel, *mSD*, comme l'écart quadratique moyen entre les distances fonctionnelles entre espèces dans l'espace utilisé (par exemple les distances cophénétiques dans un dendrogramme fonctionnel) et les distances originales (dans la matrice de distance à partir de laquelle l'arbre a été obtenu).
 Dans la matrice originale, les valeurs de traits sont centrées et réduites, et la hauteur du dendrogramme est fixée pour que la distance cophénétique maximale soit égale à la distance originale maximale.
 
@@ -154,7 +154,7 @@ La richesse est l'accumulation de classes différentes dans les mesures classiqu
 Dans un arbre phylogénétique, la longueur des branches représente un temps d'évolution: la richesse en est la somme. 
 FD et PD sont des mesures de richesse.
 
-```{r Pavoine2011, fig.cap="Régularité contre irrégularité. Les arbres de A à D sont de plus en plus irréguliers. L'arbre A, parfaitement régulier, est le cadre des mesures classiques de la diversité. La phylogénie étant donnée, trois vecteurs d'abondance (P1 à P3) sont de moins en moins réguliers : dans les cas C et D, la régularité maximale n'est pas obtenue pour des effectifs identiques, mais en augmentant les effectifs des espèces originales. ", echo=FALSE}
+```{r Pavoine2011, fig.cap="Régularité contre irrégularité. Les arbres de A à D sont de plus en plus irréguliers. L'arbre A, parfaitement régulier, est le cadre des mesures classiques de la diversité. La phylogénie étant donnée, trois vecteurs d'abondance (P1 à P3) sont de moins en moins réguliers: dans les cas C et D, la régularité maximale n'est pas obtenue pour des effectifs identiques, mais en augmentant les effectifs des espèces originales. ", echo=FALSE}
 knitr::include_graphics('images/Pavoine2011.png')
 ```
 
@@ -324,7 +324,7 @@ Les deux indices violent l'axiome de jumelage.
 À un facteur de normalisation près, ce sont des cas particuliers de l'indice de Rao pour des effectifs égaux.
 
 Le calcul sous R est immédiat avec un arbre au format `phylog` du package *ade4*.
-Un arbre au format `phylo` du package *ape* nécessite une conversion : la fonction `Preprocess.Tree` du package *entropart* la réalise.
+Un arbre au format `phylo` du package *ape* nécessite une conversion: la fonction `Preprocess.Tree` du package *entropart* la réalise.
 
 ```{r MFAD}
 phyTree <- Paracou618.Taxonomy
@@ -420,8 +420,8 @@ Il baisse ensuite alors que les espèces rares atteignent à leur tour progressi
 
 Quand $n \to +\infty$, le numérateur tend vers FAD, et le dénominateur tend vers le nombre d'espèces: $^n{T}$ tend vers MFAD.
 
-Code R pour la figure \@ref(fig:HurlbertCFig) :
-```{r HurlbertCCode, eval=FALSE, size='tiny'}
+Code R pour la figure \@ref(fig:HurlbertCFig):
+```{r HurlbertCCode, eval=FALSE, size='footnotesize'}
 Ps <- c(0.7, 0.19, 0.1, 0.01)
 S <- length(Ps)
 nRange <- 1:500
@@ -493,7 +493,7 @@ On note $y_{k,s}$ le nombre de branches partant du noeud ancestral de l'espèce 
 En figure \@ref(fig:ArbreA3), pour l'espèce 3, $y_{1,3}=3$ (l'espèce est issue d'une polytomie), $y_{2,3}=1$ (absence de noeud) et $y_{3,3}=2$ (la racine de l'arbre est dichotomique).
 On s'attend donc à ce que l'espèce 3 soit représentée par un sixième des individus.
 
-L'indice de déséquilibre d'abondance mesure l'écart à cette distribution théorique :
+L'indice de déséquilibre d'abondance mesure l'écart à cette distribution théorique:
 \begin{equation}
   \mathit{IAC} = \frac{\sum_s{|n_s - n_s^0|}}{\nu}.
 \end{equation}
@@ -508,7 +508,7 @@ L'entropie de Shannon peut être appliquée pour mesurer la diversité des parti
   H_{\mathit{ED}} = -\sum_s{\frac{\mathit{ED}_s}{\mathit{PD}} \ln\frac{\mathit{ED}_s}{\mathit{PD}}}.
 \end{equation}
 
-L'équitabilité des particularités évolutives est celle de Pielou :
+L'équitabilité des particularités évolutives est celle de Pielou:
 
 \begin{equation}
   E_{\mathit{ED}} = \frac{H_{\mathit{ED}}}{\ln{S}}.
@@ -587,7 +587,7 @@ En se limitant à deux dimensions pour la lisibilité, la figure \@ref(fig:Schei
 ```
 
 Code R:
-```{r ScheinerPsfsCode, eval=FALSE, size='tiny', tidy=FALSE}
+```{r ScheinerPsfsCode, eval=FALSE, size='footnotesize', tidy=FALSE}
 # Probabilités
 Ps <- Paracou618.MC$Ps[Paracou618.MC$Ps>0]
 Ps <- sort(Ps, decreasing = TRUE)
@@ -624,11 +624,11 @@ Diversity(Rs, q=2)
 
 Le profil de diversité d'abondance et fonctionnelle est en figure \@ref(fig:ProfilDqAFFig). 
 
-```{r ProfilDqAFFig, echo=FALSE, results='hide', ref.label='ProfilDqAFCode', fig.cap="Profil de diversité d'abondance et fonctionnelle de Scheiner de la méta-communauté `Paracou618`. Pointillés longs : diversité d'abondance; pointillés courts : diversité fonctionnelle; trait plein : diversité d'abondance et fonctionnelle."}
+```{r ProfilDqAFFig, echo=FALSE, results='hide', ref.label='ProfilDqAFCode', fig.cap="Profil de diversité d'abondance et fonctionnelle de Scheiner de la méta-communauté `Paracou618`. Pointillés longs: diversité d'abondance; pointillés courts: diversité fonctionnelle; trait plein: diversité d'abondance et fonctionnelle."}
 ```
 
   Code R:
-```{r ProfilDqAFCode, eval=FALSE, size='tiny', tidy=FALSE}
+```{r ProfilDqAFCode, eval=FALSE, size='footnotesize', tidy=FALSE}
 autoplot(CommunityProfile(Diversity, Rs), 
          xlab="Ordre de diversité", ylab="Diversité") +
 geom_line(data = as.data.frame.list(CommunityProfile(Diversity, Ps)), 
@@ -658,7 +658,7 @@ La probabilité qu'au moins une espèce soit intéressante est minorée par $p^2
 La valeur de $p$ est incertaine et sans grand intérêt.
 
 $V = \mathbf{1}_S' \mathbf{Z}^{-1} \mathbf{1}_S$ est la mesure de diversité de Solow et Polasky.
-Elle rend compte de la dispersion des espèces : moins les espèces sont similaires, plus la probabilité que l'une d'elle au moins soit intéressante est élevée, conditionnellement au nombre d'espèces et à $p$.
+Elle rend compte de la dispersion des espèces: moins les espèces sont similaires, plus la probabilité que l'une d'elle au moins soit intéressante est élevée, conditionnellement au nombre d'espèces et à $p$.
 Si les espèces sont infiniment éloignées les unes des autres, $\mathbf{Z}$ est la matrice identité et la diversité est égale à la richesse: $V$ est donc un nombre effectif d'espèces, c'est-à-dire le nombre d'espèces totalement dissimilaires nécessaires pour obtenir la diversité observée.
 À l'opposé, si toutes les espèces sont identiques, $\mathbf{Z}$ ne contient que des 1 et la diversité vaut 1.
 
@@ -698,7 +698,7 @@ L'application à la conservation est que les espèces représentatives doivent �
 Ce résultat est assez évident quand on dispose d'un arbre phylogénétique.
 L'originalité de la méthode de Weitzman est de fournir un algorithme pour créer l'arbre à partir d'une matrice de distances qui est cohérent avec la mesure de diversité appliquée.
 
-La mesure de diversité peut être combinée avec une probabilité d'extinction de chaque espèce (à dire d'expert) pour calculer l'espérance de la diversité à une échéance donnée [@Weitzman1993] : $2^S$ arbres peuvent être construit en faisant disparaître certaines des $S$ espèces de la communauté, la probabilité de chaque arbre est calculable à partir des probabilités d'extinction de chaque espèce (supposées indépendantes) et l'espérance de diversité est simplement la moyenne des diversités de chaque arbre pondérée par sa probabilité.
+La mesure de diversité peut être combinée avec une probabilité d'extinction de chaque espèce (à dire d'expert) pour calculer l'espérance de la diversité à une échéance donnée [@Weitzman1993]: $2^S$ arbres peuvent être construit en faisant disparaître certaines des $S$ espèces de la communauté, la probabilité de chaque arbre est calculable à partir des probabilités d'extinction de chaque espèce (supposées indépendantes) et l'espérance de diversité est simplement la moyenne des diversités de chaque arbre pondérée par sa probabilité.
 L'espérance de la perte de diversité peut être calculée de façon plus simple [@Witting1995], comme la moyenne de la longueur des branches pondérée par la probabilité de leur disparition, qui est le produit de la probabilité de disparition de toutes les espèces descendant de la branche.
 
 Diverses optimisations économiques sont possibles, dont le choix des espèces à protéger à partir de l'élasticité de la diversité, c'est-à-dire le gain de diversité entraîné par la diminution de la probabilité de disparition de chaque espèce: les espèces ayant la plus grande élasticité sont celles sur lesquelles les efforts auront les plus grands résultats.
@@ -746,11 +746,11 @@ Les auteurs ont établi que l'utilisation de distances ultramétriques corrige c
 L'indice atteint alors son maximum pour des fréquences d'autant plus grandes que l'espèce est originale [@Pavoine2005a].
 
 L'estimation empirique de l'indice se fait simplement en estimant les probabilités par les fréquences. 
-Le biais d'estimation est très faible [@Marcon2014a] : par analogie avec l'estimateur de l'indice de Simpson, les espèces rares interviennent peu.
+Le biais d'estimation est très faible [@Marcon2014a]: par analogie avec l'estimateur de l'indice de Simpson, les espèces rares interviennent peu.
 
 ### Calcul sous R
 
-Le package *entropart* fournit la fonction `Rao` :
+Le package *entropart* fournit la fonction `Rao`:
 
 ```{r Rao}
 # Vecteur des probabilités
@@ -771,7 +771,7 @@ library("ade4")
 divc(as.data.frame(Ps), Paracou618.Taxonomy$Wdist)
 ```
 
-`divc` peut traiter plusieurs communautés simultanément; `Rao` peut être utilisé avec la fonction `apply` :
+`divc` peut traiter plusieurs communautés simultanément; `Rao` peut être utilisé avec la fonction `apply`:
 
 ```{r divcRao}
 divc(as.data.frame (Paracou618.MC$Psi), Paracou618.Taxonomy$Wdist)
@@ -787,7 +787,7 @@ L'originalité n'est pas intéressante dans une taxonomie: une phylogénie doit 
 Le fichier `rao.traits.csv` contient une espèce par ligne, identifiée par le champ `Code`, et un certain nombre de valeurs de traits en colonnes.
 
 ```{r Originalite1}
-# Lecture des données : traits pour 34 espèces
+# Lecture des données: traits pour 34 espèces
 read.csv2 ("http://www.ecofog.gf/IMG/csv/rao.traits.csv", row.names=1, header=T)-> traits
 ```
 
@@ -818,7 +818,7 @@ hf <- hclust(dist(pcaf$tab), "ward.D")
 ```
 
 Code R pour la figure \@ref(fig:PCAFFig):
-```{r PCAFCode, eval=FALSE, size='tiny'}
+```{r PCAFCode, eval=FALSE, size='footnotesize'}
 scatter(pcaf)
 ```
 
@@ -835,7 +835,7 @@ phyf <- hclust2phylog(hf)
 ```
 
 Code R pour la figure \@ref(fig:HclustFig):
-```{r HclustCode, eval=FALSE, size='tiny'}
+```{r HclustCode, eval=FALSE, size='footnotesize'}
 plot(hf, h=-1)
 ```
 
@@ -845,7 +845,7 @@ Le résultat est en figure \@ref(fig:PhylogRaoFig).
 ```
 
 Code R pour la figure \@ref(fig:PhylogRaoFig):
-```{r PhylogRaoCode, eval=FALSE, size='tiny'}
+```{r PhylogRaoCode, eval=FALSE, size='footnotesize'}
 table.phylog(pcaf$tab[names (phyf$leaves),], phyf)
 ```
 
@@ -860,12 +860,12 @@ Le calcul de l'originalité des espèces utilise la fonction `originality` (figu
 ```
 
 Code R pour la figure \@ref(fig:originalityFig):
-```{r originalityCode, eval=FALSE, size='tiny'}
+```{r originalityCode, eval=FALSE, size='footnotesize'}
 dotchart.phylog(phyf, originality(phyf, 5))
 ```
 
 La fonction a pour paramètres l'objet `phylog` contenant la classification et le numéro de la méthode de calcul à utiliser, 5 pour l'entropie quadratique. 
-Sa représentation graphique est faite par `dotchart.phylog` :
+Sa représentation graphique est faite par `dotchart.phylog`:
 
 L'originalité ne repose que sur l'arbre, pas sur la fréquence des espèces.
 
@@ -878,14 +878,14 @@ Plusieurs normalisations ont été proposées: par sa valeur maximale ou par la 
 
 ## Diversité et moyenne
 
-@Garnier2004 définissent la moyenne pondérée d'un trait à l'échelle de la communauté (CWM: *Community Weigthed Mean*), simplement égal à la moyenne de la valeur du trait pondérée par la fréquence des espèces :
+@Garnier2004 définissent la moyenne pondérée d'un trait à l'échelle de la communauté (CWM: *Community Weigthed Mean*), simplement égal à la moyenne de la valeur du trait pondérée par la fréquence des espèces:
 
 \begin{equation}
   \mathit{CWM} = \sum_s{p_s y_s}.
 \end{equation}
 
 CWM n'est pas une mesure de diversité fonctionnelle, bien qu'il ait été utilisé parfois en tant que tel [@Lavorel2008], mais une mesure de la composition de la communauté.
-CWM peut être étendu à plusieurs traits : le vecteur formé par les valeurs de CWM pour chaque trait correspond au centre de gravité de la communauté représentée dans l'espace des traits.
+CWM peut être étendu à plusieurs traits: le vecteur formé par les valeurs de CWM pour chaque trait correspond au centre de gravité de la communauté représentée dans l'espace des traits.
 L'entropie quadratique de Rao mesure la dispersion des espèces autour de ce point: les deux mesures se complètent donc [@Ricotta2011].
 
 
@@ -1063,7 +1063,7 @@ Le nombre effectif d'espèces de l'entropie de Rao, $^{2}\!\bar{D}(T)=\frac{1}{[
 La somme est sur l'ensemble des branches de l'arbre, défini de façon identique à celle de @Allen2009 \@ref(sec:HpI1).
 
 Les entropies ont un comportement linéaire: elles s'additionnent tout au long de l'arbre pour donner $^{q}\!\bar{H}(T)$. 
-Les diversités $^{q}_{k}\!D$ calculées à chaque période ne peuvent pas être sommées sur le modèle de l'équation \@ref(eq:Hbarq) : $^{q}\!\bar{D}(T)$ n'est *pas* la moyenne pondérée des diversités aux différentes périodes, sauf dans le cas particulier $q=1$ où, comme pour la décomposition de l'indice de Shannon, il en est la moyenne géométrique pondérée.
+Les diversités $^{q}_{k}\!D$ calculées à chaque période ne peuvent pas être sommées sur le modèle de l'équation \@ref(eq:Hbarq): $^{q}\!\bar{D}(T)$ n'est *pas* la moyenne pondérée des diversités aux différentes périodes, sauf dans le cas particulier $q=1$ où, comme pour la décomposition de l'indice de Shannon, il en est la moyenne géométrique pondérée.
 
 La fonction `PhyloDiversity` de *entropart* permet de calculer $^{q}\!\bar{D}(T)$ avec ou sans correction de biais, selon qu'elle traite un vecteur d'abondances ou de probabilités. 
 À la suite de l'exemple précédent, les résultats sont présentés sous forme de diversité au lieu d'entropie:
@@ -1076,11 +1076,11 @@ PhyloDiversity(Paracou618.MC$Ns, 2, Paracou618.Taxonomy)
 
 ## Diversité individuelle
 
-La construction de la diversité fonctionnelle ou phylogénétique n'implique pas de regrouper les individus par espèces : chaque catégorie peut se réduire à un individu si des données individuelles moléculaires ou de traits sont disponibles.
+La construction de la diversité fonctionnelle ou phylogénétique n'implique pas de regrouper les individus par espèces: chaque catégorie peut se réduire à un individu si des données individuelles moléculaires ou de traits sont disponibles.
 
 Le regroupement des individus en une espèce revient simplement à considérer leur distance comme nulle. 
 Diviser une espèce en deux espèces infiniment proches revient seulement à créer une période supplémentaire dans l'arbre, de longueur infinitésimale; en d'autres termes, la mesure de diversité est continue face au regroupement. 
-Cette propriété permet de limiter les conséquences du problème de l'espèce : séparer les individus d'une espèce en deux espèces proches dans l'arbre n'a que peu d'effet sur la diversité.
+Cette propriété permet de limiter les conséquences du problème de l'espèce: séparer les individus d'une espèce en deux espèces proches dans l'arbre n'a que peu d'effet sur la diversité.
 
 
 
@@ -1139,7 +1139,7 @@ La moyenne généralisée se réduit à la moyenne arithmétique pondérée pour
 Elle donne un fort poids aux petites valeurs de $x_s$ dans la moyenne pour les faibles valeurs de $r$ (qui peuvent être négatives), et un fort poids aux grandes valeurs quand $r$ est grand (figure \@ref(fig:MoyenneHardyFig)).
 
 Le code R nécessaire pour réaliser la figure est:
-```{r MoyenneHardyCode, eval=FALSE, size='tiny', tidy=FALSE}
+```{r MoyenneHardyCode, eval=FALSE, size='footnotesize', tidy=FALSE}
 X <- runif(100)
 # La moyenne n'est pas définie à r=0, décalage de 10^-8
 r <- seq(-5, 10, .1) + 1E-8
@@ -1274,7 +1274,7 @@ Leinster et Cobbold argumentent en faveur d'une transformation exponentielle né
 Le problème majeur de la diversité $^q\!D^{\mathbf{Z}}$ est qu'elle fournit souvent des valeurs presque indépendantes de $q$ quand on l'applique à une matrice de similarité fonctionnelle [@Chiu2014b]. 
 De nombreux exemples, y compris dans l'article original de Leinster et Cobbold, montrent une très faible décroissance de la diversité de $q=0$ à $q=2$. 
 Ce n'est pas un problème théorique mais numérique. 
-Si la banalité de l'espèce $s$ est proche de 1, sa puissance $q$ peut être approchée par son développement limité au premier ordre :
+Si la banalité de l'espèce $s$ est proche de 1, sa puissance $q$ peut être approchée par son développement limité au premier ordre:
 $${(\mathbf{Zp})}_{s}^{q-1} \approx 1 + (q-1)[{(\mathbf{Zp})}_{s} - 1].$$ 
 Cette approximation linéaire implique que
 $$\sum_s{p_s{\left(\mathbf{Zp}\right)}^{q-1}_s} \approx [\sum_s{p_s{\left(\mathbf{Zp}\right)}_s}]^{q-1}.$$ 
@@ -1287,7 +1287,7 @@ Si une majorité des espèces (au sens de la somme de leurs probabilités respec
 Ce n'est pas un problème pour la comparaison de profils de diversité de communautés différentes calculés à partir de la même matrice de similarité mais l'interprétation de la diversité en termes de nombres effectifs d'espèces dépendant de $q$ n'est pas très intuitive.
 
 Le code R nécessaire pour réaliser la figure est:
-```{r LineaireZpsqCode, eval=FALSE, size='tiny'}
+```{r LineaireZpsqCode, eval=FALSE, size='footnotesize'}
 r <- 0.5
 seqZp <- seq(0, 1, 0.001)
 ggplot(data.frame(r=seqZp, xr=seqZp^r), aes(r, xr)) +
@@ -1305,13 +1305,13 @@ La transformation exponentielle négative,
 $$z_{s,t} = e^{-u \frac{d_{s,t}}{\max{(d_{s,t})}}},$$
 est justifiée par @Leinster2013. 
 $u$ est une constante positive. 
-Plus $u$ est grand, plus la transformation est convexe : les similarités sont tassées vers 0 (figure \@ref(fig:EchelleFig)).
+Plus $u$ est grand, plus la transformation est convexe: les similarités sont tassées vers 0 (figure \@ref(fig:EchelleFig)).
 
-```{r EchelleFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='EchelleCode', fig.cap="Transformation des distances (en abscisse) en similarités (en ordonnées) selon la valeur de $u$. Trait plein: $u=1$; pointillés longs : $u=2$; pointillés : $u=10$. Plus $u$ est grand, plus les similarités sont tassées vers 0."}
+```{r EchelleFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='EchelleCode', fig.cap="Transformation des distances (en abscisse) en similarités (en ordonnées) selon la valeur de $u$. Trait plein: $u=1$; pointillés longs: $u=2$; pointillés: $u=10$. Plus $u$ est grand, plus les similarités sont tassées vers 0."}
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r EchelleCode, eval=FALSE, size='tiny', tidy=FALSE}
+```{r EchelleCode, eval=FALSE, size='footnotesize', tidy=FALSE}
 ggplot(data.frame(x = seq(0, 1, by = .01)), aes(x)) + 
   stat_function(fun = function(x) exp(-x)) +
   stat_function(fun = function(x) exp(-2*x), lty = 2) +
@@ -1321,13 +1321,13 @@ ggplot(data.frame(x = seq(0, 1, by = .01)), aes(x)) +
 
 Augmenter la valeur de $u$ diminue les similarités et donc la banalité des espèces, ce qui règle (arbitrairement) le problème de la faible sensibilité de la diversité au paramètre $q$.
 
-Du point de vue théorique, l'ordre des valeurs de la matrice des distances est justifié (par les différences entre traits fonctionnels par exemple) mais leur distribution ne l'est pas : elle n'est que la conséquence de la méthode de calcul. 
+Du point de vue théorique, l'ordre des valeurs de la matrice des distances est justifié (par les différences entre traits fonctionnels par exemple) mais leur distribution ne l'est pas: elle n'est que la conséquence de la méthode de calcul. 
 Le choix de $u$ ne change pas l'ordre des distances mais déforme la distribution des similarités.
 La distance étant normalisée, $u$ fixe l'échelle des distances avant la transformation.
 
 Leinster relie la valeur de $^q\!D^{\mathbf{Z}}$ à la magnitude de l'espace des espèces (espace dans lequel les espèces sont des points dont les distances deux à deux sont décrites par la matrice $\Delta$, qui doit être euclidienne): la magnitude de l'espace est la valeur maximale que peut atteindre la diversité. 
 La magnitude est une propriété qui décrit la taille d'un espace dans le cadre de la théorie des catégories. 
-Modifier $u$ modifie la magnitude de l'espace selon une relation non triviale : $u$ est un paramètre au même titre que $q$. 
+Modifier $u$ modifie la magnitude de l'espace selon une relation non triviale: $u$ est un paramètre au même titre que $q$. 
 Quand $u \to +\infty$, $\mathbf{Z} \to \mathbf{I}_s$: la diversité tend vers la diversité neutre. 
 Leinster et Cobbold suggèrent de comparer les profils de diversité en fonction à la fois de $q$ et de $u$.
 
@@ -1488,7 +1488,7 @@ Formellement, si l'espèce $s$ est composée de deux groupes $s'$ et $s""$, la b
 $${\left(\mathbf{Zp}\right)}_{s'}=\sum_{t \ne s', s""}{p_{t}z_{s',t}} + p_{s'} + p_{s""}z_{s',s""},$$
 celle du groupe $s""$ est
 $${\left(\mathbf{Zp}\right)}_{s""}=\sum_{t \ne s', s""}{p_{t}z_{s"",t}} + p_{s'}z_{s',s""} + p_{s""}.$$
-Les similarités avec les autres espèces sont identiques : $z_{s,t}=z_{s',t}=z_{s"",t}$. 
+Les similarités avec les autres espèces sont identiques: $z_{s,t}=z_{s',t}=z_{s"",t}$. 
 La contribution à la diversité des deux groupes
 $$\sum_{s'}{p_{s'}{\left(\mathbf{Zp}\right)}^{q-1}_{s'}}+\sum_{s""}{p_{s""}{\left(\mathbf{Zp}\right)}^{q-1}_{s""}}$$
 est remplacée après regroupement par
@@ -1593,7 +1593,7 @@ Le profil de diversité se trouve en figure \@ref(fig:DqZLambdaFig).
 
 
 Code R pour la figure:
-```{r DqZLambdaCode, eval=FALSE, size='tiny'}
+```{r DqZLambdaCode, eval=FALSE, size='footnotesize'}
 DqZLambda<- CommunityProfile(Diversity, Mu)
 Xlab <- "Ordre de diversité"
 Ylab <- "Diversité"
@@ -1604,7 +1604,7 @@ autoplot(DqZLambda, xlab=Xlab, ylab=Ylab) +
 La diversité des valeurs propres permet de ramener le problème de la diversité d'espèces partiellement similaires au calcul de la diversité neutre d'une communauté d'espèces composites totalement dissimilaires.
 
 Les éléments de la diagonale de la matrice de similarité ne sont pas forcément égaux à 1: des valeurs inférieures correspondent à la variabilité intraspécifique, selon le mécanisme de regroupement traité au paragraphe précédent.
-Les raisons qui empêchent d'utiliser des valeurs de similarité intraspécifique différentes de 1 dans le calcul de la diversité de Leinster et Cobbold ne s'appliquent pas ici : quelle que soit la valeur de $q$, les valeurs propres sont les mêmes.
+Les raisons qui empêchent d'utiliser des valeurs de similarité intraspécifique différentes de 1 dans le calcul de la diversité de Leinster et Cobbold ne s'appliquent pas ici: quelle que soit la valeur de $q$, les valeurs propres sont les mêmes.
 
 Les limites de la diversité des valeurs propres sont cependant nombreuses. La première est numérique: son calcul est imprécis dans des communautés très riches. L'inversion d'une matrice de dimension 200 ou plus est toujours problématique. 
 
@@ -1636,7 +1636,7 @@ Les deux notions se confondent quand la diversité neutre est considérée: la b
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r ComparaisonDqCode, eval=FALSE, size='tiny'}
+```{r ComparaisonDqCode, eval=FALSE, size='footnotesize'}
 q <- c(seq(0, 3, 0.1))
 # Réutilisation de Paracou618.Taxonomy au format phylog (cf. calcul de FAD)
 DistanceMatrix <- as.matrix(Tree$Wdist^2/2)

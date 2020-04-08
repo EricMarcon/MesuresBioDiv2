@@ -15,7 +15,7 @@ Le terme *biodiversity* est attribué [@Meine2006] à Walter Rosen, un membre du
 La question de la diversité biologique intéressait les écologues bien avant l'invention de la biodiversité, mais le néologisme a connu un succès fulgurant [@Blandin2014] en même temps qu'il devenait une notion floue, dans lequel chacun peut placer ce qu'il souhaite y trouver, au point de lui retirer son caractère scientifique [@Delord2014]. 
 Une cause de ce glissement est que la biodiversité a été nommée pour attirer l'attention sur son érosion, en lien avec la biologie de la conservation. 
 Cette érosion concernant potentiellement de nombreux aspects du monde vivant, la définition de la biodiversité fluctue selon les besoins: @DeLong1996 en recense 85 dans les dix premières années de littérature. 
-Les indicateurs de la biodiversité peuvent englober bien d'autres choses que la diversité du vivant : le nombre d'espèces menacées (par exemple la liste rouge de l'IUCN), la taille des populations ou la surface des écosystèmes préservés, la dégradation des habitats, la menace pesant sur des espèces emblématiques...
+Les indicateurs de la biodiversité peuvent englober bien d'autres choses que la diversité du vivant: le nombre d'espèces menacées (par exemple la liste rouge de l'IUCN), la taille des populations ou la surface des écosystèmes préservés, la dégradation des habitats, la menace pesant sur des espèces emblématiques...
 Une mesure rigoureuse et cohérente de la diversité peut pourtant être construite pour clarifier beaucoup (mais pas tous) des concepts qui constituent la biodiversité. 
 
 Dans l'introduction du premier chapitre des actes de ce qui était devenu le "Forum sur la Biodiversité", Wilson utilise le mot dans le sens étroit de nombres d'espèces. 
@@ -43,7 +43,7 @@ La question est loin d'être épuisée, et fait toujours l'objet d'une recherche
 
 ## Composantes
 
-```{r Composantes, fig.cap="Importance de la richesse (en haut) et de l'équitabilité (en bas) pour la définition de la diversité. Ligne du haut: toutes choses égales par ailleurs, une communauté de 7 espèces semble plus diverse qu'une communauté de 2 espèces. Ligne du bas: à richesse égale, une communauté moins équitable (à gauche) semble moins diverse. Colonne de gauche: une communauté moins riche (en haut) peut sembler plus diverse si elle est plus équitable. Colonne de droite: idem pour la communauté du bas.", echo=FALSE, out.width='50%'}
+```{r Composantes, fig.cap="Importance de la richesse (en haut) et de l'équitabilité (en bas) pour la définition de la diversité. Ligne du haut: toutes choses égales par ailleurs, une communauté de 7 espèces semble plus diverse qu'une communauté de 2 espèces. Ligne du bas: à richesse égale, une communauté moins équitable (à gauche) semble moins diverse. Colonne de gauche: une communauté moins riche (en haut) peut sembler plus diverse si elle est plus équitable. Colonne de droite: idem pour la communauté du bas.", echo=FALSE, out.width='60%'}
 knitr::include_graphics('images/Composantes.png')
 ```
 
@@ -59,8 +59,7 @@ La richesse [terme introduit par @Mcintosh1967] est le nombre (ou une fonction c
 Un certain nombre d'hypothèses sont assumées plus ou moins explicitement:
 
 * Les classes sont bien connues: compter le nombre d'espèces a peu de sens si la taxonomie n'est pas bien établie.
-  C'est parfois une difficulté majeure quand on travaille sur les microorganismes;
-  
+C'est parfois une difficulté majeure quand on travaille sur les microorganismes;
 * Les classes sont équidistantes: la richesse augmente d'une unité quand on rajoute une espèce, que cette espèce soit proche des précédentes ou extrêmement originale.
 
 L'indice de richesse le plus simple et le plus utilisé est tout simplement le nombre d'espèces $S$.
@@ -147,18 +146,18 @@ Une analyse historique et philosophique en est faite par @Richards2010.
 L'autre aspect, avec des conséquences pratiques plus immédiates, concerne leur délimitation. 
 @Mayden1997 recense 22 définitions différentes du concept d'espèce.
 
-Le concept le plus répandu est celui d'espèce *biologique* [@Dobzhansky1937] : un "groupe de populations naturelles isolées reproductivement les unes des autres" [@Mayr1942]. 
+Le concept le plus répandu est celui d'espèce *biologique* [@Dobzhansky1937]: un "groupe de populations naturelles isolées reproductivement les unes des autres" [@Mayr1942]. 
 Lorsque les populations d'une espèce sont isolées géographiquement, leur capacité à se reproduire ensemble est toute théorique (et d'ailleurs rarement vérifiée expérimentalement). 
-Des populations allopatriques n'ont pas de flux de gènes réels entre elles et peuvent être considérées comme des espèces distinctes selon le concept d'espèce *phylogénétique* : "le plus petit groupe identifiable d'individus avec un pattern commun d'ancêtres et de descendants" [@Cracraft1983].
+Des populations allopatriques n'ont pas de flux de gènes réels entre elles et peuvent être considérées comme des espèces distinctes selon le concept d'espèce *phylogénétique*: "le plus petit groupe identifiable d'individus avec un pattern commun d'ancêtres et de descendants" [@Cracraft1983].
 C'est l'unité génétique détectée par la méthode du coalescent pour la délimitation des espèces [@Sukumaran2017].
 Le nombre d'espèces phylogénétiques est bien supérieur au nombre d'espèces biologiques. 
 Enfin, @VanValen1976 définit les espèces par la niche écologique qu'elles occupent (à partir de l'exemple des chênes blancs européens) plutôt que par les flux de gènes (permanents entre les espèces distinctes): le concept *écologique* d'espèce est proche de celui de complexe d'espèces [ensemble d'espèces voisines échangeant des gènes, @Pernes1984].
 
 Le choix de la définition modifie considérablement sur la quantification de la richesse [@Agapow2004]. 
-Des problèmes méthodologiques s'ajoutent aux problèmes conceptuels [@Hey2001] : la séparation ou le regroupement de plusieurs populations ou morphotypes en un nombre plus ou moins grand d'espèces est un choix qui reflète les connaissances du moment et peut évoluer [@Barberousse2014].
+Des problèmes méthodologiques s'ajoutent aux problèmes conceptuels [@Hey2001]: la séparation ou le regroupement de plusieurs populations ou morphotypes en un nombre plus ou moins grand d'espèces est un choix qui reflète les connaissances du moment et peut évoluer [@Barberousse2014].
 
 L'impact du problème de l'espèce sur la mesure de la diversité reste sans solution à ce stade, si ce n'est d'utiliser les mêmes définitions si des communautés différentes doivent être comparées. 
-L'approche phylogénétique (Chapitre \@ref(chap:Phyloentropie)) permet de contourner le problème : si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
+L'approche phylogénétique (Chapitre \@ref(chap:Phyloentropie)) permet de contourner le problème: si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
 
 
 
@@ -213,8 +212,8 @@ Il existe plusieurs façons de prendre en compte cette relation [@Scheiner2003],
 La figure \@ref(fig:SARFig) montre l'accumulation des espèces pour les données de BCI.
 Une SAC peut être tracée en fonction de la surface, du nombre d'individus ou du nombres de placettes d'échantillonnage, selon les besoins.
 
-Code R pour réaliser la figure \@ref(fig:SARFig) :
-```{r SARCode, eval=FALSE, tidy=FALSE, size='tiny'}
+Code R pour réaliser la figure \@ref(fig:SARFig):
+```{r SARCode, eval=FALSE, tidy=FALSE, size='footnotesize'}
 library("vegan")
 data(BCI)
 Cumul <- apply(BCI, 2, cumsum)
@@ -240,8 +239,8 @@ Le RAC est souvent utilisé pour reconnaître des distributions connues.
 ```{r RACFig, echo=FALSE, results='hide', message=FALSE, ref.label='RACCode',  fig.cap="Diagramme rang-abondance (diagramme de Whittaker) des arbres du dispositif de Barro Colorado Island. Les points sont les données: en abscisse: le rang de l'espèce, à partir de la plus abondante; en ordonnée: l'abondance de l'espèce. La courbe est l'ajustement d'une distribution log-normale."}
 ```
 
-Code de la figure \@ref(fig:SADFig) :
-```{r SADCode, eval=FALSE, tidy=FALSE, size='tiny'}
+Code de la figure \@ref(fig:SADFig):
+```{r SADCode, eval=FALSE, tidy=FALSE, size='footnotesize'}
 Ns <- sort(colSums(BCI), decr = TRUE)
 N <- sum(Ns)
 SADhist <- ggplot(data.frame(Ns), aes(Ns)) + 
@@ -253,8 +252,8 @@ SADhist <- ggplot(data.frame(Ns), aes(Ns)) +
 SADhist
 ```
 
-Code de la figure \@ref(fig:RACFig) :
-```{r RACCode, eval=FALSE, tidy=FALSE, size='tiny'}
+Code de la figure \@ref(fig:RACFig):
+```{r RACCode, eval=FALSE, tidy=FALSE, size='footnotesize'}
 library("entropart")
 autoplot(as.AbdVector(Ns), Distribution = "lnorm")
 ```
@@ -280,8 +279,8 @@ En absence de toute information sur la loi de distribution des espèces, en supp
   \alpha_\nu \approx \frac{(\nu+1)}{n} \frac{s^{n}_{\nu+1}}{s^{n}_{\nu}}.
 \end{equation}
 
-Les singletons ($s^{n}_{1}$: le nombre d'espèces observées une seule fois) et les doubletons ($s^{n}_{2}$ : le nombre d'espèces observées deux fois) ont une importance centrale.
-Pour $\nu=1$, on a : $\alpha_1 = 2 s^{n}_{2}/(ns^{n}_{1})$ : la fréquence d'une espèce typiquement représentée par un singleton est proportionnelle au rapport entre le nombre des doubletons et des singletons.
+Les singletons ($s^{n}_{1}$: le nombre d'espèces observées une seule fois) et les doubletons ($s^{n}_{2}$: le nombre d'espèces observées deux fois) ont une importance centrale.
+Pour $\nu=1$, on a: $\alpha_1 = 2 s^{n}_{2}/(ns^{n}_{1})$: la fréquence d'une espèce typiquement représentée par un singleton est proportionnelle au rapport entre le nombre des doubletons et des singletons.
 Pour $\nu=0$, l'ignorance du nombre d'espèces non échantillonnées $s^{n}_{0}$ pose problème mais le produit $\alpha_0 \times s^{n}_{0} = \pi_0$, la probabilité totale des espèces non représentées, peut être estimée par $s^{n}_{1}/n$.
 Ces relations sont le fondement des estimateurs de richesse de Chao présentées ci-dessous.
 
@@ -312,7 +311,7 @@ Plus il est élevé, meilleures seront les estimations de la diversité.
 Pour comparer deux communautés par des courbes de raréfaction, @Chao2012b montrent que le taux de couverture plutôt que la taille de l'échantillon doit être identique. 
 Les estimateurs de la diversité développés plus loin reposent largement sur cette notion pour la correction du biais d'échantillonnage [@Dauby2012] (la sous-estimation systématique de la diversité due aux espèces non observées, un des éléments du biais d'estimation).
 
-L'estimateur du taux de couverture, que Good attribue à Turing, est selon la relation des fréquences vues plus haut :
+L'estimateur du taux de couverture, que Good attribue à Turing, est selon la relation des fréquences vues plus haut:
 
 \begin{equation}
   (\#eq:CGood)

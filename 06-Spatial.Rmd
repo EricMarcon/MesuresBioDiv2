@@ -16,7 +16,7 @@ Il est tentant dans ce cadre de chercher un indicateur de la richesse indépenda
 L'approche la plus simple consiste à normaliser le nombre d'espèce observées.
 @Menhinick1964 a proposé l'indice $\frac{S^{n}}{\sqrt{n}}$ à peu près constant dans des communautés d'insectes.
 L'indice de @Margalef1958a est $\frac{S^{n} -1}{\ln{n}}$, adapté à une communauté de plancton.
-Les deux supposent implicitement une forme de la courbe d'accumulation des espèces :  dans le premier cas, proportionnelle à la racine du nombre d'individus, dans le second à son logarithme (comme dans la relation de @Gleason1922, page \@ref(sec:Gleason)).
+Les deux supposent implicitement une forme de la courbe d'accumulation des espèces:  dans le premier cas, proportionnelle à la racine du nombre d'individus, dans le second à son logarithme (comme dans la relation de @Gleason1922, page \@ref(sec:Gleason)).
 Aucune de ces normalisations ne fonctionne en général [@Magurran2004, p. 77].
 L'indice de Fisher [@Fisher1943], construit à partir d'un modèle explicite de distribution des probabilités des espèces, a nettement plus de succès.
 Il est présenté au chapitre suivant.
@@ -50,23 +50,17 @@ Le nombre d'espèces échantillonnées dépend de l'effort d'échantillonnage.
 
 Fisher a relié le nombre d'espèces $S^{n}$ au nombre d'individus $n$ échantillonnés à partir du modèle suivant:
 
-* Le nombre d'individus $N$ de l'échantillon suit une loi de Poisson de paramètre $\lambda$ par hypothèse : la surface est fixée, égale à 1, et les individus sont distribués totalement aléatoirement (avec la même probabilité partout, et indépendamment les uns des autres) ;
-
+* Le nombre d'individus $N$ de l'échantillon suit une loi de Poisson de paramètre $\lambda$ par hypothèse: la surface est fixée, égale à 1, et les individus sont distribués totalement aléatoirement (avec la même probabilité partout, et indépendamment les uns des autres);
 * Étant donné la taille de l'échantillon $N$ et la probabilité $p_s$ d'échantillonner l'espèce $s$, l'espérance du nombre d'individus échantillonnés dans l'espèce $s$ est $Np_s$;
-
 * Le nombre d'individus réellement observé fluctue aléatoirement.
   Il suit une loi de Poisson d'espérance $\lambda_s$, où $\lambda_s=\lambda p_s$;
-
 * La probabilité d'observer $\nu$ individus de l'espèce $s$ est notée ${\pi}_{s,\nu}$;
-
 * La distribution de $\lambda_s$ retenue par Fisher est une loi gamma de paramètres $k$ et $p$, choisie pour ses propriétés mathématiques qui impliquent que ${\pi}_{s,\nu}$ suit une loi binomiale négative de paramètres $k$ et $1/(p+1)$;
-
 * L'espérance du nombre d'espèces observées $\nu$ fois est $\sum_s{{\pi}_{s,\nu}}$;
-
 * Le paramètre $k=0$ décrit bien les données de Fisher et permet de calculer l'espérance du nombre d'espèces dans un échantillon de taille $n$.
 
 Le raisonnement est détaillé ici.
-La loi gamma a deux paramètres positifs notés $k$ et $p$ par Fisher : le premier fixe sa forme, le second l'échelle.
+La loi gamma a deux paramètres positifs notés $k$ et $p$ par Fisher: le premier fixe sa forme, le second l'échelle.
 Les valeurs de forme inférieures à 1 donnent une distribution décroissante présentée sur la figure \@ref(fig:gammaFig).
 La distribution obtenue est celle de $\lambda_s$, l'espérance du nombre d'individus de l'espèce $s$.
 Le paramètre de d'échelle permet d'ajuster les nombres d'individus à la taille de l'échantillon.
@@ -77,7 +71,7 @@ Plus le paramètre de forme $k$ est proche de 0, plus la décroissance des proba
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r gammaCode, eval=FALSE, size='tiny', tidy=FALSE}
+```{r gammaCode, eval=FALSE, size='footnotesize', tidy=FALSE}
 library("GoFKernel")
 k <- 0.2
 p <- 100
@@ -97,7 +91,7 @@ La probabilité qu'une espèce soit représentée par $\nu$ individus, notée ${
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r nbinCode, eval=FALSE, size='tiny', tidy=FALSE}
+```{r nbinCode, eval=FALSE, size='footnotesize', tidy=FALSE}
 nbin <- rnbinom(10000, size = k, prob = 1/(p+1))
 ggplot(data.frame(nbin), aes(x = nbin, y = ..prop..)) + 
   geom_bar(width = 1, color = "black", fill = "white") +
@@ -130,7 +124,7 @@ L'espérance du nombre d'espèces en est la somme pour toutes les valeurs de $\n
 
 Le nombre d'espèces est obtenu par la somme du développement en série entière du logarithme de $1-x$, d'où le nom de *log-série*.
 
-De même, le nombre total d'individus est :
+De même, le nombre total d'individus est:
 \begin{equation}
   (\#eq:nlogserie)
   n = \sum_{\nu=1}^{\infty}{\nu {\mathbb E}\left(S^{n}_{\nu}\right)}
@@ -148,7 +142,7 @@ La combinaison des deux équations permet d'éliminer $x$ et d'obtenir l'espéra
 $\alpha$ est un indicateur de la biodiversité qui peut être interprété comme le nombre d'espèces nouvelles découvertes quand le nombre d'individus échantillonnés est multiplié par $e$: c'est en effet la pente de la courbe de $S^{n}$ en fonction de $\ln n$, qui se stabilise à partir d'une valeur de $n$ suffisante. 
 C'est aussi le nombre de singletons attendus dans l'échantillon de taille $n$ comme le montre l'équation \@ref(eq:nalpha), sachant que $x \approx 1$.
 
-$\alpha$ est aussi égal à $\theta$, le nombre fondamental de la biodiversité de Hubbell quand le nombre d'espèces est grand [@Alonso2004] : la SAD de la méta-communauté (pas celle de la communauté locale si la dispersion est limitée) du modèle neutre est en log-séries.
+$\alpha$ est aussi égal à $\theta$, le nombre fondamental de la biodiversité de Hubbell quand le nombre d'espèces est grand [@Alonso2004]: la SAD de la méta-communauté (pas celle de la communauté locale si la dispersion est limitée) du modèle neutre est en log-séries.
 $\alpha$ est le produit du nombre total d'individus de la méta-communauté, noté classiquement $J_m$, et du taux de spéciation individuel noté $\nu$.
 $x$ est le rapport entre les taux de naissance $b$ et de mortalité $d$ dans la méta-communauté, très légèrement inférieur à 1 parce que les espèces existantes sont appelées à disparaître par dérive, et remplacées par les nouvelles espèces: $\frac{(b+\nu)}{d}=1$.
 
@@ -199,7 +193,7 @@ knitr::include_graphics('images/Schulte2005b.png')
 ```
 
 
-```{r Schulte2005a, fig.cap="Courbes nombre d'individus-espèces-simulées pour illustrer l'importance des paramètres $c$ (concentration spatiale) et $S_{\\max}$ (nombre total d'espèces, $S$ dans nos notations) dans le modèle de Fisher. $\\alpha$ est fixé à 100 pour toutes les courbes. (a) et (b) : la concentration spatiale ($c<1$) change drastiquement le nombre d'espèces attendu. En pratique, seuls $S$ et $N$ ($s^{n}_{\\ne 0}$ et $n$ dans nos notations) sont observés. Si $c$ est supposé égal à 1 par erreur, $\\alpha$ est sous-estimé. (a) et (c) : le nombre d'espèces n'est évidemment pas infini, ce qui change fortement la forme de la courbe. Si le nombre d'observations est grand, $\\alpha$ sera aussi très sous-estimé.", echo=FALSE}
+```{r Schulte2005a, fig.cap="Courbes nombre d'individus-espèces-simulées pour illustrer l'importance des paramètres $c$ (concentration spatiale) et $S_{\\max}$ (nombre total d'espèces, $S$ dans nos notations) dans le modèle de Fisher. $\\alpha$ est fixé à 100 pour toutes les courbes. (a) et (b): la concentration spatiale ($c<1$) change drastiquement le nombre d'espèces attendu. En pratique, seuls $S$ et $N$ ($s^{n}_{\\ne 0}$ et $n$ dans nos notations) sont observés. Si $c$ est supposé égal à 1 par erreur, $\\alpha$ est sous-estimé. (a) et (c): le nombre d'espèces n'est évidemment pas infini, ce qui change fortement la forme de la courbe. Si le nombre d'observations est grand, $\\alpha$ sera aussi très sous-estimé.", echo=FALSE}
 knitr::include_graphics('images/Schulte2005b.png')
 ```
 
@@ -241,7 +235,7 @@ La SAC correspondante est tracée en figure \@ref(fig:KemptonQFig).
 ```
 
 Code R pour réaliser la figure:
-```{r KemptonQCode, eval=FALSE, size='tiny', tidy=FALSE}
+```{r KemptonQCode, eval=FALSE, size='footnotesize', tidy=FALSE}
 ggplot(data.frame(x = log(1:ncol(Inventaire)), y = nEspeces)) +
   geom_line(aes(x = x, y = y)) +
   geom_vline(xintercept = log(nq1), lty = 3) +
@@ -294,7 +288,7 @@ Si la densité $\lambda_s$ (nombre d'individus par unité de surface) des espèc
 
 La SAC théorique en fonction du nombre d'individus ne contient pas cet aléa.
 Le nombre d'individus de l'espèce $s$ suit alors une loi binomiale d'espérance $np_s$ et la distribution d'un échantillon de taille $n$ suit la loi multinomiale correspondante.
-Les deux approches se réconcilient en fixant arbitrairement le nombre d'individus échantillonnés dans la courbe aire-espèce : conditionnellement au nombre total d'individus, la distribution des abondances des espèces issues de lois de Poisson de paramètres $\lambda_s$ suit une loi multinomiale [@Steel1953] dont les probabilités sont proportionnelles à $\lambda_s$.
+Les deux approches se réconcilient en fixant arbitrairement le nombre d'individus échantillonnés dans la courbe aire-espèce: conditionnellement au nombre total d'individus, la distribution des abondances des espèces issues de lois de Poisson de paramètres $\lambda_s$ suit une loi multinomiale [@Steel1953] dont les probabilités sont proportionnelles à $\lambda_s$.
 
 La SAC définie en fonction du nombre d'individus est au sens strict une succession de points (à chaque valeur de $n$), pas une courbe continue.
 Elle est toutefois toujours présentée comme une courbe lissée passant par les points pour être continue et dérivable.
@@ -303,10 +297,10 @@ Une difficulté supplémentaire consiste à prendre en compte les espèces non �
 Dans ce but, la SAC théorique peut être construite [@Chao2013] comme la somme des entropies de Simpson généralisées [@Zhang2010] (présentées en section \@ref(sec:SimpsonG)).
 
 La courbe obtenue (figure \@ref(fig:SACzetaFig)) est la même que par raréfaction, sans les problèmes d'estimation.
-Son intervalle de confiance n'est pas représenté : l'estimation est sans biais et a une variance très petite; d'autre part, la variabilité de l'échantillonnage prise en compte dans la figure \@ref(fig:specaccumFig) est ignorée ici. La fonction `GenSimp.z` est fournie par le package *EntropyEstimation* [@Cao2014].
+Son intervalle de confiance n'est pas représenté: l'estimation est sans biais et a une variance très petite; d'autre part, la variabilité de l'échantillonnage prise en compte dans la figure \@ref(fig:specaccumFig) est ignorée ici. La fonction `GenSimp.z` est fournie par le package *EntropyEstimation* [@Cao2014].
 
 Le code R nécessaire pour réaliser la figure est:
-```{r specaccumCode, eval=FALSE, size='tiny'}
+```{r specaccumCode, eval=FALSE, size='footnotesize'}
 data(BCI)
 SAC <- specaccum(BCI, "random")
 plot(SAC, ci.type="poly", lwd=2, ci.lty=0, ci.col="lightgray")
@@ -342,7 +336,7 @@ En combinant ces approximations avec l'espérance du nombre d'espèces observée
 
 L'espérance du nombre d'espèces observées $\nu$ fois dépend directement de la dérivée $\nu$\ieme\ de la SAC.
 
-@Beguinot2015 écrit l'accroissement du nombre d'espèces observées quand l'échantillon augmente de $n$ à $n +\delta n$ sous la forme d'une série entière, qu'il combine avec l'équation précédente pour en obtenir une approximation :
+@Beguinot2015 écrit l'accroissement du nombre d'espèces observées quand l'échantillon augmente de $n$ à $n +\delta n$ sous la forme d'une série entière, qu'il combine avec l'équation précédente pour en obtenir une approximation:
 \begin{equation}
   s^{n +\delta n}
   \approx s^{n} + \sum_\nu {\left(-1 \right)^{\nu-1} s^{n}_{\nu} \left(\frac{\delta n}{n}\right)^{\nu}}.
@@ -423,7 +417,7 @@ La figure \@ref(fig:Beguinot2015Fig) montre que les extrapolations sont bonnes e
 La distribution des 500 simulations d'extrapolation est proche de celle des 500 inventaires, avec une plus grande variabilité due à la quantiité plus faible de données disponibles.
 
 Le code R nécessaire pour réaliser la figure est:
-```{r Beguinot2015Code, eval=FALSE, size='tiny', tidy=FALSE}
+```{r Beguinot2015Code, eval=FALSE, size='footnotesize', tidy=FALSE}
 Xlab <- "Nombre d'espèces"
 Ylab <- "Densité de probabilité"
 ggplot(data.frame(richCommunities, eB, ei, eS)) +
@@ -501,7 +495,7 @@ Avec un inventaire de 5000 individus dans cet exemple, l'estimation de la riches
 En limitant l'inventaire à 1000 individus, l'information disponible est trop limitée.
 
 Le code R nécessaire pour réaliser la figure est:
-```{r Beguinot2015aCode, eval=FALSE, size='tiny', tidy=FALSE}
+```{r Beguinot2015aCode, eval=FALSE, size='footnotesize', tidy=FALSE}
 ggplot() +
   geom_ribbon(aes(x, ymin = Min, ymax = Max), 
               data.frame(x = n:Nmax, Min, Max), alpha = 0.3) +
@@ -528,7 +522,7 @@ Dans tous les cas, il suffit de considérer qu'un agrégat surestime le nombre d
 
 Plotkin et al. proposent une méthode permettant de prendre en compte la structure spatiale pour fournir des modèles de courbes aire-espèces fiables, dans un cadre particulier où le nombre total d'espèces et leur structure spatiale sont connus. 
 La méthode nécessite une carte des individus. 
-Le semis de point est considéré comme le résultat d'un processus de Neyman-Scott [@Neyman1958] : des centres d'agrégats sont tirés de façon complètement aléatoire et les individus sont répartis autour des centres selon une loi normale en deux dimensions. 
+Le semis de point est considéré comme le résultat d'un processus de Neyman-Scott [@Neyman1958]: des centres d'agrégats sont tirés de façon complètement aléatoire et les individus sont répartis autour des centres selon une loi normale en deux dimensions. 
 Les paramètres du processus sont estimés à partir du semis de points, puis la courbe aire-espèces est obtenue par simulation du processus.
 
 Le problème est traité de façon plus approfondie par @Picard2004 qui s'appuient sur la théorie des processus ponctuels.
@@ -585,7 +579,7 @@ La distribution des espèces non observées peut maintenant être estimée dans 
 ```
 
 En forêt tempérée, toutes les espèces d'un habitat sont rencontrées sur une surface inférieure à l'hectare. 
-L'*aire minimale* est la surface nécessaire à échantillonner pour caractériser une *association végétale*, dans l'approche de la phytosociologie fondée par @Braun-Blanquet1928 (et plus largement [@Greig-Smith1983], même si son intérêt est discuté [@McGuinness1984]) : elle ne contient pas toutes les espèces mais un sous-ensemble caractéristique. 
+L'*aire minimale* est la surface nécessaire à échantillonner pour caractériser une *association végétale*, dans l'approche de la phytosociologie fondée par @Braun-Blanquet1928 (et plus largement [@Greig-Smith1983], même si son intérêt est discuté [@McGuinness1984]): elle ne contient pas toutes les espèces mais un sous-ensemble caractéristique. 
 Elle est de l'ordre de 200&nbsp;m² en Europe [@Chytry2003].
 L'augmentation de la surface intègre de nouveaux habitats et ajoute donc la diversité $\beta$, par sauts successifs dans la situation idéale.
 
@@ -608,7 +602,7 @@ knitr::include_graphics('images/Williamson2001.png')
 
 ### Loi de puissance
 
-@Arrhenius1921 a établi le modèle de base, dit *loi de puissance* :
+@Arrhenius1921 a établi le modèle de base, dit *loi de puissance*:
 
 \begin{equation} 
 S^{A} = c A^{z}.
@@ -619,7 +613,7 @@ $A$ est la surface, $S^{A}$ est le nombre d'espèces dans $A$, $c$ et $z$ des pa
 @Preston1962 a montré que si la distribution des espèces est log-normale (sur un ensemble d'îles), la SAR (le nombre d'espèces en fonction de la surface de chaque île, mais en aucun cas la SAC de chaque île) suit une loi de puissance, et a établi que la puissance $z$ valait environ 0,26 (à partir de données empiriques, pas par nécessité théorique).
 On notera que le nombre d'espèces est clairement fini dans ce cadre, mais que la SAR n'a pas d'asymptote: les deux notions ne sont pas équivalentes.
 La loi de puissance peut donc être bornée.
-Le glissement d'un modèle de biogéographie des îles à un cadre plus général est faisable simplement, à la manière de @Hubbell2001 pour la théorie neutre : chaque île peut être considérée comme une communauté locale issue d'une méta-communauté régionale.
+Le glissement d'un modèle de biogéographie des îles à un cadre plus général est faisable simplement, à la manière de @Hubbell2001 pour la théorie neutre: chaque île peut être considérée comme une communauté locale issue d'une méta-communauté régionale.
 
 La distribution log-normale de Preston, dite "canonique " assumait une relation particulière entre le nombre d'espèces et le nombre d'individus, pour laquelle @May1975 a montré que la valeur exacte de $z$ est 0,25.
 Les résultats empiriques ultérieurs [@May1975, May2000], pour des lois quelconques, non canoniques, ont fourni des valeurs généralement comprises entre 0,2 et 0,3. 
@@ -778,7 +772,7 @@ Ses hypothèses sont peu réalistes dans la zone A, mais il valide la loi de pui
 
 La relation d'Arrhenius est donc systématiquement validée à l'échelle régionale (figure \@ref(fig:Williamson2001)). 
 On remarquera que la distribution de Fisher, validée par Hubbell pour la méta-communauté, n'est jamais observée dans la SAR à cause de l'agrégation spatiale: en augmentant la surface d'échantillonnage, de nouvelles communautés sont ajoutées progressivement, mais l'échantillonnage de toute la méta-communauté n'est jamais réalisé (sauf au point marquant le passage de la zone B à la zone C). 
-Les seuls exemples empiriques sont des inventaires d'arbres à l'échelle de l'Amazonie entière [@TerSteege2013], ou de la totalité des forêts tropicales [@Slik2015] qui correspondent à la distribution de Fisher. Dans ces deux exemples, l'ajustement est obtenu en extrapolant linéairement la SAD, ce qui est légitime [@Izsak2012] si la distribution est effectivement celle de Fisher : la forme de la distribution est donc assumée, pas prouvée.
+Les seuls exemples empiriques sont des inventaires d'arbres à l'échelle de l'Amazonie entière [@TerSteege2013], ou de la totalité des forêts tropicales [@Slik2015] qui correspondent à la distribution de Fisher. Dans ces deux exemples, l'ajustement est obtenu en extrapolant linéairement la SAD, ce qui est légitime [@Izsak2012] si la distribution est effectivement celle de Fisher: la forme de la distribution est donc assumée, pas prouvée.
 Les valeurs de $\alpha$ à ces échelles sont bien supérieures aux valeurs locales (35 pour BCI, voir chapitre \@ref(chap:Fisher)): 754 pour l'Amazonie, de l'ordre de 1000 pour les néotropiques, mais seulement de 250 pour l'Afrique, et de l'ordre de 2000 pour l'ensemble des tropiques.
 
 Enfin, quand l'échelle est encore plus grande, le nombre d'espèces augmente à nouveau plus vite parce que d'autres méta-communautés sont intégrées.

@@ -9,9 +9,7 @@ library("tidyverse")
 La biodiversité peut être mesurée de nombreuses façons. 
 La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire.
 D'autres mesures de diversité ont été présentées ici, d'autres encore peuvent être trouvées dans la littérature. 
-Elles ont en général un moins bon support mathématique, surtout les mesures de diversité $\beta$, elles ne peuvent pas % !TeX encoding = UTF-8
-% !TeX spellcheck = fr-classique
-être décomposées, corrigées ou interprétées. 
+Elles ont en général un moins bon support mathématique, surtout les mesures de diversité $\beta$, elles ne peuvent pas être décomposées, corrigées ou interprétées. 
 La diversité de Hurlbert possède toutes ses propriétés et une correction très efficace du biais d'estimation, mais elle n'est pas généralisée à la diversité phylogénétique.
 
 
@@ -34,10 +32,9 @@ Sa transformation en diversité au sens strict permet d'interpréter les valeurs
 La diversité de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet d'autres définitions de la distance entre espèces.
 Le paramétrage des mesures (l'ordre de la diversité) permet de donner plus ou moins d'importance aux espèces rares et de tracer des profils de diversité.
 
-Les communautés et assemblages idéals définissant les nombres équivalents d'espèces et de communautés sont :
+Les communautés et assemblages idéals définissant les nombres équivalents d'espèces et de communautés sont:
 
 * des communautés d'espèces équiprobables [@Hill1973], dont l'ancêtre commun est la racine de l'arbre phylogénétique (diversité phylogénétique)[@Marcon2014b] ou dont la distance fonctionnelle est maximale (diversité fonctionnelle) [@Leinster2012];
-
 * une méta-communauté contenant des communautés de poids égal et totalement distinctes [@Jost2007], c'est-à-dire n'ayant aucune espèce en commun. De plus, la distance fonctionnelle ou phylogénétique est maximale entre deux espèces quelconques appartenant à des communautés différentes [@Pavoine2015a].
 
 Le package *entropart*[@Marcon2014c] permet de calculer avec R la diversité d'une méta-communauté à partir de données d'abondances et d'un arbre (phylogénétique) ou d'une matrice de distances (fonctionnelles).
@@ -69,7 +66,7 @@ Pour $q=2$ seulement, toutes les mesures de diversité sont identiques:
 
 * La diversité de Leinster et Cobbold est égale à la diversité phylogénétique.
     
-La diversité d'ordre 1 a en revanche des propriétés avantageuses pour la décomposition : toutes les définitions de diversité $\alpha$ sont dans ce cas identiques, et l'information mutuelle se confond avec la diversité $\beta$.
+La diversité d'ordre 1 a en revanche des propriétés avantageuses pour la décomposition: toutes les définitions de diversité $\alpha$ sont dans ce cas identiques, et l'information mutuelle se confond avec la diversité $\beta$.
 
 
 ## Limites

@@ -17,13 +17,13 @@ La décomposition de @Chiu2014 se situe en réalité dans ce cadre.
 
 La notion de diversité structurelle a été définie par les forestiers [@Bacaro2013]. 
 En plus des espèces, d'autres critères (par exemple les classes de diamètres) sont pris en compte pour définir la structure forestière. 
-Une revue des approches utilisées pour décrire cette structure, et plus particulièrement sa complexité, est fournie par Bacaro et al. Certaines se sont attachées à définir une mesure de diversité structurelle : notamment, @Das2004 définissent un indice qui prend en compte la variabilité des diamètres.
+Une revue des approches utilisées pour décrire cette structure, et plus particulièrement sa complexité, est fournie par Bacaro et al. Certaines se sont attachées à définir une mesure de diversité structurelle: notamment, @Das2004 définissent un indice qui prend en compte la variabilité des diamètres.
 
 Bacaro et al. suggèrent d'utiliser l'entropie de Shannon pour mesurer la diversité structurelle. 
 Cette idée est explorée ici pour définir une mesure de diversité bidimensionnelle (croisant par exemple les espèces et les classes de diamètres) et étendue à la diversité HCDT.
 
 
-Pour la suite, les données sont organisées comme dans le tableau \@ref(tab:Notations2) : les individus appartiennent à l'espèce $s$ et à la classe $i$ avec la probabilité $p_{s,i}$ telle que $\sum_s{\sum_i{p_{s,i}}}=1$ (au lieu de $\sum_i{p_{s|i}}=1$ dans les chapitres précédents).
+Pour la suite, les données sont organisées comme dans le tableau \@ref(tab:Notations2): les individus appartiennent à l'espèce $s$ et à la classe $i$ avec la probabilité $p_{s,i}$ telle que $\sum_s{\sum_i{p_{s,i}}}=1$ (au lieu de $\sum_i{p_{s|i}}=1$ dans les chapitres précédents).
 
 ```{r Notations2, echo=FALSE, warning=FALSE}
 Notations <- data.frame(
@@ -192,7 +192,7 @@ MC1 <- MetaCommunity(df1)
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r Repartition1Code, eval=FALSE, size='tiny'}
+```{r Repartition1Code, eval=FALSE, size='footnotesize'}
 plot(MC1)
 ```
 
@@ -212,7 +212,7 @@ MC2 <- MetaCommunity(df2)
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r Repartition2Code, eval=FALSE, size='tiny'}
+```{r Repartition2Code, eval=FALSE, size='footnotesize'}
 plot(MC2)
 ```
 
@@ -252,7 +252,7 @@ La décomposition complète de la diversité jointe s'écrit
 \end{equation}
 
 La méta-communauté suivante illustre cette décomposition: elle contient $R_c=3$ répliques identiques de $D_{\beta}=2$ communautés équiprobables totalement distinctes, comprenant chacune $D_{\alpha}=2$ espèces équiprobables (figure \@ref(fig:DifferentiationFig)). 
-Sa diversité jointe est 12 (le nombre de cellules non nulles dans la matrice) :
+Sa diversité jointe est 12 (le nombre de cellules non nulles dans la matrice):
 
 ```{r Differentiation}
 q <- 2  # Peu importe q
@@ -266,7 +266,7 @@ MC <- MetaCommunity(df3)
 ```
 
 Le code R nécessaire pour réaliser la figure est:
-```{r DifferentiationCode, eval=FALSE, size='tiny'}
+```{r DifferentiationCode, eval=FALSE, size='footnotesize'}
 plot(MC)
 ```
 
@@ -276,7 +276,7 @@ summary(DivPart(q, MC)->dp)
 (Dis <- Djointe/dp$GammaDiversity)
 ```
 
-La définition de la diversité $\alpha$ de @Chiu2014 \@ref(eq:Chiualpha) est la diversité jointe, normalisée par le nombre de communautés :
+La définition de la diversité $\alpha$ de @Chiu2014 \@ref(eq:Chiualpha) est la diversité jointe, normalisée par le nombre de communautés:
 
 \begin{equation}
   (\#eq:Chiualphajointe)
@@ -308,11 +308,10 @@ En inversant le rôle des lignes et des colonnes de la matrice $\{p_{s,i}\}$, on
   = \frac{^{q}\!D_{j}}{^{q}\!D\left(\{p_{i}\}\right)}.
 \end{equation}
 
-Gregorius montre que $^{q}\!R_{s}$ égale la diversité $\alpha$ selon Jost \@ref(eq:JostHalpha) :
+Gregorius montre que $^{q}\!R_{s}$ égale la diversité $\alpha$ selon Jost \@ref(eq:JostHalpha):
 
 \begin{equation}
   (\#eq:JostGregorius)
   ^{q}\!R_{s}
   = {\left(\sum_s{\sum_i{\frac{p^q_i}{\sum_i{p^q_i}}p^q_{s|i}}}\right)}^{{1}/{\left(1-q\right)}}.
 \end{equation}
-

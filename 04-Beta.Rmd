@@ -273,7 +273,7 @@ L'indice de Sørensen vaut deux fois le nombre d'espèces communes divisé par l
 Les notations $S_n$ correspondent à celles de l'article de référence de @Gower1986 qui fait la revue de ces indices de similarité (13 autres sont traités) et en étudie les propriétés. 
 Certains indices prennent en compte les espèces absentes des deux communautés mais qui auraient pu être observées $s_{0,0}$.
 
-Deux autres indices sont mentionnés ici, celui de @Sokal1963 et celui d'@Ochiai1957 :
+Deux autres indices sont mentionnés ici, celui de @Sokal1963 et celui d'@Ochiai1957:
 
 \begin{equation}
   S_5 = \frac{s_{1,1}}{s_{1,1}+2 \left(s_{1,0}+s_{0,1}\right)};
@@ -305,7 +305,7 @@ La distribution des valeurs de l'indice de Jaccard $S_3=1-D_3^2$ est en figure \
 Le mode est proche de 0,5: la moitié des espèces sont communes entre deux carrés.
 
 Code R pour la figure:
-```{r JaccardCode, eval=FALSE, size='tiny'}
+```{r JaccardCode, eval=FALSE, size='footnotesize'}
 ggplot(data.frame(Jaccard=as.numeric(1-DistJaccard^2))) +
   geom_density(aes(x=Jaccard))
 ```
@@ -395,7 +395,7 @@ La distribution des valeurs de l'indice corrigé se trouve en figure \@ref(fig:C
 La majorité des paires de carrés a une similarité supérieure à 0,8 après correction.
 
 Code R pour la figure:
-```{r ChaoJaccardCode, eval=FALSE, size='tiny', tidy=FALSE}
+```{r ChaoJaccardCode, eval=FALSE, size='footnotesize', tidy=FALSE}
 ggplot(data.frame(ChaoJaccard = as.numeric(ChaoJaccard))) +
   geom_density(aes(x=ChaoJaccard))
 ```
@@ -408,7 +408,7 @@ Ils montrent que la similarité augmente beaucoup avec la taille des placettes �
 
 ### Représentation graphique
 
-La matrice de distances peut être représentée par une analyse en coordonnées principales (PCoA) [@Gower1966] :
+La matrice de distances peut être représentée par une analyse en coordonnées principales (PCoA) [@Gower1966]:
 ```{r JaccardPCO}
 DistChaoJaccard <- as.dist(sqrt(1-ChaoJaccard))
 PcoChaoJaccard <- dudi.pco(DistChaoJaccard, scannf = FALSE)
@@ -424,7 +424,7 @@ Les distances entre les points sont les valeurs de $\sqrt{D_3}$, projetées sur 
 La matrice de distances n'est pas euclidienne à cause des approximations de l'estimation mais les conséquences sont faibles sur les premiers axes.
 
 Code R pour la figure:
-```{r JaccardPCOCode, eval=FALSE, size='tiny'}
+```{r JaccardPCOCode, eval=FALSE, size='footnotesize'}
 scatter(PcoChaoJaccard, posieig = "bottomright")
 ```
 
@@ -454,7 +454,7 @@ $R_s$ est l'étendue ou l'écart-type de l'abondance de l'espèce $s$, qui perme
 $w_s$ est le poids attribué à l'espèce $s$, qui peut être utilisé pour éliminer les doubles absences ($w_s=0$ si l'espèce est absente des deux communautés, 1 sinon).
 
 @Anderson2006 proposent une mesure de dissimilarité (de Gower modifiée) donnant le même poids à une différence d'un ordre de grandeur entre les abondances qu'à la différence entre présence et absence, qui permet donc de se passer de la normalisation par $R_s$.
-Les effectifs sont transformés de la façon suivante : $x_s=\log n_s +1$ si $n_s \ne 0$, $x_s=1$ sinon (le logarithme est décimal).
+Les effectifs sont transformés de la façon suivante: $x_s=\log n_s +1$ si $n_s \ne 0$, $x_s=1$ sinon (le logarithme est décimal).
 La dissimilarité est
 \begin{equation}
   D_{\mathit{MG}} = \frac{\sum_s{w_s\left| x_{s,1}-x_{s,2} \right|}}{\sum_s{w_s}}.
@@ -465,7 +465,7 @@ Elle n'est pas euclidienne.
 Les dissimilarités de Jaccard et de Sørensen se généralisent aux données d'abondance.
 Le nombre d'espèces communes aux deux sites $s_{1,1}$ est remplacé par le nombre d'individus de même espèce présents sur les deux sites: $n_{1,1}=\sum_s{\min(n_{s,1}, n_{s,2})}$; le nombre d'espèces seulement présentes sur le premier site $s_{1,0}$ est remplacé par le nombre d'individus, sommé sur toutes les espèces, présents uniquement sur le site: $n_{1,0}=\sum_s{\max(0, n_{s,1}-n_{s,2})}$; de même, $s_{0,1}$ est remplacé par $n_{0,1}=\sum_s{\max(0, n_{s,2}-n_{s,1)}}$.
 
-La dissimilarité de Ružička [@Ruzicka1958] généralise celle de Jaccard :
+La dissimilarité de Ružička [@Ruzicka1958] généralise celle de Jaccard:
 
 \begin{equation}
   (\#eq:Ruzicka)
@@ -530,7 +530,7 @@ knitr::include_graphics('images/Podani2011.png')
 
 @Podani2011 défendent un point de vue différent sur la façon de comptabiliser les deux composantes de la décomposition de la dissimilarité de Jaccard.
 Le terme de substitution comptabilise les espèces présentes sur un seul site, en nombre égal: $2\min(s_{1,0},s_{0,1})$ plutôt que l'indice de dissimilarité de Simpson..
-Ainsi, le terme d'emboîtement comptabilise la différence de richesse entre les deux sites : $|s_{1,0}-s_{0,1}|$.
+Ainsi, le terme d'emboîtement comptabilise la différence de richesse entre les deux sites: $|s_{1,0}-s_{0,1}|$.
 
 Après normalisation par le nombre total d'espèce, la décomposition est
 
@@ -694,7 +694,7 @@ Cette "définition" est valide puisque cette distance est la composante inter de
 L'ACP non centrée des 50 carrés de BCI est en figure \@ref(fig:BCIPCAFig).
 
 Code R pour la figure:
-```{r BCIPCACode, eval=FALSE, size='tiny'}
+```{r BCIPCACode, eval=FALSE, size='footnotesize'}
 pcaBCI <- dudi.pca(BCI/rowSums(BCI), scannf = FALSE, nf = 2, center = FALSE, scale = FALSE)
   scatter(pcaBCI, posieig = "bottomleft")
 ```
@@ -706,7 +706,7 @@ pcaBCI <- dudi.pca(BCI/rowSums(BCI), scannf = FALSE, nf = 2, center = FALSE, sca
 L'ACP centrée (mais non réduite, figure \@ref(fig:BCIPCA2Fig)) permet de mieux représenter la diversité $\beta$ : la distance de chaque carré au centre du repère est sa contribution.
 
 Code R:
-```{r BCIPCA2Code, eval=FALSE, size='tiny'}
+```{r BCIPCA2Code, eval=FALSE, size='footnotesize'}
 pcaBCI <- dudi.pca(BCI/rowSums(BCI), scannf = FALSE, nf = 2, center = TRUE, scale = FALSE)
   scatter(pcaBCI, clab.col = 0)
 ```
@@ -765,7 +765,7 @@ La diversité $\beta$ de BCI (figure \@ref(fig:BCIPCA2Fig)) est mieux représent
 La limite de la méthode est que l'origine du repère ne représente plus ici la méta-communauté: sa position correspond à la moyenne des probabilités des espèces transformées, $y_{s|i}$, pas à celle des $p_{s|i}$.
 
 Code R:
-```{r BCICordeCode, eval=FALSE, size='tiny'}
+```{r BCICordeCode, eval=FALSE, size='footnotesize'}
 library("adespatial")
 dCorde <- dist.ldc(BCI, method = "chord")
 pcoaBCI <- dudi.pco(dCorde, scannf = FALSE, nf = 2)
@@ -1261,7 +1261,7 @@ L'entropie $\beta$ entre les échantillons de deux hectares est donc diminuée d
 La figure \@ref(fig:BetaSampleFig) présente les valeurs estimées de diversité neutre $\beta$ entre carrés de BCI tirés aléatoirement, en fonction du nombre de carrés.
 
 Code pour réaliser la figure:
-```{r BetaSampleCode1, eval=FALSE, size='tiny', tidy=FALSE}
+```{r BetaSampleCode1, eval=FALSE, size='footnotesize', tidy=FALSE}
 library("gplots")
 MC <- MetaCommunity(as.data.frame(t(BCI)))
 
@@ -1293,7 +1293,7 @@ BetaPlots(q = 2, nPlots=c(2, 5, 10, 15, 20, 25, 30),
           nSimulations = 100)
 ```
 
-L'estimation de la diversité présente les difficultés classiques dues au biais d'estimation: la diversité $\gamma$ est sous-estimée si l'échantillonnage est trop faible, la diversité $\beta$ augmente avec le nombre de communautés comme la diversité $\gamma$ augmente avec la taille de l'échantillon ; il s'agit d'un problème d'estimation, pas de normalisation. 
+L'estimation de la diversité présente les difficultés classiques dues au biais d'estimation: la diversité $\gamma$ est sous-estimée si l'échantillonnage est trop faible, la diversité $\beta$ augmente avec le nombre de communautés comme la diversité $\gamma$ augmente avec la taille de l'échantillon; il s'agit d'un problème d'estimation, pas de normalisation. 
 
 La diversité $\beta$ ne doit donc pas être normalisée systématiquement, mais seulement dans le premier cas.
 
@@ -1386,7 +1386,7 @@ La diversité $\gamma$ (rectangles de hauteur 1) est égale au produit des diver
 Si les communautés étaient de même poids et complètement différentes, c'est à dire contenant des espèces totalement dissimilaires entre communautés [@Pavoine2015a], la hauteur du rectangle serait égale à leur nombre (2 ici).
 
 Code pour réaliser la figure:
-```{r DivPartCode, eval=FALSE, size='tiny', tidy=FALSE}
+```{r DivPartCode, eval=FALSE, size='footnotesize', tidy=FALSE}
 q <- 1
 Neutre <- DivPart(q, Paracou618.MC, Biased = FALSE)
 plot(c(0, Neutre$GammaDiversity), c(0, Paracou618.MC$Ncommunities),
@@ -1520,7 +1520,7 @@ Si l'intervalle de confiance ne contient pas 0, l'égalité des distributions es
 Calcul sous R: la fonction `DivEst` produit un graphique avec l'intervalle de confiance (figure \@ref(fig:DivestFig)).
 
 Code R:
-```{r DivestCode, eval=FALSE, size='tiny'}
+```{r DivestCode, eval=FALSE, size='footnotesize'}
 de <- DivEst(q = 1, Paracou618.MC, Simulations = 1000)
 plot(de)
 ```
