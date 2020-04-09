@@ -6,7 +6,7 @@ bookdown::gitbook:
         <li><a href="./">Mesures de la Biodiversité</a></li>
       after: |
         <li><a href="https://github.com/EricMarcon/MesuresBioDiv2" target="blank">Publié avec bookdown, hébergé sur GitHub</a></li>
-    download: null
+    download: ["pdf"]
 bookdown::pdf_book:
   template: latex/template.tex
   pandoc_args: --top-level-division=chapter
