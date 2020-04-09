@@ -1040,13 +1040,13 @@ Son espérance, estimée par sa moyenne calculée en ajoutant tous les relevés 
 
 @Chao2013 utilisent l'estimateur de la pente de la courbe de raréfaction, calculé précédemment [@Chao2012b] pour estimer la richesse spécifique, pour fournir un estimateur extrêmement performant:
 
-\begin{multline}
+\begin{align}
   (\#eq:Chao2013)
   \tilde{H}
-  = -\sum_{s=1}^{s^{n}_{\ne 0}}
+  = &-\sum_{s=1}^{s^{n}_{\ne 0}}
     {\frac{n_s}{n}\left(\mathrm{\Psi}\left(n\right) - \mathrm{\Psi}\left(n_s\right)\right)} \\
-  -\frac{s_{1}}{n} {\left(1-A\right)}^{1-n} \left(-{\ln\left( A \right)}-\sum^{n-1}_{r=1}{\frac{1}{r}{\left( 1-A \right)}^r}\right),
-\end{multline}
+  &-\frac{s_{1}}{n} {\left(1-A\right)}^{1-n} \left(-{\ln\left( A \right)}-\sum^{n-1}_{r=1}{\frac{1}{r}{\left( 1-A \right)}^r}\right),
+\end{align}
 
 où $\mathrm{\Psi}\left(\cdot\right)$ est la fonction digamma et $A$ vaut:
 
@@ -1146,12 +1146,18 @@ L'estimateur $\hat{p}_s$ est sans biais mais a une variance importante.
 L'estimateur $\frac{1}{S}$, si $S$ est connu, est de variance nulle mais est très biaisé. 
 Comme le nombre d'espèces est en général inconnu, il doit être estimé par une méthode quelconque, mais de préférence le surestimant plutôt que le sous-estimant. 
 L'estimateur de James-Stein (*shrinkage estimator*) optimal est
-\begin{eqnarray}
-  (\#eq:JamesStein)
-  \tilde{p}_s = \hat{\lambda}\frac{1}{\hat{S}} + \left( 1-\hat{\lambda} \right)\hat{p}_s, \\
+\begin{equation}
+  (\#eq:JamesStein1)
+  \tilde{p}_s = \hat{\lambda}\frac{1}{\hat{S}} + \left( 1-\hat{\lambda} \right)\hat{p}_s,
+\end{equation}
+
+où
+\begin{equation}
+  (\#eq:JamesStein2)
   \hat{\lambda} = \frac{1-\sum^{s^{n}_{\ne 0}}_{s=1}{\left( \hat{p}_s \right)^2}}
                   {\left( n-1 \right) \sum^{s^{n}_{\ne 0}}_{s=1}{\left( \frac{1}{\hat{S}} - \hat{p}_s \right)^2}}.
-\end{eqnarray}
+\end{equation}
+
 
 L'entropie est ensuite simplement estimée par l'estimateur plug-in: $\tilde{H} = -\sum^{s^{n}_{\ne 0}}_{s=1}{\tilde{p}_s \ln{\tilde{p}_s}}$. 
 Le calcul sous R est le suivant:
@@ -1687,10 +1693,10 @@ Code R:
 ```
 
 Les coordonnées des points du profil sont définies par
-\begin{eqnarray}
+\begin{equation}
   (\#eq:ProfilQueue)
   y(x) = \sum_{s=x+1}^{S}{p_{[s]}},\ x\in \{0, 1, \dots, S\}.
-\end{eqnarray}
+\end{equation}
 
 $p_{[s]}$ est la probabilité de l'espèce $s$; les espèces sont classées par probabilité décroissante.
 
@@ -1746,12 +1752,12 @@ Diversity(Paracou618.MC$Ns, q=1, Correction="ZhangGrabchak")
 $h_q$ s'écrit sous la forme de la somme infinie des entropies de Simpson généralisées: $h_q = \sum_{k=0}^{\infty}{\binom{q-1}{k}(-1)^k\zeta_{1,k}}$.
 Alors que l'estimateur de Zhang et Grabchak ne prend en compte que les $n-1$ premiers termes de la somme pour un estimateur sans biais,  @Chao2015, eqn 5, le complètent par une estimation, forcément biaisée, des termes suivants pour obtenir:
 
-\begin{multline}
+\begin{align}
   (\#eq:HqChaoJost)
-  ^q\!{\tilde{H}}
-  = \frac{1}{q-1} \\
-  \left[ 1 -\tilde{h}_q -\frac{s_{1}}{n} {\left( 1-A \right)}^{1-n} \left( A^{q-1} -\sum^{n-1}_{r=0}{ \binom{q-1}{r} {\left(A-1\right)}^r} \right) \right].
-\end{multline}
+  ^q\!{\tilde{H}} = 
+  &\frac{1}{q-1} \\
+  &\left[ 1 -\tilde{h}_q -\frac{s_{1}}{n} {\left( 1-A \right)}^{1-n} \left( A^{q-1} -\sum^{n-1}_{r=0}{ \binom{q-1}{r} {\left(A-1\right)}^r} \right) \right].
+\end{align}
 
 La formule du nombre de combinaisons est généralisée aux valeurs de $q-1$ non entières, et vaut par convention 1 pour $r=0$. $A$ vaut:
 
@@ -1777,13 +1783,13 @@ Le deuxième terme de la somme est estimé en posant $\hat{p}_s = \hat{\alpha}_0
 Alors, $\sum_s{p_s}$ est estimé par $\hat{\alpha}_0 {s^{n}_{0}} = \frac{s^{n}_{1}}{n}(1 - \hat{\alpha}_1)$ et $(1-p_s)^m$ par $(1-\hat{\alpha}_0)^m$.
 Les deux estimateurs $\hat{\alpha}_1$ et $\hat{\alpha}_0$ sont égaux à $A$ si le nombre d'espèces non échantillonnées est estimé par l'estimateur Chao1. On obtient
 
-\begin{eqnarray} 
+\begin{align} 
   (\#eq:Cnm)
   {\mathbb E}\left(C^{n+m} \right)
-  & = & 1-\frac{s^{n}_{1}}{n} 
+  &= 1-\frac{s^{n}_{1}}{n} 
     \left[ \frac{\left(n-1\right)s^{n}_{1}}{\left(n-1\right)s^{n}_{1}+2s^{n}_{2}} \right]^{n+m} \\
-  & = & 1-\frac{s^{n}_{1}}{n} \left( 1-A \right)^{m+1}.
-\end{eqnarray}
+  &= 1-\frac{s^{n}_{1}}{n} \left( 1-A \right)^{m+1}.
+\end{align}
 
 L'espérance du taux de couverture est directement liée à l'indice de Simpson généralisé [@Good1953]: ${\mathbb E}(C^{n+m}) = 1 - \zeta_{1,n+m}$.
 L'estimateur de $h_q$ est obtenu en remplaçant les termes $\zeta_{1,k}$ de la somme infinie $\sum_{k=n}^{\infty}{\binom{q-1}{k}(-1)^k \zeta_{1,k}}$ par la valeur de $1 -{\mathbb E}(C^{n+m})$

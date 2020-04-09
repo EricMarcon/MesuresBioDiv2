@@ -918,12 +918,13 @@ Cet estimateur est le moins biaisé à ce jour, mais n'est applicable qu'à l'en
 
 @Zhang2014a proposent un estimateur de la divergence de Kullback-Leibler avec un biais réduit selon la même méthode que pour l'estimation de l'entropie HCDT ou de l'entropie de Shannon:
 
-\begin{multline}
+\begin{align}
+  (\#eq:Zhang2014a)
   _{i}\tilde{H}_{\beta} 
-  = \sum^{s_{\ne 0}}_{s=1}{\frac{n_{s,i}}{n} }\\{
-  \left\{ \sum^{n-n_s}_{v=1}{\frac{1}{v} \prod^v_{j=1}{ \left( 1-\frac{n_s}{n-j+1} \right) }}
-     -  \sum^{n_i-n_{s,i}}_{v=1}{\frac{1}{v} \prod^v_{j=1}{\left( 1-\frac{n_{s,i}-1}{n_i-j} \right) }} \right\} }.
-\end{multline}
+  &= \sum^{s_{\ne 0}}_{s=1}{\frac{n_{s,i}}{n} }\\
+    &\left\{ \sum^{n-n_s}_{v=1}{\frac{1}{v} \prod^v_{j=1}{ \left( 1-\frac{n_s}{n-j+1} \right) }}
+     -  \sum^{n_i-n_{s,i}}_{v=1}{\frac{1}{v} \prod^v_{j=1}{\left( 1-\frac{n_{s,i}-1}{n_i-j} \right) }} \right\}.
+\end{align}
 
 Cette correction est incluse dans la fonction `ShannonBeta` de *entropart* :
 ```{r bcShannonBeta}
