@@ -96,8 +96,9 @@ L'inégalité de Cauchy-Schwarz (le produit scalaire est inférieur au produit d
 
 
 d'où
-\begin{equation} 
- {\mathbb E}(s^{n}_{0}) 
+\begin{equation}
+  (\#eq:Esn0)
+  {\mathbb E}(s^{n}_{0}) 
   \ge \frac{n-1}{n}\frac{\left[ {\mathbb E}(s^{n}_{1}) \right]^2}{2 {\mathbb E}(s^{n}_{2})}.
 \end{equation}
 
@@ -131,11 +132,19 @@ Si aucune espèce n'est observée deux fois, l'estimateur est remplacé par
 Si $n$ n'est pas trop petit, les approximations suivantes sont possibles:
 
 \begin{equation}
+  (\#eq:Chao1sansn)
   \hat{S}_\mathit{Chao1}
    = {s^{n}_{\ne 0}} + \frac{{\left(s^{n}_{1}\right)}^2}{2s^{n}_{2}}.
 \end{equation}
 
-Si aucune espèce n'est observée deux fois, l'estimateur est remplacé [@Chao2004] par $${\hat{S}}_\mathit{Chao1} = {s^{n}_{\ne 0}}+{s^{n}_{1}\left(s^{n}_{1}-1\right)}/{2}.$$
+Si aucune espèce n'est observée deux fois, l'estimateur est remplacé [@Chao2004] par
+
+\begin{equation}
+  (\#eq:Chao1sansnf2)
+  \hat{S}}_\mathit{Chao1} 
+  = {s^{n}_{\ne 0}}+{s^{n}_{1}\left(s^{n}_{1}-1\right)}/{2}.
+\end{equation}
+
 
 La variance de l'estimateur est connue, mais pas sa distribution:
 
@@ -155,7 +164,7 @@ Si aucune espèce n'est observée deux fois:
   + \frac{{\left(s^{n}_{1}\right)}^4}{4s^{n}_{\ne 0}}.
 \end{equation}
 
-@Chao1987 calcule une approximation de l'intervalle de confiance à 95\%: 
+@Chao1987 donne une approximation de l'intervalle de confiance à 95\% en assumant une distribution normale: 
 
 \begin{equation}
   (\#eq:ICChao1)
@@ -254,7 +263,7 @@ L'estimateur est construit à partir de l'hypothèse selon laquelle le nombre d'
 $$s^{n}_{0} = \sum_{i=1}^{\infty}{\frac{a_i}{n^i}}.$$
 
 Pour cette raison, @Cormack1989 affirme qu'il n'a pas de support théorique solide.
-L'espérance du nombre d'espèces non observées est \@ref(eq:Esnnu) $\sum_s{(1-p_s)^n}$, qui décroît beaucoup plus rapidement que $\sum_{i}{\frac{a_i}{n^i}}$: l'hypothèse est bien fausse.
+L'espérance du nombre d'espèces non observées est \@ref(eq:Esnnu) $\sum_s{(1-p_s)^n}$, qui décroît beaucoup plus rapidement que $\sum_{i}{{a_i}/{n^i}}$: l'hypothèse est bien fausse.
 En revanche, pour une gamme de $n$ fixée (de la taille de l'inventaire à une taille suffisante pour approcher la richesse asymptotique par exemple), il est toujours possible d'écrire le nombre d'espèces non observées sous la forme d'une série de puissances négatives de $n$, comme dans l'illustration ci-dessous.
 
 Une communauté log-normale, similaire à BCI (300 espèces, écart-type égal à 2) est simulée et un échantillon de 1000 individus est tiré.
@@ -351,6 +360,7 @@ L'estimateur du jackknife est très utilisé parce qu'il est efficace en pratiqu
 
 L'estimateur du bootstrap [@Smith1984] est
 \begin{equation} 
+  (\#eq:Smith1984)
   \hat{S}_\mathit{b} = {s^{n}_{\ne 0}} + \sum_s{(1-p_s)^n}.
 \end{equation}
 
@@ -419,7 +429,7 @@ sum(DistNs)+DistNs[1]*(sum(BCI)-1)/sum(BCI)
 ```
 
 La valeur du jackknife 1 fournie par `specpool` est fausse. 
-La fonction `jackknife` de *SPECIES* donne le bon résultat, avec un intervalle de confiance calculé en supposant que la distribution est normale ($\pm$1,96 écart-type au seuil de 95\%).
+La fonction `jackknife` de *SPECIES* donne le bon résultat, avec un intervalle de confiance calculé en supposant que la distribution est normale ($\pm$ 1,96 écart-type au seuil de 95\%).
 
 L'estimateur du bootstrap est calculable simplement:
 ```{r Richesse4}
@@ -660,7 +670,8 @@ Le nombre d'espèces estimé est `r round(Shat, 0)`, inférieur au nombre d'esp�
 
 Pour calculer l'intervalle de confiance, il est plus simple de passer par une transformation linéaire du modèle [@Lineweaver1934]:
 
-\begin{equation} 
+\begin{equation}
+  (\#eq:Lineweaver1934)
   \left[\frac{1}{\hat{S}^{n}}\right] = \frac{K}{\hat{S}}\left[\frac{1}{n}\right]+\frac{1}{\hat{S}} 
 \end{equation}
 
@@ -697,6 +708,7 @@ Le modèle le plus simple est exponentiel négatif.
 Si la probabilité de trouver une nouvelle espèce est proportionnelle au nombre d'espèces non encore découvertes, la courbe d'accumulation suit la relation
 
 \begin{equation} 
+  (\#eq:Soberon1993a)
   S^{n} = S \left( 1 - e^{Kn} \right).
 \end{equation}
 
@@ -713,6 +725,7 @@ La fonction la plus simple est une exponentielle négative mais elle ne s'annule
 Un paramètre supplémentaire pour obtenir l'asymptote est nécessaire et aboutir à la relation
 
 \begin{equation} 
+  (\#eq:Soberon1993b)
   S^{n} = \frac{1}{z} \ln \left[ \frac{a}{c} - \frac{a-c}{c} e^{-czn} \right].
 \end{equation}
 
@@ -802,6 +815,7 @@ On note $p_s$ la probabilité qu'un individu tiré au hasard appartienne à l'es
 L'indice de @Simpson1949, ou Gini-Simpson, est
 
 \begin{equation}
+  (\#eq:SimpsonE)
   E =1-\sum^{S}_{s=1}{p^2_s}.
 \end{equation}
 
@@ -814,7 +828,7 @@ Deux autres formes de l'indice sont utilisées.
 Tout d'abord, la probabilité que deux individus soient de la même espèce, souvent appelée *indice de concentration de Simpson*, qui est celui défini dans l'article original de Simpson:
 
 \begin{equation}
- (\#eq:SimpsonD)
+  (\#eq:SimpsonD)
   D =\sum^{S}_{s=1}{p^2_s}.
 \end{equation}
 
@@ -826,6 +840,7 @@ Le nombre d'espèces doit être estimé par les méthodes présentées plus haut
 L'estimateur du maximum de vraisemblance de l'indice est
 
 \begin{equation}
+  (\#eq:EstEML)
   \hat{E} = 1-\sum^{s^{n}_{\ne 0}}_{s=1}{\hat{p}^2_s}.
 \end{equation}
 
@@ -847,7 +862,7 @@ ${{\mathbf 1}}_{sh}$ suit une loi de Bernoulli d'espérance $p_s$ et de variance
 $E$ est la somme sur toutes les espèces de cette variance. 
 Un estimateur non biaisé d'une variance à partir d'un échantillon est la somme des écarts quadratiques divisée par le nombre d'observation moins une. 
 L'estimateur $\hat{E}$ est légèrement biaisé parce qu'il est calculé à partir des ${\hat{p}}_s$, ce qui revient à diviser la somme des écarts par $n$, et non $n-1$. 
-Un estimateur non biaisé est [@Good1953, Lande1996]
+Un estimateur non biaisé est [@Good1953; @Lande1996]
 
 \begin{equation} 
   (\#eq:BiaisSimpson)
@@ -862,7 +877,8 @@ Il est négligeable: si $p_s$ est petit, $p^2_s$ est négligeable dans la somme.
 Simpson a fourni un estimateur non biaisé de $D$, à partir du calcul du nombre de paires d'individus tirés sans remise:
 
 \begin{equation}
-\tilde{D} = \frac{\sum^{S}_{s=1}{n_s\left(n_s -1\right)}}{n\left(n-1\right)}.
+  (\#eq:EstSimpson1949)
+  \tilde{D} = \frac{\sum^{S}_{s=1}{n_s\left(n_s -1\right)}}{n\left(n-1\right)}.
 \end{equation}
 
 L'argumentation est totalement différente, mais le résultat est le même: $\tilde{E}=1-\tilde{D}$.
@@ -926,6 +942,7 @@ L'indice de Shannon donne une mesure de la biodiversité en tant que quantité d
 L'estimateur du maximum de vraisemblance de l'indice est
 
 \begin{equation}
+  (\#eq:EstShannonML)
   \hat{H} = -\sum^{s^{n}_{\ne 0}}_{s=1}{\hat{p}_s \ln{\hat{p}_s}}.
 \end{equation}
 
@@ -941,6 +958,7 @@ La distribution de l'estimateur est connue [@Hutcheson1970] mais elle est inutil
 @Bulmer1974 établit une relation entre l'indice de Shannon et l'indice $\alpha$ de Fisher, à condition que la distribution de l'abondance des espèces soit log-normale:
 
 \begin{equation}
+  (\#eq:Bulmer1974)
   \hat{H} = \mathrm{\Psi}\left(\hat{\alpha}+1\right) - \mathrm{\Psi}\left(1\right).
 \end{equation}
 
@@ -959,7 +977,8 @@ La sous-estimation est assez sévère sur cet exemple.
 Si $S$ est le nombre d'espèces réel et $n$ le nombre d'individus échantillonnés, le biais est
 
 \begin{equation}
-\mathbb{E}\left(\hat{H}\right)-H =-\frac{S-1}{2n} + O\left(n^{-2}\right).
+  (\#eq:Basharin1959)
+  \mathbb{E}\left(\hat{H}\right)-H =-\frac{S-1}{2n} + O\left(n^{-2}\right).
 \end{equation}
 
 $O\left(n^{-2}\right)$ est un terme négligeable. 
@@ -1040,9 +1059,9 @@ Le problème traité est la non-linéarité de l'indice de Shannon par rapport a
 La fonction logarithme fournit un exemple simple: l'espérance de $\ln(p_s)$ n'est pas le logarithme de l'espérance de $p_s$ parce que la fonction $\ln$ est concave. 
 Chaque estimateur ${\hat{p}}_s$ fluctue autour de $p_s$ mais vaut $p_s$ en moyenne. 
 À cause de la concavité, $\ln({\hat{p}}_s)$ est en moyenne inférieur à $\ln(p_s)$: cette relation est connue sous le nom d'inégalité de @Jensen1906. 
-L'indice de Shannon est concave (figure \@ref(fig:ShannonFig) donc son estimateur (\@ref(eq:Shannon)) est biaisé négativement, même sans prendre en considération les espèces non observées.
+L'indice de Shannon est concave (figure \@ref(fig:ShannonFig) donc son estimateur \@ref(eq:Shannon) est biaisé négativement, même sans prendre en considération les espèces non observées.
 
-```{r ShannonFig, echo=FALSE, results='hide', message=FALSE, ref.label='ShannonCode',  fig.cap="courbe de $x\\ln x$ entre 0 et 1.)."}
+```{r ShannonFig, echo=FALSE, results='hide', message=FALSE, ref.label='ShannonCode',  fig.cap="courbe de $x\\ln x$ entre 0 et 1."}
 ```
 
 Code de la figure \@ref(fig:SARFig):
@@ -1083,6 +1102,7 @@ Biais.p <- function (p) {
 @Grassberger1988 a fourni la correction de référence:
 
 \begin{equation}
+  (\#eq:Grassberger1988)
   \tilde{H}
   = -\sum^{s^{n}_{\ne 0}}_{s=1}
   {\frac{n_s}{n}\left(\ln\left(n\right)-\mathrm{\Psi}\left(n_s\right)-\frac{{\left(-1\right)}^{n_s}}{n_s+1}\right)}.
@@ -1092,6 +1112,7 @@ Biais.p <- function (p) {
 @Grassberger2003 l'a perfectionnée:
 
 \begin{equation}
+  (\#eq:Grassberger2003)
   \tilde{H} 
   = -\sum^{s^{n}_{\ne 0}}_{s=1}
     {\frac{n_s}{n} \left(\mathrm{\Psi}\left(n\right)-\mathrm{\Psi}\left(n_s\right)-{\left(-1\right)}^{n_s}\int^1_0{\frac{t^{n_s-1}}{1+t}\mathop{dt}}\right)}.
@@ -1100,6 +1121,7 @@ Biais.p <- function (p) {
 Enfin, @Schurmann2004 l'a généralisée pour définir une famille de corrections dépendant d'un paramètre $\xi$:
 
 \begin{equation}
+  (\#eq:Schurmann2004)
   \tilde{H} = -\sum^{s^{n}_{\ne 0}}_{s=1}
     {\frac{n_s}{n} \left(\mathrm{\Psi}\left(n\right)-\mathrm{\Psi}\left(n_s\right)-{\left(-1\right)}^{n_s}\int^{\frac{1}{\xi}-1}_0{\frac{t^{n_s-1}}{1+t}\mathop{dt}}\right)}.
 \end{equation}
@@ -1125,6 +1147,7 @@ L'estimateur $\frac{1}{S}$, si $S$ est connu, est de variance nulle mais est tr�
 Comme le nombre d'espèces est en général inconnu, il doit être estimé par une méthode quelconque, mais de préférence le surestimant plutôt que le sous-estimant. 
 L'estimateur de James-Stein (*shrinkage estimator*) optimal est
 \begin{eqnarray}
+  (\#eq:JamesStein)
   \tilde{p}_s = \hat{\lambda}\frac{1}{\hat{S}} + \left( 1-\hat{\lambda} \right)\hat{p}_s, \\
   \hat{\lambda} = \frac{1-\sum^{s^{n}_{\ne 0}}_{s=1}{\left( \hat{p}_s \right)^2}}
                   {\left( n-1 \right) \sum^{s^{n}_{\ne 0}}_{s=1}{\left( \frac{1}{\hat{S}} - \hat{p}_s \right)^2}}.
@@ -1165,7 +1188,8 @@ Appliqué à des données de biodiversité aquatique, l'estimateur de James-Stei
 L'indice de @Hurlbert1971 est l'espérance du nombre d'espèces observées dans un échantillon de taille $k$ choisie:
 
 \begin{equation}
-  _{k}\!S = \sum^S_{s=1}{\left[1-{\left(1-p_s\right)}^k\right]}.
+  (\#eq:HurlbertSk)
+  _{k}S = \sum^S_{s=1}{\left[1-{\left(1-p_s\right)}^k\right]}.
 \end{equation}
 
 Chaque terme de la somme est la probabilité d'observer au moins une fois l'espèce correspondante.
@@ -1176,18 +1200,18 @@ L'indice peut être converti en nombre équivalent d'espèces [@Dauby2012] (c'es
 
 \begin{equation}
   (\#eq:HurlbertD)
-  _{k}\!S = _{k}\!D \left[1-{\left(1-\frac{1}{_{k}\!D}\right)}^k\right].
+  _{k}S = _{k}\!D \left[1-{\left(1-\frac{1}{_{k}\!D}\right)}^k\right].
 \end{equation}
 
-L'équation doit être résolue pour obtenir $_{k}\!D$ à partir de la valeur de $_{k}\!S$ estimée, numériquement pour $k>3$.
+L'équation doit être résolue pour obtenir $_{k}\!D$ à partir de la valeur de $_{k}S$ estimée, numériquement pour $k>3$.
 
 Dans deux cas particuliers, les nombres équivalents d'espèces de Hurlbert sont identiques aux nombres de Hill: $_{2}\!D =^{2}\!D$ et $_{\infty}\!D=^{0}\!D$.
 
-Pour les autres ordres entiers de diversité, il existe une correspondance parfaite entre les deux mesures [@Chao2014, Annexe S2]: la connaissance de l'une suffit permet d'obtenir l'autre. Pour $k>1$, on a [@Leinster2012]
+Pour les autres ordres entiers de diversité, il existe une correspondance parfaite entre les deux mesures [@Chao2014, Annexe S2]: la connaissance de l'une permet d'obtenir l'autre. Pour $k>1$, on a [@Leinster2012]
 
 \begin{equation}
   (\#eq:HurlbertDq)
-  _{k}\!S = k + \sum_{q=2}^{k}{\binom{k}{q} (-1)^{q+1} (^{q}\!D)^{1-q}}.
+  _{k}S = k + \sum_{q=2}^{k}{\binom{k}{q} (-1)^{q+1} (^{q}\!D)^{1-q}}.
 \end{equation}
 
 On a vu que $^{0}\!D$ égale $_{\infty}\!D$, donc $_{\infty}\!S=^{0}\!D$ \@ref(eq:HurlbertD).
@@ -1196,13 +1220,13 @@ Inversement, pour $q>1$:
 
 \begin{equation}
   (\#eq:DqHurlbert)
-  (^{q}\!D)^{1-q} = q + \sum_{k=2}^{q}{\binom{q}{k} (-1)^{k+1} _{k}\!S}.
+  (^{q}\!D)^{1-q} = q + \sum_{k=2}^{q}{\binom{q}{k} (-1)^{k+1} _{k}S}.
 \end{equation}
 
 Pour $q=1$, la relation est [@Mao2007]
 \begin{equation}
   (\#eq:Mao2007)
-  ^{1}\!H = -1 + \sum_{k=2}^{\infty}{\frac{_{k}\!S}{k(k-1)}}.
+  ^{1}\!H = -1 + \sum_{k=2}^{\infty}{\frac{_{k}S}{k(k-1)}}.
 \end{equation}
 
 
