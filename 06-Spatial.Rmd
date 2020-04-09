@@ -13,9 +13,9 @@ Dans une communauté de taille définie, avec une distribution des espèces et u
 L'accumulation de la diversité locale, décrite par une courbe d'accumulation (SAC) est présentée au chapitre \@ref(chap:Accumulation).
 
 Il est tentant dans ce cadre de chercher un indicateur de la richesse indépendant de la surface ou du nombre d'individus.
-L'approche la plus simple consiste à normaliser le nombre d'espèce observées.
-@Menhinick1964 a proposé l'indice $\frac{S^{n}}{\sqrt{n}}$ à peu près constant dans des communautés d'insectes.
-L'indice de @Margalef1958a est $\frac{S^{n} -1}{\ln{n}}$, adapté à une communauté de plancton.
+L'approche la plus simple consiste à normaliser le nombre d'espèces observées.
+@Menhinick1964 a proposé l'indice ${S^{n}}/{\sqrt{n}}$ à peu près constant dans des communautés d'insectes.
+L'indice de @Margalef1958a est ${S^{n} -1}/{\ln{n}}$, adapté à une communauté de plancton.
 Les deux supposent implicitement une forme de la courbe d'accumulation des espèces:  dans le premier cas, proportionnelle à la racine du nombre d'individus, dans le second à son logarithme (comme dans la relation de @Gleason1922, page \@ref(sec:Gleason)).
 Aucune de ces normalisations ne fonctionne en général [@Magurran2004, p. 77].
 L'indice de Fisher [@Fisher1943], construit à partir d'un modèle explicite de distribution des probabilités des espèces, a nettement plus de succès.
@@ -107,7 +107,7 @@ Une courbe représentant les valeurs de ${\pi}_{s,\nu}$ en fonction de leur rang
 La variance de la loi binomiale négative varie en sens inverse du paramètre $k$.
 En appliquant son modèle à des données, Fisher remarque que $k \to 0$, ce qui correspond à une distribution comprenant de nombreuses espèces de fréquences très variables, donc un pseudo-RAC décroissant rapidement, et retient cette propriété pour la suite de son raisonnement.
 La valeur nulle de $k$ simplifie les calculs et permet de calculer pour une valeur arbitraire de $\nu$ la somme sur toutes les espèces des valeurs de ${\pi}_{s,\nu}$.
-Dans ce cas, l'espérance du nombre d'espèces représentées par $\nu$ individus est, en posant $x=\frac{p}{p+1}$ et $\alpha$ une constante:
+Dans ce cas, l'espérance du nombre d'espèces représentées par $\nu$ individus est, en posant $x=p/(p+1)$ et $\alpha$ une constante:
 
 \begin{equation}
   (\#eq:nalpha)
@@ -144,7 +144,7 @@ C'est aussi le nombre de singletons attendus dans l'échantillon de taille $n$ c
 
 $\alpha$ est aussi égal à $\theta$, le nombre fondamental de la biodiversité de Hubbell quand le nombre d'espèces est grand [@Alonso2004]: la SAD de la méta-communauté (pas celle de la communauté locale si la dispersion est limitée) du modèle neutre est en log-séries.
 $\alpha$ est le produit du nombre total d'individus de la méta-communauté, noté classiquement $J_m$, et du taux de spéciation individuel noté $\nu$.
-$x$ est le rapport entre les taux de naissance $b$ et de mortalité $d$ dans la méta-communauté, très légèrement inférieur à 1 parce que les espèces existantes sont appelées à disparaître par dérive, et remplacées par les nouvelles espèces: $\frac{(b+\nu)}{d}=1$.
+$x$ est le rapport entre les taux de naissance $b$ et de mortalité $d$ dans la méta-communauté, très légèrement inférieur à 1 parce que les espèces existantes sont appelées à disparaître par dérive, et remplacées par les nouvelles espèces: ${(b+\nu)}/{d}=1$.
 
 
 Dans R, les fonctions `fisher.alpha` de la librairie *vegan* et `fishers.alpha` de la librairie *untb* [@Hankin2007] effectuent une résolution numérique de l'équation \@ref(eq:AlphaFisher) pour estimer $\alpha$.
@@ -162,10 +162,10 @@ optimal.theta(Ns)
 ```
 
 
-Le modèle de Fisher (\@ref(eq:AlphaFisher)) peut être écrit sous la forme $\hat{S}^{n} = \alpha{\ln\left(\alpha+n\right)}-\alpha\ln\left(\alpha\right)$. 
+Le modèle de Fisher \@ref(eq:AlphaFisher) peut être écrit sous la forme $\hat{S}^{n} = \alpha{\ln\left(\alpha+n\right)}-\alpha\ln\left(\alpha\right)$. 
 Pour $n$ assez grand et sous l'hypothèse de saturation de Hubbell[@Hubbell2001], $A$ est proportionnel à $\alpha+n$ et le modèle de Fisher est équivalent au modèle de Gleason [@Engen1977].
 
-Bordenave [@Bordenave1998, Bordenave2011] propose un indice de richesse spécifique (IRS, ou SDI: *Species Diversity Index*) égal à la pente de la relation de Gleason. 
+Bordenave [@Bordenave1998; @Bordenave2011] propose un indice de richesse spécifique (IRS, ou SDI: *Species Diversity Index*) égal à la pente de la relation de Gleason. 
 Dans le cadre de l'approximation précédente, il est égal à $\alpha$.
 
 
@@ -186,7 +186,7 @@ où
   q =\frac{e^{c/\alpha}-1}{1-e^{c\left(1-S\right)/\alpha}}.
 \end{equation}
 
-Si $S = \infty$ et $c = 1$, l'équation (\@ref(eq:Schulte)) se simplifie pour retrouver l'équation \@ref(eq:AlphaFisher).
+Si $S = \infty$ et $c = 1$, l'équation \@ref(eq:Schulte) se simplifie pour retrouver l'équation \@ref(eq:AlphaFisher).
 
 ```{r Schulte2005b, fig.cap="Comparaison entre le modèle de Fisher et le modèle étendu dans trois parcelles forestières connues. Les modèles sont ajustés aux données observées par @Condit1996. Les courbes légendées *Equation 4* correspondent au modèle de Fisher étendu par Schulte, alors que l'*Equation 5* est le modèle intermédiaire, supposant le nombre total d'espèces infini.", echo=FALSE}
 knitr::include_graphics('images/Schulte2005b.png')
@@ -205,8 +205,8 @@ L'approximation du nombre d'espèces infini paraît être la plus pénalisante p
 L'indice de Fisher repose lourdement sur l'hypothèse que la distribution réelle des espèces est conforme au modèle. 
 @Jost2007 montre par un exemple que des interprétations absurdes de l'indice peuvent être faites si l'hypothèse n'est pas respectée.
 
-@Kempton1976, Kempton1978 ont défini l'indice $Q$ comme la pente de la courbe de $\hat{S}^{n}$ en fonction de $\log{n}$ mesurée entre le premier et le troisième quartile du nombre d'espèces observées, quelle que soit la distribution des espèces.
-$Q = \alpha$ si la distribution est en log-séries, et $Q = \frac{c S}{\sigma}$ si elle est log-normale ($c$ est une constante dépendant de la proportion des espèces échantillonnée, $S$ le nombre d'espèces total et $\sigma$ l'écart-type de la distribution du logarithme des probabilités).
+@Kempton1976 et @Kempton1978 ont défini l'indice $Q$ comme la pente de la courbe de $\hat{S}^{n}$ en fonction de $\log{n}$ mesurée entre le premier et le troisième quartile du nombre d'espèces observées, quelle que soit la distribution des espèces.
+$Q = \alpha$ si la distribution est en log-séries, et $Q = {c S}/{\sigma}$ si elle est log-normale ($c$ est une constante dépendant de la proportion des espèces échantillonnée, $S$ le nombre d'espèces total et $\sigma$ l'écart-type de la distribution du logarithme des probabilités).
 
 La simulation suivante tire 10000 arbres dans le jeu de données BCI indépendamment et selon les fréquences des espèces.
 L'indice Q est calculé:
@@ -304,7 +304,7 @@ Elle est toutefois toujours présentée comme une courbe lissée passant par les
 ```
 
 Une difficulté supplémentaire consiste à prendre en compte les espèces non échantillonnées en appliquant des techniques statistiques pour réduire le biais qu'elles induisent [@Colwell2012].
-Dans ce but, la SAC théorique peut être construite [@Chao2013] comme la somme des entropies de Simpson généralisées [@Zhang2010] (présentées en section \@ref(sec:SimpsonG)).
+Dans ce but, la SAC théorique peut être construite [@Chao2013] comme la somme des entropies de Simpson généralisées [@Zhang2010], présentées en section \@ref(sec:SimpsonG).
 
 La courbe obtenue (figure \@ref(fig:SACzetaFig)) est la même que par raréfaction, sans les problèmes d'estimation.
 Son intervalle de confiance n'est pas représenté: l'estimation est sans biais et a une variance très petite; d'autre part, la variabilité de l'échantillonnage prise en compte dans la figure \@ref(fig:specaccumFig) est ignorée ici. La fonction `GenSimp.z` est fournie par le package *EntropyEstimation* [@Cao2014].
@@ -353,7 +353,7 @@ La somme est infinie mais ses termes décroissent rapidement.
 Le nombre de termes à prendre en compte est d'autant plus grand que $\frac{\delta n}{n}$, le niveau d'extrapolation, est grand.
 L'auteur conseille de ne pas pousser l'extrapolation au delà du double de $n$.
 
-Cette méthode est comparée à l'extrapolation de la diversité d'ordre 0 (section \@ref(sec:RarExtrapol)) et à l'estimateur de @Shen2003 (section \@ref(sec:Shen2003)) dans l'illustration suivante.
+Cette méthode est comparée à l'extrapolation de la diversité d'ordre 0 (section \@ref(sec:RarExtrapol)) et à l'estimateur de @Shen2003 (section \@ref(sec:Extrapol)) dans l'illustration suivante.
 
 Une communauté théorique log-normale de 300 espèces est créée.
 Des inventaires de 1000 individus sont simulés et les trois méthodes d'extrapolation de la richesse spécifique sont appliquées pour estimer la richesse d'un échantillon de 1800 individus.
@@ -416,7 +416,7 @@ deS <- density(eS)
 ```
 
 
-```{r Beguinot2015Fig, echo=FALSE, results='hide', ref.label='Beguinot2015Code', fig.cap="Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de @Shen2003 (pointillés alternés vert), @Beguinot2015 (tirets rouges) ou avec le package *iNEXT* [@Hsieh2014] (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire."}
+```{r Beguinot2015Fig, echo=FALSE, results='hide', ref.label='Beguinot2015Code', fig.cap="Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen, Chao, et Lin (2003) (pointillés alternés vert), Béguinot (2015b) (tirets rouges) ou avec le package iNEXT (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire."}
 ```
 
 
@@ -533,7 +533,7 @@ Le semis de point est considéré comme le résultat d'un processus de Neyman-Sc
 Les paramètres du processus sont estimés à partir du semis de points, puis la courbe aire-espèces est obtenue par simulation du processus.
 
 Le problème est traité de façon plus approfondie par @Picard2004 qui s'appuient sur la théorie des processus ponctuels.
-En supposant que la distribution spatiale des espèces est homogène (c'est-à-dire stationnaire et isotrope), la forme du domaine échantillonné n'a pas d'importance: l'aire $A$ peut être représentée par un cercle de rayon $r=\sqrt{\frac{A}{\pi}}$.
+En supposant que la distribution spatiale des espèces est homogène (c'est-à-dire stationnaire et isotrope), la forme du domaine échantillonné n'a pas d'importance: l'aire $A$ peut être représentée par un cercle de rayon $r=\sqrt{{A}/{\pi}}$.
 La probabilité d'observer l'espèce $s$ dans $A$ est identique à la probabilité que la distance entre un individu de l'espèce $s$ et un point arbitrairement choisi soit inférieure à $r$.
 Cette probabilité a été largement étudiée et est connue sous le nom de fonction $F$ de @Diggle1983, ou *empty space function*.
 $F_s(r)$ est la fonction d'espace vide de l'espèce $s$, dont l'argument est la distance $r$.
@@ -569,6 +569,7 @@ Enfin, il est possible de prendre en compte les espèces non observées.
 La relation aire-espèce \@ref(eq:SARF) s'entend pour toutes les espèces.
 Elle peut être réécrite sous la forme
 \begin{equation}
+  (\#eq:SARF2)
   {\mathbb E}\left( S^A \right) 
   = \sum_{s=1}^{S_{\ne 0}}{F_s\left( r \right)}
     + \sum_{s=S_{\ne 0}+1}^{S}{F_s\left( r \right)}.
@@ -602,7 +603,7 @@ Une revue historique des théories sur la forme de la SAR est fournie par @McGui
 
 ## La relation d'Arrhenius {#sec:Arrhenius}
 
-```{r Williamson2001, fig.cap="Logarithme du nombre d'espèces en fonction du logarithme de la surface échantillonnée [@Williamson2001, fig.~1,]. Les données sont des relevés d'espèces natives sur 104 sites de taille variable à travers le monde. Les symboles correspondent à divers types d'habitats (îles ou continent, réserves ou non) sans intérêt ici. La valeur de $z$ est 0,27. Données de @Lonsdale1999.", echo=FALSE}
+```{r Williamson2001, fig.cap="Logarithme du nombre d'espèces en fonction du logarithme de la surface échantillonnée. Les données sont des relevés d'espèces natives sur 104 sites de taille variable à travers le monde. Les symboles correspondent à divers types d'habitats (îles ou continent, réserves ou non) sans intérêt ici. La valeur de $z$ est 0,27.", echo=FALSE}
 knitr::include_graphics('images/Williamson2001.png')
 ```
 
@@ -612,7 +613,8 @@ knitr::include_graphics('images/Williamson2001.png')
 @Arrhenius1921 a établi le modèle de base, dit *loi de puissance*:
 
 \begin{equation} 
-S^{A} = c A^{z}.
+  (\#eq:Arrhenius1921)
+  S^{A} = c A^{z}.
 \end{equation}
 
 $A$ est la surface, $S^{A}$ est le nombre d'espèces dans $A$, $c$ et $z$ des paramètres.
@@ -623,14 +625,15 @@ La loi de puissance peut donc être bornée.
 Le glissement d'un modèle de biogéographie des îles à un cadre plus général est faisable simplement, à la manière de @Hubbell2001 pour la théorie neutre: chaque île peut être considérée comme une communauté locale issue d'une méta-communauté régionale.
 
 La distribution log-normale de Preston, dite "canonique " assumait une relation particulière entre le nombre d'espèces et le nombre d'individus, pour laquelle @May1975 a montré que la valeur exacte de $z$ est 0,25.
-Les résultats empiriques ultérieurs [@May1975, May2000], pour des lois quelconques, non canoniques, ont fourni des valeurs généralement comprises entre 0,2 et 0,3. 
-Une large méta-analyse [@Drakare2006] à partir de 794 SAR d'origine très différentes fournit une moyenne de 0,27, comme la méta-analyse de la figure \@ref(fig:Williamson2001) [@Williamson2001], mais avec une certaine variabilité que les auteurs relient à l'échelle spatiale, au type d'organismes et aux habitats échantillonnés, mais aussi à la technique d'échantillonnage.
+Les résultats empiriques ultérieurs [@May1975; @May2000], pour des lois quelconques, non canoniques, ont fourni des valeurs généralement comprises entre 0,2 et 0,3. 
+Une large méta-analyse [@Drakare2006] à partir de 794 SAR d'origine très différentes fournit une moyenne de 0,27, comme la méta-analyse de la figure \@ref(fig:Williamson2001) [@Williamson2001], données de @Lonsdale1999, mais avec une certaine variabilité que les auteurs relient à l'échelle spatiale, au type d'organismes et aux habitats échantillonnés, mais aussi à la technique d'échantillonnage.
 
 Le paramètre le plus variable de la loi de puissance reste donc $c$, un facteur d'échelle dépendant de la richesse de l'habitat.
 
 Représentée en logarithmes, la relation est une droite (figure \@ref(fig:Williamson2001)):
 
 \begin{equation}
+  (\#eq:Arrhenius1921log)
   \ln S^{A} = \ln c + z\ln A.
 \end{equation}
 
@@ -657,14 +660,14 @@ On obtient le rectangle $A_{i+1}$ en plaçant deux rectangles $A_i$ côte à cô
 $\hat{S}^{A_i}$ est le nombre d'espèces rencontrées dans $A_i$. 
 On définit enfin $a_i=\hat{S}^{A_{i-1}}/\hat{S}^{A_i}$ le facteur de diminution du nombre d'espèces (dit *paramètre de persistance*) lié à la division par 2 de la taille du rectangle.
 
-```{r Plotkin2000, fig.cap="Courbes aire-espèces (a) et paramètre de persistance en fonction de la surface (b) dans 5 forêts tropicales [@Plotkin2000]. Le modèle d'Arrhenius est représentée par le parallélogramme sur la figure a, pour une gamme de valeurs de la constante. Elle implique que la relation aire-espèces représentée en logarithmes soit une droite, dont la position dépend de la constante, ce qui n'est visiblement pas le cas.", echo=FALSE}
+```{r Plotkin2000, fig.cap="Courbes aire-espèces (a) et paramètre de persistance en fonction de la surface (b) dans 5 forêts tropicales. Le modèle d'Arrhenius est représentée par le parallélogramme sur la figure a, pour une gamme de valeurs de la constante. Elle implique que la relation aire-espèces représentée en logarithmes soit une droite, dont la position dépend de la constante, ce qui n'est visiblement pas le cas.", echo=FALSE}
 knitr::include_graphics('images/Plotkin2000.png')
 ```
 
 
 S'il s'agit d'une constante, $a$, indépendante de la taille du rectangle, l'habitat est dit auto-similaire: l'augmentation du nombre d'espèces ne dépend pas de l'échelle d'observation Si cette condition est respectée, le nombre d'espèces suit la loi de puissance, et $a=2^{-z}$. 
 Pour la valeur classique de $z=0,25$, $a=0,84$. 
-La figure \@ref(fig:Plotkin2000)b présente la valeur de $a_i$ en fonction de la surface échantillonnée. 
+La figure \@ref(fig:Plotkin2000)b [@Plotkin2000] présente la valeur de $a_i$ en fonction de la surface échantillonnée. 
 Elle augmente avec la surface, ce qui infirme le modèle d'autosimilarité.
 
 @Plotkin2000 ne supposent pas $a_i$ constant et lui imposent simplement d'être une fonction de la surface, choisie arbitrairement pour permettre les calculs ultérieurs, et dont la forme correspond aux observations de la figure \@ref(fig:Plotkin2000)b. 
@@ -675,10 +678,11 @@ L'approximation de degré 0 est la loi de puissance.
 Celle de degré 1 est retenue par les auteurs pour estimer le nombre d'espèces rencontrées sur la surface $A$:
 
 \begin{equation}
+  (\#eq:Plotkin2000)
   \hat{S}^{A} = cA^z e^{-kA}.
 \end{equation}
 
-```{r Plotkin2000b, fig.cap="Performance du modèle de @Plotkin2000 face à des distributions théoriques: SAD log-normales, modèles de Fisher et Broken Stick de MacArthur. La courbe représente le nombre d'espèces rencontrées à Pasoh sur des surfaces de 0 à 50 ha. Les données observées sont des tirages aléatoires d'échantillons de la surface souhaitée. L'écart-type est représenté (l'intervalle de fluctuation à 95\\% est de l'ordre de 2 écart-types). Les valeurs issues du modèle ont été obtenues par un paramétrage de $k$ et $z$ sur 25 ha, supposé valide également sur les autres forêts. Le paramétrage de $c$ est obtenu par un échantillon d'un hectare, répété 1000 fois pour obtenir un intervalle de confiance. L'intervalle de fluctuation à 95\\% est ici encore de l'ordre de deux écart-types", echo=FALSE}
+```{r Plotkin2000b, fig.cap="Performance du modèle de Plotkin et al. (2000) face à des distributions théoriques: SAD log-normales, modèles de Fisher et Broken Stick de MacArthur. La courbe représente le nombre d'espèces rencontrées à Pasoh sur des surfaces de 0 à 50 ha. Les données observées sont des tirages aléatoires d'échantillons de la surface souhaitée. L'écart-type est représenté (l'intervalle de fluctuation à 95\\% est de l'ordre de 2 écart-types). Les valeurs issues du modèle ont été obtenues par un paramétrage de $k$ et $z$ sur 25 ha, supposé valide également sur les autres forêts. Le paramétrage de $c$ est obtenu par un échantillon d'un hectare, répété 1000 fois pour obtenir un intervalle de confiance. L'intervalle de fluctuation à 95\\% est ici encore de l'ordre de deux écart-types", echo=FALSE}
 knitr::include_graphics('images/Plotkin2000b.png')
 ```
 
@@ -690,12 +694,13 @@ La figure \@ref(fig:Plotkin2000b) compare les performances de cette méthode (*p
 
 ## Le modèle de Gleason {#sec:Gleason}
 
-@Gleason1922 réfute le travail d'@Arrhenius1921 à partir de l'argument selon lequel le nombre d'espèces doit se stabiliser quand la surface augmente, au risque de prévoir une richesse beaucoup trop élevée pour de grandes surfaces. 
+@Gleason1922 réfute le travail d'Arrhenius [-@Arrhenius1921] à partir de l'argument selon lequel le nombre d'espèces doit se stabiliser quand la surface augmente, au risque de prévoir une richesse beaucoup trop élevée pour de grandes surfaces. 
 Les travaux ultérieurs lui donneront tort [@Williamson2001].
 
 Gleason propose une relation dans laquelle le nombre d'espèces (et non son logarithme) croît avec le logarithme de la surface:
 
 \begin{equation} 
+  (\#eq:Gleason1922)
   S^{A} = \ln{c} + z \ln{A}.
 \end{equation}
 
@@ -706,12 +711,12 @@ Gleason propose une relation dans laquelle le nombre d'espèces (et non son loga
 
 ## Le modèle de placement aléatoire
 
-```{r Coleman1982, fig.cap="Relation aire-espèce de @Coleman1982, fig. 3,. Les axes sont en échelle logarithmique. Les points représentent des relevés de nombre d'espèces d'oiseaux (en 1979) en fonction de la taille des îles où elles se trouvaient. La ligne en pointillés courts est l'ajustement d'une loi de puissance (modèle d'Arrhenius). Les pointillés long correspondent du modèle de Gleason. La courbe continue est l'ajustement du modèle de placement aléatoire. Un test de qualité d'ajustement montre que le modèle de placement aléatoire est le plus proche des données.", echo=FALSE}
+```{r Coleman1982, fig.cap="Relation aire-espèce de Coleman. Les axes sont en échelle logarithmique. Les points représentent des relevés de nombre d'espèces d'oiseaux (en 1979) en fonction de la taille des îles où elles se trouvaient. La ligne en pointillés courts est l'ajustement d'une loi de puissance (modèle d'Arrhenius). Les pointillés long correspondent du modèle de Gleason. La courbe continue est l'ajustement du modèle de placement aléatoire. Un test de qualité d'ajustement montre que le modèle de placement aléatoire est le plus proche des données.", echo=FALSE}
 knitr::include_graphics('images/Coleman1982.png')
 ```
 
 
-En concurrence au modèle de @Preston1962 prédisant une SAR en forme de loi de puissance, @Coleman1981, Coleman1982 proposent le modèle de placement aléatoire (*random placement*).
+En concurrence au modèle de @Preston1962 prédisant une SAR en forme de loi de puissance, Coleman [-@Coleman1981; -@Coleman1982] propose le modèle de placement aléatoire (*random placement*).
 L'idée sous-jacente est que certaines communautés ont une composition "aléatoire ", c'est-à-dire issues d'un simple échantillonnage de la méta-communauté.
 Coleman ne prétend pas que la SAR des arbres de forêt tropicale suive son modèle, mais que ce soit le cas par exemple pour les oiseaux à une échelle spatiale limitée.
 
@@ -720,12 +725,13 @@ Chaque individu d'une espèce donnée peut se placer sur une quelconque des île
 La probabilité qu'un individu au moins de l'espèce $s$ se trouve sur l'île $i$ est $1-(1-p_i)^{n_s}$ (1 moins la probabilité que tous les individus de l'espèce se trouve sur une autre île, elle-même égale à $1-p_i$ pour tous les individus).
 L'espérance du nombre d'espèces représentées sur l'île $i$ est donc
 \begin{equation}
+  (\#eq:Coleman)
   {\mathbb E}\left( S^{i}_{\ne 0}\right) = S - \sum_{s}{\left( 1- p_i \right)^{n_s}}.
 \end{equation}
 
 Ce modèle ne fait aucune hypothèse sur la distribution de la probabilité des espèces et n'assume que l'indépendance des individus et la proportionnalité entre la probabilité de présence et la surface.
 Formellement, il s'agit donc d'une courbe d'accumulation d'espèces.
-Sur des données de richesse en nombre d'espèces d'oiseaux reproducteurs dans les îles d'un lac nord-américain, le modèle s'ajuste mieux que ceux d'Arrhenius et de Gleason (figure \@ref(fig:Coleman1982)).
+Sur des données de richesse en nombre d'espèces d'oiseaux reproducteurs dans les îles d'un lac nord-américain, le modèle s'ajuste mieux que ceux d'Arrhenius et de Gleason (figure \@ref(fig:Coleman1982)) [@Coleman1982, fig. 3].
 
 Le modèle de Coleman est parfois utilisé à l'échelle locale, pour construire une courbe d'accumulation par raréfaction [@Coleman1981].
 $S$ est alors la richesse de la communauté et $p_i$ la proportion de la surface de la communauté inventoriée.
@@ -770,7 +776,7 @@ Le meilleur modèle à l'échelle locale est donc celui de @Plotkin2000, qui ré
 La SAC est concave sur une échelle log-log (figure \@ref(fig:Plotkin2000)). 
 
 L'utilisation de l'indice $\alpha$ de Fisher est sujette à caution puisque la SAC locale ne correspond pas au modèle (figure \@ref(fig:Plotkin2000b)).
-Sa valeur calculée plus haut pour BCI est 35, très différente de la valeur de $\theta$ du modèle neutre pour les mêmes données [ @Volkov2003, figure 1,], entre 47 et 50.
+Sa valeur calculée plus haut pour BCI est 35, très différente de la valeur de $\theta$ du modèle neutre pour les mêmes données [@Volkov2003, figure 1], entre 47 et 50.
 
 L'échelle plus grande (zone B de la figure \@ref(fig:Grilli2012)) est pour Hubbell un assemblage d'un certain nombre de communautés composant la méta-communauté (page 186). 
 La SAR obtenue par simulation suit la loi de puissance d'Arrhenius. 
@@ -811,8 +817,8 @@ Il reste à évaluer les différentes valeurs de $z$.
 À l'intérieur de chaque placette, l'équation \@ref(eq:NsA1) est suffisante. 
 À plus grande distance, les auteurs utilisent l'indice de Sørensen, c'est-à-dire deux fois la fraction d'espèces communes entre deux placettes: $\chi=2{\left(S^{1} \cap S^{2}\right)}/{\left(S^{1}+S^{2}\right)}$. 
 L'indice dépend principalement de la surface des placettes $A$ et de leur éloignement $d$. 
-Pour chaque plage de distances, à conditions que les placettes soient éloignées ($d$ étant la distance entre deux placettes, ${A} \ll d^2$), $\chi$ est proportionnel à $(\frac{A}{d^2})^z$. 
-La valeur de $z$ peut donc être calculée en comptant le nombre d'espèces communes entre chaque paire de placettes, et ajustant $\ln\chi$ à $\ln \frac{A}{d^2}$ sur des plages de distances convenables pour que $z$ reste constant, et donc que la relation soit linéaire.
+Pour chaque plage de distances, à conditions que les placettes soient éloignées ($d$ étant la distance entre deux placettes, ${A} \ll d^2$), $\chi$ est proportionnel à $({A}/{d^2})^z$. 
+La valeur de $z$ peut donc être calculée en comptant le nombre d'espèces communes entre chaque paire de placettes, et ajustant $\ln\chi$ à $\ln({A}/{d^2})$ sur des plages de distances convenables pour que $z$ reste constant, et donc que la relation soit linéaire.
 
 Cette méthode permet l'extrapolation à de très grandes surfaces de mesures de richesse faites sur de petites placettes à condition qu'elles soient assez nombreuses et éloignées les unes des autres.
 
@@ -839,7 +845,7 @@ En pratique il est estimé à partir d'individus situés dans des parcelles dist
 
 De la même façon que l'indice de Simpson est généralisable à l'indice de Rao, $\beta_s(r)$ est généralisable à $\beta_{phy}(r)$, l'indice de Rao spatialement explicite, égal à la divergence moyenne entre deux individus situés à distance $r$.
 
-Les deux mesures sont des entropies $\beta$, au sens où ce sont des diversités de différenciation [@Jurasinski2009], voir section~\@ref(sec:DebatDecomposition), qui mesurent à quel point des unités spatiales distantes de $r$ sont différentes. 
+Les deux mesures sont des entropies $\beta$, au sens où ce sont des diversités de différenciation [@Jurasinski2009], voir section \@ref(sec:DebatDecomposition), qui mesurent à quel point des unités spatiales distantes de $r$ sont différentes. 
 Ce ne sont pas des mesures de diversité proportionnelle parce que ce ne sont pas les différences entre les entropies $\gamma$ (de la méta-communauté composée de toutes les parcelles) et $\alpha$ (la moyenne des entropies des parcelles). 
 L'avantage de ces mesures est d'être facilement interprétables, estimables sans biais (en tant qu'entropies de Simpson ou de Rao), et indépendantes de la diversité $\alpha$.
 
@@ -897,7 +903,7 @@ Le variogramme de la composition spécifique est appelé "variogramme de complé
 
 ${\mathbb E}({\mathbf 1}_{s})$ est la probabilité qu'une parcelle quelconque contienne l'espèce $s$.
 Ce n'est pas la probabilité $p_s$ qu'un individu appartienne à l'espèce $s$: 
-comme toutes les parcelles sont de taille identique, $p_s$ est égal à $\frac{{\mathbb E}({\mathbf 1}_{s})}{\sum_s{{\mathbb E}({\mathbf 1}_{s})}}$.
+comme toutes les parcelles sont de taille identique, $p_s$ est égal à ${{\mathbb E}({\mathbf 1}_{s})}/{\sum_s{{\mathbb E}({\mathbf 1}_{s})}}$.
 
 En absence de structuration spatiale, ou à partir de la valeur de $r$ appelée *portée*, au-delà de laquelle la variance se stabilise à son *palier*, $\hat{\gamma}(r)$ est égal à $\sum_s{{\mathbb E}({\mathbf 1}_{s})[1-{\mathbb E}({\mathbf 1}_{s})]}$.
 $\hat{\gamma}(r)$ n'est pas une forme de l'indice de Simpson parce que la somme des ${\mathbb E}({\mathbf 1}_{s})$ ne vaut pas 1.

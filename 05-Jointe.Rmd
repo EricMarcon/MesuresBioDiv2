@@ -79,7 +79,7 @@ Le premier terme de chaque équation est la différence entre l'entropie de la d
 Une démonstration rigoureuse est fournie par @Baez2011 d'après @Faddeev1956, mais il s'agit d'un résultat assez répandu dans la littérature, sous des formes diverses[@Aczel1975; @Renyi1961; @Bourguignon1979]. 
 $H(\{p_{s,i}\})-H(\{p_i\})-H(\{p_s\})$ est l'information mutuelle, vue en section \@ref(sec:BiaisShannonBeta).
 
-Le terme de droite de l'équation \@ref(eq:Recursivite1) est l'entropie $\alpha$ de l'ensemble des classes si on les pondère par $p_i$ car $\frac{p_{s,i}}{p_i}=p_{s|i}$. 
+Le terme de droite de l'équation \@ref(eq:Recursivite1) est l'entropie $\alpha$ de l'ensemble des classes si on les pondère par $p_i$ car ${p_{s,i}}/{p_i}=p_{s|i}$. 
 Par ailleurs, $H(\{p_s\})$ est l'entropie $\gamma$. 
 En combinant les équations \@ref(eq:Recursivite1) et \@ref(eq:Recursivite2), on voit que l'entropie $\beta$ est l'opposée de l'information mutuelle. 
 L'information mutuelle est nulle quand les distributions des lignes et des colonnes sont indépendantes ($p_{s,i}=p_{s}p_{i}$), autrement dit quand les distributions marginales $\{p_s\}$ et $\{p_i\}$ suffisent à décrire la méta-communauté: l'information contenue par chaque communauté se limite à son poids. 
@@ -188,7 +188,7 @@ library("entropart")
 MC1 <- MetaCommunity(df1)
 ```
 
-```{r Repartition1Fig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='Repartition1Code', fig.cap="Méta-communauté simple."}
+```{r Repartition1Fig, echo=FALSE, results='hide', ref.label='Repartition1Code', fig.cap="Méta-communauté simple."}
 ```
 
 Le code R nécessaire pour réaliser la figure est:
@@ -208,7 +208,7 @@ df2 <- cbind(df1, df1)
 MC2 <- MetaCommunity(df2)
 ```
 
-```{r Repartition2Fig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='Repartition2Code', fig.cap="Méta-communauté doublant les communautés de la précédente."}
+```{r Repartition2Fig, echo=FALSE, results='hide', ref.label='Repartition2Code', fig.cap="Méta-communauté doublant les communautés de la précédente."}
 ```
 
 Le code R nécessaire pour réaliser la figure est:
@@ -238,11 +238,8 @@ En résumé:
 
 * Le nombre effectif d'espèces $^{q}_{i}\!D$ de la communauté {i} est le nombre d'espèces équifréquentes nécessaires pour obtenir la diversité observée dans la communauté. 
 La diversité $\alpha$ est le nombre d'espèces équifréquentes nécessaires dans chaque communauté pour obtenir la diversité observée;
-
 * La diversité $\beta$ est le nombre de communautés totalement distinctes (chaque espèce n'est présente que dans une seule communauté), de même poids et de même diversité (cette diversité étant égale à la diversité $\alpha$), égal au rapport entre la diversité $\gamma$ et la diversité $\alpha$;
-
 * La diversité $\gamma$ est le nombre effectif d'espèces de l'assemblage des communautés;
-
 * La réplication des communautés est le nombre effectif d'assemblages identiques constituant la méta-communauté.
 
 La décomposition complète de la diversité jointe s'écrit
@@ -262,7 +259,7 @@ MC <- MetaCommunity(df3)
 ```
 
 
-```{r DifferentiationFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='DifferentiationCode', fig.cap="Méta-communauté illustrant la décomposition complète de la diversité jointe."}
+```{r DifferentiationFig, echo=FALSE, results='hide', ref.label='DifferentiationCode', fig.cap="Méta-communauté illustrant la décomposition complète de la diversité jointe."}
 ```
 
 Le code R nécessaire pour réaliser la figure est:
@@ -276,7 +273,7 @@ summary(DivPart(q, MC)->dp)
 (Dis <- Djointe/dp$GammaDiversity)
 ```
 
-La définition de la diversité $\alpha$ de @Chiu2014 \@ref(eq:Chiualpha) est la diversité jointe, normalisée par le nombre de communautés:
+La définition de la diversité $\alpha$ de @Chiu2014, équation \@ref(eq:Chiualpha), est la diversité jointe, normalisée par le nombre de communautés:
 
 \begin{equation}
   (\#eq:Chiualphajointe)

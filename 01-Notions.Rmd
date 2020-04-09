@@ -110,7 +110,7 @@ La diversité est classiquement estimée à plusieurs niveaux emboîtés, nommé
 La diversité $\alpha$ est la diversité locale, mesurée à l'intérieur d'un système délimité. 
 Plus précisément, il s'agit de la diversité dans un habitat uniforme de taille fixe.
 
-```{r Gaston2000, fig.cap="Patrons de biodiversité. (a) Le nombre d'espèces de vers de terre augmente en fonction de la surface échantillonnée, de 100 m² à plus de 500000 km² selon la relation d'Arrhenius). (b) Nombre d'espèces d'oiseaux en fonction de la latitude. (c) Relation entre la richesse régionale et la richesse locale. (d) Nombre d'espèces de chauves-souris en fonction de l'altitude dans une réserve au Pérou. (e) Nombre d'espèces de végétaux ligneux en fonction des précipitations en Afrique du Sud.", echo=FALSE, out.width='90%'}
+```{r Gaston2000, fig.cap="Patrons de biodiversité. (a) Le nombre d'espèces de vers de terre augmente en fonction de la surface échantillonnée, de 100 m² à plus de 500000 km² selon la relation d'Arrhenius). (b) Nombre d'espèces d'oiseaux en fonction de la latitude. (c) Relation entre la richesse régionale et la richesse locale. (d) Nombre d'espèces de chauves-souris en fonction de l'altitude dans une réserve au Pérou. (e) Nombre d'espèces de végétaux ligneux en fonction des précipitations en Afrique du Sud.", echo=FALSE, out.width='100%'}
 knitr::include_graphics('images/Gaston2000.png')
 ```
 

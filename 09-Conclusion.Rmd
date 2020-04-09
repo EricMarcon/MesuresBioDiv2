@@ -15,7 +15,7 @@ La diversité de Hurlbert possède toutes ses propriétés et une correction tr�
 
 ## Entropie et diversité
 
-```{r ConclusionFig, fig.cap="Généralisation des mesures classiques de diversité. La figure présente les mesures d'entropie, qui peuvent toutes être transformées en mesures de diversité au sens strict. Toutes ces entropies sont des cas particuliers de l'entropie de Ricotta et Szeidl, qui peut être transformée en diversité de Leinster et Cobbold.", echo=FALSE}
+```{r ConclusionFig, fig.cap="Généralisation des mesures classiques de diversité. La figure présente les mesures d'entropie, qui peuvent toutes être transformées en mesures de diversité au sens strict. Toutes ces entropies sont des cas particuliers de l'entropie de Ricotta et Szeidl, qui peut être transformée en diversité de Leinster et Cobbold.", echo=FALSE, out.width='60%'}
 knitr::include_graphics('images/ConclusionFig.png')
 ```
 
@@ -47,8 +47,8 @@ La diversité d'ordre 2 présente de nombreuses particularités et avantages qui
 ### Estimation
 
 Tous les estimateurs de $^q\!H$ sont biaisés, d'autant plus que $q$ est petit. 
-Seul l'estimateur de l'indice de Simpson, $^{2}\!\tilde{H}=(\frac{n}{n-1})(1-\sum_s{{\hat{p}}^{2}_{s}})$ est non biaisé.
-Comme l'entropie de Rao est la somme sur les périodes de l'arbre des entropies de Simpson, $^{2}\!\tilde{H}(T)=(\frac{n}{n-1})^{2}\!\tilde{H}(T)$ est donc sans biais.
+Seul l'estimateur de l'indice de Simpson, $^{2}\!\tilde{H}=[n/(n-1)](1-\sum_s{{\hat{p}}^{2}_{s}})$ est non biaisé.
+Comme l'entropie de Rao est la somme sur les périodes de l'arbre des entropies de Simpson, $^{2}\!\tilde{H}(T)=[n/(n-1)]\,^{2}\!\tilde{H}(T)$ est donc sans biais.
   
 ### Partition
 
@@ -63,7 +63,6 @@ Cette propriété permet de représenter dans un même espace les espèces et le
 Pour $q=2$ seulement, toutes les mesures de diversité sont identiques:
 
 * Le nombre équivalent d'espèces de Hurlbert est égal à $^{2}\!D$, le nombre de Hill;
-
 * La diversité de Leinster et Cobbold est égale à la diversité phylogénétique.
     
 La diversité d'ordre 1 a en revanche des propriétés avantageuses pour la décomposition: toutes les définitions de diversité $\alpha$ sont dans ce cas identiques, et l'information mutuelle se confond avec la diversité $\beta$.
@@ -72,7 +71,7 @@ La diversité d'ordre 1 a en revanche des propriétés avantageuses pour la déc
 ## Limites
 
 Les principales limites des mesures de diversité sont d'ordre conceptuel et pratique. 
-L'axiome de symétrie interdit de donner un rôle particulier à une espèce: il n'est donc pas possible conceptuellement de prendre en compte les espèces focales [@Zacharias2001] dans la quantification de la diversité (espèces emblématiques, espèces clé de voûte [@Paine1969], espèces parapluie [@Roberge2004], espèces ingénieures[@Jones1994]...). 
+L'axiome de symétrie interdit de donner un rôle particulier à une espèce: il n'est donc pas possible conceptuellement de prendre en compte les espèces focales [@Zacharias2001] dans la quantification de la diversité (espèces emblématiques, espèces clé de voûte [@Paine1969], espèces parapluie [@Roberge2004], espèces ingénieures [@Jones1994]...). 
 Leur présence peut être décisive pour la conservation, mais il s'agit clairement d'une question distincte de celle de la diversité.
 
 Sur le plan pratique, la mesure de la diversité se réduit souvent à un groupe biologique (dans ce document, les arbres).

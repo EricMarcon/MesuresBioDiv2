@@ -46,15 +46,12 @@ Pour une similarité le lien est d'autant plus fort que sa valeur est grande.
 Une dissimilarité vérifie ($k$, $l$ et $m$ sont trois individus):
 
 * La dissimilarité d'un individu avec lui-même est nulle: $d\left(k,k\right)=0$;
-
 * La dissimilarité entre deux individus différents est positive: $d\left(k,l\right)\ge 0$;
-
 * La dissimilarité est symétrique: $d\left(k,l\right)=d\left(l,k\right)$.
 
 Une distance vérifie en plus:
 
 * La distance entre deux individus différents est strictement positive: $d\left(k,l\right)=0\Rightarrow k=l$;
-  
 * L'inégalité triangulaire: $d\left(k,m\right)\le d\left(k,l\right)+d\left(l,m\right)$.
 De nombreux indices de dissimilarité ne vérifient pas cette propriété.
 
@@ -250,7 +247,7 @@ La richesse fonctionnelle est l'intégrale des valeurs maximales de $f_s$ dans l
   \mathit{FR}_{Im} = \int \max_s\left(f_s(\mathbf{T}) \right) \mathop{d\mathbf{T}}.
 \end{equation}
 
-Après transformation de la matrice de distance en dendrogramme fonctionnel, éventuellement sous la forme d'un arbre-consensus[@Mouchet2008], la longueur totale des branches (FD)[@Petchey2002] est une autre mesure de richesse multidimensionnelle.
+Après transformation de la matrice de distance en dendrogramme fonctionnel, éventuellement sous la forme d'un arbre-consensus [@Mouchet2008], la longueur totale des branches, FD [@Petchey2002], est une autre mesure de richesse multidimensionnelle.
 
 
 
@@ -270,8 +267,8 @@ Pour l'intervalle entre l'espèce $s$ et l'espèce $s+1$:
   \mathit{EW}_{s} = \frac{T_{s+1}-T_{s}}{N_{s+1}+N_{s}}.
 \end{equation}
 
-Cette valeur est normalisée: $\mathit{PEW}_{s}=\frac{\mathit{EW}_{s}}{\sum_s{\mathit{EW}_{s}}}$.
-Sa valeur de $\mathit{PEW}_{s}$ attendue pour le maximum d'équitabilité est $\frac{1}{(S-1)}$.
+Cette valeur est normalisée: $\mathit{PEW}_{s}={\mathit{EW}_{s}}/{\sum_s{\mathit{EW}_{s}}}$.
+Sa valeur de $\mathit{PEW}_{s}$ attendue pour le maximum d'équitabilité est ${1}/{(S-1)}$.
 L'indice est celui de Bulla, appliqué aux $S-1$ intervalles entre espèces:
 
 \begin{equation}
@@ -368,13 +365,13 @@ Ils fournissent le package *FD* pour calculer leur indice $\mathit{FDis}$ et ceu
 
 ## Originalité, richesse et équitabilité phylogénétique
 
-La littérature de la diversité phylogénétique s'est intéressée tôt à l'originalité taxonomique des espèces parce que les questions traitées concernaient la conservation (intéressée par la valeur de l'héritage évolutif [@Faith2008]).
+La littérature de la diversité phylogénétique s'est intéressée tôt à l'originalité taxonomique des espèces parce que les questions traitées concernaient la conservation, concernée par la valeur de l'héritage évolutif [@Faith2008].
 
 ### Mesures spécifiques d'originalité
 
 @Vane-Wright1991 définissent la distinction taxonomique (*taxonomic distinctness*) $\mathit{TD}_s$ de chaque espèce comme l'inverse du nombre de noeuds entre elle et la racine de l'arbre phylogénétique, normalisé pour que $\sum_s{\mathit{TD}_s} = 1$.
-Dans l'arbre de la figure \@ref(fig:ArbreA4), les valeurs de TD non normalisées sont $\frac{1}{2}$ pour les deux premières espèces et $\frac{1}{3}$ pour les trois autres: la racine de l'arbre est comptabilisée dans le nombre de noeuds.
-Les valeurs de $\mathit{TD}_s$ sont respectivement $\frac{1}{4}$ et $\frac{1}{6}$ après normalisation.
+Dans l'arbre de la figure \@ref(fig:ArbreA4), les valeurs de TD non normalisées sont ${1}/{2}$ pour les deux premières espèces et ${1}/{3}$ pour les trois autres: la racine de l'arbre est comptabilisée dans le nombre de noeuds.
+Les valeurs de $\mathit{TD}_s$ sont respectivement ${1}/{4}$ et ${1}/{6}$ après normalisation.
 
 ```{r ArbreA4, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. L'arbre comprend 5 espèces dont les probabilités sont notées $p_s$, 3 périodes de durées $T_k$ délimitées par les noeuds. Les branches sont notées $b$ et indicées par la période à laquelle elles se terminent et un numéro d'ordre.", echo=FALSE}
 knitr::include_graphics('images/ArbreA.png')
@@ -388,7 +385,7 @@ Clairement, la diversité phylogénétique PD (section \@ref(sec:PDFD)) est la s
 
 ### Originalité taxonomique de Ricotta {#sec:OrigTax}
 
-```{r HurlbertCFig, echo=FALSE, results='hide', ref.label='HurlbertCCode', fig.cap="Contribution des espèces à l'indice de Hurlbert. Les contributions de 4 espèces d'une communauté à l'indice sont représentées en fonction de la taille de l'échantillon $n$. Les fréquences des espèces sont lisibles pour $n=1$: une espèce fréquente (probabilité égale à 0,7, supérieure à $\\frac{1}{S}$), deux espèces peu fréquentes (0,19 et 0,1), et une espèce rare (0,01). Quand $n$ est assez grand, toutes les contributions tendent vers $\\frac{1}{S}=\\frac{1}{4}$ (ligne horizontale)."}
+```{r HurlbertCFig, echo=FALSE, results='hide', ref.label='HurlbertCCode', fig.cap="Contribution des espèces à l'indice de Hurlbert. Les contributions de 4 espèces d'une communauté à l'indice sont représentées en fonction de la taille de l'échantillon $n$. Les fréquences des espèces sont lisibles pour $n=1$: une espèce fréquente (probabilité égale à 0,7, supérieure à $1/S$), deux espèces peu fréquentes (0,19 et 0,1), et une espèce rare (0,01). Quand $n$ est assez grand, toutes les contributions tendent vers $1/S=1/4$ (ligne horizontale)."}
 ```
 
 @Ricotta2004a construit un indice paramétrique (permettant de donner plus ou moins d'importance aux espèces rares) à partir de l'espérance du nombre d'espèces tirées dans un échantillon de taille $n$ fixée (l'indice de @Hurlbert1971):
@@ -406,7 +403,7 @@ Ricotta pondère cette espérance par l'originalité taxonomique de chaque espè
   = \frac{\sum_s{w_s \left[ 1-\left( 1-p_s \right)^n  \right]}}{{\mathbb E}\left( S^n \right)}.
 \end{equation}
 
-L'originalité taxonomique est définie comme la distance phylogénétique moyenne entre l'espèce $s$ et les autres: $w_s=\frac{\sum_s{d_{s,t}}}{S-1}$.
+L'originalité taxonomique est définie comme la distance phylogénétique moyenne entre l'espèce $s$ et les autres: $w_s={\sum_s{d_{s,t}}}/{(S-1)}$.
 
 @Weikard2006 montrent que cette définition de $w_s$ ne permet pas de satisfaire l'axiome de monotonicité d'ensemble.
 La définition correcte de $w_s=\sum_s{d_{s,t}}$, validée par @Ricotta2006.
@@ -420,7 +417,7 @@ Cette contribution est présentée en figure \@ref(fig:HurlbertCFig).
 
 Quand $n=1$, c'est simplement la fréquence des espèces.
 Quand $n$ augmente, le poids des espèces fréquentes (dont la proabilité est supérieure à $\frac{1}{S}$) diminue alors que celui des espèces intermédiaires augmente.
-Ce dernier atteint $\frac{1}{{\mathbb E}(S^n)}$ (une espèce est échantillonnée à coup sûr dès que l'échantillon est assez grand) d'autant plus rapidement que $p_s$ est grand.
+Ce dernier atteint ${1}/{{\mathbb E}(S^n)}$ (une espèce est échantillonnée à coup sûr dès que l'échantillon est assez grand) d'autant plus rapidement que $p_s$ est grand.
 Il baisse ensuite alors que les espèces rares atteignent à leur tour progressivement leur poids maximal.
 
 Quand $n \to +\infty$, le numérateur tend vers FAD, et le dénominateur tend vers le nombre d'espèces: $^n{T}$ tend vers MFAD.
@@ -677,7 +674,7 @@ Si les espèces sont infiniment éloignées les unes des autres, $\mathbf{Z}$ es
 
 ## FD et PD {#sec:PDFD}
 
-```{r Arbre, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. (a) Arbre complet. 5 espèces sont présentes ($S=5$). Une période de l'arbre est définie entre deux noeuds successifs: l'arbre contient $K=3$ périodes. Les hauteurs des périodes sont notées $T_k$. À chaque période correspond un arbre plus simple (b pour la période 2, c pour la période 3) dans lequel les espèces originales sont regroupées. Le nombre de feuilles de ces arbres est noté $L_k$. Les probabilités pour un individu d'appartenir à une feuille sont notées $u_{k,l}$.", echo=FALSE}
+```{r Arbre, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. (a) Arbre complet. 5 espèces sont présentes ($S=5$). Une période de l'arbre est définie entre deux noeuds successifs: l'arbre contient $K=3$ périodes. Les hauteurs des périodes sont notées $T_k$. À chaque période correspond un arbre plus simple: (b) pour la période 2, (c) pour la période 3 dans lequel les espèces originales sont regroupées. Le nombre de feuilles de ces arbres est noté $L_k$. Les probabilités pour un individu d'appartenir à une feuille sont notées $u_{k,l}$.", echo=FALSE}
 knitr::include_graphics('images/Arbre.png')
 ```
 
@@ -729,17 +726,17 @@ L'indice de Rao est souvent appelé "entropie quadratique" en raison de sa forme
 
 ### Formalisation
 
-Les espèces sont prises deux à deux et sont donc notées ici $s'$ et $s"$.
+Les espèces sont prises deux à deux et sont donc notées ici $s'$ et $s''$.
 
-On note $\mathbf{\Delta}$ la matrice de dissimilarité dont les éléments sont $\delta_{s's''}$, la dissimilarité entre l'espèce $s'$ et l'espèce $s"$. 
+On note $\mathbf{\Delta}$ la matrice de dissimilarité dont les éléments sont $\delta_{s's''}$, la dissimilarité entre l'espèce $s'$ et l'espèce $s''$. 
 Il n'est pas nécessaire à ce stade que $\mathbf{\Delta}$ soit une distance. 
-$\mathbf{p}$ est le vecteur des probabilités dont $p_{s'}$ et $p_{s"}$ sont des éléments:
+$\mathbf{p}$ est le vecteur des probabilités dont $p_{s'}$ et $p_{s''}$ sont des éléments:
 
 L'indice de Rao est
 
 \begin{equation}
   (\#eq:Rao)
-  H_{\mathbf{\Delta}}\left(\mathbf{p}\right)=\sum_{s'}{\sum_{s"}{p_{s'}}}p_{s"}\delta_{s's"}.
+  H_{\mathbf{\Delta}}\left(\mathbf{p}\right)=\sum_{s'}{\sum_{s''}{p_{s'}}}p_{s''}\delta_{s's''}.
 \end{equation}
 
 
@@ -747,10 +744,9 @@ L'indice de Rao est
 
 La définition de la distance est essentielle:
 
-* en fixant $\delta_{s's"}=1$ si deux espèces sont différentes, on obtient l'indice de Simpson. 
+* en fixant $\delta_{s's''}=1$ si deux espèces sont différentes, on obtient l'indice de Simpson. 
 Sa valeur peut être interprétée comme la probabilité qu'une paire d'individus choisie au hasard soit de deux espèces différentes;
-
-* Dans un espace unidimensionnel où la valeur $y_s$ associée à l'espèce $s$ est une variable quantitative $Y$, choisir $\delta_{s's"}={{\left(y_k-y_l\right)}^2}/{2}$ rend l'indice de Rao égal à la variance de $Y$.
+* Dans un espace unidimensionnel où la valeur $y_s$ associée à l'espèce $s$ est une variable quantitative $Y$, choisir $\delta_{s's''}={{\left(y_k-y_l\right)}^2}/{2}$ rend l'indice de Rao égal à la variance de $Y$.
 
 @Pavoine2005c ont montré que l'utilisation de distances ordinaires fait que la valeur maximale de l'entropie quadratique pour un effectif donné est obtenue en éliminant les espèces intermédiaires en ne retenant que les espèces extrêmes (le résultat est évident en une dimension: la variance est maximale en ne retenant que les valeurs extrêmes d'un échantillon). 
 Ce résultat est contraire aux propriétés attendues d'un indice de diversité. 
@@ -770,10 +766,10 @@ Ps <- Paracou618.MC$Ps
 Rao(Ps, Paracou618.Taxonomy)
 ```
 
-Le package *ADE4* permet le calcul avec la fonction `divc` qui utilise un format différent pour les probabilités et surtout la matrice des racines carrées du double des distances de l'objet `phylog` (chaque élément de `\$Wdist` vaut $\sqrt{2\delta_{s's"}}$.
+Le package *ADE4* permet le calcul avec la fonction `divc` qui utilise un format différent pour les probabilités et surtout la matrice des racines carrées du double des distances de l'objet `phylog` (chaque élément de `\$Wdist` vaut $\sqrt{2\delta_{s's''}}$.
 Cette particularité d'*ADE4* vient de l'analyse multivariée [@Champely2002]: l'entropie quadratique de Rao peut être représentée dans l'espace euclidien engendré par une matrice de distances $\mathbf{D}$ entre espèces (par une Analyse en Coordonnées Principales, PCoA).
 L'inertie des points représentants les espèces, précisément la moyenne des carrés des distances entre les espèces et leur centre de gravité (les probabilités $\mathbf{p}$ des espèces constituent leur poids), est alors égale à l'entropie de Rao $H_{\mathbf{\Delta}}\left(\mathbf{p}\right)$, où la matrice de distances $\mathbf{\Delta}$ est ${\mathbf{D}^{\circ2}}/{2}$: les valeurs de  $\mathbf{\Delta}$ valent la moitié du carré de celles de $\mathbf{D}$.
-Cette représentation est étendue dans la double analyse en composantes principales de @Pavoine2004 (section \@ref(sec:RaoDisc)).
+Cette représentation est étendue dans la double analyse en composantes principales de @Pavoine2004, section \@ref(sec:RaoDisc).
 
 Dans *ADE4*, les arbres phylogénétiques sont donc stockés sous la forme d'objets de type `phylog` où la matrice des distances (`\$Wdist`) est $\mathbf{D}$ mais les longueurs des branches de l'arbre (`\$droot`) correspondent aux valeurs de $\mathbf{\Delta}$.
 
@@ -818,7 +814,7 @@ pcaf <- dudi.pca(traits, scale=T, scannf=FALSE, nf=2)
 ```
 
 
-```{r PCAFFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='PCAFCode', fig.cap="Analyse en composante principale des traits foliaires"}
+```{r PCAFFig, echo=FALSE, results='hide', ref.label='PCAFCode', fig.cap="Analyse en composante principale des traits foliaires"}
 ```
 
 
@@ -835,7 +831,7 @@ scatter(pcaf)
 ```
 
 
-```{r HclustFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='HclustCode', fig.cap="Arbre phylogénétique issu de la classification automatique."}
+```{r HclustFig, echo=FALSE, results='hide', ref.label='HclustCode', fig.cap="Arbre phylogénétique issu de la classification automatique."}
 ```
 
 
@@ -853,7 +849,7 @@ plot(hf, h=-1)
 
 Le résultat est en figure \@ref(fig:PhylogRaoFig).
 
-```{r PhylogRaoFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='PhylogRaoCode', fig.cap="Présentation de l'arbre phylogénétique avec la contribution de chacune des variables."}
+```{r PhylogRaoFig, echo=FALSE, results='hide', ref.label='PhylogRaoCode', fig.cap="Présentation de l'arbre phylogénétique avec la contribution de chacune des variables."}
 ```
 
 Code R pour la figure \@ref(fig:PhylogRaoFig):
@@ -868,7 +864,7 @@ Le nuage de points est pratiquement contenu dans un plan alors que sa représent
 
 Le calcul de l'originalité des espèces utilise la fonction `originality` (figure \@ref(fig:originalityFig)).
 
-```{r originalityFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='originalityCode', fig.cap="Originalité des espèces."}
+```{r originalityFig, echo=FALSE, results='hide', ref.label='originalityCode', fig.cap="Originalité des espèces."}
 ```
 
 Code R pour la figure \@ref(fig:originalityFig):
@@ -919,7 +915,7 @@ L'entropie quadratique de Rao mesure la dispersion des espèces autour de ce poi
 Ces indices sont proposés pour leurs propriétés mathématiques, assurant l'existence de sa décomposition, sans support écologique bien établi.
 
 $\mathbf{\Delta}$ est la matrice de dissimilarité dont les éléments sont $\delta_{s,t}$, la dissimilarité entre l'espèce $s$ et l'espèce $t$.
-@Guiasu2011, @Guiasu2012 proposent l'indice $\mathit{{GS}_{D}}$ pour ses propriétés mathématiques et fournissent sa décomposition:
+R. C. Guiasu et S. Guiasu [-@Guiasu2011; -@Guiasu2012] proposent l'indice $\mathit{{GS}_{D}}$ pour ses propriétés mathématiques et fournissent sa décomposition:
 
 \begin{equation}
   (\#eq:Guiasu)
@@ -1105,7 +1101,7 @@ Cette propriété permet de limiter les conséquences du problème de l'espèce:
 
 ## Arbres non ultramétriques
 
-```{r Chao2010, fig.cap="Arbre phylogénétique hypothétique non ultramétrique", echo=FALSE}
+```{r Chao2010, fig.cap="Arbre phylogénétique hypothétique non ultramétrique", echo=FALSE, out.width='40%'}
 knitr::include_graphics('images/Chao2010.png')
 ```
 
@@ -1151,7 +1147,7 @@ La moyenne généralisée d'ordre $r$ [@Hardy1952], *generalized mean* ou *power
   \bar{x}={\left(\sum_s{p_s x^r_s}\right)}^{\frac{1}{r}}.
 \end{equation}
 
-```{r MoyenneHardyFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='MoyenneHardyCode', fig.cap="Moyenne généralisée d'ordre $r$ (en abscisse) d'une distribution uniforme de 100 valeurs tirées entre 0 et 1. La moyenne arithmétique 0,5 est obtenue pour $r=1$. La moyenne généralisée tend vers la plus petite valeur (près de 0) quand $r\\to -\\infty$, et vers la plus grande valeur (près de 1) quand $r\\to +\\infty$."}
+```{r MoyenneHardyFig, echo=FALSE, results='hide', ref.label='MoyenneHardyCode', fig.cap="Moyenne généralisée d'ordre $r$ (en abscisse) d'une distribution uniforme de 100 valeurs tirées entre 0 et 1. La moyenne arithmétique 0,5 est obtenue pour $r=1$. La moyenne généralisée tend vers la plus petite valeur (près de 0) quand $r\\to -\\infty$, et vers la plus grande valeur (près de 1) quand $r\\to +\\infty$."}
 ```
 
 
@@ -1289,8 +1285,7 @@ La plus simple est
 $$z_{s,t} = 1 - \frac{d_{s,t}}{\max{(d_{s,t})}}.$$
 Leinster et Cobbold argumentent en faveur d'une transformation exponentielle négative, déjà utilisée par @Nei1972.
 
-```{r LineaireZpsqFig, fig.cap = "Approximation de ${(\\mathbf{Zp})}_{s}^{q-1}$ par son développement limité au premier ordre pour $q=1.5$ (a) ($r=q-1$) et $q=0.5$ (b)", fig.ncol = 2, echo = FALSE, ref.label='LineaireZpsqCode', out.width='100%'}
-
+```{r LineaireZpsqFig, fig.cap = "Approximation de ${(\\mathbf{Zp})}_{s}^{q-1}$ par son développement limité au premier ordre pour (a) $q=1.5$ ($r=q-1$) et (b) $q=0.5$", out.width='100%', echo = FALSE, ref.label='LineaireZpsqCode', fig.asp=.4}
 ```
 
 Le problème majeur de la diversité $^q\!D^{\mathbf{Z}}$ est qu'elle fournit souvent des valeurs presque indépendantes de $q$ quand on l'applique à une matrice de similarité fonctionnelle [@Chiu2014b]. 
@@ -1330,7 +1325,7 @@ est justifiée par @Leinster2013.
 $u$ est une constante positive. 
 Plus $u$ est grand, plus la transformation est convexe: les similarités sont tassées vers 0 (figure \@ref(fig:EchelleFig)).
 
-```{r EchelleFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='EchelleCode', fig.cap="Transformation des distances (en abscisse) en similarités (en ordonnées) selon la valeur de $u$. Trait plein: $u=1$; pointillés longs: $u=2$; pointillés: $u=10$. Plus $u$ est grand, plus les similarités sont tassées vers 0."}
+```{r EchelleFig, echo=FALSE, results='hide', ref.label='EchelleCode', fig.cap="Transformation des distances (en abscisse) en similarités (en ordonnées) selon la valeur de $u$. Trait plein: $u=1$; pointillés longs: $u=2$; pointillés: $u=10$. Plus $u$ est grand, plus les similarités sont tassées vers 0."}
 ```
 
 Le code R nécessaire pour réaliser la figure est:
@@ -1456,7 +1451,7 @@ knitr::include_graphics('images/ArbreA.png')
 La diversité phylogénétique $^{q}\!\bar{D}(T)$ appliquée à un arbre ultramétrique est un cas particulier de $^q\!D^{\mathbf{Z}}$ pour une matrice $\mathbf{Z}$ dont les lignes et colonnes sont la similarité des "espèces historiques", c'est-à-dire les couples (espèce actuelle; branche ancestrale)[@Leinster2012, proposition A7].
 
 
-```{r SimMatrice, echo=FALSE, warning=FALSE}
+```{r MatricePhylo, echo=FALSE, warning=FALSE, size="scriptsize"}
 Matrice <- data.frame(
   lignes = c("$(1;b_{1,1})$", "$(1;b_{3,1})$", "$(2;b_{1,2})$", "$(2;b_{3,1})$", "$(3;b_{1,3})$", "$(3;b_{2,3})$", "$(4;b_{1,4})$", "$(4;b_{2,3})$", "$(5;b_{1,5})$", "$(5;b_{2,3})$"),
   b111 = c(1, 1, 0, 1, 0, 0, 0, 0, 0, 0),
@@ -1472,7 +1467,7 @@ Matrice <- data.frame(
 )
 names(Matrice) <- c("", "$(1;b_{1,1})$", "$(1;b_{3,1})$", "$(2;b_{1,2})$", "$(2;b_{3,1})$", "$(3;b_{1,3})$", "$(3;b_{2,3})$", "$(4;b_{1,4})$", "$(4;b_{2,3})$", "$(5;b_{1,5})$", "$(5;b_{2,3})$")
 knitr::kable(Matrice, caption="Matrice de similarité correspondant à l'arbre phylogénétique en exemple. Les noms des lignes et colonnes sont les couples (espèce actuelle; branche ancestrale).", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
+  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
 ```
 
 Par exemple, l'espèce 1 et les branches $b_{1,1}$ et $b_{3,1}$ fournissent les deux premières lignes et colonnes de la matrice; l'espèce 5 et les branches $b_{1,5}$ et $b_{2,3}$, les deux dernières.  
@@ -1489,7 +1484,7 @@ Les dimensions de la matrice de similarité et du vecteur de probabilités devie
 Cette équivalence de méthodes n'a donc pas d'intérêt pratique mais montre que la diversité de Leinster et Cobbold généralise la diversité phylogénétique.
 Cependant, le calcul de $^q\!{\hat{D}}^{\mathbf{Z}}$ à partir d'une matrice $\mathbf{Z}$ qui serait la simple transformation des distances de l'arbre phylogénétique, c'est-à-dire 1 moins les distances normalisées par la hauteur de l'arbre, ne donne pas la valeur de la diversité phylogénétique $^{q}\!\bar{D}(T)$, sauf dans le cas particulier de la diversité de Rao, $q=2$.
 
-Pour un arbre non ultramétrique, il est possible de définir une matrice $\mathbf{Z}$ similaire à celle de la figure \@ref(fig:MatricePhylo), mais ses valeurs non nulles ne sont pas égales à 1.
+Pour un arbre non ultramétrique, il est possible de définir une matrice $\mathbf{Z}$ similaire à celle de la table \@ref(tab:MatricePhylo), mais ses valeurs non nulles ne sont pas égales à 1.
 Elles sont égales au rapport de $\bar{T}$, la longueur moyenne des branches pondérée par la fréquence des espèces, sur la longueur de la branche: elles dépendent donc des fréquences des espèces et empêchent par conséquent la comparaison de la diversité entre communautés différentes.
 
 
@@ -1498,32 +1493,32 @@ Elles sont égales au rapport de $\bar{T}$, la longueur moyenne des branches pon
 La diversité $^q\!D^{\mathbf{Z}}$ et tous ses cas particuliers (phylodiversité et diversité neutre) peuvent être envisagés au niveau individuel plutôt qu'au niveau de l'espèce.
 
 Le calcul de la diversité n'est pas affecté par le remplacement d'une espèce par deux espèces identiques.
-La ligne et la colonne de la matrice $\mathbf{Z}$, correspondant à l'espèce $s$ sont remplacées par deux lignes et colonnes identiques correspondant aux espèces $s'$ et $s"$, dont la similarité avec les autres espèces est la même que celle de l'espèce $s$ et la similarité entre elles égale à 1, les probabilités vérifiant $p_s=p_{s'}+p_{s"}$. 
-L'opération peut être répétée jusqu'à la désagrégation complète de la matrice où chaque ligne correspondrait à un individu et les probabilités seraient égales à $\frac{1}{N}$. 
+La ligne et la colonne de la matrice $\mathbf{Z}$, correspondant à l'espèce $s$ sont remplacées par deux lignes et colonnes identiques correspondant aux espèces $s'$ et $s''$, dont la similarité avec les autres espèces est la même que celle de l'espèce $s$ et la similarité entre elles égale à 1, les probabilités vérifiant $p_s=p_{s'}+p_{s''}$. 
+L'opération peut être répétée jusqu'à la désagrégation complète de la matrice où chaque ligne correspondrait à un individu et les probabilités seraient égales à ${1}/{N}$. 
 Il n'y donc pas de différence entre la mesure de la diversité individuelle et celle de la diversité spécifique qui n'est qu'une façon pratique de regrouper des individus ayant la même banalité. 
 Dit autrement, l'entropie d'une communauté est la somme des entropie de ses espèces, qui n'est que la somme pondérée des entropies individuelles si tous les individus d'une espèce ont la même entropie.
 
 La variabilité intraspécifique peut être traitée par un raisonnement similaire.
-L'idée d'intégrer aux mesures de diversité la possibilité que tous les individus d'une espèce ne soient pas semblables émerge dans la littérature[@Pavoine2014b, Chiu2014b].
+L'idée d'intégrer aux mesures de diversité la possibilité que tous les individus d'une espèce ne soient pas semblables émerge dans la littérature [@Pavoine2014b; @Chiu2014b].
 Mais si des individus de la même espèce ne sont pas totalement similaires, ils ne peuvent pas être regroupés en prenant pour similarité de l'espèce avec elle-même une valeur unique qui résumerait la similarité entre les individus (au lieu de 1) pour tous les ordres de diversité.
 
-Formellement, si l'espèce $s$ est composée de deux groupes $s'$ et $s"$, la banalité du groupe $s'$ est
-$${\left(\mathbf{Zp}\right)}_{s'}=\sum_{t \ne s', s"}{p_{t}z_{s',t}} + p_{s'} + p_{s"}z_{s',s"},$$
-celle du groupe $s"$ est
-$${\left(\mathbf{Zp}\right)}_{s"}=\sum_{t \ne s', s"}{p_{t}z_{s",t}} + p_{s'}z_{s',s"} + p_{s"}.$$
-Les similarités avec les autres espèces sont identiques: $z_{s,t}=z_{s',t}=z_{s",t}$. 
+Formellement, si l'espèce $s$ est composée de deux groupes $s'$ et $s''$, la banalité du groupe $s'$ est
+$${\left(\mathbf{Zp}\right)}_{s'}=\sum_{t \ne s', s''}{p_{t}z_{s',t}} + p_{s'} + p_{s''}z_{s',s''},$$
+celle du groupe $s''$ est
+$${\left(\mathbf{Zp}\right)}_{s''}=\sum_{t \ne s', s''}{p_{t}z_{s'',t}} + p_{s'}z_{s',s''} + p_{s''}.$$
+Les similarités avec les autres espèces sont identiques: $z_{s,t}=z_{s',t}=z_{s'',t}$. 
 La contribution à la diversité des deux groupes
-$$\sum_{s'}{p_{s'}{\left(\mathbf{Zp}\right)}^{q-1}_{s'}}+\sum_{s"}{p_{s"}{\left(\mathbf{Zp}\right)}^{q-1}_{s"}}$$
+$$\sum_{s'}{p_{s'}{\left(\mathbf{Zp}\right)}^{q-1}_{s'}}+\sum_{s''}{p_{s''}{\left(\mathbf{Zp}\right)}^{q-1}_{s''}}$$
 est remplacée après regroupement par
 $$\sum_{s}{p_{s}{\left(\mathbf{Zp}\right)}^{q-1}_{s}}.$$
-Puisque $p_s=p_{s'}+p_{s"}$, le regroupement n'est possible quel que soit $q$ que si les banalités des deux groupes sont identiques, ce qui interdit toute variabilité intraspécifique: $z_{s',s"}$ est obligatoirement égal à 1. 
+Puisque $p_s=p_{s'}+p_{s''}$, le regroupement n'est possible quel que soit $q$ que si les banalités des deux groupes sont identiques, ce qui interdit toute variabilité intraspécifique: $z_{s',s''}$ est obligatoirement égal à 1. 
 La non-linéarité de la moyenne généralisée ne permet pas de définir une matrice de similarité intégrant la variabilité intraspécifique.
 
 Dans le cas de la diversité de Rao ($q=2$), on peut chercher la valeur de $z_{s,s}$, différente de 1, définissant la similarité de l'espèce avec elle même pour prendre en compte sa variabilité. La résolution de l'équation
-$$\sum_{s'}{p_{s'}{\left(\mathbf{Zp}\right)}_{s'}}+\sum_{s"}{p_{s"}{\left(\mathbf{Zp}\right)}_{s"}} = \sum_{s}{p_{s}{\left(\mathbf{Zp}\right)}_{s}}$$
+$$\sum_{s'}{p_{s'}{\left(\mathbf{Zp}\right)}_{s'}}+\sum_{s''}{p_{s''}{\left(\mathbf{Zp}\right)}_{s''}} = \sum_{s}{p_{s}{\left(\mathbf{Zp}\right)}_{s}}$$
 permet de trouver
-$$z_{s,s}=1+ \frac{2 p_{s'} p_{s"}(z_{s',s"}-1)}{p_s^2}.$$
-Dans le cas le plus simple où $p_{s'}=p_{s"}$, la similarité intraspécifique est $\frac{(1+z_{s',s"})}{2}$. 
+$$z_{s,s}=1+ \frac{2 p_{s'} p_{s''}(z_{s',s''}-1)}{p_s^2}.$$
+Dans le cas le plus simple où $p_{s'}=p_{s''}$, la similarité intraspécifique est ${(1+z_{s',s''})}/{2}$. 
 La valeur de $z_{s,s}$ peut être cherchée pour n'importe quelle valeur de $q$, mais la résolution de l'équation est en général impossible analytiquement, et $z_{s,s}$ varie avec $q$.
 Se limiter à $q=2$ simplifie le problème.
 
@@ -1571,7 +1566,7 @@ Les axes correspondent aux espèces "pures", totalement dissimilaires, les vecte
 Dans le cas extrême de la diversité neutre, $\mathbf{C}=\mathbf{I}$, chaque espèce est située uniquement sur son axe. 
 Dans l'autre cas extrême de totale similarité, où $\mathbf{C}$ ne contient que des 1, toutes les espèces sont colinéaires.
 
-Il est possible de calculer les $S$ valeurs propres notées $\lambda_s$ de la matrice des coordonnées des espèces et de les normaliser: $\mu_s=\frac{\lambda_s}{\sum_s{\lambda_s}}$.
+Il est possible de calculer les $S$ valeurs propres notées $\lambda_s$ de la matrice des coordonnées des espèces et de les normaliser: $\mu_s={\lambda_s}/{\sum_s{\lambda_s}}$.
 La communauté peut maintenant être représentée par ses valeurs propres $\mu_s$ correspondant à la proportion d'une "espèce composite" pure sur chaque axe généré par les vecteurs propres: cette transformation est une ACP non centrée, non réduite.
 La diversité HCDT des valeurs propres est la diversité de la communauté, qui sera notée ici $^q\!D^{\mathbf{Z}}(\Lambda)$.
 

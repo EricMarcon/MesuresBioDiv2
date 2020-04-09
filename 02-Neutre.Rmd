@@ -141,7 +141,7 @@ Si aucune espèce n'est observée deux fois, l'estimateur est remplacé [@Chao20
 
 \begin{equation}
   (\#eq:Chao1sansnf2)
-  \hat{S}}_\mathit{Chao1} 
+  {\hat{S}}_\mathit{Chao1} 
   = {s^{n}_{\ne 0}}+{s^{n}_{1}\left(s^{n}_{1}-1\right)}/{2}.
 \end{equation}
 
@@ -289,7 +289,7 @@ Code de la figure \@ref(fig:BiaisJack1Fig):
 autoplot(Ns, Distribution="lnorm")
 ```
 
-```{r BiaisJack1Fig, echo=FALSE, results='hide', out.width='\\maxwidth', ref.label='BiaisJack1Code', fig.cap="Echantillon de 1000 individus tiré dans une communauté log-normale."}
+```{r BiaisJack1Fig, echo=FALSE, results='hide', ref.label='BiaisJack1Code', fig.cap="Echantillon de 1000 individus tiré dans une communauté log-normale."}
 ```
 
 
@@ -341,7 +341,7 @@ summary(lm4 <- lm(Bias ~ 0 +I(1/n.seq) + I(1/n.seq^2)
                   + I(1/n.seq^3) + I(1/n.seq^4)))
 ```
 
-```{r BiaisJack3Fig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='BiaisJack3Code', fig.cap="Nombre d'espèces non obervées dans un échantillon de taille croissante et sa décomposition en séries de puissances négatives de $n$. Le nombre d'espèces non observées est représenté par la courbe continue noire. Les séries de puissances négatives d'ordre 1 (courbe rouge), 2 (courbe orange) et 4 (courbe bleue) sont représentées en pointillés. Les courbes d'ordre 6 et plus sont confondues avec la courbe noire. "}
+```{r BiaisJack3Fig, echo=FALSE, results='hide', ref.label='BiaisJack3Code', fig.cap="Nombre d'espèces non obervées dans un échantillon de taille croissante et sa décomposition en séries de puissances négatives de $n$. Le nombre d'espèces non observées est représenté par la courbe continue noire. Les séries de puissances négatives d'ordre 1 (courbe rouge), 2 (courbe orange) et 4 (courbe bleue) sont représentées en pointillés. Les courbes d'ordre 6 et plus sont confondues avec la courbe noire."}
 ```
 
 
@@ -483,7 +483,7 @@ Quand le seuil de 0,6 est dépassé, la valeur de l'estimateur de Chao devient s
 Ce seuil est cohérent avec les règles de @Brose2003.
 
 
-#### Prédiction de la richesse d'un nouvel échantillon
+#### Prédiction de la richesse d'un nouvel échantillon {#sec:Extrapol}
 
 La prédiction du nombre d'espèces $\hat{S'}$ découvert dans une nouvelle placette d'un habitat dans lequel on a déjà échantillonné est une question importante, par exemple pour évaluer le nombre d'espèces préservées dans le cadre d'une mise en réserve, ou évaluer le nombre d'espèces perdues en réduisant la surface d'une forêt.
 
@@ -542,7 +542,7 @@ mod.ll <- prestondistr(colSums(BCI))
 veiledspec(mod.ll)
 ```
 
-```{r PrestonSansOFig, echo=FALSE, results='hide', out.width='\\textwidth', ref.label='PrestonSansO2', fig.cap="Ajustement du modèle de Preston aux données de BCI."}
+```{r PrestonSansOFig, echo=FALSE, results='hide', ref.label='PrestonSansO2', fig.cap="Ajustement du modèle de Preston aux données de BCI."}
 ```
 
 Le code R nécessaire pour réaliser la figure est:
@@ -743,7 +743,7 @@ log(coefs["a"]/coefs["c"])/coefs["z"]
 ```
 
 
-L'estimation est cette fois supérieure à celle du jackknife (`r round(SPECIES::jackknife(entropart::AbdFreqCount(Ns))$Nhat, 0)` espèces).
+L'estimation est cette fois supérieure à celle du jackknife (`r round(SPECIES::jackknife(entropart::AbdFreqCount(Ns, CheckArguments=FALSE))$Nhat, 0)` espèces).
 
 La figure \@ref(fig:SobLLorFig) présente les deux ajustements de modèle de Soberón et Llorente avec celui de Clench. 
 L'estimation de la richesse par extrapolation est plus incertaine que par les méthodes non paramétriques. 
@@ -1279,12 +1279,11 @@ Ses propriétés mathématiques permettent d'unifier les mesures de diversité d
 
 ## Définition de l'entropie
 
-Les textes fondateurs sont @Davis1941 et surtout @Theil1967 en économétrie, et Shannon [@Shannon1948, Shannon1963] pour la mesure de la diversité. 
+Les textes fondateurs sont @Davis1941 et surtout @Theil1967 en économétrie, et Shannon [-@Shannon1948; -@Shannon1963] pour la mesure de la diversité. 
 Une revue est fournie par @Maasoumi1993.
 
 Considérons une expérience dont les résultats possibles sont $\left\{r_1,r_2,\dots ,\ r_S\right\}$. 
-La probabilité d'obtenir $r_s$ est $p_s$, et\break
-$\mathbf{p}=(p_1,p_2,\dots,p_S)$ est le vecteur composé des probabilités d'obtenir chaque résultat. 
+La probabilité d'obtenir $r_s$ est $p_s$, et $\mathbf{p}=(p_1,p_2,\dots,p_S)$ est le vecteur composé des probabilités d'obtenir chaque résultat. 
 Les probabilités sont connues *a priori*. 
 Tout ce qui suit est vrai aussi pour des valeurs de $r$ continues, dont on connaîtrait la densité de probabilité.
 
@@ -1295,8 +1294,7 @@ On définit donc une fonction d'information, $I(p_s)$, décroissante quand la pr
 Chaque valeur observée dans l'échantillon apporte une certaine quantité d'information, dont la somme est l'information de l'échantillon. 
 @Patil1982 appellent l'information "rareté".
 
-La quantité d'information attendue de l'expérience est\break
-$\sum^S_{s=1}{p_s I(p_s) = H(\mathbf{p})}$. 
+La quantité d'information attendue de l'expérience est $\sum^S_{s=1}{p_s I(p_s) = H(\mathbf{p})}$. 
 Si on choisit $I\left(p_s\right)=-\ln\left(p_s\right)$, $H\left(\mathbf{p}\right)$ est l'indice de Shannon, mais bien d'autres formes de $I\left(p_s\right)$ sont possibles. 
 $H\left(\mathbf{p}\right)$ est appelée *entropie*. 
 C'est une mesure de l'incertitude (de la volatilité) du résultat de l'expérience. 
@@ -1305,7 +1303,8 @@ L'entropie est maximale quand les résultats sont équiprobables.
 
 
 Si $\mathbf{p}$ est la distribution des probabilité des espèces dans une communauté, @Patil1982 montrent que:
-  * Si $I\left(p_s\right) = \frac{1-p_s}{p_s}$, alors $H\left(\mathbf{p}\right)$ est le nombre d'espèces $S$ moins 1;
+
+  * Si $I\left(p_s\right) = (1-p_s)/{p_s}$, alors $H\left(\mathbf{p}\right)$ est le nombre d'espèces $S$ moins 1;
   * Si $I\left(p_s\right)=-\ln\left(p_s\right)$, alors $H\left(\mathbf{p}\right)$ est l'indice de Shannon;
   * Si $I\left(p_s\right)=1-p_s$, alors $H\left(\mathbf{p}\right)$ est l'indice de Simpson.
 
@@ -1359,21 +1358,18 @@ Il est possible que les distributions $\mathbf{p}$ et $\mathbf{q}$ soit identiqu
 Quelques formes possibles de $H(\mathbf{q},\mathbf{p})$ sont:
 
 * La divergence de Kullback-Leibler [@Kullback1951] connue par les économistes comme l'indice de dissimilarité de @Theil1967:
-
 \begin{equation}
   (\#eq:Theil)
   T = \sum^S_{s=1}{q_{s}\ln\frac{q_s}{p_s}};
 \end{equation}
-
 * Sa proche parente, appelée parfois deuxième mesure de Theil [@Conceicao2000], qui inverse simplement les rôles de $p$ et $q$:
-
 \begin{equation}
   (\#eq:Theil2)
   L = \sum^S_{s=1}{p_{s}\ln\frac{p_s}{q_s}}.
 \end{equation}
 
 
-```{r KullbackLeiblerFig, echo=FALSE, message=FALSE, results='hide', ref.label='KullbackLeiblerCode', fig.cap="Valeur de $q\\ln(\\frac{q}{p})$ en fonction de $p$ et $q$. La divergence de Kullback-Leibler est la somme de cette valeur pour toutes les espèces"}
+```{r KullbackLeiblerFig, echo=FALSE, message=FALSE, results='hide', ref.label='KullbackLeiblerCode', fig.cap="Valeur de $q\\ln(q/p)$ en fonction de $p$ et $q$. La divergence de Kullback-Leibler est la somme de cette valeur pour toutes les espèces", fig.asp=1}
 ```
 
 
@@ -1496,7 +1492,7 @@ Le logarithme d'ordre $q$ est défini par
 \end{equation}
 dont la forme est identique à la transformation de @Box1964 utilisée en statistiques pour normaliser une variable.
 
-Le logarithme déformé converge vers le logarithme naturel quand $q\to 1$ (figure \@ref(fig:lnqFig).
+Le logarithme déformé converge vers le logarithme naturel quand $q\to 1$ (figure \@ref(fig:lnqFig)).
 
 Le code R nécessaire pour réaliser la figure est:
 ```{r lnqCode, eval=FALSE, tidy=FALSE}
@@ -1511,7 +1507,7 @@ ggplot(data.frame(x = c(0, 1)), aes(x)) +
     coord_cartesian(ylim = c(-4, 0)) +
     labs(x = "p", y = expression(ln[q](p)))
 ```
-).
+
 
 Sa fonction inverse est l'exponentielle d'ordre $q$:
 
@@ -1611,15 +1607,18 @@ On voit immédiatement que l'entropie de Tsallis est le logarithme d'ordre $q$ d
 L'entropie est utile pour les calculs: la correction des biais d'estimation notamment.
 Les nombres de Hill, ou *nombres équivalents d'espèces* ou *nombres effectif d'espèces* permettent une appréhension plus intuitive de la notion de biodiversité [@Jost2006]. 
 En raison de leurs propriétés, notamment de décomposition (voir le chapitre \@ref(chap:DedompHCDT)), @Jost2007 les appelle "vraie diversité". 
-@Hoffmann2008 critiquent cette définition totalitaire^[@Jost2009 reconnaît qu'un autre terme aurait pu être choisi ("diversité neutre" ou "diversité mathématique" par exemple).]
-et fournissent une revue historique plus lointaine sur les origines de ces mesures. 
+@Hoffmann2008 critiquent cette définition totalitaire et fournissent une revue historique plus lointaine sur les origines de ces mesures.
+@Jost2009 reconnaît qu'un autre terme aurait pu être choisi ("diversité neutre" ou "diversité mathématique" par exemple).
 
 @Dauby2012 écrivent "diversité au sens strict"; @Gregorius2010 "diversité explicite".
+
+\clearpage
+
 Quoi qu'il en soit, les nombres de Hill respectent le principe de réplication (voir @Chao2010, section 3 pour une discussion et un historique): si $I$ communautés de même taille, de même niveau de diversité $D$, mais sans espèces en commun sont regroupées dans une méta-communauté, la diversité de la méta-communauté doit être $I\times D$.
 
 L'intérêt de ces approches est de fournir une définition paramétrique de la diversité, qui donne plus ou moins d'importance aux espèces rares:
 
-* $^{-\infty}\!D={1}/{\min(p_S)}$ est l'inverse de la proportion de la communauté représentée par l'espèce la plus rare (toutes les autres espèces sont ignorées). 
+* $^{-\infty}\!D={1}/{\min(p_S)}$ est l'inverse de la proportion de la communauté représentée par l'espèce la plus rare (toutes les autres espèces sont ignorées).
 Le biais d'estimation est incontrôlable: l'espèce la plus rare n'est pas dans l'échantillon tant que l'inventaire n'est pas exhaustif;
 * $^{0}\!D$ est le nombre d'espèces (alors que $^{0}\!H$ est le nombre d'espèces moins 1). C'est la mesure classique qui donne le plus d'importance aux espèces rares: toutes les espèces ont la même importance, quel que soit leur effectif en termes d'individus.
 Il est bien adapté à une approche patrimoniale, celle du collectionneur qui considère que l'existence d'une espèce supplémentaire a un intérêt en soi, par exemple parce qu'elle peut contenir une molécule valorisable. 
@@ -1736,7 +1735,7 @@ L'estimateur corrigé de $^{1}\!H$ est
 \end{equation}
 
 Cet estimateur est différent de $H_z$ [@Zhang2012].
-Il a été également obtenu par d'autres auteurs [@Mao2007, Vinck2012][ @Chao2013, Annexe S1,] avec d'autres approches. 
+Il a été également obtenu par d'autres auteurs [@Mao2007; @Vinck2012; @Chao2013, Annexe S1] avec d'autres approches. 
 
 Dans *entropart*, utiliser `Tsallis` et `Diversity`:
 
@@ -1748,7 +1747,7 @@ Diversity(Paracou618.MC$Ns, q=1, Correction="ZhangGrabchak")
 
 ### Chao et Jost {#sec:BiaisHCDT}
 
-@Chao2015 complètent cet estimateur par une estimation du biais résiduel, selon la même démarche que pour l'entropie de Shannon [@Chao2013] \@ref(eq:Chao2013).
+@Chao2015 complètent cet estimateur par une estimation du biais résiduel, selon la même démarche que pour l'entropie de Shannon [@Chao2013].
 $h_q$ s'écrit sous la forme de la somme infinie des entropies de Simpson généralisées: $h_q = \sum_{k=0}^{\infty}{\binom{q-1}{k}(-1)^k\zeta_{1,k}}$.
 Alors que l'estimateur de Zhang et Grabchak ne prend en compte que les $n-1$ premiers termes de la somme pour un estimateur sans biais,  @Chao2015, eqn 5, le complètent par une estimation, forcément biaisée, des termes suivants pour obtenir:
 
@@ -1766,7 +1765,7 @@ La formule du nombre de combinaisons est généralisée aux valeurs de $q-1$ non
 * $1$ en absence de singletons et doubletons.
 
 Cet estimateur est le plus performant. Quand $q \to 1$, il tend vers l'estimateur de l'entropie de Shannon de @Chao2013, équation \@ref(eq:Chao2013).
-Quand $q=0$, l'estimateur se réduit à Chao1. Pour toutes les valeurs entières de $q$ supérieures ou égales à 2, il se réduit à l'estimateur (\@ref(eq:HqZhang)), identique à l'estimateur de Lande pour $q=2$, et est sans biais.
+Quand $q=0$, l'estimateur se réduit à Chao1. Pour toutes les valeurs entières de $q$ supérieures ou égales à 2, il se réduit à l'estimateur \@ref(eq:HqZhang), identique à l'estimateur de Lande pour $q=2$, et est sans biais.
 
 L'estimateur est obtenu à partir de celui du taux de couverture extrapolé (section \@ref(sec:Couverture)) fourni par @Chao2012b, annexe E, sans le détail de la démonstration présenté ici.
 L'espérance conditionnelle du taux de couverture dans un échantillon de taille $n+m$ compte-tenu des effectifs observés, notés $\{n_s\}$, est
@@ -1779,7 +1778,7 @@ L'espérance conditionnelle du taux de couverture dans un échantillon de taille
 
 Le taux de couverture $C^{n}$ est augmenté par l'échantillonnage de $m$ individus supplémentaires si les espèces non échantillonnées (vérifiant $\mathbf{1}(n_s=0)$) sont découvertes (la probabilité de le faire est $1-(1-p_s)^m$).
 $\hat{C}^{n} + \sum_s{p_s \mathbf{1}(n_s=0)}$ vaut par définition 1.
-Le deuxième terme de la somme est estimé en posant $\hat{p}_s = \hat{\alpha}_0$ pour toutes les espèces non observées, ce qui constitue la même approximation que pour l'estimation de la relation de Good-Turing, équation~(\@ref(eq:GoodTuring2014)).
+Le deuxième terme de la somme est estimé en posant $\hat{p}_s = \hat{\alpha}_0$ pour toutes les espèces non observées, ce qui constitue la même approximation que pour l'estimation de la relation de Good-Turing, équation \@ref(eq:GoodTuring2014).
 Alors, $\sum_s{p_s}$ est estimé par $\hat{\alpha}_0 {s^{n}_{0}} = \frac{s^{n}_{1}}{n}(1 - \hat{\alpha}_1)$ et $(1-p_s)^m$ par $(1-\hat{\alpha}_0)^m$.
 Les deux estimateurs $\hat{\alpha}_1$ et $\hat{\alpha}_0$ sont égaux à $A$ si le nombre d'espèces non échantillonnées est estimé par l'estimateur Chao1. On obtient
 
@@ -1793,8 +1792,8 @@ Les deux estimateurs $\hat{\alpha}_1$ et $\hat{\alpha}_0$ sont égaux à $A$ si 
 
 L'espérance du taux de couverture est directement liée à l'indice de Simpson généralisé [@Good1953]: ${\mathbb E}(C^{n+m}) = 1 - \zeta_{1,n+m}$.
 L'estimateur de $h_q$ est obtenu en remplaçant les termes $\zeta_{1,k}$ de la somme infinie $\sum_{k=n}^{\infty}{\binom{q-1}{k}(-1)^k \zeta_{1,k}}$ par la valeur de $1 -{\mathbb E}(C^{n+m})$
-calculée dans l'équation~\eqref{eq:Cnm}.
-La formule obtenue contient le développement en série entière de $[1 - (1-A)^{q-1}]$, ce qui permet d'éliminer la somme infinie et d'obtenir l'estimateur de l'équation~\eqref{eq:HqChaoJost} après simplifications [ @Chao2015, Appendix S1, Theorem S1.2d,].
+calculée dans l'équation \@ref(eq:Cnm).
+La formule obtenue contient le développement en série entière de $[1 - (1-A)^{q-1}]$, ce qui permet d'éliminer la somme infinie et d'obtenir l'estimateur de l'équation \@ref(eq:HqChaoJost) après simplifications [@Chao2015, Appendix S1, Theorem S1.2d].
 
 
 ### Autres méthodes
@@ -1858,7 +1857,7 @@ inventorié peut être considéré comme un tirage dans une loi multinomiale, qu
 Par simulation à partir d'une distribution connue, il est possible de tirer un grand nombre d'échantillons et de répéter l'estimation de la diversité sur chacun d'eux.
 La distribution de la valeur de l'échantillon permet de juger ses performances: son biais moyen (mesuré par rapport à la valeur de référence calculée à partir des probabilités choisies), et sa variabilité (évaluée par sa variance empirique sur les simulations).
 Un estimateur performant doit être peu biaisé mais aussi peu variable.
-L'erreur quadratique moyenne, somme du carré du biais et de la variance, ou sa racine carrée dont la dimension est celle des données (*root mean square error*: RMSE), est un bon critère de test [Voir par exemple @Chao2013, figure 1,].
+L'erreur quadratique moyenne, somme du carré du biais et de la variance, ou sa racine carrée dont la dimension est celle des données (*root mean square error*: RMSE), est un bon critère de test [voir par exemple @Chao2013, figure 1].
 
 @Haegeman2013 proposent deux estimateurs de la diversité $^{q}\!D$ à partir des courbes de raréfaction et d'extrapolation du nombre d'espèces.
 Les deux estimateurs bornent la vraie valeur de $^{q}\!D$ (leur variabilité n'est pas prise en compte, mais elle est négligeable dans le cadre utilisé).
@@ -1880,15 +1879,15 @@ Ces résultats sont développés plus loin.
 
 À partir de données d'inventaire, l'estimation du biais est impossible (sinon, le biais serait simplement ajouté à l'estimateur pour le rendre sans biais).
 La variabilité de l'estimateur peut être évaluée en générant des communautés par bootstrap et en estimant leur diversité comme dans la méthode précédente.
-Les communautés peuvent être simulées par tirage dans une loi multinomiale respectant les probabilités observées [@Marcon2012a, Marcon2014a].
+Les communautés peuvent être simulées par tirage dans une loi multinomiale respectant les probabilités observées [@Marcon2012a; @Marcon2014a].
 L'inconvénient est que les espèces dont les probabilités sont petites ne sont pas tirées, ce qui entraîne un nouveau biais d'estimation.
 L'estimateur le corrige en partie, le biais d'estimation dû au non échantillonnage des espèces rares de la communauté (corrigé par l'estimateur appliqué aux données réelles) n'est pas accessible.
 Il est donc nécessaire de recentrer les valeurs obtenues par simulation autour de la valeur obtenue sur les données.
 
 @Chao2015 proposent une méthode plus élaborée qui consiste à reconstituer la distribution des probabilités de la communauté réelle le mieux possible avant d'en tirer les échantillons simulés.
-L'estimateur naïf de la probabilité d'une espèe observée $s$ est $\hat{p}_s = \frac{n_s}{n}$.
+L'estimateur naïf de la probabilité d'une espèce observée $s$ est $\hat{p}_s = {n_s}/{n}$.
 $\hat{p}_s$ est sans biais mais comme on ne dispose que d'une réalisation de la loi, il est préférable de chercher un estimateur sans biais conditionnellement aux espèces observées.
-Il est obtenu par @Chao2013 à partir de l'espérance conditionnelle de $\frac{N_s}{n}$:
+Il est obtenu par @Chao2013 à partir de l'espérance conditionnelle de ${N_s}/{n}$:
 
 \begin{equation}
   (\#eq:Chao2013ENs)
@@ -1930,7 +1929,7 @@ Ce dernier biais peut être négligé [@Grassberger1988] parce que $^{q}\!H$, l'
 Des simulations menées sur des distributions log-normale ou géométrique de richesse diverses avec des efforts d'échantillonnage variés permettent de tester les estimateurs dans des cas théoriques réalistes [@Marcon2015a].
 Un résultat représentatif est donné ici. 
 
-```{r Estimation, fig.cap="Estimation de la diversité d'une communauté log-normale de 300 espèces. Un inventaire de 500 (en bas) ou 5000 (en haut) individus est répété 1000 fois et la diversité estimée à chaque fois par l'estimateur de Chao-Wang-Jost (à gauche) ou l'estimateur révélé (à droite). La courbe noire en gras représente la vraie diversité de la communauté. La courbe maigre est la moyenne de l'estimation, l'enveloppe grise limitée par les pointillés rouges contient 95\\% des valeurs simulées. A: 5000 individus, estimateur de Chao-Wang-Jost. B: 5000 individus, estimateur révélé. C:500 individus, estimateur de Chao-Wang-Jost. D: 500 individus, estimateur révélé.", echo=FALSE}
+```{r Estimation, fig.cap="Estimation de la diversité d'une communauté log-normale de 300 espèces. Un inventaire de 500 (en bas) ou 5000 (en haut) individus est répété 1000 fois et la diversité estimée à chaque fois par l'estimateur de Chao-Wang-Jost (à gauche) ou l'estimateur révélé (à droite). La courbe noire en gras représente la vraie diversité de la communauté. La courbe maigre est la moyenne de l'estimation, l'enveloppe grise limitée par les pointillés rouges contient 95\\% des valeurs simulées. A: 5000 individus, estimateur de Chao-Wang-Jost. B: 5000 individus, estimateur révélé. C: 500 individus, estimateur de Chao-Wang-Jost. D: 500 individus, estimateur révélé.", echo=FALSE, out.width='100%'}
 knitr::include_graphics('images/Estimation.png')
 ```
 
@@ -2234,7 +2233,7 @@ knitr::include_graphics('images/Tuomisto2012.png')
 ```
 
 Un critère supplémentaire établi par @Smith1996, complété par @Gosselin2001 est la compatibilité avec la courbe de @Lorenz1905, construite en classant les espèces de la moins fréquente à la plus fréquente, et en traçant le cumul des fréquences en fonction du rang (figure \@ref(fig:Tuomisto2012), @Tuomisto2012): une communauté parfaitement équitable est représentée par la bissectrice.
-La surface entre la courbe réelle et la bissectrice est très utilisée en économie pour mesurer l'inégalité sous le nom d'"indice de Gini" [@Gini1912, Ceriani2012]:
+La surface entre la courbe réelle et la bissectrice est très utilisée en économie pour mesurer l'inégalité sous le nom d'"indice de Gini" [@Gini1912; @Ceriani2012]:
 
 * Compatibilité avec la courbe de Lorenz: l'équitabilité augmente pour une communauté si sa courbe de Lorenz est plus proche de la bissectrice. 
 Si les courbes de deux communautés se croisent, l'ordre de leurs équitabilités est imprévisible.
@@ -2267,7 +2266,7 @@ Bulla le normalise pour qu'il soit compris entre 0 et 1:
   E_O = \frac{O - \min{O}}{1 - \min{O}}.
 \end{equation}
 
-La valeur minimale de $O$ est $\frac{1}{S}$.
+La valeur minimale de $O$ est ${1}/{S}$.
 Bulla considère que ce n'est pas le cas si les effectifs sont entiers et fournit une valeur exacte dépendant du nombre d'espèces.
 
 
@@ -2283,7 +2282,7 @@ L'indice de Gini est le double de la surface comprise entre la courbe de Lorenz 
 ### Ratios de Hill
 
 @Hill1973 utilise les rapports entre nombres effectifs d'espèces d'ordres différents comme mesure d'équitabilité.
-$E_{1,0} = \frac{^{1}\!D}{^{0}\!D}$ avait déjà été proposé par @Sheldon1969.
+$E_{1,0} = {^{1}\!D}/{^{0}\!D}$ avait déjà été proposé par @Sheldon1969.
 @Peet1974 le normalise en retirant au numérateur et au dénominateur leur valeur minimale, c'est-à-dire 1.
 
 La version normalisée de $E_{2,1}$ est recommandée par @Alatalo1981.
@@ -2424,7 +2423,7 @@ La solution la plus évidente consiste à corriger le mieux possible le biais d'
 
 \begin{equation}
   (\#eq:EstJq)
-  ^q\!{\tilde{J}}= \frac{\ln\left(\right)}{\ln\tilde{S}}.
+  ^q\!{\tilde{J}}= \frac{\ln\left(e_q^{^q{\tilde{H}}} \right)}{\ln\tilde{S}}.
 \end{equation}
 
 
