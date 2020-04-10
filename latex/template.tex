@@ -407,7 +407,10 @@ $endif$
 $endif$
 %
 $if(biblatex)$
+\twocolumn
+\renewcommand*{\bibfont}{\scriptsize}
 \printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+\onecolumn
 $endif$
 
 
