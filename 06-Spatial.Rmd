@@ -190,18 +190,18 @@ où
 
 Si $S = \infty$ et $c = 1$, l'équation \@ref(eq:Schulte) se simplifie pour retrouver l'équation \@ref(eq:AlphaFisher).
 
-(ref:Schulte2005b) Comparaison entre le modèle de Fisher et le modèle étendu dans trois parcelles forestières connues. Les modèles sont ajustés aux données observées par @Condit1996. Les courbes légendées *Equation 4* correspondent au modèle de Fisher étendu par Schulte, alors que l'*Equation 5* est le modèle intermédiaire, supposant le nombre total d'espèces infini.
+(ref:Schulte2005b) Courbes nombre d'individus-espèces-simulées pour illustrer l'importance des paramètres $c$ (concentration spatiale) et $S_{\max}$ (nombre total d'espèces, $S$ dans nos notations) dans le modèle de Fisher. $\alpha$ est fixé à 100 pour toutes les courbes. (a) et (b): la concentration spatiale ($c<1$) change drastiquement le nombre d'espèces attendu. En pratique, seuls $S$ et $N$ ($s^{n}_{\ne 0}$ et $n$ dans nos notations) sont observés. Si $c$ est supposé égal à 1 par erreur, $\alpha$ est sous-estimé. (a) et (c): le nombre d'espèces n'est évidemment pas infini, ce qui change fortement la forme de la courbe. Si le nombre d'observations est grand, $\alpha$ sera aussi très sous-estimé.
 ```{r Schulte2005b, fig.cap="(ref:Schulte2005b)", echo=FALSE}
 knitr::include_graphics('images/Schulte2005b.png')
 ```
 
+Leurs résultats (figure \@ref(fig:Schulte2005b)) montrent que la non prise en compte de ces deux paramètres aboutit à une sous-estimation systématique de $\alpha$, différente selon les sites, ce qui invalide les comparaisons inter-sites.
 
-(ref:Schulte2005a) Courbes nombre d'individus-espèces-simulées pour illustrer l'importance des paramètres $c$ (concentration spatiale) et $S_{\\max}$ (nombre total d'espèces, $S$ dans nos notations) dans le modèle de Fisher. $\\alpha$ est fixé à 100 pour toutes les courbes. (a) et (b): la concentration spatiale ($c<1$) change drastiquement le nombre d'espèces attendu. En pratique, seuls $S$ et $N$ ($s^{n}_{\ne 0}$ et $n$ dans nos notations) sont observés. Si $c$ est supposé égal à 1 par erreur, $\alpha$ est sous-estimé. (a) et (c): le nombre d'espèces n'est évidemment pas infini, ce qui change fortement la forme de la courbe. Si le nombre d'observations est grand, $\alpha$ sera aussi très sous-estimé.
+(ref:Schulte2005a) Comparaison entre le modèle de Fisher et le modèle étendu dans trois parcelles forestières connues. Les modèles sont ajustés aux données observées par @Condit1996. Les courbes légendées *Equation 4* correspondent au modèle de Fisher étendu par Schulte, alors que l'*Equation 5* est le modèle intermédiaire, supposant le nombre total d'espèces infini.
 ```{r Schulte2005a, fig.cap="(ref:Schulte2005a)", echo=FALSE}
-knitr::include_graphics('images/Schulte2005b.png')
+knitr::include_graphics('images/Schulte2005a.png')
 ```
 
-Leurs résultats (figure \@ref(fig:Schulte2005b)) montrent que la non prise en compte de ces deux paramètres aboutit à une sous-estimation systématique de $\alpha$, différente selon les sites, ce qui invalide les comparaisons inter-sites.
 
 Appliqué à des données réelles (figure \@ref(fig:Schulte2005a)), le modèle de Fisher étendu s'ajuste forcément mieux (il possède trois paramètres au lieu d'un). 
 L'approximation du nombre d'espèces infini paraît être la plus pénalisante parce qu'elle exclut l'inflexion de la courbe pour les grandes valeurs de $N$, même si ces valeurs sont rarement atteinte dans les faits ($e^{10}>20000)$.
@@ -367,7 +367,17 @@ Une communauté théorique log-normale de 300 espèces est créée.
 Des inventaires de 1000 individus sont simulés et les trois méthodes d'extrapolation de la richesse spécifique sont appliquées pour estimer la richesse d'un échantillon de 1800 individus.
 Les résultats obtenus sont comparés à des inventaires directs de 1800 individus.
 
-```{r Beguinot2015}
+
+(ref:Beguinot2015Fig) Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen et al. (pointillés alternés vert), Béguinot (tirets rouges) ou avec le package iNEXT (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire.
+```{r Beguinot2015Fig, echo=FALSE, results='hide', ref.label='Beguinot2015Code', fig.cap="(ref:Beguinot2015Fig)"}
+```
+
+
+La figure \@ref(fig:Beguinot2015Fig) montre que les extrapolations sont bonnes et très similaires avec les trois méthodes.
+La distribution des 500 simulations d'extrapolation est proche de celle des 500 inventaires, avec une plus grande variabilité due à la quantiité plus faible de données disponibles.
+
+Le code R nécessaire pour réaliser la figure est:
+```{r Beguinot2015Code, eval=FALSE, tidy=FALSE}
 # Ecart-type de la communauté log-normale
 sdlog <- 2
 # Nombre d'espèces
@@ -383,20 +393,22 @@ nSim <- 500
 # Création de nSim inventaires de n individus
 Samples <- rmultinom(nSim, n, Ps)
 # Richesse observée
-S0 <- colSums(Samples>0)
+S0 <- colSums(Samples > 0)
 # Fonction d'extrapolation selon Béguinot
 ExtrapolateB <- function(Ns) {
   # Création d'un tableau contenant le nombre d'espèces par abondance
   f <- AbdFreqCount(Ns)
   # Calcul des termes de la somme
-  s <- sapply(1:nrow(f), function(i) (-1)^(f[i,1]-1)* f[i,2] * extra^f[i,1])
+  s <- sapply(1:nrow(f), function(i) 
+              (-1)^(f[i, 1]-1) * f[i,2] * extra^f[i, 1])
   return(sum(s))
 }
 # Extrapolation des inventaires
-eB <- apply(Samples, 2, ExtrapolateB)+S0
+eB <- apply(Samples, 2, ExtrapolateB) + S0
 # Extrapolation par iNext
 library("iNEXT")
-ei <- iNEXT(as.data.frame(Samples), q=0, endpoint=n*(1+extra), knots=4, se=FALSE)$iNextEst
+ei <- iNEXT(as.data.frame(Samples), q = 0, endpoint = n*(1+extra), 
+            knots = 4, se = FALSE)$iNextEst
 # Extraction des résultats de l'objet obtenu
 ei <- sapply(ei, function(x) x[[4]][4])
 # Fonction d'extrapolation selon Shen et al.
@@ -404,36 +416,24 @@ library("SPECIES")
 ExtrapolateS <- function(Ns) {
   # Nombre d'espèces non observées
   sink(tempfile()) # Suppression des messages de jacknife()
-  S0 <- jackknife(AbdFreqCount(Ns))$Nhat-sum(Ns>0)
+  S0 <- jackknife(AbdFreqCount(Ns))$Nhat -sum(Ns > 0)
   sink() # restauration de l'affichage normal
   # Taux de couverture
   C <- Coverage(Ns)
   # Espèces nouvelles
-  return(S0*(1-(1-(1-C)/S0)^(n*extra)))
+  return(S0*(1 -(1 -(1 -C)/S0)^(n*extra)))
 }
 # Extrapolation des inventaires
-eS <- apply(Samples, 2, ExtrapolateS)+S0
+eS <- apply(Samples, 2, ExtrapolateS) + S0
 # Tirage de nSim communautés de taille n(1+extra)
-Communities <- rmultinom(nSim, n*(1+extra), Ps)
-richCommunities <- colSums(Communities>0)
+Communities <- rmultinom(nSim, n*(1 + extra), Ps)
+richCommunities <- colSums(Communities > 0)
 # Distribution des résultats
 deCommunities <- density(richCommunities)
 deB <- density(eB)
 dei <- density(ei)
 deS <- density(eS)
-```
-
-
-(ref:Beguinot2015Fig) Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de @Shen2003 (pointillés alternés vert), @Beguinot2015 (tirets rouges) ou avec le package iNEXT [@Hsieh2014] (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire.
-```{r Beguinot2015Fig, echo=FALSE, results='hide', ref.label='Beguinot2015Code', fig.cap="(ref:Beguinot2015Fig)"}
-```
-
-
-La figure \@ref(fig:Beguinot2015Fig) montre que les extrapolations sont bonnes et très similaires avec les trois méthodes.
-La distribution des 500 simulations d'extrapolation est proche de celle des 500 inventaires, avec une plus grande variabilité due à la quantiité plus faible de données disponibles.
-
-Le code R nécessaire pour réaliser la figure est:
-```{r Beguinot2015Code, eval=FALSE, tidy=FALSE}
+# Figure
 Xlab <- "Nombre d'espèces"
 Ylab <- "Densité de probabilité"
 ggplot(data.frame(richCommunities, eB, ei, eS)) +
@@ -696,7 +696,7 @@ Celle de degré 1 est retenue par les auteurs pour estimer le nombre d'espèces 
   \hat{S}^{A} = cA^z e^{-kA}.
 \end{equation}
 
-(ref:Plotkin2000b) Performance du modèle de @Plotkin2000 face à des distributions théoriques: SAD log-normales, modèles de Fisher et Broken Stick de MacArthur. La courbe représente le nombre d'espèces rencontrées à Pasoh sur des surfaces de 0 à 50 ha. Les données observées sont des tirages aléatoires d'échantillons de la surface souhaitée. L'écart-type est représenté (l'intervalle de fluctuation à 95\\% est de l'ordre de 2 écart-types). Les valeurs issues du modèle ont été obtenues par un paramétrage de $k$ et $z$ sur 25 ha, supposé valide également sur les autres forêts. Le paramétrage de $c$ est obtenu par un échantillon d'un hectare, répété 1000 fois pour obtenir un intervalle de confiance. L'intervalle de fluctuation à 95\% est ici encore de l'ordre de deux écart-types.
+(ref:Plotkin2000b) Performance du modèle de Plotkin face à des distributions théoriques: SAD log-normales, modèles de Fisher et Broken Stick de MacArthur. La courbe représente le nombre d'espèces rencontrées à Pasoh sur des surfaces de 0 à 50 ha. Les données observées sont des tirages aléatoires d'échantillons de la surface souhaitée. L'écart-type est représenté (l'intervalle de fluctuation à 95\% est de l'ordre de 2 écart-types). Les valeurs issues du modèle ont été obtenues par un paramétrage de $k$ et $z$ sur 25 ha, supposé valide également sur les autres forêts. Le paramétrage de $c$ est obtenu par un échantillon d'un hectare, répété 1000 fois pour obtenir un intervalle de confiance. L'intervalle de fluctuation à 95\% est ici encore de l'ordre de deux écart-types.
 ```{r Plotkin2000b, fig.cap="(ref:Plotkin2000b)", echo=FALSE}
 knitr::include_graphics('images/Plotkin2000b.png')
 ```

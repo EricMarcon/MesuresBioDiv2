@@ -2091,7 +2091,7 @@ Son nombre effectif d'espèces est
 
 L'existence d'un estimateur sans biais et d'un intervalle de confiance calculable analytiquement permet de comparer des profils de diversité de façon robuste quand l'échantillonnage est limité et la richesse élevée.
 
-La figure \@ref(fig:comProfilzetaFig) montre les profils de diversité (en nombre effectifs d'espèces) des deux parcelles 6 et 18 de Paracou: 1&nbsp;ha inventorié, respectivement 681 et 483 arbres, pour une richesse estimée à 254 et 309 espèces par les estimateurs jackknife d'ordres 2 et 3:
+La figure \@ref(fig:comProfilzetaFig)a montre les profils de diversité (en nombre effectifs d'espèces) des deux parcelles 6 et 18 de Paracou: 1&nbsp;ha inventorié, respectivement 681 et 483 arbres, pour une richesse estimée à 254 et 309 espèces par les estimateurs jackknife d'ordres 2 et 3:
 ```{r Paracou618S}
 NsP6 <- as.AbdVector(Paracou618.MC$Nsi[, 1])
 (S6 <- Richness(NsP6, Correction="Jackknife"))
@@ -2100,13 +2100,12 @@ NsP18 <- as.AbdVector(Paracou618.MC$Nsi[, 2])
 S <- min(S6, S18)
 ```
 
+En comparaison, la figure \@ref(fig:comProfilzetaFig)b montre les profils de diversité HCDT des mêmes parcelles.
+Ils se chevauchent pour les petits ordres de diversité, ce qui ne permet pas de conclure.
 
-(ref:comProfilzetaFig) Comparaison des profils de diversité des parcelles 6 et 18 de Paracou avec leur intervalle de confiance à 95\%. La parcelle 18 est tracée en rouge, lignes continues, et la 6 en vert, lignes pointillées. Diversité généralisée de Simpson (nombres effectif d'espèces): les profils sont distincts, ce qui permet de conclure que la parcelle 6 est plus diverse que la parcelle 18.
-```{r comProfilzetaFig, echo=FALSE, results='hide', message=FALSE, ref.label='comProfilzetaCode', fig.cap="(ref:comProfilzetaFig)"}
-```
 
-(ref:comProfilHCDTFig) Comparaison des profils de diversité des parcelles 6 et 18 de Paracou. Diversité HCDT: les profils se chevauchent jusqu'à $q \approx 0,7$.
-```{r comProfilHCDTFig, echo=FALSE, results='hide', message=FALSE, ref.label='comProfilHCDTCode', fig.cap="(ref:comProfilHCDTFig)"}
+(ref:comProfilzetaFig) Comparaison des profils de diversité des parcelles 6 et 18 de Paracou avec leur intervalle de confiance à 95\%. La parcelle 18 est tracée en rouge, lignes continues, et la 6 en vert, lignes pointillées. (a) Diversité généralisée de Simpson (nombres effectif d'espèces): les profils sont distincts, ce qui permet de conclure que la parcelle 6 est plus diverse que la parcelle 18. (b) Diversité HCDT: les profils se chevauchent jusqu'à $q \approx 0,7$.
+```{r comProfilzetaFig, echo=FALSE, results='hide', message=FALSE, ref.label='comProfilzetaCode', fig.cap="(ref:comProfilzetaFig)", out.width='100%', fig.asp=0.5}
 ```
 
 La diversité est donc estimée jusqu'à l'ordre 253.
@@ -2114,58 +2113,54 @@ La diversité est donc estimée jusqu'à l'ordre 253.
 Code R pour réaliser la figure \@ref(fig:comProfilzetaFig):
 ```{r comProfilzetaCode, eval=FALSE, tidy=FALSE}
 # Profil P6
-  library("EntropyEstimation")
-  zeta6 <- CommunityProfile(GenSimpson, NsP6, 1:(S - 1))
-  sigma6 <- sapply(1:(S - 1), function(r) GenSimp.sd(NsP6, r))
-  ic6 <- qnorm(1 - 0.05/2) * sigma6/sqrt(sum(NsP6))
-  zeta6$low <- zeta6$y - ic6
-  zeta6$high <- zeta6$y + ic6
-  # Profil P18
-  zeta18 <- CommunityProfile(GenSimpson, NsP18, 1:(S - 1))
-  sigma18 <- sapply(1:(S - 1), function(r) GenSimp.sd(NsP18, r))
-  ic18 <- qnorm(1 - 0.05/2) * sigma18/sqrt(sum(NsP18))
-  zeta18$low <- zeta18$y - ic18
-  zeta18$high <- zeta18$y + ic18
-  # Transformation en diversité
-  zeta6D <- zeta6
-  zeta6D$y <- 1/(1 - (zeta6$y)^(1/zeta6$x))
-  zeta6D$low <- 1/(1 - (zeta6$low)^(1/zeta6$x))
-  zeta6D$high <- 1/(1 - (zeta6$high)^(1/zeta6$x))
-  zeta18D <- zeta18
-  zeta18D$y <- 1/(1 - (zeta18$y)^(1/zeta18$x))
-  zeta18D$low <- 1/(1 - (zeta18$low)^(1/zeta18$x))
-  zeta18D$high <- 1/(1 - (zeta18$high)^(1/zeta18$x))
-  # Figure
-  ggplot() + 
-    geom_ribbon(aes(x, ymin = low, ymax = high), 
-                as.data.frame.list(zeta18D), alpha = 0.3) +
-    geom_line(aes(x, y), as.data.frame.list(zeta18D), col = "red") +
-    geom_ribbon(aes(x, ymin = low, ymax = high), 
-                as.data.frame.list(zeta6D), alpha = 0.3) +
-    geom_line(aes(x, y), as.data.frame.list(zeta6D), col = "darkgreen") +
-    labs(x = "Ordre de diversité", y = "Diversité de Simpson généralisée")
-```
-
-
-En comparaison, la figure \@ref(fig:comProfilHCDTFig) montre les profils de diversité HCDT des mêmes parcelles.
-Ils se chevauchent pour les petits ordres de diversité, ce qui ne permet pas de conclure.
-
-Code R pour réaliser la figure:
-```{r comProfilHCDTCode, eval=FALSE, tidy=FALSE}
+library("EntropyEstimation")
+zeta6 <- CommunityProfile(GenSimpson, NsP6, 1:(S - 1))
+sigma6 <- sapply(1:(S - 1), function(r) GenSimp.sd(NsP6, r))
+ic6 <- qnorm(1 - 0.05/2) * sigma6/sqrt(sum(NsP6))
+zeta6$low <- zeta6$y - ic6
+zeta6$high <- zeta6$y + ic6
+# Profil P18
+zeta18 <- CommunityProfile(GenSimpson, NsP18, 1:(S - 1))
+sigma18 <- sapply(1:(S - 1), function(r) GenSimp.sd(NsP18, r))
+ic18 <- qnorm(1 - 0.05/2) * sigma18/sqrt(sum(NsP18))
+zeta18$low <- zeta18$y - ic18
+zeta18$high <- zeta18$y + ic18
+# Transformation en diversité
+zeta6D <- zeta6
+zeta6D$y <- 1/(1 - (zeta6$y)^(1/zeta6$x))
+zeta6D$low <- 1/(1 - (zeta6$low)^(1/zeta6$x))
+zeta6D$high <- 1/(1 - (zeta6$high)^(1/zeta6$x))
+zeta18D <- zeta18
+zeta18D$y <- 1/(1 - (zeta18$y)^(1/zeta18$x))
+zeta18D$low <- 1/(1 - (zeta18$low)^(1/zeta18$x))
+zeta18D$high <- 1/(1 - (zeta18$high)^(1/zeta18$x))
+# Figure
+gga <- ggplot() + 
+  geom_ribbon(aes(x, ymin = low, ymax = high), 
+              as.data.frame.list(zeta18D), alpha = 0.3) +
+  geom_line(aes(x, y), as.data.frame.list(zeta18D), col = "red") +
+  geom_ribbon(aes(x, ymin = low, ymax = high), 
+              as.data.frame.list(zeta6D), alpha = 0.3) +
+  geom_line(aes(x, y), as.data.frame.list(zeta6D), col = "darkgreen") +
+  labs(x = "Ordre de diversité", 
+       y = "Diversité de Simpson généralisée") +
+  labs(tag = "a")
 # Calcul des profils HCDT
-  D6 <- CommunityProfile(Diversity, NsP6, NumberOfSimulations = 10,
-  q.seq=q.seq, Correction = "UnveilJ")
-  D18 <- CommunityProfile(Diversity, NsP18, NumberOfSimulations = 10,
-  q.seq=q.seq, Correction = "UnveilJ")
-  # Figure
-  ggplot(data.frame(x = D6$x, D6$y, D18$y)) +
-    geom_ribbon(aes(x, ymin = low, ymax = high), as.data.frame.list(D6), 
-                alpha = 0.3) +
-    geom_line(aes(x, D6.y), col = "darkgreen", lty = 2) + 
-    geom_ribbon(aes(x, ymin = low, ymax = high), as.data.frame.list(D18), 
-                alpha = 0.3) +
-    geom_line(aes(x, D18.y), col = "red") + 
-    labs(x = "Ordre de diversité", y = "Nombre de Hill")
+D6 <- CommunityProfile(Diversity, NsP6, NumberOfSimulations = 10,
+q.seq=q.seq, Correction = "UnveilJ")
+D18 <- CommunityProfile(Diversity, NsP18, NumberOfSimulations = 10,
+q.seq=q.seq, Correction = "UnveilJ")
+# Figure
+ggb <- ggplot(data.frame(x = D6$x, D6$y, D18$y)) +
+  geom_ribbon(aes(x, ymin = low, ymax = high), as.data.frame.list(D6), 
+              alpha = 0.3) +
+  geom_line(aes(x, D6.y), col = "darkgreen", lty = 2) + 
+  geom_ribbon(aes(x, ymin = low, ymax = high), as.data.frame.list(D18), 
+              alpha = 0.3) +
+  geom_line(aes(x, D18.y), col = "red") + 
+  labs(x = "Ordre de diversité", y = "Nombre de Hill") +
+  labs(tag = "b")
+grid.arrange(gga, ggb, ncol = 2)
 ```
 
 
@@ -2173,7 +2168,7 @@ La distribution statistique de la différence d'entropie est connue, et peut don
 Son intervalle de confiance ne contient jamais la valeur 0, ce qui permet de conclure que la parcelle 18 est plus diverse.
 
 
-(fig:zetaDiffFig) Différence entre les entropies de Simpson généralisées des parcelles 18 et 6 de Paracou avec son intervalle de confiance à 95\%. La ligne horizontale représente l'hypothèse nulle d'égalité entre les entropies, qui peut être rejetée.
+(ref:zetaDiffFig) Différence entre les entropies de Simpson généralisées des parcelles 18 et 6 de Paracou avec son intervalle de confiance à 95\%. La ligne horizontale représente l'hypothèse nulle d'égalité entre les entropies, qui peut être rejetée.
 ```{r zetaDiffFig, echo=FALSE, results='hide', ref.label='zetaDiffCode', fig.cap="(fig:zetaDiffFig)"}
 ```
 
