@@ -49,7 +49,7 @@ Notations <- data.frame(
   )
 names(Notations) <- c("", "Communauté $i$", "$\\dots$", "Total: méta-communauté")
 knitr::kable(Notations, caption="(ref:Notations)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
 ```
 
 
@@ -66,7 +66,7 @@ Ces deux définitions sont présentées sur les figures \@ref(fig:Anderson2011a)
 knitr::include_graphics('images/Anderson2011a.png')
 ```
 
-(ref:Anderson2011b) Diversité $\\beta$ liée à la variation de la composition spécifique. $\beta_W$ est le rapport entre la diversité $\gamma$ et la diversité $\alpha$, $\\beta_{Add}$ leur différence. $d_{ij}$ est la dissimilarité entre les communautés $i$ et $j$. $\hat{\sigma}^2$ est la variance de cette dissimilarité, $\bar{d}$ sa moyenne. Si $d$ est une distance euclidienne, $\bar{d}_{cen}$ est la distance moyenne des communautés à leur centre de gravité.
+(ref:Anderson2011b) Diversité $\beta$ liée à la variation de la composition spécifique. $\beta_W$ est le rapport entre la diversité $\gamma$ et la diversité $\alpha$, $\beta_{Add}$ leur différence. $d_{ij}$ est la dissimilarité entre les communautés $i$ et $j$. $\hat{\sigma}^2$ est la variance de cette dissimilarité, $\bar{d}$ sa moyenne. Si $d$ est une distance euclidienne, $\bar{d}_{cen}$ est la distance moyenne des communautés à leur centre de gravité.
 ```{r Anderson2011b, fig.cap="(ref:Anderson2011b)", echo=FALSE}
 knitr::include_graphics('images/Anderson2011B.png')
 ```
@@ -881,7 +881,7 @@ DecShannon <- data.frame(
 )
 names(DecShannon) <- c("Indice", "Distribution observée", "Distribution attendue", "Formule")
 knitr::kable(DecShannon, caption="(ref:DecShannon)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
 ```
 
 
@@ -1147,7 +1147,7 @@ Decomposition <- data.frame(
 )
 names(Decomposition) <- c("Mesure de diversité", "Entropie généralisée", "Shannon")
 knitr::kable(Decomposition, caption="(ref:Decomposition)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
 ```
 
 
@@ -1604,7 +1604,7 @@ Couteron <- data.frame(
 )
 names(Couteron) <- c("", "", "", "Forêt $k$, Parcelle $j$, Placette $i$, Arbre $h$", "$\\dots$", "Total")
 knitr::kable(Couteron, caption="(ref:Couteron)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
 ```
 
 Un cadre général de partitionnement de la diversité, applicable aux trois indices classiques, est proposé par @Pelissier2007, en conclusion d'une série d'articles [@Pelissier2003; @Couteron2004].

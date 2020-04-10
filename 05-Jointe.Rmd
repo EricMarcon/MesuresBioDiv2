@@ -42,7 +42,7 @@ Notations <- data.frame(
   )
 names(Notations) <- c("", "Classe $i$", "$\\dots$", "Total: Communauté")
 knitr::kable(Notations, caption="(ref:Notations2)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
 ```
 
 
