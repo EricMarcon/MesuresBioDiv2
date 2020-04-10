@@ -341,7 +341,9 @@ summary(lm4 <- lm(Bias ~ 0 +I(1/n.seq) + I(1/n.seq^2)
                   + I(1/n.seq^3) + I(1/n.seq^4)))
 ```
 
-```{r BiaisJack3Fig, echo=FALSE, results='hide', ref.label='BiaisJack3Code', fig.cap="Nombre d'espèces non obervées dans un échantillon de taille croissante et sa décomposition en séries de puissances négatives de $n$. Le nombre d'espèces non observées est représenté par la courbe continue noire. Les séries de puissances négatives d'ordre 1 (courbe rouge), 2 (courbe orange) et 4 (courbe bleue) sont représentées en pointillés. Les courbes d'ordre 6 et plus sont confondues avec la courbe noire."}
+
+(ref:BiaisJack3Fig) Nombre d'espèces non obervées dans un échantillon de taille croissante et sa décomposition en séries de puissances négatives de $n$. Le nombre d'espèces non observées est représenté par la courbe continue noire. Les séries de puissances négatives d'ordre 1 (courbe rouge), 2 (courbe orange) et 4 (courbe bleue) sont représentées en pointillés. Les courbes d'ordre 6 et plus sont confondues avec la courbe noire.
+```{r BiaisJack3Fig, echo=FALSE, results='hide', ref.label='BiaisJack3Code', fig.cap="(ref:BiaisJack3Fig)"}
 ```
 
 
@@ -446,7 +448,8 @@ Les auteurs appellent cette proportion couverture (*coverage*).
 Le terme *completeness* a été proposé par @Beck2010 pour éviter la confusion avec le taux de couverture défini par Good (vu en section \@ref(sec:Couverture)). 
 La complétude est inférieure à la couverture: toutes les espèces ont le même poids alors que les espèces manquantes sont plus rares et pénalisent moins le taux de couverture.
 
-```{r Brose2003, fig.cap="Arbre de décision du meilleur estimateur du nombre d'espèces", echo=FALSE}
+(ref:Brose2003) Arbre de décision du meilleur estimateur du nombre d'espèces.
+```{r Brose2003, fig.cap="(ref:Brose2003)", echo=FALSE}
 knitr::include_graphics('images/Brose2003.png')
 ```
 
@@ -506,7 +509,9 @@ Exemple de BCI, suite: combien de nouvelles espèces seront découvertes en éch
 (C <- Coverage(Ns))
 ```
 
-```{r NonObsNFig, echo=FALSE, results='hide', ref.label='NonObsNCode', fig.cap="Nombre de nouvelles espèces découvertes en fonction de l'effort d'échantillonnage supplémentaire (données de BCI). Seulement 7 nouvelles espèces seront observées en échantillonnant 10000 arbres supplémentaires (environ 25 ha en plus des 50 ha de la parcelle qui contiennent 225 espèces)."}
+
+(ref:NonObsNFig) Nombre de nouvelles espèces découvertes en fonction de l'effort d'échantillonnage supplémentaire (données de BCI). Seulement 7 nouvelles espèces seront observées en échantillonnant 10000 arbres supplémentaires (environ 25 ha en plus des 50 ha de la parcelle qui contiennent 225 espèces).
+```{r NonObsNFig, echo=FALSE, results='hide', ref.label='NonObsNCode', fig.cap="(ref:NonObsNFig)"}
 ```
 
 Le taux de couverture de l'inventaire de BCI est très proche de 100\%, donc peu de nouvelles espèces seront découvertes en augmentant l'effort d'échantillonnage. 
@@ -542,7 +547,9 @@ mod.ll <- prestondistr(colSums(BCI))
 veiledspec(mod.ll)
 ```
 
-```{r PrestonSansOFig, echo=FALSE, results='hide', ref.label='PrestonSansO2', fig.cap="Ajustement du modèle de Preston aux données de BCI."}
+
+(ref:PrestonSansOFig) Ajustement du modèle de Preston aux données de BCI.
+```{r PrestonSansOFig, echo=FALSE, results='hide', ref.label='PrestonSansO2', fig.cap="(ref:PrestonSansOFig)"}
 ```
 
 Le code R nécessaire pour réaliser la figure est:
@@ -685,7 +692,8 @@ lm1 <- lm(y ~ x)
 ```
 
 
-```{r LineweaverFig, echo=FALSE, results='hide', ref.label='Lineweaver2', fig.cap="Ajustement du même modèle de Michaelis-Menten transformé selon Lineweaver et Burk."}
+(ref:LineweaverFig) Ajustement du même modèle de Michaelis-Menten transformé selon Lineweaver et Burk.
+```{r LineweaverFig, echo=FALSE, results='hide', ref.label='Lineweaver2', fig.cap="(ref:LineweaverFig)"}
 ```
 
 On voit assez clairement que le modèle (figure \@ref(fig:LineweaverFig)) s'ajuste mal quand il est représenté sous cette forme [@Raaijmakers1987].
@@ -739,7 +747,8 @@ log(coefs["a"]/coefs["c"])/coefs["z"]
 ```
 
 
-```{r SobLLorFig, echo=FALSE, results='hide', ref.label='SobLLor', fig.cap="Ajustement des modèle de Michaelis-Menten (trait plein) et de de Soberón et Llorente (pointillés longs: modèle exponentiel négatif; pointillés courts: modèle à trois paramètres) aux données de BCI. Les cercles représentent le nombre d'espèces cumulées en fonction du nombre d'arbres. Le modèle exponentiel négatif (Holdridge) sous-estime la richesse, plus que celui de Michaelis-Menten (Clench). Le modèle à trois paramètres s'ajuste mieux aux données, mais il surestime probablement la richesse."}
+(ref:SobLLorFig) Ajustement des modèle de Michaelis-Menten (trait plein) et de de Soberón et Llorente (pointillés longs: modèle exponentiel négatif; pointillés courts: modèle à trois paramètres) aux données de BCI. Les cercles représentent le nombre d'espèces cumulées en fonction du nombre d'arbres. Le modèle exponentiel négatif (Holdridge) sous-estime la richesse, plus que celui de Michaelis-Menten (Clench). Le modèle à trois paramètres s'ajuste mieux aux données, mais il surestime probablement la richesse.
+```{r SobLLorFig, echo=FALSE, results='hide', ref.label='SobLLor', fig.cap="(ref:SobLLorFig)"}
 ```
 
 
@@ -792,7 +801,9 @@ Aucune justification de ce résultat majeur n'est donnée par les auteurs, si ce
 
 Le nombre total d'espèces estimé est 8,7 millions, tous règnes confondus, dans la fourchette des estimations précédentes (de 3 à 100 millions), et nécessitant près de 500 ans d'inventaires au rythme actuel des découvertes [@May2011].
 
-```{r Mora2011, fig.cap="Évolution du nombre de taxons connus en fonction du temps et valeur estimée du nombre total (ligne horizontale grise, A à E). Le nombre d'espèces connues est trop faible pour utiliser cette méthode (F). Il est obtenu par extrapolation de la relation du nombre de taxons d'un niveau à celui du niveau supérieur (G).", echo=FALSE}
+
+(ref:Mora2011) Évolution du nombre de taxons connus en fonction du temps et valeur estimée du nombre total (ligne horizontale grise, A à E). Le nombre d'espèces connues est trop faible pour utiliser cette méthode (F). Il est obtenu par extrapolation de la relation du nombre de taxons d'un niveau à celui du niveau supérieur (G).
+```{r Mora2011, fig.cap="(ref:Mora2011)", echo=FALSE}
 knitr::include_graphics('images/Mora2011.png')
 ```
 
@@ -1059,9 +1070,10 @@ Le problème traité est la non-linéarité de l'indice de Shannon par rapport a
 La fonction logarithme fournit un exemple simple: l'espérance de $\ln(p_s)$ n'est pas le logarithme de l'espérance de $p_s$ parce que la fonction $\ln$ est concave. 
 Chaque estimateur ${\hat{p}}_s$ fluctue autour de $p_s$ mais vaut $p_s$ en moyenne. 
 À cause de la concavité, $\ln({\hat{p}}_s)$ est en moyenne inférieur à $\ln(p_s)$: cette relation est connue sous le nom d'inégalité de @Jensen1906. 
-L'indice de Shannon est concave (figure \@ref(fig:ShannonFig) donc son estimateur \@ref(eq:Shannon) est biaisé négativement, même sans prendre en considération les espèces non observées.
+L'indice de Shannon est concave (figure \@ref(fig:ShannonFig)) donc son estimateur \@ref(eq:Shannon) est biaisé négativement, même sans prendre en considération les espèces non observées.
 
-```{r ShannonFig, echo=FALSE, results='hide', message=FALSE, ref.label='ShannonCode',  fig.cap="courbe de $x\\ln x$ entre 0 et 1."}
+(ref:ShannonFig) Courbe de $x\ln x$ entre 0 et 1.
+```{r ShannonFig, echo=FALSE, results='hide', message=FALSE, ref.label='ShannonCode',  fig.cap="(ref:ShannonFig)"}
 ```
 
 Code de la figure \@ref(fig:SARFig):
@@ -1079,7 +1091,8 @@ La valeur du biais en fonction de $p_s$ est en figure \@ref(fig:ShannonBiaisFig)
 Le biais de l'indice de Shannon est la somme des biais pour toutes les probabilités spécifiques de la communauté étudiée, et son calcul est toujours l'objet de recherches.
 
 
-```{r ShannonBiaisFig, echo=FALSE, results='hide', message=FALSE, ref.label='ShannonBiaisCode',  fig.cap="Biais de $\\hat{p}_s \\ln\\hat{p}_s$ entre 0 et 1."}
+(ref:ShannonBiaisFig) Biais de $\hat{p}_s \ln\hat{p}_s$ entre 0 et 1.
+```{r ShannonBiaisFig, echo=FALSE, results='hide', message=FALSE, ref.label='ShannonBiaisCode',  fig.cap="(ref:ShannonBiaisFig)"}
 ```
 
 Code de la figure \@ref(fig:ShannonBiaisFig):
@@ -1140,10 +1153,10 @@ Shannon(colSums(BCI), Correction = "Schurmann")
 Shannon(colSums(BCI), Correction = "ZhangHz")
 ```
 
-D'autres estimateurs peu utilisés en écologie sont disponibles dans le package *entropy*[@Hausser2009]. 
+D'autres estimateurs peu utilisés en écologie sont disponibles dans le package *entropy* [@Hausser2009]. 
 La contraction de Stein [@James1961] consiste à estimer la distribution des probabilités d'occurence des espèces par la pondération optimale entre un estimateur à faible biais et un estimateur à faible variance. 
 L'estimateur $\hat{p}_s$ est sans biais mais a une variance importante. 
-L'estimateur $\frac{1}{S}$, si $S$ est connu, est de variance nulle mais est très biaisé. 
+L'estimateur ${1}/{S}$, si $S$ est connu, est de variance nulle mais est très biaisé. 
 Comme le nombre d'espèces est en général inconnu, il doit être estimé par une méthode quelconque, mais de préférence le surestimant plutôt que le sous-estimant. 
 L'estimateur de James-Stein (*shrinkage estimator*) optimal est
 \begin{equation}
@@ -1202,16 +1215,16 @@ Chaque terme de la somme est la probabilité d'observer au moins une fois l'esp�
 
 L'augmentation de la valeur de $k$ permet de donner plus d'importance aux espèces rares.
 
-L'indice peut être converti en nombre équivalent d'espèces [@Dauby2012] (c'est-à-dire le nombre d'espèces équiprobables nécessaire pour obtenir la même diversité) notés $_{k}\!D$ à partir de la relation
+L'indice peut être converti en nombre équivalent d'espèces [@Dauby2012] (c'est-à-dire le nombre d'espèces équiprobables nécessaire pour obtenir la même diversité) notés $_{k}D$ à partir de la relation
 
 \begin{equation}
   (\#eq:HurlbertD)
-  _{k}S = _{k}\!D \left[1-{\left(1-\frac{1}{_{k}\!D}\right)}^k\right].
+  _{k}S = _{k}D \left[1-{\left(1-\frac{1}{_{k}\!D}\right)}^k\right].
 \end{equation}
 
-L'équation doit être résolue pour obtenir $_{k}\!D$ à partir de la valeur de $_{k}S$ estimée, numériquement pour $k>3$.
+L'équation doit être résolue pour obtenir $_{k}D$ à partir de la valeur de $_{k}S$ estimée, numériquement pour $k>3$.
 
-Dans deux cas particuliers, les nombres équivalents d'espèces de Hurlbert sont identiques aux nombres de Hill: $_{2}\!D =^{2}\!D$ et $_{\infty}\!D=^{0}\!D$.
+Dans deux cas particuliers, les nombres équivalents d'espèces de Hurlbert sont identiques aux nombres de Hill: $_{2}D =^{2}\!D$ et $_{\infty}D=^{0}\!D$.
 
 Pour les autres ordres entiers de diversité, il existe une correspondance parfaite entre les deux mesures [@Chao2014, Annexe S2]: la connaissance de l'une permet d'obtenir l'autre. Pour $k>1$, on a [@Leinster2012]
 
@@ -1220,7 +1233,7 @@ Pour les autres ordres entiers de diversité, il existe une correspondance parfa
   _{k}S = k + \sum_{q=2}^{k}{\binom{k}{q} (-1)^{q+1} (^{q}\!D)^{1-q}}.
 \end{equation}
 
-On a vu que $^{0}\!D$ égale $_{\infty}\!D$, donc $_{\infty}\!S=^{0}\!D$ \@ref(eq:HurlbertD).
+On a vu que $^{0}\!D$ égale $_{\infty}D$, donc $_{\infty}S=^{0}\!D$ \@ref(eq:HurlbertD).
 
 Inversement, pour $q>1$:
 
@@ -1308,7 +1321,9 @@ Si $\mathbf{p}$ est la distribution des probabilité des espèces dans une commu
   * Si $I\left(p_s\right)=-\ln\left(p_s\right)$, alors $H\left(\mathbf{p}\right)$ est l'indice de Shannon;
   * Si $I\left(p_s\right)=1-p_s$, alors $H\left(\mathbf{p}\right)$ est l'indice de Simpson.
 
-```{r IFig, echo=FALSE, results='hide', message=FALSE, ref.label='ICode', fig.cap="Fonctions d'information utilisées dans le nombre d'espèces (trait plein), l'indice de Shannon (pointillés longs) et l'indice de Simpson (pointillés). L'information apportée par l'observation d'espèces rares décroît du nombre d'espèces à l'indice de Simpson."}
+
+(ref:IFig) Fonctions d'information utilisées dans le nombre d'espèces (trait plein), l'indice de Shannon (pointillés longs) et l'indice de Simpson (pointillés). L'information apportée par l'observation d'espèces rares décroît du nombre d'espèces à l'indice de Simpson.
+```{r IFig, echo=FALSE, results='hide', message=FALSE, ref.label='ICode', fig.cap="(ref:IFig)"}
 ```
 
 Ces trois fonctions d'information sont représentées en figure \@ref(fig:IFig).
@@ -1327,7 +1342,8 @@ ggplot(data.frame(x=c(0, 1)), aes(x)) +
 ```
 
 
-```{r EntropieFig, echo=FALSE, results='hide', message=FALSE, ref.label='EntropieCode', fig.cap="Valeur de $p_{s}I\\left(p_s\\right)$ dans le nombre d'espèces (trait plein), l'indice de Shannon (pointillés longs) et l'indice de Simpson (pointillés). Les espèces rares contribuent peu, sauf pour le nombre d'espèces."}
+(ref:EntropieFig) Valeur de $p_{s}I(p_s)$ dans le nombre d'espèces (trait plein), l'indice de Shannon (pointillés longs) et l'indice de Simpson (pointillés). Les espèces rares contribuent peu, sauf pour le nombre d'espèces.
+```{r EntropieFig, echo=FALSE, results='hide', message=FALSE, ref.label='EntropieCode', fig.cap="(ref:EntropieFig)"}
 ```
 
 
@@ -1369,7 +1385,8 @@ Quelques formes possibles de $H(\mathbf{q},\mathbf{p})$ sont:
 \end{equation}
 
 
-```{r KullbackLeiblerFig, echo=FALSE, message=FALSE, results='hide', ref.label='KullbackLeiblerCode', fig.cap="Valeur de $q\\ln(q/p)$ en fonction de $p$ et $q$. La divergence de Kullback-Leibler est la somme de cette valeur pour toutes les espèces", fig.asp=1}
+(ref:KullbackLeiblerFig) Valeur de $q\ln(q/p)$ en fonction de $p$ et $q$. La divergence de Kullback-Leibler est la somme de cette valeur pour toutes les espèces
+```{r KullbackLeiblerFig, echo=FALSE, message=FALSE, results='hide', ref.label='KullbackLeiblerCode', fig.cap="(ref:KullbackLeiblerFig)", fig.asp=1}
 ```
 
 
@@ -1437,13 +1454,13 @@ Ils sont des transformations simples des indices classiques:
 
 Ces résultats avaient déjà été obtenus avec une autre approche par @MacArthur1965 et repris par @Adelman1969 dans la littérature économique.
 
-Les nombres de Hill sont des "nombres effectifs" ou "nombres équivalents{}". 
+Les nombres de Hill sont des "nombres effectifs" ou "nombres équivalents". 
 Le concept a été défini rigoureusement par @Gregorius1991, d'après @Wright1931 (qui avait le premier défini la taille effective d'une population): étant donné une variable caractéristique (ici, l'entropie) fonction seulement d'une variable numérique (ici, le nombre d'espèces) dans un cas idéal (ici, l'équiprobabilité des espèces), le nombre effectif est la valeur de la variable numérique pour laquelle la variable caractéristique est celle du jeu de données. 
 
 @Gregorius2014 montre que de nombreux autres indices de diversité sont acceptables dans le sens où ils vérifient les axiomes précédents et, de plus, que la diversité d'un assemblage de communautés est obligatoirement supérieure à la diversité moyenne de ces communautés (l'égalité n'étant possible que si les communautés sont toutes identiques). 
 Cette dernière propriété sera traitée en détail dans la partie consacrée à la décomposition de la diversité. 
 Ces indices doivent vérifier deux propriétés: leur fonction d'information doit être décroissante, et ils doivent être une fonction strictement concave de $p_s$. 
-Parmi les possibilités, $I(p_s) = \cos{(p_s \frac{\pi}{2})}$ est envisageable par exemple: le choix de la fonction d'information est virtuellement illimité, mais seules quelques unes seront interprétables clairement.
+Parmi les possibilités, $I(p_s) = \cos{(p_s {\pi}/{2})}$ est envisageable par exemple: le choix de la fonction d'information est virtuellement illimité, mais seules quelques unes seront interprétables clairement.
 
 Un nombre équivalent d'espèces existe pour tous ces indices, il est toujours égal à l'inverse de l'image de l'indice par la réciproque de la fonction d'information:
 
@@ -1517,7 +1534,8 @@ Sa fonction inverse est l'exponentielle d'ordre $q$:
 \end{equation}
 
 
-```{r lnqFig, echo=FALSE, results='hide', ref.label='lnqCode', fig.cap="Valeur du logarithme d'ordre $q$ de probabilités entre 0 et 1 pour différentes valeurs de $q$: $q = 0$ (pointillés longs rouges), la courbe est une droite; $q = 1$ (trait plein): logarithme naturel; $q = 2$ (pointillés courts bleus): la courbe a la même forme que le logarithme naturel pour les valeurs positives de $q$; $q =-1$ (pointillés alternés verts): la courbe est convexe pour les valeurs négatives de $q$."}
+(ref:lnqFig) Valeur du logarithme d'ordre $q$ de probabilités entre 0 et 1 pour différentes valeurs de $q$: $q = 0$ (pointillés longs rouges), la courbe est une droite; $q = 1$ (trait plein): logarithme naturel; $q = 2$ (pointillés courts bleus): la courbe a la même forme que le logarithme naturel pour les valeurs positives de $q$; $q =-1$ (pointillés alternés verts): la courbe est convexe pour les valeurs négatives de $q$.
+```{r lnqFig, echo=FALSE, results='hide', ref.label='lnqCode', fig.cap="(ref:lnqFig)"}
 ```
 
 
@@ -1655,7 +1673,8 @@ Si les courbes se croisent, il n'y a pas de relation d'ordre [@Tothmeresz1995].
 
 @Lande2000 montrent que si la diversité de Simpson et la richesse de deux communautés n'ont pas le même ordre, alors les courbes d'accumulation du nombre d'espèces en fonction du nombre d'individus échantillonnés se croisent aussi.
 
-```{r ProfilDivFig, echo=FALSE, results='hide', ref.label='ProfilDivCode', fig.cap="Profil de diversité calculé pour deux parcelles de Paracou (Parcelle 6: trait plein et Parcelle 18: trait pointillé). La correction du biais d'estimation est celle de Chao et Jost."}
+(ref:ProfilDivFig) Profil de diversité calculé pour deux parcelles de Paracou (Parcelle 6: trait plein et Parcelle 18: trait pointillé). La correction du biais d'estimation est celle de Chao et Jost.
+```{r ProfilDivFig, echo=FALSE, results='hide', ref.label='ProfilDivCode', fig.cap="(ref:ProfilDivFig)"}
 ```
 
 Code R pour réaliser la figure \@ref(fig:ProfilDivFig):
@@ -1674,7 +1693,9 @@ Ils montrent que des communautés peuvent être séparables en selon un profil d
 Ils montrent que les communautés séparables selon un troisième type de profil, celui de la queue de distribution [@Patil1982], le sont dans tous les cas.
 Le profil de la queue de distribution est construit en classant les espèces de la plus fréquente à la plus rare et en traçant la probabilité qu'un individu appartienne à une espèce plus rare que l'espèce en abscisse (figure \@ref(fig:ProfilQueueFig)).
 
-```{r ProfilQueueFig, echo=FALSE, results='hide', ref.label='ProfilQueueCode', fig.cap="Profil de queue de distribution calculé pour les deux parcelles de Paracou (Parcelle 6: trait plein et Parcelle 18: trait pointillé). En abscisse: rang de l'espèce dans le classement de la plus fréquente à la plus rare; en ordonnée: probabilité qu'un individu de la communauté appartienne à une espèce plus rare."}
+
+(ref:ProfilQueueFig) Profil de queue de distribution calculé pour les deux parcelles de Paracou (Parcelle 6: trait plein et Parcelle 18: trait pointillé). En abscisse: rang de l'espèce dans le classement de la plus fréquente à la plus rare; en ordonnée: probabilité qu'un individu de la communauté appartienne à une espèce plus rare.
+```{r ProfilQueueFig, echo=FALSE, results='hide', ref.label='ProfilQueueCode', fig.cap="(ref:ProfilQueueFig)"}
 ```
 
 Code R:
@@ -1749,7 +1770,7 @@ Diversity(Paracou618.MC$Ns, q=1, Correction="ZhangGrabchak")
 
 @Chao2015 complètent cet estimateur par une estimation du biais résiduel, selon la même démarche que pour l'entropie de Shannon [@Chao2013].
 $h_q$ s'écrit sous la forme de la somme infinie des entropies de Simpson généralisées: $h_q = \sum_{k=0}^{\infty}{\binom{q-1}{k}(-1)^k\zeta_{1,k}}$.
-Alors que l'estimateur de Zhang et Grabchak ne prend en compte que les $n-1$ premiers termes de la somme pour un estimateur sans biais,  @Chao2015, eqn 5, le complètent par une estimation, forcément biaisée, des termes suivants pour obtenir:
+Alors que l'estimateur de Zhang et Grabchak ne prend en compte que les $n-1$ premiers termes de la somme pour un estimateur sans biais; @Chao2015, eqn 5, le complètent par une estimation, forcément biaisée, des termes suivants pour obtenir:
 
 \begin{align}
   (\#eq:HqChaoJost)
@@ -1929,7 +1950,8 @@ Ce dernier biais peut être négligé [@Grassberger1988] parce que $^{q}\!H$, l'
 Des simulations menées sur des distributions log-normale ou géométrique de richesse diverses avec des efforts d'échantillonnage variés permettent de tester les estimateurs dans des cas théoriques réalistes [@Marcon2015a].
 Un résultat représentatif est donné ici. 
 
-```{r Estimation, fig.cap="Estimation de la diversité d'une communauté log-normale de 300 espèces. Un inventaire de 500 (en bas) ou 5000 (en haut) individus est répété 1000 fois et la diversité estimée à chaque fois par l'estimateur de Chao-Wang-Jost (à gauche) ou l'estimateur révélé (à droite). La courbe noire en gras représente la vraie diversité de la communauté. La courbe maigre est la moyenne de l'estimation, l'enveloppe grise limitée par les pointillés rouges contient 95\\% des valeurs simulées. A: 5000 individus, estimateur de Chao-Wang-Jost. B: 5000 individus, estimateur révélé. C: 500 individus, estimateur de Chao-Wang-Jost. D: 500 individus, estimateur révélé.", echo=FALSE, out.width='100%'}
+(ref:Estimation) Estimation de la diversité d'une communauté log-normale de 300 espèces. Un inventaire de 500 (en bas) ou 5000 (en haut) individus est répété 1000 fois et la diversité estimée à chaque fois par l'estimateur de Chao-Wang-Jost (à gauche) ou l'estimateur révélé (à droite). La courbe noire en gras représente la vraie diversité de la communauté. La courbe maigre est la moyenne de l'estimation, l'enveloppe grise limitée par les pointillés rouges contient 95\% des valeurs simulées. A: 5000 individus, estimateur de Chao-Wang-Jost. B: 5000 individus, estimateur révélé. C: 500 individus, estimateur de Chao-Wang-Jost. D: 500 individus, estimateur révélé.
+```{r Estimation, fig.cap="(ref:Estimation)", echo=FALSE, out.width='100%'}
 knitr::include_graphics('images/Estimation.png')
 ```
 
@@ -2078,10 +2100,13 @@ NsP18 <- as.AbdVector(Paracou618.MC$Nsi[, 2])
 S <- min(S6, S18)
 ```
 
-```{r comProfilzetaFig, echo=FALSE, results='hide', message=FALSE, ref.label='comProfilzetaCode', fig.cap="Comparaison des profils de diversité des parcelles 6 et 18 de Paracou avec leur intervalle de confiance à 95\\%. La parcelle 18 est tracée en rouge, lignes continues, et la 6 en vert, lignes pointillées. Diversité généralisée de Simpson (nombres effectif d'espèces): les profils sont distincts, ce qui permet de conclure que la parcelle 6 est plus diverse que la parcelle 18."}
+
+(ref:comProfilzetaFig) Comparaison des profils de diversité des parcelles 6 et 18 de Paracou avec leur intervalle de confiance à 95\%. La parcelle 18 est tracée en rouge, lignes continues, et la 6 en vert, lignes pointillées. Diversité généralisée de Simpson (nombres effectif d'espèces): les profils sont distincts, ce qui permet de conclure que la parcelle 6 est plus diverse que la parcelle 18.
+```{r comProfilzetaFig, echo=FALSE, results='hide', message=FALSE, ref.label='comProfilzetaCode', fig.cap="(ref:comProfilzetaFig)"}
 ```
 
-```{r comProfilHCDTFig, echo=FALSE, results='hide', message=FALSE, ref.label='comProfilHCDTCode', fig.cap="Comparaison des profils de diversité des parcelles 6 et 18 de Paracou. Diversité HCDT: les profils se chevauchent jusqu'à $q \\approx 0,7$."}
+(ref:comProfilHCDTFig) Comparaison des profils de diversité des parcelles 6 et 18 de Paracou. Diversité HCDT: les profils se chevauchent jusqu'à $q \approx 0,7$.
+```{r comProfilHCDTFig, echo=FALSE, results='hide', message=FALSE, ref.label='comProfilHCDTCode', fig.cap="(ref:comProfilHCDTFig)"}
 ```
 
 La diversité est donc estimée jusqu'à l'ordre 253.
@@ -2147,7 +2172,9 @@ Code R pour réaliser la figure:
 La distribution statistique de la différence d'entropie est connue, et peut donc être tracée (figure \@ref(fig:zetaDiffFig)).
 Son intervalle de confiance ne contient jamais la valeur 0, ce qui permet de conclure que la parcelle 18 est plus diverse.
 
-```{r zetaDiffFig, echo=FALSE, results='hide', ref.label='zetaDiffCode', fig.cap="Différence entre les entropies de Simpson généralisées des parcelles 18 et 6 de Paracou avec son intervalle de confiance à 95\\%. La ligne horizontale représente l'hypothèse nulle d'égalité entre les entropies, qui peut être rejetée."}
+
+(fig:zetaDiffFig) Différence entre les entropies de Simpson généralisées des parcelles 18 et 6 de Paracou avec son intervalle de confiance à 95\%. La ligne horizontale représente l'hypothèse nulle d'égalité entre les entropies, qui peut être rejetée.
+```{r zetaDiffFig, echo=FALSE, results='hide', ref.label='zetaDiffCode', fig.cap="(fig:zetaDiffFig)"}
 ```
 
 Code R pour réaliser la figure:
@@ -2228,7 +2255,9 @@ Une approche axiomatique a été développée par la littérature, revue par @Jo
 * L'équitabilité diminue quand une espèce rare est ajoutée;
 * Invariance d'échelle: l'équitabilité ne dépend que des fréquences, pas des abondances absolues.
 
-```{r Tuomisto2012, fig.cap="Courbes de Lorenz de plusieurs jeux de données. Les espèces sont classées par fréquence croissante, et la courbe représente la fréquence cumulée des espèces. Plus la courbe est loin de la bissectrice, plus le jeu de données est inéquitable.", echo=FALSE}
+
+(ref:Tuomisto2012) Courbes de Lorenz de plusieurs jeux de données. Les espèces sont classées par fréquence croissante, et la courbe représente la fréquence cumulée des espèces. Plus la courbe est loin de la bissectrice, plus le jeu de données est inéquitable.
+```{r Tuomisto2012, fig.cap="Tuomisto2012", echo=FALSE}
 knitr::include_graphics('images/Tuomisto2012.png')
 ```
 
@@ -2380,7 +2409,9 @@ L'idée fondamentale de la notion d'équitabilité est que la mesure de la diver
 
 ### Jost
 
-```{r ProfilIneqFig, echo=FALSE, results='hide', ref.label='ProfilIneqCode', fig.cap="Profil d'inéquitabilité de BCI: L'inéquitabilité augmente quand on néglige de plus en plus les espèces rares. Pour q=2, la forêt de BCI est aussi inéquitable qu'une communauté de 6 espèces dans laquelle une seule serait représentée au-delà d'un nombre négligeable d'individus."}
+
+(ref:ProfilIneqFig) Profil d'inéquitabilité de BCI: L'inéquitabilité augmente quand on néglige de plus en plus les espèces rares. Pour q=2, la forêt de BCI est aussi inéquitable qu'une communauté de 6 espèces dans laquelle une seule serait représentée au-delà d'un nombre négligeable d'individus.
+```{r ProfilIneqFig, echo=FALSE, results='hide', ref.label='ProfilIneqCode', fig.cap="(ref:ProfilIneqFig)"}
 ```
 
 @Jost2010 montre que l'indépendance est impossible dans le cadre de la décomposition multiplicative: si $^{q}\!E={^{q}\!D/{S}}$, sa valeur minimale est contrainte par le nombre d'espèces, une communauté pauvre ne peut pas être aussi inéquitable qu'une communauté riche (propriété déjà montrée par @Sheldon1969 ou @Alatalo1981).
@@ -2427,7 +2458,8 @@ La solution la plus évidente consiste à corriger le mieux possible le biais d'
 \end{equation}
 
 
-```{r BCIEqFig, echo=FALSE, results='hide', ref.label='BCIEqCode', fig.cap="Profil d'équitabilité de BCI. L'équitabilité est ici normalisée selon Jost."}
+(ref:BCIEqFig) Profil d'équitabilité de BCI. L'équitabilité est ici normalisée selon Jost.
+```{r BCIEqFig, echo=FALSE, results='hide', ref.label='BCIEqCode', fig.cap="(ref:BCIEqFig)"}
 ```
 
 
@@ -2462,7 +2494,8 @@ Des simulations permettent de comprendre les corrélations dans des cas simples.
 
 La figure \@ref(fig:SJLogNormaleFig) montre que l'entropie et l'équitabilité sont corrélées positivement à la richesse dans des communautés log-normales de même variance.
 
-```{r SJLogNormaleFig, ref.label='SJLogNormaleCode', fig.cap="Relations entre l'entropie de Shannon (a), l'indice d'équitabilité de Pielou (b), l'entropie de Simpson (c), l'équitabilité de Hurlbert (d) et la richesse de communautés log-normales similaires (même écart-type des probabilités, seule la richesse varie).", echo=FALSE, out.width='100%'}
+(ref:SJLogNormaleFig) Relations entre l'entropie de Shannon (a), l'indice d'équitabilité de Pielou (b), l'entropie de Simpson (c), l'équitabilité de Hurlbert (d) et la richesse de communautés log-normales similaires (même écart-type des probabilités, seule la richesse varie).
+```{r SJLogNormaleFig, ref.label='SJLogNormaleCode', fig.cap="(ref:SJLogNormaleFig)", echo=FALSE, out.width='100%'}
 ```
 
 
@@ -2497,7 +2530,9 @@ En revanche, dans une communauté log-normale de richesse fixe mais insuffisamme
 Le sous-échantillonnage a un effet plus sévère sur la richesse que sur les entropies d'ordres supérieurs.
 La non observation des espèces les plus rares augmente aussi l'équitabilité.
 
-```{r NJLogNormaleFig, ref.label='NJLogNormaleCode', fig.cap="Relations entre l'entropie de Shannon (a), l'indice d'équitabilité de Pielou (b), l'entropie de Simpson (c), l'équitabilité de Hurlbert (d) et la richesse d'échantillons de taille variable d'une même communauté log-normale.", echo=FALSE, out.width='100%'}
+
+(ref:NJLogNormaleFig) Relations entre l'entropie de Shannon (a), l'indice d'équitabilité de Pielou (b), l'entropie de Simpson (c), l'équitabilité de Hurlbert (d) et la richesse d'échantillons de taille variable d'une même communauté log-normale.
+```{r NJLogNormaleFig, ref.label='NJLogNormaleCode', fig.cap="(ref:NJLogNormaleFig)", echo=FALSE, out.width='100%'}
 ```
 
 

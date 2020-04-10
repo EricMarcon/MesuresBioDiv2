@@ -25,7 +25,9 @@ Cette idée est explorée ici pour définir une mesure de diversité bidimension
 
 Pour la suite, les données sont organisées comme dans le tableau \@ref(tab:Notations2): les individus appartiennent à l'espèce $s$ et à la classe $i$ avec la probabilité $p_{s,i}$ telle que $\sum_s{\sum_i{p_{s,i}}}=1$ (au lieu de $\sum_i{p_{s|i}}=1$ dans les chapitres précédents).
 
-```{r Notations2, echo=FALSE, warning=FALSE}
+
+(ref:Notations2) Notations des effectifs, tableau espèces-classes.
+```{r Notations2, echo=FALSE, warning=FALSE, size="scriptsize"}
 Notations <- data.frame(
   Especes=c("Espèce $s$", "$\\dots$", "Total"),
   Classe=c("$n_{s,i}$: nombre d'individus de l'espèce $s$ dans la classe $i$. $\\hat{p}_{s|i}=n_{s,i}/n_{+i}$ est l'estimateur de la probabilité $p_{s|i}$ qu'un individu de la classe $i$ soit de l'espèce $s$.", 
@@ -39,8 +41,8 @@ Notations <- data.frame(
           "$n$: nombre total d'individus échantillonnés ")
   )
 names(Notations) <- c("", "Classe $i$", "$\\dots$", "Total: Communauté")
-knitr::kable(Notations, caption="Notations des effectifs, tableau espèces-classes.", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
+knitr::kable(Notations, caption="(ref:Notations2)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
+  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
 ```
 
 

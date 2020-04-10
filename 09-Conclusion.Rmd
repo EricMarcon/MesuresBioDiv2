@@ -15,7 +15,8 @@ La diversité de Hurlbert possède toutes ses propriétés et une correction tr�
 
 ## Entropie et diversité
 
-```{r ConclusionFig, fig.cap="Généralisation des mesures classiques de diversité. La figure présente les mesures d'entropie, qui peuvent toutes être transformées en mesures de diversité au sens strict. Toutes ces entropies sont des cas particuliers de l'entropie de Ricotta et Szeidl, qui peut être transformée en diversité de Leinster et Cobbold.", echo=FALSE, out.width='60%'}
+(ref:ConclusionFig) Généralisation des mesures classiques de diversité. La figure présente les mesures d'entropie, qui peuvent toutes être transformées en mesures de diversité au sens strict. Toutes ces entropies sont des cas particuliers de l'entropie de Ricotta et Szeidl, qui peut être transformée en diversité de Leinster et Cobbold.
+```{r ConclusionFig, fig.cap="(ref:ConclusionFig)", echo=FALSE, out.width='60%'}
 knitr::include_graphics('images/ConclusionFig.png')
 ```
 
@@ -48,7 +49,7 @@ La diversité d'ordre 2 présente de nombreuses particularités et avantages qui
 
 Tous les estimateurs de $^q\!H$ sont biaisés, d'autant plus que $q$ est petit. 
 Seul l'estimateur de l'indice de Simpson, $^{2}\!\tilde{H}=[n/(n-1)](1-\sum_s{{\hat{p}}^{2}_{s}})$ est non biaisé.
-Comme l'entropie de Rao est la somme sur les périodes de l'arbre des entropies de Simpson, $^{2}\!\tilde{H}(T)=[n/(n-1)]\,^{2}\!\tilde{H}(T)$ est donc sans biais.
+Comme l'entropie de Rao est la somme sur les périodes de l'arbre des entropies de Simpson, $^{2}\!\tilde{H}(T)=[n/(n-1)]\,^{2}\!\hat{H}(T)$ est donc sans biais.
   
 ### Partition
 

@@ -4,6 +4,7 @@
 
 ```{r, echo=FALSE, message=FALSE}
 library("tidyverse")
+library("gridExtra")
 ```
 
 
@@ -24,7 +25,7 @@ En écologie, ces différences sont fonctionnelles ou phylogénétiques, défini
 Les premières propositions de ce type d'indices sont dues à @Rao1982 (voir section \@ref(sec:Rao)) puis, avec nettement moins de succès, @Vane-Wright1991 et @Warwick1995. 
 @Chave2007 montrent que la diversité neutre prédit mal la diversité phylogénétique (calculée par l'entropie quadratique de Rao).
 
-De nombreuses mesures de diversité ont été créées et plusieurs revues permettent d'en faire le tour. [@Ricotta2007; @Vellend2010; @Pavoine2011]
+De nombreuses mesures de diversité ont été créées et plusieurs revues permettent d'en faire le tour. [@Ricotta2007; @Vellend2010]
 Les mesures présentées ici sont les plus utilisées, et notamment celles qui peuvent être ramenées aux mesures classiques en fixant une distance égale entre toutes les espèces.
 Le cadre méthodologique dans lequel ces mesures ont été développées est présenté dans ce chapitre, suivi par une revue des nombreuses mesures de diversité fonctionnelles et phylogénétiques de la littérature.
 L'entropie phylogénétique et la diversité de Leinster et Cobbold sont ensuite développées en détail, suivies d'une synthèse et de considérations sur la mesure de la diversité individuelle plutôt que spécifique.
@@ -62,7 +63,9 @@ Dans R, utiliser `is.euclid()` pour vérifier qu'une distance est euclidienne, e
 Enfin, une distance est ultramétrique si $d\left(k,m\right) \le \max\left(d\left(k,l\right),d\left(l,m\right)\right)$. 
 Les distances obtenues en mesurant les longueurs des branches d'un dendrogramme (arbre) résultant d'une classification hiérarchique sont ultramétriques.
 
-```{r ArbreA1, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. 5 espèces sont présentes ($S=5$), leurs probabilités notées $p_1$ à $p_5$. Les noms des branches sont affichés.", echo=FALSE}
+
+(ref:ArbreA1) Arbre phylogénétique ou fonctionnel hypothétique. 5 espèces sont présentes ($S=5$), leurs probabilités notées $p_1$ à $p_5$. Les noms des branches sont affichés.
+```{r ArbreA1, fig.cap="(ref:ArbreA1)", echo=FALSE}
 knitr::include_graphics('images/ArbreA.png')
 ```
 
@@ -151,7 +154,9 @@ La richesse est l'accumulation de classes différentes dans les mesures classiqu
 Dans un arbre phylogénétique, la longueur des branches représente un temps d'évolution: la richesse en est la somme. 
 FD et PD sont des mesures de richesse.
 
-```{r Pavoine2011, fig.cap="Régularité contre irrégularité. Les arbres de A à D sont de plus en plus irréguliers. L'arbre A, parfaitement régulier, est le cadre des mesures classiques de la diversité. La phylogénie étant donnée, trois vecteurs d'abondance (P1 à P3) sont de moins en moins réguliers: dans les cas C et D, la régularité maximale n'est pas obtenue pour des effectifs identiques, mais en augmentant les effectifs des espèces originales.", echo=FALSE}
+
+(ref:Pavoine2011) Régularité contre irrégularité. Les arbres de A à D sont de plus en plus irréguliers. L'arbre A, parfaitement régulier, est le cadre des mesures classiques de la diversité. La phylogénie étant donnée, trois vecteurs d'abondance (P1 à P3) sont de moins en moins réguliers: dans les cas C et D, la régularité maximale n'est pas obtenue pour des effectifs identiques, mais en augmentant les effectifs des espèces originales.
+```{r Pavoine2011, fig.cap="(ref:Pavoine2011)", echo=FALSE}
 knitr::include_graphics('images/Pavoine2011.png')
 ```
 
@@ -221,7 +226,9 @@ L'étendue fonctionnelle peut être moyennée sur plusieurs traits.
 Schleuter et al. développent l'indice $\mathit{FR}_{Is}$ pour prendre en compte la variabilité intraspécifique et les valeurs de traits non occupées par des espèces dans l'étendue fonctionnelle.
 Les valeurs de traits individuelles sont nécessaires: l'étendue des valeurs d'un trait est définie comme l'union des étendues des valeurs de chaque espèce. 
 
-```{r Schleuter2010, fig.cap="Fonction d'appartenance de l'espace des niches de Schleuter et al., en une dimension. $x$, en ordonnée, est la valeur du trait considéré. Chaque espèce est considérée comme un ensemble flou dans l'espace des traits. Quatre espèces sont représentées, avec leur fonction d'appartenance $f_s(x)$. Le volume de l'espace des traits occupé, $\\mathit{FR}_{Im}$, est obtenu en intégrant les fonctions d'appartenance: c'est la zone grisée de la figure.", echo=FALSE}
+
+(ref:Schleuter2010) Fonction d'appartenance de l'espace des niches de Schleuter et al., en une dimension. $x$, en ordonnée, est la valeur du trait considéré. Chaque espèce est considérée comme un ensemble flou dans l'espace des traits. Quatre espèces sont représentées, avec leur fonction d'appartenance $f_s(x)$. Le volume de l'espace des traits occupé, $\mathit{FR}_{Im}$, est obtenu en intégrant les fonctions d'appartenance: c'est la zone grisée de la figure.
+```{r Schleuter2010, fig.cap="(ref:Schleuter2010)", echo=FALSE}
 knitr::include_graphics('images/Schleuter2010.png')
 ```
 
@@ -373,7 +380,9 @@ La littérature de la diversité phylogénétique s'est intéressée tôt à l'o
 Dans l'arbre de la figure \@ref(fig:ArbreA4), les valeurs de TD non normalisées sont ${1}/{2}$ pour les deux premières espèces et ${1}/{3}$ pour les trois autres: la racine de l'arbre est comptabilisée dans le nombre de noeuds.
 Les valeurs de $\mathit{TD}_s$ sont respectivement ${1}/{4}$ et ${1}/{6}$ après normalisation.
 
-```{r ArbreA4, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. L'arbre comprend 5 espèces dont les probabilités sont notées $p_s$, 3 périodes de durées $T_k$ délimitées par les noeuds. Les branches sont notées $b$ et indicées par la période à laquelle elles se terminent et un numéro d'ordre.", echo=FALSE}
+
+(ref:ArbreA4) Arbre phylogénétique ou fonctionnel hypothétique. L'arbre comprend 5 espèces dont les probabilités sont notées $p_s$, 3 périodes de durées $T_k$ délimitées par les noeuds. Les branches sont notées $b$ et indicées par la période à laquelle elles se terminent et un numéro d'ordre.
+```{r ArbreA4, fig.cap="(ref:ArbreA4)", echo=FALSE}
 knitr::include_graphics('images/ArbreA.png')
 ```
 
@@ -385,7 +394,8 @@ Clairement, la diversité phylogénétique PD (section \@ref(sec:PDFD)) est la s
 
 ### Originalité taxonomique de Ricotta {#sec:OrigTax}
 
-```{r HurlbertCFig, echo=FALSE, results='hide', ref.label='HurlbertCCode', fig.cap="Contribution des espèces à l'indice de Hurlbert. Les contributions de 4 espèces d'une communauté à l'indice sont représentées en fonction de la taille de l'échantillon $n$. Les fréquences des espèces sont lisibles pour $n=1$: une espèce fréquente (probabilité égale à 0,7, supérieure à $1/S$), deux espèces peu fréquentes (0,19 et 0,1), et une espèce rare (0,01). Quand $n$ est assez grand, toutes les contributions tendent vers $1/S=1/4$ (ligne horizontale)."}
+(ref:HurlbertCFig) Contribution des espèces à l'indice de Hurlbert. Les contributions de 4 espèces d'une communauté à l'indice sont représentées en fonction de la taille de l'échantillon $n$. Les fréquences des espèces sont lisibles pour $n = 1$: une espèce fréquente (probabilité égale à 0,7, supérieure à $1/S$), deux espèces peu fréquentes (0,19 et 0,1), et une espèce rare (0,01). Quand $n$ est assez grand, toutes les contributions tendent vers $1/S = 1/4$ (ligne horizontale).
+```{r HurlbertCFig, echo=FALSE, results='hide', ref.label='HurlbertCCode', fig.cap="(ref:HurlbertCFig)"}
 ```
 
 @Ricotta2004a construit un indice paramétrique (permettant de donner plus ou moins d'importance aux espèces rares) à partir de l'espérance du nombre d'espèces tirées dans un échantillon de taille $n$ fixée (l'indice de @Hurlbert1971):
@@ -592,7 +602,9 @@ La mesure de biodiversité est la diversité des volumes occupés par les espèc
 
 En se limitant à deux dimensions pour la lisibilité, la figure \@ref(fig:ScheinerPsfsFig) présente les rectangles correspondant à la diversité d'abondance et fonctionnelle occupés par les espèces de la méta-communauté `Paracou618`, classées par fréquences décroissantes.
 
-```{r ScheinerPsfsFig, echo=FALSE, results='hide', fig.width=6, fig.height=6, ref.label='ScheinerPsfsCode', fig.cap="Rectangles de surface fréquence $\\times$ taille de niche des espèces de la méta-communauté `Paracou618`. La diversité de Scheiner $^{q}\\!D(AF)$ est la diversité de leur surface."}
+
+(ref:ScheinerPsfsFig) Rectangles de surface fréquence $\times$ taille de niche des espèces de la méta-communauté `Paracou618`. La diversité de Scheiner $^{q}\!D(AF)$ est la diversité de leur surface.
+```{r ScheinerPsfsFig, echo=FALSE, results='hide', fig.width=6, fig.height=6, ref.label='ScheinerPsfsCode', fig.cap="(ref:ScheinerPsfsFig)"}
 ```
 
 Code R:
@@ -633,7 +645,9 @@ Diversity(Rs, q=2)
 
 Le profil de diversité d'abondance et fonctionnelle est en figure \@ref(fig:ProfilDqAFFig). 
 
-```{r ProfilDqAFFig, echo=FALSE, results='hide', ref.label='ProfilDqAFCode', fig.cap="Profil de diversité d'abondance et fonctionnelle de Scheiner de la méta-communauté `Paracou618`. Pointillés longs: diversité d'abondance; pointillés courts: diversité fonctionnelle; trait plein: diversité d'abondance et fonctionnelle."}
+
+(ref:ProfilDqAFFig) Profil de diversité d'abondance et fonctionnelle de Scheiner de la méta-communauté `Paracou618`. Pointillés longs: diversité d'abondance; pointillés courts: diversité fonctionnelle; trait plein: diversité d'abondance et fonctionnelle.
+```{r ProfilDqAFFig, echo=FALSE, results='hide', ref.label='ProfilDqAFCode', fig.cap="(ref:ProfilDqAFFig)"}
 ```
 
   Code R:
@@ -674,7 +688,8 @@ Si les espèces sont infiniment éloignées les unes des autres, $\mathbf{Z}$ es
 
 ## FD et PD {#sec:PDFD}
 
-```{r Arbre, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. (a) Arbre complet. 5 espèces sont présentes ($S=5$). Une période de l'arbre est définie entre deux noeuds successifs: l'arbre contient $K=3$ périodes. Les hauteurs des périodes sont notées $T_k$. À chaque période correspond un arbre plus simple: (b) pour la période 2, (c) pour la période 3 dans lequel les espèces originales sont regroupées. Le nombre de feuilles de ces arbres est noté $L_k$. Les probabilités pour un individu d'appartenir à une feuille sont notées $u_{k,l}$.", echo=FALSE}
+(ref:Arbre) Arbre phylogénétique ou fonctionnel hypothétique. (a) Arbre complet. 5 espèces sont présentes ($S = 5$). Une période de l'arbre est définie entre deux noeuds successifs: l'arbre contient $K = 3$ périodes. Les hauteurs des périodes sont notées $T_k$. À chaque période correspond un arbre plus simple: (b) pour la période 2, (c) pour la période 3 dans lequel les espèces originales sont regroupées. Le nombre de feuilles de ces arbres est noté $L_k$. Les probabilités pour un individu d'appartenir à une feuille sont notées $u_{k,l}$.
+```{r Arbre, fig.cap="(ref:Arbre)", echo=FALSE}
 knitr::include_graphics('images/Arbre.png')
 ```
 
@@ -849,7 +864,8 @@ plot(hf, h=-1)
 
 Le résultat est en figure \@ref(fig:PhylogRaoFig).
 
-```{r PhylogRaoFig, echo=FALSE, results='hide', ref.label='PhylogRaoCode', fig.cap="Présentation de l'arbre phylogénétique avec la contribution de chacune des variables."}
+(ref:PhylogRaoFig) Présentation de l'arbre phylogénétique avec la contribution de chacune des variables.
+```{r PhylogRaoFig, echo=FALSE, results='hide', ref.label='PhylogRaoCode', fig.cap="(ref:PhylogRaoFig)"}
 ```
 
 Code R pour la figure \@ref(fig:PhylogRaoFig):
@@ -1006,7 +1022,9 @@ Nous suivrons plutôt les notations de @Chao2010 en numérotant les périodes à
 Figure \@ref(fig:Arbre), la première période se termine quand les branches des espèces 3 à 5 se rejoignent. 
 L'arbre comprend $K=3$ périodes.
 
-```{r ArbreA5, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. 5 espèces sont présentes ($S=5$), leurs probabilités notées $p_1$ à $p_5$. Les noms des branches sont affichés.", echo=FALSE}
+
+(ref:ArbreA5) Arbre phylogénétique ou fonctionnel hypothétique. 5 espèces sont présentes ($S=5$), leurs probabilités notées $p_1$ à $p_5$. Les noms des branches sont affichés.
+```{r ArbreA5, fig.cap="(ref:ArbreA5)", echo=FALSE}
 knitr::include_graphics('images/ArbreA.png')
 ```
 
@@ -1147,7 +1165,8 @@ La moyenne généralisée d'ordre $r$ [@Hardy1952], *generalized mean* ou *power
   \bar{x}={\left(\sum_s{p_s x^r_s}\right)}^{\frac{1}{r}}.
 \end{equation}
 
-```{r MoyenneHardyFig, echo=FALSE, results='hide', ref.label='MoyenneHardyCode', fig.cap="Moyenne généralisée d'ordre $r$ (en abscisse) d'une distribution uniforme de 100 valeurs tirées entre 0 et 1. La moyenne arithmétique 0,5 est obtenue pour $r=1$. La moyenne généralisée tend vers la plus petite valeur (près de 0) quand $r\\to -\\infty$, et vers la plus grande valeur (près de 1) quand $r\\to +\\infty$."}
+(ref:MoyenneHardyFig) Moyenne généralisée d'ordre $r$ (en abscisse) d'une distribution uniforme de 100 valeurs tirées entre 0 et 1. La moyenne arithmétique 0,5 est obtenue pour $r=1$. La moyenne généralisée tend vers la plus petite valeur (près de 0) quand $r\to -\infty$, et vers la plus grande valeur (près de 1) quand $r\to +\infty$.
+```{r MoyenneHardyFig, echo=FALSE, results='hide', ref.label='MoyenneHardyCode', fig.cap="(ref:MoyenneHardyFig)"}
 ```
 
 
@@ -1285,7 +1304,9 @@ La plus simple est
 $$z_{s,t} = 1 - \frac{d_{s,t}}{\max{(d_{s,t})}}.$$
 Leinster et Cobbold argumentent en faveur d'une transformation exponentielle négative, déjà utilisée par @Nei1972.
 
-```{r LineaireZpsqFig, fig.cap = "Approximation de ${(\\mathbf{Zp})}_{s}^{q-1}$ par son développement limité au premier ordre pour (a) $q=1.5$ ($r=q-1$) et (b) $q=0.5$", out.width='100%', echo = FALSE, ref.label='LineaireZpsqCode', fig.asp=.4}
+
+(ref:LineaireZpsqFig) Approximation de ${(\mathbf{Zp})}_{s}^{q-1}$ par son développement limité au premier ordre pour (a) $q=1.5$ ($r=q-1$) et (b) $q=0.5$
+```{r LineaireZpsqFig, fig.cap = "(ref:LineaireZpsqFig)", out.width='100%', echo = FALSE, ref.label='LineaireZpsqCode', fig.asp=.4}
 ```
 
 Le problème majeur de la diversité $^q\!D^{\mathbf{Z}}$ est qu'elle fournit souvent des valeurs presque indépendantes de $q$ quand on l'applique à une matrice de similarité fonctionnelle [@Chiu2014b]. 
@@ -1325,7 +1346,8 @@ est justifiée par @Leinster2013.
 $u$ est une constante positive. 
 Plus $u$ est grand, plus la transformation est convexe: les similarités sont tassées vers 0 (figure \@ref(fig:EchelleFig)).
 
-```{r EchelleFig, echo=FALSE, results='hide', ref.label='EchelleCode', fig.cap="Transformation des distances (en abscisse) en similarités (en ordonnées) selon la valeur de $u$. Trait plein: $u=1$; pointillés longs: $u=2$; pointillés: $u=10$. Plus $u$ est grand, plus les similarités sont tassées vers 0."}
+(ref:EchelleFig) Transformation des distances (en abscisse) en similarités (en ordonnées) selon la valeur de $u$. Trait plein: $u=1$; pointillés longs: $u=2$; pointillés: $u=10$. Plus $u$ est grand, plus les similarités sont tassées vers 0.
+```{r EchelleFig, echo=FALSE, results='hide', ref.label='EchelleCode', fig.cap="(ref:EchelleFig)"}
 ```
 
 Le code R nécessaire pour réaliser la figure est:
@@ -1444,13 +1466,15 @@ Dqz(Paracou618.MC$Ns, q=1, Z)
 
 ## Diversité phylogénétique
 
-```{r ArbreA6, fig.cap="Arbre phylogénétique ou fonctionnel hypothétique. 5 espèces sont présentes ($S=5$), leurs probabilités notées $p_1$ à $p_5$. Les noms des branches sont affichés.", echo=FALSE}
+(ref:ArbreA6) Arbre phylogénétique ou fonctionnel hypothétique. 5 espèces sont présentes ($S=5$), leurs probabilités notées $p_1$ à $p_5$. Les noms des branches sont affichés.
+```{r ArbreA6, fig.cap="(ref:ArbreA6)", echo=FALSE}
 knitr::include_graphics('images/ArbreA.png')
 ```
 
 La diversité phylogénétique $^{q}\!\bar{D}(T)$ appliquée à un arbre ultramétrique est un cas particulier de $^q\!D^{\mathbf{Z}}$ pour une matrice $\mathbf{Z}$ dont les lignes et colonnes sont la similarité des "espèces historiques", c'est-à-dire les couples (espèce actuelle; branche ancestrale)[@Leinster2012, proposition A7].
 
-
+<div class="smalltable">
+(ref:MatricePhylo) Matrice de similarité correspondant à l'arbre phylogénétique en exemple. Les noms des lignes et colonnes sont les couples (espèce actuelle; branche ancestrale).
 ```{r MatricePhylo, echo=FALSE, warning=FALSE, size="scriptsize"}
 Matrice <- data.frame(
   lignes = c("$(1;b_{1,1})$", "$(1;b_{3,1})$", "$(2;b_{1,2})$", "$(2;b_{3,1})$", "$(3;b_{1,3})$", "$(3;b_{2,3})$", "$(4;b_{1,4})$", "$(4;b_{2,3})$", "$(5;b_{1,5})$", "$(5;b_{2,3})$"),
@@ -1466,9 +1490,10 @@ Matrice <- data.frame(
   b235 = c(0, 0, 0, 0, 0, 1, 0, 1, 1, 1)
 )
 names(Matrice) <- c("", "$(1;b_{1,1})$", "$(1;b_{3,1})$", "$(2;b_{1,2})$", "$(2;b_{3,1})$", "$(3;b_{1,3})$", "$(3;b_{2,3})$", "$(4;b_{1,4})$", "$(4;b_{2,3})$", "$(5;b_{1,5})$", "$(5;b_{2,3})$")
-knitr::kable(Matrice, caption="Matrice de similarité correspondant à l'arbre phylogénétique en exemple. Les noms des lignes et colonnes sont les couples (espèce actuelle; branche ancestrale).", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
+knitr::kable(Matrice, caption="(ref:MatricePhylo)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
+  kableExtra::kable_styling(font_size = 7, bootstrap_options = "condensed")
 ```
+</div>
 
 Par exemple, l'espèce 1 et les branches $b_{1,1}$ et $b_{3,1}$ fournissent les deux premières lignes et colonnes de la matrice; l'espèce 5 et les branches $b_{1,5}$ et $b_{2,3}$, les deux dernières.  
 
@@ -1556,7 +1581,8 @@ Mais en absence de données individuelles, il est possible de choisir arbitraire
 L'approche de @Pavoine2014 permet de prendre en compte la variabilité intraspécifique de façon rigoureuse.
 Pour mesurer la diversité neutre, les espèces sont placées dans un espace multidimensionnel, de dimension $S$. Chaque espèce est représentée par un vecteur de longueur $p_s$ sur son axe. Cette représentation a été utilisée par @Campos2009 qui ont relié la diversité de Simpson au volume de la sphère sur laquelle se trouve le point définissant la communauté (figure \@ref(fig:Campos2009)).
 
-```{r Campos2009, fig.cap="Représentation d'une communauté dans un espace multidimensionnel dont chaque axe correspond à une espèce. La communauté est composée de trois espèces. Le point représentant la communauté se trouve sur la sphère de rayon $r=\\sqrt{\\sum_s{p_s^2}}$. Le plan (qui est en réalité un hyperplan de dimension $S-1$) d'équation $\\sum_s{p_s}=1$ est représenté par un triangle.", echo=FALSE}
+(ref:Campos2009) Représentation d'une communauté dans un espace multidimensionnel dont chaque axe correspond à une espèce. La communauté est composée de trois espèces. Le point représentant la communauté se trouve sur la sphère de rayon $r=\sqrt{\sum_s{p_s^2}}$. Le plan (qui est en réalité un hyperplan de dimension $S-1$) d'équation $\sum_s{p_s}=1$ est représenté par un triangle.
+```{r Campos2009, fig.cap="(ref:Campos2009)", echo=FALSE, out.width='50%'}
 knitr::include_graphics('images/Campos2009.png')
 ```
 
@@ -1606,7 +1632,9 @@ La valeur de la diversité des valeurs propres est légèrement différente de c
 
 Le profil de diversité se trouve en figure \@ref(fig:DqZLambdaFig).
 
-```{r DqZLambdaFig, echo=FALSE, results='hide', ref.label='DqZLambdaCode', fig.cap="Profil de diversité des valeurs propres de la méta-communauté `Paracou618`."}
+
+(ref:DqZLambdaFig) Profil de diversité des valeurs propres de la méta-communauté `Paracou618`.
+```{r DqZLambdaFig, echo=FALSE, results='hide', ref.label='DqZLambdaCode', fig.cap="(ref:DqZLambdaFig)"}
 ```
 
 
@@ -1650,7 +1678,9 @@ Le rôle du paramètre est assez différent: dans $^q\!D^{\mathbf{Z}}$, la banal
 Le paramètre détermine l'importance donnée aux espèces *originales*, c'est-à-dire dont la banalité est petite, et non aux espèces *rares*.
 Les deux notions se confondent quand la diversité neutre est considérée: la banalité d'une espèce se réduit alors à sa fréquence.
 
-```{r ComparaisonDqFig, echo=FALSE, results='hide', ref.label='ComparaisonDqCode', fig.cap="Diversité phylogénétique (l'arbre est une taxonomie) d'ordre $q$ de deux hectares de forêt de Paracou: $^q\\!D^{\\mathbf{Z}}$ (trait plein) et $^{q}\\!\\hat{D}(T)$ (pointillé)."}
+
+(ref:ComparaisonDqFig) Diversité phylogénétique (l'arbre est une taxonomie) d'ordre $q$ de deux hectares de forêt de Paracou: $^q\!D^{\mathbf{Z}}$ (trait plein) et $^{q}\!\hat{D}(T)$ (pointillé).
+```{r ComparaisonDqFig, echo=FALSE, results='hide', ref.label='ComparaisonDqCode', fig.cap="(ref:ComparaisonDqFig)"}
 ```
 
 Le code R nécessaire pour réaliser la figure est:

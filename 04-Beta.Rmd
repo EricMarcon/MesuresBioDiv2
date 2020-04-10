@@ -32,7 +32,9 @@ library(entropart)
 summary(Paracou618.MC)
 ```
 
-```{r Notations, echo=FALSE, warning=FALSE}
+
+(ref:Notations) Notations des effectifs, tableau espèces-communautés.
+```{r Notations, echo=FALSE, warning=FALSE, size="scriptsize"}
 Notations <- data.frame(
   Especes=c("Espèce $s$", "$\\dots$", "Total"),
   Communaute=c("$n_{s,i}$: nombre d'individus de l'espèce $s$ dans la communauté $i$. $\\hat{p}_{s|i}=n_{s,i}/n_{+i}$ est l'estimateur de la probabilité $p_{s|i}$ qu'un individu de la communauté $i$ soit de l'espèce $s$.", 
@@ -46,8 +48,8 @@ Notations <- data.frame(
           "$n$: nombre total d'individus échantillonnés ")
   )
 names(Notations) <- c("", "Communauté $i$", "$\\dots$", "Total: méta-communauté")
-knitr::kable(Notations, caption="Notations des effectifs, tableau espèces-communautés.", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
+knitr::kable(Notations, caption="(ref:Notations)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
+  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
 ```
 
 
@@ -59,11 +61,13 @@ knitr::kable(Notations, caption="Notations des effectifs, tableau espèces-commu
 Deux types de diversité $\beta$ peuvent être définies [@Vellend2001] en accord avec les notions originales de Whittaker: le *remplacement* (*turnover*) des espèces le long d'un gradient environnemental, spatial ou temporel et la *variation* de la composition spécifique entre communautés, qui diffèrent de la méta-communauté et entre elles.
 Ces deux définitions sont présentées sur les figures \@ref(fig:Anderson2011a) et \@ref(fig:Anderson2011b) [@Anderson2011].
 
-```{r Anderson2011a, fig.cap="Diversité $\\beta$ liée au remplacement des espèces le long d'un gradient. $\\Delta{y}$ est la mesure de la dissimilarité entre deux communautés. $\\mathbf{x}$ est un gradient environnemental, spatial ou temporel. $\\Delta{x}$ est l'écart entre deux points du gradient.", echo=FALSE}
+(ref:Anderson2011a) Diversité $\beta$ liée au remplacement des espèces le long d'un gradient. $\Delta{y}$ est la mesure de la dissimilarité entre deux communautés. $\mathbf{x}$ est un gradient environnemental, spatial ou temporel. $\Delta{x}$ est l'écart entre deux points du gradient.
+```{r Anderson2011a, fig.cap="(ref:Anderson2011a)", echo=FALSE}
 knitr::include_graphics('images/Anderson2011a.png')
 ```
 
-```{r Anderson2011b, fig.cap="Diversité $\\beta$ liée à la variation de la composition spécifique. $\\beta_W$ est le rapport entre la diversité $\\gamma$ et la diversité $\\alpha$, $\\beta_{Add}$ leur différence. $d_{ij}$ est la dissimilarité entre les communautés $i$ et $j$. $\\hat{\\sigma}^2$ est la variance de cette dissimilarité, $\\bar{d}$ sa moyenne. Si $d$ est une distance euclidienne, $\\bar{d}_{cen}$ est la distance moyenne des communautés à leur centre de gravité.", echo=FALSE}
+(ref:Anderson2011b) Diversité $\\beta$ liée à la variation de la composition spécifique. $\beta_W$ est le rapport entre la diversité $\gamma$ et la diversité $\alpha$, $\\beta_{Add}$ leur différence. $d_{ij}$ est la dissimilarité entre les communautés $i$ et $j$. $\hat{\sigma}^2$ est la variance de cette dissimilarité, $\bar{d}$ sa moyenne. Si $d$ est une distance euclidienne, $\bar{d}_{cen}$ est la distance moyenne des communautés à leur centre de gravité.
+```{r Anderson2011b, fig.cap="(ref:Anderson2011b)", echo=FALSE}
 knitr::include_graphics('images/Anderson2011B.png')
 ```
 
@@ -298,7 +302,9 @@ library("ade4")
 DistJaccard <- dist.binary(BCI, method = 1)
 ```
 
-```{r JaccardFig, echo=FALSE, results='hide', ref.label='JaccardCode', fig.cap="Distribution des indices de Jaccard calculés pour les 50 carrés de BCI deux à deux."}
+
+(ref:JaccardFig) Distribution des indices de Jaccard calculés pour les 50 carrés de BCI deux à deux.
+```{r JaccardFig, echo=FALSE, results='hide', ref.label='JaccardCode', fig.cap="(ref:JaccardFig)"}
 ```
 
 La distribution des valeurs de l'indice de Jaccard $S_3=1-D_3^2$ est en figure \@ref(fig:JaccardFig). 
@@ -392,7 +398,9 @@ BCIjaccard(1,2)
 
 La distribution des valeurs de l'indice corrigé se trouve en figure \@ref(fig:ChaoJaccardFig). 
 
-```{r ChaoJaccardFig, echo=FALSE, results='hide', ref.label='ChaoJaccardCode', fig.cap="Distribution des indices de Jaccard corrigés du biais d'etimation pour les 50 carrés de BCI deux à deux."}
+
+(ref:ChaoJaccardFig) Distribution des indices de Jaccard corrigés du biais d'etimation pour les 50 carrés de BCI deux à deux.
+```{r ChaoJaccardFig, echo=FALSE, results='hide', ref.label='ChaoJaccardCode', fig.cap="(ref:ChaoJaccardFig)"}
 ```
 
 La majorité des paires de carrés a une similarité supérieure à 0,8 après correction.
@@ -417,7 +425,9 @@ DistChaoJaccard <- as.dist(sqrt(1-ChaoJaccard))
 PcoChaoJaccard <- dudi.pco(DistChaoJaccard, scannf = FALSE)
 ```
 
-```{r JaccardPCOFig, echo=FALSE, results='hide', ref.label='JaccardPCOCode', fig.cap="Représentation des 50 carrés de BCI dans une analyse en coordonnées principale fondée sur les distances de Jaccard."}
+
+(ref:JaccardPCOFig) Représentation des 50 carrés de BCI dans une analyse en coordonnées principale fondée sur les distances de Jaccard.
+```{r JaccardPCOFig, echo=FALSE, results='hide', ref.label='JaccardPCOCode', fig.cap="(ref:JaccardPCOFig)"}
 ```
 
 La représentation de l'analyse est en figure \@ref(fig:JaccardPCOFig). 
@@ -469,7 +479,7 @@ Elle n'est pas euclidienne.
 Les dissimilarités de Jaccard et de Sørensen se généralisent aux données d'abondance.
 Le nombre d'espèces communes aux deux sites $s_{1,1}$ est remplacé par le nombre d'individus de même espèce présents sur les deux sites: $n_{1,1}=\sum_s{\min(n_{s,1}, n_{s,2})}$; le nombre d'espèces seulement présentes sur le premier site $s_{1,0}$ est remplacé par le nombre d'individus, sommé sur toutes les espèces, présents uniquement sur le site: $n_{1,0}=\sum_s{\max(0, n_{s,1}-n_{s,2})}$; de même, $s_{0,1}$ est remplacé par $n_{0,1}=\sum_s{\max(0, n_{s,2}-n_{s,1)}}$.
 
-La dissimilarité de Ružička [@Ruzicka1958] généralise celle de Jaccard:
+La dissimilarité de @Ruzicka1958 généralise celle de Jaccard:
 
 \begin{equation}
   (\#eq:Ruzicka)
@@ -527,7 +537,8 @@ Ces mesures de dissimilarité sont généralisées au-delà de deux communautés
 
 Le premier terme de la somme est le terme lié à la substitution et le second celui lié à l'emboîtement.
 
-```{r Podani2011, fig.cap="Triangle du simplex Similarité-Substitution-Emboîtement. (a) Similarité, emboîtement et substitution somment à 1 donc les trois composantes peuvent être représentées dans un triangle et combinées deux à deux. La dissimilarité est par exemple représentée par la proximité au côté gauche du triangle, somme de l'emboîtement et de la substitution (ses sommets adjacents) et complément à 1 de la dissimilarité (le sommet opposé). (b) Les formules de calcul dont données pour la similarité de Jaccard. Avec ces notations classiques, $a$ est le nombre d'espèces communes $s_{1,1}$, $b$ et $c$ sont les espèces propres à chaque communauté, $s_{0,1}$ et $s_{1,0}$, et $n$ est le nombre total d'espèces $a+b+c$.", echo=FALSE, out.width='100%'}
+(ref:Podani2011) Triangle du simplex Similarité-Substitution-Emboîtement. (a) Similarité, emboîtement et substitution somment à 1 donc les trois composantes peuvent être représentées dans un triangle et combinées deux à deux. La dissimilarité est par exemple représentée par la proximité au côté gauche du triangle, somme de l'emboîtement et de la substitution (ses sommets adjacents) et complément à 1 de la dissimilarité (le sommet opposé). (b) Les formules de calcul dont données pour la similarité de Jaccard. Avec ces notations classiques, $a$ est le nombre d'espèces communes $s_{1,1}$, $b$ et $c$ sont les espèces propres à chaque communauté, $s_{0,1}$ et $s_{1,0}$, et $n$ est le nombre total d'espèces $a+b+c$.
+```{r Podani2011, fig.cap="(ref:Podani2011)", echo=FALSE, out.width='100%'}
 knitr::include_graphics('images/Podani2011.png')
 ```
 
@@ -597,8 +608,6 @@ mais avec pondération par l'abondance des espèces chez @Ricotta2008 :
   (\#eq:Ricotta2008)
   d_{\mathit{RB}} = \frac{1}{2}\left( \sum_s{p_{s|1}\min{d_{s,2}}} + \sum_t{p_{t|2}\min{d_{t,1}}} \right),
 \end{equation}
-
-\clearpage
 
 alors qu'elle l'est globalement dans l'indice de @Izsak2001 :
 \begin{equation}
@@ -689,11 +698,10 @@ où $\bar{d_{s,2}}$ est la dissimilarité moyenne entre l'espèce $s$ de la comm
 Dans certains cas présentés ici, la diversité de différentiation est parfaitement conciliable avec la diversité proportionnelle.
 
 
-\clearpage
-
 ### Diversité de Simpson
 
-```{r BCIPCAFig, echo=FALSE, results='hide', out.width='100%', ref.label='BCIPCACode', fig.cap="Représentation des deux premiers axes factoriels de l'ACP des 50 carrés de BCI. Les données sont les probabilités des espèce, ni centrées ni réduites pour l'ACP. Les carrés sont représentés avec les espèces. Les carrés 35 et 40 ont une diversité faible et sont associés aux espèces Gustavia superba et Alseis blackiana."}
+(ref:BCIPCAFig) Représentation des deux premiers axes factoriels de l'ACP des 50 carrés de BCI. Les données sont les probabilités des espèce, ni centrées ni réduites pour l'ACP. Les carrés sont représentés avec les espèces. Les carrés 35 et 40 ont une diversité faible et sont associés aux espèces *Gustavia superba* et *Alseis blackiana*.
+```{r BCIPCAFig, echo=FALSE, results='hide', out.width='100%', ref.label='BCIPCACode', fig.cap="(ref:BCIPCAFig)"}
 ```
 
 
@@ -711,7 +719,8 @@ pcaBCI <- dudi.pca(BCI/rowSums(BCI), scannf = FALSE, nf = 2, center = FALSE, sca
   scatter(pcaBCI, posieig = "bottomleft")
 ```
 
-```{r BCIPCA2Fig, echo=FALSE, results='hide', out.width='100%', ref.label='BCIPCA2Code', fig.cap="ACP centrée des 50 carrés de BCI pour visualiser la diversité $\\beta$."}
+(ref:BCIPCA2Fig) ACP centrée des 50 carrés de BCI pour visualiser la diversité $\beta$.
+```{r BCIPCA2Fig, echo=FALSE, results='hide', out.width='100%', ref.label='BCIPCA2Code', fig.cap="(ref:BCIPCA2Fig)"}
 ```
 
 
@@ -744,7 +753,8 @@ La moyenne des dissimilarités $D_n$ ou des compléments à 1 des similarités d
 
 Pour un certain nombre de distances, la transformation de $p_{s|i}$ en $y_{s|i}$ est bien connue [@Legendre2001].
 
-```{r Corde, fig.cap="Distance de corde entre deux communautés représentées dans l'espace engendré par deux espèces. La distance $d_{1,2}$ entre les deux communautés est la longueur de la corde qui relie leurs vecteurs de composition normalisés sur le cercle de rayon 1. C'est aussi deux fois le sinus de l'angle $\\frac{\\alpha_{1,2}}{2}$ formé par les deux vecteurs de composition des communautés.", echo=FALSE}
+(ref:Corde) Distance de corde entre deux communautés représentées dans l'espace engendré par deux espèces. La distance $d_{1,2}$ entre les deux communautés est la longueur de la corde qui relie leurs vecteurs de composition normalisés sur le cercle de rayon 1. C'est aussi deux fois le sinus de l'angle ${\alpha_{1,2}}/{2}$ formé par les deux vecteurs de composition des communautés.
+```{r Corde, fig.cap="(ref:Corde)", echo=FALSE}
 knitr::include_graphics('images/Corde.png')
 ```
 
@@ -771,7 +781,8 @@ Les distance de corde et de Hellinger (qui est la distance entre les racines car
 
 La diversité $\beta$ exprimée de cette façon peut faire l'objet d'analyses par les méthodes d'ordination classiques (RDA: Analyse de Redondance [@Rao1964]; CCA: Analyse Canonique de Correspondance [@Braak1986]) pour la relier à des variables environnementales par exemple[@Legendre2013].
 
-```{r BCICordeFig, echo=FALSE, message=FALSE, results='hide', out.width='100%', ref.label='BCICordeCode', fig.cap="PCoA appliquée à la distance de corde des 50 carrés de BCI pour visualiser la diversité $\\beta$."}
+(ref:BCICordeFig) PCoA appliquée à la distance de corde des 50 carrés de BCI pour visualiser la diversité $\\beta$.
+```{r BCICordeFig, echo=FALSE, message=FALSE, results='hide', out.width='100%', ref.label='BCICordeCode', fig.cap="(ref:BCICordeFig)"}
 ```
 
 La diversité $\beta$ de BCI (figure \@ref(fig:BCIPCA2Fig)) est mieux représentée par une analyse en coordonnées principales appliquée à la distance de corde entre les communautés (figure \@ref(fig:BCICordeFig)).
@@ -854,8 +865,8 @@ La décomposition de l'entropie HCDT constitue un cadre cohérent dans lequel la
 
 ## Décomposition de l'indice de Shannon
 
-
-```{r DecShannon, echo=FALSE, warning=FALSE}
+(ref:DecShannon) Définition explicite de la diversité de Shannon en tant que divergence entre une distribution observée et une distribution attendue. Les indices $H_\alpha$ et $H_\gamma$ sont les compléments au logarithme du nombre d'espèces de cette divergence.
+```{r DecShannon, echo=FALSE, warning=FALSE, size="scriptsize"}
 DecShannon <- data.frame(
   Indice=c("$H_\\alpha$", "$H_\\beta$", "$H_\\gamma$"),
   Dobs=c("Fréquence des espèces dans la communauté", 
@@ -869,8 +880,8 @@ DecShannon <- data.frame(
             "$H_\\gamma = \\sum_s{p_{s}\\ln{p_{s}}}$")
 )
 names(DecShannon) <- c("Indice", "Distribution observée", "Distribution attendue", "Formule")
-knitr::kable(DecShannon, caption="Définition explicite de la diversité de Shannon en tant que divergence entre une distribution observée et une distribution attendue. Les indices $H_\\alpha$ et $H_\\gamma$ sont les compléments au logarithme du nombre d'espèces de cette divergence.", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
+knitr::kable(DecShannon, caption="(ref:DecShannon)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
+  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
 ```
 
 
@@ -1120,7 +1131,9 @@ d'où une décomposition additive différente, qui correspond à sa décompositi
 Il n'y a en réalité aucune raison pour que le nombre équivalent de la diversité $\beta$ ait la même forme que celle de la diversité $\alpha$: les deux diversités sont par nature très différentes, et Hill ne traitait pas la diversité $\beta$. 
 La diversité de Shannon est exceptionnelle parce que, pour des raisons différentes, son nombre de Hill est l'exponentielle de l'entropie, et l'exponentielle de la décomposition additive \@ref(eq:DecompHq) est la décomposition multiplicative \@ref(eq:DecompDq).
 
-```{r Decomposition, echo=FALSE, warning=FALSE}
+
+(ref:Decomposition) Entropie, diversité et décomposition. L'entropie $\alpha$ de chaque communauté se calcule comme l'entropie $\gamma$
+```{r Decomposition, echo=FALSE, warning=FALSE, size="scriptsize"}
 Decomposition <- data.frame(
   Mesure=c("Entropie $\\gamma$", "Entropie $\\beta$", "Diversité $\\gamma$ (nombre de Hill)", "Diversité $\\beta$ (nombre équivalent"),
   Generalise=c("$^{q}\\!H_{\\gamma}=-\\sum_s{p^q_s}\\ln_q{p_s}$", 
@@ -1133,8 +1146,8 @@ Decomposition <- data.frame(
              "$^{1}\\!D_{\\beta}=e^{^{1}\\!H_{\\beta}}$")
 )
 names(Decomposition) <- c("Mesure de diversité", "Entropie généralisée", "Shannon")
-knitr::kable(Decomposition, caption="Entropie, diversité et décomposition. L'entropie $\\alpha$ de chaque communauté se calcule comme l'entropie $\\gamma$", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
+knitr::kable(Decomposition, caption="(ref:Decomposition)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
+  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
 ```
 
 
@@ -1270,7 +1283,8 @@ Pour une taille d'échantillon fixée (par exemple un hectare de forêt), la div
 Cette variabilité dépend de l'échelle de l'échantillonnage dans le sens où elle diminue si les échantillons sont de taille plus grande: l'entropie $\alpha$ de deux hectares de forêts est la diversité $\alpha$ moyenne de chacun des deux hectares plus l'entropie $\beta$ entre eux. 
 L'entropie $\beta$ entre les échantillons de deux hectares est donc diminuée de cette entropie $\beta$ "intra" qui est absorbée par la nouvelle entropie $\alpha$ quand la taille des échantillons augmente.
 
-```{r BetaSampleFig, echo=FALSE, results='hide', message=FALSE, ref.label='BetaSampleCode', fig.cap="Estimation de la diversité $\\beta$ entre carrés de BCI. La diversité est calculée à partir du nombre de carrés en abscisse, de 2 à 30, tirés aléatoirement. La valeur en ordonnée est la diversité d'ordre 2 moyenne sur 100 tirages, les barres représentent l'écart-type. Aux erreurs d'estimation près, la valeur de la diversité $\\beta$ ne dépend pas du nombre de carrés."}
+(ref:BetaSampleFig) Estimation de la diversité $\beta$ entre carrés de BCI. La diversité est calculée à partir du nombre de carrés en abscisse, de 2 à 30, tirés aléatoirement. La valeur en ordonnée est la diversité d'ordre 2 moyenne sur 100 tirages, les barres représentent l'écart-type. Aux erreurs d'estimation près, la valeur de la diversité $\beta$ ne dépend pas du nombre de carrés.
+```{r BetaSampleFig, echo=FALSE, results='hide', message=FALSE, ref.label='BetaSampleCode', fig.cap="(ref:BetaSampleFig)"}
 ```
 
 La figure \@ref(fig:BetaSampleFig) présente les valeurs estimées de diversité neutre $\beta$ entre carrés de BCI tirés aléatoirement, en fonction du nombre de carrés.
@@ -1393,7 +1407,8 @@ summary(DivPart(q = 1, Paracou618.MC, Biased = FALSE,
                 Tree = Paracou618.Taxonomy))
 ```
 
-```{r DivPartFig, echo=FALSE, results='hide', ref.label='DivPartCode', fig.cap="Représentation graphique de la diversité des deux parcelles du jeu de données `Paracou618`. Les rectangles transparents représentent la diversité neutre, les rectangles hachurés la diversité phylogénétique (l'arbre est la taxonomie des espèces, $q=1$). Dans chaque cas, le rectangle le plus large, de hauteur 1, représente la diversité $\\gamma$. Le rectangle plus haut a pour largeur et longueur les diversités $\\alpha$ et $\\beta$. Les surfaces des deux rectangles sont identiques."}
+(ref:DivPartFig) Représentation graphique de la diversité des deux parcelles du jeu de données `Paracou618`. Les rectangles transparents représentent la diversité neutre, les rectangles hachurés la diversité phylogénétique (l'arbre est la taxonomie des espèces, $q=1$). Dans chaque cas, le rectangle le plus large, de hauteur 1, représente la diversité $\\gamma$. Le rectangle plus haut a pour largeur et longueur les diversités $\alpha$ et $\beta$. Les surfaces des deux rectangles sont identiques.
+```{r DivPartFig, echo=FALSE, results='hide', ref.label='DivPartCode', fig.cap="(ref:DivPartFig)"}
 ```
 
 La figure \@ref(fig:DivPartFig) donne une représentation graphique de la décomposition de la diversité. 
@@ -1529,7 +1544,8 @@ L'intervalle de confiance de l'estimateur de $H_{\beta}$ [@Marcon2014a] peut êt
 
 Si l'intervalle de confiance ne contient pas 0, l'égalité des distributions est rejetée.
 
-```{r DivestFig, echo=FALSE, results='hide', ref.label='DivestCode', out.width='100%', fig.cap="Estimation de la diversité de la méta-communauté `Paracou618`."}
+(ref:DivestFig) Estimation de la diversité de la méta-communauté `Paracou618`.
+```{r DivestFig, echo=FALSE, results='hide', ref.label='DivestCode', out.width='100%', fig.cap="(ref:DivestFig)"}
 ```
 
 Calcul sous R: la fonction `DivEst` produit un graphique avec l'intervalle de confiance (figure \@ref(fig:DivestFig)).
@@ -1574,7 +1590,8 @@ Des définitions différentes de la diversité $\beta$ ou du partitionnement de 
 
 ### Cadre
 
-```{r Couteron, echo=FALSE, warning=FALSE}
+(ref:Couteron) Tableau d'occurrence des espèces.
+```{r Couteron, echo=FALSE, warning=FALSE, size="scriptsize"}
 Couteron <- data.frame(
   Famille=c("Famille $u$", "$\\dots$", "Total"),
   Genre=c("Genre $t$", "$\\dots$", ""),
@@ -1586,8 +1603,8 @@ Couteron <- data.frame(
   Total=c("", "", "1")
 )
 names(Couteron) <- c("", "", "", "Forêt $k$, Parcelle $j$, Placette $i$, Arbre $h$", "$\\dots$", "Total")
-knitr::kable(Couteron, caption="Tableau d'occurrence des espèces.", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
+knitr::kable(Couteron, caption="(ref:Couteron)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
+  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
 ```
 
 Un cadre général de partitionnement de la diversité, applicable aux trois indices classiques, est proposé par @Pelissier2007, en conclusion d'une série d'articles [@Pelissier2003; @Couteron2004].

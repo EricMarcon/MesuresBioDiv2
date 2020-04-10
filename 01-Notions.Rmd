@@ -43,7 +43,8 @@ La question est loin d'être épuisée, et fait toujours l'objet d'une recherche
 
 ## Composantes
 
-```{r Composantes, fig.cap="Importance de la richesse (en haut) et de l'équitabilité (en bas) pour la définition de la diversité. Ligne du haut: toutes choses égales par ailleurs, une communauté de 7 espèces semble plus diverse qu'une communauté de 2 espèces. Ligne du bas: à richesse égale, une communauté moins équitable (à gauche) semble moins diverse. Colonne de gauche: une communauté moins riche (en haut) peut sembler plus diverse si elle est plus équitable. Colonne de droite: idem pour la communauté du bas.", echo=FALSE, out.width='60%'}
+(ref:Composantes) Importance de la richesse (en haut) et de l'équitabilité (en bas) pour la définition de la diversité. Ligne du haut: toutes choses égales par ailleurs, une communauté de 7 espèces semble plus diverse qu'une communauté de 2 espèces. Ligne du bas: à richesse égale, une communauté moins équitable (à gauche) semble moins diverse. Colonne de gauche: une communauté moins riche (en haut) peut sembler plus diverse si elle est plus équitable. Colonne de droite: idem pour la communauté du bas.
+```{r Composantes, fig.cap="(ref:Composantes)", echo=FALSE, out.width='60%'}
 knitr::include_graphics('images/Composantes.png')
 ```
 
@@ -110,7 +111,9 @@ La diversité est classiquement estimée à plusieurs niveaux emboîtés, nommé
 La diversité $\alpha$ est la diversité locale, mesurée à l'intérieur d'un système délimité. 
 Plus précisément, il s'agit de la diversité dans un habitat uniforme de taille fixe.
 
-```{r Gaston2000, fig.cap="Patrons de biodiversité. (a) Le nombre d'espèces de vers de terre augmente en fonction de la surface échantillonnée, de 100 m² à plus de 500000 km² selon la relation d'Arrhenius). (b) Nombre d'espèces d'oiseaux en fonction de la latitude. (c) Relation entre la richesse régionale et la richesse locale. (d) Nombre d'espèces de chauves-souris en fonction de l'altitude dans une réserve au Pérou. (e) Nombre d'espèces de végétaux ligneux en fonction des précipitations en Afrique du Sud.", echo=FALSE, out.width='100%'}
+
+(ref:Gaston2000) Patrons de biodiversité. (a) Le nombre d'espèces de vers de terre augmente en fonction de la surface échantillonnée, de 100 m² à plus de 500000 km² selon la relation d'Arrhenius). (b) Nombre d'espèces d'oiseaux en fonction de la latitude. (c) Relation entre la richesse régionale et la richesse locale. (d) Nombre d'espèces de chauves-souris en fonction de l'altitude dans une réserve au Pérou. (e) Nombre d'espèces de végétaux ligneux en fonction des précipitations en Afrique du Sud.
+```{r Gaston2000, fig.cap="(ref:Gaston2000)", echo=FALSE, out.width='100%'}
 knitr::include_graphics('images/Gaston2000.png')
 ```
 
@@ -199,7 +202,9 @@ Le jeu de données utilisé pour les exemples est une version réduite aux arbre
 
 ## SAD et SAR
 
-```{r SARFig, echo=FALSE, results='hide', message=FALSE, ref.label='SARCode',  fig.cap="Courbe d'accumulation des espèces d'arbres du dispositif de Barro Colorado Island. Le nombre d'espèces est cumulé dans l'ordre des carrés d'un hectare du dispositif."}
+
+(ref:SARFig) Courbe d'accumulation des espèces d'arbres du dispositif de Barro Colorado Island. Le nombre d'espèces est cumulé dans l'ordre des carrés d'un hectare du dispositif.
+```{r SARFig, echo=FALSE, results='hide', message=FALSE, ref.label='SARCode',  fig.cap="(ref:SARFig)"}
 ```
 
 La courbe aire-espèces (SAR: *Species Area Relationship*) représente le nombre d'espèces observées en fonction de la surface échantillonnée (figure \@ref(fig:Williamson2001).
@@ -229,14 +234,17 @@ SARplot
 La distribution de l'abondance des espèces (SAD: *Species Abundance Distribution*) est la loi qui donne l'abondance attendue de chaque espèce d'une communauté. 
 Les espèces ne sont pas identifiées individuellement, mais par le nombre d'individus leur appartenant.
 
-```{r SADFig, echo=FALSE, results='hide', message=FALSE, ref.label='SADCode', fig.cap="Histogramme des fréquences (diagramme de Preston) des arbres du dispositif de Barro Colorado Island. En abscisse: le nombre d'arbres de chaque espèce (en logarithme); en ordonnée: le nombre d'espèces)"}
+
+(ref:SADFig) Histogramme des fréquences (diagramme de Preston) des arbres du dispositif de Barro Colorado Island. En abscisse: le nombre d'arbres de chaque espèce (en logarithme); en ordonnée: le nombre d'espèces.
+```{r SADFig, echo=FALSE, results='hide', message=FALSE, ref.label='SADCode', fig.cap="(ref:SADFig)"}
 ```
 
 Elle peut être représentée sous la forme d'un histogramme des fréquences (diagramme de @Preston1948, figure \@ref(fig:SADFig)) ou bien d'un diagramme rang-abondance (RAC: *Rank Abundance Curve* ou diagramme de @Whittaker1965, figure \@ref(fig:RACFig)). 
 Le RAC est souvent utilisé pour reconnaître des distributions connues. 
 @Izsak2012 ont étudié les propriétés des RAC pour les principales SAD.
 
-```{r RACFig, echo=FALSE, results='hide', message=FALSE, ref.label='RACCode',  fig.cap="Diagramme rang-abondance (diagramme de Whittaker) des arbres du dispositif de Barro Colorado Island. Les points sont les données: en abscisse: le rang de l'espèce, à partir de la plus abondante; en ordonnée: l'abondance de l'espèce. La courbe est l'ajustement d'une distribution log-normale."}
+(ref:RACFig) Diagramme rang-abondance (diagramme de Whittaker) des arbres du dispositif de Barro Colorado Island. Les points sont les données: en abscisse: le rang de l'espèce, à partir de la plus abondante; en ordonnée: l'abondance de l'espèce. La courbe est l'ajustement d'une distribution log-normale.
+```{r RACFig, echo=FALSE, results='hide', message=FALSE, ref.label='RACCode',  fig.cap="(ref:RACFig)"}
 ```
 
 Code de la figure \@ref(fig:SADFig):

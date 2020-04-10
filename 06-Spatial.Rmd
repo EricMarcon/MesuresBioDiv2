@@ -67,7 +67,8 @@ Le paramètre de d'échelle permet d'ajuster les nombres d'individus à la taill
 Il est forcément très supérieur à 1.
 Plus le paramètre de forme $k$ est proche de 0, plus la décroissance des probabilités est rapide.
 
-```{r gammaFig, echo=FALSE, fig.cap="", message=FALSE, ref.label='gammaCode', results='hide', fig.cap="Densité de probabilité d'une loi gamma de paramètres $0,2$ et 100. Seules les valeurs inférieures à 50 sont affichées."}
+(ref:gammaFig) Densité de probabilité d'une loi gamma de paramètres $0,2$ et 100. Seules les valeurs inférieures à 50 sont affichées.
+```{r gammaFig, echo=FALSE, fig.cap="", message=FALSE, ref.label='gammaCode', results='hide', fig.cap="(ref:gammaFig)"}
 ```
 
 Le code R nécessaire pour réaliser la figure est:
@@ -85,9 +86,10 @@ ggplot(data.frame(d$x, d$y), aes(d.x, d.y)) +
 
 Les effectifs de la communauté sont un mélange de lois de Poisson de paramètres aléatoires suivant tous la même loi gamma.
 La distribution des probabilités qui en résulte est une loi binomiale négative [@Greenwood1920].
-La probabilité qu'une espèce soit représentée par $\nu$ individus, notée ${\pi}_{s,\nu}$, suit donc une loi binomiale négative de paramètres $k$ et $\frac{1}{p+1}$ représentée sur la figure \@ref(fig:nbinFig).
+La probabilité qu'une espèce soit représentée par $\nu$ individus, notée ${\pi}_{s,\nu}$, suit donc une loi binomiale négative de paramètres $k$ et ${1}/{p+1}$ représentée sur la figure \@ref(fig:nbinFig).
 
-```{r nbinFig, echo=FALSE, results='hide', ref.label='nbinCode', fig.cap="Réalisation d'une loi gamma de paramètres $0,2$ et 100. L'histogramme représente la proportion (qui estime la probabilité) des valeurs inférieures à 50. Les espèces d'abondance nulle ne sont pas observées dans l'échantillon."}
+(fig:nbinFig) Réalisation d'une loi gamma de paramètres $0,2$ et $100$. L'histogramme représente la proportion (qui estime la probabilité) des valeurs inférieures à 50. Les espèces d'abondance nulle ne sont pas observées dans l'échantillon.
+```{r nbinFig, echo=FALSE, results='hide', ref.label='nbinCode', fig.cap="(fig:nbinFig)"}
 ```
 
 Le code R nécessaire pour réaliser la figure est:
@@ -188,12 +190,14 @@ où
 
 Si $S = \infty$ et $c = 1$, l'équation \@ref(eq:Schulte) se simplifie pour retrouver l'équation \@ref(eq:AlphaFisher).
 
-```{r Schulte2005b, fig.cap="Comparaison entre le modèle de Fisher et le modèle étendu dans trois parcelles forestières connues. Les modèles sont ajustés aux données observées par @Condit1996. Les courbes légendées *Equation 4* correspondent au modèle de Fisher étendu par Schulte, alors que l'*Equation 5* est le modèle intermédiaire, supposant le nombre total d'espèces infini.", echo=FALSE}
+(ref:Schulte2005b) Comparaison entre le modèle de Fisher et le modèle étendu dans trois parcelles forestières connues. Les modèles sont ajustés aux données observées par @Condit1996. Les courbes légendées *Equation 4* correspondent au modèle de Fisher étendu par Schulte, alors que l'*Equation 5* est le modèle intermédiaire, supposant le nombre total d'espèces infini.
+```{r Schulte2005b, fig.cap="(ref:Schulte2005b)", echo=FALSE}
 knitr::include_graphics('images/Schulte2005b.png')
 ```
 
 
-```{r Schulte2005a, fig.cap="Courbes nombre d'individus-espèces-simulées pour illustrer l'importance des paramètres $c$ (concentration spatiale) et $S_{\\max}$ (nombre total d'espèces, $S$ dans nos notations) dans le modèle de Fisher. $\\alpha$ est fixé à 100 pour toutes les courbes. (a) et (b): la concentration spatiale ($c<1$) change drastiquement le nombre d'espèces attendu. En pratique, seuls $S$ et $N$ ($s^{n}_{\\ne 0}$ et $n$ dans nos notations) sont observés. Si $c$ est supposé égal à 1 par erreur, $\\alpha$ est sous-estimé. (a) et (c): le nombre d'espèces n'est évidemment pas infini, ce qui change fortement la forme de la courbe. Si le nombre d'observations est grand, $\\alpha$ sera aussi très sous-estimé.", echo=FALSE}
+(ref:Schulte2005a) Courbes nombre d'individus-espèces-simulées pour illustrer l'importance des paramètres $c$ (concentration spatiale) et $S_{\\max}$ (nombre total d'espèces, $S$ dans nos notations) dans le modèle de Fisher. $\\alpha$ est fixé à 100 pour toutes les courbes. (a) et (b): la concentration spatiale ($c<1$) change drastiquement le nombre d'espèces attendu. En pratique, seuls $S$ et $N$ ($s^{n}_{\ne 0}$ et $n$ dans nos notations) sont observés. Si $c$ est supposé égal à 1 par erreur, $\alpha$ est sous-estimé. (a) et (c): le nombre d'espèces n'est évidemment pas infini, ce qui change fortement la forme de la courbe. Si le nombre d'observations est grand, $\alpha$ sera aussi très sous-estimé.
+```{r Schulte2005a, fig.cap="(ref:Schulte2005a)", echo=FALSE}
 knitr::include_graphics('images/Schulte2005b.png')
 ```
 
@@ -231,7 +235,8 @@ Sq3 <- nEspeces[nq3]
 
 La SAC correspondante est tracée en figure \@ref(fig:KemptonQFig).
 
-```{r KemptonQFig, echo=FALSE, results='hide', ref.label='KemptonQCode', fig.cap="SAC d'un inventaire simulé de 10000 arbres de BCI. Le nombre d'espèces cumulé est tracé en fonction du logarithme du nombre d'individus échantillonnés. $Q$ est la pente de la droite passant par les points de la courbe correspondant aux premier et troisième quartiles du nombre d'espèces."}
+(ref:KemptonQFig) SAC d'un inventaire simulé de 10000 arbres de BCI. Le nombre d'espèces cumulé est tracé en fonction du logarithme du nombre d'individus échantillonnés. $Q$ est la pente de la droite passant par les points de la courbe correspondant aux premier et troisième quartiles du nombre d'espèces.
+```{r KemptonQFig, echo=FALSE, results='hide', ref.label='KemptonQCode', fig.cap="(ref:KemptonQFig)"}
 ```
 
 Code R pour réaliser la figure:
@@ -266,7 +271,8 @@ Quelques méthodes sont pourtant applicables.
 
 On suppose que la communauté locale est de taille fixe et contient donc un nombre fixe d'espèces, et que leur découverte progressive aboutira à une asymptote de la SAC.
 
-```{r Gotelli2001, fig.cap="Courbes d'accumulation et de raréfaction, obtenues par inventaires individuels ou groupés (*samples*). Les courbes de raréfaction permettent de lisser les courbes d'accumulation. Les courbes obtenues par inventaire groupé sont en général en dessous des courbes individuelles à cause de l'agrégation spatiale.", echo=FALSE}
+(ref:Gotelli2001) Courbes d'accumulation et de raréfaction, obtenues par inventaires individuels ou groupés (*samples*). Les courbes de raréfaction permettent de lisser les courbes d'accumulation. Les courbes obtenues par inventaire groupé sont en général en dessous des courbes individuelles à cause de l'agrégation spatiale.
+```{r Gotelli2001, fig.cap="(ref:Gotelli2001)", echo=FALSE}
 knitr::include_graphics('images/Gotelli2001.png')
 ```
 
@@ -275,7 +281,8 @@ Ils suggèrent notamment de calculer la courbe de raréfaction (figure \@ref(fig
 La courbe de raréfaction est obtenue en sous-échantillonnant dans l'inventaire complet des effectifs de toutes tailles et en calculant le nombre moyen d'espèces trouvé pour chacun, ce qui permet de la lisser.
 La formulation exacte de la courbe de raréfaction et de sa variance est connue [@Ugland2003]. 
 
-```{r specaccumFig, fig.cap="Courbe d'accumulation des espèces d'arbres de Barro Colorado Island. Calcul par specaccum: accumulation des 50 carrés avec permutations.", ref.label="specaccumCode"}
+(ref:specaccumFig) Courbe d'accumulation des espèces d'arbres de Barro Colorado Island. Calcul par specaccum: accumulation des 50 carrés avec permutations.
+```{r specaccumFig, fig.cap="(ref:specaccumFig)", ref.label="specaccumCode"}
 ```
 
 La fonction `specaccum` de la librairie *vegan* [@Oksanen2012] permet de tracer les SAC (figure \@ref(fig:specaccumFig)) selon différentes méthodes, avec un intervalle de confiance obtenu par permutation de l'ordre d'ajout des données ou à partir des formules de raréfaction.
@@ -300,7 +307,8 @@ Les deux approches se réconcilient en fixant arbitrairement le nombre d'individ
 La SAC définie en fonction du nombre d'individus est au sens strict une succession de points (à chaque valeur de $n$), pas une courbe continue.
 Elle est toutefois toujours présentée comme une courbe lissée passant par les points pour être continue et dérivable.
 
-```{r SACzetaFig, fig.cap="Courbe d'accumulation des espèces d'arbres de Barro Colorado Island. Somme des entropies de Simpson généralisées.", ref.label="SACzetaCode"}
+(ref:SACzetaFig) Courbe d'accumulation des espèces d'arbres de Barro Colorado Island. Somme des entropies de Simpson généralisées.
+```{r SACzetaFig, fig.cap="(ref:SACzetaFig)", ref.label="SACzetaCode"}
 ```
 
 Une difficulté supplémentaire consiste à prendre en compte les espèces non échantillonnées en appliquant des techniques statistiques pour réduire le biais qu'elles induisent [@Colwell2012].
@@ -416,7 +424,8 @@ deS <- density(eS)
 ```
 
 
-```{r Beguinot2015Fig, echo=FALSE, results='hide', ref.label='Beguinot2015Code', fig.cap="Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen, Chao, et Lin (2003) (pointillés alternés vert), Béguinot (2015b) (tirets rouges) ou avec le package iNEXT (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire."}
+(ref:Beguinot2015Fig) Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de @Shen2003 (pointillés alternés vert), @Beguinot2015 (tirets rouges) ou avec le package iNEXT [@Hsieh2014] (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire.
+```{r Beguinot2015Fig, echo=FALSE, results='hide', ref.label='Beguinot2015Code', fig.cap="(ref:Beguinot2015Fig)"}
 ```
 
 
@@ -493,7 +502,8 @@ MoyenneReduit <- apply(ExtraSACs, 1, mean)
 
 À titre de comparaison, l'extrapolation d'un seul inventaire de 1000 individus est également tentée.
 
-```{r Beguinot2015aFig, echo=FALSE, results='hide', ref.label='Beguinot2015aCode', fig.cap="Extrapolation de 500 inventaires de 5000 individus (valeurs moyenne en tireté rouge et enveloppe de confiance à 95\\% en gris) superposée à la SAC réelle d'une communauté log-normale de 300 espèces. L'extrapolation (en pointllés bleu) d'un inventaire limité à 1000 individus est sévèrement sous-estimée."}
+(ref:Beguinot2015aFig) Extrapolation de 500 inventaires de 5000 individus (valeurs moyenne en tireté rouge et enveloppe de confiance à 95\\% en gris) superposée à la SAC réelle d'une communauté log-normale de 300 espèces. L'extrapolation (en pointllés bleu) d'un inventaire limité à 1000 individus est sévèrement sous-estimée.
+```{r Beguinot2015aFig, echo=FALSE, results='hide', ref.label='Beguinot2015aCode', fig.cap="(ref:Beguinot2015aFig)"}
 ```
 
 
@@ -603,7 +613,8 @@ Une revue historique des théories sur la forme de la SAR est fournie par @McGui
 
 ## La relation d'Arrhenius {#sec:Arrhenius}
 
-```{r Williamson2001, fig.cap="Logarithme du nombre d'espèces en fonction du logarithme de la surface échantillonnée. Les données sont des relevés d'espèces natives sur 104 sites de taille variable à travers le monde. Les symboles correspondent à divers types d'habitats (îles ou continent, réserves ou non) sans intérêt ici. La valeur de $z$ est 0,27.", echo=FALSE}
+(ref:Williamson2001) Logarithme du nombre d'espèces en fonction du logarithme de la surface échantillonnée. Les données sont des relevés d'espèces natives sur 104 sites de taille variable à travers le monde. Les symboles correspondent à divers types d'habitats (îles ou continent, réserves ou non) sans intérêt ici. La valeur de $z$ est 0,27.
+```{r Williamson2001, fig.cap="(ref:Williamson2001)", echo=FALSE}
 knitr::include_graphics('images/Williamson2001.png')
 ```
 
@@ -649,7 +660,9 @@ Sur un même territoire, le rapport entre le nombre d'espèces de deux taxons es
 @Plotkin2000 ont eu accès à de grands échantillons (5 placettes de 50 hectares de forêt dans l'ensemble du monde tropical, figure \@ref(fig:CTFS), toutes déterminées correctement sur le plan botanique et dans lesquels chaque arbre est positionné). 
 Ils montrent que le modèle d'Arrhenius comme les SAD classiques rendent mal compte de la réalité (figure \@ref(fig:Plotkin2000)a) quand on les compare aux courbes d'accumulation à l'échelle locale.
 
-```{r CTFS, fig.cap="Les cinq dispositifs de Plotkin *et al*. Chaque dispositif mesure 50 ha et toutes les tiges de diamètre supérieur à 1 cm sont cartographiées et déterminées.", echo=FALSE}
+
+(ref:CTFS) Les cinq dispositifs de Plotkin *et al*. Chaque dispositif mesure 50 ha et toutes les tiges de diamètre supérieur à 1 cm sont cartographiées et déterminées.
+```{r CTFS, fig.cap="(ref:CTFS)", echo=FALSE}
 knitr::include_graphics('images/CTFS.png')
 ```
 
@@ -660,7 +673,8 @@ On obtient le rectangle $A_{i+1}$ en plaçant deux rectangles $A_i$ côte à cô
 $\hat{S}^{A_i}$ est le nombre d'espèces rencontrées dans $A_i$. 
 On définit enfin $a_i=\hat{S}^{A_{i-1}}/\hat{S}^{A_i}$ le facteur de diminution du nombre d'espèces (dit *paramètre de persistance*) lié à la division par 2 de la taille du rectangle.
 
-```{r Plotkin2000, fig.cap="Courbes aire-espèces (a) et paramètre de persistance en fonction de la surface (b) dans 5 forêts tropicales. Le modèle d'Arrhenius est représentée par le parallélogramme sur la figure a, pour une gamme de valeurs de la constante. Elle implique que la relation aire-espèces représentée en logarithmes soit une droite, dont la position dépend de la constante, ce qui n'est visiblement pas le cas.", echo=FALSE}
+(ref:Plotkin2000) Courbes aire-espèces (a) et paramètre de persistance en fonction de la surface (b) dans 5 forêts tropicales. Le modèle d'Arrhenius est représentée par le parallélogramme sur la figure a, pour une gamme de valeurs de la constante. Elle implique que la relation aire-espèces représentée en logarithmes soit une droite, dont la position dépend de la constante, ce qui n'est visiblement pas le cas.
+```{r Plotkin2000, fig.cap="(ref:Plotkin2000)", echo=FALSE}
 knitr::include_graphics('images/Plotkin2000.png')
 ```
 
@@ -672,7 +686,7 @@ Elle augmente avec la surface, ce qui infirme le modèle d'autosimilarité.
 
 @Plotkin2000 ne supposent pas $a_i$ constant et lui imposent simplement d'être une fonction de la surface, choisie arbitrairement pour permettre les calculs ultérieurs, et dont la forme correspond aux observations de la figure \@ref(fig:Plotkin2000)b. 
 Après calculs, la relation aire-espèces est $S^{A}\approx cA^z e^{-p\left(A\right)}$. 
-$p\left(A\right)$ est un polynôme de degré $n$ de $A$, sans constante. 
+$p(A)$ est un polynôme de degré $n$ de $A$, sans constante. 
 Les monômes sont d'autant moins importants que leur degré est élevé. 
 L'approximation de degré 0 est la loi de puissance. 
 Celle de degré 1 est retenue par les auteurs pour estimer le nombre d'espèces rencontrées sur la surface $A$:
@@ -682,7 +696,8 @@ Celle de degré 1 est retenue par les auteurs pour estimer le nombre d'espèces 
   \hat{S}^{A} = cA^z e^{-kA}.
 \end{equation}
 
-```{r Plotkin2000b, fig.cap="Performance du modèle de Plotkin et al. (2000) face à des distributions théoriques: SAD log-normales, modèles de Fisher et Broken Stick de MacArthur. La courbe représente le nombre d'espèces rencontrées à Pasoh sur des surfaces de 0 à 50 ha. Les données observées sont des tirages aléatoires d'échantillons de la surface souhaitée. L'écart-type est représenté (l'intervalle de fluctuation à 95\\% est de l'ordre de 2 écart-types). Les valeurs issues du modèle ont été obtenues par un paramétrage de $k$ et $z$ sur 25 ha, supposé valide également sur les autres forêts. Le paramétrage de $c$ est obtenu par un échantillon d'un hectare, répété 1000 fois pour obtenir un intervalle de confiance. L'intervalle de fluctuation à 95\\% est ici encore de l'ordre de deux écart-types", echo=FALSE}
+(ref:Plotkin2000b) Performance du modèle de @Plotkin2000 face à des distributions théoriques: SAD log-normales, modèles de Fisher et Broken Stick de MacArthur. La courbe représente le nombre d'espèces rencontrées à Pasoh sur des surfaces de 0 à 50 ha. Les données observées sont des tirages aléatoires d'échantillons de la surface souhaitée. L'écart-type est représenté (l'intervalle de fluctuation à 95\\% est de l'ordre de 2 écart-types). Les valeurs issues du modèle ont été obtenues par un paramétrage de $k$ et $z$ sur 25 ha, supposé valide également sur les autres forêts. Le paramétrage de $c$ est obtenu par un échantillon d'un hectare, répété 1000 fois pour obtenir un intervalle de confiance. L'intervalle de fluctuation à 95\% est ici encore de l'ordre de deux écart-types.
+```{r Plotkin2000b, fig.cap="(ref:Plotkin2000b)", echo=FALSE}
 knitr::include_graphics('images/Plotkin2000b.png')
 ```
 
@@ -711,7 +726,8 @@ Gleason propose une relation dans laquelle le nombre d'espèces (et non son loga
 
 ## Le modèle de placement aléatoire
 
-```{r Coleman1982, fig.cap="Relation aire-espèce de Coleman. Les axes sont en échelle logarithmique. Les points représentent des relevés de nombre d'espèces d'oiseaux (en 1979) en fonction de la taille des îles où elles se trouvaient. La ligne en pointillés courts est l'ajustement d'une loi de puissance (modèle d'Arrhenius). Les pointillés long correspondent du modèle de Gleason. La courbe continue est l'ajustement du modèle de placement aléatoire. Un test de qualité d'ajustement montre que le modèle de placement aléatoire est le plus proche des données.", echo=FALSE}
+(ref:Coleman1982) Relation aire-espèce de Coleman. Les axes sont en échelle logarithmique. Les points représentent des relevés de nombre d'espèces d'oiseaux (en 1979) en fonction de la taille des îles où elles se trouvaient. La ligne en pointillés courts est l'ajustement d'une loi de puissance (modèle d'Arrhenius). Les pointillés long correspondent du modèle de Gleason. La courbe continue est l'ajustement du modèle de placement aléatoire. Un test de qualité d'ajustement montre que le modèle de placement aléatoire est le plus proche des données.
+```{r Coleman1982, fig.cap="(ref:Coleman1982)", echo=FALSE}
 knitr::include_graphics('images/Coleman1982.png')
 ```
 
