@@ -1331,12 +1331,14 @@ seqZp <- seq(0, 1, 0.001)
 gga <- ggplot(data.frame(r=seqZp, xr=seqZp^r), aes(r, xr)) +
   geom_line() +
   geom_abline(intercept=1-r, slope=r, col="red", lty=2) +
-  labs(y=expression(x^r))
+  labs(y=expression(x^r)) +
+  labs(tag = "a")
 r <- -0.5
 ggb <- ggplot(data.frame(r=seqZp, xr=seqZp^r), aes(r, xr)) +
   geom_line() +
   geom_abline(intercept=1-r, slope=r, col="red", lty=2) +
-  labs(y=expression(x^r))
+  labs(y=expression(x^r)) +
+  labs(tag = "b")
 grid.arrange(gga, ggb, ncol = 2)
 ```
 
