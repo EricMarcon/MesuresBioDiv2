@@ -8,7 +8,7 @@ bookdown::gitbook:
         <li><a href="https://github.com/EricMarcon/MesuresBioDiv2" target="blank">Publié avec bookdown, hébergé sur GitHub</a></li>
     download: "pdf"
   includes:
-    in_header: google_analytics.html
+    in_header: gtag.js
 bookdown::pdf_book:
   template: latex/template.tex
   pandoc_args: --top-level-division=chapter
