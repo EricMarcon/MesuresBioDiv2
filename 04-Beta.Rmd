@@ -1280,7 +1280,7 @@ Pour une taille d'échantillon fixée (par exemple un hectare de forêt), la div
 Cette variabilité dépend de l'échelle de l'échantillonnage dans le sens où elle diminue si les échantillons sont de taille plus grande: l'entropie $\alpha$ de deux hectares de forêts est la diversité $\alpha$ moyenne de chacun des deux hectares plus l'entropie $\beta$ entre eux. 
 L'entropie $\beta$ entre les échantillons de deux hectares est donc diminuée de cette entropie $\beta$ "intra" qui est absorbée par la nouvelle entropie $\alpha$ quand la taille des échantillons augmente.
 
-(ref:BetaSampleFig) Estimation de la diversité $\beta$ entre carrés de BCI. La diversité est calculée à partir du nombre de carrés en abscisse, de 2 à 30, tirés aléatoirement. La valeur en ordonnée est la diversité d'ordre 2 moyenne sur 100 tirages, les barres représentent l'écart-type. Aux erreurs d'estimation près, la valeur de la diversité $\beta$ ne dépend pas du nombre de carrés.
+(ref:BetaSampleFig) Estimation de la diversité $\beta$ entre carrés de BCI. La diversité est calculée à partir du nombre de carrés en abscisse, de 2 à 30, tirés aléatoirement. La valeur en ordonnée est la diversité d'ordre 2 moyenne sur 100 tirages, les barres représentent l'écart-type. Aux erreurs d'estimation près et dès 5 carrés (nécessaires pour représenter l'ensemble du dispositif), la valeur de la diversité $\beta$ ne dépend pas du nombre de carrés. La ligne horizontale représente la diversité $\beta$ entre tous les carrés.
 ```{r BetaSampleFig, echo=FALSE, results='hide', message=FALSE, ref.label='BetaSampleCode', fig.cap="(ref:BetaSampleFig)"}
 ```
 
@@ -1288,7 +1288,7 @@ La figure \@ref(fig:BetaSampleFig) présente les valeurs estimées de diversité
 
 Code pour réaliser la figure:
 ```{r BetaSampleCode, eval=FALSE, tidy=FALSE}
-library("gplots")
+# Metacommunauté de BCI
 MC <- MetaCommunity(as.data.frame(t(BCI)))
 
 # Création d'une méta-communauté à partir de n carrés de BCI 
@@ -1308,15 +1308,22 @@ BetaPlots <- function (q, nPlots, nSimulations) {
     buiw[i] <- sd(Sims)
     i <- i+1
   }
-  plotCI(x = nPlots, y = b, uiw = buiw, col = "black", barcol = "blue",
-    lwd = 1, xlab = "Nombre de carrés", 
-    ylab = expression(paste("Diversité ", beta)))
-  dpBCI <- DivPart(q, MC, Biased = FALSE)
-  abline(h = dpBCI$TotalBetaDiversity, lty = 2)
+  # Retour d'un dataframe
+  return(data.frame(x=nPlots, y=b, ymin=b-buiw, ymax=b+buiw))
 }
 
-BetaPlots(q = 2, nPlots=c(2, 5, 10, 15, 20, 25, 30), 
+# Echantillonnage de la diversité beta
+BetaD <- BetaPlots(q = 2, nPlots=c(2, 5, 10, 15, 20, 25, 30), 
           nSimulations = 100)
+# Diversité beta totale
+dpBCI <- DivPart(q, MC, Biased = FALSE)
+# Figure
+ggplot(BetaD) +
+  geom_point(aes(x=x, y=y)) + 
+  geom_errorbar(aes(x=x, ymin=ymin, ymax=ymax)) +
+  geom_hline(yintercept = dpBCI$TotalBetaDiversity, lty=2) +
+  labs(x="Nombre de carrés", 
+       y=expression(paste("Diversité ", beta)))
 ```
 
 L'estimation de la diversité présente les difficultés classiques dues au biais d'estimation: la diversité $\gamma$ est sous-estimée si l'échantillonnage est trop faible, la diversité $\beta$ augmente avec le nombre de communautés comme la diversité $\gamma$ augmente avec la taille de l'échantillon; il s'agit d'un problème d'estimation, pas de normalisation. 
