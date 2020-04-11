@@ -1,12 +1,14 @@
 # Mesures de la Biodiversité
 
-![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg)
+![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)
 
 Ouvrage de synthèse sur la mesure de la biodiversité.
 
-Cette version (GitBook et PDF) encore en cours de correction remplacera la version non accessible en ligne (https://github.com/EricMarcon/MesuresBioDiv/).
-
 [Lire en ligne](https://EricMarcon.github.io/MesuresBioDiv2/) ou [télécharger](https://EricMarcon.github.io/MesuresBioDiv2/MesuresBD.pdf)
+
+Cette version (GitBook et PDF) remplace la version non accessible en ligne (https://github.com/EricMarcon/MesuresBioDiv/), qui ne sera plus mise à jour.
+
+Les versions stables du document au format PDD sont [publiées sur HAL.](https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/)
 
 La biodiversité peut être mesurée de nombreuses façons.
 
