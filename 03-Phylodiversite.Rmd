@@ -1694,7 +1694,7 @@ Divq <- sapply(q,
      function(q) ChaoPD(Paracou618.MC$Ps, q=q, PhyloTree=Paracou618.Taxonomy))
 ggplot(data.frame(q, Divq, Divqz), aes(q)) +
   geom_line(aes(y=Divqz)) +
-  geom_line(aes(y=Divq), lty=2) 
+  geom_line(aes(y=Divq), lty=2) +
   labs(y="Diversité")
 ```
 
