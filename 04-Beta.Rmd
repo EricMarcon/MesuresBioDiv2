@@ -697,16 +697,17 @@ Dans certains cas présentés ici, la diversité de différentiation est parfait
 
 ### Diversité de Simpson
 
-(ref:BCIPCAFig) Représentation des deux premiers axes factoriels de l'ACP des 50 carrés de BCI. Les données sont les probabilités des espèce, ni centrées ni réduites pour l'ACP. Les carrés sont représentés avec les espèces. Les carrés 35 et 40 ont une diversité faible et sont associés aux espèces *Gustavia superba* et *Alseis blackiana*.
-```{r BCIPCAFig, echo=FALSE, results='hide', out.width='100%', ref.label='BCIPCACode', fig.cap="(ref:BCIPCAFig)"}
-```
-
-
 @terBraak1983 a le premier rapproché l'entropie de Simpson et l'Analyse en Composantes Principales [@Pearson1901]. 
 En représentant les communautés dans l'espace des espèces, la norme du vecteur de la communauté $i$ est ${\sum_s{p_{s|i}^2}}$, c'est-à-dire 1 moins l'entropie de Simpson. 
 La représentation graphique de l'ACP (non centrée, non réduite) montre les communautés les moins diverses (les plus éloignées de l'origine du repère). 
 Ter Braak *définit* la diversité $\beta$ comme la distance entre deux communautés (et la moyenne des distances entre paires de communautés si leur nombre est supérieur à 2). 
 Cette "définition" est valide puisque cette distance est la composante inter de la décomposition de l'entropie $\beta$ de Simpson \@ref(eq:SimpsonNei).
+
+
+(ref:BCIPCAFig) Représentation des deux premiers axes factoriels de l'ACP des 50 carrés de BCI. Les données sont les probabilités des espèce, ni centrées ni réduites pour l'ACP. Les carrés sont représentés avec les espèces. Les carrés 35 et 40 ont une diversité faible et sont associés aux espèces *Gustavia superba* et *Alseis blackiana*.
+```{r BCIPCAFig, echo=FALSE, results='hide', out.width='100%', ref.label='BCIPCACode', fig.cap="(ref:BCIPCAFig)"}
+```
+
 
 L'ACP non centrée des 50 carrés de BCI est en figure \@ref(fig:BCIPCAFig).
 
