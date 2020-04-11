@@ -244,7 +244,7 @@ La diversité $\alpha$ est le nombre d'espèces équifréquentes nécessaires da
 La décomposition complète de la diversité jointe s'écrit
 \begin{equation}
   (\#eq:DecJointe)
-  ^{q}\!D_{j}= ^{q}\!D_{\alpha} ^{q}\!D_{\beta} ^{q}\!R_{c}.
+  ^{q}\!D_{j}= ^{q}\!D_{\alpha} \times ^{q}\!D_{\beta} \times ^{q}\!R_{c}.
 \end{equation}
 
 La méta-communauté suivante illustre cette décomposition: elle contient $R_c=3$ répliques identiques de $D_{\beta}=2$ communautés équiprobables totalement distinctes, comprenant chacune $D_{\alpha}=2$ espèces équiprobables (figure \@ref(fig:DifferentiationFig)). 
