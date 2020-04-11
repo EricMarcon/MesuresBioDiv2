@@ -197,7 +197,7 @@ knitr::include_graphics('images/Schulte2005b.png')
 
 Leurs résultats (figure \@ref(fig:Schulte2005b)) montrent que la non prise en compte de ces deux paramètres aboutit à une sous-estimation systématique de $\alpha$, différente selon les sites, ce qui invalide les comparaisons inter-sites.
 
-(ref:Schulte2005a) Comparaison entre le modèle de Fisher et le modèle étendu dans trois parcelles forestières connues. Les modèles sont ajustés aux données observées par @Condit1996. Les courbes légendées *Equation 4* correspondent au modèle de Fisher étendu par Schulte, alors que l'*Equation 5* est le modèle intermédiaire, supposant le nombre total d'espèces infini.
+(ref:Schulte2005a) Comparaison entre le modèle de Fisher et le modèle étendu dans trois parcelles forestières connues. Les modèles sont ajustés aux données. Les courbes légendées *Equation 4* correspondent au modèle de Fisher étendu par Schulte, alors que l'*Equation 5* est le modèle intermédiaire, supposant le nombre total d'espèces infini.
 ```{r Schulte2005a, fig.cap="(ref:Schulte2005a)", echo=FALSE}
 knitr::include_graphics('images/Schulte2005a.png')
 ```
@@ -282,7 +282,7 @@ La courbe de raréfaction est obtenue en sous-échantillonnant dans l'inventaire
 La formulation exacte de la courbe de raréfaction et de sa variance est connue [@Ugland2003]. 
 
 (ref:specaccumFig) Courbe d'accumulation des espèces d'arbres de Barro Colorado Island. Calcul par specaccum: accumulation des 50 carrés avec permutations.
-```{r specaccumFig, fig.cap="(ref:specaccumFig)", ref.label="specaccumCode"}
+```{r specaccumFig, fig.cap="(ref:specaccumFig)", ref.label="specaccumCode", echo=FALSE, results='hide'}
 ```
 
 La fonction `specaccum` de la librairie *vegan* [@Oksanen2012] permet de tracer les SAC (figure \@ref(fig:specaccumFig)) selon différentes méthodes, avec un intervalle de confiance obtenu par permutation de l'ordre d'ajout des données ou à partir des formules de raréfaction.
@@ -308,7 +308,7 @@ La SAC définie en fonction du nombre d'individus est au sens strict une success
 Elle est toutefois toujours présentée comme une courbe lissée passant par les points pour être continue et dérivable.
 
 (ref:SACzetaFig) Courbe d'accumulation des espèces d'arbres de Barro Colorado Island. Somme des entropies de Simpson généralisées.
-```{r SACzetaFig, fig.cap="(ref:SACzetaFig)", ref.label="SACzetaCode"}
+```{r SACzetaFig, fig.cap="(ref:SACzetaFig)", ref.label="SACzetaCode", echo=FALSE, results='hide'}
 ```
 
 Une difficulté supplémentaire consiste à prendre en compte les espèces non échantillonnées en appliquant des techniques statistiques pour réduire le biais qu'elles induisent [@Colwell2012].
@@ -324,7 +324,9 @@ data(BCI)
 Ns <- colSums(BCI)
 gsValues <- sapply(1:(sum(Ns)-1), function(r) GenSimp.z(Ns, r))
 SAC <- cumsum(gsValues)
-ggplot(data.frame(x = 0:(sum(Ns)-1), y = c(0, SAC)), aes(x = x, y = y)) +
+ggplot(data.frame(x = 0:(sum(Ns)-1), 
+                  y = c(0, SAC)), 
+       aes(x = x, y = y)) +
   geom_line() +
   labs(x = "Nombre d'individus", y = "Nombre d'espèces")
 ```
