@@ -70,16 +70,19 @@ toc-depth: 3
 ```{r, echo=FALSE, message=FALSE}
 ### Utilities. Do not modify.
 # Installation of packages if necessary and loading
-Library <- function(Packages) {
-  InstallAndLoad <- function(Package) {
+InstallPackages <- function(Packages) {
+  InstallPackage <- function(Package) {
     if (!Package %in% installed.packages()[, 1]) {
       install.packages(Package, repos="https://cran.rstudio.com/")
     }
   }
-  invisible(sapply(Packages, InstallAndLoad))
+  invisible(sapply(Packages, InstallPackage))
 }
 
-# Chunk font size hook: allows size='small' in chunk options
+# Basic packages
+InstallPackages(c("bookdown", "devtools", "kable", "kableExtra", "knitr", "rmarkdown"))
+
+# Chunk font size hook: allows size='small' or any valid Latex font size in chunk options
 def.chunk.hook  <- knitr::knit_hooks$get("chunk")
 knitr::knit_hooks$set(chunk = function(x, options) {
   x <- def.chunk.hook(x, options)
@@ -89,11 +92,14 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
 
 ```{r Options, echo=FALSE, message=FALSE}
+### Customized options fir this book
 # Add necessary packages here
-Packages <- c("bookdown", "kableExtra", "knitr", "rmarkdown", 
-              "tidyverse", "magrittr", "devtools",
-              "ade4", "adespatial", "devtools", "entropart", "entropy", "EntropyEstimation", 
-              "gplots", "GoFKernel", "gridExtra", "iNEXT", "knitr", "sp", "SPECIES", "untb", "vegan")
+Packages <- c("tidyverse", "magrittr", "gridExtra",
+              "ade4", "adespatial", "entropart", "entropy", "EntropyEstimation", 
+              "gplots", "GoFKernel", "iNEXT", "sp", "SPECIES", "untb", "vegan")
+# Install them if necessary
+InstallPackages(Packages)
+# GitHib packages
 if (!"SpatDiv" %in% installed.packages()[, 1]) {
   devtools::install_github("EricMarcon/SpatDiv")
 }
