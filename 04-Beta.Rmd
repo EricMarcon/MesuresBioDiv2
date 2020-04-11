@@ -34,22 +34,19 @@ summary(Paracou618.MC)
 
 
 (ref:Notations) Notations des effectifs, tableau espèces-communautés.
-```{r Notations, echo=FALSE, warning=FALSE, size="scriptsize"}
+```{r Notations, echo=FALSE, warning=FALSE}
 Notations <- data.frame(
   Especes=c("Espèce $s$", "$\\dots$", "Total"),
   Communaute=c("$n_{s,i}$: nombre d'individus de l'espèce $s$ dans la communauté $i$. $\\hat{p}_{s|i}=n_{s,i}/n_{+i}$ est l'estimateur de la probabilité $p_{s|i}$ qu'un individu de la communauté $i$ soit de l'espèce $s$.", 
                "",
                "$n_{s+}=\\sum_i{n_{s,i}}$. $p_s=\\sum_i{w_{i}p_{s|i}}$"),
-  Espace=c("", 
-           "", 
-           ""),
   Total=c("$n_{s+}=\\sum_i{n_{s,i}}$. $p_s=\\sum_i{w_{i}p_{s|i}}$", 
           "", 
           "$n$: nombre total d'individus échantillonnés ")
   )
-names(Notations) <- c("", "Communauté $i$", "$\\dots$", "Total: méta-communauté")
+names(Notations) <- c("", "Communauté $i$", "$\\dots$ Total: méta-communauté")
 knitr::kable(Notations, caption="(ref:Notations)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
+  kableExtra::kable_styling(font_size = 9, bootstrap_options = "striped", full_width = TRUE)
 ```
 
 
@@ -866,7 +863,7 @@ La décomposition de l'entropie HCDT constitue un cadre cohérent dans lequel la
 ## Décomposition de l'indice de Shannon
 
 (ref:DecShannon) Définition explicite de la diversité de Shannon en tant que divergence entre une distribution observée et une distribution attendue. Les indices $H_\alpha$ et $H_\gamma$ sont les compléments au logarithme du nombre d'espèces de cette divergence.
-```{r DecShannon, echo=FALSE, warning=FALSE, size="scriptsize"}
+```{r DecShannon, echo=FALSE, warning=FALSE}
 DecShannon <- data.frame(
   Indice=c("$H_\\alpha$", "$H_\\beta$", "$H_\\gamma$"),
   Dobs=c("Fréquence des espèces dans la communauté", 
@@ -881,7 +878,7 @@ DecShannon <- data.frame(
 )
 names(DecShannon) <- c("Indice", "Distribution observée", "Distribution attendue", "Formule")
 knitr::kable(DecShannon, caption="(ref:DecShannon)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
+  kableExtra::kable_styling(font_size = 9, bootstrap_options = "striped", full_width = TRUE)
 ```
 
 
@@ -1133,7 +1130,7 @@ La diversité de Shannon est exceptionnelle parce que, pour des raisons différe
 
 
 (ref:Decomposition) Entropie, diversité et décomposition. L'entropie $\alpha$ de chaque communauté se calcule comme l'entropie $\gamma$
-```{r Decomposition, echo=FALSE, warning=FALSE, size="scriptsize"}
+```{r Decomposition, echo=FALSE, warning=FALSE}
 Decomposition <- data.frame(
   Mesure=c("Entropie $\\gamma$", "Entropie $\\beta$", "Diversité $\\gamma$ (nombre de Hill)", "Diversité $\\beta$ (nombre équivalent"),
   Generalise=c("$^{q}\\!H_{\\gamma}=-\\sum_s{p^q_s}\\ln_q{p_s}$", 
@@ -1147,7 +1144,7 @@ Decomposition <- data.frame(
 )
 names(Decomposition) <- c("Mesure de diversité", "Entropie généralisée", "Shannon")
 knitr::kable(Decomposition, caption="(ref:Decomposition)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
+  kableExtra::kable_styling(font_size = 6, bootstrap_options = "striped", full_width = TRUE)
 ```
 
 
@@ -1591,7 +1588,7 @@ Des définitions différentes de la diversité $\beta$ ou du partitionnement de 
 ### Cadre
 
 (ref:Couteron) Tableau d'occurrence des espèces.
-```{r Couteron, echo=FALSE, warning=FALSE, size="scriptsize"}
+```{r Couteron, echo=FALSE, warning=FALSE}
 Couteron <- data.frame(
   Famille=c("Famille $u$", "$\\dots$", "Total"),
   Genre=c("Genre $t$", "$\\dots$", ""),
@@ -1599,12 +1596,11 @@ Couteron <- data.frame(
   n=c("$n_{sh}=1$ si l'arbre $h$ appartient à l'espèce $s$, $0$ sinon. $n_{s\\cdot}={n_{s+}}/{n}$ ", 
       "", 
       "$q_{+h}=p_{+h}=1$"),
-  Dots=c("", "", ""),
   Total=c("", "", "1")
 )
-names(Couteron) <- c("", "", "", "Forêt $k$, Parcelle $j$, Placette $i$, Arbre $h$", "$\\dots$", "Total")
+names(Couteron) <- c("", "", "", "Forêt $k$, Parcelle $j$, Placette $i$, Arbre $h$", "$\\dots$ Total")
 knitr::kable(Couteron, caption="(ref:Couteron)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
+  kableExtra::kable_styling(font_size = 8, bootstrap_options = "striped", full_width = TRUE)
 ```
 
 Un cadre général de partitionnement de la diversité, applicable aux trois indices classiques, est proposé par @Pelissier2007, en conclusion d'une série d'articles [@Pelissier2003; @Couteron2004].

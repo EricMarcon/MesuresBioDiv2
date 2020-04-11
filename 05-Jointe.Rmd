@@ -27,22 +27,19 @@ Pour la suite, les données sont organisées comme dans le tableau \@ref(tab:Not
 
 
 (ref:Notations2) Notations des effectifs, tableau espèces-classes.
-```{r Notations2, echo=FALSE, warning=FALSE, size="scriptsize"}
+```{r Notations2, echo=FALSE}
 Notations <- data.frame(
   Especes=c("Espèce $s$", "$\\dots$", "Total"),
   Classe=c("$n_{s,i}$: nombre d'individus de l'espèce $s$ dans la classe $i$. $\\hat{p}_{s|i}=n_{s,i}/n_{+i}$ est l'estimateur de la probabilité $p_{s|i}$ qu'un individu de la classe $i$ soit de l'espèce $s$.", 
                "",
                "$n_{+i}$: nombre d'individus de la classe.\\ ${n_{+i}}/{n}=w_i$: poids de la classe"),
-  Espace=c("", 
-           "", 
-           ""),
   Total=c("$n_{s+}=\\sum_i{n_{s,i}}$. $p_s=\\sum_i{w_{i}p_{s|i}}$", 
           "", 
           "$n$: nombre total d'individus échantillonnés ")
   )
-names(Notations) <- c("", "Classe $i$", "$\\dots$", "Total: Communauté")
+names(Notations) <- c("", "Classe $i$", "$\\dots$ Total: Communauté")
 knitr::kable(Notations, caption="(ref:Notations2)", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
+  kableExtra::kable_styling(font_size = 9, bootstrap_options = "striped", full_width = TRUE)
 ```
 
 

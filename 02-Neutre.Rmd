@@ -2169,7 +2169,7 @@ Son intervalle de confiance ne contient jamais la valeur 0, ce qui permet de con
 
 
 (ref:zetaDiffFig) Différence entre les entropies de Simpson généralisées des parcelles 18 et 6 de Paracou avec son intervalle de confiance à 95\%. La ligne horizontale représente l'hypothèse nulle d'égalité entre les entropies, qui peut être rejetée.
-```{r zetaDiffFig, echo=FALSE, results='hide', ref.label='zetaDiffCode', fig.cap="(fig:zetaDiffFig)"}
+```{r zetaDiffFig, echo=FALSE, results='hide', ref.label='zetaDiffCode', fig.cap="(ref:zetaDiffFig)"}
 ```
 
 Code R pour réaliser la figure:
@@ -2490,7 +2490,7 @@ Des simulations permettent de comprendre les corrélations dans des cas simples.
 La figure \@ref(fig:SJLogNormaleFig) montre que l'entropie et l'équitabilité sont corrélées positivement à la richesse dans des communautés log-normales de même variance.
 
 (ref:SJLogNormaleFig) Relations entre l'entropie de Shannon (a), l'indice d'équitabilité de Pielou (b), l'entropie de Simpson (c), l'équitabilité de Hurlbert (d) et la richesse de communautés log-normales similaires (même écart-type des probabilités, seule la richesse varie).
-```{r SJLogNormaleFig, ref.label='SJLogNormaleCode', fig.cap="(ref:SJLogNormaleFig)", echo=FALSE, out.width='100%'}
+```{r SJLogNormaleFig, ref.label='SJLogNormaleCode', fig.cap="(ref:SJLogNormaleFig)", echo=FALSE, results='hide', out.width='100%'}
 ```
 
 
@@ -2527,7 +2527,7 @@ La non observation des espèces les plus rares augmente aussi l'équitabilité.
 
 
 (ref:NJLogNormaleFig) Relations entre l'entropie de Shannon (a), l'indice d'équitabilité de Pielou (b), l'entropie de Simpson (c), l'équitabilité de Hurlbert (d) et la richesse d'échantillons de taille variable d'une même communauté log-normale.
-```{r NJLogNormaleFig, ref.label='NJLogNormaleCode', fig.cap="(ref:NJLogNormaleFig)", echo=FALSE, out.width='100%'}
+```{r NJLogNormaleFig, ref.label='NJLogNormaleCode', fig.cap="(ref:NJLogNormaleFig)", echo=FALSE, results='hide', out.width='100%'}
 ```
 
 
