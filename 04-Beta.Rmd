@@ -4,6 +4,7 @@
 
 ```{r, echo=FALSE, message=FALSE}
 library("tidyverse")
+library("ade4")
 ```
 
 
@@ -1317,7 +1318,7 @@ BetaPlots <- function (q, nPlots, nSimulations) {
 BetaD <- BetaPlots(q = 2, nPlots=c(2, 5, 10, 15, 20, 25, 30), 
           nSimulations = 100)
 # Diversité beta totale
-dpBCI <- DivPart(q, MC, Biased = FALSE)
+dpBCI <- DivPart(q = 2, MC, Biased = FALSE)
 # Figure
 ggplot(BetaD) +
   geom_point(aes(x=x, y=y)) + 
@@ -1518,7 +1519,6 @@ Le partitionnement de la diversité fonctionnelle de la méta-communauté `Parac
 ```{block, type='Essentiel'}
   Les tests de significativité permettent d'affirmer que des communautés sont réellement différentiées. En complément, les intervalles de confiance des mesures de diversité peuvent être calculés sous l'hypothèse d'une distribution multinomiale.
 ```
-
 
 
 La diversité $\beta$ calculée entre plusieurs échantillons successifs d'une même communauté n'est pas nulle: par simple fluctuation des effectifs due au hasard, les distributions des échantillons ne sont pas identiques.
