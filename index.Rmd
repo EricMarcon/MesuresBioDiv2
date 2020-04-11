@@ -80,7 +80,8 @@ InstallPackages <- function(Packages) {
 }
 
 # Basic packages
-InstallPackages(c("bookdown", "devtools", "kable", "kableExtra", "knitr", "rmarkdown"))
+InstallPackages(c("bookdown", "devtools", "kableExtra", "knitr", "rmarkdown"))
+library("kableExtra") # Mandatory to load css and more
 
 # Chunk font size hook: allows size='small' or any valid Latex font size in chunk options
 def.chunk.hook  <- knitr::knit_hooks$get("chunk")
@@ -96,7 +97,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 # Add necessary packages here
 Packages <- c("tidyverse", "magrittr", "gridExtra",
               "ade4", "adespatial", "entropart", "entropy", "EntropyEstimation", 
-              "gplots", "GoFKernel", "iNEXT", "sp", "SPECIES", "untb", "vegan")
+              "GoFKernel", "iNEXT", "sp", "SPECIES", "untb", "vegan")
 # Install them if necessary
 InstallPackages(Packages)
 # GitHib packages
