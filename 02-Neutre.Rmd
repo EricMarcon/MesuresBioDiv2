@@ -33,7 +33,7 @@ Au chapitre suivant, l'entropie HCDT permettra d'unifier ces mesures et les nomb
 ## Richesse spécifique {#sec:Richesse}
 
 La richesse est tout simplement le nombre d'espèces présentes dans le taxocène considéré.
-C'est la mesure conceptuellement la plus simple mais pratiquement la plus délicate dans des systèmes très riches comme les forêts tropicales: même avec des efforts d'inventaire considérables, 
+C'est la mesure conceptuellement la plus simple mais pratiquement la plus délicate dans des systèmes très riches comme les forêts tropicales: même avec des efforts d'inventaire considérables, il n'est en général pas possible de relever toutes les espèces rares, ce qui implique de recourir à des modèles mathématiques pour en estimer le nombre.
 
 On ne fait pas de supposition sur la forme de la SAD quand on utilise des méthodes d'estimation non paramétriques. 
 Les estimateurs les plus connus sont ceux de @Chao1984 et le *jackknife* [@Burnham1979].
@@ -1215,16 +1215,16 @@ Chaque terme de la somme est la probabilité d'observer au moins une fois l'esp�
 
 L'augmentation de la valeur de $k$ permet de donner plus d'importance aux espèces rares.
 
-L'indice peut être converti en nombre équivalent d'espèces [@Dauby2012] (c'est-à-dire le nombre d'espèces équiprobables nécessaire pour obtenir la même diversité) notés $_{k}D$ à partir de la relation
+L'indice peut être converti en nombre équivalent d'espèces [@Dauby2012], c'est-à-dire le nombre d'espèces équiprobables nécessaire pour obtenir la même diversité, notés $_{k}D$ à partir de la relation
 
 \begin{equation}
   (\#eq:HurlbertD)
-  _{k}S = _{k}D \left[1-{\left(1-\frac{1}{_{k}\!D}\right)}^k\right].
+  _{k}S = {_{k}D} \left[1-{\left(1-\frac{1}{_{k}D}\right)}^k\right].
 \end{equation}
 
 L'équation doit être résolue pour obtenir $_{k}D$ à partir de la valeur de $_{k}S$ estimée, numériquement pour $k>3$.
 
-Dans deux cas particuliers, les nombres équivalents d'espèces de Hurlbert sont identiques aux nombres de Hill: $_{2}D =^{2}\!D$ et $_{\infty}D=^{0}\!D$.
+Dans deux cas particuliers, les nombres équivalents d'espèces de Hurlbert sont identiques aux nombres de Hill: $_{2}D ={^{2}\!D}$ et $_{\infty}D={^{0}\!D}$.
 
 Pour les autres ordres entiers de diversité, il existe une correspondance parfaite entre les deux mesures [@Chao2014, Annexe S2]: la connaissance de l'une permet d'obtenir l'autre. Pour $k>1$, on a [@Leinster2012]
 
@@ -1233,7 +1233,7 @@ Pour les autres ordres entiers de diversité, il existe une correspondance parfa
   _{k}S = k + \sum_{q=2}^{k}{\binom{k}{q} (-1)^{q+1} (^{q}\!D)^{1-q}}.
 \end{equation}
 
-On a vu que $^{0}\!D$ égale $_{\infty}D$, donc $_{\infty}S=^{0}\!D$ \@ref(eq:HurlbertD).
+On a vu que $^{0}\!D$ égale $_{\infty}D$, donc $_{\infty}S={^{0}\!D}$ \@ref(eq:HurlbertD).
 
 Inversement, pour $q>1$:
 
@@ -1933,7 +1933,7 @@ où
 \end{equation}
 
 $\lambda$ est un paramètre d'un modèle permettant d'estimer les valeurs de $p_i$ à partir de leur espérance conditionnelle et des données. 
-Le modèle complet est présenté par @Chao2014c
+Le modèle complet est présenté par @Chao2014c.
 
 Les probabilités des espèces non observées sont considérées comme égales par souci de simplification et parce qu'elles influencent peu la variance des estimateurs.
 Leur somme est égale au déficit de couverture, et leur nombre estimé par Chao1.
@@ -2213,7 +2213,7 @@ La mesure normalisée est appelée *case-based entropy* en anglais et vaut
   \mathit{C_c} = \frac{100 D_c}{^{1}\!D}.
 \end{equation}
 
-$\mathit{D_c}=^{1}\!D$ quand toute la communauté est prise en compte ($c=1$).
+$\mathit{D_c}={^{1}\!D}$ quand toute la communauté est prise en compte ($c=1$).
 Les auteurs s'intéressent principalement à la courbe de $C_c$ en fonction de $c$ pour montrer [@Castellani2016] que la contribution à la diversité totale des 40\% des composants les moints complexes de systèmes très divers ("des galaxies au gènes ") atteint toujours au moins 60\%, ce résultat étant interprété comme une loi universelle de limitation de la complexité.
 
 Cette mesure peut être étendue à l'entropie HCDT sans difficulté:

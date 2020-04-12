@@ -978,7 +978,7 @@ La décomposition additive de l'entropie selon @Lande1996 doit être la suivante
 
 \begin{equation}
   (\#eq:DecompHq)
-  ^{q}\!H_{\gamma}=^{q}\!H_{\alpha} + ^{q}\!H_{\beta}.
+  ^{q}\!H_{\gamma} = {^{q}\!H_{\alpha}} + {^{q}\!H_{\beta}}.
 \end{equation}
 
 @Bourguignon1979 comme @Lande1996 définissent une mesure d'inégalité décomposable comme respectant les propriétés suivantes:

@@ -955,7 +955,7 @@ R. C. Guiasu et S. Guiasu [-@Guiasu2011; -@Guiasu2012] proposent l'indice $\math
   = e^{\frac{1}{2}\left[\sum_s{\sum_t{p_s p_t\frac{\delta_{s,t}}{Q}\ln{p_s p_t}}}\right]}.
 \end{equation}
 
-La notation $^{q}\!D(Q)$ fait référence à l'entropie quadratique $Q=^{2}\!\bar{H}(T)$. 
+La notation $^{q}\!D(Q)$ fait référence à l'entropie quadratique $Q = {^{2}\!\bar{H}}(T)$. 
 Une approche complémentaire est développée ci-dessous. 
 Chiu et Chao notent que $\mathit{{GS}_{D}} = Q - ^{q}\!D(Q)$.
 
@@ -1041,7 +1041,7 @@ Nous le normalisons par la hauteur totale de l'arbre ($T$) pour définir $^{q}\!
   ^{q}\!\bar{H} \left( T \right)=\sum_{k=1}^K{\frac{T_k}{T}^{q}_{k}\!H}.
 \end{equation}
 
-Dans un arbre parfaitement régulier, toutes les branches sont de longueur 1, il n'y a qu'une seule période, et $I_q=^{q}\!H$.
+Dans un arbre parfaitement régulier, toutes les branches sont de longueur 1, il n'y a qu'une seule période, et $I_q={^{q}\!H}$.
 
 @Shimatani2001 puis @Ricotta2005e avaient montré que l'indice de Rao est la somme pondérée sur chaque période de l'indice de Simpson, c'est-à-dire l'égalité \@ref(eq:Hbarq) pour le cas particulier $q=2$.
 
@@ -1083,13 +1083,13 @@ L'entropie $^{q}\!\bar{H}(T)$ peut être transformée en diversité [@Marcon2014
   ^{q}\!\bar{D}\left(T\right)=e^{^{q}\!\bar{H}\left(T\right)}_q.
 \end{equation}
 
-Le nombre effectif d'espèces de l'entropie de Rao, $^{2}\!\bar{D}(T)=\frac{1}{[1-^{2}\!\bar{H}(T)]}$ a été établi par @Ricotta2009.
+Le nombre effectif d'espèces de l'entropie de Rao, ${^{2}\!\bar{D}}(T)=\frac{1}{[1-{^{2}\!\bar{H}}(T)]}$ a été établi par @Ricotta2009.
 
 @Chao2010 obtiennent ce résultat sans recourir explicitement à l'entropie, mais en faisant le même calcul:
 
 \begin{equation}
   (\#eq:DbarqChao)
-  ^{q}\!\bar{D} \left( T \right)
+  {^{q}\!\bar{D}} \left( T \right)
   =\left( \sum_b{\frac{l(b)}{T} p(b)^q} \right)^{\frac{1}{1-q}}.
 \end{equation}
 
@@ -1220,7 +1220,7 @@ Leinster et Cobbold montrent que la diversité HCDT est un cas particulier de $^
 
 \begin{equation}
   (\#eq:DqI)
-  ^{q}\!D=^q\!D^{\mathbf{I}}.
+  ^{q}\!D={^q\!D^{\mathbf{I}}}.
 \end{equation}
 
 
@@ -1601,7 +1601,7 @@ Si $\mathbf{C}$ est la racine carrée d'une matrice de similarité au sens stric
 La définition de $\mathbf{C}$ comme racine carrée de $\mathbf{Z}$ se justifie par des raisons géométriques: la norme de chaque vecteur représentant une espèce est la racine carrée de la somme des carrés de ses coordonnées.
 Le carré de la norme du vecteur de l'espèce $s$ est donc $p_s$ multiplié par la banalité de l'espèce.
 
-Si $\mathbf{Z}=\mathbf{I}_s$, l'ACP ne modifie pas le nuage de points original et $^q\!D^{\mathbf{Z}}(\Lambda)=^{q}\!D$.
+Si $\mathbf{Z}=\mathbf{I}_s$, l'ACP ne modifie pas le nuage de points original et $^q\!D^{\mathbf{Z}}(\Lambda)={^{q}\!D}$.
 
 L'exemple suivant calcule la diversité de la méta-communauté `Paracou618` selon la matrice de distances `Paracou618.dist`.
 ```{r DqZLambda}

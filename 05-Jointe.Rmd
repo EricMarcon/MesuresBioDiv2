@@ -97,14 +97,14 @@ Si les colonnes sont les classes de diamètre par exemple, les informations four
 
 \begin{equation}
   (\#eq:Baez2011a)
-  ^{q}\!H\left(\{p_{s,i}\}\right)-^{q}\!H\left(\{p_i\}\right) 
-  = \sum_i{{p_i^q} ^{q}\!H\left(\{\frac{p_{s,i}}{p_i}\}\right)}
+  ^{q}\!H\left(\{p_{s,i}\}\right) - {^{q}\!H}\left(\{p_i\}\right) 
+  = \sum_i{{p_i^q} {^{q}\!H}\left(\{\frac{p_{s,i}}{p_i}\}\right)}
 \end{equation}
 et
 \begin{equation}
   (\#eq:Baez2011b)
-  ^{q}\!H\left(\{p_{s,i}\}\right)-^{q}\!H\left(\{p_s\}\right) 
-  = \sum_s{{p_s^q} ^{q}\!H\left(\{\frac{p_{s,i}}{p_s}\}\right)}.
+  ^{q}\!H\left(\{p_{s,i}\}\right) - {^{q}\!H}\left(\{p_s\}\right) 
+  = \sum_s{{p_s^q} {^{q}\!H}\left(\{\frac{p_{s,i}}{p_s}\}\right)}.
 \end{equation}
 
 Ce résultat avait déjà été obtenu par @Suyari2004, corrigé par @Ilic2013.
@@ -219,7 +219,7 @@ plot(MC2)
 summary(DivPart(q, MC2)->dp2)
 ```
 
-La diversité jointe $^{q}\!D_{j}=^{q}\!D(\{p_{s,i}\})$ est en revanche doublée au cours de l'opération: elle mesure le nombre effectif de catégories (combinaison de l'espèce et de la communauté) du tableau de données:
+La diversité jointe $^{q}\!D_{j}={^{q}\!D}(\{p_{s,i}\})$ est en revanche doublée au cours de l'opération: elle mesure le nombre effectif de catégories (combinaison de l'espèce et de la communauté) du tableau de données:
 
 ```{r DivJointe}
 # Méta-communauté simple
