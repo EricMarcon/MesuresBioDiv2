@@ -196,7 +196,7 @@ Les données sont souvent celles de la parcelle 6 de Paracou en Guyane français
 Tous les arbres de plus de 10&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) y ont été inventoriés en 2016.
 La postition de chaque arbre, son espèce et sa surface terrière sont fournis dans le package *SpatDiv*.
 
-D'autres exemples utilisent la parcelle forestière permanente de Barro Colorado Island (BCI)[@Condit2012]: 50&nbsp;ha de forêt tropicale dont les arbres de plus de 1&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) ont été inventoriés.
+D'autres exemples utilisent la parcelle forestière permanente de Barro Colorado Island, souvent abrégée BCI [@Condit2012]: 50&nbsp;ha de forêt tropicale dont les arbres de plus de 1&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) ont été inventoriés.
 Le jeu de données utilisé pour les exemples est une version réduite aux arbres de plus de 10&nbsp;cm disponible dans le package *vegan* [@Oksanen2012].
 
 
@@ -207,7 +207,7 @@ Le jeu de données utilisé pour les exemples est une version réduite aux arbre
 ```{r SARFig, echo=FALSE, results='hide', message=FALSE, ref.label='SARCode',  fig.cap="(ref:SARFig)"}
 ```
 
-La courbe aire-espèces (SAR: *Species Area Relationship*) représente le nombre d'espèces observées en fonction de la surface échantillonnée (figure \@ref(fig:Williamson2001).
+La courbe aire-espèces (SAR: *Species Area Relationship*) représente le nombre d'espèces observées en fonction de la surface échantillonnée (figure \@ref(fig:Williamson2001)).
 Il existe plusieurs façons de prendre en compte cette relation [@Scheiner2003], classables en deux grandes familles [@Dengler2009]:
 
 * Dans une SAR au sens strict, chaque point représente une communauté. 
@@ -399,7 +399,7 @@ Coverage(as.AbdVector(Paracou6))
 où $C^{n}$ est le taux de couverture d'un échantillon de taille $n$ et $S^{n}$ le nombre d'espèces découvertes dans cet échantillon.
 
 Les estimateurs présentés ici supposent une population de taille infinie (de façon équivalente, les individus sont tirés avec remise).
-Le cas des populations de taille finie est traité par @Chao2012 et @Hwang2014
+Le cas des populations de taille finie est traité par @Chao2012 et @Hwang2014.
 
 ### Complétude
 
