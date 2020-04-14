@@ -1303,7 +1303,7 @@ Tout ce qui suit est vrai aussi pour des valeurs de $r$ continues, dont on conna
 On considère maintenant un échantillon de valeurs de $r$. 
 La présence de $r_s$ dans l'échantillon est peu étonnante si $p_s$ est grande: elle apporte peu d'information supplémentaire par rapport à la simple connaissance des probabilités. 
 En revanche, si $p_s$ est petite, la présence de $r_s$ est surprenante. 
-On définit donc une fonction d'information, $I(p_s)$, décroissante quand la probabilité augmente, de $I(0)=+\infty $ (ou éventuellement une valeur strictement positive finie) à $I(1)=0$. 
+On définit donc une fonction d'information, $I(p_s)$, décroissante quand la probabilité augmente, de $I(0)>0$ (éventuellement $+\infty$) à $I(1)=0$. 
 Chaque valeur observée dans l'échantillon apporte une certaine quantité d'information, dont la somme est l'information de l'échantillon. 
 @Patil1982 appellent l'information "rareté".
 
