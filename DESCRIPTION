@@ -1,0 +1,14 @@
+Package: Home-Page
+Title: Eric Marcon's Home Page
+Version: 1.0.0
+Authors@R: c(
+  person("Eric", "Marcon", , "e.marcon@free.fr", c("aut", "cre"))
+  )
+URL: https://github.com/ericmarcon/Home-Page
+Depends:
+  R (>= 3.1.0)
+Imports:
+  blogdown, 
+  tidyverse,
+  igraph,
+  scholar

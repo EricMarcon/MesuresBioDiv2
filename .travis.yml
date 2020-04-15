@@ -1,0 +1,15 @@
+language: r
+dist: xenial
+latex: false
+
+branches:
+  only:
+    - master
+
+cache:
+  packages: false
+  directories:
+  - $HOME/.npm
+
+r_github_packages:
+  - rstudio/blogdown
