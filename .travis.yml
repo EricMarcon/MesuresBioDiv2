@@ -1,15 +1,14 @@
 language: r
-dist: xenial
-latex: false
-
-branches:
-  only:
-    - master
-
 cache:
-  packages: false
+  packages: true
   directories:
+  - _bookdown_files
   - $HOME/.npm
 
-r_github_packages:
-  - rstudio/blogdown
+before_install:
+- nvm install stable
+- npm install netlify-cli -g
+
+script:
+- Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook', quiet = TRUE)"
+- Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', quiet = TRUE)"
