@@ -139,3 +139,7 @@ TSWLatexianTemp*
 .Rhistory
 _bookdown_files
 MyBook.Rmd
+
+# Output
+docs/
+
