@@ -8,7 +8,10 @@ cache:
 addons:
   apt:
     packages:
-      - libudunits2-dev
+      - libudunits2-dev # units
+      - libgdal-dev     # sf
+      - libgeos-dev     # sf
+      - libproj-dev     # sf
 
 before_install:
 - nvm install stable
