@@ -7,9 +7,8 @@ Ouvrage de synthèse sur la mesure de la biodiversité.
 
 [Lire en ligne](https://EricMarcon.github.io/MesuresBioDiv2/) ou [télécharger](https://EricMarcon.github.io/MesuresBioDiv2/MesuresBD.pdf)
 
-Cette version (GitBook et PDF) remplace la version non accessible en ligne (https://github.com/EricMarcon/MesuresBioDiv/), qui ne sera plus mise à jour.
-
-Les versions stables du document au format PDD sont [publiées sur HAL.](https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/)
+> Cette version (GitBook et PDF) remplace la version non accessible en ligne (https://github.com/EricMarcon/MesuresBioDiv/), qui ne sera plus mise à jour.
+> Les versions d'étape du document au format PDF sont [publiées sur HAL.](https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/)
 
 La biodiversité peut être mesurée de nombreuses façons.
 
