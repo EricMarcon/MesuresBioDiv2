@@ -5,17 +5,17 @@ cache:
   - _bookdown_files
   - $HOME/.npm
 
+branches:
+  only:
+    - master
+
 addons:
   apt:
     packages:
-      - libudunits2-dev # units
+      - libudunits2-dev # units, sf
       - libgdal-dev     # sf
       - libgeos-dev     # sf
       - libproj-dev     # sf
-
-before_install:
-- nvm install stable
-- npm install netlify-cli -g
 
 script:
 - travis_wait 60 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook', quiet = TRUE)"
@@ -24,7 +24,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  github_token: $GITHUB_TOKEN
   keep_history: true
   local_dir: docs
   on:
