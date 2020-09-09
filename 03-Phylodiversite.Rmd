@@ -1539,7 +1539,8 @@ $$\sum_{s}{p_{s}{\left(\mathbf{Zp}\right)}^{q-1}_{s}}.$$
 Puisque $p_s=p_{s'}+p_{s''}$, le regroupement n'est possible quel que soit $q$ que si les banalités des deux groupes sont identiques, ce qui interdit toute variabilité intraspécifique: $z_{s',s''}$ est obligatoirement égal à 1. 
 La non-linéarité de la moyenne généralisée ne permet pas de définir une matrice de similarité intégrant la variabilité intraspécifique.
 
-Dans le cas de la diversité de Rao ($q=2$), on peut chercher la valeur de $z_{s,s}$, différente de 1, définissant la similarité de l'espèce avec elle même pour prendre en compte sa variabilité. La résolution de l'équation
+Dans le cas de la diversité de Rao ($q=2$), on peut chercher la valeur de $z_{s,s}$, différente de 1, définissant la similarité de l'espèce avec elle même pour prendre en compte sa variabilité. 
+La résolution de l'équation
 $$\sum_{s'}{p_{s'}{\left(\mathbf{Zp}\right)}_{s'}}+\sum_{s''}{p_{s''}{\left(\mathbf{Zp}\right)}_{s''}} = \sum_{s}{p_{s}{\left(\mathbf{Zp}\right)}_{s}}$$
 permet de trouver
 $$z_{s,s}=1+ \frac{2 p_{s'} p_{s''}(z_{s',s''}-1)}{p_s^2}.$$
@@ -1579,14 +1580,17 @@ Mais en absence de données individuelles, il est possible de choisir arbitraire
 ## Diversité des valeurs propres
 
 L'approche de @Pavoine2014 permet de prendre en compte la variabilité intraspécifique de façon rigoureuse.
-Pour mesurer la diversité neutre, les espèces sont placées dans un espace multidimensionnel, de dimension $S$. Chaque espèce est représentée par un vecteur de longueur $p_s$ sur son axe. Cette représentation a été utilisée par @Campos2009 qui ont relié la diversité de Simpson au volume de la sphère sur laquelle se trouve le point définissant la communauté (figure \@ref(fig:Campos2009)).
+Pour mesurer la diversité neutre, les espèces sont placées dans un espace multidimensionnel, de dimension $S$. 
+Chaque espèce est représentée par un vecteur de longueur $p_s$ sur son axe.
+Cette représentation a été utilisée par @Campos2009 qui ont relié la diversité de Simpson au volume de la sphère sur laquelle se trouve le point définissant la communauté (figure \@ref(fig:Campos2009)).
 
 (ref:Campos2009) Représentation d'une communauté dans un espace multidimensionnel dont chaque axe correspond à une espèce. La communauté est composée de trois espèces. Le point représentant la communauté se trouve sur la sphère de rayon $r=\sqrt{\sum_s{p_s^2}}$. Le plan (qui est en réalité un hyperplan de dimension $S-1$) d'équation $\sum_s{p_s}=1$ est représenté par un triangle.
 ```{r Campos2009, fig.cap="(ref:Campos2009)", echo=FALSE, out.width='50%'}
 knitr::include_graphics('images/Campos2009.png')
 ```
 
-La matrice de similarité entre les espèces $\mathbf{Z}$ permet d'affiner la représentation. Soit la matrice $\mathbf{C}=\sqrt{\mathbf{Z}}$.
+La matrice de similarité entre les espèces $\mathbf{Z}$ permet d'affiner la représentation. 
+Soit la matrice $\mathbf{C}=\sqrt{\mathbf{Z}}$.
 Chaque espèce $s$ est maintenant représentée par le vecteur dont la coordonnée sur l'axe $t$ est $\sqrt{p_s p_t}c_{s,t}$. 
 Les axes correspondent aux espèces "pures", totalement dissimilaires, les vecteurs des espèces réelles prennent en compte la similarité. 
 Dans le cas extrême de la diversité neutre, $\mathbf{C}=\mathbf{I}$, chaque espèce est située uniquement sur son axe. 
@@ -1652,9 +1656,12 @@ La diversité des valeurs propres permet de ramener le problème de la diversit�
 Les éléments de la diagonale de la matrice de similarité ne sont pas forcément égaux à 1: des valeurs inférieures correspondent à la variabilité intraspécifique, selon le mécanisme de regroupement traité au paragraphe précédent.
 Les raisons qui empêchent d'utiliser des valeurs de similarité intraspécifique différentes de 1 dans le calcul de la diversité de Leinster et Cobbold ne s'appliquent pas ici: quelle que soit la valeur de $q$, les valeurs propres sont les mêmes.
 
-Les limites de la diversité des valeurs propres sont cependant nombreuses. La première est numérique: son calcul est imprécis dans des communautés très riches. L'inversion d'une matrice de dimension 200 ou plus est toujours problématique. 
+Les limites de la diversité des valeurs propres sont cependant nombreuses. 
+La première est numérique: son calcul est imprécis dans des communautés très riches. 
+L'inversion d'une matrice de dimension 200 ou plus est toujours problématique. 
 
-Les espèces non échantillonnées entraînent un biais d'estimation: le nombre de dimensions est sous-estimé. Comme les espèces manquantes ont une faible probabilité, leur vecteur est petit et n'influe pas beaucoup sur la diagonalisation de la matrice.
+Les espèces non échantillonnées entraînent un biais d'estimation: le nombre de dimensions est sous-estimé. 
+Comme les espèces manquantes ont une faible probabilité, leur vecteur est petit et n'influe pas beaucoup sur la diagonalisation de la matrice.
 Les valeurs propres manquantes sont donc petites.
 Elles influent sur la diversité pour les faibles valeurs de $q$, notamment la diversité d'ordre 0 qui est le nombre de dimensions de la matrice des espèces (en général, le nombre d'espèces, ou une valeur inférieure si des espèces sont colinéaires). 
 Il n'existe pas de technique pour corriger ce biais d'estimation.
