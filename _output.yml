@@ -9,6 +9,7 @@ bookdown::gitbook:
     download: "pdf"
   includes:
     in_header: gtag.js
+  split_by: "chapter+number"
 bookdown::pdf_book:
   template: latex/template.tex
   pandoc_args: --top-level-division=chapter
