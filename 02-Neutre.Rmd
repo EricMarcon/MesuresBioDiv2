@@ -1585,7 +1585,7 @@ Les dérivées première et seconde de l'exponentielle déformée sont, quel que
 \end{equation}
 \begin{equation}
   (\#eq:expqsec)
-  \exp""_q\left(x\right) = \left( e_q^x \right)^{2q-1}.
+  \exp''_q\left(x\right) = \left( e_q^x \right)^{2q-1}.
 \end{equation}
 
 Ces fonctions sont implémentées dans le package *entropart*: `lnq(x, q)` et `expq(x, q)`.

@@ -780,7 +780,7 @@ Les distance de corde et de Hellinger (qui est la distance entre les racines car
 
 La diversité $\beta$ exprimée de cette façon peut faire l'objet d'analyses par les méthodes d'ordination classiques (RDA: Analyse de Redondance [@Rao1964]; CCA: Analyse Canonique de Correspondance [@Braak1986]) pour la relier à des variables environnementales par exemple[@Legendre2013].
 
-(ref:BCICordeFig) PCoA appliquée à la distance de corde des 50 carrés de BCI pour visualiser la diversité $\\beta$.
+(ref:BCICordeFig) PCoA appliquée à la distance de corde des 50 carrés de BCI pour visualiser la diversité $\beta$.
 ```{r BCICordeFig, echo=FALSE, message=FALSE, results='hide', out.width='100%', ref.label='BCICordeCode', fig.cap="(ref:BCICordeFig)"}
 ```
 
