@@ -102,7 +102,7 @@ Packages <- c("tidyverse", "magrittr", "gridExtra",
 InstallPackages(Packages)
 # GitHub packages
 if (!"SpatDiv" %in% installed.packages()[, 1]) {
-  devtools::install_github("EricMarcon/SpatDiv")
+  remotes::install_github("EricMarcon/SpatDiv")
 }
 
 # knitr options
