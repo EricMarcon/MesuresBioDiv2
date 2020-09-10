@@ -594,7 +594,7 @@ La souplesse de la loi gamma permet d'ajuster le modèle à des lois diverses et
 Il est disponible dans *SPECIES*: fonction `pcg`. 
 Son défaut est qu'il nécessite un très long temps de calcul (plusieurs heures selon les données).
 
-```{r Wang2010}
+```{r Wang2010, eval=FALSE}
 # Calcul long
 pcg(DistNs.SPECIES)
 ```
