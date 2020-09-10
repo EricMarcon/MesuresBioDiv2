@@ -27,10 +27,14 @@ before_install:
 
 jobs:
   include:
-    - stage: gitbook
+    - stage: prepare-cache
       script: travis_wait 90 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook', quiet = TRUE)"
-    - stage: pdf
+    - stage: prepare-cache
       script: travis_wait 90 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', quiet = TRUE)"
+    - stage: production
+      script: 
+        - travis_wait 90 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook', quiet = TRUE)"
+        - travis_wait 90 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', quiet = TRUE)"
 
 deploy:
   provider: pages
