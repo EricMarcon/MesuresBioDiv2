@@ -1,4 +1,8 @@
 language: r
+os: linux
+dist: xenial
+pandoc_version: 2.7.3
+
 cache:
   packages: true
   directories:
@@ -29,10 +33,10 @@ jobs:
   include:
     - stage: prepare-cache
       script: travis_wait 90 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook', quiet = TRUE)"
-      deploy: skip
+      deploy:
     - stage: prepare-cache
       script: travis_wait 90 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', quiet = TRUE)"
-      deploy: skip
+      deploy:
     - stage: production
       script: 
         - travis_wait 90 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook', quiet = TRUE)"
