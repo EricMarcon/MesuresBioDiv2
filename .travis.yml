@@ -17,6 +17,12 @@ addons:
       - libgeos-dev     # sf
       - libproj-dev     # sf
 
+before_install:
+  - echo "options(repos = c(CRAN = 'https://packagemanager.rstudio.com/all/__linux__/xenial/latest'))" >> ~/.Rprofile.site
+  - echo "options(HTTPUserAgent = paste0('R/', getRversion(), ' R (',
+       paste(getRversion(), R.version['platform'], R.version['arch'], R.version['os']),
+       ')'))" >> ~/.Rprofile.site
+
 script:
 - travis_wait 90 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook', quiet = TRUE)"
 - travis_wait 90 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', quiet = TRUE)"
