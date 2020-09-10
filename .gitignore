@@ -65,6 +65,7 @@
 .Rhistory
 _bookdown_files
 MyBook.Rmd
+.Rbuildignore
 
 # Output
 docs/
