@@ -29,8 +29,10 @@ jobs:
   include:
     - stage: prepare-cache
       script: travis_wait 90 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook', quiet = TRUE)"
+      deploy: skip
     - stage: prepare-cache
       script: travis_wait 90 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', quiet = TRUE)"
+      deploy: skip
     - stage: production
       script: 
         - travis_wait 90 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook', quiet = TRUE)"
@@ -40,7 +42,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  keep_history: true
+  keep_history: false
   local_dir: docs
   on:
     branch: master
