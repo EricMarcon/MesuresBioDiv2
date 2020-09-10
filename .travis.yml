@@ -15,6 +15,7 @@ addons:
       - libudunits2-dev # units, sf
       - libgdal-dev     # sf
       - libgeos-dev     # sf
+      - libglpk-dev     # adeg
       - libproj-dev     # sf
 
 before_install:
