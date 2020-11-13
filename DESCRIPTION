@@ -29,4 +29,5 @@ Imports:
   untb,
   vegan
 Remotes:
+  EricMarcon/entropart,
   EricMarcon/SpatDiv
