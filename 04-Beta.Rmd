@@ -1181,9 +1181,9 @@ L'exemple suivant utilise les communautés du fichier `rao.effectifs.csv` :
 
 ```{r disc1}
 # Vecteur contenant 8 espèces...
-(read.csv2("http://www.ecofog.gf/IMG/csv/rao.effectifs.csv", row.names=1, header=T)-> effectifs)
+(read.csv2("data/rao.effectifs.csv", row.names=1, header=T)-> effectifs)
 # Lecture des données : traits pour 34 espèces
-read.csv2 ("http://www.ecofog.gf/IMG/csv/rao.traits.csv", row.names=1, header=T)-> traits
+read.csv2 ("data/rao.traits.csv", row.names=1, header=T)-> traits
 # ACP sur les traits foliaires
 pcaf <- dudi.pca(traits, scale=T, scannf=FALSE, nf=2)
 # CAH Ward des traits foliaires

@@ -811,7 +811,7 @@ Le fichier `rao.traits.csv` contient une espèce par ligne, identifiée par le c
 
 ```{r Originalite1}
 # Lecture des données: traits pour 34 espèces
-read.csv2 ("http://www.ecofog.gf/IMG/csv/rao.traits.csv", row.names=1, header=T)-> traits
+read.csv2 ("data/rao.traits.csv", row.names=1, header=T)-> traits
 ```
 
 Le résultat est un *data frame* nommé `traits` à 8 lignes (espèces) et 6 colonnes (traits):
@@ -1247,7 +1247,7 @@ La diversité peut être calculée par la fonction `Dqz` de *entropart*:
 
 ```{r DqZ3}
 # Vecteur contenant 8 espèces...
-(read.csv2("http://www.ecofog.gf/IMG/csv/rao.effectifs.csv", row.names=1, header=T)-> effectifs)
+(read.csv2("data/rao.effectifs.csv", row.names=1, header=T)-> effectifs)
 Ps <-rowSums(effectifs)/sum(effectifs)
 Dqz(Ps, q=2, Z)
 ```
