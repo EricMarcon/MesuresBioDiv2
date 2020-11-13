@@ -1,6 +1,6 @@
 # (PART) Conclusion {-}
 
-# Synthèse
+# Synthèse {#sec:conclusionSynthese}
 
 ```{r, echo=FALSE, message=FALSE}
 library("tidyverse")

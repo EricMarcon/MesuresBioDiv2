@@ -1051,7 +1051,7 @@ On peut les interpréter intuitivement comme une somme pondérée par la longueu
 En remontant dans l'arbre, les classes se confondent et la diversité diminue progressivement. 
 Deux classes peu distantes, comme les espèces 3 à 5 de la figure \@ref(fig:ArbreA5), apportent peu de diversité supplémentaire par rapport à une situation où les deux espèces seraient confondues (et leurs effectifs ajoutés), contrairement aux espèces 1 et 2.
 
-## Estimation
+## Estimation {#sec:phyloEstimation}
 
 La correction du biais d'estimation applicable à l'entropie généralisée l'est aussi à chaque période de l'arbre. 
 Les biais sont de moins en moins importants quand on se rapproche de la racine de l'arbre: il est de moins en moins probable de ne pas observer une classe quand les classes sont de plus en plus vastes. 
@@ -1070,7 +1070,7 @@ PhyloEntropy(Paracou618.MC$Ns, 2, Paracou618.Taxonomy)
 
 La fonction retourne la valeur de $^{q}_{k}\!H$ dans chaque intervalle (l'arbre est ici une taxonomie espèce-genre-famille, correspondant aux limites des périodes (`Cuts`) 1, 2 et 3 dont l'entropie va en décroissant) et la valeur de $^{q}\!\bar{H}(T)$.
 
-## Entropie et diversité
+## Entropie et diversité {#sec:phyloEntopieDiv}
 
 La diversité phylogénétique est le nombre d'espèces équifréquentes et dont la distance à toutes les autres dans la phylogénie est maximale, dont l'entropie serait égale à l'entropie observée.
 
@@ -1374,7 +1374,7 @@ Quand $u \to +\infty$, $\mathbf{Z} \to \mathbf{I}_s$: la diversité tend vers la
 Leinster et Cobbold suggèrent de comparer les profils de diversité en fonction à la fois de $q$ et de $u$.
 
 
-## Estimation
+## Estimation {#sec:dqzEstimation}
 
 Comme les autres mesures de diversité, $^q\!D^{\mathbf{Z}}$ est sujette au biais d'estimation. 
 Deux estimateurs réduisant le biais existent [@Marcon2014e]. 
@@ -1671,7 +1671,7 @@ Elle est donc unique pour chaque communauté, ce qui empêche toute décompositi
 
 
 
-## Synthèse
+## Synthèse {#sec:dqzSynthese}
 
 $^{q}\!D(T)$ est l'exponentielle d'ordre $q$ de la moyenne pondérée de l'entropie HCDT calculée à chaque période de l'arbre phylogénétique.
 

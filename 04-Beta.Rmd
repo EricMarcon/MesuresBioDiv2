@@ -1,6 +1,6 @@
 # (PART) Diversité beta et décomposition {-}
 
-# Cadre
+# Cadre {#sec:betaCadre}
 
 ```{r, echo=FALSE, message=FALSE}
 library("tidyverse")
@@ -96,7 +96,7 @@ La diversité $\beta$ peut être décomposée en niveaux hiérarchiques emboît�
 D'autres analyses sont bien sûr envisageables, comme la comparaison de la forme de la courbe de dissimilarité moyenne entre paires de communautés en fonction de la distance à des patrons connus, issus de simulation de processus à identifier [@Rejou-Mechain2011].
 
 
-## Typologie des mesures
+## Typologie des mesures  {#sec:betaTypo}
 
 Cette approche utilitaire est complétée par le cadre théorique de @Jurasinski2009 qui distinguent plusieurs types de mesures de diversité:
 
@@ -110,7 +110,7 @@ La conciliation des deux approches n'est pas simple.
 @Gregorius2016 montre notamment que les mesures habituelles de diversité proportionnelle ne rendent pas compte correctement de la différentiation.
 
 
-## Décomposition de la diversité
+## Décomposition de la diversité {#sec:betaDecomposition}
 
 La façon de décomposer la diversité, aboutissant donc à une diversité $\beta$ proportionnelle, ne fait pas consensus.
 Les éléments du débat sont présentés ici.
@@ -1586,14 +1586,14 @@ Sa valeur observée est comparée à la distribution de sa valeur simulée en re
 
 
 
-# Autres approches
+# Autres approches {#sec:betaAutres}
 
 Des définitions différentes de la diversité $\beta$ ou du partitionnement de la diversité sont présentées ici parce qu'elles sont importantes dans la littérature même si elles n'entrent pas dans le cadre précédent.
 
 
 ## Le partitionnement de la diversité selon Pélissier et Couteron
 
-### Cadre
+### Cadre {#sec:PCcadre}
 
 (ref:Couteron) Tableau d'occurrence des espèces.
 ```{r Couteron, echo=FALSE, warning=FALSE}
@@ -1635,7 +1635,7 @@ Si le poids $w_s$ vaut toujours 1, $\mathit{TSS}/{n}$ est l'indice de Simpson.
 Si $w_s={\ln{\left(1/{n_{s\cdot}}\right)}/{\left(1-n_{s\cdot}\right)}}$, on obtient l'indice de Shannon, et $w_s={1}/{w_{s\cdot}}$ donne le nombre d'espèces moins 1.
 
 
-### Décomposition
+### Décomposition {#sec:PCdecomposition}
 
 L'intérêt de la méthode est de permettre l'utilisation de modèles linéaires et des outils informatiques associés classiques pour décomposer la diversité de différentes manières. 
 Nous nous intéresserons ici à la décomposition de la diversité totale $\gamma$ en diversités $\alpha$ et $\beta$. 

@@ -1,6 +1,6 @@
 # (PART) Diversité jointe, diversité structurelle {-}
 
-# Cadre
+# Cadre {#sec:jointeCadre}
 
 ```{r, echo=FALSE, message=FALSE}
 library("tidyverse")
@@ -57,7 +57,7 @@ Elles sont présentées ici après leur propriété mathématique fondamentale: 
 
 ## Récursivité de l'entropie
 
-### Entropie de Shannon
+### Entropie de Shannon {#sec:jointeShannon}
 
 L'entropie de Shannon (et ses multiples) sont les seules fonctions $H$ telles que 
 
@@ -91,7 +91,7 @@ Si les colonnes sont les classes de diamètre par exemple, les informations four
 * La diversité jointe est le nombre effectif de catégories (espèces $\times$ classes de diamètre) de la communauté.
 
 
-### Entropie HCDT
+### Entropie HCDT {#sec:jointeHCDT}
 
 @Baez2011 généralisent la récursivité à l'entropie HCDT et montrent que
 
@@ -174,7 +174,7 @@ La décomposition de la diversité jointe [@Gregorius2009a; @Gregorius2010] comp
 On se place dans le cadre d'un échantillonnage global de la méta-communauté, dans lequel le poids de chaque communauté est égal à la probabilité qu'un individu lui appartienne, et non un choix arbitraire.
 
 
-## Définitions
+## Définitions {#sec:Definitions}
 
 La diversité $\beta$ mesure la divergence entre la distribution moyenne des espèces dans les communautés et leur distribution dans la méta-communauté. 
 Gregorius la qualifie de "diversité de répartition" (*apportionment*) [@Gregorius2014]. 

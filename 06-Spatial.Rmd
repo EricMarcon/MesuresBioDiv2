@@ -1,6 +1,6 @@
 # (PART) Diversité spatialement explicite {-}
 
-# Cadre
+# Cadre {#sec:spatialCadre}
 
 ```{r, echo=FALSE, message=FALSE}
 library("tidyverse")
@@ -757,7 +757,7 @@ La courbe est tracée pour les valeurs de $p-i$ entre 0 et 1.
 La fonction `specaccum` de *vegan* permet de calculer une SAC selon ce modèle.
 
 
-## Synthèse
+## Synthèse {#sec:spatialSynthese}
 
 La relation d'Arrhenius est plus robuste que celle de Gleason, selon les résultats empiriques et des considérations théoriques [@GarciaMartin2006], y compris de thermodynamique [@Wurtz2008].
 
