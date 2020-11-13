@@ -8,22 +8,25 @@ URL: https://github.com/ericmarcon/MesuresBioDiv2
 Depends:
   R (>= 3.1.0)
 Imports:
-  bookdown,
-  devtools,
-  kableExtra,
-  knitr,
-  rmarkdown,
-  tidyverse,
-  magrittr,
-  gridExtra,
   ade4,
   adespatial,
+  bookdown,
+  devtools,
   entropart,
   entropy,
   EntropyEstimation,
   GoFKernel,
+  gridExtra,
   iNEXT,
+  kableExtra,
+  knitr,
+  magrittr,
+  ragg,
+  rmarkdown,
   sp,
   SPECIES,
+  tidyverse,
   untb,
   vegan
+Remotes:
+  EricMarcon/SpatStat
