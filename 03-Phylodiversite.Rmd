@@ -1503,7 +1503,7 @@ La matrice n'est donc pas symétrique, mais c'est une matrice de similarité don
 La probabilité de chaque espèce historique est la somme de celles des espèces actuelles qui en descendent, multipliée par la longueur de la branche normalisée par la hauteur de l'arbre.
 Dans l'exemple, la hauteur totale de l'arbre est $T=T_1 + T_2 + T_3$.
 Les probabilités des espèces historiques sont
-$$(p_1 \frac{l(b_{1,1})}{T}, (p_1 + p_2) \frac{l(b_{3,1})}{T}, p_2 \frac{l(b_{1,2})}{T}, \dots, (p_3 + p_4 + p_5) \frac{l(b_{3,1})}{T}).$$
+$$(p_1 \frac{l(b_{1,1})}{T}, (p_1 + p_2) \frac{l(b_{3,1})}{T}, p_2 \frac{l(b_{1,2})}{T}, \dots, (p_3 + p_4 + p_5) \frac{l(b_{2,3})}{T}).$$
 
 Les dimensions de la matrice de similarité et du vecteur de probabilités deviennent rapidement très grandes et leur écriture pénible: il est bien plus simple de calculer la diversité phylogénétique à partir des distances dans l'arbre et des probabilités des espèces.
 Cette équivalence de méthodes n'a donc pas d'intérêt pratique mais montre que la diversité de Leinster et Cobbold généralise la diversité phylogénétique.
