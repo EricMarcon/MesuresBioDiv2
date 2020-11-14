@@ -905,7 +905,7 @@ Simpson(colSums(BCI))
 
 ### Définition
 
-L'indice de Shannon [@Shannon1948; @Shannon1963], aussi appelé indice de Shannon-Weaver ou Shannon-Wiener, ou simplement *entropie* est dérivé de la théorie de l'information:
+L'indice de Shannon [@Shannon1948; @Shannon1963], aussi appelé indice de Shannon-Weaver ou Shannon-Wiener [@Spellerberg2003], ou simplement *entropie* est dérivé de la théorie de l'information:
 
 \begin{equation}
   (\#eq:Shannon)
@@ -1860,7 +1860,7 @@ L'estimateur est linéaire par rapport à $\widetilde{p^q_s}$: le problème orig
 L'estimateur de Chao et Shen peut être amélioré [@Marcon2015a] en estimant mieux les probabilités.
 @Chao2014c ont développé un estimateur de la distribution des probabilités à partir de l'estimation du taux de couverture généralisé.
 $\hat{C}{\hat{p}}_s$ peut être remplacé par cet estimateur pour réduire le biais de l'estimateur de Chao et Shen.
-  
+
 Enfin, la distribution des espèces non échantillonnées peut être ajoutée en estimant leur nombre et en choisissant une loi.
 @Chao2014c ont utilisé l'estimateur Chao1 et une distribution géométrique.
 L'estimateur jackknife [@Burnham1979] est plus versatile parce que son ordre peut être adapté aux données quand l'effort d'échantillonnage est trop faible pour que l'estimateur Chao1 soit performant [@Brose2003].
