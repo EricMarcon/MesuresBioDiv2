@@ -1165,7 +1165,7 @@ La moyenne généralisée d'ordre $r$ [@Hardy1952], *generalized mean* ou *power
   \bar{x}={\left(\sum_s{p_s x^r_s}\right)}^{\frac{1}{r}}.
 \end{equation}
 
-(ref:MoyenneHardyFig) Moyenne généralisée d'ordre $r$ (en abscisse) d'une distribution uniforme de 100 valeurs tirées entre 0 et 1. La moyenne arithmétique 0,5 est obtenue pour $r=1$. La moyenne généralisée tend vers la plus petite valeur (près de 0) quand $r\to -\infty$, et vers la plus grande valeur (près de 1) quand $r\to +\infty$.
+(ref:MoyenneHardyFig) Moyenne généralisée d'ordre $r$ (en abscisse) d'une distribution uniforme de 10000 valeurs tirées entre 0 et 1. La moyenne arithmétique 0,5 est obtenue pour $r=1$. La moyenne généralisée tend vers la plus petite valeur (près de 0) quand $r\to -\infty$, et vers la plus grande valeur (près de 1) quand $r\to +\infty$.
 ```{r MoyenneHardyFig, echo=FALSE, results='hide', ref.label='MoyenneHardyCode', fig.cap="(ref:MoyenneHardyFig)"}
 ```
 
@@ -1175,7 +1175,7 @@ Elle donne un fort poids aux petites valeurs de $x_s$ dans la moyenne pour les f
 
 Le code R nécessaire pour réaliser la figure est:
 ```{r MoyenneHardyCode, eval=FALSE, tidy=FALSE}
-X <- runif(100)
+X <- runif(10000)
 # La moyenne n'est pas définie à r=0, décalage de 10^-8
 r <- seq(-5, 10, .1) + 1E-8
 # Préparation des données
