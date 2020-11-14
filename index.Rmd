@@ -2,7 +2,7 @@
 title: "Mesures de la Biodiversité"
 author: "Eric Marcon"
 date: "`r Sys.Date()`"
-biblio-style: authoryear-ibid
+output: pdf_document
 bibliography: library.bib
 cite-style: verbose-inote
 classoption:
@@ -32,36 +32,39 @@ lang: fr
 link-citations: yes
 maintitlepage:
   epigraph: |
-    Ce document est réalisé de façon dynamique et reproductible grâce à:
     \begin{itemize}
+    \end{itemize}
+    Ce document est réalisé de façon dynamique et reproductible grâce à:
       \item \LaTeX, dans sa distribution Miktex (\url{http://miktex.org/}) et la classe memoir (\url{http://www.ctan.org/pkg/memoir}).
       \item R (\url{http://www.r-project.org/}) et RStudio (\url{http://www.rstudio.com/})
       \item bookdown (\url{http://bookdown.org/})
-    \end{itemize}
 otherlangs:
 - en-US
 - en-GB
 - fr
 papersize: A4
-resume: |
-  
-  La biodiversité peut être mesurée de nombreuses façons.
-
-  La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire. 
-  L’entropie est la surprise moyenne fournie par les individus d’une communauté.
-  Le choix de la fonction d’information qui mesure cette surprise à partir des probabilités d’occurence des espèces (ou d’autres catégories) permet de définir les mesures de diversités neutres, fonctionnelles ou phylogénétique présentées ici. 
-  L’entropie est transformée en diversité au sens strict par une fonction croissante (l’exponentielle déformée), ce qui simplifie son interprétation en tant que nombre équivalent d’espèces.
-
-  L’entropie phylogénétique généralise les indices de diversité classique, intègre si nécessaire la distance entre espèces, peut être écomposée et corrigée des biais d’estimation.
-  Sa transformation en diversité au sens strict permet d’interpréter les valeurs sous une forme unique : un nombre équivalent d’espèces et un nombre équivalent de communautés. 
-  La diversité de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet d’autres définitions de la distance entre espèces. 
-
-  Le paramétrage des mesures (l’ordre de la diversité) permet de donner plus ou moins d’importance aux espèces rares et de tracer des profils de diversité. 
-
-  La construction de ce cadre méthodologique est présentée en détail ainsi que plusieurs approches différentes, qui constituent l'état de l'art de la mesure de la biodiversité.
+resume: "\nLa biodiversité peut être mesurée de nombreuses façons.\n\nLa dualité entropie-diversité
+  fournit un cadre clair et rigoureux pour le faire. \nL’entropie est la surprise
+  moyenne fournie par les individus d’une communauté.\nLe choix de la fonction d’information
+  qui mesure cette surprise à partir des probabilités d’occurence des espèces (ou
+  d’autres catégories) permet de définir les mesures de diversités neutres, fonctionnelles
+  ou phylogénétique présentées ici. \nL’entropie est transformée en diversité au sens
+  strict par une fonction croissante (l’exponentielle déformée), ce qui simplifie
+  son interprétation en tant que nombre équivalent d’espèces.\n\nL’entropie phylogénétique
+  généralise les indices de diversité classique, intègre si nécessaire la distance
+  entre espèces, peut être écomposée et corrigée des biais d’estimation.\nSa transformation
+  en diversité au sens strict permet d’interpréter les valeurs sous une forme unique
+  : un nombre équivalent d’espèces et un nombre équivalent de communautés. \nLa diversité
+  de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet
+  d’autres définitions de la distance entre espèces. \n\nLe paramétrage des mesures
+  (l’ordre de la diversité) permet de donner plus ou moins d’importance aux espèces
+  rares et de tracer des profils de diversité. \n\nLa construction de ce cadre méthodologique
+  est présentée en détail ainsi que plusieurs approches différentes, qui constituent
+  l'état de l'art de la mesure de la biodiversité.\n"
 site: bookdown::bookdown_site
 always_allow_html: yes
 toc-depth: 3
+biblio-style: authoryear-ibid
 ---
 
 <!-- Commande nécessaire pour la copie de l'icône "Essentiel" en HTML--> 
@@ -137,9 +140,9 @@ Les vecteurs sont notés en gras minuscule: $\mathbf{p}$.
 Les nombres sont notés en minuscules, $n$, et les variables aléatoires en majuscules: $N$.
 Les valeurs maximales des énumérations font exception: elles sont notées en majuscules pour les distinguer des indices: $\sum_{s=1}^{S}{p_s}=1$.
 
-Le produit matriciel de $\mathbf{X}$ et $\mathbf{Y}$ est noté $\mathbf{X}\mathbf{Y}$. Dans les scripts R, l'opérateur est `\%*\%`.
+Le produit matriciel de $\mathbf{X}$ et $\mathbf{Y}$ est noté $\mathbf{X}\mathbf{Y}$. Dans les scripts R, l'opérateur est `%*%`.
 Le produit de Hadamard (terme à terme) est noté $\mathbf{X}\circ\mathbf{Y}$ (opérateur `*` dans R).
-De même $\mathbf{X}^n$ indique la puissance $n$ au sens du produit matriciel d'une matrice carrée (opérateur `\%$\wedge$\%` du package *expm*), alors que $\mathbf{X}^{\circ n}$ est la matrice dont chaque terme est celui de $\mathbf{X}$ à la puissance $n$ (opérateur `$\wedge$` de R).
+De même $\mathbf{X}^n$ indique la puissance $n$ au sens du produit matriciel d'une matrice carrée (opérateur `%^%` du package *expm*), alors que $\mathbf{X}^{\circ n}$ est la matrice dont chaque terme est celui de $\mathbf{X}$ à la puissance $n$ (opérateur `^` de R).
 La matrice transposée de $\mathbf{X}$ est notée $\mathbf{X'}$.
 
 Les notations sont les suivantes:
@@ -159,7 +162,7 @@ $C^{n}$ est le taux de couverture correspondant à un échantillon de taille $n$
 $^{q}_{i}\!D_{\alpha}$ est la diversité $\alpha$ mesurée dans la communauté $i$. 
 $^{q}\!\bar{D}\left(T\right)$ est la diversité phylogénétique.
 
-\noindent $\mathbf{\Delta}$: la matrice de dissimilarité dont les éléments sont $\delta_{s,t}$, la dissimilarité entre l'espèce $s$ et l'espèce $t$.
+\noindent $\boldsymbol{\Delta}$: la matrice de dissimilarité dont les éléments sont $\delta_{s,t}$, la dissimilarité entre l'espèce $s$ et l'espèce $t$.
 
 \noindent ${\mathbb E}\left(X\right)$: l'espérance de la variable aléatoire $X$.
 

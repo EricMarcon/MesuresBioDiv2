@@ -25,7 +25,7 @@ La déclaration de Michel Loreau, président du du comité scientifique de la co
 > La Terre abrite une extraordinaire diversité biologique, qui inclut non seulement les espèces qui habitent notre planète, mais aussi la diversité de leurs gènes, la multitude des interactions écologiques entre elles et avec leur environnement physique, et la variété des écosystèmes complexes qu'elles constituent. Cette biodiversité, qui est le produit de plus de 3 milliards d'années d'évolution, constitue un patrimoine naturel et une ressource vitale dont l'humanité dépend de multiples façons.
 
 Aujourd'hui encore, le terme *biodiversité* concerne le plus souvent la richesse en espèces d'un écosystème. 
-Pour simplifier la présentation, le niveau d'étude dans ce document sera en général celui des espèces (autre concept flou[@Hey2001]).
+Pour simplifier la présentation, le niveau d'étude dans ce document sera en général celui des espèces [autre concept flou, @Hey2001].
 La prise en compte de la totalité des êtres vivants est généralement hors de portée.
 La mesure de diversité est alors limitée à un taxocène, c'est-à-dire un sous-ensemble des espèces d'une communauté reliées taxonomiquement: les papillons, les mammifères, les arbres (la délimitation du sous-ensemble n'est pas forcément strictement taxonomique)...
 
