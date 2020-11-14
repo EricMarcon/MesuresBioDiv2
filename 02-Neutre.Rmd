@@ -193,7 +193,7 @@ où
 \end{equation}
 
 @Chao2017 étendent l'applicabilité de l'estimateur Chao2 à des données dans lesquelles les espèces sont notées uniquement comme singletons ou doubletons et plus, sans distinction entre doubletons et espèces plus fréquentes.
-Une relation entre le nombre de doubletons et les données disponibles est fourni; sa résolution numérique (le code R nécessaire est disponible avec l'article) permet d'estimer $s^{n}_{2}$ et de l'injecter dans l'estimateur Chao2.
+Une relation entre le nombre de doubletons et les données disponibles est fournie; sa résolution numérique (le code R nécessaire est disponible avec l'article) permet d'estimer $s^{n}_{2}$ et de l'injecter dans l'estimateur Chao2.
 
 
 
@@ -235,7 +235,7 @@ Si ce n'est pas le cas, la limite des espèces rares $\kappa$ doit être augment
 #### L'estimateur jackknife
 
 La méthode jackknife a pour objectif de réduire le biais d'un estimateur en considérant des jeux de données dans lesquels on a supprimé un certain nombre d'observations (ce nombre est l'ordre de la méthode). 
-Burnham et Overton [@Burnham1978, Burnham1979] ont utilisé cette technique pour obtenir des estimateurs du nombre d'espèces, appelés jackknife à l'ordre $j$, prenant en compte les valeurs de $s^{n}_{1}$ à $s^{n}_{j}$. 
+Burnham et Overton [@Burnham1978, @Burnham1979] ont utilisé cette technique pour obtenir des estimateurs du nombre d'espèces, appelés jackknife à l'ordre $j$, prenant en compte les valeurs de $s^{n}_{1}$ à $s^{n}_{j}$. 
 Les estimateurs du premier et du deuxième ordre sont les plus utilisés en pratique:
 
 \begin{equation}

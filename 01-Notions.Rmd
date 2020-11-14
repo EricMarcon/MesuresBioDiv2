@@ -239,7 +239,7 @@ autoplot(as.AbdVector(Ns), Distribution = "lnorm")
 Les SAD ne sont pas traitées en détail ici: on se reportera à @Magurran1988, @McGill2007 et Izsák et Pavoine. 
 Les SAD nécessaires à la compréhension de la suite sont:
 
-* La distribution géométrique [@Motomura1932, Whittaker1972];
+* La distribution géométrique [@Motomura1932; @Whittaker1972];
 * La distribution en log-séries de @Fisher1943;
 * La distribution log-normale [@Preston1948];
 * Le modèle Broken Stick [@MacArthur1957].
