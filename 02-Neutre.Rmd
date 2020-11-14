@@ -1990,7 +1990,6 @@ Une approche alternative consiste à modéliser la probabilité d'observation co
 Ces méthodes ont l'avantage de fournir une distribution de probabilité des paramètres des modèles, et donc de la diversité qui est calculée comme une quantité dérivée. Leur faiblesse est qu'ils dépendent de la loi choisie. Une revue complète est fournie par @Iknayan2014
 
 
-
 ### Raréfaction et extrapolation {#sec:RarExtrapol}
 
 @Chao2014 étendent l'approche de @Gotelli2001 aux nombres de Hill et fournissent les méthodes nécessaires au calcul de courbes de raréfaction et d'extrapolation de l'estimateur de $^{q}\!D$ en fonction de la taille de l'échantillon ou du taux de couverture.
@@ -1999,7 +1998,7 @@ Les courbes de raréfaction sont obtenues à partir de l'échantillon disponible
 Les courbes d'extrapolation simulent l'augmentation de la taille de l'échantillon. 
 Elles sont en réalité calculées par raréfaction d'un échantillon hypothétique de taille infinie: un estimateur de $^{q}\!D$ corrigé du biais d'estimation est nécessaire. 
 L'article se limite aux valeurs de $q$ égales à 0, 1 ou 2 ou non entières mais supérieures à 2.
-Le package *iNEXT* [@Hsieh2014] implémente ces calculs dans R.
+Le package *iNEXT* [@Hsieh2014] implémente ces calculs dans R comme le package *entropart* qui améliore l'estimation des ordres non entiers de diversité.
 
 
 
