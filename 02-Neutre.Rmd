@@ -235,7 +235,7 @@ Si ce n'est pas le cas, la limite des espèces rares $\kappa$ doit être augment
 #### L'estimateur jackknife
 
 La méthode jackknife a pour objectif de réduire le biais d'un estimateur en considérant des jeux de données dans lesquels on a supprimé un certain nombre d'observations (ce nombre est l'ordre de la méthode). 
-Burnham et Overton [-@Burnham1978, -@Burnham1979] ont utilisé cette technique pour obtenir des estimateurs du nombre d'espèces, appelés jackknife à l'ordre $j$, prenant en compte les valeurs de $s^{n}_{1}$ à $s^{n}_{j}$. 
+Burnham et Overton [-@Burnham1978; -@Burnham1979] ont utilisé cette technique pour obtenir des estimateurs du nombre d'espèces, appelés jackknife à l'ordre $j$, prenant en compte les valeurs de $s^{n}_{1}$ à $s^{n}_{j}$. 
 Les estimateurs du premier et du deuxième ordre sont les plus utilisés en pratique:
 
 \begin{equation}
