@@ -1798,10 +1798,14 @@ L'espérance conditionnelle du taux de couverture dans un échantillon de taille
 \end{equation}
 
 Le taux de couverture $C^{n}$ est augmenté par l'échantillonnage de $m$ individus supplémentaires si les espèces non échantillonnées (vérifiant $\mathbf{1}(n_s=0)$) sont découvertes (la probabilité de le faire est $1-(1-p_s)^m$).
+
 $\hat{C}^{n} + \sum_s{p_s \mathbf{1}(n_s=0)}$ vaut par définition 1.
+
 Le deuxième terme de la somme est estimé en posant $\hat{p}_s = \hat{\alpha}_0$ pour toutes les espèces non observées, ce qui constitue la même approximation que pour l'estimation de la relation de Good-Turing, équation \@ref(eq:GoodTuring2014).
-Alors, $\sum_s{p_s}$ est estimé par $\hat{\alpha}_0 {s^{n}_{0}} = \frac{s^{n}_{1}}{n}(1 - \hat{\alpha}_1)$ et $(1-p_s)^m$ par $(1-\hat{\alpha}_0)^m$.
-Les deux estimateurs $\hat{\alpha}_1$ et $\hat{\alpha}_0$ sont égaux à $A$ si le nombre d'espèces non échantillonnées est estimé par l'estimateur Chao1. On obtient
+Alors, $(1-p_s)^m$ est estimé par $(1-\hat{\alpha}_0)^m$ et peut sortir de la somme qui ne contient plus que le terme $\sum_s{p_s}\mathbf{1}(n_s=0)}$, estimé par $\hat{\alpha}_0 {s^{n}_{0}} = \frac{s^{n}_{1}}{n}(1 - \hat{\alpha}_1)$.
+
+Les deux estimateurs $\hat{\alpha}_1$ et $\hat{\alpha}_0$ sont égaux à $A$ si le nombre d'espèces non échantillonnées est estimé par l'estimateur Chao1.
+On obtient
 
 \begin{align} 
   (\#eq:Cnm)
@@ -1812,8 +1816,7 @@ Les deux estimateurs $\hat{\alpha}_1$ et $\hat{\alpha}_0$ sont égaux à $A$ si 
 \end{align}
 
 L'espérance du taux de couverture est directement liée à l'indice de Simpson généralisé [@Good1953]: ${\mathbb E}(C^{n+m}) = 1 - \zeta_{1,n+m}$.
-L'estimateur de $h_q$ est obtenu en remplaçant les termes $\zeta_{1,k}$ de la somme infinie $\sum_{k=n}^{\infty}{\binom{q-1}{k}(-1)^k \zeta_{1,k}}$ par la valeur de $1 -{\mathbb E}(C^{n+m})$
-calculée dans l'équation \@ref(eq:Cnm).
+L'estimateur de $h_q$ est obtenu en remplaçant les termes $\zeta_{1,k}$ de la somme infinie $\sum_{k=n}^{\infty}{\binom{q-1}{k}(-1)^k \zeta_{1,k}}$ par la valeur de $1 -{\mathbb E}(C^{n+m})$ calculée dans l'équation \@ref(eq:Cnm).
 La formule obtenue contient le développement en série entière de $[1 - (1-A)^{q-1}]$, ce qui permet d'éliminer la somme infinie et d'obtenir l'estimateur de l'équation \@ref(eq:HqChaoJost) après simplifications [@Chao2015, Appendix S1, Theorem S1.2d].
 
 
