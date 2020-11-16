@@ -38,7 +38,7 @@ Les communautés et assemblages idéals définissant les nombres équivalents d'
 * des communautés d'espèces équiprobables [@Hill1973], dont l'ancêtre commun est la racine de l'arbre phylogénétique (diversité phylogénétique)[@Marcon2014b] ou dont la distance fonctionnelle est maximale (diversité fonctionnelle) [@Leinster2012];
 * une méta-communauté contenant des communautés de poids égal et totalement distinctes [@Jost2007], c'est-à-dire n'ayant aucune espèce en commun. De plus, la distance fonctionnelle ou phylogénétique est maximale entre deux espèces quelconques appartenant à des communautés différentes [@Pavoine2015a].
 
-Le package *entropart*[@Marcon2014c] permet de calculer avec R la diversité d'une méta-communauté à partir de données d'abondances et d'un arbre (phylogénétique) ou d'une matrice de distances (fonctionnelles).
+Le package *entropart*[@Marcon2014c] permet de calculer avec R la diversité d'une méta-communauté à partir de données d'abondances et d'un arbre (diversité phylogénétique) ou d'une matrice de distances (diversité fonctionnelle).
 
 
 ## Ordres particuliers de diversité

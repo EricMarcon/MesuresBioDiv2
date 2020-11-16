@@ -1473,7 +1473,7 @@ D'autres entropies ont été utlisées, avec plus ou moins de succès.
 Par exemple, @Ricotta2003c proposent d'utiliser la fonction d'information $I(p_s)=-\ln(k_s)$ où $k_s$ est la dissimilarité totale de l'espèce $s$ avec les autres (par exemple, la somme des distances aux autres espèces dans un arbre phylogénétique, voir section \@ref(sec:Dphylo)), normalisée pour que $\sum_s{k_s}=1$.
 Ainsi, les espèces les plus originales apportent peu d'information, ce qui n'est pas très intuitif.
 Les auteurs montrent que leur mesure est la somme de l'entropie de Shannon et de la divergence de Kullback-Leibler entre les probabilités et les dissimilarités des espèces.
-@Ricotta2006b ont défini plus tard une entropie augmentant avec l'originalité de chaque espèce, présentée au chapitre \@ref(chap:LeinsterCobbold)).
+@Ricotta2006b ont défini plus tard une entropie augmentant avec l'originalité de chaque espèce, présentée au chapitre \@ref(chap:LeinsterCobbold).
 
 
 
@@ -1488,7 +1488,7 @@ Les auteurs montrent que leur mesure est la somme de l'entropie de Shannon et de
 
 Tsallis a montré que les indices de Simpson et de Shannon étaient des cas particuliers d'entropie généralisée, retrouvant, sans faire le rapprochement [@Ricotta2005], la définition d'un indice de diversité de @Patil1982.
 
-Ces résultats ont été complétés par d'autres et repris en écologie par @Keylock2005 et @Jost2006, Jost2007. 
+Ces résultats ont été complétés par d'autres et repris en écologie par @Keylock2005 et Jost (-@Jost2006; -@Jost2007). 
 Là encore:
 
 * Le nombre d'espèces moins 1 est $^{0}\!H$;
@@ -1570,7 +1570,7 @@ et
   e^{x+y}_q = e_q^x e^{\frac{y}{1+\left(1-q\right)x}}_q.
 \end{equation}
 
-Si $q>1$, ${\mathop{\lim}_{x\to +\infty} \left(\ln_q{x}\right)={1}/{\left(q-1\right)}}$, donc $e^x_q$ n'est pas défini pour $x>{1}/{\left(q-1\right)}$.
+Si $q>1$, ${\mathop{\lim}_{x\to +\infty} \left(\ln_q{x}\right)={1}/{\left(q-1\right)}}$, donc $e^x_q$ n'est pas définie pour $x>{1}/{\left(q-1\right)}$.
 
 La dérivée du logarithme déformé est, quel que soit $q$,
 \begin{equation}

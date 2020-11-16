@@ -1473,7 +1473,7 @@ Dqz(Paracou618.MC$Ns, q=1, Z)
 knitr::include_graphics('images/ArbreA.png')
 ```
 
-La diversité phylogénétique $^{q}\!\bar{D}(T)$ appliquée à un arbre ultramétrique est un cas particulier de $^q\!D^{\mathbf{Z}}$ pour une matrice $\mathbf{Z}$ dont les lignes et colonnes sont la similarité des "espèces historiques", c'est-à-dire les couples (espèce actuelle; branche ancestrale)[@Leinster2012, proposition A7].
+La diversité phylogénétique $^{q}\!\bar{D}(T)$ appliquée à un arbre ultramétrique est un cas particulier de $^q\!D^{\mathbf{Z}}$ pour une matrice $\mathbf{Z}$ dont les lignes et colonnes sont la similarité des "espèces historiques" [@Leinster2012, proposition A7], c'est-à-dire les couples (espèce actuelle; branche ancestrale).
 
 (ref:MatricePhylo) Matrice de similarité correspondant à l'arbre phylogénétique en exemple. Les noms des lignes et colonnes sont les couples (espèce actuelle; branche ancestrale).
 ```{r MatricePhylo, echo=FALSE, size="scriptsize"}

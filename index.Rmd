@@ -67,7 +67,7 @@ toc-depth: 3
 <!-- Commande nécessaire pour la copie de l'icône "Essentiel" en HTML--> 
 <img src="images/Essentiel.png" alt="image" hidden/>
 
-```{r, echo=FALSE, message=FALSE}
+```{r, include=FALSE}
 ### Utilities. Do not modify.
 # Installation of packages if necessary
 InstallPackages <- function(Packages) {
@@ -90,7 +90,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 ```
 
 
-```{r Options, echo=FALSE, message=FALSE}
+```{r Options, include=FALSE}
 ### Customized options for this book
 # Add necessary packages here
 Packages <- c("ade4", "adespatial", "entropart", "entropy", "EntropyEstimation", 
