@@ -1279,8 +1279,11 @@ HurlbertD(colSums(BCI), k=2)
 ```{block, type='Essentiel'}
   L'entropie est la surprise moyenne apportée par l'observation des individus d'une communauté, d'autant plus grande qu'un individu appartient à une espèce plus rare.
   L'entropie HCDT permet d'unifier les indices classiques de diversité: son paramètre, appelé ordre, fixe l'importance donnée aux espèces rares. L'entropie d'ordre 0 est la richesse; celle d'ordre 1, l'indice de Shannon; celle d'ordre 2, celui de Simpson.
+  L'entropie est la moyenne du logarithme déformé de la rareté des espèces, définie comme l'inverse de leur probabilité.
   
-  L'entropie va de pair avec la diversité au sens strict (Nombres de Hill): le nombre d'espèces équiprobables dont l'entropie est la même que celle de la communauté réelle. Les profils de diversité représentent la diversité en fonction de son ordre et permettent la comparaison de communautés.
+  L'entropie va de pair avec la diversité au sens strict (Nombres de Hill): le nombre d'espèces équiprobables dont l'entropie est la même que celle de la communauté réelle.
+  La diversité est l'exponentielle déformée de la rareté.
+  Les profils de diversité représentent la diversité en fonction de son ordre et permettent la comparaison de communautés.
   
   L'estimation de la diversité est difficile pour des ordres inférieurs à $0,5$ dans des taxocènes très divers comme les arbres des forêts tropicales.
 ```
@@ -1630,8 +1633,6 @@ En raison de leurs propriétés, notamment de décomposition (voir le chapitre \
 
 @Dauby2012 écrivent "diversité au sens strict"; @Gregorius2010 "diversité explicite".
 
-\clearpage
-
 Quoi qu'il en soit, les nombres de Hill respectent le principe de réplication (voir @Chao2010, section 3 pour une discussion et un historique): si $I$ communautés de même taille, de même niveau de diversité $D$, mais sans espèces en commun sont regroupées dans une méta-communauté, la diversité de la méta-communauté doit être $I\times D$.
 
 L'intérêt de ces approches est de fournir une définition paramétrique de la diversité, qui donne plus ou moins d'importance aux espèces rares:
@@ -1663,6 +1664,24 @@ Les propriétés mathématiques de la diversité ne sont pas celles de l'entropi
 L'entropie doit être une fonction concave des probabilités comme on l'a vu plus haut, mais pas la diversité (un exemple de confusion est fourni par @Gadagkar1989, qui reproche à $^{2}\!D$ de ne pas être concave). 
 L'entropie est une moyenne pondérée par les probabilités de la fonction d'information, c'est donc une fonction linéaire des probabilités, propriété importante pour définir l'entropie $\alpha$ (section \@ref(sec:defalpha)) comme la moyenne des entropies de plusieurs communautés, ou l'entropie phylogénétique (chapitre \@ref(chap:Phyloentropie)) comme la moyenne de l'entropie sur les périodes d'un arbre. 
 La diversité n'est pas une fonction linéaire des probabilités: la diversité moyenne n'est en général pas la moyenne des diversités.
+
+
+### Synthèse
+
+L'inverse de la probabilité d'une espèce, $1/p_s$, définit sa rareté.
+L’entropie est la moyenne du logarithme de la rareté:
+
+\begin{equation}
+  (\#eq:EntropieRarete)
+  ^{q}\!H = \frac{1}{q-1}\left(1-\sum^S_{s=1}{p^q_s}\right)=\sum_s{p_s}\ln_q\frac{1}{p_s}.
+\end{equation}
+
+La diversité est son exponentielle:
+
+\begin{equation}
+  (\#eq:DexpHSynthese)
+  ^{q}\!D = e_q^{^{q}\!H}.
+\end{equation}
 
 
 ## Profils de diversité
