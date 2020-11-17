@@ -1802,7 +1802,7 @@ Le taux de couverture $C^{n}$ est augmenté par l'échantillonnage de $m$ indivi
 $\hat{C}^{n} + \sum_s{p_s \mathbf{1}(n_s=0)}$ vaut par définition 1.
 
 Le deuxième terme de la somme est estimé en posant $\hat{p}_s = \hat{\alpha}_0$ pour toutes les espèces non observées, ce qui constitue la même approximation que pour l'estimation de la relation de Good-Turing, équation \@ref(eq:GoodTuring2014).
-Alors, $(1-p_s)^m$ est estimé par $(1-\hat{\alpha}_0)^m$ et peut sortir de la somme qui ne contient plus que le terme $\sum_s{p_s}\mathbf{1}(n_s=0)}$, estimé par $\hat{\alpha}_0 {s^{n}_{0}} = \frac{s^{n}_{1}}{n}(1 - \hat{\alpha}_1)$.
+Alors, $(1-p_s)^m$ est estimé par $(1-\hat{\alpha}_0)^m$ et peut sortir de la somme qui ne contient plus que le terme $\sum_s{p_s}\mathbf{1}(n_s=0)$, estimé par $\hat{\alpha}_0 {s^{n}_{0}} = \frac{s^{n}_{1}}{n}(1 - \hat{\alpha}_1)$.
 
 Les deux estimateurs $\hat{\alpha}_1$ et $\hat{\alpha}_0$ sont égaux à $A$ si le nombre d'espèces non échantillonnées est estimé par l'estimateur Chao1.
 On obtient
