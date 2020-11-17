@@ -1282,7 +1282,7 @@ HurlbertD(colSums(BCI), k=2)
   L'entropie est la moyenne du logarithme déformé de la rareté des espèces, définie comme l'inverse de leur probabilité.
   
   L'entropie va de pair avec la diversité au sens strict (Nombres de Hill): le nombre d'espèces équiprobables dont l'entropie est la même que celle de la communauté réelle.
-  La diversité est l'exponentielle déformée de la rareté.
+  La diversité est l'exponentielle déformée de l'entropie.
   Les profils de diversité représentent la diversité en fonction de son ordre et permettent la comparaison de communautés.
   
   L'estimation de la diversité est difficile pour des ordres inférieurs à $0,5$ dans des taxocènes très divers comme les arbres des forêts tropicales.
