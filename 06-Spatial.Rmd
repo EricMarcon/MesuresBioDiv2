@@ -811,7 +811,7 @@ Enfin, quand l'échelle est encore plus grande, le nombre d'espèces augmente à
 
 ## Estimation de la richesse à partir de placettes distantes
 
-@Krishnamani2004, d'après @Harte1999, développent une méthode permettant l'extrapolation de la richesse mesurée sur de petites surfaces (48 placettes de .25&nbsp;ha) à de très grandes zones (60000&nbsp;km², la taille des Western Ghats en Inde).
+@Krishnamani2004, d'après @Harte1999, développent une méthode permettant l'extrapolation de la richesse mesurée sur de petites surfaces (48 placettes de 0.25&nbsp;ha) à de très grandes zones (60000&nbsp;km², la taille des Western Ghats en Inde).
 
 Partant de la relation d'Arrhenius vue précédemment, le nombre d'espèces dans une surface $A_1$ est
 
