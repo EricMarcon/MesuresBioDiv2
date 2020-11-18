@@ -104,8 +104,8 @@ Cette approche utilitaire est complétée par le cadre théorique de @Jurasinski
 * La diversité de différenciation (*differentiation diversity*), qui mesure à quel point les unités spatiales sont différentes, ce qui correspond à la définition littérale de la diversité $\beta$ de Whittaker;
 * La diversité proportionnelle (*proportional diversity*), diversité $\beta$ qui se construit par différence ou rapport des diversités $\gamma$ et $\alpha$. @Marcon2014a ont montré qu'avec une décomposition appropriée de la diversité, la diversité proportionnelle est aussi la divergence entre la distribution des communautés locales et celle de la méta-communauté: la diversité $\beta$ mesure alors à quel point les unités spatiales sont différentes de leur assemblage plutôt qu'entre elles.
 
-Dans son article fondateur, @Whittaker1960 définit la diversité $\beta$ comme le niveau de changement dans la composition des communautés, la nomme "diversité secondaire " et lui attribue la lettre $\beta$ en référence à la diversité "primaire " mesurable par l'indice $alpha$ de Fisher [@Fisher1943] (voir le chapitre \@ref(chap:Fisher).
-Il illustre cette définition par une mesure de différentiation: l'indice de Jaccard, mais utilise ensuite une mesure proportionnelle: le rapport des indice $alpha$ de l'assemblage des communautés à sa moyenne sur les communautés.
+Dans son article fondateur, @Whittaker1960 définit la diversité $\beta$ comme le niveau de changement dans la composition des communautés, la nomme "diversité secondaire " et lui attribue la lettre $\beta$ en référence à la diversité "primaire " mesurable par l'indice $\alpha$ de Fisher [@Fisher1943], voir le chapitre \@ref(chap:Fisher).
+Il illustre cette définition par une mesure de différentiation: l'indice de Jaccard, mais utilise ensuite une mesure proportionnelle: le rapport des indice $\alpha$ de l'assemblage des communautés à sa moyenne sur les communautés.
 La conciliation des deux approches n'est pas simple.
 @Gregorius2016 montre notamment que les mesures habituelles de diversité proportionnelle ne rendent pas compte correctement de la différentiation.
 
