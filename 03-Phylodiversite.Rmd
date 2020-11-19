@@ -1609,30 +1609,34 @@ Si $\mathbf{Z}=\mathbf{I}_s$, l'ACP ne modifie pas le nuage de points original e
 
 L'exemple suivant calcule la diversité de la méta-communauté `Paracou618` selon la matrice de distances `Paracou618.dist`.
 ```{r DqZLambda}
-# Probabilités
-Ps <- Paracou618.MC$Ps[Paracou618.MC$Ps>0]
 # Matrice de distances fonctionnelles
 DistanceMatrix <- as.matrix(Paracou618.dist)
-# Transformation en matrice de similarité
-Z <- 1 - DistanceMatrix/max(DistanceMatrix)
 # Mise en correspondance de la matrice et du vecteur de probabilités
-Z <- Z[names(Ps), names(Ps)]
+D <- DistanceMatrix[names(Ps), names(Ps)]
+# Normalisation
+D <- D/max(D)
+# Transformation en matrice de similarité
+Z <- 1 - D
+# Probabilités
+Ps <- Paracou618.MC$Ps[Paracou618.MC$Ps>0]
 # Matrice diagonale contenant les probabilités
 Q <- diag(Ps)
 # Matrice des espèces (les lignes de Sp sont les coordonnées des vecteurs)
-Sp <- sqrt(Q %*% Z %*% Q)
+Sp <- sqrt(Q) %*% sqrt(Z) %*% sqrt(Q)
 # Valeurs propres normalisées
 Lambda <- svd(Sp)$d
 Mu <- Lambda/sum(Lambda)
 # Comparaison des valeurs à q=2
 Diversity(Mu, 2)
+# Diversité de Rao
 Dqz(Ps, 2, Z)
 # La valeur à q=0 est le nombre d'espèces
 Diversity(Mu, 0)
 length(Ps)
 ```
 
-La valeur de la diversité des valeurs propres est légèrement différente de celle de la diversité de Leinster et Cobbold à cause des approximations numériques liées au calcul des valeurs propres (qui nécessitent l'inversion d'une matrice carrée de dimension $S$).
+La valeur de la diversité des valeurs propres est différente de celle de la diversité de Rao à cause des approximations numériques liées au calcul des valeurs propres (qui nécessitent l'inversion d'une matrice carrée de dimension $S$).
+La valeur exacte est celle donnée par `Dqz()`.
 
 Le profil de diversité se trouve en figure \@ref(fig:DqZLambdaFig).
 
