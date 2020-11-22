@@ -442,10 +442,11 @@ scatter(PcoChaoJaccard, posieig = "bottomright")
 
 ## Données d'abondance
 
-La distance la plus évidente entre communautés quand les effectifs des espèces sont connus est simplement la distance euclidienne, éventuellement normalisée par le nombre d'espèces (Dissimilarité $D_1$ de @Gower1986).
+La distance la plus évidente entre communautés quand les effectifs des espèces sont connus est simplement la distance euclidienne, éventuellement normalisée par le nombre d'espèces [Dissimilarité $D_1$ de @Gower1986].
 Son problème principal est qu'elle est très sensible aux ordres de grandeurs relatifs des variables.
 
-La dissimilarité de Steinhaus [@Motyka1947], plus connue sous le nom de Bray-Curtis [@Odum1950; @Bray1957] (voir l'analyse historique de  @Legendre2012, note de bas de page, eq. 7.58,), qui pourrait être attribuée à @Renkonen1938, est très utilisée (par défaut dans plusieurs analyses du package *vegan* par exemple):
+La dissimilarité de Steinhaus [@Motyka1947] est plus connue sous le nom de Bray-Curtis [@Odum1950; @Bray1957], voir l'analyse historique de  @Legendre2012, note de bas de page, eq. 7.58, et pourrait être attribuée à @Renkonen1938.
+Elle est très utilisée, par défaut dans plusieurs analyses du package *vegan* par exemple:
 
 \begin{equation}
   (\#eq:BrayCurtis)

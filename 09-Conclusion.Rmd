@@ -72,7 +72,8 @@ La diversité d'ordre 1 a en revanche des propriétés avantageuses pour la déc
 ## Limites
 
 Les principales limites des mesures de diversité sont d'ordre conceptuel et pratique. 
-L'axiome de symétrie interdit de donner un rôle particulier à une espèce: il n'est donc pas possible conceptuellement de prendre en compte les espèces focales [@Zacharias2001] dans la quantification de la diversité (espèces emblématiques, espèces clé de voûte [@Paine1969], espèces parapluie [@Roberge2004], espèces ingénieures [@Jones1994]...). 
+L'axiome de symétrie interdit de donner un rôle particulier à une espèce.
+Il n'est donc pas possible conceptuellement de prendre en compte les espèces focales [@Zacharias2001] dans la quantification de la diversité: espèces emblématiques, espèces clé de voûte [@Paine1969], espèces parapluie [@Roberge2004], espèces ingénieures [@Jones1994].... 
 Leur présence peut être décisive pour la conservation, mais il s'agit clairement d'une question distincte de celle de la diversité.
 
 Sur le plan pratique, la mesure de la diversité se réduit souvent à un groupe biologique (dans ce document, les arbres).
@@ -81,7 +82,7 @@ L'étendue spatiale à laquelle des données d'abondance sont accessibles est so
 Si la diversité à prendre en compte est au-delà des données disponibles, il est nécessaire d'utiliser des *indicateurs* [@Balmford2003] qui peuvent être la diversité d'un ou quelques groupes représentatifs, voire la présence d'espèces indicatrices [@Clements1916]. 
 Des indicateurs indirects sont la diversité des habitats ou même l'étendue de certains habitats reconnus comme les plus favorables à un haut niveau de diversité. 
 Une réflexion en cours [@Pereira2013] consiste à établir une liste de variables pertinentes (*Essential biodiversity variables*) qui puissent constituer des indicateurs standardisés à l'échelle globale pour permettre la comparaison des données.
-Les indicateurs dévient souvent de la notion stricte de diversité et peuvent mesurer tout autre chose, comme l'indice BII (*Biodiversity Intactness Index* [@Scholes2005]) qui est la moyenne pondérée par la surface des habitats et le nombre d'espèces concernées de la variation des effectifs des populations induite par l'anthropisation. 
+Les indicateurs dévient souvent de la notion stricte de diversité et peuvent mesurer tout autre chose, comme l'indice BII [*Biodiversity Intactness Index*, @Scholes2005] qui est la moyenne pondérée par la surface des habitats et le nombre d'espèces concernées de la variation des effectifs des populations induite par l'anthropisation. 
 Les effectifs ne sont pas pris en compte dans la mesure de la diversité (sauf dans le calcul des biais d'estimation), seules les proportions importent: l'indice BII mesure donc la dégradation des habitats plus que la variation de la biodiversité. 
 L'argument, développé par @Balmford2003, est que la diminution des effectifs des espèces suivies est corrélé à la disparition des espèces plus vulnérables; l'effectif d'une population est aussi un indicateur de sa diversité génétique.
 La moyenne géométrique des abondances relatives [@Buckland2011] compare les abondances des espèces au cours du temps à leur valeur initiale.
@@ -89,4 +90,3 @@ L'indice LPI (*Living Planet Index*) [@Loh2005] s'appuie sur ce même principe: 
 Une approche similaire mais plus exhaustive [@Ceballos2017] montre une très forte probabilité d'extinction massive à venir.
 
 La recherche sur la mesure de la diversité est très active, ce document évolue donc régulièrement pour prendre en compte les avancées récentes.
-
