@@ -599,7 +599,7 @@ La distribution des espèces non observées peut maintenant être estimée dans 
 ```
 
 En forêt tempérée, toutes les espèces d'un habitat sont rencontrées sur une surface inférieure à l'hectare. 
-L'*aire minimale* est la surface nécessaire à échantillonner pour caractériser une *association végétale*, dans l'approche de la phytosociologie fondée par @Braun-Blanquet1928 (et plus largement [@Greig-Smith1983], même si son intérêt est discuté [@McGuinness1984]): elle ne contient pas toutes les espèces mais un sous-ensemble caractéristique. 
+L'*aire minimale* est la surface nécessaire à échantillonner pour caractériser une *association végétale*, dans l'approche de la phytosociologie fondée par @Braun-Blanquet1928 et plus largement [@Greig-Smith1983], même si son intérêt est discuté [@McGuinness1984]: elle ne contient pas toutes les espèces mais un sous-ensemble caractéristique. 
 Elle est de l'ordre de 200&nbsp;m² en Europe [@Chytry2003].
 L'augmentation de la surface intègre de nouveaux habitats et ajoute donc la diversité $\beta$, par sauts successifs dans la situation idéale.
 
@@ -639,7 +639,7 @@ Le glissement d'un modèle de biogéographie des îles à un cadre plus généra
 
 La distribution log-normale de Preston, dite "canonique " assumait une relation particulière entre le nombre d'espèces et le nombre d'individus, pour laquelle @May1975 a montré que la valeur exacte de $z$ est 0,25.
 Les résultats empiriques ultérieurs [@May1975; @May2000], pour des lois quelconques, non canoniques, ont fourni des valeurs généralement comprises entre 0,2 et 0,3. 
-Une large méta-analyse [@Drakare2006] à partir de 794 SAR d'origine très différentes fournit une moyenne de 0,27, comme la méta-analyse de la figure \@ref(fig:Williamson2001) [@Williamson2001], données de @Lonsdale1999, mais avec une certaine variabilité que les auteurs relient à l'échelle spatiale, au type d'organismes et aux habitats échantillonnés, mais aussi à la technique d'échantillonnage.
+Une large méta-analyse [@Drakare2006] à partir de 794 SAR d'origine très différentes fournit une moyenne de 0,27, comme la méta-analyse de la figure \@ref(fig:Williamson2001) extraite de @Williamson2001 à partir de données de @Lonsdale1999, mais avec une certaine variabilité que les auteurs relient à l'échelle spatiale, au type d'organismes et aux habitats échantillonnés, mais aussi à la technique d'échantillonnage.
 
 Le paramètre le plus variable de la loi de puissance reste donc $c$, un facteur d'échelle dépendant de la richesse de l'habitat.
 

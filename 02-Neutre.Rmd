@@ -2277,7 +2277,7 @@ Une approche axiomatique a été développée par la littérature, revue par @Jo
 knitr::include_graphics('images/Tuomisto2012.png')
 ```
 
-Un critère supplémentaire établi par @Smith1996, complété par @Gosselin2001 est la compatibilité avec la courbe de @Lorenz1905, construite en classant les espèces de la moins fréquente à la plus fréquente, et en traçant le cumul des fréquences en fonction du rang (figure \@ref(fig:Tuomisto2012), @Tuomisto2012): une communauté parfaitement équitable est représentée par la bissectrice.
+Un critère supplémentaire établi par @Smith1996, complété par @Gosselin2001 est la compatibilité avec la courbe de @Lorenz1905, construite en classant les espèces de la moins fréquente à la plus fréquente, et en traçant le cumul des fréquences en fonction du rang [figure \@ref(fig:Tuomisto2012), @Tuomisto2012]: une communauté parfaitement équitable est représentée par la bissectrice.
 La surface entre la courbe réelle et la bissectrice est très utilisée en économie pour mesurer l'inégalité sous le nom d'"indice de Gini" [@Gini1912; @Ceriani2012]:
 
 * Compatibilité avec la courbe de Lorenz: l'équitabilité augmente pour une communauté si sa courbe de Lorenz est plus proche de la bissectrice. 
