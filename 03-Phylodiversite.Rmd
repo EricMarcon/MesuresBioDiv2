@@ -1609,6 +1609,8 @@ Si $\mathbf{Z}=\mathbf{I}_s$, l'ACP ne modifie pas le nuage de points original e
 
 L'exemple suivant calcule la diversité de la méta-communauté `Paracou618` selon la matrice de distances `Paracou618.dist`.
 ```{r DqZLambda}
+# Probabilités
+Ps <- Paracou618.MC$Ps[Paracou618.MC$Ps>0]
 # Matrice de distances fonctionnelles
 DistanceMatrix <- as.matrix(Paracou618.dist)
 # Mise en correspondance de la matrice et du vecteur de probabilités
@@ -1617,8 +1619,6 @@ D <- DistanceMatrix[names(Ps), names(Ps)]
 D <- D/max(D)
 # Transformation en matrice de similarité
 Z <- 1 - D
-# Probabilités
-Ps <- Paracou618.MC$Ps[Paracou618.MC$Ps>0]
 # Matrice diagonale contenant les probabilités
 Q <- diag(Ps)
 # Matrice des espèces (les lignes de Sp sont les coordonnées des vecteurs)
