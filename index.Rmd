@@ -33,11 +33,19 @@ link-citations: yes
 maintitlepage:
   epigraph: |
     Ce document est réalisé de façon dynamique et reproductible grâce à:
+
     \begin{itemize}
       \item \LaTeX, dans sa distribution Miktex (\url{http://miktex.org/}) et la classe memoir (\url{http://www.ctan.org/pkg/memoir}).
       \item R (\url{http://www.r-project.org/}) et RStudio (\url{http://www.rstudio.com/})
       \item bookdown (\url{http://bookdown.org/})
     \end{itemize}
+    
+    Son code source est sur GitHub: \url{https://github.com/EricMarcon/MesuresBioDiv2/}.
+    
+    Le texte mis à jour en continu peut être lu sur \url{https://ericmarcon.github.io/MesuresBioDiv2/}.
+    
+    Les versions d'étape sont déposées sur HAL: \url{https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/}.
+
 otherlangs:
 - en-US
 - en-GB
