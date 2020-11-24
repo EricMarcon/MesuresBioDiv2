@@ -79,7 +79,7 @@ InstallPackages <- function(Packages) {
   invisible(sapply(Packages, InstallPackage))
 }
 # Basic packages
-InstallPackages(c("bookdown", "devtools", "kableExtra", "knitr", "rmarkdown"))
+InstallPackages(c("bookdown", "devtools", "formatR", "kableExtra", "knitr", "rmarkdown"))
 library("kableExtra") # Mandatory to load css and more
 # Chunk font size hook: allows size='small' or any valid Latex font size in chunk options
 def.chunk.hook  <- knitr::knit_hooks$get("chunk")

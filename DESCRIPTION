@@ -15,6 +15,7 @@ Imports:
   entropart,
   entropy,
   EntropyEstimation,
+  formatR,
   GoFKernel,
   gridExtra,
   iNEXT,
