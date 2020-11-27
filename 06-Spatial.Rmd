@@ -530,7 +530,7 @@ ggplot() +
 
 Les modèles classiques de courbes aire-espèces supposent un tirage indépendant des individus. 
 Sur le terrain, par exemple en forêt, l'échantillonnage est continu: s'il existe une structure spatiale comme des agrégats, la probabilité que l'arbre suivant soit d'une espèce donnée dépend de ses voisins, donc de l'arbre précédent. 
-Intuitivement, on comprend bien que le nouvel arbre de la même espèce apporte moins d'information, ce qui revient à surestimer la taille de l'échantillon ou sous-estimer la richesse pour une taille d'échantillon fixée.
+Intuitivement, on comprend bien que le nouvel arbre de la même espèce apporte moins d'information, ce qui revient à surestimer la taille de l'échantillon ou sous-estimer la richesse pour une taille d'échantillon fixée [@Veech2005].
 
 @Plotkin2000a traitent un problème un peu différent: connaissant le nombre total d'espèces dans les dispositifs de la figure \@ref(fig:CTFS), ils tracent la courbe de raréfaction théorique qui considère simplement que la probabilité de ne pas rencontrer une espèce suit une loi binomiale, les tirages étant indépendants. 
 Ce modèle surestime largement la diversité pour les petites surfaces: la probabilité de ne pas rencontrer une espèce agrégative est sous-estimée. 
