@@ -1665,7 +1665,7 @@ Le modèle est alors celui de la décomposition de l'indice de Simpson présent�
 Les mesures de dissimilarité acceptables [@Kosman2005] sont par exemple les mêmes que celles utilisées pour la diversité $\beta$ des communautés appliquées aux présences/absences de bandes de profils AFLP.
 
 La mesure de dissimilarité moyenne entre les individus, notée $ADW_{\rho}$ pour *Average Dissimilarity Within*, où $\rho$ représente la dissimilarité choisie, est simplement l'entropie quadratique de Rao.
-Si la dissimilarité n'est pas euclidienne, la concavité de $ADW_{\rho}$ n'est pas garantie, ce qui motive Kosman à proposer une autre mesure [@Kosman1996, Kosman2007], ${KW}_{\rho}$, qui est la dissimilarité moyenne des $n$ paires d'individus les plus dissimilaires (au lieu de toutes les ${n(n-1)}/{2}$ paires).
+Si la dissimilarité n'est pas euclidienne, la concavité de $ADW_{\rho}$ n'est pas garantie, ce qui motive Kosman à proposer une autre mesure [@Kosman1996; @Kosman2007], ${KW}_{\rho}$, qui est la dissimilarité moyenne des $n$ paires d'individus les plus dissimilaires (au lieu de toutes les ${n(n-1)}/{2}$ paires).
 Les $n$ paires d'individus sont construites de façon que chaque individu apparaisse une fois en tant que premier et une fois en tant que second membre de la paire, selon un algorithme non trivial [@Bellman1970].
 Tous les individus contribuent donc à la mesure de la diversité.
 
