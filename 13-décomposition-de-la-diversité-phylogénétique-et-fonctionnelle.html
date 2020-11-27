@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité</title>
+  <meta name="description" content="13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité" />
+  
+  <meta name="twitter:description" content="13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité." />
+  
+
+<meta name="author" content="Eric Marcon" />
+
+
+<meta name="date" content="2020-11-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="12-chap-DedompHCDT.html"/>
+<link rel="next" href="14-tests-de-significativité.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-163419632-1');
+</script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mesures de la Biodiversité</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Motivation</a></li>
+<li class="chapter" data-level="" data-path="notations.html"><a href="notations.html"><i class="fa fa-check"></i>Notations</a></li>
+<li class="part"><span><b>I Notions</b></span></li>
+<li class="chapter" data-level="1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html"><i class="fa fa-check"></i><b>1</b> Notions de Diversité</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#composantes"><i class="fa fa-check"></i><b>1.1</b> Composantes</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#richesse"><i class="fa fa-check"></i><b>1.1.1</b> Richesse</a></li>
+<li class="chapter" data-level="1.1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#équitabilité"><i class="fa fa-check"></i><b>1.1.2</b> Équitabilité</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#disparité"><i class="fa fa-check"></i><b>1.1.3</b> Disparité</a></li>
+<li class="chapter" data-level="1.1.4" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#agrégation"><i class="fa fa-check"></i><b>1.1.4</b> Agrégation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#niveaux-de-létude"><i class="fa fa-check"></i><b>1.2</b> Niveaux de l’étude</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#diversité-alpha-beta-et-gamma"><i class="fa fa-check"></i><b>1.2.1</b> Diversité <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> et <span class="math inline">\(\gamma\)</span></a></li>
+<li class="chapter" data-level="1.2.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#décomposition"><i class="fa fa-check"></i><b>1.2.2</b> Décomposition</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#le-problème-de-lespèce"><i class="fa fa-check"></i><b>1.3</b> Le problème de l’espèce</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-outils.html"><a href="2-outils.html"><i class="fa fa-check"></i><b>2</b> Outils</a><ul>
+<li class="chapter" data-level="2.1" data-path="2-outils.html"><a href="2-outils.html#calculs-et-données"><i class="fa fa-check"></i><b>2.1</b> Calculs et données</a></li>
+<li class="chapter" data-level="2.2" data-path="2-outils.html"><a href="2-outils.html#sad-et-sar"><i class="fa fa-check"></i><b>2.2</b> SAD et SAR</a></li>
+<li class="chapter" data-level="2.3" data-path="2-outils.html"><a href="2-outils.html#sec:Couverture"><i class="fa fa-check"></i><b>2.3</b> Taux de couverture</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="2-outils.html"><a href="2-outils.html#formule-des-fréquences-de-good-turing"><i class="fa fa-check"></i><b>2.3.1</b> Formule des fréquences de Good-Turing</a></li>
+<li class="chapter" data-level="2.3.2" data-path="2-outils.html"><a href="2-outils.html#taux-de-couverture-et-déficit-de-couverture"><i class="fa fa-check"></i><b>2.3.2</b> Taux de couverture et déficit de couverture</a></li>
+<li class="chapter" data-level="2.3.3" data-path="2-outils.html"><a href="2-outils.html#complétude"><i class="fa fa-check"></i><b>2.3.3</b> Complétude</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Diversité neutre d’une communauté</b></span></li>
+<li class="chapter" data-level="3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html"><i class="fa fa-check"></i><b>3</b> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span></a><ul>
+<li class="chapter" data-level="3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Richesse"><i class="fa fa-check"></i><b>3.1</b> Richesse spécifique</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#techniques-destimation-non-paramétrique"><i class="fa fa-check"></i><b>3.1.1</b> Techniques d’estimation non paramétrique</a></li>
+<li class="chapter" data-level="3.1.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#inférence-du-nombre-despèces-à-partir-de-la-sad"><i class="fa fa-check"></i><b>3.1.2</b> Inférence du nombre d’espèces à partir de la SAD</a></li>
+<li class="chapter" data-level="3.1.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:RichesseSAC"><i class="fa fa-check"></i><b>3.1.3</b> Inférence du nombre d’espèces à partir de courbes d’accumulation</a></li>
+<li class="chapter" data-level="3.1.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#diversité-générique"><i class="fa fa-check"></i><b>3.1.4</b> Diversité générique</a></li>
+<li class="chapter" data-level="3.1.5" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#combien-y-a-t-il-despèces-différentes-sur-terre"><i class="fa fa-check"></i><b>3.1.5</b> Combien y a-t-il d’espèces différentes sur Terre?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-simpson"><i class="fa fa-check"></i><b>3.2</b> Indice de Simpson</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition"><i class="fa fa-check"></i><b>3.2.1</b> Définition</a></li>
+<li class="chapter" data-level="3.2.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#estimation"><i class="fa fa-check"></i><b>3.2.2</b> Estimation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-shannon"><i class="fa fa-check"></i><b>3.3</b> Indice de Shannon</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition-1"><i class="fa fa-check"></i><b>3.3.1</b> Définition</a></li>
+<li class="chapter" data-level="3.3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:BiaisShannon"><i class="fa fa-check"></i><b>3.3.2</b> Estimation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Hurlbert"><i class="fa fa-check"></i><b>3.4</b> Indice de Hurlbert</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition-2"><i class="fa fa-check"></i><b>3.4.1</b> Définition</a></li>
+<li class="chapter" data-level="3.4.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#estimation-1"><i class="fa fa-check"></i><b>3.4.2</b> Estimation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-entropie.html"><a href="4-entropie.html"><i class="fa fa-check"></i><b>4</b> Entropie</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-entropie.html"><a href="4-entropie.html#définition-de-lentropie"><i class="fa fa-check"></i><b>4.1</b> Définition de l’entropie</a></li>
+<li class="chapter" data-level="4.2" data-path="4-entropie.html"><a href="4-entropie.html#entropie-relative"><i class="fa fa-check"></i><b>4.2</b> Entropie relative</a></li>
+<li class="chapter" data-level="4.3" data-path="4-entropie.html"><a href="4-entropie.html#lappropriation-de-lentropie-par-la-biodiversité"><i class="fa fa-check"></i><b>4.3</b> L’appropriation de l’entropie par la biodiversité</a></li>
+<li class="chapter" data-level="4.4" data-path="4-entropie.html"><a href="4-entropie.html#entropie-hcdt"><i class="fa fa-check"></i><b>4.4</b> Entropie HCDT</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="4-entropie.html"><a href="4-entropie.html#logarithmes-déformés"><i class="fa fa-check"></i><b>4.4.1</b> Logarithmes déformés</a></li>
+<li class="chapter" data-level="4.4.2" data-path="4-entropie.html"><a href="4-entropie.html#entropie-et-diversité"><i class="fa fa-check"></i><b>4.4.2</b> Entropie et diversité</a></li>
+<li class="chapter" data-level="4.4.3" data-path="4-entropie.html"><a href="4-entropie.html#synthèse"><i class="fa fa-check"></i><b>4.4.3</b> Synthèse</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="4-entropie.html"><a href="4-entropie.html#profils-de-diversité"><i class="fa fa-check"></i><b>4.5</b> Profils de diversité</a></li>
+<li class="chapter" data-level="4.6" data-path="4-entropie.html"><a href="4-entropie.html#estimation-de-lentropie"><i class="fa fa-check"></i><b>4.6</b> Estimation de l’entropie</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="4-entropie.html"><a href="4-entropie.html#zhang-et-grabchak"><i class="fa fa-check"></i><b>4.6.1</b> Zhang et Grabchak</a></li>
+<li class="chapter" data-level="4.6.2" data-path="4-entropie.html"><a href="4-entropie.html#sec:BiaisHCDT"><i class="fa fa-check"></i><b>4.6.2</b> Chao et Jost</a></li>
+<li class="chapter" data-level="4.6.3" data-path="4-entropie.html"><a href="4-entropie.html#autres-méthodes"><i class="fa fa-check"></i><b>4.6.3</b> Autres méthodes</a></li>
+<li class="chapter" data-level="4.6.4" data-path="4-entropie.html"><a href="4-entropie.html#biais-des-estimateurs"><i class="fa fa-check"></i><b>4.6.4</b> Biais des estimateurs</a></li>
+<li class="chapter" data-level="4.6.5" data-path="4-entropie.html"><a href="4-entropie.html#intervalle-de-confiance-des-estimateurs"><i class="fa fa-check"></i><b>4.6.5</b> Intervalle de confiance des estimateurs</a></li>
+<li class="chapter" data-level="4.6.6" data-path="4-entropie.html"><a href="4-entropie.html#pratique-de-lestimation"><i class="fa fa-check"></i><b>4.6.6</b> Pratique de l’estimation</a></li>
+<li class="chapter" data-level="4.6.7" data-path="4-entropie.html"><a href="4-entropie.html#msom-et-msam"><i class="fa fa-check"></i><b>4.6.7</b> MSOM et MSAM</a></li>
+<li class="chapter" data-level="4.6.8" data-path="4-entropie.html"><a href="4-entropie.html#sec:RarExtrapol"><i class="fa fa-check"></i><b>4.6.8</b> Raréfaction et extrapolation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="4-entropie.html"><a href="4-entropie.html#autres-approches"><i class="fa fa-check"></i><b>4.7</b> Autres approches</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-de-rényi"><i class="fa fa-check"></i><b>4.7.1</b> L’entropie de Rényi</a></li>
+<li class="chapter" data-level="4.7.2" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-généralisée-des-mesures-dinégalité"><i class="fa fa-check"></i><b>4.7.2</b> L’entropie généralisée des mesures d’inégalité</a></li>
+<li class="chapter" data-level="4.7.3" data-path="4-entropie.html"><a href="4-entropie.html#sec:SimpsonG"><i class="fa fa-check"></i><b>4.7.3</b> L’entropie de Simpson généralisée</a></li>
+<li class="chapter" data-level="4.7.4" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-par-cas"><i class="fa fa-check"></i><b>4.7.4</b> L’entropie par cas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html"><i class="fa fa-check"></i><b>5</b> Équitabilité</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#approche-axiomatique"><i class="fa fa-check"></i><b>5.1</b> Approche axiomatique</a></li>
+<li class="chapter" data-level="5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-classiques"><i class="fa fa-check"></i><b>5.2</b> Indice classiques</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-bulla"><i class="fa fa-check"></i><b>5.2.1</b> Indice de Bulla</a></li>
+<li class="chapter" data-level="5.2.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-gini"><i class="fa fa-check"></i><b>5.2.2</b> Indice de Gini</a></li>
+<li class="chapter" data-level="5.2.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#rapports-de-moyennes"><i class="fa fa-check"></i><b>5.2.3</b> Rapports de moyennes</a></li>
+<li class="chapter" data-level="5.2.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#ratios-de-hill"><i class="fa fa-check"></i><b>5.2.4</b> Ratios de Hill</a></li>
+<li class="chapter" data-level="5.2.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#synthèse-1"><i class="fa fa-check"></i><b>5.2.5</b> Synthèse</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-alternatifs"><i class="fa fa-check"></i><b>5.3</b> Indice alternatifs</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#variance-de-la-rareté"><i class="fa fa-check"></i><b>5.3.1</b> Variance de la rareté</a></li>
+<li class="chapter" data-level="5.3.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#non-spécificité"><i class="fa fa-check"></i><b>5.3.2</b> Non-spécificité</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-pielou"><i class="fa fa-check"></i><b>5.4</b> Indice de Pielou</a></li>
+<li class="chapter" data-level="5.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#généralisation-de-lindice-de-pielou"><i class="fa fa-check"></i><b>5.5</b> Généralisation de l’indice de Pielou</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#sec:Mendes"><i class="fa fa-check"></i><b>5.5.1</b> Mendes et al. </a></li>
+<li class="chapter" data-level="5.5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#tuomisto"><i class="fa fa-check"></i><b>5.5.2</b> Tuomisto</a></li>
+<li class="chapter" data-level="5.5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#jost"><i class="fa fa-check"></i><b>5.5.3</b> Jost</a></li>
+<li class="chapter" data-level="5.5.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#synthèse-2"><i class="fa fa-check"></i><b>5.5.4</b> Synthèse</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#relations-empiriques-entre-richesse-et-équitabilité"><i class="fa fa-check"></i><b>5.6</b> Relations empiriques entre richesse et équitabilité</a></li>
+</ul></li>
+<li class="part"><span><b>III Diversité fonctionnelle et phylogénétique</b></span></li>
+<li class="chapter" data-level="6" data-path="6-cadre.html"><a href="6-cadre.html"><i class="fa fa-check"></i><b>6</b> Cadre</a><ul>
+<li class="chapter" data-level="6.1" data-path="6-cadre.html"><a href="6-cadre.html#dissimilarité-et-distance"><i class="fa fa-check"></i><b>6.1</b> Dissimilarité et distance</a></li>
+<li class="chapter" data-level="6.2" data-path="6-cadre.html"><a href="6-cadre.html#sec:Dphylo"><i class="fa fa-check"></i><b>6.2</b> Distance phylogénétique</a></li>
+<li class="chapter" data-level="6.3" data-path="6-cadre.html"><a href="6-cadre.html#sec:DFonctionnelle"><i class="fa fa-check"></i><b>6.3</b> Distance fonctionnelle</a></li>
+<li class="chapter" data-level="6.4" data-path="6-cadre.html"><a href="6-cadre.html#équivalence-des-deux-diversités"><i class="fa fa-check"></i><b>6.4</b> Équivalence des deux diversités</a></li>
+<li class="chapter" data-level="6.5" data-path="6-cadre.html"><a href="6-cadre.html#typologie-des-mesures"><i class="fa fa-check"></i><b>6.5</b> Typologie des mesures</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html"><i class="fa fa-check"></i><b>7</b> Mesures particulières</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-équitabilité-et-divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1</b> Richesse, équitabilité et divergence fonctionnelle</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-fonctionnelle"><i class="fa fa-check"></i><b>7.1.1</b> Richesse fonctionnelle</a></li>
+<li class="chapter" data-level="7.1.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#equitabilité-fonctionnelle"><i class="fa fa-check"></i><b>7.1.2</b> Equitabilité fonctionnelle</a></li>
+<li class="chapter" data-level="7.1.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1.3</b> Divergence fonctionnelle</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#originalité-richesse-et-équitabilité-phylogénétique"><i class="fa fa-check"></i><b>7.2</b> Originalité, richesse et équitabilité phylogénétique</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#mesures-spécifiques-doriginalité"><i class="fa fa-check"></i><b>7.2.1</b> Mesures spécifiques d’originalité</a></li>
+<li class="chapter" data-level="7.2.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:OrigTax"><i class="fa fa-check"></i><b>7.2.2</b> Originalité taxonomique de Ricotta</a></li>
+<li class="chapter" data-level="7.2.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-phylogénétique"><i class="fa fa-check"></i><b>7.2.3</b> Richesse phylogénétique</a></li>
+<li class="chapter" data-level="7.2.4" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#indices-de-cadotte"><i class="fa fa-check"></i><b>7.2.4</b> Indices de Cadotte</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-de-scheiner"><i class="fa fa-check"></i><b>7.3</b> Diversité de Scheiner</a></li>
+<li class="chapter" data-level="7.4" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-de-solow-et-polasky"><i class="fa fa-check"></i><b>7.4</b> Diversité de Solow et Polasky</a></li>
+<li class="chapter" data-level="7.5" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:PDFD"><i class="fa fa-check"></i><b>7.5</b> FD et PD</a></li>
+<li class="chapter" data-level="7.6" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:Rao"><i class="fa fa-check"></i><b>7.6</b> Indice de Rao</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#principe"><i class="fa fa-check"></i><b>7.6.1</b> Principe</a></li>
+<li class="chapter" data-level="7.6.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#formalisation"><i class="fa fa-check"></i><b>7.6.2</b> Formalisation</a></li>
+<li class="chapter" data-level="7.6.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#propriétés"><i class="fa fa-check"></i><b>7.6.3</b> Propriétés</a></li>
+<li class="chapter" data-level="7.6.4" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#calcul-sous-r"><i class="fa fa-check"></i><b>7.6.4</b> Calcul sous R</a></li>
+<li class="chapter" data-level="7.6.5" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:MaxTheorique"><i class="fa fa-check"></i><b>7.6.5</b> Maximum théorique</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-et-moyenne"><i class="fa fa-check"></i><b>7.7</b> Diversité et moyenne</a></li>
+<li class="chapter" data-level="7.8" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#variations-sur-lentropie-quadratique"><i class="fa fa-check"></i><b>7.8</b> Variations sur l’entropie quadratique</a></li>
+<li class="chapter" data-level="7.9" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-fonctionnelle-de-chiu-et-chao"><i class="fa fa-check"></i><b>7.9</b> Diversité fonctionnelle de Chiu et Chao</a></li>
+<li class="chapter" data-level="7.10" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:HpI1"><i class="fa fa-check"></i><b>7.10</b> <span class="math inline">\(H_p\)</span> et <span class="math inline">\(I_1\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html"><i class="fa fa-check"></i><b>8</b> Entropie phylogénétique</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#généralisation-de-lentropie-hcdt"><i class="fa fa-check"></i><b>8.1</b> Généralisation de l’entropie HCDT</a></li>
+<li class="chapter" data-level="8.2" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#sec:phyloEstimation"><i class="fa fa-check"></i><b>8.2</b> Estimation</a></li>
+<li class="chapter" data-level="8.3" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#sec:phyloEntopieDiv"><i class="fa fa-check"></i><b>8.3</b> Entropie et diversité</a></li>
+<li class="chapter" data-level="8.4" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#diversité-individuelle"><i class="fa fa-check"></i><b>8.4</b> Diversité individuelle</a></li>
+<li class="chapter" data-level="8.5" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#arbres-non-ultramétriques"><i class="fa fa-check"></i><b>8.5</b> Arbres non ultramétriques</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html"><i class="fa fa-check"></i><b>9</b> Diversité de Leinster et Cobbold</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#définitions"><i class="fa fa-check"></i><b>9.1</b> Définitions</a></li>
+<li class="chapter" data-level="9.2" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-neutre"><i class="fa fa-check"></i><b>9.2</b> Diversité neutre</a></li>
+<li class="chapter" data-level="9.3" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-non-neutre"><i class="fa fa-check"></i><b>9.3</b> Diversité non neutre</a></li>
+<li class="chapter" data-level="9.4" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#entropie-de-ricotta-et-szeidl"><i class="fa fa-check"></i><b>9.4</b> Entropie de Ricotta et Szeidl</a></li>
+<li class="chapter" data-level="9.5" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#définition-de-la-similarité"><i class="fa fa-check"></i><b>9.5</b> Définition de la similarité</a></li>
+<li class="chapter" data-level="9.6" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#sec:dqzEstimation"><i class="fa fa-check"></i><b>9.6</b> Estimation</a></li>
+<li class="chapter" data-level="9.7" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-phylogénétique"><i class="fa fa-check"></i><b>9.7</b> Diversité phylogénétique</a></li>
+<li class="chapter" data-level="9.8" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-individuelle-1"><i class="fa fa-check"></i><b>9.8</b> Diversité individuelle</a></li>
+<li class="chapter" data-level="9.9" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-des-valeurs-propres"><i class="fa fa-check"></i><b>9.9</b> Diversité des valeurs propres</a></li>
+<li class="chapter" data-level="9.10" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#sec:dqzSynthese"><i class="fa fa-check"></i><b>9.10</b> Synthèse</a></li>
+</ul></li>
+<li class="part"><span><b>IV Diversité beta et décomposition</b></span></li>
+<li class="chapter" data-level="10" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html"><i class="fa fa-check"></i><b>10</b> Cadre</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#définition-de-la-diversité-beta-par-objectifs"><i class="fa fa-check"></i><b>10.1</b> Définition de la diversité <span class="math inline">\(\beta\)</span> par objectifs</a></li>
+<li class="chapter" data-level="10.2" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaTypo"><i class="fa fa-check"></i><b>10.2</b> Typologie des mesures</a></li>
+<li class="chapter" data-level="10.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaDecomposition"><i class="fa fa-check"></i><b>10.3</b> Décomposition de la diversité</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#définitions-de-la-diversité-beta-mesure-dérivée"><i class="fa fa-check"></i><b>10.3.1</b> Définitions de la diversité <span class="math inline">\(\beta\)</span>, mesure dérivée</a></li>
+<li class="chapter" data-level="10.3.2" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:DebatDecomposition"><i class="fa fa-check"></i><b>10.3.2</b> Le débat sur la décomposition</a></li>
+<li class="chapter" data-level="10.3.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#décomposition-multiplicative-de-la-diversité"><i class="fa fa-check"></i><b>10.3.3</b> Décomposition multiplicative de la diversité</a></li>
+<li class="chapter" data-level="10.3.4" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:defalpha"><i class="fa fa-check"></i><b>10.3.4</b> Définitions de la diversité <span class="math inline">\(\alpha\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html"><i class="fa fa-check"></i><b>11</b> Diversité de différentiation</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-de-présence-absence"><i class="fa fa-check"></i><b>11.1</b> Données de présence-absence</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#indices-de-similarité"><i class="fa fa-check"></i><b>11.1.1</b> Indices de similarité</a></li>
+<li class="chapter" data-level="11.1.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#biais-destimation"><i class="fa fa-check"></i><b>11.1.2</b> Biais d’estimation</a></li>
+<li class="chapter" data-level="11.1.3" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#représentation-graphique"><i class="fa fa-check"></i><b>11.1.3</b> Représentation graphique</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance"><i class="fa fa-check"></i><b>11.2</b> Données d’abondance</a></li>
+<li class="chapter" data-level="11.3" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#emboîtement-et-substitution"><i class="fa fa-check"></i><b>11.3</b> Emboîtement et substitution</a></li>
+<li class="chapter" data-level="11.4" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance-et-similarité-des-espèces"><i class="fa fa-check"></i><b>11.4</b> Données d’abondance et similarité des espèces</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#dissimilarité-minimale-moyenne"><i class="fa fa-check"></i><b>11.4.1</b> Dissimilarité minimale moyenne</a></li>
+<li class="chapter" data-level="11.4.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#similarité-moyenne-entre-individus"><i class="fa fa-check"></i><b>11.4.2</b> Similarité moyenne entre individus</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#distance-entre-paires-de-communautés-et-diversité-beta-proportionnelle"><i class="fa fa-check"></i><b>11.5</b> Distance entre paires de communautés et diversité <span class="math inline">\(\beta\)</span> proportionnelle</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#diversité-de-simpson"><i class="fa fa-check"></i><b>11.5.1</b> Diversité de Simpson</a></li>
+<li class="chapter" data-level="11.5.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#généralisation"><i class="fa fa-check"></i><b>11.5.2</b> Généralisation</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#sec:TestBetaDiff"><i class="fa fa-check"></i><b>11.6</b> Tests de significativité</a><ul>
+<li class="chapter" data-level="11.6.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#test-de-non-nullité"><i class="fa fa-check"></i><b>11.6.1</b> Test de non-nullité</a></li>
+<li class="chapter" data-level="11.6.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#analyse-de-la-variabilité"><i class="fa fa-check"></i><b>11.6.2</b> Analyse de la variabilité</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html"><i class="fa fa-check"></i><b>12</b> Décomposition de l’entropie HCDT</a><ul>
+<li class="chapter" data-level="12.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-shannon"><i class="fa fa-check"></i><b>12.1</b> Décomposition de l’indice de Shannon</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#définition-3"><i class="fa fa-check"></i><b>12.1.1</b> Définition</a></li>
+<li class="chapter" data-level="12.1.2" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:BiaisShannonBeta"><i class="fa fa-check"></i><b>12.1.2</b> Biais d’estimation</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lentropie-généralisée"><i class="fa fa-check"></i><b>12.2</b> Décomposition de l’entropie généralisée</a></li>
+<li class="chapter" data-level="12.3" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-du-nombre-despèces"><i class="fa fa-check"></i><b>12.3</b> Décomposition du nombre d’espèces</a></li>
+<li class="chapter" data-level="12.4" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-gini-simpson"><i class="fa fa-check"></i><b>12.4</b> Décomposition de l’indice de Gini-Simpson</a></li>
+<li class="chapter" data-level="12.5" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:RaoDisc"><i class="fa fa-check"></i><b>12.5</b> Décomposition de l’indice de Rao</a></li>
+<li class="chapter" data-level="12.6" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#synthèse-3"><i class="fa fa-check"></i><b>12.6</b> Synthèse</a></li>
+<li class="chapter" data-level="12.7" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#normalisation"><i class="fa fa-check"></i><b>12.7</b> Normalisation</a><ul>
+<li class="chapter" data-level="12.7.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#nécessité-de-normaliser-la-diversité-beta"><i class="fa fa-check"></i><b>12.7.1</b> Nécessité de normaliser la diversité <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="12.7.2" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:Chevauchement"><i class="fa fa-check"></i><b>12.7.2</b> L’indice de chevauchement <span class="math inline">\(C_{qN}\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><i class="fa fa-check"></i><b>13</b> Décomposition de la diversité phylogénétique et fonctionnelle</a><ul>
+<li class="chapter" data-level="13.1" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#décomposition-de-la-diversité-phylogénétique"><i class="fa fa-check"></i><b>13.1</b> Décomposition de la diversité phylogénétique</a></li>
+<li class="chapter" data-level="13.2" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#partitionnement-de-la-diversité-de-leinster-et-cobbold"><i class="fa fa-check"></i><b>13.2</b> Partitionnement de la diversité de Leinster et Cobbold</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html"><i class="fa fa-check"></i><b>14</b> Tests de significativité</a><ul>
+<li class="chapter" data-level="14.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#test-de-non-nullité-1"><i class="fa fa-check"></i><b>14.1</b> Test de non-nullité</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#intervalle-de-confiance"><i class="fa fa-check"></i><b>14.1.1</b> Intervalle de confiance</a></li>
+<li class="chapter" data-level="14.1.2" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#correction-des-biais"><i class="fa fa-check"></i><b>14.1.2</b> Correction des biais</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#analyse-de-la-variabilité-1"><i class="fa fa-check"></i><b>14.2</b> Analyse de la variabilité</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html"><i class="fa fa-check"></i><b>15</b> Autres approches</a><ul>
+<li class="chapter" data-level="15.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#le-partitionnement-de-la-diversité-selon-pélissier-et-couteron"><i class="fa fa-check"></i><b>15.1</b> Le partitionnement de la diversité selon Pélissier et Couteron</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#sec:PCcadre"><i class="fa fa-check"></i><b>15.1.1</b> Cadre</a></li>
+<li class="chapter" data-level="15.1.2" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#sec:PCdecomposition"><i class="fa fa-check"></i><b>15.1.2</b> Décomposition</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#diversité-de-kosman"><i class="fa fa-check"></i><b>15.2</b> Diversité de Kosman</a></li>
+</ul></li>
+<li class="part"><span><b>V Diversité jointe, diversité structurelle</b></span></li>
+<li class="chapter" data-level="16" data-path="16-sec-jointeCadre.html"><a href="16-sec-jointeCadre.html"><i class="fa fa-check"></i><b>16</b> Cadre</a></li>
+<li class="chapter" data-level="17" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html"><i class="fa fa-check"></i><b>17</b> Information mutuelle</a><ul>
+<li class="chapter" data-level="17.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#récursivité-de-lentropie"><i class="fa fa-check"></i><b>17.1</b> Récursivité de l’entropie</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#sec:jointeShannon"><i class="fa fa-check"></i><b>17.1.1</b> Entropie de Shannon</a></li>
+<li class="chapter" data-level="17.1.2" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#sec:jointeHCDT"><i class="fa fa-check"></i><b>17.1.2</b> Entropie HCDT</a></li>
+<li class="chapter" data-level="17.1.3" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#intérêt-de-linformation-mutuelle"><i class="fa fa-check"></i><b>17.1.3</b> Intérêt de l’information mutuelle</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#taille-de-niche"><i class="fa fa-check"></i><b>17.2</b> Taille de niche</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html"><i class="fa fa-check"></i><b>18</b> Décomposition de la diversité jointe</a><ul>
+<li class="chapter" data-level="18.1" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html#sec:Definitions"><i class="fa fa-check"></i><b>18.1</b> Définitions</a></li>
+<li class="chapter" data-level="18.2" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html#relations-avec-dautres-mesures-de-diversité"><i class="fa fa-check"></i><b>18.2</b> Relations avec d’autres mesures de diversité</a></li>
+</ul></li>
+<li class="part"><span><b>VI Diversité spatialement explicite</b></span></li>
+<li class="chapter" data-level="19" data-path="19-sec-spatialCadre.html"><a href="19-sec-spatialCadre.html"><i class="fa fa-check"></i><b>19</b> Cadre</a></li>
+<li class="chapter" data-level="20" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html"><i class="fa fa-check"></i><b>20</b> Indice <span class="math inline">\(\alpha\)</span> de Fisher</a><ul>
+<li class="chapter" data-level="20.1" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html#construction"><i class="fa fa-check"></i><b>20.1</b> Construction</a></li>
+<li class="chapter" data-level="20.2" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html#variantes"><i class="fa fa-check"></i><b>20.2</b> Variantes</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html"><i class="fa fa-check"></i><b>21</b> Accumulation de la diversité locale</a><ul>
+<li class="chapter" data-level="21.1" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#courbes-daccumulation"><i class="fa fa-check"></i><b>21.1</b> Courbes d’accumulation</a></li>
+<li class="chapter" data-level="21.2" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#sec:Extrapolation"><i class="fa fa-check"></i><b>21.2</b> Extrapolation</a></li>
+<li class="chapter" data-level="21.3" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#influence-de-la-structure-spatiale"><i class="fa fa-check"></i><b>21.3</b> Influence de la structure spatiale</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html"><i class="fa fa-check"></i><b>22</b> Diversité régionale</a><ul>
+<li class="chapter" data-level="22.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:Arrhenius"><i class="fa fa-check"></i><b>22.1</b> La relation d’Arrhenius</a><ul>
+<li class="chapter" data-level="22.1.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#loi-de-puissance"><i class="fa fa-check"></i><b>22.1.1</b> Loi de puissance</a></li>
+<li class="chapter" data-level="22.1.2" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#le-modèle-de-plotkin"><i class="fa fa-check"></i><b>22.1.2</b> Le modèle de Plotkin</a></li>
+</ul></li>
+<li class="chapter" data-level="22.2" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:Gleason"><i class="fa fa-check"></i><b>22.2</b> Le modèle de Gleason</a></li>
+<li class="chapter" data-level="22.3" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#le-modèle-de-placement-aléatoire"><i class="fa fa-check"></i><b>22.3</b> Le modèle de placement aléatoire</a></li>
+<li class="chapter" data-level="22.4" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:spatialSynthese"><i class="fa fa-check"></i><b>22.4</b> Synthèse</a></li>
+<li class="chapter" data-level="22.5" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#estimation-de-la-richesse-à-partir-de-placettes-distantes"><i class="fa fa-check"></i><b>22.5</b> Estimation de la richesse à partir de placettes distantes</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html"><i class="fa fa-check"></i><b>23</b> Diversité <span class="math inline">\(\beta\)</span> spatialement explicite</a><ul>
+<li class="chapter" data-level="23.1" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html#sec:SimpsonSpatial"><i class="fa fa-check"></i><b>23.1</b> L’indice de Simpson spatialement explicite</a></li>
+<li class="chapter" data-level="23.2" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html#le-variogramme-de-complémentarité"><i class="fa fa-check"></i><b>23.2</b> Le variogramme de complémentarité</a></li>
+</ul></li>
+<li class="part"><span><b>VII Conclusion</b></span></li>
+<li class="chapter" data-level="24" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html"><i class="fa fa-check"></i><b>24</b> Synthèse</a><ul>
+<li class="chapter" data-level="24.1" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#entropie-et-diversité-1"><i class="fa fa-check"></i><b>24.1</b> Entropie et diversité</a></li>
+<li class="chapter" data-level="24.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#ordres-particuliers-de-diversité"><i class="fa fa-check"></i><b>24.2</b> Ordres particuliers de diversité</a><ul>
+<li class="chapter" data-level="24.2.1" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#estimation-2"><i class="fa fa-check"></i><b>24.2.1</b> Estimation</a></li>
+<li class="chapter" data-level="24.2.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#partition"><i class="fa fa-check"></i><b>24.2.2</b> Partition</a></li>
+<li class="chapter" data-level="24.2.3" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#égalité-des-diversités"><i class="fa fa-check"></i><b>24.2.3</b> Égalité des diversités</a></li>
+</ul></li>
+<li class="chapter" data-level="24.3" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#limites"><i class="fa fa-check"></i><b>24.3</b> Limites</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/EricMarcon/MesuresBioDiv2" target="blank">Publié avec bookdown, hébergé sur GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mesures de la Biodiversité</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="décomposition-de-la-diversité-phylogénétique-et-fonctionnelle" class="section level1">
+<h1><span class="header-section-number">13</span> Décomposition de la diversité phylogénétique et fonctionnelle</h1>
+
+<div class="Essentiel">
+<p>
+L’entropie phylogénétique et l’entropie de Ricotta et Szeidl se décomposent comme l’entropie HCDT. La diversité <span class="math inline"><span class="math inline">\(\beta\)</span></span> phylogénétique et la diversité <span class="math inline"><span class="math inline">\(\beta\)</span></span> de Leinster et Cobbold sont des nombres effectifs de communautés, c’est-à-dire des communautés de même poids et dont les espèces seraient totalement dissimilaires qui fourniraient la même entropie <span class="math inline"><span class="math inline">\(\beta\)</span></span> que les communautés réelles.
+</p>
+</div>
+
+<p>L’entropie phylogénétique est une combinaison linéaire de l’entropie HCDT donc sa décomposition est identique <span class="citation">(Marcon et Hérault <a href="#ref-Marcon2014b" role="doc-biblioref">2015</a><a href="#ref-Marcon2014b" role="doc-biblioref">a</a>)</span>.</p>
+<div id="décomposition-de-la-diversité-phylogénétique" class="section level2">
+<h2><span class="header-section-number">13.1</span> Décomposition de la diversité phylogénétique</h2>
+<p>En combinant l’équation <a href="8-chap-Phyloentropie.html#eq:Hbarq">(8.1)</a> et le tableau <a href="12-chap-DedompHCDT.html#tab:Decomposition">12.2</a>, on obtient</p>
+<p><span class="math display" id="eq:Hqbar">\[\begin{equation}
+  \tag{13.1}
+  ^{q}\!\bar{H}_{\gamma}\left(T\right)
+  = ^{q}\!\bar{H}_{\alpha}\left(T\right)
+  + ^{q}\!\bar{H}_{\beta}\left(T\right).
+\end{equation}\]</span></p>
+<p>L’entropie <span class="math inline">\(\gamma\)</span> est celle de la méta-communauté, l’entropie <span class="math inline">\(\alpha\)</span> est la somme pondérée de celles des communautés, la pondération est libre mais doit respecter <span class="math inline">\(p_s=\sum_i{w_ip_{s|i}}\)</span>:</p>
+<p><span class="math display" id="eq:Hqbaralpha">\[\begin{equation}
+  \tag{13.2}
+  ^{q}\!\bar{H}_{\alpha}\left(T\right)
+  = \sum_i{w_i{^{q}_{i}\!\bar{H}_{\alpha}}\left(T\right)}.
+\end{equation}\]</span></p>
+<p>L’entropie <span class="math inline">\(\beta\)</span> est</p>
+<p><span class="math display" id="eq:Hqbarbeta">\[\begin{align}
+  \tag{13.3}
+  ^{q}\!\bar{H}_{\beta}\left(T\right)
+  &amp;= \sum_i{w_i}^{q}_{i}\!\bar{H}_{\beta}\left(T\right)\\
+  &amp;= \sum_i{w_i}\sum_k{\frac{T_k}{T}^{q}_{ik}\!H_{\beta}}\\
+  &amp;= \sum_i{w_i}\sum_k{\frac{T_k}{T}\sum_u{p^{q}_{k,u,i}\ln_q\frac{p_{k,u,i}}{p_{k,u}}}}
+\end{align}\]</span></p>
+<p>où <span class="math inline">\(p_{k,u}\)</span> est la probabilité d’observer une des espèces de la branche <span class="math inline">\(u\)</span> de l’arbre à la période <span class="math inline">\(k\)</span> (figure <a href="7-mesures-particulières.html#fig:Arbre">7.7</a>) dans la méta-communauté, et <span class="math inline">\(p_{k,u,i}\)</span> la même probabilité dans la communauté <span class="math inline">\(i\)</span>.</p>
+<p>La décomposition de l’entropie phylogénétique au sens de <span class="citation">Allen, Kon, et Bar-Yam (<a href="#ref-Allen2009" role="doc-biblioref">2009</a>)</span>, c’est-à-dire dans la cas particulier <span class="math inline">\(q=1\)</span>, a été établie par <span class="citation">Mouchet et Mouillot (<a href="#ref-Mouchet2011" role="doc-biblioref">2011</a>)</span>.</p>
+<p>La fonction <code>DivPart</code> de <em>entropart</em> permet de décomposer l’entropie.
+Les résultats contiennent la valeur de la diversité:</p>
+
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-1"></a><span class="kw">data</span>(Paracou618)</span>
+<span id="cb280-2"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-2"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb280-3"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-3"></a>                <span class="dt">Tree =</span> Paracou618.Taxonomy))</span></code></pre></div>
+<pre><code>## HCDT diversity partitioning of order 1 of metaCommunity Paracou618.MC
+##  with correction: UnveilJ UnveilJ UnveilJ
+## Phylogenetic or functional diversity was calculated
+## according to the tree 
+## Paracou618.Taxonomy 
+## 
+## Diversity is normalized 
+## 
+## Alpha diversity of communities: 
+##     P006     P018 
+## 37.42057 53.73643 
+## Total alpha diversity of the communities: 
+## [1] 43.6882
+## Beta diversity of the communities: 
+## [1] 1.273686
+## Gamma diversity of the metacommunity: 
+## [1] 55.64502</code></pre>
+
+
+
+<div class="figure" style="text-align: center"><span id="fig:DivPartFig"></span>
+<img src="MesuresBD_files/figure-html/DivPartFig-1.png" alt="Représentation graphique de la diversité des deux parcelles du jeu de données Paracou618. Les rectangles transparents représentent la diversité neutre, les rectangles hachurés la diversité phylogénétique (l’arbre est la taxonomie des espèces, \(q=1\)). Dans chaque cas, le rectangle le plus large, de hauteur 1, représente la diversité \(\\gamma\). Le rectangle plus haut a pour largeur et longueur les diversités \(\alpha\) et \(\beta\). Les surfaces des deux rectangles sont identiques." width="80%" />
+<p class="caption">
+Figure 13.1: Représentation graphique de la diversité des deux parcelles du jeu de données <code>Paracou618</code>. Les rectangles transparents représentent la diversité neutre, les rectangles hachurés la diversité phylogénétique (l’arbre est la taxonomie des espèces, <span class="math inline">\(q=1\)</span>). Dans chaque cas, le rectangle le plus large, de hauteur 1, représente la diversité <span class="math inline">\(\\gamma\)</span>. Le rectangle plus haut a pour largeur et longueur les diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span>. Les surfaces des deux rectangles sont identiques.
+</p>
+</div>
+
+<p>La figure <a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#fig:DivPartFig">13.1</a> donne une représentation graphique de la décomposition de la diversité.
+La différence de taille entre les rectangles hachurés et les rectangles transparents est due à la prise en compte de la phylogénie.
+La diversité <span class="math inline">\(\gamma\)</span> (rectangles de hauteur 1) est égale au produit des diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span> (côtés du rectangle plus haut).
+Si les communautés étaient de même poids et complètement différentes, c’est à dire contenant des espèces totalement dissimilaires entre communautés <span class="citation">(Pavoine, Marcon, et Ricotta <a href="#ref-Pavoine2015a" role="doc-biblioref">2016</a>)</span>, la hauteur du rectangle serait égale à leur nombre (2 ici).</p>
+<p>Code pour réaliser la figure:</p>
+
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-1"></a>q &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb282-2"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-2"></a>Neutre &lt;-<span class="st"> </span><span class="kw">DivPart</span>(q, Paracou618.MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb282-3"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-3"></a><span class="kw">plot</span>(<span class="kw">c</span>(<span class="dv">0</span>, Neutre<span class="op">$</span>GammaDiversity), <span class="kw">c</span>(<span class="dv">0</span>, Paracou618.MC<span class="op">$</span>Ncommunities),</span>
+<span id="cb282-4"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-4"></a>     <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, </span>
+<span id="cb282-5"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-5"></a>     <span class="dt">xlab =</span> <span class="kw">expression</span>(<span class="kw">paste</span>(alpha, <span class="st">&quot; / &quot;</span>, gamma, <span class="st">&quot; diversity&quot;</span>)), </span>
+<span id="cb282-6"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-6"></a>     <span class="dt">ylab =</span> <span class="kw">expression</span>(<span class="kw">paste</span>(beta, <span class="st">&quot; diversity&quot;</span>)))</span>
+<span id="cb282-7"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-7"></a><span class="kw">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, Neutre<span class="op">$</span>GammaDiversity, <span class="dv">1</span>, <span class="dt">lty=</span><span class="dv">2</span>)</span>
+<span id="cb282-8"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-8"></a><span class="kw">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, Neutre<span class="op">$</span>TotalAlphaDiversity, Neutre<span class="op">$</span>TotalBetaDiversity, </span>
+<span id="cb282-9"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-9"></a>     <span class="dt">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb282-10"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-10"></a>Phylo &lt;-<span class="st"> </span><span class="kw">DivPart</span>(q, Paracou618.MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb282-11"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-11"></a>                 <span class="dt">Tree =</span> Paracou618.Taxonomy)</span>
+<span id="cb282-12"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-12"></a><span class="kw">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, Phylo<span class="op">$</span>GammaDiversity, <span class="dv">1</span>, <span class="dt">angle=</span><span class="dv">135</span>, <span class="dt">density=</span><span class="dv">10</span>)</span>
+<span id="cb282-13"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-13"></a><span class="kw">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, Phylo<span class="op">$</span>TotalAlphaDiversity, Phylo<span class="op">$</span>TotalBetaDiversity,</span>
+<span id="cb282-14"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-14"></a>     <span class="dt">density =</span> <span class="dv">10</span>)</span></code></pre></div>
+
+</div>
+<div id="partitionnement-de-la-diversité-de-leinster-et-cobbold" class="section level2">
+<h2><span class="header-section-number">13.2</span> Partitionnement de la diversité de Leinster et Cobbold</h2>
+<p>Selon les mêmes principes que pour la décomposition de l’entropie HCDT, <span class="citation">Marcon, Zhang, et Hérault (<a href="#ref-Marcon2014e" role="doc-biblioref">2014</a>)</span> ont décomposé l’entropie de <span class="citation">Ricotta et Szeidl (<a href="#ref-Ricotta2006b" role="doc-biblioref">2006</a>)</span>.
+L’entropie <span class="math inline">\(\alpha\)</span> de la communauté <span class="math inline">\(i\)</span> est</p>
+<p><span class="math display" id="eq:Hqzialpha">\[\begin{equation}
+  \tag{13.4}
+  ^q_i\!H^{\mathbf{Z}}_\alpha
+  = \frac{1-\sum_s{p_{s|i}{\left(\mathbf{Zp}\right)}^{q-1}_{s|i}}}{q-1}.
+\end{equation}\]</span></p>
+<p>L’entropie <span class="math inline">\(\alpha\)</span> est la somme pondérée des entropies des communautés:</p>
+<p><span class="math display" id="eq:Hqzalpha">\[\begin{equation}
+  \tag{13.5}
+  ^q\!H^{\mathbf{Z}}_\alpha
+  = \sum_i{w_i \, ^q_i\!H^{\mathbf{Z}}_\alpha}
+  = \frac{1-\sum_i{w_i\sum_s{p_{s|i}{\left(\mathbf{Zp}\right)}^{q-1}_{s|i}}}}{q-1}.
+\end{equation}\]</span></p>
+<p>L’entropie <span class="math inline">\(\beta\)</span> est similaire à l’entropie <span class="math inline">\(\beta\)</span> HCDT: c’est la divergence généralisée de Jensen-Shannon entre les distributions de <span class="math inline">\(\mathbf{Zp}\)</span> des communautés.
+Formellement:</p>
+<p><span class="math display" id="eq:Hqzbeta">\[\begin{equation}
+  \tag{13.6}
+  ^q\!H^{\mathbf{Z}}_\beta
+  =\sum_i{w_i}\sum_{s}{p_{s|i}\left(\ln_q\frac{1}{{\left(\mathbf{Zp}\right)}_s}-\ln_q\frac{1}{{\left(\mathbf{Zp}\right)}_{s|i}}\right)}.
+\end{equation}\]</span></p>
+<p>La diversité <span class="math inline">\(\beta\)</span> est obtenue en calculant l’exponentielle déformée de la décomposition additive de l’entropie:</p>
+<p><span class="math display" id="eq:Dqzbeta">\[\begin{equation}
+  \tag{13.7}
+  ^q\!D^{\mathbf{Z}}_\beta
+  =e^{\frac{^qH^{\mathbf{Z}}}{1+\left(1-q\right)\,{^qH^{\mathbf{Z}}_\alpha}}}_q.
+\end{equation}\]</span></p>
+<p>La décomposition de la diversité peut être faite directement, sans passer par l’entropie.</p>
+<p>L’inverse de <span class="math inline">\(^q\!D^{\mathbf{Z}}_\gamma\)</span> est la moyenne généralisée d’ordre <span class="math inline">\(q-1\)</span> de <span class="math inline">\({\left(\mathbf{Zp}\right)}_s\)</span>:</p>
+<p><span class="math display" id="eq:Dqzgamma">\[\begin{equation}
+  \tag{13.8}
+  \frac{1}{^q\!D^{\mathbf{Z}}_\gamma}
+  ={\left[\sum_i{p_s{{\left(\mathbf{Zp}\right)}_s}^{q-1}}\right]}^{\frac{1}{q-1}}
+\end{equation}\]</span></p>
+<p>Partant de <span class="math inline">\(^{q}\!D_{\gamma} = {^{q}\!D_{\alpha}} {^{q}\!D_{\beta}}\)</span> et de la définition de Routledge de la diversité <span class="math inline">\(\alpha\)</span>, on obtient</p>
+<p><span class="math display" id="eq:Dbeta">\[\begin{equation}
+  \tag{13.9}
+  ^q\!D^{\mathbf{Z}}_\beta
+  ={\left[\sum_i{w_i}{\left(\frac{1/^q_i\!D^{\mathbf{Z}}_\alpha}{1/^q\!D^{\mathbf{Z}}_\gamma}\right)}^{q-1}\right]}^{\frac{1}{q-1}}.
+\end{equation}\]</span></p>
+<p>De la même façon que <span class="math inline">\(1/^q\!D^{\mathbf{Z}}_\gamma\)</span> est la banalité moyenne des espèces, <span class="math inline">\(^q\!D^{\mathbf{Z}}_\beta\)</span> est la banalité moyenne normalisée des communautés, où la banalité normalisée de la communauté <span class="math inline">\(i\)</span> est définie comme <span class="math inline">\({\left(1/^q_i\!D^{\mathbf{Z}}_\alpha\right)}/{\left(1/^q\!D^{\mathbf{Z}}_\gamma\right)}\)</span>, c’est-à-dire la banalité moyenne de ses espèces divisée par celle de la méta-communauté.</p>
+<p>La fonction <code>DivPart</code> (comme les autres fonctions avancées de <em>entropart</em>) supporte la décomposition de la diversité de Leinster et Cobbold quand une matrice de similarité lui est passée comme argument à la place d’un arbre phylogénétique pour le calcul de la phylodiversité HCDT:</p>
+
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-1"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
+<span id="cb283-2"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-2"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Paracou618.dist)</span>
+<span id="cb283-3"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-3"></a><span class="co"># Transformation en matrice de similarité</span></span>
+<span id="cb283-4"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-4"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>DistanceMatrix<span class="op">/</span><span class="kw">max</span>(DistanceMatrix)</span>
+<span id="cb283-5"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-5"></a><span class="co"># Partition de la diversité</span></span>
+<span id="cb283-6"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-6"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Z=</span>Z , <span class="dt">Biased =</span> <span class="ot">FALSE</span>))</span></code></pre></div>
+<pre><code>## Similarity-based diversity partitioning of order 1 of metaCommunity 
+## Paracou618.MC
+##  with correction: Best
+## Phylogenetic or functional entropy was calculated
+## according to the similarity matrix 
+## Z 
+## 
+## Alpha diversity of communities: 
+##     P006     P018 
+## 1.483722 1.482119 
+## Total alpha diversity of the communities: 
+## [1] 1.483036
+## Beta diversity of the communities: 
+##     Best 
+## 1.003403 
+## Gamma diversity of the metacommunity: 
+##     Best 
+## 1.488083</code></pre>
+
+<p>Le partitionnement de la diversité fonctionnelle de la méta-communauté <code>Paracou618.MC</code> selon la matrice de distances des traits fonctionnels montre que la diversité <span class="math inline">\(\beta\)</span> est extrêmement faible entre les deux parcelles.</p>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Allen2009">
+<p>Allen, Benjamin, Mark Kon, et Yaneer Bar-Yam. 2009. « A New Phylogenetic Diversity Measure Generalizing the Shannon Index and Its Application to Phyllostomid Bats ». <em>American Naturalist</em> 174 (2): 236‑43. <a href="https://doi.org/10.1086/600101">https://doi.org/10.1086/600101</a>.</p>
+</div>
+<div id="ref-Marcon2014b">
+<p>Marcon, Eric, et Bruno Hérault. 2015a. « Decomposing Phylodiversity ». <em>Methods in Ecology and Evolution</em> 6 (3): 333‑39. <a href="https://doi.org/10.1111/2041-210X.12323">https://doi.org/10.1111/2041-210X.12323</a>.</p>
+</div>
+<div id="ref-Marcon2014e">
+<p>Marcon, Eric, Zhiyi Zhang, et Bruno Hérault. 2014. « The Decomposition of Similarity-Based Diversity and its Bias Correction ». <em>HAL</em> 00989454 (version 3). <a href="https://hal-agroparistech.archives-ouvertes.fr/hal-00989454v3/">https://hal-agroparistech.archives-ouvertes.fr/hal-00989454v3/</a>.</p>
+</div>
+<div id="ref-Mouchet2011">
+<p>Mouchet, Maud A., et David Mouillot. 2011. « Decomposing phylogenetic entropy into <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> components ». <em>Biology Letters</em> 7 (2): 205‑9. <a href="https://doi.org/10.1098/rsbl.2010.0769">https://doi.org/10.1098/rsbl.2010.0769</a>.</p>
+</div>
+<div id="ref-Pavoine2015a">
+<p>Pavoine, Sandrine, Eric Marcon, et Carlo Ricotta. 2016. « ‘Equivalent numbers’ for species, phylogenetic or functional diversity in a nested hierarchy of multiple scales ». <em>Methods in Ecology and Evolution</em> 7 (10): 1152‑63. <a href="https://doi.org/10.1111/2041-210X.12591">https://doi.org/10.1111/2041-210X.12591</a>.</p>
+</div>
+<div id="ref-Ricotta2006b">
+<p>Ricotta, Carlo, et Laszlo Szeidl. 2006. « Towards a unifying approach to diversity measures: Bridging the gap between the Shannon entropy and Rao’s quadratic index ». <em>Theoretical Population Biology</em> 70 (3): 237‑43. <a href="https://doi.org/10.1016/j.tpb.2006.06.003">https://doi.org/10.1016/j.tpb.2006.06.003</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="12-chap-DedompHCDT.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="14-tests-de-significativité.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MesuresBD.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
