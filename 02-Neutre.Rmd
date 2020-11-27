@@ -844,7 +844,7 @@ Tout d'abord, la probabilité que deux individus soient de la même espèce, sou
 \end{equation}
 
 L'indice de Simpson est parfois considéré comme une mesure d'équitabilité [@Olszewski2004] mais il varie avec la richesse: cette approche est donc erronnée.
-@Hurlbert1971 l'a divisé par sa valeur maximale $1-{1}/{S}$ pour obtenir une mesure d'équitabilité valide généralisée plus tard par @Mendes2008 (voir section \@ref(sec:Mendes)).
+@Hurlbert1971 l'a divisé par sa valeur maximale $1-{1}/{S}$ pour obtenir une mesure d'équitabilité valide généralisée plus tard par @Mendes2008, voir section \@ref(sec:Mendes).
 Le nombre d'espèces doit être estimé par les méthodes présentées plus haut, pour ne pas dépendre de la taille de l'échantillon.
 
 
@@ -864,7 +864,7 @@ Ps <- as.ProbaVector(colSums(BCI))
 Simpson(Ps)
 ```
 
-Un historique de la définition de l'indice, de @Gini1912 à Simpson, inspiré par Turing, est fourni par Ellerman [@Ellerman2013].
+Un historique de la définition de l'indice, de @Gini1912 à Simpson, inspiré par Turing, est fourni par Ellerman [-@Ellerman2013].
 
 ### Estimation
 
