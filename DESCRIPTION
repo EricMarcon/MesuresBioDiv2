@@ -11,7 +11,6 @@ Encoding: UTF-8
 Imports:
   ade4,
   adespatial,
-  bookdown,
   devtools,
   entropart,
   entropy,
