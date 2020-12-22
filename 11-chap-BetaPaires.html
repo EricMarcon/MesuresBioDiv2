@@ -24,7 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2020-11-27" />
+<meta name="date" content="2020-12-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="10-sec-betaCadre.html"/>
 <link rel="next" href="12-chap-DedompHCDT.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,11 +51,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -67,18 +63,17 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -98,7 +93,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -150,61 +145,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Motivation</a></li>
 <li class="chapter" data-level="" data-path="notations.html"><a href="notations.html"><i class="fa fa-check"></i>Notations</a></li>
 <li class="part"><span><b>I Notions</b></span></li>
-<li class="chapter" data-level="1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html"><i class="fa fa-check"></i><b>1</b> Notions de Diversité</a><ul>
-<li class="chapter" data-level="1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#composantes"><i class="fa fa-check"></i><b>1.1</b> Composantes</a><ul>
+<li class="chapter" data-level="1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html"><i class="fa fa-check"></i><b>1</b> Notions de Diversité</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#composantes"><i class="fa fa-check"></i><b>1.1</b> Composantes</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#richesse"><i class="fa fa-check"></i><b>1.1.1</b> Richesse</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#équitabilité"><i class="fa fa-check"></i><b>1.1.2</b> Équitabilité</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#disparité"><i class="fa fa-check"></i><b>1.1.3</b> Disparité</a></li>
 <li class="chapter" data-level="1.1.4" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#agrégation"><i class="fa fa-check"></i><b>1.1.4</b> Agrégation</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#niveaux-de-létude"><i class="fa fa-check"></i><b>1.2</b> Niveaux de l’étude</a><ul>
+<li class="chapter" data-level="1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#niveaux-de-létude"><i class="fa fa-check"></i><b>1.2</b> Niveaux de l’étude</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#diversité-alpha-beta-et-gamma"><i class="fa fa-check"></i><b>1.2.1</b> Diversité <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> et <span class="math inline">\(\gamma\)</span></a></li>
 <li class="chapter" data-level="1.2.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#décomposition"><i class="fa fa-check"></i><b>1.2.2</b> Décomposition</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#le-problème-de-lespèce"><i class="fa fa-check"></i><b>1.3</b> Le problème de l’espèce</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-outils.html"><a href="2-outils.html"><i class="fa fa-check"></i><b>2</b> Outils</a><ul>
+<li class="chapter" data-level="2" data-path="2-outils.html"><a href="2-outils.html"><i class="fa fa-check"></i><b>2</b> Outils</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="2-outils.html"><a href="2-outils.html#calculs-et-données"><i class="fa fa-check"></i><b>2.1</b> Calculs et données</a></li>
 <li class="chapter" data-level="2.2" data-path="2-outils.html"><a href="2-outils.html#sad-et-sar"><i class="fa fa-check"></i><b>2.2</b> SAD et SAR</a></li>
-<li class="chapter" data-level="2.3" data-path="2-outils.html"><a href="2-outils.html#sec:Couverture"><i class="fa fa-check"></i><b>2.3</b> Taux de couverture</a><ul>
+<li class="chapter" data-level="2.3" data-path="2-outils.html"><a href="2-outils.html#sec:Couverture"><i class="fa fa-check"></i><b>2.3</b> Taux de couverture</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="2-outils.html"><a href="2-outils.html#formule-des-fréquences-de-good-turing"><i class="fa fa-check"></i><b>2.3.1</b> Formule des fréquences de Good-Turing</a></li>
 <li class="chapter" data-level="2.3.2" data-path="2-outils.html"><a href="2-outils.html#taux-de-couverture-et-déficit-de-couverture"><i class="fa fa-check"></i><b>2.3.2</b> Taux de couverture et déficit de couverture</a></li>
 <li class="chapter" data-level="2.3.3" data-path="2-outils.html"><a href="2-outils.html#complétude"><i class="fa fa-check"></i><b>2.3.3</b> Complétude</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Diversité neutre d’une communauté</b></span></li>
-<li class="chapter" data-level="3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html"><i class="fa fa-check"></i><b>3</b> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span></a><ul>
-<li class="chapter" data-level="3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Richesse"><i class="fa fa-check"></i><b>3.1</b> Richesse spécifique</a><ul>
+<li class="chapter" data-level="3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html"><i class="fa fa-check"></i><b>3</b> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Richesse"><i class="fa fa-check"></i><b>3.1</b> Richesse spécifique</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#techniques-destimation-non-paramétrique"><i class="fa fa-check"></i><b>3.1.1</b> Techniques d’estimation non paramétrique</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#inférence-du-nombre-despèces-à-partir-de-la-sad"><i class="fa fa-check"></i><b>3.1.2</b> Inférence du nombre d’espèces à partir de la SAD</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:RichesseSAC"><i class="fa fa-check"></i><b>3.1.3</b> Inférence du nombre d’espèces à partir de courbes d’accumulation</a></li>
 <li class="chapter" data-level="3.1.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#diversité-générique"><i class="fa fa-check"></i><b>3.1.4</b> Diversité générique</a></li>
 <li class="chapter" data-level="3.1.5" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#combien-y-a-t-il-despèces-différentes-sur-terre"><i class="fa fa-check"></i><b>3.1.5</b> Combien y a-t-il d’espèces différentes sur Terre?</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-simpson"><i class="fa fa-check"></i><b>3.2</b> Indice de Simpson</a><ul>
+<li class="chapter" data-level="3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-simpson"><i class="fa fa-check"></i><b>3.2</b> Indice de Simpson</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition"><i class="fa fa-check"></i><b>3.2.1</b> Définition</a></li>
 <li class="chapter" data-level="3.2.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#estimation"><i class="fa fa-check"></i><b>3.2.2</b> Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-shannon"><i class="fa fa-check"></i><b>3.3</b> Indice de Shannon</a><ul>
+<li class="chapter" data-level="3.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-shannon"><i class="fa fa-check"></i><b>3.3</b> Indice de Shannon</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition-1"><i class="fa fa-check"></i><b>3.3.1</b> Définition</a></li>
 <li class="chapter" data-level="3.3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:BiaisShannon"><i class="fa fa-check"></i><b>3.3.2</b> Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Hurlbert"><i class="fa fa-check"></i><b>3.4</b> Indice de Hurlbert</a><ul>
+<li class="chapter" data-level="3.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Hurlbert"><i class="fa fa-check"></i><b>3.4</b> Indice de Hurlbert</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition-2"><i class="fa fa-check"></i><b>3.4.1</b> Définition</a></li>
 <li class="chapter" data-level="3.4.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#estimation-1"><i class="fa fa-check"></i><b>3.4.2</b> Estimation</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-entropie.html"><a href="4-entropie.html"><i class="fa fa-check"></i><b>4</b> Entropie</a><ul>
+<li class="chapter" data-level="4" data-path="4-entropie.html"><a href="4-entropie.html"><i class="fa fa-check"></i><b>4</b> Entropie</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="4-entropie.html"><a href="4-entropie.html#définition-de-lentropie"><i class="fa fa-check"></i><b>4.1</b> Définition de l’entropie</a></li>
 <li class="chapter" data-level="4.2" data-path="4-entropie.html"><a href="4-entropie.html#entropie-relative"><i class="fa fa-check"></i><b>4.2</b> Entropie relative</a></li>
 <li class="chapter" data-level="4.3" data-path="4-entropie.html"><a href="4-entropie.html#lappropriation-de-lentropie-par-la-biodiversité"><i class="fa fa-check"></i><b>4.3</b> L’appropriation de l’entropie par la biodiversité</a></li>
-<li class="chapter" data-level="4.4" data-path="4-entropie.html"><a href="4-entropie.html#entropie-hcdt"><i class="fa fa-check"></i><b>4.4</b> Entropie HCDT</a><ul>
+<li class="chapter" data-level="4.4" data-path="4-entropie.html"><a href="4-entropie.html#entropie-hcdt"><i class="fa fa-check"></i><b>4.4</b> Entropie HCDT</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="4-entropie.html"><a href="4-entropie.html#logarithmes-déformés"><i class="fa fa-check"></i><b>4.4.1</b> Logarithmes déformés</a></li>
 <li class="chapter" data-level="4.4.2" data-path="4-entropie.html"><a href="4-entropie.html#entropie-et-diversité"><i class="fa fa-check"></i><b>4.4.2</b> Entropie et diversité</a></li>
 <li class="chapter" data-level="4.4.3" data-path="4-entropie.html"><a href="4-entropie.html#synthèse"><i class="fa fa-check"></i><b>4.4.3</b> Synthèse</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="4-entropie.html"><a href="4-entropie.html#profils-de-diversité"><i class="fa fa-check"></i><b>4.5</b> Profils de diversité</a></li>
-<li class="chapter" data-level="4.6" data-path="4-entropie.html"><a href="4-entropie.html#estimation-de-lentropie"><i class="fa fa-check"></i><b>4.6</b> Estimation de l’entropie</a><ul>
+<li class="chapter" data-level="4.6" data-path="4-entropie.html"><a href="4-entropie.html#estimation-de-lentropie"><i class="fa fa-check"></i><b>4.6</b> Estimation de l’entropie</a>
+<ul>
 <li class="chapter" data-level="4.6.1" data-path="4-entropie.html"><a href="4-entropie.html#zhang-et-grabchak"><i class="fa fa-check"></i><b>4.6.1</b> Zhang et Grabchak</a></li>
 <li class="chapter" data-level="4.6.2" data-path="4-entropie.html"><a href="4-entropie.html#sec:BiaisHCDT"><i class="fa fa-check"></i><b>4.6.2</b> Chao et Jost</a></li>
 <li class="chapter" data-level="4.6.3" data-path="4-entropie.html"><a href="4-entropie.html#autres-méthodes"><i class="fa fa-check"></i><b>4.6.3</b> Autres méthodes</a></li>
@@ -214,28 +222,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.7" data-path="4-entropie.html"><a href="4-entropie.html#msom-et-msam"><i class="fa fa-check"></i><b>4.6.7</b> MSOM et MSAM</a></li>
 <li class="chapter" data-level="4.6.8" data-path="4-entropie.html"><a href="4-entropie.html#sec:RarExtrapol"><i class="fa fa-check"></i><b>4.6.8</b> Raréfaction et extrapolation</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="4-entropie.html"><a href="4-entropie.html#autres-approches"><i class="fa fa-check"></i><b>4.7</b> Autres approches</a><ul>
+<li class="chapter" data-level="4.7" data-path="4-entropie.html"><a href="4-entropie.html#autres-approches"><i class="fa fa-check"></i><b>4.7</b> Autres approches</a>
+<ul>
 <li class="chapter" data-level="4.7.1" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-de-rényi"><i class="fa fa-check"></i><b>4.7.1</b> L’entropie de Rényi</a></li>
 <li class="chapter" data-level="4.7.2" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-généralisée-des-mesures-dinégalité"><i class="fa fa-check"></i><b>4.7.2</b> L’entropie généralisée des mesures d’inégalité</a></li>
 <li class="chapter" data-level="4.7.3" data-path="4-entropie.html"><a href="4-entropie.html#sec:SimpsonG"><i class="fa fa-check"></i><b>4.7.3</b> L’entropie de Simpson généralisée</a></li>
 <li class="chapter" data-level="4.7.4" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-par-cas"><i class="fa fa-check"></i><b>4.7.4</b> L’entropie par cas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html"><i class="fa fa-check"></i><b>5</b> Équitabilité</a><ul>
+<li class="chapter" data-level="5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html"><i class="fa fa-check"></i><b>5</b> Équitabilité</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#approche-axiomatique"><i class="fa fa-check"></i><b>5.1</b> Approche axiomatique</a></li>
-<li class="chapter" data-level="5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-classiques"><i class="fa fa-check"></i><b>5.2</b> Indice classiques</a><ul>
+<li class="chapter" data-level="5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-classiques"><i class="fa fa-check"></i><b>5.2</b> Indice classiques</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-bulla"><i class="fa fa-check"></i><b>5.2.1</b> Indice de Bulla</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-gini"><i class="fa fa-check"></i><b>5.2.2</b> Indice de Gini</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#rapports-de-moyennes"><i class="fa fa-check"></i><b>5.2.3</b> Rapports de moyennes</a></li>
 <li class="chapter" data-level="5.2.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#ratios-de-hill"><i class="fa fa-check"></i><b>5.2.4</b> Ratios de Hill</a></li>
 <li class="chapter" data-level="5.2.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#synthèse-1"><i class="fa fa-check"></i><b>5.2.5</b> Synthèse</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-alternatifs"><i class="fa fa-check"></i><b>5.3</b> Indice alternatifs</a><ul>
+<li class="chapter" data-level="5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-alternatifs"><i class="fa fa-check"></i><b>5.3</b> Indice alternatifs</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#variance-de-la-rareté"><i class="fa fa-check"></i><b>5.3.1</b> Variance de la rareté</a></li>
 <li class="chapter" data-level="5.3.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#non-spécificité"><i class="fa fa-check"></i><b>5.3.2</b> Non-spécificité</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-pielou"><i class="fa fa-check"></i><b>5.4</b> Indice de Pielou</a></li>
-<li class="chapter" data-level="5.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#généralisation-de-lindice-de-pielou"><i class="fa fa-check"></i><b>5.5</b> Généralisation de l’indice de Pielou</a><ul>
+<li class="chapter" data-level="5.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#généralisation-de-lindice-de-pielou"><i class="fa fa-check"></i><b>5.5</b> Généralisation de l’indice de Pielou</a>
+<ul>
 <li class="chapter" data-level="5.5.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#sec:Mendes"><i class="fa fa-check"></i><b>5.5.1</b> Mendes et al. </a></li>
 <li class="chapter" data-level="5.5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#tuomisto"><i class="fa fa-check"></i><b>5.5.2</b> Tuomisto</a></li>
 <li class="chapter" data-level="5.5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#jost"><i class="fa fa-check"></i><b>5.5.3</b> Jost</a></li>
@@ -244,20 +257,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#relations-empiriques-entre-richesse-et-équitabilité"><i class="fa fa-check"></i><b>5.6</b> Relations empiriques entre richesse et équitabilité</a></li>
 </ul></li>
 <li class="part"><span><b>III Diversité fonctionnelle et phylogénétique</b></span></li>
-<li class="chapter" data-level="6" data-path="6-cadre.html"><a href="6-cadre.html"><i class="fa fa-check"></i><b>6</b> Cadre</a><ul>
+<li class="chapter" data-level="6" data-path="6-cadre.html"><a href="6-cadre.html"><i class="fa fa-check"></i><b>6</b> Cadre</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="6-cadre.html"><a href="6-cadre.html#dissimilarité-et-distance"><i class="fa fa-check"></i><b>6.1</b> Dissimilarité et distance</a></li>
 <li class="chapter" data-level="6.2" data-path="6-cadre.html"><a href="6-cadre.html#sec:Dphylo"><i class="fa fa-check"></i><b>6.2</b> Distance phylogénétique</a></li>
 <li class="chapter" data-level="6.3" data-path="6-cadre.html"><a href="6-cadre.html#sec:DFonctionnelle"><i class="fa fa-check"></i><b>6.3</b> Distance fonctionnelle</a></li>
 <li class="chapter" data-level="6.4" data-path="6-cadre.html"><a href="6-cadre.html#équivalence-des-deux-diversités"><i class="fa fa-check"></i><b>6.4</b> Équivalence des deux diversités</a></li>
 <li class="chapter" data-level="6.5" data-path="6-cadre.html"><a href="6-cadre.html#typologie-des-mesures"><i class="fa fa-check"></i><b>6.5</b> Typologie des mesures</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html"><i class="fa fa-check"></i><b>7</b> Mesures particulières</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-équitabilité-et-divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1</b> Richesse, équitabilité et divergence fonctionnelle</a><ul>
+<li class="chapter" data-level="7" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html"><i class="fa fa-check"></i><b>7</b> Mesures particulières</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-équitabilité-et-divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1</b> Richesse, équitabilité et divergence fonctionnelle</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-fonctionnelle"><i class="fa fa-check"></i><b>7.1.1</b> Richesse fonctionnelle</a></li>
 <li class="chapter" data-level="7.1.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#equitabilité-fonctionnelle"><i class="fa fa-check"></i><b>7.1.2</b> Equitabilité fonctionnelle</a></li>
 <li class="chapter" data-level="7.1.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1.3</b> Divergence fonctionnelle</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#originalité-richesse-et-équitabilité-phylogénétique"><i class="fa fa-check"></i><b>7.2</b> Originalité, richesse et équitabilité phylogénétique</a><ul>
+<li class="chapter" data-level="7.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#originalité-richesse-et-équitabilité-phylogénétique"><i class="fa fa-check"></i><b>7.2</b> Originalité, richesse et équitabilité phylogénétique</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#mesures-spécifiques-doriginalité"><i class="fa fa-check"></i><b>7.2.1</b> Mesures spécifiques d’originalité</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:OrigTax"><i class="fa fa-check"></i><b>7.2.2</b> Originalité taxonomique de Ricotta</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-phylogénétique"><i class="fa fa-check"></i><b>7.2.3</b> Richesse phylogénétique</a></li>
@@ -266,7 +283,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-de-scheiner"><i class="fa fa-check"></i><b>7.3</b> Diversité de Scheiner</a></li>
 <li class="chapter" data-level="7.4" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-de-solow-et-polasky"><i class="fa fa-check"></i><b>7.4</b> Diversité de Solow et Polasky</a></li>
 <li class="chapter" data-level="7.5" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:PDFD"><i class="fa fa-check"></i><b>7.5</b> FD et PD</a></li>
-<li class="chapter" data-level="7.6" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:Rao"><i class="fa fa-check"></i><b>7.6</b> Indice de Rao</a><ul>
+<li class="chapter" data-level="7.6" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:Rao"><i class="fa fa-check"></i><b>7.6</b> Indice de Rao</a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#principe"><i class="fa fa-check"></i><b>7.6.1</b> Principe</a></li>
 <li class="chapter" data-level="7.6.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#formalisation"><i class="fa fa-check"></i><b>7.6.2</b> Formalisation</a></li>
 <li class="chapter" data-level="7.6.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#propriétés"><i class="fa fa-check"></i><b>7.6.3</b> Propriétés</a></li>
@@ -278,14 +296,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.9" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-fonctionnelle-de-chiu-et-chao"><i class="fa fa-check"></i><b>7.9</b> Diversité fonctionnelle de Chiu et Chao</a></li>
 <li class="chapter" data-level="7.10" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:HpI1"><i class="fa fa-check"></i><b>7.10</b> <span class="math inline">\(H_p\)</span> et <span class="math inline">\(I_1\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html"><i class="fa fa-check"></i><b>8</b> Entropie phylogénétique</a><ul>
+<li class="chapter" data-level="8" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html"><i class="fa fa-check"></i><b>8</b> Entropie phylogénétique</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#généralisation-de-lentropie-hcdt"><i class="fa fa-check"></i><b>8.1</b> Généralisation de l’entropie HCDT</a></li>
 <li class="chapter" data-level="8.2" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#sec:phyloEstimation"><i class="fa fa-check"></i><b>8.2</b> Estimation</a></li>
 <li class="chapter" data-level="8.3" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#sec:phyloEntopieDiv"><i class="fa fa-check"></i><b>8.3</b> Entropie et diversité</a></li>
 <li class="chapter" data-level="8.4" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#diversité-individuelle"><i class="fa fa-check"></i><b>8.4</b> Diversité individuelle</a></li>
 <li class="chapter" data-level="8.5" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#arbres-non-ultramétriques"><i class="fa fa-check"></i><b>8.5</b> Arbres non ultramétriques</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html"><i class="fa fa-check"></i><b>9</b> Diversité de Leinster et Cobbold</a><ul>
+<li class="chapter" data-level="9" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html"><i class="fa fa-check"></i><b>9</b> Diversité de Leinster et Cobbold</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#définitions"><i class="fa fa-check"></i><b>9.1</b> Définitions</a></li>
 <li class="chapter" data-level="9.2" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-neutre"><i class="fa fa-check"></i><b>9.2</b> Diversité neutre</a></li>
 <li class="chapter" data-level="9.3" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-non-neutre"><i class="fa fa-check"></i><b>9.3</b> Diversité non neutre</a></li>
@@ -298,39 +318,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.10" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#sec:dqzSynthese"><i class="fa fa-check"></i><b>9.10</b> Synthèse</a></li>
 </ul></li>
 <li class="part"><span><b>IV Diversité beta et décomposition</b></span></li>
-<li class="chapter" data-level="10" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html"><i class="fa fa-check"></i><b>10</b> Cadre</a><ul>
+<li class="chapter" data-level="10" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html"><i class="fa fa-check"></i><b>10</b> Cadre</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#définition-de-la-diversité-beta-par-objectifs"><i class="fa fa-check"></i><b>10.1</b> Définition de la diversité <span class="math inline">\(\beta\)</span> par objectifs</a></li>
 <li class="chapter" data-level="10.2" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaTypo"><i class="fa fa-check"></i><b>10.2</b> Typologie des mesures</a></li>
-<li class="chapter" data-level="10.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaDecomposition"><i class="fa fa-check"></i><b>10.3</b> Décomposition de la diversité</a><ul>
+<li class="chapter" data-level="10.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaDecomposition"><i class="fa fa-check"></i><b>10.3</b> Décomposition de la diversité</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#définitions-de-la-diversité-beta-mesure-dérivée"><i class="fa fa-check"></i><b>10.3.1</b> Définitions de la diversité <span class="math inline">\(\beta\)</span>, mesure dérivée</a></li>
 <li class="chapter" data-level="10.3.2" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:DebatDecomposition"><i class="fa fa-check"></i><b>10.3.2</b> Le débat sur la décomposition</a></li>
 <li class="chapter" data-level="10.3.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#décomposition-multiplicative-de-la-diversité"><i class="fa fa-check"></i><b>10.3.3</b> Décomposition multiplicative de la diversité</a></li>
 <li class="chapter" data-level="10.3.4" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:defalpha"><i class="fa fa-check"></i><b>10.3.4</b> Définitions de la diversité <span class="math inline">\(\alpha\)</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html"><i class="fa fa-check"></i><b>11</b> Diversité de différentiation</a><ul>
-<li class="chapter" data-level="11.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-de-présence-absence"><i class="fa fa-check"></i><b>11.1</b> Données de présence-absence</a><ul>
+<li class="chapter" data-level="11" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html"><i class="fa fa-check"></i><b>11</b> Diversité de différentiation</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-de-présence-absence"><i class="fa fa-check"></i><b>11.1</b> Données de présence-absence</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#indices-de-similarité"><i class="fa fa-check"></i><b>11.1.1</b> Indices de similarité</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#biais-destimation"><i class="fa fa-check"></i><b>11.1.2</b> Biais d’estimation</a></li>
 <li class="chapter" data-level="11.1.3" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#représentation-graphique"><i class="fa fa-check"></i><b>11.1.3</b> Représentation graphique</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance"><i class="fa fa-check"></i><b>11.2</b> Données d’abondance</a></li>
 <li class="chapter" data-level="11.3" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#emboîtement-et-substitution"><i class="fa fa-check"></i><b>11.3</b> Emboîtement et substitution</a></li>
-<li class="chapter" data-level="11.4" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance-et-similarité-des-espèces"><i class="fa fa-check"></i><b>11.4</b> Données d’abondance et similarité des espèces</a><ul>
+<li class="chapter" data-level="11.4" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance-et-similarité-des-espèces"><i class="fa fa-check"></i><b>11.4</b> Données d’abondance et similarité des espèces</a>
+<ul>
 <li class="chapter" data-level="11.4.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#dissimilarité-minimale-moyenne"><i class="fa fa-check"></i><b>11.4.1</b> Dissimilarité minimale moyenne</a></li>
 <li class="chapter" data-level="11.4.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#similarité-moyenne-entre-individus"><i class="fa fa-check"></i><b>11.4.2</b> Similarité moyenne entre individus</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#distance-entre-paires-de-communautés-et-diversité-beta-proportionnelle"><i class="fa fa-check"></i><b>11.5</b> Distance entre paires de communautés et diversité <span class="math inline">\(\beta\)</span> proportionnelle</a><ul>
+<li class="chapter" data-level="11.5" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#distance-entre-paires-de-communautés-et-diversité-beta-proportionnelle"><i class="fa fa-check"></i><b>11.5</b> Distance entre paires de communautés et diversité <span class="math inline">\(\beta\)</span> proportionnelle</a>
+<ul>
 <li class="chapter" data-level="11.5.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#diversité-de-simpson"><i class="fa fa-check"></i><b>11.5.1</b> Diversité de Simpson</a></li>
 <li class="chapter" data-level="11.5.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#généralisation"><i class="fa fa-check"></i><b>11.5.2</b> Généralisation</a></li>
 </ul></li>
-<li class="chapter" data-level="11.6" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#sec:TestBetaDiff"><i class="fa fa-check"></i><b>11.6</b> Tests de significativité</a><ul>
+<li class="chapter" data-level="11.6" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#sec:TestBetaDiff"><i class="fa fa-check"></i><b>11.6</b> Tests de significativité</a>
+<ul>
 <li class="chapter" data-level="11.6.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#test-de-non-nullité"><i class="fa fa-check"></i><b>11.6.1</b> Test de non-nullité</a></li>
 <li class="chapter" data-level="11.6.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#analyse-de-la-variabilité"><i class="fa fa-check"></i><b>11.6.2</b> Analyse de la variabilité</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html"><i class="fa fa-check"></i><b>12</b> Décomposition de l’entropie HCDT</a><ul>
-<li class="chapter" data-level="12.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-shannon"><i class="fa fa-check"></i><b>12.1</b> Décomposition de l’indice de Shannon</a><ul>
+<li class="chapter" data-level="12" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html"><i class="fa fa-check"></i><b>12</b> Décomposition de l’entropie HCDT</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-shannon"><i class="fa fa-check"></i><b>12.1</b> Décomposition de l’indice de Shannon</a>
+<ul>
 <li class="chapter" data-level="12.1.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#définition-3"><i class="fa fa-check"></i><b>12.1.1</b> Définition</a></li>
 <li class="chapter" data-level="12.1.2" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:BiaisShannonBeta"><i class="fa fa-check"></i><b>12.1.2</b> Biais d’estimation</a></li>
 </ul></li>
@@ -339,24 +368,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-gini-simpson"><i class="fa fa-check"></i><b>12.4</b> Décomposition de l’indice de Gini-Simpson</a></li>
 <li class="chapter" data-level="12.5" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:RaoDisc"><i class="fa fa-check"></i><b>12.5</b> Décomposition de l’indice de Rao</a></li>
 <li class="chapter" data-level="12.6" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#synthèse-3"><i class="fa fa-check"></i><b>12.6</b> Synthèse</a></li>
-<li class="chapter" data-level="12.7" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#normalisation"><i class="fa fa-check"></i><b>12.7</b> Normalisation</a><ul>
+<li class="chapter" data-level="12.7" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#normalisation"><i class="fa fa-check"></i><b>12.7</b> Normalisation</a>
+<ul>
 <li class="chapter" data-level="12.7.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#nécessité-de-normaliser-la-diversité-beta"><i class="fa fa-check"></i><b>12.7.1</b> Nécessité de normaliser la diversité <span class="math inline">\(\beta\)</span></a></li>
 <li class="chapter" data-level="12.7.2" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:Chevauchement"><i class="fa fa-check"></i><b>12.7.2</b> L’indice de chevauchement <span class="math inline">\(C_{qN}\)</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><i class="fa fa-check"></i><b>13</b> Décomposition de la diversité phylogénétique et fonctionnelle</a><ul>
+<li class="chapter" data-level="13" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><i class="fa fa-check"></i><b>13</b> Décomposition de la diversité phylogénétique et fonctionnelle</a>
+<ul>
 <li class="chapter" data-level="13.1" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#décomposition-de-la-diversité-phylogénétique"><i class="fa fa-check"></i><b>13.1</b> Décomposition de la diversité phylogénétique</a></li>
 <li class="chapter" data-level="13.2" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#partitionnement-de-la-diversité-de-leinster-et-cobbold"><i class="fa fa-check"></i><b>13.2</b> Partitionnement de la diversité de Leinster et Cobbold</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html"><i class="fa fa-check"></i><b>14</b> Tests de significativité</a><ul>
-<li class="chapter" data-level="14.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#test-de-non-nullité-1"><i class="fa fa-check"></i><b>14.1</b> Test de non-nullité</a><ul>
+<li class="chapter" data-level="14" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html"><i class="fa fa-check"></i><b>14</b> Tests de significativité</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#test-de-non-nullité-1"><i class="fa fa-check"></i><b>14.1</b> Test de non-nullité</a>
+<ul>
 <li class="chapter" data-level="14.1.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#intervalle-de-confiance"><i class="fa fa-check"></i><b>14.1.1</b> Intervalle de confiance</a></li>
 <li class="chapter" data-level="14.1.2" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#correction-des-biais"><i class="fa fa-check"></i><b>14.1.2</b> Correction des biais</a></li>
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#analyse-de-la-variabilité-1"><i class="fa fa-check"></i><b>14.2</b> Analyse de la variabilité</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html"><i class="fa fa-check"></i><b>15</b> Autres approches</a><ul>
-<li class="chapter" data-level="15.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#le-partitionnement-de-la-diversité-selon-pélissier-et-couteron"><i class="fa fa-check"></i><b>15.1</b> Le partitionnement de la diversité selon Pélissier et Couteron</a><ul>
+<li class="chapter" data-level="15" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html"><i class="fa fa-check"></i><b>15</b> Autres approches</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#le-partitionnement-de-la-diversité-selon-pélissier-et-couteron"><i class="fa fa-check"></i><b>15.1</b> Le partitionnement de la diversité selon Pélissier et Couteron</a>
+<ul>
 <li class="chapter" data-level="15.1.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#sec:PCcadre"><i class="fa fa-check"></i><b>15.1.1</b> Cadre</a></li>
 <li class="chapter" data-level="15.1.2" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#sec:PCdecomposition"><i class="fa fa-check"></i><b>15.1.2</b> Décomposition</a></li>
 </ul></li>
@@ -364,31 +399,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>V Diversité jointe, diversité structurelle</b></span></li>
 <li class="chapter" data-level="16" data-path="16-sec-jointeCadre.html"><a href="16-sec-jointeCadre.html"><i class="fa fa-check"></i><b>16</b> Cadre</a></li>
-<li class="chapter" data-level="17" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html"><i class="fa fa-check"></i><b>17</b> Information mutuelle</a><ul>
-<li class="chapter" data-level="17.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#récursivité-de-lentropie"><i class="fa fa-check"></i><b>17.1</b> Récursivité de l’entropie</a><ul>
+<li class="chapter" data-level="17" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html"><i class="fa fa-check"></i><b>17</b> Information mutuelle</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#récursivité-de-lentropie"><i class="fa fa-check"></i><b>17.1</b> Récursivité de l’entropie</a>
+<ul>
 <li class="chapter" data-level="17.1.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#sec:jointeShannon"><i class="fa fa-check"></i><b>17.1.1</b> Entropie de Shannon</a></li>
 <li class="chapter" data-level="17.1.2" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#sec:jointeHCDT"><i class="fa fa-check"></i><b>17.1.2</b> Entropie HCDT</a></li>
 <li class="chapter" data-level="17.1.3" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#intérêt-de-linformation-mutuelle"><i class="fa fa-check"></i><b>17.1.3</b> Intérêt de l’information mutuelle</a></li>
 </ul></li>
 <li class="chapter" data-level="17.2" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#taille-de-niche"><i class="fa fa-check"></i><b>17.2</b> Taille de niche</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html"><i class="fa fa-check"></i><b>18</b> Décomposition de la diversité jointe</a><ul>
+<li class="chapter" data-level="18" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html"><i class="fa fa-check"></i><b>18</b> Décomposition de la diversité jointe</a>
+<ul>
 <li class="chapter" data-level="18.1" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html#sec:Definitions"><i class="fa fa-check"></i><b>18.1</b> Définitions</a></li>
 <li class="chapter" data-level="18.2" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html#relations-avec-dautres-mesures-de-diversité"><i class="fa fa-check"></i><b>18.2</b> Relations avec d’autres mesures de diversité</a></li>
 </ul></li>
 <li class="part"><span><b>VI Diversité spatialement explicite</b></span></li>
 <li class="chapter" data-level="19" data-path="19-sec-spatialCadre.html"><a href="19-sec-spatialCadre.html"><i class="fa fa-check"></i><b>19</b> Cadre</a></li>
-<li class="chapter" data-level="20" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html"><i class="fa fa-check"></i><b>20</b> Indice <span class="math inline">\(\alpha\)</span> de Fisher</a><ul>
+<li class="chapter" data-level="20" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html"><i class="fa fa-check"></i><b>20</b> Indice <span class="math inline">\(\alpha\)</span> de Fisher</a>
+<ul>
 <li class="chapter" data-level="20.1" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html#construction"><i class="fa fa-check"></i><b>20.1</b> Construction</a></li>
 <li class="chapter" data-level="20.2" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html#variantes"><i class="fa fa-check"></i><b>20.2</b> Variantes</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html"><i class="fa fa-check"></i><b>21</b> Accumulation de la diversité locale</a><ul>
+<li class="chapter" data-level="21" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html"><i class="fa fa-check"></i><b>21</b> Accumulation de la diversité locale</a>
+<ul>
 <li class="chapter" data-level="21.1" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#courbes-daccumulation"><i class="fa fa-check"></i><b>21.1</b> Courbes d’accumulation</a></li>
 <li class="chapter" data-level="21.2" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#sec:Extrapolation"><i class="fa fa-check"></i><b>21.2</b> Extrapolation</a></li>
 <li class="chapter" data-level="21.3" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#influence-de-la-structure-spatiale"><i class="fa fa-check"></i><b>21.3</b> Influence de la structure spatiale</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html"><i class="fa fa-check"></i><b>22</b> Diversité régionale</a><ul>
-<li class="chapter" data-level="22.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:Arrhenius"><i class="fa fa-check"></i><b>22.1</b> La relation d’Arrhenius</a><ul>
+<li class="chapter" data-level="22" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html"><i class="fa fa-check"></i><b>22</b> Diversité régionale</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:Arrhenius"><i class="fa fa-check"></i><b>22.1</b> La relation d’Arrhenius</a>
+<ul>
 <li class="chapter" data-level="22.1.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#loi-de-puissance"><i class="fa fa-check"></i><b>22.1.1</b> Loi de puissance</a></li>
 <li class="chapter" data-level="22.1.2" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#le-modèle-de-plotkin"><i class="fa fa-check"></i><b>22.1.2</b> Le modèle de Plotkin</a></li>
 </ul></li>
@@ -397,14 +439,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.4" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:spatialSynthese"><i class="fa fa-check"></i><b>22.4</b> Synthèse</a></li>
 <li class="chapter" data-level="22.5" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#estimation-de-la-richesse-à-partir-de-placettes-distantes"><i class="fa fa-check"></i><b>22.5</b> Estimation de la richesse à partir de placettes distantes</a></li>
 </ul></li>
-<li class="chapter" data-level="23" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html"><i class="fa fa-check"></i><b>23</b> Diversité <span class="math inline">\(\beta\)</span> spatialement explicite</a><ul>
+<li class="chapter" data-level="23" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html"><i class="fa fa-check"></i><b>23</b> Diversité <span class="math inline">\(\beta\)</span> spatialement explicite</a>
+<ul>
 <li class="chapter" data-level="23.1" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html#sec:SimpsonSpatial"><i class="fa fa-check"></i><b>23.1</b> L’indice de Simpson spatialement explicite</a></li>
 <li class="chapter" data-level="23.2" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html#le-variogramme-de-complémentarité"><i class="fa fa-check"></i><b>23.2</b> Le variogramme de complémentarité</a></li>
 </ul></li>
 <li class="part"><span><b>VII Conclusion</b></span></li>
-<li class="chapter" data-level="24" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html"><i class="fa fa-check"></i><b>24</b> Synthèse</a><ul>
+<li class="chapter" data-level="24" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html"><i class="fa fa-check"></i><b>24</b> Synthèse</a>
+<ul>
 <li class="chapter" data-level="24.1" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#entropie-et-diversité-1"><i class="fa fa-check"></i><b>24.1</b> Entropie et diversité</a></li>
-<li class="chapter" data-level="24.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#ordres-particuliers-de-diversité"><i class="fa fa-check"></i><b>24.2</b> Ordres particuliers de diversité</a><ul>
+<li class="chapter" data-level="24.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#ordres-particuliers-de-diversité"><i class="fa fa-check"></i><b>24.2</b> Ordres particuliers de diversité</a>
+<ul>
 <li class="chapter" data-level="24.2.1" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#estimation-2"><i class="fa fa-check"></i><b>24.2.1</b> Estimation</a></li>
 <li class="chapter" data-level="24.2.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#partition"><i class="fa fa-check"></i><b>24.2.2</b> Partition</a></li>
 <li class="chapter" data-level="24.2.3" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#égalité-des-diversités"><i class="fa fa-check"></i><b>24.2.3</b> Égalité des diversités</a></li>
@@ -432,25 +477,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap:BetaPaires" class="section level1">
+<div id="chap:BetaPaires" class="section level1" number="11">
 <h1><span class="header-section-number">11</span> Diversité de différentiation</h1>
-
+<p></p>
 <div class="Essentiel">
 <p>
 La diversité <span class="math inline"><span class="math inline">\(\beta\)</span></span> de différentiation mesure la dissimilarité entre communautés, généralement considérées par paires. Les dissimilarités les plus connues sont celles de Jaccard ou de Sørensen. Ces mesures peuvent prendre en compte la seule présence ou absence des espèces, leur abondance ou même la similarité entre les espèces, peuvent être traitées par l’analyse multivariée et être testées contre l’hypothèse de nullité de la dissimilarité.
 </p>
 </div>
-
+<p></p>
 <p>La littérature des indices de similarité est bien antérieure à celle de la biodiversité.
 De nombreuses mesures de dissimilarité entre paires de communautés existent donc, et leurs propriétés ont été bien étudiées.
 Elles seront présentées ici en fonction des types de données qu’elles traitent: présence-absence, abondance ou abondance et similarité des espèces.
 Enfin, des tests statistiques ont été construits pour rejeter l’hypothèse que les communautés sont issues d’une même méta-communautés par un simple tirage multinomial des espèces.</p>
-<p>Une limite importante des mesures de dissimilarité est qu’elles sont très sensibles à la taille des communautés échantillonnées <span class="citation">(Wolda <a href="#ref-Wolda1981" role="doc-biblioref">1981</a>)</span>.</p>
-<div id="données-de-présence-absence" class="section level2">
+<p>Une limite importante des mesures de dissimilarité est qu’elles sont très sensibles à la taille des communautés échantillonnées <span class="citation">(<a href="references.html#ref-Wolda1981" role="doc-biblioref">Wolda 1981</a>)</span>.</p>
+<div id="données-de-présence-absence" class="section level2" number="11.1">
 <h2><span class="header-section-number">11.1</span> Données de présence-absence</h2>
-<div id="indices-de-similarité" class="section level3">
+<div id="indices-de-similarité" class="section level3" number="11.1.1">
 <h3><span class="header-section-number">11.1.1</span> Indices de similarité</h3>
-<p>Les indices les plus simples et probablement les plus connus pour calculer la diversité <span class="math inline">\(\beta\)</span> sont l’indice de <span class="citation">Jaccard (<a href="#ref-Jaccard1901" role="doc-biblioref">1901</a>)</span> et de Sørensen <span class="citation">(Czekanowski <a href="#ref-Czekanowski1913" role="doc-biblioref">1913</a>; Dice <a href="#ref-Dice1945" role="doc-biblioref">1945</a>; Sørensen <a href="#ref-Sorensen1948" role="doc-biblioref">1948</a>)</span>.
+<p>Les indices les plus simples et probablement les plus connus pour calculer la diversité <span class="math inline">\(\beta\)</span> sont l’indice de <span class="citation"><a href="references.html#ref-Jaccard1901" role="doc-biblioref">Jaccard</a> (<a href="references.html#ref-Jaccard1901" role="doc-biblioref">1901</a>)</span> et de Sørensen <span class="citation">(<a href="references.html#ref-Czekanowski1913" role="doc-biblioref">Czekanowski 1913</a>; <a href="references.html#ref-Dice1945" role="doc-biblioref">Dice 1945</a>; <a href="references.html#ref-Sorensen1948" role="doc-biblioref">Sørensen 1948</a>)</span>.
 Ils sont définis pour deux communautés et comptent la proportion d’espèces qu’elles partagent.
 Plus elle est faible, moins la composition spécifique des communautés est semblable, plus la diversité <span class="math inline">\(\beta\)</span> est considérée comme grande.</p>
 <p>Précisément, notons <span class="math inline">\(s_{1,1}\)</span> les espèces observées dans les deux communautés, <span class="math inline">\(s_{1,0}\)</span> celles observées dans la première communauté mais pas la deuxième (et de même <span class="math inline">\(s_{0,1}\)</span>).
@@ -464,9 +509,9 @@ L’indice de Jaccard est le rapport entre le nombre d’espèces communes et le
   \tag{11.2}
   S_7 = \frac{2s_{1,1}}{2s_{1,1}+s_{1,0}+s_{0,1}}.
 \end{equation}\]</span></p>
-<p>Les notations <span class="math inline">\(S_n\)</span> correspondent à celles de l’article de référence de <span class="citation">Gower et Legendre (<a href="#ref-Gower1986" role="doc-biblioref">1986</a>)</span> qui fait la revue de ces indices de similarité (13 autres sont traités) et en étudie les propriétés.
+<p>Les notations <span class="math inline">\(S_n\)</span> correspondent à celles de l’article de référence de <span class="citation"><a href="references.html#ref-Gower1986" role="doc-biblioref">Gower et Legendre</a> (<a href="references.html#ref-Gower1986" role="doc-biblioref">1986</a>)</span> qui fait la revue de ces indices de similarité (13 autres sont traités) et en étudie les propriétés.
 Certains indices prennent en compte les espèces absentes des deux communautés mais qui auraient pu être observées <span class="math inline">\(s_{0,0}\)</span>.</p>
-<p>Deux autres indices sont mentionnés ici, celui de <span class="citation">Sokal et Sneath (<a href="#ref-Sokal1963" role="doc-biblioref">1963</a>)</span> et celui d’Ochiai <span class="citation">(<a href="#ref-Ochiai1957" role="doc-biblioref">1957</a>)</span>:</p>
+<p>Deux autres indices sont mentionnés ici, celui de <span class="citation"><a href="references.html#ref-Sokal1963" role="doc-biblioref">Sokal et Sneath</a> (<a href="references.html#ref-Sokal1963" role="doc-biblioref">1963</a>)</span> et celui d’Ochiai <span class="citation">(<a href="references.html#ref-Ochiai1957" role="doc-biblioref">1957</a>)</span>:</p>
 <p><span class="math display" id="eq:S5">\[\begin{equation}
   \tag{11.3}
   S_5 = \frac{s_{1,1}}{s_{1,1}+2 \left(s_{1,0}+s_{0,1}\right)};
@@ -482,39 +527,39 @@ On utilisera donc généralement la matrice de distances euclidiennes <span clas
 <p>Exemple: l’indice de Jaccard peut être calculé pour tous les carrés de BCI comparés deux à deux.
 La fonction <code>dist.binary</code> du package <em>ade4</em> calcule <span class="math inline">\(\sqrt{D_n}\)</span> pour 10 indices de similarité étudiés par Gower et Legendre (voir l’aide de la fonction).
 Le résultat est une demi-matrice de distances de classe <code>dist</code>.</p>
+<p></p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="11-chap-BetaPaires.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;vegan&quot;</span>)</span>
+<span id="cb234-2"><a href="11-chap-BetaPaires.html#cb234-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(BCI)</span>
+<span id="cb234-3"><a href="11-chap-BetaPaires.html#cb234-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ade4&quot;</span>)</span>
+<span id="cb234-4"><a href="11-chap-BetaPaires.html#cb234-4" aria-hidden="true" tabindex="-1"></a>DistJaccard <span class="ot">&lt;-</span> <span class="fu">dist.binary</span>(BCI, <span class="at">method =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p></p>
 
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="11-chap-BetaPaires.html#cb236-1"></a><span class="kw">library</span>(<span class="st">&quot;vegan&quot;</span>)</span>
-<span id="cb236-2"><a href="11-chap-BetaPaires.html#cb236-2"></a><span class="kw">data</span>(BCI)</span>
-<span id="cb236-3"><a href="11-chap-BetaPaires.html#cb236-3"></a><span class="kw">library</span>(<span class="st">&quot;ade4&quot;</span>)</span>
-<span id="cb236-4"><a href="11-chap-BetaPaires.html#cb236-4"></a>DistJaccard &lt;-<span class="st"> </span><span class="kw">dist.binary</span>(BCI, <span class="dt">method =</span> <span class="dv">1</span>)</span></code></pre></div>
-
-
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:JaccardFig"></span>
 <img src="MesuresBD_files/figure-html/JaccardFig-1.png" alt="Distribution des indices de Jaccard calculés pour les 50 carrés de BCI deux à deux." width="80%" />
 <p class="caption">
 Figure 11.1: Distribution des indices de Jaccard calculés pour les 50 carrés de BCI deux à deux.
 </p>
 </div>
-
+<p></p>
 <p>La distribution des valeurs de l’indice de Jaccard <span class="math inline">\(S_3=1-D_3^2\)</span> est en figure <a href="11-chap-BetaPaires.html#fig:JaccardFig">11.1</a>.
 Le mode est proche de 0,5: la moitié des espèces sont communes entre deux carrés.</p>
 <p>Code R pour la figure:</p>
-
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="11-chap-BetaPaires.html#cb237-1"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">Jaccard=</span><span class="kw">as.numeric</span>(<span class="dv">1</span><span class="op">-</span>DistJaccard<span class="op">^</span><span class="dv">2</span>))) <span class="op">+</span></span>
-<span id="cb237-2"><a href="11-chap-BetaPaires.html#cb237-2"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Jaccard))</span></code></pre></div>
-
+<p></p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="11-chap-BetaPaires.html#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">Jaccard =</span> <span class="fu">as.numeric</span>(<span class="dv">1</span> <span class="sc">-</span> DistJaccard<span class="sc">^</span><span class="dv">2</span>))) <span class="sc">+</span> </span>
+<span id="cb235-2"><a href="11-chap-BetaPaires.html#cb235-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> Jaccard))</span></code></pre></div>
+<p></p>
 <p>Pour afficher l’indice de Jaccard entre les carrés 1 et 2, il faut transformer la demi-matrice des distances en matrice de similarité:</p>
-
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="11-chap-BetaPaires.html#cb238-1"></a>Jaccard &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span>(<span class="kw">as.matrix</span>(DistJaccard))<span class="op">^</span><span class="dv">2</span></span>
-<span id="cb238-2"><a href="11-chap-BetaPaires.html#cb238-2"></a>Jaccard[<span class="dv">1</span>,<span class="dv">2</span>]</span></code></pre></div>
+<p></p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="11-chap-BetaPaires.html#cb236-1" aria-hidden="true" tabindex="-1"></a>Jaccard <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="fu">as.matrix</span>(DistJaccard))<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb236-2"><a href="11-chap-BetaPaires.html#cb236-2" aria-hidden="true" tabindex="-1"></a>Jaccard[<span class="dv">1</span>, <span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] 0.5663717</code></pre>
-
+<p></p>
 </div>
-<div id="biais-destimation" class="section level3">
+<div id="biais-destimation" class="section level3" number="11.1.2">
 <h3><span class="header-section-number">11.1.2</span> Biais d’estimation</h3>
 <p>Tous les indices de similarité vus plus haut sont sensibles au biais d’estimation.
-<span class="citation">Chao, Chazdon, et al. (<a href="#ref-Chao2004a" role="doc-biblioref">2004</a>)</span> fournissent un estimateur de la probabilité qu’un individu de la première communauté appartienne à une espèce commune aux deux communautés:</p>
+<span class="citation"><a href="references.html#ref-Chao2004a" role="doc-biblioref">Chao et al.</a> (<a href="references.html#ref-Chao2004a" role="doc-biblioref">2004</a>)</span> fournissent un estimateur de la probabilité qu’un individu de la première communauté appartienne à une espèce commune aux deux communautés:</p>
 <p><span class="math display" id="eq:Chao2004a">\[\begin{equation}
   \tag{11.5}
   \hat{U} = \sum_{s}^{s_{1,1}}{\frac{n_{s,1}}{n}} + \frac{n_{+2}-1}{n_{+2}} \frac{s_1^{(2)}}{2 s_2^{(2)}} \sum_{s}^{s_{1,1}}{\frac{n_s}{n}{\mathbf 1}\left( n_{s,2}=1 \right)}.
@@ -539,95 +584,97 @@ L’estimateur de l’indice de Jaccard est donc</p>
   \hat{S}_7 = \frac{2\hat{U}\hat{V}}{\hat{U}+\hat{V}}.
 \end{equation}\]</span></p>
 <p>La matrice de dissimilarité corrigée est assez différente de l’originale. L’indice de Jaccard entre les deux premiers carrés devient:</p>
-
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="11-chap-BetaPaires.html#cb240-1"></a><span class="co"># Calcul de U et V, N2Col est une matrice ou un dataframe de deux colonnes contenant les effectifs de chaque parcelle</span></span>
-<span id="cb240-2"><a href="11-chap-BetaPaires.html#cb240-2"></a>ChaoUV &lt;-<span class="st"> </span><span class="cf">function</span>(N2Col) {</span>
-<span id="cb240-3"><a href="11-chap-BetaPaires.html#cb240-3"></a>  NCommunity &lt;-<span class="st"> </span><span class="kw">colSums</span>(N2Col)</span>
-<span id="cb240-4"><a href="11-chap-BetaPaires.html#cb240-4"></a>  Common &lt;-<span class="st"> </span>(N2Col[, <span class="dv">1</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;</span><span class="st"> </span>(N2Col[, <span class="dv">2</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
-<span id="cb240-5"><a href="11-chap-BetaPaires.html#cb240-5"></a>  Single &lt;-<span class="st"> </span>N2Col <span class="op">==</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb240-6"><a href="11-chap-BetaPaires.html#cb240-6"></a>  NSingleCommon &lt;-<span class="st"> </span><span class="kw">colSums</span>(Common <span class="op">&amp;</span><span class="st"> </span>Single)</span>
-<span id="cb240-7"><a href="11-chap-BetaPaires.html#cb240-7"></a>  Double &lt;-<span class="st"> </span>N2Col <span class="op">==</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb240-8"><a href="11-chap-BetaPaires.html#cb240-8"></a>  NDoubleCommon &lt;-<span class="st"> </span><span class="kw">colSums</span>(Common <span class="op">&amp;</span><span class="st"> </span>Double)</span>
-<span id="cb240-9"><a href="11-chap-BetaPaires.html#cb240-9"></a>  NsCommon &lt;-<span class="st"> </span>N2Col[Common,]</span>
-<span id="cb240-10"><a href="11-chap-BetaPaires.html#cb240-10"></a>  PsCommon &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">t</span>(NsCommon)<span class="op">/</span><span class="kw">colSums</span>(N2Col))</span>
-<span id="cb240-11"><a href="11-chap-BetaPaires.html#cb240-11"></a>  U &lt;-<span class="st"> </span><span class="kw">sum</span>(PsCommon[, <span class="dv">1</span>]) <span class="op">+</span><span class="st"> </span>(NCommunity[<span class="dv">2</span>]<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span>NCommunity[<span class="dv">2</span>] <span class="op">*</span><span class="st"> </span>NSingleCommon[<span class="dv">2</span>]<span class="op">/</span><span class="dv">2</span><span class="op">/</span><span class="kw">max</span>(NDoubleCommon[<span class="dv">2</span>], <span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="kw">sum</span>(PsCommon[, <span class="dv">1</span>][(NsCommon <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)[, <span class="dv">2</span>]]) </span>
-<span id="cb240-12"><a href="11-chap-BetaPaires.html#cb240-12"></a>  V &lt;-<span class="st"> </span><span class="kw">sum</span>(PsCommon[, <span class="dv">2</span>]) <span class="op">+</span><span class="st"> </span>(NCommunity[<span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span>NCommunity[<span class="dv">1</span>] <span class="op">*</span><span class="st"> </span>NSingleCommon[<span class="dv">1</span>]<span class="op">/</span><span class="dv">2</span><span class="op">/</span><span class="kw">max</span>(NDoubleCommon[<span class="dv">1</span>], <span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="kw">sum</span>(PsCommon[, <span class="dv">2</span>][(NsCommon <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)[, <span class="dv">1</span>]]) </span>
-<span id="cb240-13"><a href="11-chap-BetaPaires.html#cb240-13"></a><span class="kw">return</span> (<span class="kw">list</span>(<span class="dt">U=</span>U, <span class="dt">V=</span>V))</span>
-<span id="cb240-14"><a href="11-chap-BetaPaires.html#cb240-14"></a>}</span>
-<span id="cb240-15"><a href="11-chap-BetaPaires.html#cb240-15"></a></span>
-<span id="cb240-16"><a href="11-chap-BetaPaires.html#cb240-16"></a><span class="co"># Indice de Jaccard corrigé</span></span>
-<span id="cb240-17"><a href="11-chap-BetaPaires.html#cb240-17"></a>bcJaccard &lt;-<span class="st"> </span><span class="cf">function</span>(N2Col) {</span>
-<span id="cb240-18"><a href="11-chap-BetaPaires.html#cb240-18"></a>  ChaoEst &lt;-<span class="st"> </span><span class="kw">ChaoUV</span>(N2Col)</span>
-<span id="cb240-19"><a href="11-chap-BetaPaires.html#cb240-19"></a>  <span class="kw">return</span> (<span class="kw">min</span>(ChaoEst<span class="op">$</span>U <span class="op">*</span><span class="st"> </span>ChaoEst<span class="op">$</span>V <span class="op">/</span><span class="st"> </span>(ChaoEst<span class="op">$</span>U <span class="op">+</span><span class="st"> </span>ChaoEst<span class="op">$</span>V <span class="op">-</span><span class="st"> </span>ChaoEst<span class="op">$</span>U<span class="op">*</span>ChaoEst<span class="op">$</span>V), <span class="dv">1</span>))</span>
-<span id="cb240-20"><a href="11-chap-BetaPaires.html#cb240-20"></a>}</span>
-<span id="cb240-21"><a href="11-chap-BetaPaires.html#cb240-21"></a></span>
-<span id="cb240-22"><a href="11-chap-BetaPaires.html#cb240-22"></a><span class="co"># Calcul de l&#39;indice entre les carrés i et j de BCI, i&lt;j.</span></span>
-<span id="cb240-23"><a href="11-chap-BetaPaires.html#cb240-23"></a>BCIjaccard &lt;-<span class="st"> </span><span class="cf">function</span>(i,j) {</span>
-<span id="cb240-24"><a href="11-chap-BetaPaires.html#cb240-24"></a>  <span class="cf">if</span> (i<span class="op">&gt;=</span>j) </span>
-<span id="cb240-25"><a href="11-chap-BetaPaires.html#cb240-25"></a>    <span class="kw">return</span>(<span class="ot">NA</span>)</span>
-<span id="cb240-26"><a href="11-chap-BetaPaires.html#cb240-26"></a>  <span class="cf">else</span></span>
-<span id="cb240-27"><a href="11-chap-BetaPaires.html#cb240-27"></a>    <span class="kw">return</span>(<span class="kw">bcJaccard</span>(<span class="kw">t</span>(BCI[<span class="kw">c</span>(i,j),])))</span>
-<span id="cb240-28"><a href="11-chap-BetaPaires.html#cb240-28"></a>}</span>
-<span id="cb240-29"><a href="11-chap-BetaPaires.html#cb240-29"></a></span>
-<span id="cb240-30"><a href="11-chap-BetaPaires.html#cb240-30"></a><span class="co"># Calcul de la matrice de dissimilarité entre les 50 carrés</span></span>
-<span id="cb240-31"><a href="11-chap-BetaPaires.html#cb240-31"></a>ChaoJaccard &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>, <span class="cf">function</span>(i) {<span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>, <span class="cf">function</span>(j) <span class="kw">BCIjaccard</span>(i,j))})</span>
-<span id="cb240-32"><a href="11-chap-BetaPaires.html#cb240-32"></a></span>
-<span id="cb240-33"><a href="11-chap-BetaPaires.html#cb240-33"></a><span class="co"># Indice de Jaccard, carrés 1 et 2, corrigé</span></span>
-<span id="cb240-34"><a href="11-chap-BetaPaires.html#cb240-34"></a><span class="kw">BCIjaccard</span>(<span class="dv">1</span>,<span class="dv">2</span>)</span></code></pre></div>
+<p></p>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="11-chap-BetaPaires.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcul de U et V, N2Col est une matrice ou un dataframe de</span></span>
+<span id="cb238-2"><a href="11-chap-BetaPaires.html#cb238-2" aria-hidden="true" tabindex="-1"></a><span class="co"># deux colonnes contenant les effectifs de chaque parcelle</span></span>
+<span id="cb238-3"><a href="11-chap-BetaPaires.html#cb238-3" aria-hidden="true" tabindex="-1"></a>ChaoUV <span class="ot">&lt;-</span> <span class="cf">function</span>(N2Col) {</span>
+<span id="cb238-4"><a href="11-chap-BetaPaires.html#cb238-4" aria-hidden="true" tabindex="-1"></a>    NCommunity <span class="ot">&lt;-</span> <span class="fu">colSums</span>(N2Col)</span>
+<span id="cb238-5"><a href="11-chap-BetaPaires.html#cb238-5" aria-hidden="true" tabindex="-1"></a>    Common <span class="ot">&lt;-</span> (N2Col[, <span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">&amp;</span> (N2Col[, <span class="dv">2</span>] <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb238-6"><a href="11-chap-BetaPaires.html#cb238-6" aria-hidden="true" tabindex="-1"></a>    Single <span class="ot">&lt;-</span> N2Col <span class="sc">==</span> <span class="dv">1</span></span>
+<span id="cb238-7"><a href="11-chap-BetaPaires.html#cb238-7" aria-hidden="true" tabindex="-1"></a>    NSingleCommon <span class="ot">&lt;-</span> <span class="fu">colSums</span>(Common <span class="sc">&amp;</span> Single)</span>
+<span id="cb238-8"><a href="11-chap-BetaPaires.html#cb238-8" aria-hidden="true" tabindex="-1"></a>    Double <span class="ot">&lt;-</span> N2Col <span class="sc">==</span> <span class="dv">2</span></span>
+<span id="cb238-9"><a href="11-chap-BetaPaires.html#cb238-9" aria-hidden="true" tabindex="-1"></a>    NDoubleCommon <span class="ot">&lt;-</span> <span class="fu">colSums</span>(Common <span class="sc">&amp;</span> Double)</span>
+<span id="cb238-10"><a href="11-chap-BetaPaires.html#cb238-10" aria-hidden="true" tabindex="-1"></a>    NsCommon <span class="ot">&lt;-</span> N2Col[Common, ]</span>
+<span id="cb238-11"><a href="11-chap-BetaPaires.html#cb238-11" aria-hidden="true" tabindex="-1"></a>    PsCommon <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">t</span>(NsCommon)<span class="sc">/</span><span class="fu">colSums</span>(N2Col))</span>
+<span id="cb238-12"><a href="11-chap-BetaPaires.html#cb238-12" aria-hidden="true" tabindex="-1"></a>    U <span class="ot">&lt;-</span> <span class="fu">sum</span>(PsCommon[, <span class="dv">1</span>]) <span class="sc">+</span> (NCommunity[<span class="dv">2</span>] <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>NCommunity[<span class="dv">2</span>] <span class="sc">*</span> </span>
+<span id="cb238-13"><a href="11-chap-BetaPaires.html#cb238-13" aria-hidden="true" tabindex="-1"></a>        NSingleCommon[<span class="dv">2</span>]<span class="sc">/</span><span class="dv">2</span><span class="sc">/</span><span class="fu">max</span>(NDoubleCommon[<span class="dv">2</span>], <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">sum</span>(PsCommon[, </span>
+<span id="cb238-14"><a href="11-chap-BetaPaires.html#cb238-14" aria-hidden="true" tabindex="-1"></a>        <span class="dv">1</span>][(NsCommon <span class="sc">==</span> <span class="dv">1</span>)[, <span class="dv">2</span>]])</span>
+<span id="cb238-15"><a href="11-chap-BetaPaires.html#cb238-15" aria-hidden="true" tabindex="-1"></a>    V <span class="ot">&lt;-</span> <span class="fu">sum</span>(PsCommon[, <span class="dv">2</span>]) <span class="sc">+</span> (NCommunity[<span class="dv">1</span>] <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>NCommunity[<span class="dv">1</span>] <span class="sc">*</span> </span>
+<span id="cb238-16"><a href="11-chap-BetaPaires.html#cb238-16" aria-hidden="true" tabindex="-1"></a>        NSingleCommon[<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span><span class="sc">/</span><span class="fu">max</span>(NDoubleCommon[<span class="dv">1</span>], <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">sum</span>(PsCommon[, </span>
+<span id="cb238-17"><a href="11-chap-BetaPaires.html#cb238-17" aria-hidden="true" tabindex="-1"></a>        <span class="dv">2</span>][(NsCommon <span class="sc">==</span> <span class="dv">1</span>)[, <span class="dv">1</span>]])</span>
+<span id="cb238-18"><a href="11-chap-BetaPaires.html#cb238-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">U =</span> U, <span class="at">V =</span> V))</span>
+<span id="cb238-19"><a href="11-chap-BetaPaires.html#cb238-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb238-20"><a href="11-chap-BetaPaires.html#cb238-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Indice de Jaccard corrigé</span></span>
+<span id="cb238-21"><a href="11-chap-BetaPaires.html#cb238-21" aria-hidden="true" tabindex="-1"></a>bcJaccard <span class="ot">&lt;-</span> <span class="cf">function</span>(N2Col) {</span>
+<span id="cb238-22"><a href="11-chap-BetaPaires.html#cb238-22" aria-hidden="true" tabindex="-1"></a>    ChaoEst <span class="ot">&lt;-</span> <span class="fu">ChaoUV</span>(N2Col)</span>
+<span id="cb238-23"><a href="11-chap-BetaPaires.html#cb238-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">min</span>(ChaoEst<span class="sc">$</span>U <span class="sc">*</span> ChaoEst<span class="sc">$</span>V<span class="sc">/</span>(ChaoEst<span class="sc">$</span>U <span class="sc">+</span> ChaoEst<span class="sc">$</span>V <span class="sc">-</span> </span>
+<span id="cb238-24"><a href="11-chap-BetaPaires.html#cb238-24" aria-hidden="true" tabindex="-1"></a>        ChaoEst<span class="sc">$</span>U <span class="sc">*</span> ChaoEst<span class="sc">$</span>V), <span class="dv">1</span>))</span>
+<span id="cb238-25"><a href="11-chap-BetaPaires.html#cb238-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb238-26"><a href="11-chap-BetaPaires.html#cb238-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcul de l&#39;indice entre les carrés i et j de BCI, i&lt;j.</span></span>
+<span id="cb238-27"><a href="11-chap-BetaPaires.html#cb238-27" aria-hidden="true" tabindex="-1"></a>BCIjaccard <span class="ot">&lt;-</span> <span class="cf">function</span>(i, j) {</span>
+<span id="cb238-28"><a href="11-chap-BetaPaires.html#cb238-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (i <span class="sc">&gt;=</span> j) </span>
+<span id="cb238-29"><a href="11-chap-BetaPaires.html#cb238-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(<span class="cn">NA</span>) <span class="cf">else</span> <span class="fu">return</span>(<span class="fu">bcJaccard</span>(<span class="fu">t</span>(BCI[<span class="fu">c</span>(i, j), ])))</span>
+<span id="cb238-30"><a href="11-chap-BetaPaires.html#cb238-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb238-31"><a href="11-chap-BetaPaires.html#cb238-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcul de la matrice de dissimilarité entre les 50 carrés</span></span>
+<span id="cb238-32"><a href="11-chap-BetaPaires.html#cb238-32" aria-hidden="true" tabindex="-1"></a>ChaoJaccard <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>, <span class="cf">function</span>(i) {</span>
+<span id="cb238-33"><a href="11-chap-BetaPaires.html#cb238-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>, <span class="cf">function</span>(j) <span class="fu">BCIjaccard</span>(i, j))</span>
+<span id="cb238-34"><a href="11-chap-BetaPaires.html#cb238-34" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb238-35"><a href="11-chap-BetaPaires.html#cb238-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Indice de Jaccard, carrés 1 et 2, corrigé</span></span>
+<span id="cb238-36"><a href="11-chap-BetaPaires.html#cb238-36" aria-hidden="true" tabindex="-1"></a><span class="fu">BCIjaccard</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9391222</code></pre>
-
+<p></p>
 <p>La distribution des valeurs de l’indice corrigé se trouve en figure <a href="11-chap-BetaPaires.html#fig:ChaoJaccardFig">11.2</a>.</p>
 
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:ChaoJaccardFig"></span>
 <img src="MesuresBD_files/figure-html/ChaoJaccardFig-1.png" alt="Distribution des indices de Jaccard corrigés du biais d’etimation pour les 50 carrés de BCI deux à deux." width="80%" />
 <p class="caption">
 Figure 11.2: Distribution des indices de Jaccard corrigés du biais d’etimation pour les 50 carrés de BCI deux à deux.
 </p>
 </div>
-
+<p></p>
 <p>La majorité des paires de carrés a une similarité supérieure à 0,8 après correction.</p>
 <p>Code R pour la figure:</p>
-
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="11-chap-BetaPaires.html#cb242-1"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">ChaoJaccard =</span> <span class="kw">as.numeric</span>(ChaoJaccard))) <span class="op">+</span></span>
-<span id="cb242-2"><a href="11-chap-BetaPaires.html#cb242-2"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(<span class="dt">x=</span>ChaoJaccard))</span></code></pre></div>
-
-<p><span class="citation">Plotkin et Muller-Landau (<a href="#ref-Plotkin2002" role="doc-biblioref">2002</a>)</span> founissent des estimateurs de la similarité de Sørensen pour les SAD les plus courantes: lognormale, broken-stick, géométrique, log-séries et même gamma, une généralisation de la distibution broken-stick.
+<p></p>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="11-chap-BetaPaires.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">ChaoJaccard =</span> <span class="fu">as.numeric</span>(ChaoJaccard))) <span class="sc">+</span></span>
+<span id="cb240-2"><a href="11-chap-BetaPaires.html#cb240-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x=</span>ChaoJaccard))</span></code></pre></div>
+<p></p>
+<p><span class="citation"><a href="references.html#ref-Plotkin2002" role="doc-biblioref">Plotkin et Muller-Landau</a> (<a href="references.html#ref-Plotkin2002" role="doc-biblioref">2002</a>)</span> founissent des estimateurs de la similarité de Sørensen pour les SAD les plus courantes: lognormale, broken-stick, géométrique, log-séries et même gamma, une généralisation de la distibution broken-stick.
 Ils traitent le cas d’un échantillonnage dans lequel les individus sont indépendants les uns des autres, et le cas de l’agrégation spatiale.
 Ils montrent que la similarité augmente beaucoup avec la taille des placettes échantillonnées et est nettement plus faible en cas d’agrégation spatiale.</p>
 </div>
-<div id="représentation-graphique" class="section level3">
+<div id="représentation-graphique" class="section level3" number="11.1.3">
 <h3><span class="header-section-number">11.1.3</span> Représentation graphique</h3>
-<p>La matrice de distances peut être représentée par une analyse en coordonnées principales (PCoA) <span class="citation">(Gower <a href="#ref-Gower1966" role="doc-biblioref">1966</a>)</span>:</p>
+<p>La matrice de distances peut être représentée par une analyse en coordonnées principales (PCoA) <span class="citation">(<a href="references.html#ref-Gower1966" role="doc-biblioref">Gower 1966</a>)</span>:</p>
+<p></p>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="11-chap-BetaPaires.html#cb241-1" aria-hidden="true" tabindex="-1"></a>DistChaoJaccard <span class="ot">&lt;-</span> <span class="fu">as.dist</span>(<span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> ChaoJaccard))</span>
+<span id="cb241-2"><a href="11-chap-BetaPaires.html#cb241-2" aria-hidden="true" tabindex="-1"></a>PcoChaoJaccard <span class="ot">&lt;-</span> <span class="fu">dudi.pco</span>(DistChaoJaccard, <span class="at">scannf =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p></p>
 
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="11-chap-BetaPaires.html#cb243-1"></a>DistChaoJaccard &lt;-<span class="st"> </span><span class="kw">as.dist</span>(<span class="kw">sqrt</span>(<span class="dv">1</span><span class="op">-</span>ChaoJaccard))</span>
-<span id="cb243-2"><a href="11-chap-BetaPaires.html#cb243-2"></a>PcoChaoJaccard &lt;-<span class="st"> </span><span class="kw">dudi.pco</span>(DistChaoJaccard, <span class="dt">scannf =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-
-
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:JaccardPCOFig"></span>
 <img src="MesuresBD_files/figure-html/JaccardPCOFig-1.png" alt="Représentation des 50 carrés de BCI dans une analyse en coordonnées principale fondée sur les distances de Jaccard." width="80%" />
 <p class="caption">
 Figure 11.3: Représentation des 50 carrés de BCI dans une analyse en coordonnées principale fondée sur les distances de Jaccard.
 </p>
 </div>
-
+<p></p>
 <p>La représentation de l’analyse est en figure <a href="11-chap-BetaPaires.html#fig:JaccardPCOFig">11.3</a>.
 Les 50 carrés de BCI sont représentés sur le plan des deux premiers facteurs.
 Les valeurs propres sont représentées dans le cartouche en haut à gauche de la figure.
 Les distances entre les points sont les valeurs de <span class="math inline">\(\sqrt{D_3}\)</span>, projetées sur le plan.
 La matrice de distances n’est pas euclidienne à cause des approximations de l’estimation mais les conséquences sont faibles sur les premiers axes.</p>
 <p>Code R pour la figure:</p>
-
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="11-chap-BetaPaires.html#cb244-1"></a><span class="kw">scatter</span>(PcoChaoJaccard, <span class="dt">posieig =</span> <span class="st">&quot;bottomright&quot;</span>)</span></code></pre></div>
-
+<p></p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="11-chap-BetaPaires.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter</span>(PcoChaoJaccard, <span class="at">posieig =</span> <span class="st">&quot;bottomright&quot;</span>)</span></code></pre></div>
+<p></p>
 </div>
 </div>
-<div id="données-dabondance" class="section level2">
+<div id="données-dabondance" class="section level2" number="11.2">
 <h2><span class="header-section-number">11.2</span> Données d’abondance</h2>
-<p>La distance la plus évidente entre communautés quand les effectifs des espèces sont connus est simplement la distance euclidienne, éventuellement normalisée par le nombre d’espèces <span class="citation">(Dissimilarité <span class="math inline">\(D_1\)</span> de Gower et Legendre <a href="#ref-Gower1986" role="doc-biblioref">1986</a>)</span>.
+<p>La distance la plus évidente entre communautés quand les effectifs des espèces sont connus est simplement la distance euclidienne, éventuellement normalisée par le nombre d’espèces <span class="citation">(Dissimilarité <span class="math inline">\(D_1\)</span> de <a href="references.html#ref-Gower1986" role="doc-biblioref">Gower et Legendre 1986</a>)</span>.
 Son problème principal est qu’elle est très sensible aux ordres de grandeurs relatifs des variables.</p>
-<p>La dissimilarité de Steinhaus <span class="citation">(Motyka <a href="#ref-Motyka1947" role="doc-biblioref">1947</a>)</span> est plus connue sous le nom de Bray-Curtis <span class="citation">(Odum <a href="#ref-Odum1950" role="doc-biblioref">1950</a>; Bray et Curtis <a href="#ref-Bray1957" role="doc-biblioref">1957</a>)</span>, voir l’analyse historique de <span class="citation">Legendre et Legendre (<a href="#ref-Legendre2012" role="doc-biblioref">2012</a>)</span>, note de bas de page, eq. 7.58, et pourrait être attribuée à <span class="citation">Renkonen (<a href="#ref-Renkonen1938" role="doc-biblioref">1938</a>)</span>.
+<p>La dissimilarité de Steinhaus <span class="citation">(<a href="references.html#ref-Motyka1947" role="doc-biblioref">Motyka 1947</a>)</span> est plus connue sous le nom de Bray-Curtis <span class="citation">(<a href="references.html#ref-Odum1950" role="doc-biblioref">Odum 1950</a>; <a href="references.html#ref-Bray1957" role="doc-biblioref">Bray et Curtis 1957</a>)</span>, voir l’analyse historique de <span class="citation"><a href="references.html#ref-Legendre2012" role="doc-biblioref">Legendre et Legendre</a> (<a href="references.html#ref-Legendre2012" role="doc-biblioref">2012</a>)</span>, note de bas de page, eq. 7.58, et pourrait être attribuée à <span class="citation"><a href="references.html#ref-Renkonen1938" role="doc-biblioref">Renkonen</a> (<a href="references.html#ref-Renkonen1938" role="doc-biblioref">1938</a>)</span>.
 Elle est très utilisée, par défaut dans plusieurs analyses du package <em>vegan</em> par exemple:</p>
 <p><span class="math display" id="eq:BrayCurtis">\[\begin{equation}
   \tag{11.8}
@@ -635,14 +682,14 @@ Elle est très utilisée, par défaut dans plusieurs analyses du package <em>veg
 \end{equation}\]</span></p>
 <p><span class="math inline">\(n_{s,1}\)</span> et <span class="math inline">\(n_{s,2}\)</span> sont le nombre d’individus de l’espèce <span class="math inline">\(s\)</span> dans la première et la deuxième communauté.
 La racine carrée de la dissimilarité de Bray-Curtis est euclidienne.</p>
-<p><span class="citation">Gower (<a href="#ref-Gower1971" role="doc-biblioref">1971</a>)</span> propose une extension de la dissimilarité de Bray-Curtis:
+<p><span class="citation"><a href="references.html#ref-Gower1971" role="doc-biblioref">Gower</a> (<a href="references.html#ref-Gower1971" role="doc-biblioref">1971</a>)</span> propose une extension de la dissimilarité de Bray-Curtis:
 <span class="math display" id="eq:Gower1971">\[\begin{equation}
   \tag{11.9}
   D_{G} = \frac{\sum_s{w_s\left| n_{s,1}-n_{s,2} \right|}}{R_s\sum_s{w_s}}.
 \end{equation}\]</span></p>
 <p><span class="math inline">\(R_s\)</span> est l’étendue ou l’écart-type de l’abondance de l’espèce <span class="math inline">\(s\)</span>, qui permet de ne pas surpondérer l’effet des espèces très abondantes.
 <span class="math inline">\(w_s\)</span> est le poids attribué à l’espèce <span class="math inline">\(s\)</span>, qui peut être utilisé pour éliminer les doubles absences (<span class="math inline">\(w_s=0\)</span> si l’espèce est absente des deux communautés, 1 sinon).</p>
-<p><span class="citation">Anderson, Ellingsen, et McArdle (<a href="#ref-Anderson2006" role="doc-biblioref">2006</a>)</span> proposent une mesure de dissimilarité (de Gower modifiée) donnant le même poids à une différence d’un ordre de grandeur entre les abondances qu’à la différence entre présence et absence, qui permet donc de se passer de la normalisation par <span class="math inline">\(R_s\)</span>.
+<p><span class="citation"><a href="references.html#ref-Anderson2006" role="doc-biblioref">Anderson, Ellingsen, et McArdle</a> (<a href="references.html#ref-Anderson2006" role="doc-biblioref">2006</a>)</span> proposent une mesure de dissimilarité (de Gower modifiée) donnant le même poids à une différence d’un ordre de grandeur entre les abondances qu’à la différence entre présence et absence, qui permet donc de se passer de la normalisation par <span class="math inline">\(R_s\)</span>.
 Les effectifs sont transformés de la façon suivante: <span class="math inline">\(x_s=\log n_s +1\)</span> si <span class="math inline">\(n_s \ne 0\)</span>, <span class="math inline">\(x_s=1\)</span> sinon (le logarithme est décimal).
 La dissimilarité est
 <span class="math display" id="eq:MG">\[\begin{equation}
@@ -652,7 +699,7 @@ La dissimilarité est
 <p>Elle n’est pas euclidienne.</p>
 <p>Les dissimilarités de Jaccard et de Sørensen se généralisent aux données d’abondance.
 Le nombre d’espèces communes aux deux sites <span class="math inline">\(s_{1,1}\)</span> est remplacé par le nombre d’individus de même espèce présents sur les deux sites: <span class="math inline">\(n_{1,1}=\sum_s{\min(n_{s,1}, n_{s,2})}\)</span>; le nombre d’espèces seulement présentes sur le premier site <span class="math inline">\(s_{1,0}\)</span> est remplacé par le nombre d’individus, sommé sur toutes les espèces, présents uniquement sur le site: <span class="math inline">\(n_{1,0}=\sum_s{\max(0, n_{s,1}-n_{s,2})}\)</span>; de même, <span class="math inline">\(s_{0,1}\)</span> est remplacé par <span class="math inline">\(n_{0,1}=\sum_s{\max(0, n_{s,2}-n_{s,1)}}\)</span>.</p>
-<p>La dissimilarité de <span class="citation">Ružička (<a href="#ref-Ruzicka1958" role="doc-biblioref">1958</a>)</span> généralise celle de Jaccard:</p>
+<p>La dissimilarité de <span class="citation"><a href="references.html#ref-Ruzicka1958" role="doc-biblioref">Ružička</a> (<a href="references.html#ref-Ruzicka1958" role="doc-biblioref">1958</a>)</span> généralise celle de Jaccard:</p>
 <p><span class="math display" id="eq:Ruzicka">\[\begin{equation}
   \tag{11.11}
   D_3 = 1-\frac{n_{1,1}}{n_{1,1}+n_{1,0}+n_{0,1}}.
@@ -664,16 +711,16 @@ Le nombre d’espèces communes aux deux sites <span class="math inline">\(s_{1,
 \end{equation}\]</span></p>
 <p>La plupart des dissimilarités sont implémentées par la fonction <code>dist.ldc</code> du package <em>adespatial</em>.</p>
 </div>
-<div id="emboîtement-et-substitution" class="section level2">
+<div id="emboîtement-et-substitution" class="section level2" number="11.3">
 <h2><span class="header-section-number">11.3</span> Emboîtement et substitution</h2>
 <p>L’indice de Sørensen et les indices similaires prennent en compte deux types de dissimilarité: l’emboîtement des composition spécifiques (<em>nestedness</em>) et la substitution d’espèces (<em>turnover</em>).
 On parle d’emboîtement quand une communauté diffère d’une autre parce que sa composition est un sous-ensemble des espèces de l’autre.
 La substitution correspond au remplacement de certaines espèces d’une communauté par de nouvelles espèces.
-<span class="citation">Baselga (<a href="#ref-Baselga2010" role="doc-biblioref">2010</a><a href="#ref-Baselga2010" role="doc-biblioref">b</a>)</span> montre que la diversité <span class="math inline">\(\beta\)</span> de longicornes en Europe du nord est similaire à celle observée en Europe du sud, mais pour des raisons totalement différentes.
+<span class="citation"><a href="references.html#ref-Baselga2010" role="doc-biblioref">Baselga</a> (<a href="references.html#ref-Baselga2010" role="doc-biblioref">2010b</a>)</span> montre que la diversité <span class="math inline">\(\beta\)</span> de longicornes en Europe du nord est similaire à celle observée en Europe du sud, mais pour des raisons totalement différentes.
 En Europe du nord, les communautés perdent des espèces avec la latitude: leur dissimilarité est due principalement à l’emboîtement.
 En Europe du sud, les communautés sont composées d’espèces différentes: la diversité <span class="math inline">\(\beta\)</span> est due à la substitution des espèces.
 Baselga décompose l’indice de dissimilarité de Sørensen, <span class="math inline">\(1-S_7\)</span>, en un terme mesurant la substitution et un mesurant l’emboîtement.</p>
-<p>Le premier composant est l’indice de dissimilarité de <span class="citation">Simpson (<a href="#ref-Simpson1943" role="doc-biblioref">1943</a>)</span>:
+<p>Le premier composant est l’indice de dissimilarité de <span class="citation"><a href="references.html#ref-Simpson1943" role="doc-biblioref">G. G. Simpson</a> (<a href="references.html#ref-Simpson1943" role="doc-biblioref">1943</a>)</span>:
 <span class="math display" id="eq:Simpson1943">\[\begin{equation}
   \tag{11.13}
   D_{sim} = \frac{\min(s_{1,0},s_{0,1})}{s_{1,1}+\min(s_{1,0},s_{0,1})}.
@@ -687,7 +734,7 @@ Son complément <span class="math inline">\(D_{nes}\)</span> prend en compte la 
   - D_{sim}.
 \end{equation}\]</span></p>
 <p>Ces mesures de dissimilarité sont généralisées au-delà de deux communautés: les formules sont disponibles dans l’article de Baselga.</p>
-<p><span class="citation">Baselga (<a href="#ref-Baselga2012" role="doc-biblioref">2012</a>)</span> étend cette décomposition à la dissimilarité de Jaccard:</p>
+<p><span class="citation"><a href="references.html#ref-Baselga2012" role="doc-biblioref">Baselga</a> (<a href="references.html#ref-Baselga2012" role="doc-biblioref">2012</a>)</span> étend cette décomposition à la dissimilarité de Jaccard:</p>
 <p><span class="math display" id="eq:DNesReplBJ">\[\begin{align}
   \tag{11.15}
   D_3
@@ -697,15 +744,15 @@ Son complément <span class="math inline">\(D_{nes}\)</span> prend en compte la 
 \end{align}\]</span></p>
 <p>Le premier terme de la somme est le terme lié à la substitution et le second celui lié à l’emboîtement.</p>
 
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:Podani2011"></span>
 <img src="images/Podani2011.png" alt="Triangle du simplex Similarité-Substitution-Emboîtement. (a) Similarité, emboîtement et substitution somment à 1 donc les trois composantes peuvent être représentées dans un triangle et combinées deux à deux. La dissimilarité est par exemple représentée par la proximité au côté gauche du triangle, somme de l’emboîtement et de la substitution (ses sommets adjacents) et complément à 1 de la dissimilarité (le sommet opposé). (b) Les formules de calcul dont données pour la similarité de Jaccard. Avec ces notations classiques, \(a\) est le nombre d’espèces communes \(s_{1,1}\), \(b\) et \(c\) sont les espèces propres à chaque communauté, \(s_{0,1}\) et \(s_{1,0}\), et \(n\) est le nombre total d’espèces \(a+b+c\)." width="100%" />
 <p class="caption">
 Figure 11.4: Triangle du simplex Similarité-Substitution-Emboîtement. (a) Similarité, emboîtement et substitution somment à 1 donc les trois composantes peuvent être représentées dans un triangle et combinées deux à deux. La dissimilarité est par exemple représentée par la proximité au côté gauche du triangle, somme de l’emboîtement et de la substitution (ses sommets adjacents) et complément à 1 de la dissimilarité (le sommet opposé). (b) Les formules de calcul dont données pour la similarité de Jaccard. Avec ces notations classiques, <span class="math inline">\(a\)</span> est le nombre d’espèces communes <span class="math inline">\(s_{1,1}\)</span>, <span class="math inline">\(b\)</span> et <span class="math inline">\(c\)</span> sont les espèces propres à chaque communauté, <span class="math inline">\(s_{0,1}\)</span> et <span class="math inline">\(s_{1,0}\)</span>, et <span class="math inline">\(n\)</span> est le nombre total d’espèces <span class="math inline">\(a+b+c\)</span>.
 </p>
 </div>
-
-<p><span class="citation">Podani et Schmera (<a href="#ref-Podani2011" role="doc-biblioref">2011</a>)</span> défendent un point de vue différent sur la façon de comptabiliser les deux composantes de la décomposition de la dissimilarité de Jaccard.
+<p></p>
+<p><span class="citation"><a href="references.html#ref-Podani2011" role="doc-biblioref">Podani et Schmera</a> (<a href="references.html#ref-Podani2011" role="doc-biblioref">2011</a>)</span> défendent un point de vue différent sur la façon de comptabiliser les deux composantes de la décomposition de la dissimilarité de Jaccard.
 Le terme de substitution comptabilise les espèces présentes sur un seul site, en nombre égal: <span class="math inline">\(2\min(s_{1,0},s_{0,1})\)</span> plutôt que l’indice de dissimilarité de Simpson..
 Ainsi, le terme d’emboîtement comptabilise la différence de richesse entre les deux sites: <span class="math inline">\(|s_{1,0}-s_{0,1}|\)</span>.</p>
 <p>Après normalisation par le nombre total d’espèce, la décomposition est</p>
@@ -715,20 +762,20 @@ Ainsi, le terme d’emboîtement comptabilise la différence de richesse entre l
   = \frac{2\min(s_{1,0},s_{0,1})}{s_{1,1} + s_{1,0} + s_{0,1}}
   + \frac{|s_{1,0}-s_{0,1}|}{s_{1,1} + s_{1,0} + s_{0,1}}.
 \end{equation}\]</span></p>
-<p>La controverse entre les deux décompositions perdure <span class="citation">(Podani et Schmera <a href="#ref-Podani2016" role="doc-biblioref">2016</a>)</span>.</p>
+<p>La controverse entre les deux décompositions perdure <span class="citation">(<a href="references.html#ref-Podani2016" role="doc-biblioref">Podani et Schmera 2016</a>)</span>.</p>
 <p>Comme la dissimilarité est la somme de l’emboîtement et de la substitution et que la dissimilarité est le complément à 1 de la similarité, la somme de la similarité, de l’emboîtement et de la substitution vaut 1.
-<span class="citation">Podani et Schmera (<a href="#ref-Podani2011" role="doc-biblioref">2011</a>)</span> représentent cette égalité dans un triangle dont les sommets correspondent aux trois termes (Figure <a href="11-chap-BetaPaires.html#fig:Podani2011">11.4</a>).</p>
-<p><span class="citation">Podani, Ricotta, et Schmera (<a href="#ref-Podani2013" role="doc-biblioref">2013</a>)</span> étendent cette approche à des mesures de dissimilarité prenant en compte les abondances, particulièrement la dissimilarité de Ružička.
+<span class="citation"><a href="references.html#ref-Podani2011" role="doc-biblioref">Podani et Schmera</a> (<a href="references.html#ref-Podani2011" role="doc-biblioref">2011</a>)</span> représentent cette égalité dans un triangle dont les sommets correspondent aux trois termes (Figure <a href="11-chap-BetaPaires.html#fig:Podani2011">11.4</a>).</p>
+<p><span class="citation"><a href="references.html#ref-Podani2013" role="doc-biblioref">Podani, Ricotta, et Schmera</a> (<a href="references.html#ref-Podani2013" role="doc-biblioref">2013</a>)</span> étendent cette approche à des mesures de dissimilarité prenant en compte les abondances, particulièrement la dissimilarité de Ružička.
 La décomposition est identique à celle de l’équation <a href="11-chap-BetaPaires.html#eq:DNesReplPJ">(11.16)</a> après remplacement de chaque terme.</p>
-<p><span class="citation">Legendre (<a href="#ref-Legendre2014" role="doc-biblioref">2014</a>)</span> considère cette décomposition de la diversité <span class="math inline">\(\beta\)</span> en emboîtement et substitution comme une décomposition de variance et lui applique des méthodes d’ordination pour la relier aux variables environnementales par exemple.</p>
+<p><span class="citation"><a href="references.html#ref-Legendre2014" role="doc-biblioref">Legendre</a> (<a href="references.html#ref-Legendre2014" role="doc-biblioref">2014</a>)</span> considère cette décomposition de la diversité <span class="math inline">\(\beta\)</span> en emboîtement et substitution comme une décomposition de variance et lui applique des méthodes d’ordination pour la relier aux variables environnementales par exemple.</p>
 <p>Les mesures de diversité <span class="math inline">\(\beta\)</span> fondées sur l’entropie HCDT (chapitre <a href="12-chap-DedompHCDT.html#chap:DedompHCDT">12</a>) ne permettent pas de distinguer directement emboîtement et substitution.
 La variabilité des contributions <span class="math inline">\(^{q}_{i}\!H_{\beta}\)</span> des communautés à l’entropie <span class="math inline">\(\beta\)</span> augmente avec l’emboîtement, mais cette voie n’a pas été explorée.</p>
 </div>
-<div id="données-dabondance-et-similarité-des-espèces" class="section level2">
+<div id="données-dabondance-et-similarité-des-espèces" class="section level2" number="11.4">
 <h2><span class="header-section-number">11.4</span> Données d’abondance et similarité des espèces</h2>
-<div id="dissimilarité-minimale-moyenne" class="section level3">
+<div id="dissimilarité-minimale-moyenne" class="section level3" number="11.4.1">
 <h3><span class="header-section-number">11.4.1</span> Dissimilarité minimale moyenne</h3>
-<p><span class="citation">Ricotta et Bacaro (<a href="#ref-Ricotta2010" role="doc-biblioref">2010</a>)</span> définissent une mesure de dissimilarité paramétrique entre deux communautés.
+<p><span class="citation"><a href="references.html#ref-Ricotta2010" role="doc-biblioref">Ricotta et Bacaro</a> (<a href="references.html#ref-Ricotta2010" role="doc-biblioref">2010</a>)</span> définissent une mesure de dissimilarité paramétrique entre deux communautés.
 Une matrice de dissimilarité est définie entre toutes les paires d’espèces.
 <span class="math inline">\(\min{d_{s,2}}\)</span> désigne la dissimilarité entre l’espèce <span class="math inline">\(s\)</span> présente dans la première communauté et l’espèce la plus proche d’elle dans la deuxième communauté.
 <span class="math inline">\(\min{d_{t,1}}\)</span> est la même notation pour l’espèce <span class="math inline">\(t\)</span> de la deuxième communauté et l’espèces la plus proche dans la communauté 1.
@@ -741,32 +788,32 @@ Pour chaque communauté, la moyenne des dissimilarités minimales entre chaque e
   \tag{11.17}
   d_{\mathit{CW}(n)} = \frac{1}{2}\left(\sum_s{\pi_{s(n)} \min{d_{s,2}}} + \sum_t{\pi_{t(n)} \min{d_{t,1}}} \right).
 \end{equation}\]</span></p>
-<p>Sa version non pondérée (U pour <em>unweighted</em>) par les abondances est <span class="citation">(Ricotta et Burrascano <a href="#ref-Ricotta2008" role="doc-biblioref">2008</a>)</span>
+<p>Sa version non pondérée (U pour <em>unweighted</em>) par les abondances est <span class="citation">(<a href="references.html#ref-Ricotta2008" role="doc-biblioref">Ricotta et Burrascano 2008</a>)</span>
 <span class="math display" id="eq:CU">\[\begin{equation}
   \tag{11.18}
   d_{\mathit{CU}} = \frac{\sum_s{\min{d_{s,2}}} + \sum_t{\min{d_{t,1}}}}{2s_{1,1}+s_{1,0}+s_{0,1}}.
 \end{equation}\]</span></p>
 <p>Ces mesures sont des évolutions de mesures plus anciennes, avec des pondérations différentes.
-Dans l’indice de <span class="citation">Clarke et Warwick (<a href="#ref-Clarke1998" role="doc-biblioref">1998</a>)</span>, la moyenne est calculée dans chaque communauté, sans pondération:
+Dans l’indice de <span class="citation"><a href="references.html#ref-Clarke1998" role="doc-biblioref">Clarke et Warwick</a> (<a href="references.html#ref-Clarke1998" role="doc-biblioref">1998</a>)</span>, la moyenne est calculée dans chaque communauté, sans pondération:
 <span class="math display" id="eq:CW">\[\begin{equation}
   \tag{11.19}
   d_{\mathit{CW}} = \frac{1}{2}\left( \frac{\sum_s{\min{d_{s,2}}}}{s_{1,1}+s_{1,0}} + \frac{\sum_t{\min{d_{t,1}}}}{s_{1,1}+s_{0,1}} \right),
 \end{equation}\]</span></p>
-<p>mais avec pondération par l’abondance des espèces chez <span class="citation">Ricotta et Burrascano (<a href="#ref-Ricotta2008" role="doc-biblioref">2008</a>)</span> :
+<p>mais avec pondération par l’abondance des espèces chez <span class="citation"><a href="references.html#ref-Ricotta2008" role="doc-biblioref">Ricotta et Burrascano</a> (<a href="references.html#ref-Ricotta2008" role="doc-biblioref">2008</a>)</span> :
 <span class="math display" id="eq:Ricotta2008">\[\begin{equation}
   \tag{11.20}
   d_{\mathit{RB}} = \frac{1}{2}\left( \sum_s{p_{s|1}\min{d_{s,2}}} + \sum_t{p_{t|2}\min{d_{t,1}}} \right),
 \end{equation}\]</span></p>
-<p>alors qu’elle l’est globalement dans l’indice de <span class="citation">Izsak et Price (<a href="#ref-Izsak2001" role="doc-biblioref">2001</a>)</span> :
+<p>alors qu’elle l’est globalement dans l’indice de <span class="citation"><a href="references.html#ref-Izsak2001" role="doc-biblioref">Izsak et Price</a> (<a href="references.html#ref-Izsak2001" role="doc-biblioref">2001</a>)</span> :
 <span class="math display" id="eq:Izsak2001">\[\begin{equation}
   \tag{11.21}
   d_{\mathit{IP}} = \frac{\sum_s{\min{d_{s,2}}} + \sum_t{\min{d_{t,1}}}}{s_{1,1}+s_{1,0}+s_{1,1}+s_{0,1}},
 \end{equation}\]</span></p>
-<p>redécouvert et nommé <em>COMDISTNN</em> par <span class="citation">Webb, Ackerly, et Kembel (<a href="#ref-Webb2008" role="doc-biblioref">2008</a>)</span>.</p>
+<p>redécouvert et nommé <em>COMDISTNN</em> par <span class="citation"><a href="references.html#ref-Webb2008" role="doc-biblioref">Webb, Ackerly, et Kembel</a> (<a href="references.html#ref-Webb2008" role="doc-biblioref">2008</a>)</span>.</p>
 </div>
-<div id="similarité-moyenne-entre-individus" class="section level3">
+<div id="similarité-moyenne-entre-individus" class="section level3" number="11.4.2">
 <h3><span class="header-section-number">11.4.2</span> Similarité moyenne entre individus</h3>
-<p><span class="citation">Pavoine et Ricotta (<a href="#ref-Pavoine2014b" role="doc-biblioref">2014</a>)</span> définissent une famille de similarités entre communautés construite à partir de la similarité moyenne entre les paires d’individus de chaque communauté et les paires intercommunautaires.
+<p><span class="citation"><a href="references.html#ref-Pavoine2014b" role="doc-biblioref">Pavoine et Ricotta</a> (<a href="references.html#ref-Pavoine2014b" role="doc-biblioref">2014</a>)</span> définissent une famille de similarités entre communautés construite à partir de la similarité moyenne entre les paires d’individus de chaque communauté et les paires intercommunautaires.
 Une matrice de similarité <span class="math inline">\(\mathbf{Z}\)</span> est définie entre les paires d’espèces: <span class="math inline">\(z_{s,t}\)</span> est la similarité entre l’espèce <span class="math inline">\(s\)</span> et l’espèce <span class="math inline">\(t\)</span>, comprise entre 0 et 1 de la même façon que pour le calcul de la diversité <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> (chapitre <a href="9-chap-LeinsterCobbold.html#chap:LeinsterCobbold">9</a>).
 La matrice <span class="math inline">\(\mathbf{Z}\)</span> doit de plus être semi-définie positive, ce qui implique que <span class="math inline">\(\sqrt{1-\mathbf{Z}}\)</span> est euclidienne: de cette façon, les espèces peuvent être représentées graphiquement par une PCoA.
 Les fréquences des espèces dans les deux communautés sont <span class="math inline">\(\mathbf{p}\)</span> et <span class="math inline">\(\mathbf{q}\)</span>.
@@ -796,19 +843,19 @@ Dans ce dernier cas, et si <span class="math inline">\(\mathbf{Z}\)</span> est l
   S_{\mathit{Ochiai}} = \frac{\sum_{s,t}{p_s q_t z_{s,t}}}{\sqrt{\sum_{s,t}{p_s p_t z_{s,t}}} \sqrt{\sum_{s,t}{q_s q_t z_{s,t}}}}.
 \end{equation}\]</span></p>
 <p>Ces quatre similarités permettent une représentation des communautés par PCoA de la même façon que l’indice de Jaccard traité plus haut.</p>
-<p><span class="citation">Ricotta, Bacaro, et Pavoine (<a href="#ref-Ricotta2014b" role="doc-biblioref">2014</a>)</span> ont aussi proposé de mesurer la dissimilarité par la somme des différences (en valeur absolue) de banalité des espèces des deux communautés, normalisée par la banalité totale:
+<p><span class="citation"><a href="references.html#ref-Ricotta2014b" role="doc-biblioref">Ricotta, Bacaro, et Pavoine</a> (<a href="references.html#ref-Ricotta2014b" role="doc-biblioref">2014</a>)</span> ont aussi proposé de mesurer la dissimilarité par la somme des différences (en valeur absolue) de banalité des espèces des deux communautés, normalisée par la banalité totale:
 <span class="math display" id="eq:Ricotta2014b">\[\begin{equation}
   \tag{11.26}
   D_{\mathit{RBP}} 
   = \frac{\sum_{s}{|\sum_{t}{(p_s-q_t)z_{s,t}}}|}{\sum_{s}{\sum_{t}{(p_s+q_t)z_{s,t}}}}.
 \end{equation}\]</span></p>
-<p>D’autres similarités ont été proposées mais ont des propriétés qui empêchent de les utiliser <span class="citation">(Ricotta, Bacaro, et Pavoine <a href="#ref-Ricotta2014b" role="doc-biblioref">2014</a>)</span>: leur valeur n’est pas toujours nulle pour deux communautés identiques.
-Ce sont l’indice proposé par <span class="citation">Rao (<a href="#ref-Rao1982" role="doc-biblioref">1982</a>)</span>,
+<p>D’autres similarités ont été proposées mais ont des propriétés qui empêchent de les utiliser <span class="citation">(<a href="references.html#ref-Ricotta2014b" role="doc-biblioref">Ricotta, Bacaro, et Pavoine 2014</a>)</span>: leur valeur n’est pas toujours nulle pour deux communautés identiques.
+Ce sont l’indice proposé par <span class="citation"><a href="references.html#ref-Rao1982" role="doc-biblioref">Rao</a> (<a href="references.html#ref-Rao1982" role="doc-biblioref">1982</a>)</span>,
 <span class="math display" id="eq:Rao1982Q12">\[\begin{equation}
   \tag{11.27}
   Q_{\mathit{12}} = \sum_{s,t}{p_s q_t z_{s,t}},
 \end{equation}\]</span></p>
-<p>comme les indices de <span class="citation">Swenson, Anglada-Cordero, et Barone (<a href="#ref-Swenson2011" role="doc-biblioref">2011</a>)</span>:
+<p>comme les indices de <span class="citation"><a href="references.html#ref-Swenson2011" role="doc-biblioref">Swenson, Anglada-Cordero, et Barone</a> (<a href="references.html#ref-Swenson2011" role="doc-biblioref">2011</a>)</span>:
 <span class="math display" id="eq:Swenson2011a">\[\begin{equation}
   \tag{11.28}
   d_{\mathit{pw}} = \frac{1}{2}\left( \frac{\sum_s{\bar{d_{s,2}}}}{s_{1,1}+s_{1,0}} + \frac{\sum_t{\bar{d_{t,1}}}}{s_{1,1}+s_{0,1}} \right),
@@ -821,50 +868,52 @@ Ce sont l’indice proposé par <span class="citation">Rao (<a href="#ref-Rao198
 <p>où <span class="math inline">\(\bar{d_{s,2}}\)</span> est la dissimilarité moyenne entre l’espèce <span class="math inline">\(s\)</span> de la communauté 1 et toutes les espèces de la communauté 2.</p>
 </div>
 </div>
-<div id="distance-entre-paires-de-communautés-et-diversité-beta-proportionnelle" class="section level2">
+<div id="distance-entre-paires-de-communautés-et-diversité-beta-proportionnelle" class="section level2" number="11.5">
 <h2><span class="header-section-number">11.5</span> Distance entre paires de communautés et diversité <span class="math inline">\(\beta\)</span> proportionnelle</h2>
 <p>Dans certains cas présentés ici, la diversité de différentiation est parfaitement conciliable avec la diversité proportionnelle.</p>
-<div id="diversité-de-simpson" class="section level3">
+<div id="diversité-de-simpson" class="section level3" number="11.5.1">
 <h3><span class="header-section-number">11.5.1</span> Diversité de Simpson</h3>
-<p><span class="citation">Braak (<a href="#ref-terBraak1983" role="doc-biblioref">1983</a>)</span> a le premier rapproché l’entropie de Simpson et l’Analyse en Composantes Principales <span class="citation">(Pearson <a href="#ref-Pearson1901" role="doc-biblioref">1901</a>)</span>.
+<p><span class="citation"><a href="references.html#ref-terBraak1983" role="doc-biblioref">Braak</a> (<a href="references.html#ref-terBraak1983" role="doc-biblioref">1983</a>)</span> a le premier rapproché l’entropie de Simpson et l’Analyse en Composantes Principales <span class="citation">(<a href="references.html#ref-Pearson1901" role="doc-biblioref">Pearson 1901</a>)</span>.
 En représentant les communautés dans l’espace des espèces, la norme du vecteur de la communauté <span class="math inline">\(i\)</span> est <span class="math inline">\({\sum_s{p_{s|i}^2}}\)</span>, c’est-à-dire 1 moins l’entropie de Simpson.
 La représentation graphique de l’ACP (non centrée, non réduite) montre les communautés les moins diverses (les plus éloignées de l’origine du repère).
 Ter Braak <em>définit</em> la diversité <span class="math inline">\(\beta\)</span> comme la distance entre deux communautés (et la moyenne des distances entre paires de communautés si leur nombre est supérieur à 2).
 Cette “définition” est valide puisque cette distance est la composante inter de la décomposition de l’entropie <span class="math inline">\(\beta\)</span> de Simpson <a href="12-chap-DedompHCDT.html#eq:SimpsonNei">(12.11)</a>.</p>
 
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:BCIPCAFig"></span>
 <img src="MesuresBD_files/figure-html/BCIPCAFig-1.png" alt="Représentation des deux premiers axes factoriels de l’ACP des 50 carrés de BCI. Les données sont les probabilités des espèce, ni centrées ni réduites pour l’ACP. Les carrés sont représentés avec les espèces. Les carrés 35 et 40 ont une diversité faible et sont associés aux espèces Gustavia superba et Alseis blackiana." width="100%" />
 <p class="caption">
 Figure 11.5: Représentation des deux premiers axes factoriels de l’ACP des 50 carrés de BCI. Les données sont les probabilités des espèce, ni centrées ni réduites pour l’ACP. Les carrés sont représentés avec les espèces. Les carrés 35 et 40 ont une diversité faible et sont associés aux espèces <em>Gustavia superba</em> et <em>Alseis blackiana</em>.
 </p>
 </div>
-
+<p></p>
 <p>L’ACP non centrée des 50 carrés de BCI est en figure <a href="11-chap-BetaPaires.html#fig:BCIPCAFig">11.5</a>.</p>
 <p>Code R pour la figure:</p>
+<p></p>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="11-chap-BetaPaires.html#cb243-1" aria-hidden="true" tabindex="-1"></a>pcaBCI <span class="ot">&lt;-</span> <span class="fu">dudi.pca</span>(BCI<span class="sc">/</span><span class="fu">rowSums</span>(BCI), <span class="at">scannf =</span> <span class="cn">FALSE</span>, <span class="at">nf =</span> <span class="dv">2</span>, </span>
+<span id="cb243-2"><a href="11-chap-BetaPaires.html#cb243-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">center =</span> <span class="cn">FALSE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb243-3"><a href="11-chap-BetaPaires.html#cb243-3" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter</span>(pcaBCI, <span class="at">posieig =</span> <span class="st">&quot;bottomleft&quot;</span>)</span></code></pre></div>
+<p></p>
 
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="11-chap-BetaPaires.html#cb245-1"></a>pcaBCI &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(BCI<span class="op">/</span><span class="kw">rowSums</span>(BCI), <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>, <span class="dt">center =</span> <span class="ot">FALSE</span>, <span class="dt">scale =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb245-2"><a href="11-chap-BetaPaires.html#cb245-2"></a>  <span class="kw">scatter</span>(pcaBCI, <span class="dt">posieig =</span> <span class="st">&quot;bottomleft&quot;</span>)</span></code></pre></div>
-
-
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:BCIPCA2Fig"></span>
 <img src="MesuresBD_files/figure-html/BCIPCA2Fig-1.png" alt="ACP centrée des 50 carrés de BCI pour visualiser la diversité \(\beta\)." width="100%" />
 <p class="caption">
 Figure 11.6: ACP centrée des 50 carrés de BCI pour visualiser la diversité <span class="math inline">\(\beta\)</span>.
 </p>
 </div>
-
+<p></p>
 <p>L’ACP centrée (mais non réduite, figure <a href="11-chap-BetaPaires.html#fig:BCIPCA2Fig">11.6</a>) permet de mieux représenter la diversité <span class="math inline">\(\beta\)</span> : la distance de chaque carré au centre du repère est sa contribution.</p>
 <p>Code R:</p>
-
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="11-chap-BetaPaires.html#cb246-1"></a>pcaBCI &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(BCI<span class="op">/</span><span class="kw">rowSums</span>(BCI), <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>, <span class="dt">center =</span> <span class="ot">TRUE</span>, <span class="dt">scale =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb246-2"><a href="11-chap-BetaPaires.html#cb246-2"></a>  <span class="kw">scatter</span>(pcaBCI, <span class="dt">clab.col =</span> <span class="dv">0</span>)</span></code></pre></div>
-
+<p></p>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="11-chap-BetaPaires.html#cb244-1" aria-hidden="true" tabindex="-1"></a>pcaBCI <span class="ot">&lt;-</span> <span class="fu">dudi.pca</span>(BCI<span class="sc">/</span><span class="fu">rowSums</span>(BCI), <span class="at">scannf =</span> <span class="cn">FALSE</span>, <span class="at">nf =</span> <span class="dv">2</span>, </span>
+<span id="cb244-2"><a href="11-chap-BetaPaires.html#cb244-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb244-3"><a href="11-chap-BetaPaires.html#cb244-3" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter</span>(pcaBCI, <span class="at">clab.col =</span> <span class="dv">0</span>)</span></code></pre></div>
+<p></p>
 </div>
-<div id="généralisation" class="section level3">
+<div id="généralisation" class="section level3" number="11.5.2">
 <h3><span class="header-section-number">11.5.2</span> Généralisation</h3>
-<p><span class="citation">Legendre et Anderson (<a href="#ref-Legendre1999" role="doc-biblioref">1999</a>)</span> ont montré plus largement que si les communautés sont représentées dans l’espace vectoriel des espèces, la moyenne des carrés des distances euclidiennes entre communautés égale la somme des carrés des écarts à la moyenne des distributions des espèces:</p>
+<p><span class="citation"><a href="references.html#ref-Legendre1999" role="doc-biblioref">Legendre et Anderson</a> (<a href="references.html#ref-Legendre1999" role="doc-biblioref">1999</a>)</span> ont montré plus largement que si les communautés sont représentées dans l’espace vectoriel des espèces, la moyenne des carrés des distances euclidiennes entre communautés égale la somme des carrés des écarts à la moyenne des distributions des espèces:</p>
 <p><span class="math display" id="eq:Legendre1999">\[\begin{equation}
   \tag{11.30}
   \frac{1}{I} \sum_{i=1}^{I-1}{\sum_{j=i+1}^{I}{d_{i,j}^2}}
@@ -874,18 +923,18 @@ Figure 11.6: ACP centrée des 50 carrés de BCI pour visualiser la diversité <s
 Les communautés ont ici le même poids, <span class="math inline">\(y_s\)</span> est la moyenne des valeurs de l’espèce <span class="math inline">\(s\)</span> dans chaque communauté.
 La somme des carrés des écarts est une mesure de diversité <span class="math inline">\(\beta\)</span>.
 Si <span class="math inline">\(y_{s|i}\)</span> est la probabilité <span class="math inline">\(p_{s|i}\)</span>, il s’agit de l’entropie <span class="math inline">\(\beta\)</span> de Simpson.</p>
-<p>Ce résultat peut être étendu à toute matrice de distances euclidiennes entre communautés <span class="citation">(Legendre, Borcard, et Peres-Neto <a href="#ref-Legendre2005" role="doc-biblioref">2005</a>)</span> : l’argument est qu’il existe une matrice de <span class="math inline">\(y_{s|i}\)</span>, transformation des <span class="math inline">\(p_{s|i}\)</span>, telle que la distance entre les communautés est cette matrice de distances.
+<p>Ce résultat peut être étendu à toute matrice de distances euclidiennes entre communautés <span class="citation">(<a href="references.html#ref-Legendre2005" role="doc-biblioref">Legendre, Borcard, et Peres-Neto 2005</a>)</span> : l’argument est qu’il existe une matrice de <span class="math inline">\(y_{s|i}\)</span>, transformation des <span class="math inline">\(p_{s|i}\)</span>, telle que la distance entre les communautés est cette matrice de distances.
 La moyenne des dissimilarités <span class="math inline">\(D_n\)</span> ou des compléments à 1 des similarités de Pavoine et Ricotta (qui sont les carrés des distances euclidiennes de la PCoA) est donc une mesure de diversité <span class="math inline">\(\beta\)</span>.</p>
-<p>Pour un certain nombre de distances, la transformation de <span class="math inline">\(p_{s|i}\)</span> en <span class="math inline">\(y_{s|i}\)</span> est bien connue <span class="citation">(Legendre et Gallagher <a href="#ref-Legendre2001" role="doc-biblioref">2001</a>)</span>.</p>
+<p>Pour un certain nombre de distances, la transformation de <span class="math inline">\(p_{s|i}\)</span> en <span class="math inline">\(y_{s|i}\)</span> est bien connue <span class="citation">(<a href="references.html#ref-Legendre2001" role="doc-biblioref">Legendre et Gallagher 2001</a>)</span>.</p>
 
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:Corde"></span>
 <img src="images/Corde.png" alt="Distance de corde entre deux communautés représentées dans l’espace engendré par deux espèces. La distance \(d_{1,2}\) entre les deux communautés est la longueur de la corde qui relie leurs vecteurs de composition normalisés sur le cercle de rayon 1. C’est aussi deux fois le sinus de l’angle \({\alpha_{1,2}}/{2}\) formé par les deux vecteurs de composition des communautés." width="80%" />
 <p class="caption">
 Figure 11.7: Distance de corde entre deux communautés représentées dans l’espace engendré par deux espèces. La distance <span class="math inline">\(d_{1,2}\)</span> entre les deux communautés est la longueur de la corde qui relie leurs vecteurs de composition normalisés sur le cercle de rayon 1. C’est aussi deux fois le sinus de l’angle <span class="math inline">\({\alpha_{1,2}}/{2}\)</span> formé par les deux vecteurs de composition des communautés.
 </p>
 </div>
-
+<p></p>
 <p>La distance de corde (Figure <a href="11-chap-BetaPaires.html#fig:Corde">11.7</a>) est obtenue par la transformation</p>
 <p><span class="math display" id="eq:Corde">\[\begin{equation}
   \tag{11.31}
@@ -898,50 +947,50 @@ La distance entre communautés est donc la longueur de la corde qui relie les ex
   \tag{11.32}
   y_{s|i} = \sqrt{p_{s|i}}.
 \end{equation}\]</span></p>
-<p>La distance euclidienne entre les profils de communautés (<span class="math inline">\(y_{s|i} = p_{s|i}\)</span>) utilisée par <span class="citation">Braak (<a href="#ref-terBraak1983" role="doc-biblioref">1983</a>)</span> n’est pas optimale parce qu’elle souffre des défauts de l’entropie de Simpson <span class="citation">(Jost <a href="#ref-Jost2007" role="doc-biblioref">2007</a>)</span> qu’elle représente.
-<span class="citation">Legendre et De Cáceres (<a href="#ref-Legendre2013" role="doc-biblioref">2013</a>)</span>, annexe S3, ont établi une liste de bonnes propriétés que doivent respecter les mesures de distance entre communautés pour analyser la diversité de différentiation.
+<p>La distance euclidienne entre les profils de communautés (<span class="math inline">\(y_{s|i} = p_{s|i}\)</span>) utilisée par <span class="citation"><a href="references.html#ref-terBraak1983" role="doc-biblioref">Braak</a> (<a href="references.html#ref-terBraak1983" role="doc-biblioref">1983</a>)</span> n’est pas optimale parce qu’elle souffre des défauts de l’entropie de Simpson <span class="citation">(<a href="references.html#ref-Jost2007" role="doc-biblioref">Jost 2007</a>)</span> qu’elle représente.
+<span class="citation"><a href="references.html#ref-Legendre2013" role="doc-biblioref">Legendre et De Cáceres</a> (<a href="references.html#ref-Legendre2013" role="doc-biblioref">2013</a>)</span>, annexe S3, ont établi une liste de bonnes propriétés que doivent respecter les mesures de distance entre communautés pour analyser la diversité de différentiation.
 La fonction <code>dist.ldc</code> du package <em>adespatial</em> permet de calculer toutes les distances présentées dans l’article.
 Les distance de corde et de Hellinger (qui est la distance entre les racines carrées des profils de communautés) les respectent toutes.</p>
-<p>La diversité <span class="math inline">\(\beta\)</span> exprimée de cette façon peut faire l’objet d’analyses par les méthodes d’ordination classiques (RDA: Analyse de Redondance <span class="citation">(Rao <a href="#ref-Rao1964" role="doc-biblioref">1964</a>)</span>; CCA: Analyse Canonique de Correspondance <span class="citation">(Braak <a href="#ref-Braak1986" role="doc-biblioref">1986</a>)</span>) pour la relier à des variables environnementales par exemple<span class="citation">(Legendre et De Cáceres <a href="#ref-Legendre2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>La diversité <span class="math inline">\(\beta\)</span> exprimée de cette façon peut faire l’objet d’analyses par les méthodes d’ordination classiques (RDA: Analyse de Redondance <span class="citation">(<a href="references.html#ref-Rao1964" role="doc-biblioref">Rao 1964</a>)</span>; CCA: Analyse Canonique de Correspondance <span class="citation">(<a href="references.html#ref-Braak1986" role="doc-biblioref">Braak 1986</a>)</span>) pour la relier à des variables environnementales par exemple<span class="citation">(<a href="references.html#ref-Legendre2013" role="doc-biblioref">Legendre et De Cáceres 2013</a>)</span>.</p>
 
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:BCICordeFig"></span>
 <img src="MesuresBD_files/figure-html/BCICordeFig-1.png" alt="PCoA appliquée à la distance de corde des 50 carrés de BCI pour visualiser la diversité \(\beta\)." width="100%" />
 <p class="caption">
 Figure 11.8: PCoA appliquée à la distance de corde des 50 carrés de BCI pour visualiser la diversité <span class="math inline">\(\beta\)</span>.
 </p>
 </div>
-
+<p></p>
 <p>La diversité <span class="math inline">\(\beta\)</span> de BCI (figure <a href="11-chap-BetaPaires.html#fig:BCIPCA2Fig">11.6</a>) est mieux représentée par une analyse en coordonnées principales appliquée à la distance de corde entre les communautés (figure <a href="11-chap-BetaPaires.html#fig:BCICordeFig">11.8</a>).
 La limite de la méthode est que l’origine du repère ne représente plus ici la méta-communauté: sa position correspond à la moyenne des probabilités des espèces transformées, <span class="math inline">\(y_{s|i}\)</span>, pas à celle des <span class="math inline">\(p_{s|i}\)</span>.</p>
 <p>Code R:</p>
-
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="11-chap-BetaPaires.html#cb247-1"></a><span class="kw">library</span>(<span class="st">&quot;adespatial&quot;</span>)</span>
-<span id="cb247-2"><a href="11-chap-BetaPaires.html#cb247-2"></a>dCorde &lt;-<span class="st"> </span><span class="kw">dist.ldc</span>(BCI, <span class="dt">method =</span> <span class="st">&quot;chord&quot;</span>)</span>
-<span id="cb247-3"><a href="11-chap-BetaPaires.html#cb247-3"></a>pcoaBCI &lt;-<span class="st"> </span><span class="kw">dudi.pco</span>(dCorde, <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>)</span>
-<span id="cb247-4"><a href="11-chap-BetaPaires.html#cb247-4"></a><span class="kw">scatter</span>(pcoaBCI)</span></code></pre></div>
-
+<p></p>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="11-chap-BetaPaires.html#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;adespatial&quot;</span>)</span>
+<span id="cb245-2"><a href="11-chap-BetaPaires.html#cb245-2" aria-hidden="true" tabindex="-1"></a>dCorde <span class="ot">&lt;-</span> <span class="fu">dist.ldc</span>(BCI, <span class="at">method =</span> <span class="st">&quot;chord&quot;</span>)</span>
+<span id="cb245-3"><a href="11-chap-BetaPaires.html#cb245-3" aria-hidden="true" tabindex="-1"></a>pcoaBCI <span class="ot">&lt;-</span> <span class="fu">dudi.pco</span>(dCorde, <span class="at">scannf =</span> <span class="cn">FALSE</span>, <span class="at">nf =</span> <span class="dv">2</span>)</span>
+<span id="cb245-4"><a href="11-chap-BetaPaires.html#cb245-4" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter</span>(pcoaBCI)</span></code></pre></div>
+<p></p>
 </div>
 </div>
-<div id="sec:TestBetaDiff" class="section level2">
+<div id="sec:TestBetaDiff" class="section level2" number="11.6">
 <h2><span class="header-section-number">11.6</span> Tests de significativité</h2>
-<div id="test-de-non-nullité" class="section level3">
+<div id="test-de-non-nullité" class="section level3" number="11.6.1">
 <h3><span class="header-section-number">11.6.1</span> Test de non-nullité</h3>
-<p><span class="citation">Chase et al. (<a href="#ref-Chase2011" role="doc-biblioref">2011</a>)</span> testent la valeur de diversité <span class="math inline">\(\beta\)</span> observée contre sa valeur attendue sous l’hypothèse nulle d’une distribution aléatoire des individus dans les communautés.</p>
+<p><span class="citation"><a href="references.html#ref-Chase2011" role="doc-biblioref">Chase et al.</a> (<a href="references.html#ref-Chase2011" role="doc-biblioref">2011</a>)</span> testent la valeur de diversité <span class="math inline">\(\beta\)</span> observée contre sa valeur attendue sous l’hypothèse nulle d’une distribution aléatoire des individus dans les communautés.</p>
 <p>Leur motivation principale est d’éliminer la dépendance de la diversité <span class="math inline">\(\beta\)</span> à la diversité <span class="math inline">\(\alpha\)</span> due à la mesure de diversité qu’ils utilisent : l’indice de Jaccard, appliqué aux données de présence-absence.
 Des communautés théoriques sont tirées selon le modèle nul (selon une distribution multinomiale correspondant aux probabilités des espèces dans la méta-communauté et la taille de chaque communauté dans le cas le plus courant).
 La distribution de la diversité <span class="math inline">\(\beta\)</span> sous l’hypothèse nulle est obtenue en répétant les simulations.
 La différence entre la diversité <span class="math inline">\(\beta\)</span> réelle et la moyenne simulée est normalisée par la moyenne simulée pour obtenir une valeur comprise entre -1 et +1 (l’indice de Jaccard est compris entre 0 et 1), comparée à sa distribution sous l’hypothèse nulle pour évaluer sa significativité.</p>
-<p><span class="citation">Tucker et al. (<a href="#ref-Tucker2015" role="doc-biblioref">2016</a>)</span> étendent cette méthode aux données d’abondance en utilisant la dissimilarité de Bray-Curtis et testent, à partir de communautés simulées, sa capacité à distinguer les mécanismes d’assemblage des communautés: niche contre modèle neutre, et modèles déterministes contre stochastiques (c’est-à-dire dont les paramètres varient aléatoirement).
+<p><span class="citation"><a href="references.html#ref-Tucker2015" role="doc-biblioref">Tucker et al.</a> (<a href="references.html#ref-Tucker2015" role="doc-biblioref">2016</a>)</span> étendent cette méthode aux données d’abondance en utilisant la dissimilarité de Bray-Curtis et testent, à partir de communautés simulées, sa capacité à distinguer les mécanismes d’assemblage des communautés: niche contre modèle neutre, et modèles déterministes contre stochastiques (c’est-à-dire dont les paramètres varient aléatoirement).
 Ces deux oppositions peuvent être traitées indépendamment, pour éviter la confusion entre niche et déterminisme et entre neutralité et stochasticité.
 Ils concluent qu’une valeur de diversité <span class="math inline">\(\beta\)</span> significativement différente de celle du modèle nul permet de détecter le mécanisme de niche (alors que le modèle neutre donne une valeur identique à celle de l’hypothèse nulle, 0 étant donné la normalisation).
-<span class="citation">Chase et Myers (<a href="#ref-Chase2011a" role="doc-biblioref">2011</a>)</span> interprétait les valeurs significatives comme preuve de déterminisme (par opposition à la stochasticité).
+<span class="citation"><a href="references.html#ref-Chase2011a" role="doc-biblioref">Chase et Myers</a> (<a href="references.html#ref-Chase2011a" role="doc-biblioref">2011</a>)</span> interprétait les valeurs significatives comme preuve de déterminisme (par opposition à la stochasticité).
 Tucker et al. montrent que ce n’est pas le cas: le niveau de stochasticité influe peu sur les résultats quand la diversité est mesurée à partir de données d’abondance.
 En revanche, la méthode n’est pas fiable quand elle est utilisée avec des données de présence-absence: la stochasticité ne permet alors plus de distinguer les mécanismes.</p>
 </div>
-<div id="analyse-de-la-variabilité" class="section level3">
+<div id="analyse-de-la-variabilité" class="section level3" number="11.6.2">
 <h3><span class="header-section-number">11.6.2</span> Analyse de la variabilité</h3>
-<p><span class="citation">Anderson, Ellingsen, et McArdle (<a href="#ref-Anderson2006" role="doc-biblioref">2006</a>)</span> fournissent un test d’égalité de la diversité <span class="math inline">\(\beta\)</span> entre groupes de communautés.
+<p><span class="citation"><a href="references.html#ref-Anderson2006" role="doc-biblioref">Anderson, Ellingsen, et McArdle</a> (<a href="references.html#ref-Anderson2006" role="doc-biblioref">2006</a>)</span> fournissent un test d’égalité de la diversité <span class="math inline">\(\beta\)</span> entre groupes de communautés.
 Les communautés sont placées dans un espace euclidien, dans lequel les distances entre elles sont une mesure de dissimilarité présentée dans ce chapitre.
 Si les dissimilarités ne sont pas euclidiennes, une PCoA permet de les placer dans un espace euclidien dont certains axes sont imaginaires, sans que cette difficulté invalide la méthode.</p>
 <p>Dans chaque groupe, la distance entre chaque communauté et le centre de gravité du groupe est calculée.
@@ -953,165 +1002,12 @@ Elle est comparée à sa distribution obtenue par permutation.</p>
 <p>Une alternative consiste à utiliser la distance aux médianes spatiales des groupes.
 La médiane spatiale est le point qui minimise la somme des distances entre les points et lui (alors que le centre de gravité minimise la somme des carrés de ces distances).</p>
 <p>La fonction <code>betadisper</code> du package <em>vegan</em> implémente ce test.</p>
-<p><span class="citation">Ricotta et Burrascano (<a href="#ref-Ricotta2009a" role="doc-biblioref">2009</a>)</span> utilisent comme point central de chaque groupe celui représentant l’assemblage de ses communautés.
+<p><span class="citation"><a href="references.html#ref-Ricotta2009a" role="doc-biblioref">Ricotta et Burrascano</a> (<a href="references.html#ref-Ricotta2009a" role="doc-biblioref">2009</a>)</span> utilisent comme point central de chaque groupe celui représentant l’assemblage de ses communautés.
 Ils définissent ainsi la diversité <span class="math inline">\(\beta\)</span> comme la dissimilarité moyenne entre chaque communauté et la méta-communauté.</p>
-<p><span class="citation">Bacaro, Gioria, et Ricotta (<a href="#ref-Bacaro2012" role="doc-biblioref">2012</a>)</span> préfèrent tester la distribution des dissimilarités entre paires des communautés plutôt que la dissimilarité entre chaque communauté et un point de référence.
+<p><span class="citation"><a href="references.html#ref-Bacaro2012" role="doc-biblioref">Bacaro, Gioria, et Ricotta</a> (<a href="references.html#ref-Bacaro2012" role="doc-biblioref">2012</a>)</span> préfèrent tester la distribution des dissimilarités entre paires des communautés plutôt que la dissimilarité entre chaque communauté et un point de référence.
 Une statistique F est calculée à partir de ces dissimilarités et comparée à sa distribution obtenue par permutation.
-La méthode de permutation originale est inappropriée et donc corrigée <span class="citation">(Bacaro, Gioria, et Ricotta <a href="#ref-Bacaro2013a" role="doc-biblioref">2013</a>)</span>: les dissimilarités doivent être redistribuées aléatoirement entre les groupes.</p>
+La méthode de permutation originale est inappropriée et donc corrigée <span class="citation">(<a href="references.html#ref-Bacaro2013a" role="doc-biblioref">Bacaro, Gioria, et Ricotta 2013</a>)</span>: les dissimilarités doivent être redistribuées aléatoirement entre les groupes.</p>
 </div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Anderson2006">
-<p>Anderson, Marti J., Kari E. Ellingsen, et Brian H. McArdle. 2006. « Multivariate dispersion as a measure of beta diversity. » <em>Ecology letters</em> 9 (6): 683‑93. <a href="https://doi.org/10.1111/j.1461-0248.2006.00926.x">https://doi.org/10.1111/j.1461-0248.2006.00926.x</a>.</p>
-</div>
-<div id="ref-Bacaro2012">
-<p>Bacaro, Giovanni, Margherita Gioria, et Carlo Ricotta. 2012. « Testing for Differences in Beta Diversity From Plot-To-Plot Dissimilarities ». <em>Ecological Research</em> 27 (2): 285‑92. <a href="https://doi.org/10.1007/s11284-011-0899-z">https://doi.org/10.1007/s11284-011-0899-z</a>.</p>
-</div>
-<div id="ref-Bacaro2013a">
-<p>Bacaro, Giovanni, Margherita Gioria, et Carlo Ricotta. 2013. « Beta diversity reconsidered ». <em>Ecological Research</em> 28 (3): 537‑40. <a href="https://doi.org/10.1007/s11284-013-1043-z">https://doi.org/10.1007/s11284-013-1043-z</a>.</p>
-</div>
-<div id="ref-Baselga2010">
-<p>Baselga, Andrés. 2010b. « Partitioning the turnover and nestedness components of beta diversity ». <em>Global Ecology and Biogeography</em> 19 (1): 134‑43. <a href="https://doi.org/10.1111/j.1466-8238.2009.00490.x">https://doi.org/10.1111/j.1466-8238.2009.00490.x</a>.</p>
-</div>
-<div id="ref-Baselga2012">
-<p>Baselga, Andrés. 2012. « The relationship between species replacement, dissimilarity derived from nestedness, and nestedness ». <em>Global Ecology and Biogeography</em> 21 (12): 1223‑32. <a href="https://doi.org/10.1111/j.1466-8238.2011.00756.x">https://doi.org/10.1111/j.1466-8238.2011.00756.x</a>.</p>
-</div>
-<div id="ref-terBraak1983">
-<p>Braak, Cajo J. F. ter. 1983. « Principal components biplots and alpha and beta diversity ». <em>Ecology</em> 64 (3): 454‑62. <a href="https://doi.org/10.2307/1939964">https://doi.org/10.2307/1939964</a>.</p>
-</div>
-<div id="ref-Braak1986">
-<p>Braak, Cajo J. 1986. « Canonical Correspondence Analysis : A New Eigenvector Technique for Multivariate Direct Gradient Analysis ». <em>Ecology</em> 67 (5): 1167‑79. <a href="https://doi.org/10.2307/1938672">https://doi.org/10.2307/1938672</a>.</p>
-</div>
-<div id="ref-Bray1957">
-<p>Bray, J. Roger, et J. T. Curtis. 1957. « An Ordination of the Upland Forest Communities of Southern Wisconsin ». <em>Ecological Monographs</em> 27 (4): 325‑49. <a href="https://doi.org/10.2307/1942268">https://doi.org/10.2307/1942268</a>.</p>
-</div>
-<div id="ref-Chao2004a">
-<p>Chao, Anne, Robin L. Chazdon, Robert K. Colwell, et Tsung-Jen Shen. 2004. « A new statistical approach for assessing similarity of species composition with incidence and abundance data ». <em>Ecology Letters</em> 8 (2): 148‑59. <a href="https://doi.org/10.1111/j.1461-0248.2004.00707.x">https://doi.org/10.1111/j.1461-0248.2004.00707.x</a>.</p>
-</div>
-<div id="ref-Chase2011">
-<p>Chase, Jonathan M., Nathan J. B. Kraft, Kevin G. Smith, Mark Vellend, et Brian D Inouye. 2011. « Using null models to disentangle variation in community dissimilarity from variation in <span class="math inline">\(\alpha\)</span>-diversity ». <em>Ecosphere</em> 2 (2): art. 24. <a href="https://doi.org/10.1890/ES10-00117.1">https://doi.org/10.1890/ES10-00117.1</a>.</p>
-</div>
-<div id="ref-Chase2011a">
-<p>Chase, Jonathan M., et Jonathan A. Myers. 2011. « Disentangling the importance of ecological niches from stochastic processes across scales ». <em>Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences</em> 366 (1576): 2351‑63. <a href="https://doi.org/10.1098/rstb.2011.0063">https://doi.org/10.1098/rstb.2011.0063</a>.</p>
-</div>
-<div id="ref-Clarke1998">
-<p>Clarke, K. R., et R. M. Warwick. 1998. « Quantifying structural redundancy in ecological communities ». <em>Oecologia</em> 113 (2): 278‑89. <a href="https://doi.org/10.1007/s004420050379">https://doi.org/10.1007/s004420050379</a>.</p>
-</div>
-<div id="ref-Czekanowski1913">
-<p>Czekanowski, Jan. 1913. <em>Zarys metod statystycznych w zastosowaniu do antropologii</em>. Warsaw: Towarzystwo Naukowe Warszawskie.</p>
-</div>
-<div id="ref-Dice1945">
-<p>Dice, Lee R. 1945. « Measures of the amount of ecologic association between species ». <em>Ecology</em> 26 (3): 297‑302. <a href="https://doi.org/10.2307/1932409">https://doi.org/10.2307/1932409</a>.</p>
-</div>
-<div id="ref-Gower1966">
-<p>Gower, J. C. 1966. « Some distance properties of latent root and vector methods used in multivariate analysis ». <em>Biometrika</em> 53 (3): 325‑38. <a href="https://doi.org/10.1093/biomet/53.3-4.325">https://doi.org/10.1093/biomet/53.3-4.325</a>.</p>
-</div>
-<div id="ref-Gower1971">
-<p>Gower, J. 1971. « A General Coefficient of Similarity and Some of Its Properties ». <em>Biometrics</em> 27 (4): 857‑71. <a href="https://doi.org/10.2307/2528823">https://doi.org/10.2307/2528823</a>.</p>
-</div>
-<div id="ref-Gower1986">
-<p>Gower, J. C., et Pierre Legendre. 1986. « Metric and Euclidean properties of dissimilarity coefficients ». <em>Journal of classification</em> 48: 5‑48. <a href="https://doi.org/10.1007/BF01896809">https://doi.org/10.1007/BF01896809</a>.</p>
-</div>
-<div id="ref-Izsak2001">
-<p>Izsak, C., et A. R. G. Price. 2001. « Measuring <span class="math inline">\(\beta\)</span>-diversity using a taxonomic similarity index , and its relation to spatial scale ». <em>Marine Ecology Progress Series</em> 215: 69‑77. <a href="https://doi.org/10.3354/meps215069">https://doi.org/10.3354/meps215069</a>.</p>
-</div>
-<div id="ref-Jaccard1901">
-<p>Jaccard, Paul. 1901. « Étude comparative de la distribution florale dans une portion des Alpes et du Jura ». <em>Bulletin de la Société Vaudoise des Sciences Naturelles</em> 37: 547‑79. <a href="https://doi.org/http://dx.doi.org/10.5169/seals-266450">https://doi.org/http://dx.doi.org/10.5169/seals-266450</a>.</p>
-</div>
-<div id="ref-Jost2007">
-<p>Jost, Lou. 2007. « Partitioning diversity into independent alpha and beta components ». <em>Ecology</em> 88 (10): 2427‑39. <a href="https://doi.org/10.1890/06-1736.1">https://doi.org/10.1890/06-1736.1</a>.</p>
-</div>
-<div id="ref-Legendre2014">
-<p>Legendre, Pierre. 2014. « Interpreting the replacement and richness difference components of beta diversity ». <em>Global Ecology and Biogeography</em> 23 (11): 1324‑34. <a href="https://doi.org/10.1111/geb.12207">https://doi.org/10.1111/geb.12207</a>.</p>
-</div>
-<div id="ref-Legendre1999">
-<p>Legendre, Pierre, et Marti J. Anderson. 1999. « Distance-based redundancy analysis: testing multispecies responses in multifactorial ecological experiments ». <em>Ecological Monographs</em> 69 (1): 1‑24. <a href="https://doi.org/10.1890/0012-9615(1999)069%5B0001:DBRATM%5D2.0.CO;2">https://doi.org/10.1890/0012-9615(1999)069[0001:DBRATM]2.0.CO;2</a>.</p>
-</div>
-<div id="ref-Legendre2005">
-<p>Legendre, Pierre, Daniel Borcard, et Pedro R Peres-Neto. 2005. « Analyzing Beta Diversity: Partitioning the Spatial Variation of Community Composition Data ». <em>Ecological Monographs</em> 75 (4): 435‑50. <a href="https://doi.org/10.1890/05-0549">https://doi.org/10.1890/05-0549</a>.</p>
-</div>
-<div id="ref-Legendre2013">
-<p>Legendre, Pierre, et Miquel De Cáceres. 2013. « Beta diversity as the variance of community data: Dissimilarity coefficients and partitioning ». <em>Ecology Letters</em> 16 (8): 951‑63. <a href="https://doi.org/10.1111/ele.12141">https://doi.org/10.1111/ele.12141</a>.</p>
-</div>
-<div id="ref-Legendre2001">
-<p>Legendre, Pierre, et Eugene Gallagher. 2001. « Ecologically meaningful transformations for ordination of species data ». <em>Oecologia</em> 129 (2): 271‑80. <a href="https://doi.org/10.1007/s004420100716">https://doi.org/10.1007/s004420100716</a>.</p>
-</div>
-<div id="ref-Legendre2012">
-<p>Legendre, Pierre, et Louis Legendre. 2012. <em>Numerical Ecology</em>. 3rd Ed. Elsevier.</p>
-</div>
-<div id="ref-Motyka1947">
-<p>Motyka, J. 1947. <em>O celach i metodach badan geobotanicznych. Sur les buts et les méthodes des recherches géobotaniques</em>. Lublin, Poland: Nakladem universytftu Marii Curie-Sklodowskiej.</p>
-</div>
-<div id="ref-Ochiai1957">
-<p>Ochiai, Akira. 1957. « Zoogeographic studies on the soleoid fishes found in Japan and its neighbouring regions ». <em>Bulletin of the Japanese Society of Scientific Fisheries</em> 22 (9): 526‑30. <a href="https://doi.org/10.2331/suisan.22.526">https://doi.org/10.2331/suisan.22.526</a>.</p>
-</div>
-<div id="ref-Odum1950">
-<p>Odum, Eugene P. 1950. « Bird Populations of the Highlands (North Carolina) Plateau in Relation to Plant Succession and Avian Invasion ». <em>Ecology</em> 31 (4): 587‑605. <a href="https://doi.org/10.2307/1931577">https://doi.org/10.2307/1931577</a>.</p>
-</div>
-<div id="ref-Pavoine2014b">
-<p>Pavoine, Sandrine, et Carlo Ricotta. 2014. « Functional and phylogenetic similarity among communities ». <em>Methods in Ecology and Evolution</em> 5 (7): 666‑75. <a href="https://doi.org/10.1111/2041-210X.12193">https://doi.org/10.1111/2041-210X.12193</a>.</p>
-</div>
-<div id="ref-Pearson1901">
-<p>Pearson, Karl. 1901. « On lines and planes of closest fit to systems of points in space ». <em>Philosophical Magazine</em> 2: 559‑72.</p>
-</div>
-<div id="ref-Plotkin2002">
-<p>Plotkin, Joshua B., et Helene C. Muller-Landau. 2002. « Sampling the species composition of a landscape ». <em>Ecology</em> 83 (12): 3344‑56. <a href="https://doi.org/10.1890/0012-9658(2002)083%5B3344:STSCOA%5D2.0.CO;2">https://doi.org/10.1890/0012-9658(2002)083[3344:STSCOA]2.0.CO;2</a>.</p>
-</div>
-<div id="ref-Podani2013">
-<p>Podani, János, Carlo Ricotta, et Dénes Schmera. 2013. « A general framework for analyzing beta diversity, nestedness and related community-level phenomena based on abundance data ». <em>Ecological Complexity</em> 15: 52‑61. <a href="https://doi.org/10.1016/j.ecocom.2013.03.002">https://doi.org/10.1016/j.ecocom.2013.03.002</a>.</p>
-</div>
-<div id="ref-Podani2011">
-<p>Podani, János, et Dénes Schmera. 2011. « A new conceptual and methodological framework for exploring and explaining pattern in presence - absence data ». <em>Oikos</em> 120 (11): 1625‑38. <a href="https://doi.org/10.1111/j.1600-0706.2011.19451.x">https://doi.org/10.1111/j.1600-0706.2011.19451.x</a>.</p>
-</div>
-<div id="ref-Podani2016">
-<p>Podani, János, et Dénes Schmera. 2016. « Once again on the components of pairwise beta diversity ». <em>Ecological Informatics</em> 32: 63‑68. <a href="https://doi.org/10.1016/j.ecoinf.2016.01.002">https://doi.org/10.1016/j.ecoinf.2016.01.002</a>.</p>
-</div>
-<div id="ref-Rao1964">
-<p>Rao, C. Radhakrishna. 1964. « The Use and Interpretation of Principal Component Analysis in Applied Research ». <em>Sankhyā: The Indian Journal of Statistics</em> 26 (4): 329‑58. <a href="https://www.jstor.org/stable/25049339">https://www.jstor.org/stable/25049339</a>.</p>
-</div>
-<div id="ref-Rao1982">
-<p>Rao, C. 1982. « Diversity and dissimilarity coefficients: a unified approach ». <em>Theoretical Population Biology</em> 21: 24‑43. <a href="https://doi.org/10.1016/0040-5809(82)90004-1">https://doi.org/10.1016/0040-5809(82)90004-1</a>.</p>
-</div>
-<div id="ref-Renkonen1938">
-<p>Renkonen, Olavi. 1938. « Statisch-ökologische Untersuchungen über die terrestrische Käferwelt der finnischen Bruchmoore ». <em>Annales botanici Societatis Zoologicæ Botanicæ Fennicæ Vanamo</em> 6: 1‑231.</p>
-</div>
-<div id="ref-Ricotta2010">
-<p>Ricotta, Carlo, et Giovanni Bacaro. 2010. « On plot-to-plot dissimilarity measures based on species functional traits ». <em>Community Ecology</em> 11 (1): 113‑19. <a href="https://doi.org/10.1556/ComEc.11.2010.1.16">https://doi.org/10.1556/ComEc.11.2010.1.16</a>.</p>
-</div>
-<div id="ref-Ricotta2014b">
-<p>Ricotta, Carlo, Giovanni Bacaro, et Sandrine Pavoine. 2014. « A cautionary note on some phylogenetic dissimilarity measures ». <em>Journal of Plant Ecology</em> 8 (1): 12‑16. <a href="https://doi.org/10.1093/jpe/rtu008">https://doi.org/10.1093/jpe/rtu008</a>.</p>
-</div>
-<div id="ref-Ricotta2008">
-<p>Ricotta, Carlo, et Sabina Burrascano. 2008. « Beta diversity for functional ecology ». <em>Preslia</em> 80 (1): 61‑72. <a href="http://www.preslia.cz/P081Ric.pdf">http://www.preslia.cz/P081Ric.pdf</a>.</p>
-</div>
-<div id="ref-Ricotta2009a">
-<p>Ricotta, Carlo, et Sabina Burrascano. 2009. « Testing for differences in beta diversity with asymmetric dissimilarities ». <em>Ecological Indicators</em> 9 (4): 719‑24. <a href="https://doi.org/10.1016/j.ecolind.2008.09.003">https://doi.org/10.1016/j.ecolind.2008.09.003</a>.</p>
-</div>
-<div id="ref-Ruzicka1958">
-<p>Ružička, M. 1958. « Anwendung mathematisch-statisticher Methoden in der Geobotanik (synthetische Bearbeitung von Aufnahmen) ». <em>Biologia, Bratislava</em> 13: 647‑61.</p>
-</div>
-<div id="ref-Simpson1943">
-<p>Simpson, George Gaylord. 1943. « Mammals and the Nature of Continents ». <em>American Journal of Science</em> 241: 1‑31. <a href="https://doi.org/10.2475/ajs.241.1.1">https://doi.org/10.2475/ajs.241.1.1</a>.</p>
-</div>
-<div id="ref-Sokal1963">
-<p>Sokal, Robert R., et P. H. A. Sneath. 1963. <em>Principles of numerical taxonomy</em>. San Francisco: W. H. Freeman &amp; Co.</p>
-</div>
-<div id="ref-Swenson2011">
-<p>Swenson, Nathan G., Pedro Anglada-Cordero, et John A. Barone. 2011. « Deterministic tropical tree community turnover: evidence from patterns of functional beta diversity along an elevational gradient ». <em>Proceedings of the Royal Society of London, Series B: Biological Sciences</em> 278 (1707): 877‑84. <a href="https://doi.org/10.1098/rspb.2010.1369">https://doi.org/10.1098/rspb.2010.1369</a>.</p>
-</div>
-<div id="ref-Sorensen1948">
-<p>Sørensen, T. 1948. « A Method of Establishing Groups of Equal Amplitude in Plant Sociology Based on Similarity of Species Content and Its Application to Analyses of the Vegetation on Danish Commons ». <em>Biologiske Skrifter</em>, Biologiske Skrifter, 5 (4): 1‑34. <a href="http://books.google.co.in/books?id=rpS8GAAACAAJ">http://books.google.co.in/books?id=rpS8GAAACAAJ</a>.</p>
-</div>
-<div id="ref-Tucker2015">
-<p>Tucker, Caroline M., Lauren G. Shoemaker, Kendi F. Davies, Diana Nemergut, et Brett A. Melbourne. 2016. « Differentiating between niche and neutral assembly in metacommunities using null models of <span class="math inline">\(\beta\)</span>-diversity ». <em>Oikos</em> 125 (6): 778‑89. <a href="https://doi.org/10.1111/oik.02803">https://doi.org/10.1111/oik.02803</a>.</p>
-</div>
-<div id="ref-Webb2008">
-<p>Webb, Campbell O., David D. Ackerly, et Steven W. Kembel. 2008. « Phylocom : Software for the analysis of phylogenetic community structure and trait evolution ». <em>Bioinformatics</em> 24 (18): 2098‑2100. <a href="https://doi.org/10.1093/bioinformatics/btn358">https://doi.org/10.1093/bioinformatics/btn358</a>.</p>
-</div>
-<div id="ref-Wolda1981">
-<p>Wolda, Henk. 1981. « Similarity indices, sample size and diversity ». <em>Oecologia</em> 50 (3): 296‑302. <a href="https://doi.org/10.1007/BF00344966">https://doi.org/10.1007/BF00344966</a>.</p>
 </div>
 </div>
             </section>

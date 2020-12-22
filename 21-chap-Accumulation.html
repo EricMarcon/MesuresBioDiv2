@@ -24,7 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2020-11-27" />
+<meta name="date" content="2020-12-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="20-chap-Fisher.html"/>
 <link rel="next" href="22-diversité-régionale.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,11 +51,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -67,18 +63,17 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -98,7 +93,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -150,61 +145,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Motivation</a></li>
 <li class="chapter" data-level="" data-path="notations.html"><a href="notations.html"><i class="fa fa-check"></i>Notations</a></li>
 <li class="part"><span><b>I Notions</b></span></li>
-<li class="chapter" data-level="1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html"><i class="fa fa-check"></i><b>1</b> Notions de Diversité</a><ul>
-<li class="chapter" data-level="1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#composantes"><i class="fa fa-check"></i><b>1.1</b> Composantes</a><ul>
+<li class="chapter" data-level="1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html"><i class="fa fa-check"></i><b>1</b> Notions de Diversité</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#composantes"><i class="fa fa-check"></i><b>1.1</b> Composantes</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#richesse"><i class="fa fa-check"></i><b>1.1.1</b> Richesse</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#équitabilité"><i class="fa fa-check"></i><b>1.1.2</b> Équitabilité</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#disparité"><i class="fa fa-check"></i><b>1.1.3</b> Disparité</a></li>
 <li class="chapter" data-level="1.1.4" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#agrégation"><i class="fa fa-check"></i><b>1.1.4</b> Agrégation</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#niveaux-de-létude"><i class="fa fa-check"></i><b>1.2</b> Niveaux de l’étude</a><ul>
+<li class="chapter" data-level="1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#niveaux-de-létude"><i class="fa fa-check"></i><b>1.2</b> Niveaux de l’étude</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#diversité-alpha-beta-et-gamma"><i class="fa fa-check"></i><b>1.2.1</b> Diversité <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> et <span class="math inline">\(\gamma\)</span></a></li>
 <li class="chapter" data-level="1.2.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#décomposition"><i class="fa fa-check"></i><b>1.2.2</b> Décomposition</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#le-problème-de-lespèce"><i class="fa fa-check"></i><b>1.3</b> Le problème de l’espèce</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-outils.html"><a href="2-outils.html"><i class="fa fa-check"></i><b>2</b> Outils</a><ul>
+<li class="chapter" data-level="2" data-path="2-outils.html"><a href="2-outils.html"><i class="fa fa-check"></i><b>2</b> Outils</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="2-outils.html"><a href="2-outils.html#calculs-et-données"><i class="fa fa-check"></i><b>2.1</b> Calculs et données</a></li>
 <li class="chapter" data-level="2.2" data-path="2-outils.html"><a href="2-outils.html#sad-et-sar"><i class="fa fa-check"></i><b>2.2</b> SAD et SAR</a></li>
-<li class="chapter" data-level="2.3" data-path="2-outils.html"><a href="2-outils.html#sec:Couverture"><i class="fa fa-check"></i><b>2.3</b> Taux de couverture</a><ul>
+<li class="chapter" data-level="2.3" data-path="2-outils.html"><a href="2-outils.html#sec:Couverture"><i class="fa fa-check"></i><b>2.3</b> Taux de couverture</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="2-outils.html"><a href="2-outils.html#formule-des-fréquences-de-good-turing"><i class="fa fa-check"></i><b>2.3.1</b> Formule des fréquences de Good-Turing</a></li>
 <li class="chapter" data-level="2.3.2" data-path="2-outils.html"><a href="2-outils.html#taux-de-couverture-et-déficit-de-couverture"><i class="fa fa-check"></i><b>2.3.2</b> Taux de couverture et déficit de couverture</a></li>
 <li class="chapter" data-level="2.3.3" data-path="2-outils.html"><a href="2-outils.html#complétude"><i class="fa fa-check"></i><b>2.3.3</b> Complétude</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Diversité neutre d’une communauté</b></span></li>
-<li class="chapter" data-level="3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html"><i class="fa fa-check"></i><b>3</b> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span></a><ul>
-<li class="chapter" data-level="3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Richesse"><i class="fa fa-check"></i><b>3.1</b> Richesse spécifique</a><ul>
+<li class="chapter" data-level="3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html"><i class="fa fa-check"></i><b>3</b> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Richesse"><i class="fa fa-check"></i><b>3.1</b> Richesse spécifique</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#techniques-destimation-non-paramétrique"><i class="fa fa-check"></i><b>3.1.1</b> Techniques d’estimation non paramétrique</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#inférence-du-nombre-despèces-à-partir-de-la-sad"><i class="fa fa-check"></i><b>3.1.2</b> Inférence du nombre d’espèces à partir de la SAD</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:RichesseSAC"><i class="fa fa-check"></i><b>3.1.3</b> Inférence du nombre d’espèces à partir de courbes d’accumulation</a></li>
 <li class="chapter" data-level="3.1.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#diversité-générique"><i class="fa fa-check"></i><b>3.1.4</b> Diversité générique</a></li>
 <li class="chapter" data-level="3.1.5" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#combien-y-a-t-il-despèces-différentes-sur-terre"><i class="fa fa-check"></i><b>3.1.5</b> Combien y a-t-il d’espèces différentes sur Terre?</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-simpson"><i class="fa fa-check"></i><b>3.2</b> Indice de Simpson</a><ul>
+<li class="chapter" data-level="3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-simpson"><i class="fa fa-check"></i><b>3.2</b> Indice de Simpson</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition"><i class="fa fa-check"></i><b>3.2.1</b> Définition</a></li>
 <li class="chapter" data-level="3.2.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#estimation"><i class="fa fa-check"></i><b>3.2.2</b> Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-shannon"><i class="fa fa-check"></i><b>3.3</b> Indice de Shannon</a><ul>
+<li class="chapter" data-level="3.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-shannon"><i class="fa fa-check"></i><b>3.3</b> Indice de Shannon</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition-1"><i class="fa fa-check"></i><b>3.3.1</b> Définition</a></li>
 <li class="chapter" data-level="3.3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:BiaisShannon"><i class="fa fa-check"></i><b>3.3.2</b> Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Hurlbert"><i class="fa fa-check"></i><b>3.4</b> Indice de Hurlbert</a><ul>
+<li class="chapter" data-level="3.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Hurlbert"><i class="fa fa-check"></i><b>3.4</b> Indice de Hurlbert</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition-2"><i class="fa fa-check"></i><b>3.4.1</b> Définition</a></li>
 <li class="chapter" data-level="3.4.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#estimation-1"><i class="fa fa-check"></i><b>3.4.2</b> Estimation</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-entropie.html"><a href="4-entropie.html"><i class="fa fa-check"></i><b>4</b> Entropie</a><ul>
+<li class="chapter" data-level="4" data-path="4-entropie.html"><a href="4-entropie.html"><i class="fa fa-check"></i><b>4</b> Entropie</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="4-entropie.html"><a href="4-entropie.html#définition-de-lentropie"><i class="fa fa-check"></i><b>4.1</b> Définition de l’entropie</a></li>
 <li class="chapter" data-level="4.2" data-path="4-entropie.html"><a href="4-entropie.html#entropie-relative"><i class="fa fa-check"></i><b>4.2</b> Entropie relative</a></li>
 <li class="chapter" data-level="4.3" data-path="4-entropie.html"><a href="4-entropie.html#lappropriation-de-lentropie-par-la-biodiversité"><i class="fa fa-check"></i><b>4.3</b> L’appropriation de l’entropie par la biodiversité</a></li>
-<li class="chapter" data-level="4.4" data-path="4-entropie.html"><a href="4-entropie.html#entropie-hcdt"><i class="fa fa-check"></i><b>4.4</b> Entropie HCDT</a><ul>
+<li class="chapter" data-level="4.4" data-path="4-entropie.html"><a href="4-entropie.html#entropie-hcdt"><i class="fa fa-check"></i><b>4.4</b> Entropie HCDT</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="4-entropie.html"><a href="4-entropie.html#logarithmes-déformés"><i class="fa fa-check"></i><b>4.4.1</b> Logarithmes déformés</a></li>
 <li class="chapter" data-level="4.4.2" data-path="4-entropie.html"><a href="4-entropie.html#entropie-et-diversité"><i class="fa fa-check"></i><b>4.4.2</b> Entropie et diversité</a></li>
 <li class="chapter" data-level="4.4.3" data-path="4-entropie.html"><a href="4-entropie.html#synthèse"><i class="fa fa-check"></i><b>4.4.3</b> Synthèse</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="4-entropie.html"><a href="4-entropie.html#profils-de-diversité"><i class="fa fa-check"></i><b>4.5</b> Profils de diversité</a></li>
-<li class="chapter" data-level="4.6" data-path="4-entropie.html"><a href="4-entropie.html#estimation-de-lentropie"><i class="fa fa-check"></i><b>4.6</b> Estimation de l’entropie</a><ul>
+<li class="chapter" data-level="4.6" data-path="4-entropie.html"><a href="4-entropie.html#estimation-de-lentropie"><i class="fa fa-check"></i><b>4.6</b> Estimation de l’entropie</a>
+<ul>
 <li class="chapter" data-level="4.6.1" data-path="4-entropie.html"><a href="4-entropie.html#zhang-et-grabchak"><i class="fa fa-check"></i><b>4.6.1</b> Zhang et Grabchak</a></li>
 <li class="chapter" data-level="4.6.2" data-path="4-entropie.html"><a href="4-entropie.html#sec:BiaisHCDT"><i class="fa fa-check"></i><b>4.6.2</b> Chao et Jost</a></li>
 <li class="chapter" data-level="4.6.3" data-path="4-entropie.html"><a href="4-entropie.html#autres-méthodes"><i class="fa fa-check"></i><b>4.6.3</b> Autres méthodes</a></li>
@@ -214,28 +222,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.7" data-path="4-entropie.html"><a href="4-entropie.html#msom-et-msam"><i class="fa fa-check"></i><b>4.6.7</b> MSOM et MSAM</a></li>
 <li class="chapter" data-level="4.6.8" data-path="4-entropie.html"><a href="4-entropie.html#sec:RarExtrapol"><i class="fa fa-check"></i><b>4.6.8</b> Raréfaction et extrapolation</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="4-entropie.html"><a href="4-entropie.html#autres-approches"><i class="fa fa-check"></i><b>4.7</b> Autres approches</a><ul>
+<li class="chapter" data-level="4.7" data-path="4-entropie.html"><a href="4-entropie.html#autres-approches"><i class="fa fa-check"></i><b>4.7</b> Autres approches</a>
+<ul>
 <li class="chapter" data-level="4.7.1" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-de-rényi"><i class="fa fa-check"></i><b>4.7.1</b> L’entropie de Rényi</a></li>
 <li class="chapter" data-level="4.7.2" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-généralisée-des-mesures-dinégalité"><i class="fa fa-check"></i><b>4.7.2</b> L’entropie généralisée des mesures d’inégalité</a></li>
 <li class="chapter" data-level="4.7.3" data-path="4-entropie.html"><a href="4-entropie.html#sec:SimpsonG"><i class="fa fa-check"></i><b>4.7.3</b> L’entropie de Simpson généralisée</a></li>
 <li class="chapter" data-level="4.7.4" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-par-cas"><i class="fa fa-check"></i><b>4.7.4</b> L’entropie par cas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html"><i class="fa fa-check"></i><b>5</b> Équitabilité</a><ul>
+<li class="chapter" data-level="5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html"><i class="fa fa-check"></i><b>5</b> Équitabilité</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#approche-axiomatique"><i class="fa fa-check"></i><b>5.1</b> Approche axiomatique</a></li>
-<li class="chapter" data-level="5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-classiques"><i class="fa fa-check"></i><b>5.2</b> Indice classiques</a><ul>
+<li class="chapter" data-level="5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-classiques"><i class="fa fa-check"></i><b>5.2</b> Indice classiques</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-bulla"><i class="fa fa-check"></i><b>5.2.1</b> Indice de Bulla</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-gini"><i class="fa fa-check"></i><b>5.2.2</b> Indice de Gini</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#rapports-de-moyennes"><i class="fa fa-check"></i><b>5.2.3</b> Rapports de moyennes</a></li>
 <li class="chapter" data-level="5.2.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#ratios-de-hill"><i class="fa fa-check"></i><b>5.2.4</b> Ratios de Hill</a></li>
 <li class="chapter" data-level="5.2.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#synthèse-1"><i class="fa fa-check"></i><b>5.2.5</b> Synthèse</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-alternatifs"><i class="fa fa-check"></i><b>5.3</b> Indice alternatifs</a><ul>
+<li class="chapter" data-level="5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-alternatifs"><i class="fa fa-check"></i><b>5.3</b> Indice alternatifs</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#variance-de-la-rareté"><i class="fa fa-check"></i><b>5.3.1</b> Variance de la rareté</a></li>
 <li class="chapter" data-level="5.3.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#non-spécificité"><i class="fa fa-check"></i><b>5.3.2</b> Non-spécificité</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-pielou"><i class="fa fa-check"></i><b>5.4</b> Indice de Pielou</a></li>
-<li class="chapter" data-level="5.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#généralisation-de-lindice-de-pielou"><i class="fa fa-check"></i><b>5.5</b> Généralisation de l’indice de Pielou</a><ul>
+<li class="chapter" data-level="5.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#généralisation-de-lindice-de-pielou"><i class="fa fa-check"></i><b>5.5</b> Généralisation de l’indice de Pielou</a>
+<ul>
 <li class="chapter" data-level="5.5.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#sec:Mendes"><i class="fa fa-check"></i><b>5.5.1</b> Mendes et al. </a></li>
 <li class="chapter" data-level="5.5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#tuomisto"><i class="fa fa-check"></i><b>5.5.2</b> Tuomisto</a></li>
 <li class="chapter" data-level="5.5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#jost"><i class="fa fa-check"></i><b>5.5.3</b> Jost</a></li>
@@ -244,20 +257,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#relations-empiriques-entre-richesse-et-équitabilité"><i class="fa fa-check"></i><b>5.6</b> Relations empiriques entre richesse et équitabilité</a></li>
 </ul></li>
 <li class="part"><span><b>III Diversité fonctionnelle et phylogénétique</b></span></li>
-<li class="chapter" data-level="6" data-path="6-cadre.html"><a href="6-cadre.html"><i class="fa fa-check"></i><b>6</b> Cadre</a><ul>
+<li class="chapter" data-level="6" data-path="6-cadre.html"><a href="6-cadre.html"><i class="fa fa-check"></i><b>6</b> Cadre</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="6-cadre.html"><a href="6-cadre.html#dissimilarité-et-distance"><i class="fa fa-check"></i><b>6.1</b> Dissimilarité et distance</a></li>
 <li class="chapter" data-level="6.2" data-path="6-cadre.html"><a href="6-cadre.html#sec:Dphylo"><i class="fa fa-check"></i><b>6.2</b> Distance phylogénétique</a></li>
 <li class="chapter" data-level="6.3" data-path="6-cadre.html"><a href="6-cadre.html#sec:DFonctionnelle"><i class="fa fa-check"></i><b>6.3</b> Distance fonctionnelle</a></li>
 <li class="chapter" data-level="6.4" data-path="6-cadre.html"><a href="6-cadre.html#équivalence-des-deux-diversités"><i class="fa fa-check"></i><b>6.4</b> Équivalence des deux diversités</a></li>
 <li class="chapter" data-level="6.5" data-path="6-cadre.html"><a href="6-cadre.html#typologie-des-mesures"><i class="fa fa-check"></i><b>6.5</b> Typologie des mesures</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html"><i class="fa fa-check"></i><b>7</b> Mesures particulières</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-équitabilité-et-divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1</b> Richesse, équitabilité et divergence fonctionnelle</a><ul>
+<li class="chapter" data-level="7" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html"><i class="fa fa-check"></i><b>7</b> Mesures particulières</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-équitabilité-et-divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1</b> Richesse, équitabilité et divergence fonctionnelle</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-fonctionnelle"><i class="fa fa-check"></i><b>7.1.1</b> Richesse fonctionnelle</a></li>
 <li class="chapter" data-level="7.1.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#equitabilité-fonctionnelle"><i class="fa fa-check"></i><b>7.1.2</b> Equitabilité fonctionnelle</a></li>
 <li class="chapter" data-level="7.1.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1.3</b> Divergence fonctionnelle</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#originalité-richesse-et-équitabilité-phylogénétique"><i class="fa fa-check"></i><b>7.2</b> Originalité, richesse et équitabilité phylogénétique</a><ul>
+<li class="chapter" data-level="7.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#originalité-richesse-et-équitabilité-phylogénétique"><i class="fa fa-check"></i><b>7.2</b> Originalité, richesse et équitabilité phylogénétique</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#mesures-spécifiques-doriginalité"><i class="fa fa-check"></i><b>7.2.1</b> Mesures spécifiques d’originalité</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:OrigTax"><i class="fa fa-check"></i><b>7.2.2</b> Originalité taxonomique de Ricotta</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-phylogénétique"><i class="fa fa-check"></i><b>7.2.3</b> Richesse phylogénétique</a></li>
@@ -266,7 +283,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-de-scheiner"><i class="fa fa-check"></i><b>7.3</b> Diversité de Scheiner</a></li>
 <li class="chapter" data-level="7.4" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-de-solow-et-polasky"><i class="fa fa-check"></i><b>7.4</b> Diversité de Solow et Polasky</a></li>
 <li class="chapter" data-level="7.5" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:PDFD"><i class="fa fa-check"></i><b>7.5</b> FD et PD</a></li>
-<li class="chapter" data-level="7.6" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:Rao"><i class="fa fa-check"></i><b>7.6</b> Indice de Rao</a><ul>
+<li class="chapter" data-level="7.6" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:Rao"><i class="fa fa-check"></i><b>7.6</b> Indice de Rao</a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#principe"><i class="fa fa-check"></i><b>7.6.1</b> Principe</a></li>
 <li class="chapter" data-level="7.6.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#formalisation"><i class="fa fa-check"></i><b>7.6.2</b> Formalisation</a></li>
 <li class="chapter" data-level="7.6.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#propriétés"><i class="fa fa-check"></i><b>7.6.3</b> Propriétés</a></li>
@@ -278,14 +296,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.9" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-fonctionnelle-de-chiu-et-chao"><i class="fa fa-check"></i><b>7.9</b> Diversité fonctionnelle de Chiu et Chao</a></li>
 <li class="chapter" data-level="7.10" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:HpI1"><i class="fa fa-check"></i><b>7.10</b> <span class="math inline">\(H_p\)</span> et <span class="math inline">\(I_1\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html"><i class="fa fa-check"></i><b>8</b> Entropie phylogénétique</a><ul>
+<li class="chapter" data-level="8" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html"><i class="fa fa-check"></i><b>8</b> Entropie phylogénétique</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#généralisation-de-lentropie-hcdt"><i class="fa fa-check"></i><b>8.1</b> Généralisation de l’entropie HCDT</a></li>
 <li class="chapter" data-level="8.2" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#sec:phyloEstimation"><i class="fa fa-check"></i><b>8.2</b> Estimation</a></li>
 <li class="chapter" data-level="8.3" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#sec:phyloEntopieDiv"><i class="fa fa-check"></i><b>8.3</b> Entropie et diversité</a></li>
 <li class="chapter" data-level="8.4" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#diversité-individuelle"><i class="fa fa-check"></i><b>8.4</b> Diversité individuelle</a></li>
 <li class="chapter" data-level="8.5" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#arbres-non-ultramétriques"><i class="fa fa-check"></i><b>8.5</b> Arbres non ultramétriques</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html"><i class="fa fa-check"></i><b>9</b> Diversité de Leinster et Cobbold</a><ul>
+<li class="chapter" data-level="9" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html"><i class="fa fa-check"></i><b>9</b> Diversité de Leinster et Cobbold</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#définitions"><i class="fa fa-check"></i><b>9.1</b> Définitions</a></li>
 <li class="chapter" data-level="9.2" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-neutre"><i class="fa fa-check"></i><b>9.2</b> Diversité neutre</a></li>
 <li class="chapter" data-level="9.3" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-non-neutre"><i class="fa fa-check"></i><b>9.3</b> Diversité non neutre</a></li>
@@ -298,39 +318,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.10" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#sec:dqzSynthese"><i class="fa fa-check"></i><b>9.10</b> Synthèse</a></li>
 </ul></li>
 <li class="part"><span><b>IV Diversité beta et décomposition</b></span></li>
-<li class="chapter" data-level="10" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html"><i class="fa fa-check"></i><b>10</b> Cadre</a><ul>
+<li class="chapter" data-level="10" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html"><i class="fa fa-check"></i><b>10</b> Cadre</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#définition-de-la-diversité-beta-par-objectifs"><i class="fa fa-check"></i><b>10.1</b> Définition de la diversité <span class="math inline">\(\beta\)</span> par objectifs</a></li>
 <li class="chapter" data-level="10.2" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaTypo"><i class="fa fa-check"></i><b>10.2</b> Typologie des mesures</a></li>
-<li class="chapter" data-level="10.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaDecomposition"><i class="fa fa-check"></i><b>10.3</b> Décomposition de la diversité</a><ul>
+<li class="chapter" data-level="10.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaDecomposition"><i class="fa fa-check"></i><b>10.3</b> Décomposition de la diversité</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#définitions-de-la-diversité-beta-mesure-dérivée"><i class="fa fa-check"></i><b>10.3.1</b> Définitions de la diversité <span class="math inline">\(\beta\)</span>, mesure dérivée</a></li>
 <li class="chapter" data-level="10.3.2" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:DebatDecomposition"><i class="fa fa-check"></i><b>10.3.2</b> Le débat sur la décomposition</a></li>
 <li class="chapter" data-level="10.3.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#décomposition-multiplicative-de-la-diversité"><i class="fa fa-check"></i><b>10.3.3</b> Décomposition multiplicative de la diversité</a></li>
 <li class="chapter" data-level="10.3.4" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:defalpha"><i class="fa fa-check"></i><b>10.3.4</b> Définitions de la diversité <span class="math inline">\(\alpha\)</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html"><i class="fa fa-check"></i><b>11</b> Diversité de différentiation</a><ul>
-<li class="chapter" data-level="11.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-de-présence-absence"><i class="fa fa-check"></i><b>11.1</b> Données de présence-absence</a><ul>
+<li class="chapter" data-level="11" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html"><i class="fa fa-check"></i><b>11</b> Diversité de différentiation</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-de-présence-absence"><i class="fa fa-check"></i><b>11.1</b> Données de présence-absence</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#indices-de-similarité"><i class="fa fa-check"></i><b>11.1.1</b> Indices de similarité</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#biais-destimation"><i class="fa fa-check"></i><b>11.1.2</b> Biais d’estimation</a></li>
 <li class="chapter" data-level="11.1.3" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#représentation-graphique"><i class="fa fa-check"></i><b>11.1.3</b> Représentation graphique</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance"><i class="fa fa-check"></i><b>11.2</b> Données d’abondance</a></li>
 <li class="chapter" data-level="11.3" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#emboîtement-et-substitution"><i class="fa fa-check"></i><b>11.3</b> Emboîtement et substitution</a></li>
-<li class="chapter" data-level="11.4" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance-et-similarité-des-espèces"><i class="fa fa-check"></i><b>11.4</b> Données d’abondance et similarité des espèces</a><ul>
+<li class="chapter" data-level="11.4" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance-et-similarité-des-espèces"><i class="fa fa-check"></i><b>11.4</b> Données d’abondance et similarité des espèces</a>
+<ul>
 <li class="chapter" data-level="11.4.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#dissimilarité-minimale-moyenne"><i class="fa fa-check"></i><b>11.4.1</b> Dissimilarité minimale moyenne</a></li>
 <li class="chapter" data-level="11.4.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#similarité-moyenne-entre-individus"><i class="fa fa-check"></i><b>11.4.2</b> Similarité moyenne entre individus</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#distance-entre-paires-de-communautés-et-diversité-beta-proportionnelle"><i class="fa fa-check"></i><b>11.5</b> Distance entre paires de communautés et diversité <span class="math inline">\(\beta\)</span> proportionnelle</a><ul>
+<li class="chapter" data-level="11.5" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#distance-entre-paires-de-communautés-et-diversité-beta-proportionnelle"><i class="fa fa-check"></i><b>11.5</b> Distance entre paires de communautés et diversité <span class="math inline">\(\beta\)</span> proportionnelle</a>
+<ul>
 <li class="chapter" data-level="11.5.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#diversité-de-simpson"><i class="fa fa-check"></i><b>11.5.1</b> Diversité de Simpson</a></li>
 <li class="chapter" data-level="11.5.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#généralisation"><i class="fa fa-check"></i><b>11.5.2</b> Généralisation</a></li>
 </ul></li>
-<li class="chapter" data-level="11.6" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#sec:TestBetaDiff"><i class="fa fa-check"></i><b>11.6</b> Tests de significativité</a><ul>
+<li class="chapter" data-level="11.6" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#sec:TestBetaDiff"><i class="fa fa-check"></i><b>11.6</b> Tests de significativité</a>
+<ul>
 <li class="chapter" data-level="11.6.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#test-de-non-nullité"><i class="fa fa-check"></i><b>11.6.1</b> Test de non-nullité</a></li>
 <li class="chapter" data-level="11.6.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#analyse-de-la-variabilité"><i class="fa fa-check"></i><b>11.6.2</b> Analyse de la variabilité</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html"><i class="fa fa-check"></i><b>12</b> Décomposition de l’entropie HCDT</a><ul>
-<li class="chapter" data-level="12.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-shannon"><i class="fa fa-check"></i><b>12.1</b> Décomposition de l’indice de Shannon</a><ul>
+<li class="chapter" data-level="12" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html"><i class="fa fa-check"></i><b>12</b> Décomposition de l’entropie HCDT</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-shannon"><i class="fa fa-check"></i><b>12.1</b> Décomposition de l’indice de Shannon</a>
+<ul>
 <li class="chapter" data-level="12.1.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#définition-3"><i class="fa fa-check"></i><b>12.1.1</b> Définition</a></li>
 <li class="chapter" data-level="12.1.2" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:BiaisShannonBeta"><i class="fa fa-check"></i><b>12.1.2</b> Biais d’estimation</a></li>
 </ul></li>
@@ -339,24 +368,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-gini-simpson"><i class="fa fa-check"></i><b>12.4</b> Décomposition de l’indice de Gini-Simpson</a></li>
 <li class="chapter" data-level="12.5" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:RaoDisc"><i class="fa fa-check"></i><b>12.5</b> Décomposition de l’indice de Rao</a></li>
 <li class="chapter" data-level="12.6" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#synthèse-3"><i class="fa fa-check"></i><b>12.6</b> Synthèse</a></li>
-<li class="chapter" data-level="12.7" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#normalisation"><i class="fa fa-check"></i><b>12.7</b> Normalisation</a><ul>
+<li class="chapter" data-level="12.7" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#normalisation"><i class="fa fa-check"></i><b>12.7</b> Normalisation</a>
+<ul>
 <li class="chapter" data-level="12.7.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#nécessité-de-normaliser-la-diversité-beta"><i class="fa fa-check"></i><b>12.7.1</b> Nécessité de normaliser la diversité <span class="math inline">\(\beta\)</span></a></li>
 <li class="chapter" data-level="12.7.2" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:Chevauchement"><i class="fa fa-check"></i><b>12.7.2</b> L’indice de chevauchement <span class="math inline">\(C_{qN}\)</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><i class="fa fa-check"></i><b>13</b> Décomposition de la diversité phylogénétique et fonctionnelle</a><ul>
+<li class="chapter" data-level="13" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><i class="fa fa-check"></i><b>13</b> Décomposition de la diversité phylogénétique et fonctionnelle</a>
+<ul>
 <li class="chapter" data-level="13.1" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#décomposition-de-la-diversité-phylogénétique"><i class="fa fa-check"></i><b>13.1</b> Décomposition de la diversité phylogénétique</a></li>
 <li class="chapter" data-level="13.2" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#partitionnement-de-la-diversité-de-leinster-et-cobbold"><i class="fa fa-check"></i><b>13.2</b> Partitionnement de la diversité de Leinster et Cobbold</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html"><i class="fa fa-check"></i><b>14</b> Tests de significativité</a><ul>
-<li class="chapter" data-level="14.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#test-de-non-nullité-1"><i class="fa fa-check"></i><b>14.1</b> Test de non-nullité</a><ul>
+<li class="chapter" data-level="14" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html"><i class="fa fa-check"></i><b>14</b> Tests de significativité</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#test-de-non-nullité-1"><i class="fa fa-check"></i><b>14.1</b> Test de non-nullité</a>
+<ul>
 <li class="chapter" data-level="14.1.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#intervalle-de-confiance"><i class="fa fa-check"></i><b>14.1.1</b> Intervalle de confiance</a></li>
 <li class="chapter" data-level="14.1.2" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#correction-des-biais"><i class="fa fa-check"></i><b>14.1.2</b> Correction des biais</a></li>
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#analyse-de-la-variabilité-1"><i class="fa fa-check"></i><b>14.2</b> Analyse de la variabilité</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html"><i class="fa fa-check"></i><b>15</b> Autres approches</a><ul>
-<li class="chapter" data-level="15.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#le-partitionnement-de-la-diversité-selon-pélissier-et-couteron"><i class="fa fa-check"></i><b>15.1</b> Le partitionnement de la diversité selon Pélissier et Couteron</a><ul>
+<li class="chapter" data-level="15" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html"><i class="fa fa-check"></i><b>15</b> Autres approches</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#le-partitionnement-de-la-diversité-selon-pélissier-et-couteron"><i class="fa fa-check"></i><b>15.1</b> Le partitionnement de la diversité selon Pélissier et Couteron</a>
+<ul>
 <li class="chapter" data-level="15.1.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#sec:PCcadre"><i class="fa fa-check"></i><b>15.1.1</b> Cadre</a></li>
 <li class="chapter" data-level="15.1.2" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#sec:PCdecomposition"><i class="fa fa-check"></i><b>15.1.2</b> Décomposition</a></li>
 </ul></li>
@@ -364,31 +399,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>V Diversité jointe, diversité structurelle</b></span></li>
 <li class="chapter" data-level="16" data-path="16-sec-jointeCadre.html"><a href="16-sec-jointeCadre.html"><i class="fa fa-check"></i><b>16</b> Cadre</a></li>
-<li class="chapter" data-level="17" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html"><i class="fa fa-check"></i><b>17</b> Information mutuelle</a><ul>
-<li class="chapter" data-level="17.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#récursivité-de-lentropie"><i class="fa fa-check"></i><b>17.1</b> Récursivité de l’entropie</a><ul>
+<li class="chapter" data-level="17" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html"><i class="fa fa-check"></i><b>17</b> Information mutuelle</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#récursivité-de-lentropie"><i class="fa fa-check"></i><b>17.1</b> Récursivité de l’entropie</a>
+<ul>
 <li class="chapter" data-level="17.1.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#sec:jointeShannon"><i class="fa fa-check"></i><b>17.1.1</b> Entropie de Shannon</a></li>
 <li class="chapter" data-level="17.1.2" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#sec:jointeHCDT"><i class="fa fa-check"></i><b>17.1.2</b> Entropie HCDT</a></li>
 <li class="chapter" data-level="17.1.3" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#intérêt-de-linformation-mutuelle"><i class="fa fa-check"></i><b>17.1.3</b> Intérêt de l’information mutuelle</a></li>
 </ul></li>
 <li class="chapter" data-level="17.2" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#taille-de-niche"><i class="fa fa-check"></i><b>17.2</b> Taille de niche</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html"><i class="fa fa-check"></i><b>18</b> Décomposition de la diversité jointe</a><ul>
+<li class="chapter" data-level="18" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html"><i class="fa fa-check"></i><b>18</b> Décomposition de la diversité jointe</a>
+<ul>
 <li class="chapter" data-level="18.1" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html#sec:Definitions"><i class="fa fa-check"></i><b>18.1</b> Définitions</a></li>
 <li class="chapter" data-level="18.2" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html#relations-avec-dautres-mesures-de-diversité"><i class="fa fa-check"></i><b>18.2</b> Relations avec d’autres mesures de diversité</a></li>
 </ul></li>
 <li class="part"><span><b>VI Diversité spatialement explicite</b></span></li>
 <li class="chapter" data-level="19" data-path="19-sec-spatialCadre.html"><a href="19-sec-spatialCadre.html"><i class="fa fa-check"></i><b>19</b> Cadre</a></li>
-<li class="chapter" data-level="20" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html"><i class="fa fa-check"></i><b>20</b> Indice <span class="math inline">\(\alpha\)</span> de Fisher</a><ul>
+<li class="chapter" data-level="20" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html"><i class="fa fa-check"></i><b>20</b> Indice <span class="math inline">\(\alpha\)</span> de Fisher</a>
+<ul>
 <li class="chapter" data-level="20.1" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html#construction"><i class="fa fa-check"></i><b>20.1</b> Construction</a></li>
 <li class="chapter" data-level="20.2" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html#variantes"><i class="fa fa-check"></i><b>20.2</b> Variantes</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html"><i class="fa fa-check"></i><b>21</b> Accumulation de la diversité locale</a><ul>
+<li class="chapter" data-level="21" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html"><i class="fa fa-check"></i><b>21</b> Accumulation de la diversité locale</a>
+<ul>
 <li class="chapter" data-level="21.1" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#courbes-daccumulation"><i class="fa fa-check"></i><b>21.1</b> Courbes d’accumulation</a></li>
 <li class="chapter" data-level="21.2" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#sec:Extrapolation"><i class="fa fa-check"></i><b>21.2</b> Extrapolation</a></li>
 <li class="chapter" data-level="21.3" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#influence-de-la-structure-spatiale"><i class="fa fa-check"></i><b>21.3</b> Influence de la structure spatiale</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html"><i class="fa fa-check"></i><b>22</b> Diversité régionale</a><ul>
-<li class="chapter" data-level="22.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:Arrhenius"><i class="fa fa-check"></i><b>22.1</b> La relation d’Arrhenius</a><ul>
+<li class="chapter" data-level="22" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html"><i class="fa fa-check"></i><b>22</b> Diversité régionale</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:Arrhenius"><i class="fa fa-check"></i><b>22.1</b> La relation d’Arrhenius</a>
+<ul>
 <li class="chapter" data-level="22.1.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#loi-de-puissance"><i class="fa fa-check"></i><b>22.1.1</b> Loi de puissance</a></li>
 <li class="chapter" data-level="22.1.2" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#le-modèle-de-plotkin"><i class="fa fa-check"></i><b>22.1.2</b> Le modèle de Plotkin</a></li>
 </ul></li>
@@ -397,14 +439,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.4" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:spatialSynthese"><i class="fa fa-check"></i><b>22.4</b> Synthèse</a></li>
 <li class="chapter" data-level="22.5" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#estimation-de-la-richesse-à-partir-de-placettes-distantes"><i class="fa fa-check"></i><b>22.5</b> Estimation de la richesse à partir de placettes distantes</a></li>
 </ul></li>
-<li class="chapter" data-level="23" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html"><i class="fa fa-check"></i><b>23</b> Diversité <span class="math inline">\(\beta\)</span> spatialement explicite</a><ul>
+<li class="chapter" data-level="23" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html"><i class="fa fa-check"></i><b>23</b> Diversité <span class="math inline">\(\beta\)</span> spatialement explicite</a>
+<ul>
 <li class="chapter" data-level="23.1" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html#sec:SimpsonSpatial"><i class="fa fa-check"></i><b>23.1</b> L’indice de Simpson spatialement explicite</a></li>
 <li class="chapter" data-level="23.2" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html#le-variogramme-de-complémentarité"><i class="fa fa-check"></i><b>23.2</b> Le variogramme de complémentarité</a></li>
 </ul></li>
 <li class="part"><span><b>VII Conclusion</b></span></li>
-<li class="chapter" data-level="24" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html"><i class="fa fa-check"></i><b>24</b> Synthèse</a><ul>
+<li class="chapter" data-level="24" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html"><i class="fa fa-check"></i><b>24</b> Synthèse</a>
+<ul>
 <li class="chapter" data-level="24.1" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#entropie-et-diversité-1"><i class="fa fa-check"></i><b>24.1</b> Entropie et diversité</a></li>
-<li class="chapter" data-level="24.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#ordres-particuliers-de-diversité"><i class="fa fa-check"></i><b>24.2</b> Ordres particuliers de diversité</a><ul>
+<li class="chapter" data-level="24.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#ordres-particuliers-de-diversité"><i class="fa fa-check"></i><b>24.2</b> Ordres particuliers de diversité</a>
+<ul>
 <li class="chapter" data-level="24.2.1" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#estimation-2"><i class="fa fa-check"></i><b>24.2.1</b> Estimation</a></li>
 <li class="chapter" data-level="24.2.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#partition"><i class="fa fa-check"></i><b>24.2.2</b> Partition</a></li>
 <li class="chapter" data-level="24.2.3" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#égalité-des-diversités"><i class="fa fa-check"></i><b>24.2.3</b> Égalité des diversités</a></li>
@@ -432,95 +477,95 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap:Accumulation" class="section level1">
+<div id="chap:Accumulation" class="section level1" number="21">
 <h1><span class="header-section-number">21</span> Accumulation de la diversité locale</h1>
-
+<p></p>
 <div class="Essentiel">
 <p>
 La courbe d’accumulation (SAC) décrit comment la richesse, ou la diversité, augmente en fonction de l’effort d’échantillonnage. Sous l’hypothèse d’un tirage multinomial des individus observés, les formules de raréfaction (estimation du nombre d’espèces pour une surface inférieure à celle inventoriée) sont bien contenues. La structure spatiale rend les observations dépendantes entre elles et doit être prise en compte.
 </p>
 </div>
-
+<p></p>
 <p>Les propriétés des courbes d’accumulation ont été largement étudiées dans la littérature, notamment pour prédire la richesse spécifique (section <a href="3-chap-MesuresNeutres.html#sec:RichesseSAC">3.1.3</a>).</p>
 <p>L’influence de la structure spatiale est considérable mais souvent négligée parce que difficile à prendre en compte.
 Quelques méthodes sont pourtant applicables.</p>
-<div id="courbes-daccumulation" class="section level2">
+<div id="courbes-daccumulation" class="section level2" number="21.1">
 <h2><span class="header-section-number">21.1</span> Courbes d’accumulation</h2>
 <p>On suppose que la communauté locale est de taille fixe et contient donc un nombre fixe d’espèces, et que leur découverte progressive aboutira à une asymptote de la SAC.</p>
 
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:Gotelli2001"></span>
 <img src="images/Gotelli2001.png" alt="Courbes d’accumulation et de raréfaction, obtenues par inventaires individuels ou groupés (samples). Les courbes de raréfaction permettent de lisser les courbes d’accumulation. Les courbes obtenues par inventaire groupé sont en général en dessous des courbes individuelles à cause de l’agrégation spatiale." width="80%" />
 <p class="caption">
 Figure 21.1: Courbes d’accumulation et de raréfaction, obtenues par inventaires individuels ou groupés (<em>samples</em>). Les courbes de raréfaction permettent de lisser les courbes d’accumulation. Les courbes obtenues par inventaire groupé sont en général en dessous des courbes individuelles à cause de l’agrégation spatiale.
 </p>
 </div>
-
-<p><span class="citation">Gotelli et Colwell (<a href="#ref-Gotelli2001" role="doc-biblioref">2001</a>)</span> proposent une revue des problèmes les plus communément rencontrés dans l’estimation et la comparaison de la richesse spécifique.
+<p></p>
+<p><span class="citation"><a href="references.html#ref-Gotelli2001" role="doc-biblioref">Gotelli et Colwell</a> (<a href="references.html#ref-Gotelli2001" role="doc-biblioref">2001</a>)</span> proposent une revue des problèmes les plus communément rencontrés dans l’estimation et la comparaison de la richesse spécifique.
 Ils suggèrent notamment de calculer la courbe de raréfaction (figure <a href="21-chap-Accumulation.html#fig:Gotelli2001">21.1</a>) plutôt que d’utiliser la courbe d’accumulation obtenue en traçant simplement le nombre d’espèces découvert en fonction de l’effort d’échantillonnage.
 La courbe de raréfaction est obtenue en sous-échantillonnant dans l’inventaire complet des effectifs de toutes tailles et en calculant le nombre moyen d’espèces trouvé pour chacun, ce qui permet de la lisser.
-La formulation exacte de la courbe de raréfaction et de sa variance est connue <span class="citation">(Ugland, Gray, et Ellingsen <a href="#ref-Ugland2003" role="doc-biblioref">2003</a>)</span>.</p>
+La formulation exacte de la courbe de raréfaction et de sa variance est connue <span class="citation">(<a href="references.html#ref-Ugland2003" role="doc-biblioref">Ugland, Gray, et Ellingsen 2003</a>)</span>.</p>
 
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:specaccumFig"></span>
 <img src="MesuresBD_files/figure-html/specaccumFig-1.png" alt="Courbe d’accumulation des espèces d’arbres de Barro Colorado Island. Calcul par specaccum: accumulation des 50 carrés avec permutations." width="80%" />
 <p class="caption">
 Figure 21.2: Courbe d’accumulation des espèces d’arbres de Barro Colorado Island. Calcul par specaccum: accumulation des 50 carrés avec permutations.
 </p>
 </div>
-
-<p>La fonction <code>specaccum</code> de la librairie <em>vegan</em> <span class="citation">(Oksanen et al. <a href="#ref-Oksanen2012" role="doc-biblioref">2012</a>)</span> permet de tracer les SAC (figure <a href="21-chap-Accumulation.html#fig:specaccumFig">21.2</a>) selon différentes méthodes, avec un intervalle de confiance obtenu par permutation de l’ordre d’ajout des données ou à partir des formules de raréfaction.</p>
+<p></p>
+<p>La fonction <code>specaccum</code> de la librairie <em>vegan</em> <span class="citation">(<a href="references.html#ref-Oksanen2012" role="doc-biblioref">Oksanen et al. 2012</a>)</span> permet de tracer les SAC (figure <a href="21-chap-Accumulation.html#fig:specaccumFig">21.2</a>) selon différentes méthodes, avec un intervalle de confiance obtenu par permutation de l’ordre d’ajout des données ou à partir des formules de raréfaction.</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
-
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="21-chap-Accumulation.html#cb321-1"></a><span class="kw">data</span>(BCI)</span>
-<span id="cb321-2"><a href="21-chap-Accumulation.html#cb321-2"></a>SAC &lt;-<span class="st"> </span><span class="kw">specaccum</span>(BCI, <span class="st">&quot;random&quot;</span>)</span>
-<span id="cb321-3"><a href="21-chap-Accumulation.html#cb321-3"></a><span class="kw">plot</span>(SAC, <span class="dt">ci.type=</span><span class="st">&quot;poly&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">ci.lty=</span><span class="dv">0</span>, <span class="dt">ci.col=</span><span class="st">&quot;lightgray&quot;</span>)</span></code></pre></div>
-
+<p></p>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="21-chap-Accumulation.html#cb315-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(BCI)</span>
+<span id="cb315-2"><a href="21-chap-Accumulation.html#cb315-2" aria-hidden="true" tabindex="-1"></a>SAC <span class="ot">&lt;-</span> <span class="fu">specaccum</span>(BCI, <span class="st">&quot;random&quot;</span>)</span>
+<span id="cb315-3"><a href="21-chap-Accumulation.html#cb315-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(SAC, <span class="at">ci.type =</span> <span class="st">&quot;poly&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">ci.lty =</span> <span class="dv">0</span>, <span class="at">ci.col =</span> <span class="st">&quot;lightgray&quot;</span>)</span></code></pre></div>
+<p></p>
 <p>Pour une surface donnée, le nombre d’individus est une variable aléatoire.
-Dans ce cas, la SAC (dépendant de la surface) est différente de la courbe de raréfaction (fonction du nombre d’individus) de Gotelli et Colwell, que <span class="citation">Coleman (<a href="#ref-Coleman1981" role="doc-biblioref">1981</a>)</span> nomme “courbe du collecteur”.</p>
+Dans ce cas, la SAC (dépendant de la surface) est différente de la courbe de raréfaction (fonction du nombre d’individus) de Gotelli et Colwell, que <span class="citation"><a href="references.html#ref-Coleman1981" role="doc-biblioref">Coleman</a> (<a href="references.html#ref-Coleman1981" role="doc-biblioref">1981</a>)</span> nomme “courbe du collecteur”.</p>
 <p>La SAC théorique en fonction de la surface contient une incertitude concernant le nombre d’individus.
-Si la densité <span class="math inline">\(\lambda_s\)</span> (nombre d’individus par unité de surface) des espèces peut être connue (estimée en comptant les individus) ou si les probabilités <span class="math inline">\(p_s\)</span> sont issues d’un modèle (log-séries, log-normal…), le nombre d’individus observés de l’espèce <span class="math inline">\(s\)</span> suit une loi de Poisson d’espérance <span class="math inline">\(A\hat{\lambda}_s\)</span> ou, de façon équivalente <span class="citation">(Pielou <a href="#ref-Pielou1969" role="doc-biblioref">1969</a>, 204‑5)</span>, <span class="math inline">\(np_s\)</span> (dans ce deuxième cas, <span class="math inline">\(n\)</span> est l’estimateur de <span class="math inline">\(N\)</span>, la variable aléatoire correspondant à la taille de l’échantillon).</p>
+Si la densité <span class="math inline">\(\lambda_s\)</span> (nombre d’individus par unité de surface) des espèces peut être connue (estimée en comptant les individus) ou si les probabilités <span class="math inline">\(p_s\)</span> sont issues d’un modèle (log-séries, log-normal…), le nombre d’individus observés de l’espèce <span class="math inline">\(s\)</span> suit une loi de Poisson d’espérance <span class="math inline">\(A\hat{\lambda}_s\)</span> ou, de façon équivalente <span class="citation">(<a href="references.html#ref-Pielou1969" role="doc-biblioref">Pielou 1969, 204‑5</a>)</span>, <span class="math inline">\(np_s\)</span> (dans ce deuxième cas, <span class="math inline">\(n\)</span> est l’estimateur de <span class="math inline">\(N\)</span>, la variable aléatoire correspondant à la taille de l’échantillon).</p>
 <p>La SAC théorique en fonction du nombre d’individus ne contient pas cet aléa.
 Le nombre d’individus de l’espèce <span class="math inline">\(s\)</span> suit alors une loi binomiale d’espérance <span class="math inline">\(np_s\)</span> et la distribution d’un échantillon de taille <span class="math inline">\(n\)</span> suit la loi multinomiale correspondante.
-Les deux approches se réconcilient en fixant arbitrairement le nombre d’individus échantillonnés dans la courbe aire-espèce: conditionnellement au nombre total d’individus, la distribution des abondances des espèces issues de lois de Poisson de paramètres <span class="math inline">\(\lambda_s\)</span> suit une loi multinomiale <span class="citation">(Steel <a href="#ref-Steel1953" role="doc-biblioref">1953</a>)</span> dont les probabilités sont proportionnelles à <span class="math inline">\(\lambda_s\)</span>.</p>
+Les deux approches se réconcilient en fixant arbitrairement le nombre d’individus échantillonnés dans la courbe aire-espèce: conditionnellement au nombre total d’individus, la distribution des abondances des espèces issues de lois de Poisson de paramètres <span class="math inline">\(\lambda_s\)</span> suit une loi multinomiale <span class="citation">(<a href="references.html#ref-Steel1953" role="doc-biblioref">Steel 1953</a>)</span> dont les probabilités sont proportionnelles à <span class="math inline">\(\lambda_s\)</span>.</p>
 <p>La SAC définie en fonction du nombre d’individus est au sens strict une succession de points (à chaque valeur de <span class="math inline">\(n\)</span>), pas une courbe continue.
 Elle est toutefois toujours présentée comme une courbe lissée passant par les points pour être continue et dérivable.</p>
 
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:SACzetaFig"></span>
 <img src="MesuresBD_files/figure-html/SACzetaFig-1.png" alt="Courbe d’accumulation des espèces d’arbres de Barro Colorado Island. Somme des entropies de Simpson généralisées." width="80%" />
 <p class="caption">
 Figure 21.3: Courbe d’accumulation des espèces d’arbres de Barro Colorado Island. Somme des entropies de Simpson généralisées.
 </p>
 </div>
-
-<p>Une difficulté supplémentaire consiste à prendre en compte les espèces non échantillonnées en appliquant des techniques statistiques pour réduire le biais qu’elles induisent <span class="citation">(Colwell et al. <a href="#ref-Colwell2012" role="doc-biblioref">2012</a>)</span>.
-Dans ce but, la SAC théorique peut être construite <span class="citation">(Chao, Wang, et Jost <a href="#ref-Chao2013" role="doc-biblioref">2013</a>)</span> comme la somme des entropies de Simpson généralisées <span class="citation">(Zhang et Zhou <a href="#ref-Zhang2010" role="doc-biblioref">2010</a>)</span>, présentées en section <a href="4-entropie.html#sec:SimpsonG">4.7.3</a>.</p>
+<p></p>
+<p>Une difficulté supplémentaire consiste à prendre en compte les espèces non échantillonnées en appliquant des techniques statistiques pour réduire le biais qu’elles induisent <span class="citation">(<a href="references.html#ref-Colwell2012" role="doc-biblioref">Colwell et al. 2012</a>)</span>.
+Dans ce but, la SAC théorique peut être construite <span class="citation">(<a href="references.html#ref-Chao2013" role="doc-biblioref">Chao, Wang, et Jost 2013</a>)</span> comme la somme des entropies de Simpson généralisées <span class="citation">(<a href="references.html#ref-Zhang2010" role="doc-biblioref">Z. Zhang et Zhou 2010</a>)</span>, présentées en section <a href="4-entropie.html#sec:SimpsonG">4.7.3</a>.</p>
 <p>La courbe obtenue (figure <a href="21-chap-Accumulation.html#fig:SACzetaFig">21.3</a>) est la même que par raréfaction, sans les problèmes d’estimation.
-Son intervalle de confiance n’est pas représenté: l’estimation est sans biais et a une variance très petite; d’autre part, la variabilité de l’échantillonnage prise en compte dans la figure <a href="21-chap-Accumulation.html#fig:specaccumFig">21.2</a> est ignorée ici. La fonction <code>GenSimp.z</code> est fournie par le package <em>EntropyEstimation</em> <span class="citation">(Cao et Grabchak <a href="#ref-Cao2014" role="doc-biblioref">2014</a>)</span>.</p>
+Son intervalle de confiance n’est pas représenté: l’estimation est sans biais et a une variance très petite; d’autre part, la variabilité de l’échantillonnage prise en compte dans la figure <a href="21-chap-Accumulation.html#fig:specaccumFig">21.2</a> est ignorée ici. La fonction <code>GenSimp.z</code> est fournie par le package <em>EntropyEstimation</em> <span class="citation">(<a href="references.html#ref-Cao2014" role="doc-biblioref">Cao et Grabchak 2014</a>)</span>.</p>
 <p>Code pour la figure:</p>
-
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="21-chap-Accumulation.html#cb322-1"></a><span class="kw">library</span>(<span class="st">&quot;EntropyEstimation&quot;</span>)</span>
-<span id="cb322-2"><a href="21-chap-Accumulation.html#cb322-2"></a><span class="kw">data</span>(BCI)</span>
-<span id="cb322-3"><a href="21-chap-Accumulation.html#cb322-3"></a>Ns &lt;-<span class="st"> </span><span class="kw">colSums</span>(BCI)</span>
-<span id="cb322-4"><a href="21-chap-Accumulation.html#cb322-4"></a>gsValues &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>(<span class="kw">sum</span>(Ns)<span class="op">-</span><span class="dv">1</span>), <span class="cf">function</span>(r) <span class="kw">GenSimp.z</span>(Ns, r))</span>
-<span id="cb322-5"><a href="21-chap-Accumulation.html#cb322-5"></a>SAC &lt;-<span class="st"> </span><span class="kw">cumsum</span>(gsValues)</span>
-<span id="cb322-6"><a href="21-chap-Accumulation.html#cb322-6"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span>(<span class="kw">sum</span>(Ns)<span class="op">-</span><span class="dv">1</span>), </span>
-<span id="cb322-7"><a href="21-chap-Accumulation.html#cb322-7"></a>                  <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, SAC)), </span>
-<span id="cb322-8"><a href="21-chap-Accumulation.html#cb322-8"></a>       <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)) <span class="op">+</span></span>
-<span id="cb322-9"><a href="21-chap-Accumulation.html#cb322-9"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb322-10"><a href="21-chap-Accumulation.html#cb322-10"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Nombre d&#39;individus&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span></code></pre></div>
-
+<p></p>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="21-chap-Accumulation.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;EntropyEstimation&quot;</span>)</span>
+<span id="cb316-2"><a href="21-chap-Accumulation.html#cb316-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(BCI)</span>
+<span id="cb316-3"><a href="21-chap-Accumulation.html#cb316-3" aria-hidden="true" tabindex="-1"></a>Ns <span class="ot">&lt;-</span> <span class="fu">colSums</span>(BCI)</span>
+<span id="cb316-4"><a href="21-chap-Accumulation.html#cb316-4" aria-hidden="true" tabindex="-1"></a>gsValues <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span>(<span class="fu">sum</span>(Ns)<span class="sc">-</span><span class="dv">1</span>), <span class="cf">function</span>(r) <span class="fu">GenSimp.z</span>(Ns, r))</span>
+<span id="cb316-5"><a href="21-chap-Accumulation.html#cb316-5" aria-hidden="true" tabindex="-1"></a>SAC <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(gsValues)</span>
+<span id="cb316-6"><a href="21-chap-Accumulation.html#cb316-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>(<span class="fu">sum</span>(Ns)<span class="sc">-</span><span class="dv">1</span>), </span>
+<span id="cb316-7"><a href="21-chap-Accumulation.html#cb316-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, SAC)), </span>
+<span id="cb316-8"><a href="21-chap-Accumulation.html#cb316-8" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb316-9"><a href="21-chap-Accumulation.html#cb316-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb316-10"><a href="21-chap-Accumulation.html#cb316-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Nombre d&#39;individus&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span></code></pre></div>
+<p></p>
 </div>
-<div id="sec:Extrapolation" class="section level2">
+<div id="sec:Extrapolation" class="section level2" number="21.2">
 <h2><span class="header-section-number">21.2</span> Extrapolation</h2>
 <p>L’extrapolation de la SAC est un cas particulier de celle de la diversité, déjà vue en section <a href="4-entropie.html#sec:RarExtrapol">4.6.8</a>.</p>
-<p><span class="citation">Béguinot (<a href="#ref-Beguinot2015" role="doc-biblioref">2015</a><a href="#ref-Beguinot2015" role="doc-biblioref">b</a>)</span> a une approche différente.
+<p><span class="citation"><a href="references.html#ref-Beguinot2015" role="doc-biblioref">Béguinot</a> (<a href="references.html#ref-Beguinot2015" role="doc-biblioref">2015b</a>)</span> a une approche différente.
 Il considère la SAC comme une fonction continue et infiniment dérivable de la taille de l’échantillon.
 Le nombre d’espèces non observées dans un échantillon de taille <span class="math inline">\(n\)</span> est noté <span class="math inline">\(s^{n}_{0}\)</span>.
 Le nombre d’espèces observées dans la SAC est <span class="math inline">\(s^{n}_{&gt;0} = S - s^{n}_{0}\)</span>.
 Quand <span class="math inline">\(n\)</span> est assez grand, la pente de la SAC varie peu entre <span class="math inline">\(n-1\)</span> et <span class="math inline">\(n+1\)</span> individus.
-<span class="citation">Béguinot (<a href="#ref-Beguinot2014" role="doc-biblioref">2014</a>)</span> approxime la dérivée de <span class="math inline">\(s^{n}_{0}\)</span> par <span class="math inline">\(s^{n}_{0}-s^{n-1}_{0}\)</span>.
+<span class="citation"><a href="references.html#ref-Beguinot2014" role="doc-biblioref">Béguinot</a> (<a href="references.html#ref-Beguinot2014" role="doc-biblioref">2014</a>)</span> approxime la dérivée de <span class="math inline">\(s^{n}_{0}\)</span> par <span class="math inline">\(s^{n}_{0}-s^{n-1}_{0}\)</span>.
 La dérivée est en réalité plus grande: la pente de la SAC, qui est l’opposée de la pente de <span class="math inline">\(s^{n}_{0}\)</span>, décroît avec <span class="math inline">\(n\)</span> mais l’approximation est acceptable quand <span class="math inline">\(n\)</span> est assez grand.
 De même, les dérivées successives, par exemple seconde, sont approchées par la variation de la dérivée d’ordre inférieur, par exemple première, entre <span class="math inline">\(n-1\)</span> et <span class="math inline">\(n\)</span>.
 En combinant ces approximations avec l’espérance du nombre d’espèces observées <span class="math inline">\(\nu\)</span> fois dans un échantillon de taille <span class="math inline">\(n\)</span>, équation <a href="3-chap-MesuresNeutres.html#eq:Esnnu">(3.2)</a>, on obtient:
@@ -530,7 +575,7 @@ En combinant ces approximations avec l’espérance du nombre d’espèces obser
   = \left(-1 \right)^{\nu-1} \binom{n}{\nu} \frac{\partial^\nu s^{n}_{&gt;0}}{\partial n^\nu}, \nu=1,2,\dots
 \end{equation}\]</span></p>
 <p>L’espérance du nombre d’espèces observées <span class="math inline">\(\nu\)</span> fois dépend directement de la dérivée <span class="math inline">\(\nu\)</span> de la SAC.</p>
-<p><span class="citation">Béguinot (<a href="#ref-Beguinot2015" role="doc-biblioref">2015</a><a href="#ref-Beguinot2015" role="doc-biblioref">b</a>)</span> écrit l’accroissement du nombre d’espèces observées quand l’échantillon augmente de <span class="math inline">\(n\)</span> à <span class="math inline">\(n +\delta n\)</span> sous la forme d’une série entière, qu’il combine avec l’équation précédente pour en obtenir une approximation:
+<p><span class="citation"><a href="references.html#ref-Beguinot2015" role="doc-biblioref">Béguinot</a> (<a href="references.html#ref-Beguinot2015" role="doc-biblioref">2015b</a>)</span> écrit l’accroissement du nombre d’espèces observées quand l’échantillon augmente de <span class="math inline">\(n\)</span> à <span class="math inline">\(n +\delta n\)</span> sous la forme d’une série entière, qu’il combine avec l’équation précédente pour en obtenir une approximation:
 <span class="math display">\[\begin{equation}
   s^{n +\delta n}
   \approx s^{n} + \sum_\nu {\left(-1 \right)^{\nu-1} s^{n}_{\nu} \left(\frac{\delta n}{n}\right)^{\nu}}.
@@ -538,89 +583,89 @@ En combinant ces approximations avec l’espérance du nombre d’espèces obser
 <p>La somme est infinie mais ses termes décroissent rapidement.
 Le nombre de termes à prendre en compte est d’autant plus grand que <span class="math inline">\(\frac{\delta n}{n}\)</span>, le niveau d’extrapolation, est grand.
 L’auteur conseille de ne pas pousser l’extrapolation au delà du double de <span class="math inline">\(n\)</span>.</p>
-<p>Cette méthode est comparée à l’extrapolation de la diversité d’ordre 0 (section <a href="4-entropie.html#sec:RarExtrapol">4.6.8</a>) et à l’estimateur de <span class="citation">Shen, Chao, et Lin (<a href="#ref-Shen2003" role="doc-biblioref">2003</a>)</span> (section <a href="3-chap-MesuresNeutres.html#sec:Extrapol">3.1.1.8</a>) dans l’illustration suivante.</p>
+<p>Cette méthode est comparée à l’extrapolation de la diversité d’ordre 0 (section <a href="4-entropie.html#sec:RarExtrapol">4.6.8</a>) et à l’estimateur de <span class="citation"><a href="references.html#ref-Shen2003" role="doc-biblioref">T.-J. Shen, Chao, et Lin</a> (<a href="references.html#ref-Shen2003" role="doc-biblioref">2003</a>)</span> (section <a href="3-chap-MesuresNeutres.html#sec:Extrapol">3.1.1.8</a>) dans l’illustration suivante.</p>
 <p>Une communauté théorique log-normale de 300 espèces est créée.
 Des inventaires de 1000 individus sont simulés et les trois méthodes d’extrapolation de la richesse spécifique sont appliquées pour estimer la richesse d’un échantillon de 1800 individus.
 Les résultats obtenus sont comparés à des inventaires directs de 1800 individus.</p>
 
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:Beguinot2015Fig"></span>
 <img src="MesuresBD_files/figure-html/Beguinot2015Fig-1.png" alt="Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen et al. (pointillés alternés vert), Béguinot (tirets rouges) ou avec le package iNEXT (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire." width="80%" />
 <p class="caption">
 Figure 21.4: Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen et al. (pointillés alternés vert), Béguinot (tirets rouges) ou avec le package iNEXT (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire.
 </p>
 </div>
-
+<p></p>
 <p>La figure <a href="21-chap-Accumulation.html#fig:Beguinot2015Fig">21.4</a> montre que les extrapolations sont bonnes et très similaires avec les trois méthodes.
 La distribution des 500 simulations d’extrapolation est proche de celle des 500 inventaires, avec une plus grande variabilité due à la quantiité plus faible de données disponibles.</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
-
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="21-chap-Accumulation.html#cb323-1"></a><span class="co"># Ecart-type de la communauté log-normale</span></span>
-<span id="cb323-2"><a href="21-chap-Accumulation.html#cb323-2"></a>sdlog &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb323-3"><a href="21-chap-Accumulation.html#cb323-3"></a><span class="co"># Nombre d&#39;espèces</span></span>
-<span id="cb323-4"><a href="21-chap-Accumulation.html#cb323-4"></a>S &lt;-<span class="st"> </span><span class="dv">300</span></span>
-<span id="cb323-5"><a href="21-chap-Accumulation.html#cb323-5"></a><span class="co"># Tirage des probabilités log-normales (l&#39;espérance est sans importance)</span></span>
-<span id="cb323-6"><a href="21-chap-Accumulation.html#cb323-6"></a>Ps &lt;-<span class="st"> </span><span class="kw">as.ProbaVector</span>(<span class="kw">rlnorm</span>(S, <span class="dv">0</span>, sdlog))</span>
-<span id="cb323-7"><a href="21-chap-Accumulation.html#cb323-7"></a><span class="co"># Taille de l&#39;inventaire</span></span>
-<span id="cb323-8"><a href="21-chap-Accumulation.html#cb323-8"></a>n &lt;-<span class="st"> </span><span class="dv">1000</span></span>
-<span id="cb323-9"><a href="21-chap-Accumulation.html#cb323-9"></a><span class="co"># Niveau d&#39;extrapolation</span></span>
-<span id="cb323-10"><a href="21-chap-Accumulation.html#cb323-10"></a>extra &lt;-<span class="st"> </span><span class="fl">0.8</span></span>
-<span id="cb323-11"><a href="21-chap-Accumulation.html#cb323-11"></a><span class="co"># Nombre de simulations</span></span>
-<span id="cb323-12"><a href="21-chap-Accumulation.html#cb323-12"></a>nSim &lt;-<span class="st"> </span><span class="dv">500</span></span>
-<span id="cb323-13"><a href="21-chap-Accumulation.html#cb323-13"></a><span class="co"># Création de nSim inventaires de n individus</span></span>
-<span id="cb323-14"><a href="21-chap-Accumulation.html#cb323-14"></a>Samples &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(nSim, n, Ps)</span>
-<span id="cb323-15"><a href="21-chap-Accumulation.html#cb323-15"></a><span class="co"># Richesse observée</span></span>
-<span id="cb323-16"><a href="21-chap-Accumulation.html#cb323-16"></a>S0 &lt;-<span class="st"> </span><span class="kw">colSums</span>(Samples <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
-<span id="cb323-17"><a href="21-chap-Accumulation.html#cb323-17"></a><span class="co"># Fonction d&#39;extrapolation selon Béguinot</span></span>
-<span id="cb323-18"><a href="21-chap-Accumulation.html#cb323-18"></a>ExtrapolateB &lt;-<span class="st"> </span><span class="cf">function</span>(Ns) {</span>
-<span id="cb323-19"><a href="21-chap-Accumulation.html#cb323-19"></a>  <span class="co"># Création d&#39;un tableau contenant le nombre d&#39;espèces par abondance</span></span>
-<span id="cb323-20"><a href="21-chap-Accumulation.html#cb323-20"></a>  f &lt;-<span class="st"> </span><span class="kw">AbdFreqCount</span>(Ns)</span>
-<span id="cb323-21"><a href="21-chap-Accumulation.html#cb323-21"></a>  <span class="co"># Calcul des termes de la somme</span></span>
-<span id="cb323-22"><a href="21-chap-Accumulation.html#cb323-22"></a>  s &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(f), <span class="cf">function</span>(i) </span>
-<span id="cb323-23"><a href="21-chap-Accumulation.html#cb323-23"></a>              (<span class="op">-</span><span class="dv">1</span>)<span class="op">^</span>(f[i, <span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span>) <span class="op">*</span><span class="st"> </span>f[i,<span class="dv">2</span>] <span class="op">*</span><span class="st"> </span>extra<span class="op">^</span>f[i, <span class="dv">1</span>])</span>
-<span id="cb323-24"><a href="21-chap-Accumulation.html#cb323-24"></a>  <span class="kw">return</span>(<span class="kw">sum</span>(s))</span>
-<span id="cb323-25"><a href="21-chap-Accumulation.html#cb323-25"></a>}</span>
-<span id="cb323-26"><a href="21-chap-Accumulation.html#cb323-26"></a><span class="co"># Extrapolation des inventaires</span></span>
-<span id="cb323-27"><a href="21-chap-Accumulation.html#cb323-27"></a>eB &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, ExtrapolateB) <span class="op">+</span><span class="st"> </span>S0</span>
-<span id="cb323-28"><a href="21-chap-Accumulation.html#cb323-28"></a><span class="co"># Extrapolation par iNext</span></span>
-<span id="cb323-29"><a href="21-chap-Accumulation.html#cb323-29"></a><span class="kw">library</span>(<span class="st">&quot;iNEXT&quot;</span>)</span>
-<span id="cb323-30"><a href="21-chap-Accumulation.html#cb323-30"></a>ei &lt;-<span class="st"> </span><span class="kw">iNEXT</span>(<span class="kw">as.data.frame</span>(Samples), <span class="dt">q =</span> <span class="dv">0</span>, <span class="dt">endpoint =</span> n<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>extra), </span>
-<span id="cb323-31"><a href="21-chap-Accumulation.html#cb323-31"></a>            <span class="dt">knots =</span> <span class="dv">4</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)<span class="op">$</span>iNextEst</span>
-<span id="cb323-32"><a href="21-chap-Accumulation.html#cb323-32"></a><span class="co"># Extraction des résultats de l&#39;objet obtenu</span></span>
-<span id="cb323-33"><a href="21-chap-Accumulation.html#cb323-33"></a>ei &lt;-<span class="st"> </span><span class="kw">sapply</span>(ei, <span class="cf">function</span>(x) x[[<span class="dv">4</span>]][<span class="dv">4</span>])</span>
-<span id="cb323-34"><a href="21-chap-Accumulation.html#cb323-34"></a><span class="co"># Fonction d&#39;extrapolation selon Shen et al.</span></span>
-<span id="cb323-35"><a href="21-chap-Accumulation.html#cb323-35"></a><span class="kw">library</span>(<span class="st">&quot;SPECIES&quot;</span>)</span>
-<span id="cb323-36"><a href="21-chap-Accumulation.html#cb323-36"></a>ExtrapolateS &lt;-<span class="st"> </span><span class="cf">function</span>(Ns) {</span>
-<span id="cb323-37"><a href="21-chap-Accumulation.html#cb323-37"></a>  <span class="co"># Nombre d&#39;espèces non observées</span></span>
-<span id="cb323-38"><a href="21-chap-Accumulation.html#cb323-38"></a>  <span class="kw">sink</span>(<span class="kw">tempfile</span>()) <span class="co"># Suppression des messages de jacknife()</span></span>
-<span id="cb323-39"><a href="21-chap-Accumulation.html#cb323-39"></a>  S0 &lt;-<span class="st"> </span><span class="kw">jackknife</span>(<span class="kw">AbdFreqCount</span>(Ns))<span class="op">$</span>Nhat <span class="op">-</span><span class="kw">sum</span>(Ns <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
-<span id="cb323-40"><a href="21-chap-Accumulation.html#cb323-40"></a>  <span class="kw">sink</span>() <span class="co"># restauration de l&#39;affichage normal</span></span>
-<span id="cb323-41"><a href="21-chap-Accumulation.html#cb323-41"></a>  <span class="co"># Taux de couverture</span></span>
-<span id="cb323-42"><a href="21-chap-Accumulation.html#cb323-42"></a>  C &lt;-<span class="st"> </span><span class="kw">Coverage</span>(Ns)</span>
-<span id="cb323-43"><a href="21-chap-Accumulation.html#cb323-43"></a>  <span class="co"># Espèces nouvelles</span></span>
-<span id="cb323-44"><a href="21-chap-Accumulation.html#cb323-44"></a>  <span class="kw">return</span>(S0<span class="op">*</span>(<span class="dv">1</span> <span class="op">-</span>(<span class="dv">1</span> <span class="op">-</span>(<span class="dv">1</span> <span class="op">-</span>C)<span class="op">/</span>S0)<span class="op">^</span>(n<span class="op">*</span>extra)))</span>
-<span id="cb323-45"><a href="21-chap-Accumulation.html#cb323-45"></a>}</span>
-<span id="cb323-46"><a href="21-chap-Accumulation.html#cb323-46"></a><span class="co"># Extrapolation des inventaires</span></span>
-<span id="cb323-47"><a href="21-chap-Accumulation.html#cb323-47"></a>eS &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, ExtrapolateS) <span class="op">+</span><span class="st"> </span>S0</span>
-<span id="cb323-48"><a href="21-chap-Accumulation.html#cb323-48"></a><span class="co"># Tirage de nSim communautés de taille n(1+extra)</span></span>
-<span id="cb323-49"><a href="21-chap-Accumulation.html#cb323-49"></a>Communities &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(nSim, n<span class="op">*</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>extra), Ps)</span>
-<span id="cb323-50"><a href="21-chap-Accumulation.html#cb323-50"></a>richCommunities &lt;-<span class="st"> </span><span class="kw">colSums</span>(Communities <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
-<span id="cb323-51"><a href="21-chap-Accumulation.html#cb323-51"></a><span class="co"># Distribution des résultats</span></span>
-<span id="cb323-52"><a href="21-chap-Accumulation.html#cb323-52"></a>deCommunities &lt;-<span class="st"> </span><span class="kw">density</span>(richCommunities)</span>
-<span id="cb323-53"><a href="21-chap-Accumulation.html#cb323-53"></a>deB &lt;-<span class="st"> </span><span class="kw">density</span>(eB)</span>
-<span id="cb323-54"><a href="21-chap-Accumulation.html#cb323-54"></a>dei &lt;-<span class="st"> </span><span class="kw">density</span>(ei)</span>
-<span id="cb323-55"><a href="21-chap-Accumulation.html#cb323-55"></a>deS &lt;-<span class="st"> </span><span class="kw">density</span>(eS)</span>
-<span id="cb323-56"><a href="21-chap-Accumulation.html#cb323-56"></a><span class="co"># Figure</span></span>
-<span id="cb323-57"><a href="21-chap-Accumulation.html#cb323-57"></a>Xlab &lt;-<span class="st"> &quot;Nombre d&#39;espèces&quot;</span></span>
-<span id="cb323-58"><a href="21-chap-Accumulation.html#cb323-58"></a>Ylab &lt;-<span class="st"> &quot;Densité de probabilité&quot;</span></span>
-<span id="cb323-59"><a href="21-chap-Accumulation.html#cb323-59"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(richCommunities, eB, ei, eS)) <span class="op">+</span></span>
-<span id="cb323-60"><a href="21-chap-Accumulation.html#cb323-60"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(richCommunities)) <span class="op">+</span></span>
-<span id="cb323-61"><a href="21-chap-Accumulation.html#cb323-61"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(eB), <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
-<span id="cb323-62"><a href="21-chap-Accumulation.html#cb323-62"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(ei), <span class="dt">lty =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span></span>
-<span id="cb323-63"><a href="21-chap-Accumulation.html#cb323-63"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(eS), <span class="dt">lty =</span> <span class="dv">4</span>, <span class="dt">col =</span> <span class="st">&quot;darkgreen&quot;</span>) <span class="op">+</span></span>
-<span id="cb323-64"><a href="21-chap-Accumulation.html#cb323-64"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> Xlab, <span class="dt">y =</span> Ylab)</span></code></pre></div>
-
-<p><span class="citation">Béguinot (<a href="#ref-Beguinot2015a" role="doc-biblioref">2015</a><a href="#ref-Beguinot2015a" role="doc-biblioref">a</a>)</span> propose également une forme analytique de la SAC extrapolée en combinant l’équation <a href="21-chap-Accumulation.html#eq:Beguinot2014">(21.1)</a> à l’estimateur jackknife d’ordre 2.
+<p></p>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="21-chap-Accumulation.html#cb317-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ecart-type de la communauté log-normale</span></span>
+<span id="cb317-2"><a href="21-chap-Accumulation.html#cb317-2" aria-hidden="true" tabindex="-1"></a>sdlog <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb317-3"><a href="21-chap-Accumulation.html#cb317-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Nombre d&#39;espèces</span></span>
+<span id="cb317-4"><a href="21-chap-Accumulation.html#cb317-4" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="dv">300</span></span>
+<span id="cb317-5"><a href="21-chap-Accumulation.html#cb317-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Tirage des probabilités log-normales (l&#39;espérance est sans importance)</span></span>
+<span id="cb317-6"><a href="21-chap-Accumulation.html#cb317-6" aria-hidden="true" tabindex="-1"></a>Ps <span class="ot">&lt;-</span> <span class="fu">as.ProbaVector</span>(<span class="fu">rlnorm</span>(S, <span class="dv">0</span>, sdlog))</span>
+<span id="cb317-7"><a href="21-chap-Accumulation.html#cb317-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Taille de l&#39;inventaire</span></span>
+<span id="cb317-8"><a href="21-chap-Accumulation.html#cb317-8" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb317-9"><a href="21-chap-Accumulation.html#cb317-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Niveau d&#39;extrapolation</span></span>
+<span id="cb317-10"><a href="21-chap-Accumulation.html#cb317-10" aria-hidden="true" tabindex="-1"></a>extra <span class="ot">&lt;-</span> <span class="fl">0.8</span></span>
+<span id="cb317-11"><a href="21-chap-Accumulation.html#cb317-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Nombre de simulations</span></span>
+<span id="cb317-12"><a href="21-chap-Accumulation.html#cb317-12" aria-hidden="true" tabindex="-1"></a>nSim <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb317-13"><a href="21-chap-Accumulation.html#cb317-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Création de nSim inventaires de n individus</span></span>
+<span id="cb317-14"><a href="21-chap-Accumulation.html#cb317-14" aria-hidden="true" tabindex="-1"></a>Samples <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(nSim, n, Ps)</span>
+<span id="cb317-15"><a href="21-chap-Accumulation.html#cb317-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Richesse observée</span></span>
+<span id="cb317-16"><a href="21-chap-Accumulation.html#cb317-16" aria-hidden="true" tabindex="-1"></a>S0 <span class="ot">&lt;-</span> <span class="fu">colSums</span>(Samples <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb317-17"><a href="21-chap-Accumulation.html#cb317-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Fonction d&#39;extrapolation selon Béguinot</span></span>
+<span id="cb317-18"><a href="21-chap-Accumulation.html#cb317-18" aria-hidden="true" tabindex="-1"></a>ExtrapolateB <span class="ot">&lt;-</span> <span class="cf">function</span>(Ns) {</span>
+<span id="cb317-19"><a href="21-chap-Accumulation.html#cb317-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Création d&#39;un tableau contenant le nombre d&#39;espèces par abondance</span></span>
+<span id="cb317-20"><a href="21-chap-Accumulation.html#cb317-20" aria-hidden="true" tabindex="-1"></a>  f <span class="ot">&lt;-</span> <span class="fu">AbdFreqCount</span>(Ns)</span>
+<span id="cb317-21"><a href="21-chap-Accumulation.html#cb317-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calcul des termes de la somme</span></span>
+<span id="cb317-22"><a href="21-chap-Accumulation.html#cb317-22" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(f), <span class="cf">function</span>(i) </span>
+<span id="cb317-23"><a href="21-chap-Accumulation.html#cb317-23" aria-hidden="true" tabindex="-1"></a>              (<span class="sc">-</span><span class="dv">1</span>)<span class="sc">^</span>(f[i, <span class="dv">1</span>]<span class="sc">-</span><span class="dv">1</span>) <span class="sc">*</span> f[i,<span class="dv">2</span>] <span class="sc">*</span> extra<span class="sc">^</span>f[i, <span class="dv">1</span>])</span>
+<span id="cb317-24"><a href="21-chap-Accumulation.html#cb317-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">sum</span>(s))</span>
+<span id="cb317-25"><a href="21-chap-Accumulation.html#cb317-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb317-26"><a href="21-chap-Accumulation.html#cb317-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Extrapolation des inventaires</span></span>
+<span id="cb317-27"><a href="21-chap-Accumulation.html#cb317-27" aria-hidden="true" tabindex="-1"></a>eB <span class="ot">&lt;-</span> <span class="fu">apply</span>(Samples, <span class="dv">2</span>, ExtrapolateB) <span class="sc">+</span> S0</span>
+<span id="cb317-28"><a href="21-chap-Accumulation.html#cb317-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Extrapolation par iNext</span></span>
+<span id="cb317-29"><a href="21-chap-Accumulation.html#cb317-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;iNEXT&quot;</span>)</span>
+<span id="cb317-30"><a href="21-chap-Accumulation.html#cb317-30" aria-hidden="true" tabindex="-1"></a>ei <span class="ot">&lt;-</span> <span class="fu">iNEXT</span>(<span class="fu">as.data.frame</span>(Samples), <span class="at">q =</span> <span class="dv">0</span>, <span class="at">endpoint =</span> n<span class="sc">*</span>(<span class="dv">1</span><span class="sc">+</span>extra), </span>
+<span id="cb317-31"><a href="21-chap-Accumulation.html#cb317-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">knots =</span> <span class="dv">4</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)<span class="sc">$</span>iNextEst</span>
+<span id="cb317-32"><a href="21-chap-Accumulation.html#cb317-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraction des résultats de l&#39;objet obtenu</span></span>
+<span id="cb317-33"><a href="21-chap-Accumulation.html#cb317-33" aria-hidden="true" tabindex="-1"></a>ei <span class="ot">&lt;-</span> <span class="fu">sapply</span>(ei, <span class="cf">function</span>(x) x[[<span class="dv">4</span>]][<span class="dv">4</span>])</span>
+<span id="cb317-34"><a href="21-chap-Accumulation.html#cb317-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Fonction d&#39;extrapolation selon Shen et al.</span></span>
+<span id="cb317-35"><a href="21-chap-Accumulation.html#cb317-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;SPECIES&quot;</span>)</span>
+<span id="cb317-36"><a href="21-chap-Accumulation.html#cb317-36" aria-hidden="true" tabindex="-1"></a>ExtrapolateS <span class="ot">&lt;-</span> <span class="cf">function</span>(Ns) {</span>
+<span id="cb317-37"><a href="21-chap-Accumulation.html#cb317-37" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Nombre d&#39;espèces non observées</span></span>
+<span id="cb317-38"><a href="21-chap-Accumulation.html#cb317-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sink</span>(<span class="fu">tempfile</span>()) <span class="co"># Suppression des messages de jacknife()</span></span>
+<span id="cb317-39"><a href="21-chap-Accumulation.html#cb317-39" aria-hidden="true" tabindex="-1"></a>  S0 <span class="ot">&lt;-</span> <span class="fu">jackknife</span>(<span class="fu">AbdFreqCount</span>(Ns))<span class="sc">$</span>Nhat <span class="sc">-</span><span class="fu">sum</span>(Ns <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb317-40"><a href="21-chap-Accumulation.html#cb317-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sink</span>() <span class="co"># restauration de l&#39;affichage normal</span></span>
+<span id="cb317-41"><a href="21-chap-Accumulation.html#cb317-41" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Taux de couverture</span></span>
+<span id="cb317-42"><a href="21-chap-Accumulation.html#cb317-42" aria-hidden="true" tabindex="-1"></a>  C <span class="ot">&lt;-</span> <span class="fu">Coverage</span>(Ns)</span>
+<span id="cb317-43"><a href="21-chap-Accumulation.html#cb317-43" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Espèces nouvelles</span></span>
+<span id="cb317-44"><a href="21-chap-Accumulation.html#cb317-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(S0<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span>(<span class="dv">1</span> <span class="sc">-</span>(<span class="dv">1</span> <span class="sc">-</span>C)<span class="sc">/</span>S0)<span class="sc">^</span>(n<span class="sc">*</span>extra)))</span>
+<span id="cb317-45"><a href="21-chap-Accumulation.html#cb317-45" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb317-46"><a href="21-chap-Accumulation.html#cb317-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Extrapolation des inventaires</span></span>
+<span id="cb317-47"><a href="21-chap-Accumulation.html#cb317-47" aria-hidden="true" tabindex="-1"></a>eS <span class="ot">&lt;-</span> <span class="fu">apply</span>(Samples, <span class="dv">2</span>, ExtrapolateS) <span class="sc">+</span> S0</span>
+<span id="cb317-48"><a href="21-chap-Accumulation.html#cb317-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Tirage de nSim communautés de taille n(1+extra)</span></span>
+<span id="cb317-49"><a href="21-chap-Accumulation.html#cb317-49" aria-hidden="true" tabindex="-1"></a>Communities <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(nSim, n<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">+</span> extra), Ps)</span>
+<span id="cb317-50"><a href="21-chap-Accumulation.html#cb317-50" aria-hidden="true" tabindex="-1"></a>richCommunities <span class="ot">&lt;-</span> <span class="fu">colSums</span>(Communities <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb317-51"><a href="21-chap-Accumulation.html#cb317-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Distribution des résultats</span></span>
+<span id="cb317-52"><a href="21-chap-Accumulation.html#cb317-52" aria-hidden="true" tabindex="-1"></a>deCommunities <span class="ot">&lt;-</span> <span class="fu">density</span>(richCommunities)</span>
+<span id="cb317-53"><a href="21-chap-Accumulation.html#cb317-53" aria-hidden="true" tabindex="-1"></a>deB <span class="ot">&lt;-</span> <span class="fu">density</span>(eB)</span>
+<span id="cb317-54"><a href="21-chap-Accumulation.html#cb317-54" aria-hidden="true" tabindex="-1"></a>dei <span class="ot">&lt;-</span> <span class="fu">density</span>(ei)</span>
+<span id="cb317-55"><a href="21-chap-Accumulation.html#cb317-55" aria-hidden="true" tabindex="-1"></a>deS <span class="ot">&lt;-</span> <span class="fu">density</span>(eS)</span>
+<span id="cb317-56"><a href="21-chap-Accumulation.html#cb317-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Figure</span></span>
+<span id="cb317-57"><a href="21-chap-Accumulation.html#cb317-57" aria-hidden="true" tabindex="-1"></a>Xlab <span class="ot">&lt;-</span> <span class="st">&quot;Nombre d&#39;espèces&quot;</span></span>
+<span id="cb317-58"><a href="21-chap-Accumulation.html#cb317-58" aria-hidden="true" tabindex="-1"></a>Ylab <span class="ot">&lt;-</span> <span class="st">&quot;Densité de probabilité&quot;</span></span>
+<span id="cb317-59"><a href="21-chap-Accumulation.html#cb317-59" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(richCommunities, eB, ei, eS)) <span class="sc">+</span></span>
+<span id="cb317-60"><a href="21-chap-Accumulation.html#cb317-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(richCommunities)) <span class="sc">+</span></span>
+<span id="cb317-61"><a href="21-chap-Accumulation.html#cb317-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(eB), <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb317-62"><a href="21-chap-Accumulation.html#cb317-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(ei), <span class="at">lty =</span> <span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb317-63"><a href="21-chap-Accumulation.html#cb317-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(eS), <span class="at">lty =</span> <span class="dv">4</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>) <span class="sc">+</span></span>
+<span id="cb317-64"><a href="21-chap-Accumulation.html#cb317-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> Xlab, <span class="at">y =</span> Ylab)</span></code></pre></div>
+<p></p>
+<p><span class="citation"><a href="references.html#ref-Beguinot2015a" role="doc-biblioref">Béguinot</a> (<a href="references.html#ref-Beguinot2015a" role="doc-biblioref">2015a</a>)</span> propose également une forme analytique de la SAC extrapolée en combinant l’équation <a href="21-chap-Accumulation.html#eq:Beguinot2014">(21.1)</a> à l’estimateur jackknife d’ordre 2.
 Alors, dans le domaine de validité de l’estimateur jackknife 2, c’est-à-dire quand le nombre de singletons est supérieur à 0,6 fois le nombre de doubletons, la richesse pour <span class="math inline">\(n\)</span> individus est
 <span class="math display" id="eq:Beguinot2015a">\[\begin{equation}
   \tag{21.2}
@@ -633,97 +678,99 @@ Alors, dans le domaine de validité de l’estimateur jackknife 2, c’est-à-di
 où <span class="math inline">\(n_0\)</span> est la taille de l’inventaire de départ.</p>
 <p>La méthode est testée ici sur la même communauté log-normale.
 500 inventaires de 5000 individus sont réalisés et chacun est extrapolé jusqu’à 25000 individus.</p>
-
-<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="21-chap-Accumulation.html#cb324-1"></a><span class="co"># Extrapolation jusqu&#39;à</span></span>
-<span id="cb324-2"><a href="21-chap-Accumulation.html#cb324-2"></a>Nmax &lt;-<span class="st"> </span><span class="dv">25000</span></span>
-<span id="cb324-3"><a href="21-chap-Accumulation.html#cb324-3"></a><span class="co"># SAC réelle, obtenue par la somme des entropies de Simpson généralisées</span></span>
-<span id="cb324-4"><a href="21-chap-Accumulation.html#cb324-4"></a><span class="co"># Calcul de p(1-p)^r pour toutes les espèces (en lignes) et tous les r (en colonnes)</span></span>
-<span id="cb324-5"><a href="21-chap-Accumulation.html#cb324-5"></a>GSsr &lt;-<span class="st"> </span>Ps<span class="op">*</span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>Nmax, <span class="cf">function</span>(r) (<span class="dv">1</span><span class="op">-</span>Ps)<span class="op">^</span>r)</span>
-<span id="cb324-6"><a href="21-chap-Accumulation.html#cb324-6"></a><span class="co"># Simpson généralisé pour tous les r</span></span>
-<span id="cb324-7"><a href="21-chap-Accumulation.html#cb324-7"></a>GSr &lt;-<span class="st"> </span><span class="kw">colSums</span>(GSsr)</span>
-<span id="cb324-8"><a href="21-chap-Accumulation.html#cb324-8"></a><span class="co"># SAC: somme cumulée des entropies de Simpson généralisées</span></span>
-<span id="cb324-9"><a href="21-chap-Accumulation.html#cb324-9"></a>SAC &lt;-<span class="st"> </span><span class="kw">cumsum</span>(GSr)</span>
-<span id="cb324-10"><a href="21-chap-Accumulation.html#cb324-10"></a><span class="co"># Fonction d&#39;extrapolation de la SAC                  </span></span>
-<span id="cb324-11"><a href="21-chap-Accumulation.html#cb324-11"></a>ExtraSAC &lt;-<span class="st"> </span><span class="cf">function</span>(Ns, N) {</span>
-<span id="cb324-12"><a href="21-chap-Accumulation.html#cb324-12"></a>  <span class="co"># Ns est le vecteur des abondances de l&#39;échantillon,</span></span>
-<span id="cb324-13"><a href="21-chap-Accumulation.html#cb324-13"></a>  <span class="co"># N est le vecteur des tailles à extrapoler </span></span>
-<span id="cb324-14"><a href="21-chap-Accumulation.html#cb324-14"></a>  n0 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns)</span>
-<span id="cb324-15"><a href="21-chap-Accumulation.html#cb324-15"></a>  Sn0 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns<span class="op">&gt;</span><span class="dv">0</span>)</span>
-<span id="cb324-16"><a href="21-chap-Accumulation.html#cb324-16"></a>  f1 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns<span class="op">==</span><span class="dv">1</span>)</span>
-<span id="cb324-17"><a href="21-chap-Accumulation.html#cb324-17"></a>  f2 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns<span class="op">==</span><span class="dv">2</span>)</span>
-<span id="cb324-18"><a href="21-chap-Accumulation.html#cb324-18"></a>  <span class="co"># Extrapolation à chaque taille</span></span>
-<span id="cb324-19"><a href="21-chap-Accumulation.html#cb324-19"></a>  <span class="kw">vapply</span>(N, <span class="cf">function</span>(n) Sn0<span class="op">+</span><span class="dv">2</span><span class="op">*</span>f1<span class="op">-</span>f2<span class="op">-</span>(<span class="dv">3</span><span class="op">*</span>f1<span class="dv">-2</span><span class="op">*</span>f2)<span class="op">*</span>n0<span class="op">/</span>n<span class="op">-</span>(f2<span class="op">-</span>f1)<span class="op">*</span>(n0<span class="op">/</span>n)<span class="op">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
-<span id="cb324-20"><a href="21-chap-Accumulation.html#cb324-20"></a>}</span>
-<span id="cb324-21"><a href="21-chap-Accumulation.html#cb324-21"></a><span class="co"># Taille de l&#39;échantillon</span></span>
-<span id="cb324-22"><a href="21-chap-Accumulation.html#cb324-22"></a>n &lt;-<span class="st"> </span><span class="dv">5000</span></span>
-<span id="cb324-23"><a href="21-chap-Accumulation.html#cb324-23"></a><span class="co"># Tirage de nSim inventaires dans la communauté log-normale</span></span>
-<span id="cb324-24"><a href="21-chap-Accumulation.html#cb324-24"></a>Samples &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(nSim, n, Ps)</span>
-<span id="cb324-25"><a href="21-chap-Accumulation.html#cb324-25"></a><span class="co"># Extrapolation des inventaires</span></span>
-<span id="cb324-26"><a href="21-chap-Accumulation.html#cb324-26"></a>ExtraSACs &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, ExtraSAC, n<span class="op">:</span>Nmax)</span>
-<span id="cb324-27"><a href="21-chap-Accumulation.html#cb324-27"></a><span class="co"># Moyenne et intervalle de confiance à 95%</span></span>
-<span id="cb324-28"><a href="21-chap-Accumulation.html#cb324-28"></a>Moyenne &lt;-<span class="st"> </span><span class="kw">apply</span>(ExtraSACs, <span class="dv">1</span>, mean)</span>
-<span id="cb324-29"><a href="21-chap-Accumulation.html#cb324-29"></a>Max &lt;-<span class="st"> </span><span class="kw">apply</span>(ExtraSACs, <span class="dv">1</span>, quantile, <span class="dt">probs=</span>.<span class="dv">975</span>)</span>
-<span id="cb324-30"><a href="21-chap-Accumulation.html#cb324-30"></a>Min &lt;-<span class="st"> </span><span class="kw">apply</span>(ExtraSACs, <span class="dv">1</span>, quantile, <span class="dt">probs=</span>.<span class="dv">025</span>)</span>
-<span id="cb324-31"><a href="21-chap-Accumulation.html#cb324-31"></a><span class="co"># Taille d&#39;échantillon réduite</span></span>
-<span id="cb324-32"><a href="21-chap-Accumulation.html#cb324-32"></a>nReduit &lt;-<span class="st"> </span><span class="dv">1000</span></span>
-<span id="cb324-33"><a href="21-chap-Accumulation.html#cb324-33"></a><span class="co"># Tirage de nSim inventaires dans la communauté log-normale</span></span>
-<span id="cb324-34"><a href="21-chap-Accumulation.html#cb324-34"></a>Samples &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(nSim, nReduit, Ps)</span>
-<span id="cb324-35"><a href="21-chap-Accumulation.html#cb324-35"></a><span class="co"># Extrapolation des inventaires</span></span>
-<span id="cb324-36"><a href="21-chap-Accumulation.html#cb324-36"></a>ExtraSACs &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, ExtraSAC, nReduit<span class="op">:</span>Nmax)</span>
-<span id="cb324-37"><a href="21-chap-Accumulation.html#cb324-37"></a><span class="co"># Moyenne</span></span>
-<span id="cb324-38"><a href="21-chap-Accumulation.html#cb324-38"></a>MoyenneReduit &lt;-<span class="st"> </span><span class="kw">apply</span>(ExtraSACs, <span class="dv">1</span>, mean)</span></code></pre></div>
-
+<p></p>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="21-chap-Accumulation.html#cb318-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extrapolation jusqu&#39;à</span></span>
+<span id="cb318-2"><a href="21-chap-Accumulation.html#cb318-2" aria-hidden="true" tabindex="-1"></a>Nmax <span class="ot">&lt;-</span> <span class="dv">25000</span></span>
+<span id="cb318-3"><a href="21-chap-Accumulation.html#cb318-3" aria-hidden="true" tabindex="-1"></a><span class="co"># SAC réelle, obtenue par la somme des entropies de Simpson</span></span>
+<span id="cb318-4"><a href="21-chap-Accumulation.html#cb318-4" aria-hidden="true" tabindex="-1"></a><span class="co"># généralisées Calcul de p(1-p)^r pour toutes les espèces (en</span></span>
+<span id="cb318-5"><a href="21-chap-Accumulation.html#cb318-5" aria-hidden="true" tabindex="-1"></a><span class="co"># lignes) et tous les r (en colonnes)</span></span>
+<span id="cb318-6"><a href="21-chap-Accumulation.html#cb318-6" aria-hidden="true" tabindex="-1"></a>GSsr <span class="ot">&lt;-</span> Ps <span class="sc">*</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span>Nmax, <span class="cf">function</span>(r) (<span class="dv">1</span> <span class="sc">-</span> Ps)<span class="sc">^</span>r)</span>
+<span id="cb318-7"><a href="21-chap-Accumulation.html#cb318-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Simpson généralisé pour tous les r</span></span>
+<span id="cb318-8"><a href="21-chap-Accumulation.html#cb318-8" aria-hidden="true" tabindex="-1"></a>GSr <span class="ot">&lt;-</span> <span class="fu">colSums</span>(GSsr)</span>
+<span id="cb318-9"><a href="21-chap-Accumulation.html#cb318-9" aria-hidden="true" tabindex="-1"></a><span class="co"># SAC: somme cumulée des entropies de Simpson généralisées</span></span>
+<span id="cb318-10"><a href="21-chap-Accumulation.html#cb318-10" aria-hidden="true" tabindex="-1"></a>SAC <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(GSr)</span>
+<span id="cb318-11"><a href="21-chap-Accumulation.html#cb318-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Fonction d&#39;extrapolation de la SAC</span></span>
+<span id="cb318-12"><a href="21-chap-Accumulation.html#cb318-12" aria-hidden="true" tabindex="-1"></a>ExtraSAC <span class="ot">&lt;-</span> <span class="cf">function</span>(Ns, N) {</span>
+<span id="cb318-13"><a href="21-chap-Accumulation.html#cb318-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ns est le vecteur des abondances de l&#39;échantillon, N est le</span></span>
+<span id="cb318-14"><a href="21-chap-Accumulation.html#cb318-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># vecteur des tailles à extrapoler</span></span>
+<span id="cb318-15"><a href="21-chap-Accumulation.html#cb318-15" aria-hidden="true" tabindex="-1"></a>    n0 <span class="ot">&lt;-</span> <span class="fu">sum</span>(Ns)</span>
+<span id="cb318-16"><a href="21-chap-Accumulation.html#cb318-16" aria-hidden="true" tabindex="-1"></a>    Sn0 <span class="ot">&lt;-</span> <span class="fu">sum</span>(Ns <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb318-17"><a href="21-chap-Accumulation.html#cb318-17" aria-hidden="true" tabindex="-1"></a>    f1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(Ns <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb318-18"><a href="21-chap-Accumulation.html#cb318-18" aria-hidden="true" tabindex="-1"></a>    f2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(Ns <span class="sc">==</span> <span class="dv">2</span>)</span>
+<span id="cb318-19"><a href="21-chap-Accumulation.html#cb318-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extrapolation à chaque taille</span></span>
+<span id="cb318-20"><a href="21-chap-Accumulation.html#cb318-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">vapply</span>(N, <span class="cf">function</span>(n) Sn0 <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> f1 <span class="sc">-</span> f2 <span class="sc">-</span> (<span class="dv">3</span> <span class="sc">*</span> f1 <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> f2) <span class="sc">*</span> </span>
+<span id="cb318-21"><a href="21-chap-Accumulation.html#cb318-21" aria-hidden="true" tabindex="-1"></a>        n0<span class="sc">/</span>n <span class="sc">-</span> (f2 <span class="sc">-</span> f1) <span class="sc">*</span> (n0<span class="sc">/</span>n)<span class="sc">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
+<span id="cb318-22"><a href="21-chap-Accumulation.html#cb318-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb318-23"><a href="21-chap-Accumulation.html#cb318-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Taille de l&#39;échantillon</span></span>
+<span id="cb318-24"><a href="21-chap-Accumulation.html#cb318-24" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
+<span id="cb318-25"><a href="21-chap-Accumulation.html#cb318-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Tirage de nSim inventaires dans la communauté log-normale</span></span>
+<span id="cb318-26"><a href="21-chap-Accumulation.html#cb318-26" aria-hidden="true" tabindex="-1"></a>Samples <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(nSim, n, Ps)</span>
+<span id="cb318-27"><a href="21-chap-Accumulation.html#cb318-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Extrapolation des inventaires</span></span>
+<span id="cb318-28"><a href="21-chap-Accumulation.html#cb318-28" aria-hidden="true" tabindex="-1"></a>ExtraSACs <span class="ot">&lt;-</span> <span class="fu">apply</span>(Samples, <span class="dv">2</span>, ExtraSAC, n<span class="sc">:</span>Nmax)</span>
+<span id="cb318-29"><a href="21-chap-Accumulation.html#cb318-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Moyenne et intervalle de confiance à 95%</span></span>
+<span id="cb318-30"><a href="21-chap-Accumulation.html#cb318-30" aria-hidden="true" tabindex="-1"></a>Moyenne <span class="ot">&lt;-</span> <span class="fu">apply</span>(ExtraSACs, <span class="dv">1</span>, mean)</span>
+<span id="cb318-31"><a href="21-chap-Accumulation.html#cb318-31" aria-hidden="true" tabindex="-1"></a>Max <span class="ot">&lt;-</span> <span class="fu">apply</span>(ExtraSACs, <span class="dv">1</span>, quantile, <span class="at">probs =</span> <span class="fl">0.975</span>)</span>
+<span id="cb318-32"><a href="21-chap-Accumulation.html#cb318-32" aria-hidden="true" tabindex="-1"></a>Min <span class="ot">&lt;-</span> <span class="fu">apply</span>(ExtraSACs, <span class="dv">1</span>, quantile, <span class="at">probs =</span> <span class="fl">0.025</span>)</span>
+<span id="cb318-33"><a href="21-chap-Accumulation.html#cb318-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Taille d&#39;échantillon réduite</span></span>
+<span id="cb318-34"><a href="21-chap-Accumulation.html#cb318-34" aria-hidden="true" tabindex="-1"></a>nReduit <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb318-35"><a href="21-chap-Accumulation.html#cb318-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Tirage de nSim inventaires dans la communauté log-normale</span></span>
+<span id="cb318-36"><a href="21-chap-Accumulation.html#cb318-36" aria-hidden="true" tabindex="-1"></a>Samples <span class="ot">&lt;-</span> <span class="fu">rmultinom</span>(nSim, nReduit, Ps)</span>
+<span id="cb318-37"><a href="21-chap-Accumulation.html#cb318-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Extrapolation des inventaires</span></span>
+<span id="cb318-38"><a href="21-chap-Accumulation.html#cb318-38" aria-hidden="true" tabindex="-1"></a>ExtraSACs <span class="ot">&lt;-</span> <span class="fu">apply</span>(Samples, <span class="dv">2</span>, ExtraSAC, nReduit<span class="sc">:</span>Nmax)</span>
+<span id="cb318-39"><a href="21-chap-Accumulation.html#cb318-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Moyenne</span></span>
+<span id="cb318-40"><a href="21-chap-Accumulation.html#cb318-40" aria-hidden="true" tabindex="-1"></a>MoyenneReduit <span class="ot">&lt;-</span> <span class="fu">apply</span>(ExtraSACs, <span class="dv">1</span>, mean)</span></code></pre></div>
+<p></p>
 <p>À titre de comparaison, l’extrapolation d’un seul inventaire de 1000 individus est également tentée.</p>
 
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:Beguinot2015aFig"></span>
 <img src="MesuresBD_files/figure-html/Beguinot2015aFig-1.png" alt="Extrapolation de 500 inventaires de 5000 individus (valeurs moyenne en tireté rouge et enveloppe de confiance à 95% en gris) superposée à la SAC réelle d’une communauté log-normale de 300 espèces. L’extrapolation (en pointllés bleu) d’un inventaire limité à 1000 individus est sévèrement sous-estimée." width="80%" />
 <p class="caption">
 Figure 21.5: Extrapolation de 500 inventaires de 5000 individus (valeurs moyenne en tireté rouge et enveloppe de confiance à 95% en gris) superposée à la SAC réelle d’une communauté log-normale de 300 espèces. L’extrapolation (en pointllés bleu) d’un inventaire limité à 1000 individus est sévèrement sous-estimée.
 </p>
 </div>
-
+<p></p>
 <p>L’extrapolation fonctionne assez bien (figure <a href="21-chap-Accumulation.html#fig:Beguinot2015aFig">21.5</a>) tant que l’échantillonnage n’est pas trop faible.
 Avec un inventaire de 5000 individus dans cet exemple, l’estimation de la richesse asymptotique par l’estimateur jackknife 2 est correcte, l’extrapolation de la SAC l’est aussi.
 En limitant l’inventaire à 1000 individus, l’information disponible est trop limitée.</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
-
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="21-chap-Accumulation.html#cb325-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb325-2"><a href="21-chap-Accumulation.html#cb325-2"></a><span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(x, <span class="dt">ymin =</span> Min, <span class="dt">ymax =</span> Max), </span>
-<span id="cb325-3"><a href="21-chap-Accumulation.html#cb325-3"></a>              <span class="kw">data.frame</span>(<span class="dt">x =</span> n<span class="op">:</span>Nmax, Min, Max), <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
-<span id="cb325-4"><a href="21-chap-Accumulation.html#cb325-4"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span>Nmax, <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, SAC))) <span class="op">+</span></span>
-<span id="cb325-5"><a href="21-chap-Accumulation.html#cb325-5"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">data.frame</span>(<span class="dt">x =</span> n<span class="op">:</span>Nmax, <span class="dt">y =</span> Moyenne), </span>
-<span id="cb325-6"><a href="21-chap-Accumulation.html#cb325-6"></a>            <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></span>
-<span id="cb325-7"><a href="21-chap-Accumulation.html#cb325-7"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">data.frame</span>(<span class="dt">x =</span> nReduit<span class="op">:</span>Nmax, <span class="dt">y =</span> MoyenneReduit), </span>
-<span id="cb325-8"><a href="21-chap-Accumulation.html#cb325-8"></a>            <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
-<span id="cb325-9"><a href="21-chap-Accumulation.html#cb325-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Nombre d&#39;individus&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span></code></pre></div>
-
+<p></p>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="21-chap-Accumulation.html#cb319-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb319-2"><a href="21-chap-Accumulation.html#cb319-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(x, <span class="at">ymin =</span> Min, <span class="at">ymax =</span> Max), </span>
+<span id="cb319-3"><a href="21-chap-Accumulation.html#cb319-3" aria-hidden="true" tabindex="-1"></a>              <span class="fu">data.frame</span>(<span class="at">x =</span> n<span class="sc">:</span>Nmax, Min, Max), <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb319-4"><a href="21-chap-Accumulation.html#cb319-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(x, y), <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>Nmax, <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, SAC))) <span class="sc">+</span></span>
+<span id="cb319-5"><a href="21-chap-Accumulation.html#cb319-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(x, y), <span class="fu">data.frame</span>(<span class="at">x =</span> n<span class="sc">:</span>Nmax, <span class="at">y =</span> Moyenne), </span>
+<span id="cb319-6"><a href="21-chap-Accumulation.html#cb319-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb319-7"><a href="21-chap-Accumulation.html#cb319-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(x, y), <span class="fu">data.frame</span>(<span class="at">x =</span> nReduit<span class="sc">:</span>Nmax, <span class="at">y =</span> MoyenneReduit), </span>
+<span id="cb319-8"><a href="21-chap-Accumulation.html#cb319-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lty =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb319-9"><a href="21-chap-Accumulation.html#cb319-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Nombre d&#39;individus&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span></code></pre></div>
+<p></p>
 </div>
-<div id="influence-de-la-structure-spatiale" class="section level2">
+<div id="influence-de-la-structure-spatiale" class="section level2" number="21.3">
 <h2><span class="header-section-number">21.3</span> Influence de la structure spatiale</h2>
 <p>Les modèles classiques de courbes aire-espèces supposent un tirage indépendant des individus.
 Sur le terrain, par exemple en forêt, l’échantillonnage est continu: s’il existe une structure spatiale comme des agrégats, la probabilité que l’arbre suivant soit d’une espèce donnée dépend de ses voisins, donc de l’arbre précédent.
 Intuitivement, on comprend bien que le nouvel arbre de la même espèce apporte moins d’information, ce qui revient à surestimer la taille de l’échantillon ou sous-estimer la richesse pour une taille d’échantillon fixée.</p>
-<p><span class="citation">Plotkin, Potts, Leslie, et al. (<a href="#ref-Plotkin2000a" role="doc-biblioref">2000</a>)</span> traitent un problème un peu différent: connaissant le nombre total d’espèces dans les dispositifs de la figure <a href="22-diversité-régionale.html#fig:CTFS">22.2</a>, ils tracent la courbe de raréfaction théorique qui considère simplement que la probabilité de ne pas rencontrer une espèce suit une loi binomiale, les tirages étant indépendants.
+<p><span class="citation"><a href="references.html#ref-Plotkin2000a" role="doc-biblioref">Plotkin, Potts, Leslie, et al.</a> (<a href="references.html#ref-Plotkin2000a" role="doc-biblioref">2000</a>)</span> traitent un problème un peu différent: connaissant le nombre total d’espèces dans les dispositifs de la figure <a href="22-diversité-régionale.html#fig:CTFS">22.2</a>, ils tracent la courbe de raréfaction théorique qui considère simplement que la probabilité de ne pas rencontrer une espèce suit une loi binomiale, les tirages étant indépendants.
 Ce modèle surestime largement la diversité pour les petites surfaces: la probabilité de ne pas rencontrer une espèce agrégative est sous-estimée.
 Le biais diminue quand la surface d’échantillonnage augmente, parce que la taille relative des agrégats diminue.</p>
 <p>Les effets de l’agrégation peuvent donc être opposés selon la question posée.
 Dans tous les cas, il suffit de considérer qu’un agrégat surestime le nombre d’arbres de son espèce qui devrait être pris en compte dans le cadre d’un modèle à tirages indépendants.</p>
 <p>Plotkin et al. proposent une méthode permettant de prendre en compte la structure spatiale pour fournir des modèles de courbes aire-espèces fiables, dans un cadre particulier où le nombre total d’espèces et leur structure spatiale sont connus.
 La méthode nécessite une carte des individus.
-Le semis de point est considéré comme le résultat d’un processus de Neyman-Scott <span class="citation">(Neyman et Scott <a href="#ref-Neyman1958" role="doc-biblioref">1958</a>)</span>: des centres d’agrégats sont tirés de façon complètement aléatoire et les individus sont répartis autour des centres selon une loi normale en deux dimensions.
+Le semis de point est considéré comme le résultat d’un processus de Neyman-Scott <span class="citation">(<a href="references.html#ref-Neyman1958" role="doc-biblioref">Neyman et Scott 1958</a>)</span>: des centres d’agrégats sont tirés de façon complètement aléatoire et les individus sont répartis autour des centres selon une loi normale en deux dimensions.
 Les paramètres du processus sont estimés à partir du semis de points, puis la courbe aire-espèces est obtenue par simulation du processus.</p>
-<p>Le problème est traité de façon plus approfondie par <span class="citation">Picard, Karembe, et Birnbaum (<a href="#ref-Picard2004" role="doc-biblioref">2004</a>)</span> qui s’appuient sur la théorie des processus ponctuels.
+<p>Le problème est traité de façon plus approfondie par <span class="citation"><a href="references.html#ref-Picard2004" role="doc-biblioref">Picard, Karembe, et Birnbaum</a> (<a href="references.html#ref-Picard2004" role="doc-biblioref">2004</a>)</span> qui s’appuient sur la théorie des processus ponctuels.
 En supposant que la distribution spatiale des espèces est homogène (c’est-à-dire stationnaire et isotrope), la forme du domaine échantillonné n’a pas d’importance: l’aire <span class="math inline">\(A\)</span> peut être représentée par un cercle de rayon <span class="math inline">\(r=\sqrt{{A}/{\pi}}\)</span>.
 La probabilité d’observer l’espèce <span class="math inline">\(s\)</span> dans <span class="math inline">\(A\)</span> est identique à la probabilité que la distance entre un individu de l’espèce <span class="math inline">\(s\)</span> et un point arbitrairement choisi soit inférieure à <span class="math inline">\(r\)</span>.
-Cette probabilité a été largement étudiée et est connue sous le nom de fonction <span class="math inline">\(F\)</span> de <span class="citation">Diggle (<a href="#ref-Diggle1983" role="doc-biblioref">1983</a>)</span>, ou <em>empty space function</em>.
+Cette probabilité a été largement étudiée et est connue sous le nom de fonction <span class="math inline">\(F\)</span> de <span class="citation"><a href="references.html#ref-Diggle1983" role="doc-biblioref">Diggle</a> (<a href="references.html#ref-Diggle1983" role="doc-biblioref">1983</a>)</span>, ou <em>empty space function</em>.
 <span class="math inline">\(F_s(r)\)</span> est la fonction d’espace vide de l’espèce <span class="math inline">\(s\)</span>, dont l’argument est la distance <span class="math inline">\(r\)</span>.
 Le nombre d’espèces peut être écrit comme la somme des fonctions <span class="math inline">\(F_s\)</span>:</p>
 <p><span class="math display" id="eq:SARF">\[\begin{equation}
   \tag{21.3}
   {\mathbb E}\left( S^A \right)  = \sum_s{F_s\left( r \right) }.
 \end{equation}\]</span></p>
-<p>La fonction <span class="math inline">\(F_s(r)\)</span> est connue pour les processus ponctuels courants <span class="citation">(Cressie <a href="#ref-Cressie1993" role="doc-biblioref">1993</a>, Stoyan1994)</span>.
+<p>La fonction <span class="math inline">\(F_s(r)\)</span> est connue pour les processus ponctuels courants <span class="citation">(<a href="references.html#ref-Cressie1993" role="doc-biblioref">N. A. Cressie 1993, Stoyan1994</a>)</span>.
 Le processus de Poisson place les individus indépendamment les uns des autres avec la même probabilité partout.
 Son seul paramètre est l’intensité <span class="math inline">\(\lambda_s\)</span>, qui donne l’espérance du nombre d’individus de l’espèce <span class="math inline">\(s\)</span> par unité de surface.
 Si toutes les espèces sont distribuées selon un processus de Poisson, la courbe aire-espèce est décrite par</p>
@@ -732,7 +779,7 @@ Si toutes les espèces sont distribuées selon un processus de Poisson, la courb
   {\mathbb E}\left( S^A \right)  = S - \sum_s{e^{-\lambda_s A}}.
 \end{equation}\]</span></p>
 <p>L’équation <a href="21-chap-Accumulation.html#eq:SARPoisson">(21.4)</a> est identique au modèle de distribution aléatoire de Coleman en remplaçant la distribution observée des effectifs par espèce par l’intensité du processus de Poisson.
-Les formes de <span class="math inline">\(F_s\)</span> sont connues aussi pour des processus agrégatifs, notamment le processus de <span class="citation">Matérn (<a href="#ref-Matern1960" role="doc-biblioref">1960</a>)</span> ou des distributions régulières.
+Les formes de <span class="math inline">\(F_s\)</span> sont connues aussi pour des processus agrégatifs, notamment le processus de <span class="citation"><a href="references.html#ref-Matern1960" role="doc-biblioref">Matérn</a> (<a href="references.html#ref-Matern1960" role="doc-biblioref">1960</a>)</span> ou des distributions régulières.
 La courbe aire-espèce peut donc être évaluée à partir d’inventaires fournissant la position des individus.
 Le processus ponctuel correspondant à chaque espèce peut être inféré pour fournir une forme analytique de la courbe comme dans l’équation <a href="21-chap-Accumulation.html#eq:SARPoisson">(21.4)</a> ou bien la fonction d’espace vide de chaque espèce peut être estimée à partir des données par la fonction <code>Fest</code> du package <em>spatstat</em> et sommée pour toutes les espèces selon l’équation <a href="21-chap-Accumulation.html#eq:SARF">(21.3)</a>.</p>
 <p>La relation aire-espèce contient au moins autant de paramètres que d’espèces: l’intensité <span class="math inline">\(\lambda_s\)</span> si l’espèce <span class="math inline">\(s\)</span> est distribuée spatialement selon un processus de Poisson, deux paramètres supplémentaires pour le processus de Matérn.
@@ -749,73 +796,7 @@ Elle peut être réécrite sous la forme
     + \sum_{s=S_{\ne 0}+1}^{S}{F_s\left( r \right)}.
 \end{equation}\]</span></p>
 <p>Le premier terme de la somme correspond aux espèces observées, le deuxième aux espèces non observées.
-La distribution des espèces non observées peut maintenant être estimée dans certains cas <span class="citation">(Chao, Hsieh, et al. <a href="#ref-Chao2014c" role="doc-biblioref">2015</a>)</span> et leur distribution spatiale être supposée poissonnienne puisque ce sont des espèces rares <span class="citation">(Picard, Karembe, et Birnbaum <a href="#ref-Picard2004" role="doc-biblioref">2004</a>)</span>, ce qui ouvre la voie à une meilleure estimation de la courbe.</p>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Beguinot2014">
-<p>Béguinot, Jean. 2014. « An Algebraic Derivation of Chao’s Estimator of the Number of Species in a Community Highlights the Condition Allowing Chao to Deliver Centered Estimates ». <em>International Scholarly Research Notices</em> 2014 (Article ID 847328). <a href="https://doi.org/10.1155/2014/847328">https://doi.org/10.1155/2014/847328</a>.</p>
-</div>
-<div id="ref-Beguinot2015a">
-<p>Béguinot, Jean. 2015a. « Extrapolation of the Species Accumulation Curve for Incomplete Species Samplings: A New Nonparametric Approach to Estimate the Degree of Sample Completeness and Decide when to Stop Sampling ». <em>Annual Research &amp; Review in Biology</em> 8 (5): 1‑9. <a href="https://doi.org/10.9734/ARRB/2015/22351">https://doi.org/10.9734/ARRB/2015/22351</a>.</p>
-</div>
-<div id="ref-Beguinot2015">
-<p>Béguinot, Jean. 2015b. « When Reasonably Stop Sampling? How to Estimate the Gain in Newly Recorded Species According to the Degree of Supplementary Sampling Effort ». <em>Annual Research &amp; Review in Biology</em> 7 (5): 300‑308. <a href="https://doi.org/10.9734/ARRB/2015/18809">https://doi.org/10.9734/ARRB/2015/18809</a>.</p>
-</div>
-<div id="ref-Cao2014">
-<p>Cao, Lijuan, et Michael Grabchak. 2014. « EntropyEstimation: Estimation of Entropy and Related Quantities ». <a href="http://cran.r-project.org/package=EntropyEstimation">http://cran.r-project.org/package=EntropyEstimation</a>.</p>
-</div>
-<div id="ref-Chao2014c">
-<p>Chao, Anne, T. C. Hsieh, Robin L. Chazdon, Robert K. Colwell, et Nicholas J. Gotelli. 2015. « Unveiling the Species-Rank Abundance Distribution by Generalizing Good-Turing Sample Coverage Theory ». <em>Ecology</em> 96 (5): 1189‑1201. <a href="https://doi.org/10.1890/14-0550.1">https://doi.org/10.1890/14-0550.1</a>.</p>
-</div>
-<div id="ref-Chao2013">
-<p>Chao, Anne, Yi-Ting Wang, et Lou Jost. 2013. « Entropy and the species accumulation curve: a novel entropy estimator via discovery rates of new species ». <em>Methods in Ecology and Evolution</em> 4 (11): 1091‑1100. <a href="https://doi.org/10.1111/2041-210x.12108">https://doi.org/10.1111/2041-210x.12108</a>.</p>
-</div>
-<div id="ref-Coleman1981">
-<p>Coleman, Bernard D. 1981. « On random placement and species-area relations ». <em>Mathematical Biosciences</em> 54 (3-4): 191‑215. <a href="https://doi.org/10.1016/0025-5564(81)90086-9">https://doi.org/10.1016/0025-5564(81)90086-9</a>.</p>
-</div>
-<div id="ref-Colwell2012">
-<p>Colwell, Robert K., Anne Chao, Nicholas J. Gotelli, Shang-Yi Lin, Chang Xuan Mao, Robin L. Chazdon, et John T. Longino. 2012. « Models and estimators linking individual-based and sample-based rarefaction, extrapolation and comparison of assemblages ». <em>Journal of Plant Ecology</em> 5 (1): 3‑21. <a href="https://doi.org/10.1093/jpe/rtr044">https://doi.org/10.1093/jpe/rtr044</a>.</p>
-</div>
-<div id="ref-Cressie1993">
-<p>Cressie, Noel A. 1993. <em>Statistics for spatial data</em>. New York: John Wiley &amp; Sons. <a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-1119114616.html">http://www.wiley.com/WileyCDA/WileyTitle/productCd-1119114616.html</a>.</p>
-</div>
-<div id="ref-Diggle1983">
-<p>Diggle, Peter J. 1983. <em>Statistical analysis of spatial point patterns</em>. London: Academic Press.</p>
-</div>
-<div id="ref-Gotelli2001">
-<p>Gotelli, Nicholas J., et Robert K. Colwell. 2001. « Quantifying biodiversity: procedures and pitfalls in the measurement and comparison of species richness ». <em>Ecology Letters</em> 4 (4): 379‑91. <a href="https://doi.org/10.1046/j.1461-0248.2001.00230.x">https://doi.org/10.1046/j.1461-0248.2001.00230.x</a>.</p>
-</div>
-<div id="ref-Matern1960">
-<p>Matérn, Bertil. 1960. « Spatial variation ». <em>Meddelanden från Statens Skogsforskningsinstitut</em> 49 (5): 1‑144. <a href="http://www.springer.com/cn/book/9781461578925">http://www.springer.com/cn/book/9781461578925</a>.</p>
-</div>
-<div id="ref-Neyman1958">
-<p>Neyman, Jerzy, et Elizabeth L Scott. 1958. « Statistical Approach to Problems of Cosmology ». <em>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</em> 20 (1): 1‑43. <a href="https://doi.org/10.1111/j.2517-6161.1958.tb00272.x">https://doi.org/10.1111/j.2517-6161.1958.tb00272.x</a>.</p>
-</div>
-<div id="ref-Oksanen2012">
-<p>Oksanen, Jari, F. Guillaume Blanchet, Roeland Kindt, Pierre Legendre, Peter R. Minchin, R. B. O’Hara, Gavin L. Simpson, Peter Solymos, M. Henry H. Stevens, et Helene Wagner. 2012. « vegan: Community Ecology Package ». <a href="http://cran.r-project.org/package=vegan">http://cran.r-project.org/package=vegan</a>.</p>
-</div>
-<div id="ref-Picard2004">
-<p>Picard, Nicolas, M Karembe, et Philippe Birnbaum. 2004. « Species-area curve and spatial pattern ». <em>Ecoscience</em> 11 (1): 45‑54. <a href="https://doi.org/10.1080/11956860.2004.11682808">https://doi.org/10.1080/11956860.2004.11682808</a>.</p>
-</div>
-<div id="ref-Pielou1969">
-<p>Pielou, Evelyn C. 1969. <em>An Introduction to Mathematical Ecology</em>. New York: Wiley.</p>
-</div>
-<div id="ref-Plotkin2000a">
-<p>Plotkin, Joshua B., Matthew D. Potts, Nandi Leslie, N. Manokaran, James V. LaFrankie, et Peter S. Ashton. 2000. « Species-area curves, spatial aggregation, and habitat specialization in tropical forests ». <em>Journal of Theoretical Biology</em> 207 (1): 81‑99. <a href="https://doi.org/10.1006/jtbi.2000.2158">https://doi.org/10.1006/jtbi.2000.2158</a>.</p>
-</div>
-<div id="ref-Shen2003">
-<p>Shen, Tsung-Jen, Anne Chao, et Chih-Feng Lin. 2003. « Predicting the number of new species in a further taxonomic sampling ». <em>Ecology</em> 84 (3): 798‑804. <a href="https://doi.org/10.1890/0012-9658(2003)084%5B0798:PTNONS%5D2.0.CO;2">https://doi.org/10.1890/0012-9658(2003)084[0798:PTNONS]2.0.CO;2</a>.</p>
-</div>
-<div id="ref-Steel1953">
-<p>Steel, G. D. 1953. « Relation Between Poisson and Multinomial Distributions ». In <em>Biometrics Unit Technical Reports</em>, 1‑2. Cornell University. Biometrics Unit. <a href="http://hdl.handle.net/1813/32480">http://hdl.handle.net/1813/32480</a>.</p>
-</div>
-<div id="ref-Ugland2003">
-<p>Ugland, Karl I., John S. Gray, et Kari E. Ellingsen. 2003. « The species-accumulation curve and estimation of species richness ». <em>Journal of Animal Ecology</em> 72 (5): 888‑97. <a href="https://doi.org/10.1046/j.1365-2656.2003.00748.x">https://doi.org/10.1046/j.1365-2656.2003.00748.x</a>.</p>
-</div>
-<div id="ref-Zhang2010">
-<p>Zhang, Zhiyi, et Jun Zhou. 2010. « Re-parameterization of multinomial distributions and diversity indices ». <em>Journal of Statistical Planning and Inference</em> 140 (7): 1731‑8. <a href="https://doi.org/10.1016/j.jspi.2009.12.023">https://doi.org/10.1016/j.jspi.2009.12.023</a>.</p>
+La distribution des espèces non observées peut maintenant être estimée dans certains cas <span class="citation">(<a href="references.html#ref-Chao2014c" role="doc-biblioref">Chao, Hsieh, et al. 2015</a>)</span> et leur distribution spatiale être supposée poissonnienne puisque ce sont des espèces rares <span class="citation">(<a href="references.html#ref-Picard2004" role="doc-biblioref">Picard, Karembe, et Birnbaum 2004</a>)</span>, ce qui ouvre la voie à une meilleure estimation de la courbe.</p>
 </div>
 </div>
             </section>
