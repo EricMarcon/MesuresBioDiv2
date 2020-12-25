@@ -1,0 +1,55 @@
+on:
+  push:
+     branches:
+       - master
+
+name: bookdown
+
+jobs:
+  renderbook:
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v1
+      - name: Install pandoc
+        run: |
+          brew install pandoc
+      - name: Install dependencies
+        run: |
+          install.packages(c("remotes", "bookdown", "tinytex"))
+          tinytex::install_tinytex()
+          remotes::install_deps(dependencies = TRUE)
+        shell: Rscript {0}
+      - name: Render book
+        run: |
+          bookdown::render_book("index.Rmd", "bookdown::pdf_book")
+          bookdown::render_book("index.Rmd", "bookdown::gitbook")
+        shell: Rscript {0}
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: _book
+          path: docs/
+  checkout-and-deploy:
+    runs-on: ubuntu-latest
+    needs: renderbook
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Download artifact
+        uses: actions/download-artifact@v1
+        with:
+          # Artifact name
+          name: _book
+          # Destination path
+          path: docs
+      - name: Deploy to GitHub Pages
+        uses: Cecilapp/GitHub-Pages-deploy@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        with:
+          email: ${{ secrets.EMAIL }}
+          build_dir: docs
+          jekyll: no
