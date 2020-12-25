@@ -24,7 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2020-12-22" />
+<meta name="date" content="2020-12-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,6 @@
   
 <link rel="prev" href="4-entropie.html"/>
 <link rel="next" href="6-cadre.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,6 +50,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -63,17 +63,18 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -93,7 +94,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -145,74 +146,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Motivation</a></li>
 <li class="chapter" data-level="" data-path="notations.html"><a href="notations.html"><i class="fa fa-check"></i>Notations</a></li>
 <li class="part"><span><b>I Notions</b></span></li>
-<li class="chapter" data-level="1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html"><i class="fa fa-check"></i><b>1</b> Notions de Diversité</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#composantes"><i class="fa fa-check"></i><b>1.1</b> Composantes</a>
-<ul>
+<li class="chapter" data-level="1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html"><i class="fa fa-check"></i><b>1</b> Notions de Diversité</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#composantes"><i class="fa fa-check"></i><b>1.1</b> Composantes</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#richesse"><i class="fa fa-check"></i><b>1.1.1</b> Richesse</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#équitabilité"><i class="fa fa-check"></i><b>1.1.2</b> Équitabilité</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#disparité"><i class="fa fa-check"></i><b>1.1.3</b> Disparité</a></li>
 <li class="chapter" data-level="1.1.4" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#agrégation"><i class="fa fa-check"></i><b>1.1.4</b> Agrégation</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#niveaux-de-létude"><i class="fa fa-check"></i><b>1.2</b> Niveaux de l’étude</a>
-<ul>
+<li class="chapter" data-level="1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#niveaux-de-létude"><i class="fa fa-check"></i><b>1.2</b> Niveaux de l’étude</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#diversité-alpha-beta-et-gamma"><i class="fa fa-check"></i><b>1.2.1</b> Diversité <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> et <span class="math inline">\(\gamma\)</span></a></li>
 <li class="chapter" data-level="1.2.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#décomposition"><i class="fa fa-check"></i><b>1.2.2</b> Décomposition</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#le-problème-de-lespèce"><i class="fa fa-check"></i><b>1.3</b> Le problème de l’espèce</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-outils.html"><a href="2-outils.html"><i class="fa fa-check"></i><b>2</b> Outils</a>
-<ul>
+<li class="chapter" data-level="2" data-path="2-outils.html"><a href="2-outils.html"><i class="fa fa-check"></i><b>2</b> Outils</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-outils.html"><a href="2-outils.html#calculs-et-données"><i class="fa fa-check"></i><b>2.1</b> Calculs et données</a></li>
 <li class="chapter" data-level="2.2" data-path="2-outils.html"><a href="2-outils.html#sad-et-sar"><i class="fa fa-check"></i><b>2.2</b> SAD et SAR</a></li>
-<li class="chapter" data-level="2.3" data-path="2-outils.html"><a href="2-outils.html#sec:Couverture"><i class="fa fa-check"></i><b>2.3</b> Taux de couverture</a>
-<ul>
+<li class="chapter" data-level="2.3" data-path="2-outils.html"><a href="2-outils.html#sec:Couverture"><i class="fa fa-check"></i><b>2.3</b> Taux de couverture</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="2-outils.html"><a href="2-outils.html#formule-des-fréquences-de-good-turing"><i class="fa fa-check"></i><b>2.3.1</b> Formule des fréquences de Good-Turing</a></li>
 <li class="chapter" data-level="2.3.2" data-path="2-outils.html"><a href="2-outils.html#taux-de-couverture-et-déficit-de-couverture"><i class="fa fa-check"></i><b>2.3.2</b> Taux de couverture et déficit de couverture</a></li>
 <li class="chapter" data-level="2.3.3" data-path="2-outils.html"><a href="2-outils.html#complétude"><i class="fa fa-check"></i><b>2.3.3</b> Complétude</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Diversité neutre d’une communauté</b></span></li>
-<li class="chapter" data-level="3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html"><i class="fa fa-check"></i><b>3</b> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span></a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Richesse"><i class="fa fa-check"></i><b>3.1</b> Richesse spécifique</a>
-<ul>
+<li class="chapter" data-level="3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html"><i class="fa fa-check"></i><b>3</b> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span></a><ul>
+<li class="chapter" data-level="3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Richesse"><i class="fa fa-check"></i><b>3.1</b> Richesse spécifique</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#techniques-destimation-non-paramétrique"><i class="fa fa-check"></i><b>3.1.1</b> Techniques d’estimation non paramétrique</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#inférence-du-nombre-despèces-à-partir-de-la-sad"><i class="fa fa-check"></i><b>3.1.2</b> Inférence du nombre d’espèces à partir de la SAD</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:RichesseSAC"><i class="fa fa-check"></i><b>3.1.3</b> Inférence du nombre d’espèces à partir de courbes d’accumulation</a></li>
 <li class="chapter" data-level="3.1.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#diversité-générique"><i class="fa fa-check"></i><b>3.1.4</b> Diversité générique</a></li>
 <li class="chapter" data-level="3.1.5" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#combien-y-a-t-il-despèces-différentes-sur-terre"><i class="fa fa-check"></i><b>3.1.5</b> Combien y a-t-il d’espèces différentes sur Terre?</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-simpson"><i class="fa fa-check"></i><b>3.2</b> Indice de Simpson</a>
-<ul>
+<li class="chapter" data-level="3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-simpson"><i class="fa fa-check"></i><b>3.2</b> Indice de Simpson</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition"><i class="fa fa-check"></i><b>3.2.1</b> Définition</a></li>
 <li class="chapter" data-level="3.2.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#estimation"><i class="fa fa-check"></i><b>3.2.2</b> Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-shannon"><i class="fa fa-check"></i><b>3.3</b> Indice de Shannon</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-shannon"><i class="fa fa-check"></i><b>3.3</b> Indice de Shannon</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition-1"><i class="fa fa-check"></i><b>3.3.1</b> Définition</a></li>
 <li class="chapter" data-level="3.3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:BiaisShannon"><i class="fa fa-check"></i><b>3.3.2</b> Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Hurlbert"><i class="fa fa-check"></i><b>3.4</b> Indice de Hurlbert</a>
-<ul>
+<li class="chapter" data-level="3.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Hurlbert"><i class="fa fa-check"></i><b>3.4</b> Indice de Hurlbert</a><ul>
 <li class="chapter" data-level="3.4.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition-2"><i class="fa fa-check"></i><b>3.4.1</b> Définition</a></li>
 <li class="chapter" data-level="3.4.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#estimation-1"><i class="fa fa-check"></i><b>3.4.2</b> Estimation</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-entropie.html"><a href="4-entropie.html"><i class="fa fa-check"></i><b>4</b> Entropie</a>
-<ul>
+<li class="chapter" data-level="4" data-path="4-entropie.html"><a href="4-entropie.html"><i class="fa fa-check"></i><b>4</b> Entropie</a><ul>
 <li class="chapter" data-level="4.1" data-path="4-entropie.html"><a href="4-entropie.html#définition-de-lentropie"><i class="fa fa-check"></i><b>4.1</b> Définition de l’entropie</a></li>
 <li class="chapter" data-level="4.2" data-path="4-entropie.html"><a href="4-entropie.html#entropie-relative"><i class="fa fa-check"></i><b>4.2</b> Entropie relative</a></li>
 <li class="chapter" data-level="4.3" data-path="4-entropie.html"><a href="4-entropie.html#lappropriation-de-lentropie-par-la-biodiversité"><i class="fa fa-check"></i><b>4.3</b> L’appropriation de l’entropie par la biodiversité</a></li>
-<li class="chapter" data-level="4.4" data-path="4-entropie.html"><a href="4-entropie.html#entropie-hcdt"><i class="fa fa-check"></i><b>4.4</b> Entropie HCDT</a>
-<ul>
+<li class="chapter" data-level="4.4" data-path="4-entropie.html"><a href="4-entropie.html#entropie-hcdt"><i class="fa fa-check"></i><b>4.4</b> Entropie HCDT</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="4-entropie.html"><a href="4-entropie.html#logarithmes-déformés"><i class="fa fa-check"></i><b>4.4.1</b> Logarithmes déformés</a></li>
 <li class="chapter" data-level="4.4.2" data-path="4-entropie.html"><a href="4-entropie.html#entropie-et-diversité"><i class="fa fa-check"></i><b>4.4.2</b> Entropie et diversité</a></li>
 <li class="chapter" data-level="4.4.3" data-path="4-entropie.html"><a href="4-entropie.html#synthèse"><i class="fa fa-check"></i><b>4.4.3</b> Synthèse</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="4-entropie.html"><a href="4-entropie.html#profils-de-diversité"><i class="fa fa-check"></i><b>4.5</b> Profils de diversité</a></li>
-<li class="chapter" data-level="4.6" data-path="4-entropie.html"><a href="4-entropie.html#estimation-de-lentropie"><i class="fa fa-check"></i><b>4.6</b> Estimation de l’entropie</a>
-<ul>
+<li class="chapter" data-level="4.6" data-path="4-entropie.html"><a href="4-entropie.html#estimation-de-lentropie"><i class="fa fa-check"></i><b>4.6</b> Estimation de l’entropie</a><ul>
 <li class="chapter" data-level="4.6.1" data-path="4-entropie.html"><a href="4-entropie.html#zhang-et-grabchak"><i class="fa fa-check"></i><b>4.6.1</b> Zhang et Grabchak</a></li>
 <li class="chapter" data-level="4.6.2" data-path="4-entropie.html"><a href="4-entropie.html#sec:BiaisHCDT"><i class="fa fa-check"></i><b>4.6.2</b> Chao et Jost</a></li>
 <li class="chapter" data-level="4.6.3" data-path="4-entropie.html"><a href="4-entropie.html#autres-méthodes"><i class="fa fa-check"></i><b>4.6.3</b> Autres méthodes</a></li>
@@ -222,33 +210,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.7" data-path="4-entropie.html"><a href="4-entropie.html#msom-et-msam"><i class="fa fa-check"></i><b>4.6.7</b> MSOM et MSAM</a></li>
 <li class="chapter" data-level="4.6.8" data-path="4-entropie.html"><a href="4-entropie.html#sec:RarExtrapol"><i class="fa fa-check"></i><b>4.6.8</b> Raréfaction et extrapolation</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="4-entropie.html"><a href="4-entropie.html#autres-approches"><i class="fa fa-check"></i><b>4.7</b> Autres approches</a>
-<ul>
+<li class="chapter" data-level="4.7" data-path="4-entropie.html"><a href="4-entropie.html#autres-approches"><i class="fa fa-check"></i><b>4.7</b> Autres approches</a><ul>
 <li class="chapter" data-level="4.7.1" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-de-rényi"><i class="fa fa-check"></i><b>4.7.1</b> L’entropie de Rényi</a></li>
 <li class="chapter" data-level="4.7.2" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-généralisée-des-mesures-dinégalité"><i class="fa fa-check"></i><b>4.7.2</b> L’entropie généralisée des mesures d’inégalité</a></li>
 <li class="chapter" data-level="4.7.3" data-path="4-entropie.html"><a href="4-entropie.html#sec:SimpsonG"><i class="fa fa-check"></i><b>4.7.3</b> L’entropie de Simpson généralisée</a></li>
 <li class="chapter" data-level="4.7.4" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-par-cas"><i class="fa fa-check"></i><b>4.7.4</b> L’entropie par cas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html"><i class="fa fa-check"></i><b>5</b> Équitabilité</a>
-<ul>
+<li class="chapter" data-level="5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html"><i class="fa fa-check"></i><b>5</b> Équitabilité</a><ul>
 <li class="chapter" data-level="5.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#approche-axiomatique"><i class="fa fa-check"></i><b>5.1</b> Approche axiomatique</a></li>
-<li class="chapter" data-level="5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-classiques"><i class="fa fa-check"></i><b>5.2</b> Indice classiques</a>
-<ul>
+<li class="chapter" data-level="5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-classiques"><i class="fa fa-check"></i><b>5.2</b> Indice classiques</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-bulla"><i class="fa fa-check"></i><b>5.2.1</b> Indice de Bulla</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-gini"><i class="fa fa-check"></i><b>5.2.2</b> Indice de Gini</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#rapports-de-moyennes"><i class="fa fa-check"></i><b>5.2.3</b> Rapports de moyennes</a></li>
 <li class="chapter" data-level="5.2.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#ratios-de-hill"><i class="fa fa-check"></i><b>5.2.4</b> Ratios de Hill</a></li>
 <li class="chapter" data-level="5.2.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#synthèse-1"><i class="fa fa-check"></i><b>5.2.5</b> Synthèse</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-alternatifs"><i class="fa fa-check"></i><b>5.3</b> Indice alternatifs</a>
-<ul>
+<li class="chapter" data-level="5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-alternatifs"><i class="fa fa-check"></i><b>5.3</b> Indice alternatifs</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#variance-de-la-rareté"><i class="fa fa-check"></i><b>5.3.1</b> Variance de la rareté</a></li>
 <li class="chapter" data-level="5.3.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#non-spécificité"><i class="fa fa-check"></i><b>5.3.2</b> Non-spécificité</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-pielou"><i class="fa fa-check"></i><b>5.4</b> Indice de Pielou</a></li>
-<li class="chapter" data-level="5.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#généralisation-de-lindice-de-pielou"><i class="fa fa-check"></i><b>5.5</b> Généralisation de l’indice de Pielou</a>
-<ul>
+<li class="chapter" data-level="5.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#généralisation-de-lindice-de-pielou"><i class="fa fa-check"></i><b>5.5</b> Généralisation de l’indice de Pielou</a><ul>
 <li class="chapter" data-level="5.5.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#sec:Mendes"><i class="fa fa-check"></i><b>5.5.1</b> Mendes et al. </a></li>
 <li class="chapter" data-level="5.5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#tuomisto"><i class="fa fa-check"></i><b>5.5.2</b> Tuomisto</a></li>
 <li class="chapter" data-level="5.5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#jost"><i class="fa fa-check"></i><b>5.5.3</b> Jost</a></li>
@@ -257,24 +240,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#relations-empiriques-entre-richesse-et-équitabilité"><i class="fa fa-check"></i><b>5.6</b> Relations empiriques entre richesse et équitabilité</a></li>
 </ul></li>
 <li class="part"><span><b>III Diversité fonctionnelle et phylogénétique</b></span></li>
-<li class="chapter" data-level="6" data-path="6-cadre.html"><a href="6-cadre.html"><i class="fa fa-check"></i><b>6</b> Cadre</a>
-<ul>
+<li class="chapter" data-level="6" data-path="6-cadre.html"><a href="6-cadre.html"><i class="fa fa-check"></i><b>6</b> Cadre</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-cadre.html"><a href="6-cadre.html#dissimilarité-et-distance"><i class="fa fa-check"></i><b>6.1</b> Dissimilarité et distance</a></li>
 <li class="chapter" data-level="6.2" data-path="6-cadre.html"><a href="6-cadre.html#sec:Dphylo"><i class="fa fa-check"></i><b>6.2</b> Distance phylogénétique</a></li>
 <li class="chapter" data-level="6.3" data-path="6-cadre.html"><a href="6-cadre.html#sec:DFonctionnelle"><i class="fa fa-check"></i><b>6.3</b> Distance fonctionnelle</a></li>
 <li class="chapter" data-level="6.4" data-path="6-cadre.html"><a href="6-cadre.html#équivalence-des-deux-diversités"><i class="fa fa-check"></i><b>6.4</b> Équivalence des deux diversités</a></li>
 <li class="chapter" data-level="6.5" data-path="6-cadre.html"><a href="6-cadre.html#typologie-des-mesures"><i class="fa fa-check"></i><b>6.5</b> Typologie des mesures</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html"><i class="fa fa-check"></i><b>7</b> Mesures particulières</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-équitabilité-et-divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1</b> Richesse, équitabilité et divergence fonctionnelle</a>
-<ul>
+<li class="chapter" data-level="7" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html"><i class="fa fa-check"></i><b>7</b> Mesures particulières</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-équitabilité-et-divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1</b> Richesse, équitabilité et divergence fonctionnelle</a><ul>
 <li class="chapter" data-level="7.1.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-fonctionnelle"><i class="fa fa-check"></i><b>7.1.1</b> Richesse fonctionnelle</a></li>
 <li class="chapter" data-level="7.1.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#equitabilité-fonctionnelle"><i class="fa fa-check"></i><b>7.1.2</b> Equitabilité fonctionnelle</a></li>
 <li class="chapter" data-level="7.1.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1.3</b> Divergence fonctionnelle</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#originalité-richesse-et-équitabilité-phylogénétique"><i class="fa fa-check"></i><b>7.2</b> Originalité, richesse et équitabilité phylogénétique</a>
-<ul>
+<li class="chapter" data-level="7.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#originalité-richesse-et-équitabilité-phylogénétique"><i class="fa fa-check"></i><b>7.2</b> Originalité, richesse et équitabilité phylogénétique</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#mesures-spécifiques-doriginalité"><i class="fa fa-check"></i><b>7.2.1</b> Mesures spécifiques d’originalité</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:OrigTax"><i class="fa fa-check"></i><b>7.2.2</b> Originalité taxonomique de Ricotta</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-phylogénétique"><i class="fa fa-check"></i><b>7.2.3</b> Richesse phylogénétique</a></li>
@@ -283,8 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-de-scheiner"><i class="fa fa-check"></i><b>7.3</b> Diversité de Scheiner</a></li>
 <li class="chapter" data-level="7.4" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-de-solow-et-polasky"><i class="fa fa-check"></i><b>7.4</b> Diversité de Solow et Polasky</a></li>
 <li class="chapter" data-level="7.5" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:PDFD"><i class="fa fa-check"></i><b>7.5</b> FD et PD</a></li>
-<li class="chapter" data-level="7.6" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:Rao"><i class="fa fa-check"></i><b>7.6</b> Indice de Rao</a>
-<ul>
+<li class="chapter" data-level="7.6" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:Rao"><i class="fa fa-check"></i><b>7.6</b> Indice de Rao</a><ul>
 <li class="chapter" data-level="7.6.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#principe"><i class="fa fa-check"></i><b>7.6.1</b> Principe</a></li>
 <li class="chapter" data-level="7.6.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#formalisation"><i class="fa fa-check"></i><b>7.6.2</b> Formalisation</a></li>
 <li class="chapter" data-level="7.6.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#propriétés"><i class="fa fa-check"></i><b>7.6.3</b> Propriétés</a></li>
@@ -296,16 +274,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.9" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-fonctionnelle-de-chiu-et-chao"><i class="fa fa-check"></i><b>7.9</b> Diversité fonctionnelle de Chiu et Chao</a></li>
 <li class="chapter" data-level="7.10" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:HpI1"><i class="fa fa-check"></i><b>7.10</b> <span class="math inline">\(H_p\)</span> et <span class="math inline">\(I_1\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html"><i class="fa fa-check"></i><b>8</b> Entropie phylogénétique</a>
-<ul>
+<li class="chapter" data-level="8" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html"><i class="fa fa-check"></i><b>8</b> Entropie phylogénétique</a><ul>
 <li class="chapter" data-level="8.1" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#généralisation-de-lentropie-hcdt"><i class="fa fa-check"></i><b>8.1</b> Généralisation de l’entropie HCDT</a></li>
 <li class="chapter" data-level="8.2" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#sec:phyloEstimation"><i class="fa fa-check"></i><b>8.2</b> Estimation</a></li>
 <li class="chapter" data-level="8.3" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#sec:phyloEntopieDiv"><i class="fa fa-check"></i><b>8.3</b> Entropie et diversité</a></li>
 <li class="chapter" data-level="8.4" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#diversité-individuelle"><i class="fa fa-check"></i><b>8.4</b> Diversité individuelle</a></li>
 <li class="chapter" data-level="8.5" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#arbres-non-ultramétriques"><i class="fa fa-check"></i><b>8.5</b> Arbres non ultramétriques</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html"><i class="fa fa-check"></i><b>9</b> Diversité de Leinster et Cobbold</a>
-<ul>
+<li class="chapter" data-level="9" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html"><i class="fa fa-check"></i><b>9</b> Diversité de Leinster et Cobbold</a><ul>
 <li class="chapter" data-level="9.1" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#définitions"><i class="fa fa-check"></i><b>9.1</b> Définitions</a></li>
 <li class="chapter" data-level="9.2" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-neutre"><i class="fa fa-check"></i><b>9.2</b> Diversité neutre</a></li>
 <li class="chapter" data-level="9.3" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-non-neutre"><i class="fa fa-check"></i><b>9.3</b> Diversité non neutre</a></li>
@@ -318,48 +294,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.10" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#sec:dqzSynthese"><i class="fa fa-check"></i><b>9.10</b> Synthèse</a></li>
 </ul></li>
 <li class="part"><span><b>IV Diversité beta et décomposition</b></span></li>
-<li class="chapter" data-level="10" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html"><i class="fa fa-check"></i><b>10</b> Cadre</a>
-<ul>
+<li class="chapter" data-level="10" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html"><i class="fa fa-check"></i><b>10</b> Cadre</a><ul>
 <li class="chapter" data-level="10.1" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#définition-de-la-diversité-beta-par-objectifs"><i class="fa fa-check"></i><b>10.1</b> Définition de la diversité <span class="math inline">\(\beta\)</span> par objectifs</a></li>
 <li class="chapter" data-level="10.2" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaTypo"><i class="fa fa-check"></i><b>10.2</b> Typologie des mesures</a></li>
-<li class="chapter" data-level="10.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaDecomposition"><i class="fa fa-check"></i><b>10.3</b> Décomposition de la diversité</a>
-<ul>
+<li class="chapter" data-level="10.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaDecomposition"><i class="fa fa-check"></i><b>10.3</b> Décomposition de la diversité</a><ul>
 <li class="chapter" data-level="10.3.1" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#définitions-de-la-diversité-beta-mesure-dérivée"><i class="fa fa-check"></i><b>10.3.1</b> Définitions de la diversité <span class="math inline">\(\beta\)</span>, mesure dérivée</a></li>
 <li class="chapter" data-level="10.3.2" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:DebatDecomposition"><i class="fa fa-check"></i><b>10.3.2</b> Le débat sur la décomposition</a></li>
 <li class="chapter" data-level="10.3.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#décomposition-multiplicative-de-la-diversité"><i class="fa fa-check"></i><b>10.3.3</b> Décomposition multiplicative de la diversité</a></li>
 <li class="chapter" data-level="10.3.4" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:defalpha"><i class="fa fa-check"></i><b>10.3.4</b> Définitions de la diversité <span class="math inline">\(\alpha\)</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html"><i class="fa fa-check"></i><b>11</b> Diversité de différentiation</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-de-présence-absence"><i class="fa fa-check"></i><b>11.1</b> Données de présence-absence</a>
-<ul>
+<li class="chapter" data-level="11" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html"><i class="fa fa-check"></i><b>11</b> Diversité de différentiation</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-de-présence-absence"><i class="fa fa-check"></i><b>11.1</b> Données de présence-absence</a><ul>
 <li class="chapter" data-level="11.1.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#indices-de-similarité"><i class="fa fa-check"></i><b>11.1.1</b> Indices de similarité</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#biais-destimation"><i class="fa fa-check"></i><b>11.1.2</b> Biais d’estimation</a></li>
 <li class="chapter" data-level="11.1.3" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#représentation-graphique"><i class="fa fa-check"></i><b>11.1.3</b> Représentation graphique</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance"><i class="fa fa-check"></i><b>11.2</b> Données d’abondance</a></li>
 <li class="chapter" data-level="11.3" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#emboîtement-et-substitution"><i class="fa fa-check"></i><b>11.3</b> Emboîtement et substitution</a></li>
-<li class="chapter" data-level="11.4" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance-et-similarité-des-espèces"><i class="fa fa-check"></i><b>11.4</b> Données d’abondance et similarité des espèces</a>
-<ul>
+<li class="chapter" data-level="11.4" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance-et-similarité-des-espèces"><i class="fa fa-check"></i><b>11.4</b> Données d’abondance et similarité des espèces</a><ul>
 <li class="chapter" data-level="11.4.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#dissimilarité-minimale-moyenne"><i class="fa fa-check"></i><b>11.4.1</b> Dissimilarité minimale moyenne</a></li>
 <li class="chapter" data-level="11.4.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#similarité-moyenne-entre-individus"><i class="fa fa-check"></i><b>11.4.2</b> Similarité moyenne entre individus</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#distance-entre-paires-de-communautés-et-diversité-beta-proportionnelle"><i class="fa fa-check"></i><b>11.5</b> Distance entre paires de communautés et diversité <span class="math inline">\(\beta\)</span> proportionnelle</a>
-<ul>
+<li class="chapter" data-level="11.5" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#distance-entre-paires-de-communautés-et-diversité-beta-proportionnelle"><i class="fa fa-check"></i><b>11.5</b> Distance entre paires de communautés et diversité <span class="math inline">\(\beta\)</span> proportionnelle</a><ul>
 <li class="chapter" data-level="11.5.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#diversité-de-simpson"><i class="fa fa-check"></i><b>11.5.1</b> Diversité de Simpson</a></li>
 <li class="chapter" data-level="11.5.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#généralisation"><i class="fa fa-check"></i><b>11.5.2</b> Généralisation</a></li>
 </ul></li>
-<li class="chapter" data-level="11.6" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#sec:TestBetaDiff"><i class="fa fa-check"></i><b>11.6</b> Tests de significativité</a>
-<ul>
+<li class="chapter" data-level="11.6" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#sec:TestBetaDiff"><i class="fa fa-check"></i><b>11.6</b> Tests de significativité</a><ul>
 <li class="chapter" data-level="11.6.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#test-de-non-nullité"><i class="fa fa-check"></i><b>11.6.1</b> Test de non-nullité</a></li>
 <li class="chapter" data-level="11.6.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#analyse-de-la-variabilité"><i class="fa fa-check"></i><b>11.6.2</b> Analyse de la variabilité</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html"><i class="fa fa-check"></i><b>12</b> Décomposition de l’entropie HCDT</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-shannon"><i class="fa fa-check"></i><b>12.1</b> Décomposition de l’indice de Shannon</a>
-<ul>
+<li class="chapter" data-level="12" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html"><i class="fa fa-check"></i><b>12</b> Décomposition de l’entropie HCDT</a><ul>
+<li class="chapter" data-level="12.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-shannon"><i class="fa fa-check"></i><b>12.1</b> Décomposition de l’indice de Shannon</a><ul>
 <li class="chapter" data-level="12.1.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#définition-3"><i class="fa fa-check"></i><b>12.1.1</b> Définition</a></li>
 <li class="chapter" data-level="12.1.2" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:BiaisShannonBeta"><i class="fa fa-check"></i><b>12.1.2</b> Biais d’estimation</a></li>
 </ul></li>
@@ -368,30 +335,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-gini-simpson"><i class="fa fa-check"></i><b>12.4</b> Décomposition de l’indice de Gini-Simpson</a></li>
 <li class="chapter" data-level="12.5" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:RaoDisc"><i class="fa fa-check"></i><b>12.5</b> Décomposition de l’indice de Rao</a></li>
 <li class="chapter" data-level="12.6" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#synthèse-3"><i class="fa fa-check"></i><b>12.6</b> Synthèse</a></li>
-<li class="chapter" data-level="12.7" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#normalisation"><i class="fa fa-check"></i><b>12.7</b> Normalisation</a>
-<ul>
+<li class="chapter" data-level="12.7" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#normalisation"><i class="fa fa-check"></i><b>12.7</b> Normalisation</a><ul>
 <li class="chapter" data-level="12.7.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#nécessité-de-normaliser-la-diversité-beta"><i class="fa fa-check"></i><b>12.7.1</b> Nécessité de normaliser la diversité <span class="math inline">\(\beta\)</span></a></li>
 <li class="chapter" data-level="12.7.2" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:Chevauchement"><i class="fa fa-check"></i><b>12.7.2</b> L’indice de chevauchement <span class="math inline">\(C_{qN}\)</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><i class="fa fa-check"></i><b>13</b> Décomposition de la diversité phylogénétique et fonctionnelle</a>
-<ul>
+<li class="chapter" data-level="13" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><i class="fa fa-check"></i><b>13</b> Décomposition de la diversité phylogénétique et fonctionnelle</a><ul>
 <li class="chapter" data-level="13.1" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#décomposition-de-la-diversité-phylogénétique"><i class="fa fa-check"></i><b>13.1</b> Décomposition de la diversité phylogénétique</a></li>
 <li class="chapter" data-level="13.2" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#partitionnement-de-la-diversité-de-leinster-et-cobbold"><i class="fa fa-check"></i><b>13.2</b> Partitionnement de la diversité de Leinster et Cobbold</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html"><i class="fa fa-check"></i><b>14</b> Tests de significativité</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#test-de-non-nullité-1"><i class="fa fa-check"></i><b>14.1</b> Test de non-nullité</a>
-<ul>
+<li class="chapter" data-level="14" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html"><i class="fa fa-check"></i><b>14</b> Tests de significativité</a><ul>
+<li class="chapter" data-level="14.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#test-de-non-nullité-1"><i class="fa fa-check"></i><b>14.1</b> Test de non-nullité</a><ul>
 <li class="chapter" data-level="14.1.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#intervalle-de-confiance"><i class="fa fa-check"></i><b>14.1.1</b> Intervalle de confiance</a></li>
 <li class="chapter" data-level="14.1.2" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#correction-des-biais"><i class="fa fa-check"></i><b>14.1.2</b> Correction des biais</a></li>
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#analyse-de-la-variabilité-1"><i class="fa fa-check"></i><b>14.2</b> Analyse de la variabilité</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html"><i class="fa fa-check"></i><b>15</b> Autres approches</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#le-partitionnement-de-la-diversité-selon-pélissier-et-couteron"><i class="fa fa-check"></i><b>15.1</b> Le partitionnement de la diversité selon Pélissier et Couteron</a>
-<ul>
+<li class="chapter" data-level="15" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html"><i class="fa fa-check"></i><b>15</b> Autres approches</a><ul>
+<li class="chapter" data-level="15.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#le-partitionnement-de-la-diversité-selon-pélissier-et-couteron"><i class="fa fa-check"></i><b>15.1</b> Le partitionnement de la diversité selon Pélissier et Couteron</a><ul>
 <li class="chapter" data-level="15.1.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#sec:PCcadre"><i class="fa fa-check"></i><b>15.1.1</b> Cadre</a></li>
 <li class="chapter" data-level="15.1.2" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#sec:PCdecomposition"><i class="fa fa-check"></i><b>15.1.2</b> Décomposition</a></li>
 </ul></li>
@@ -399,38 +360,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>V Diversité jointe, diversité structurelle</b></span></li>
 <li class="chapter" data-level="16" data-path="16-sec-jointeCadre.html"><a href="16-sec-jointeCadre.html"><i class="fa fa-check"></i><b>16</b> Cadre</a></li>
-<li class="chapter" data-level="17" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html"><i class="fa fa-check"></i><b>17</b> Information mutuelle</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#récursivité-de-lentropie"><i class="fa fa-check"></i><b>17.1</b> Récursivité de l’entropie</a>
-<ul>
+<li class="chapter" data-level="17" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html"><i class="fa fa-check"></i><b>17</b> Information mutuelle</a><ul>
+<li class="chapter" data-level="17.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#récursivité-de-lentropie"><i class="fa fa-check"></i><b>17.1</b> Récursivité de l’entropie</a><ul>
 <li class="chapter" data-level="17.1.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#sec:jointeShannon"><i class="fa fa-check"></i><b>17.1.1</b> Entropie de Shannon</a></li>
 <li class="chapter" data-level="17.1.2" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#sec:jointeHCDT"><i class="fa fa-check"></i><b>17.1.2</b> Entropie HCDT</a></li>
 <li class="chapter" data-level="17.1.3" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#intérêt-de-linformation-mutuelle"><i class="fa fa-check"></i><b>17.1.3</b> Intérêt de l’information mutuelle</a></li>
 </ul></li>
 <li class="chapter" data-level="17.2" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#taille-de-niche"><i class="fa fa-check"></i><b>17.2</b> Taille de niche</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html"><i class="fa fa-check"></i><b>18</b> Décomposition de la diversité jointe</a>
-<ul>
+<li class="chapter" data-level="18" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html"><i class="fa fa-check"></i><b>18</b> Décomposition de la diversité jointe</a><ul>
 <li class="chapter" data-level="18.1" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html#sec:Definitions"><i class="fa fa-check"></i><b>18.1</b> Définitions</a></li>
 <li class="chapter" data-level="18.2" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html#relations-avec-dautres-mesures-de-diversité"><i class="fa fa-check"></i><b>18.2</b> Relations avec d’autres mesures de diversité</a></li>
 </ul></li>
 <li class="part"><span><b>VI Diversité spatialement explicite</b></span></li>
 <li class="chapter" data-level="19" data-path="19-sec-spatialCadre.html"><a href="19-sec-spatialCadre.html"><i class="fa fa-check"></i><b>19</b> Cadre</a></li>
-<li class="chapter" data-level="20" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html"><i class="fa fa-check"></i><b>20</b> Indice <span class="math inline">\(\alpha\)</span> de Fisher</a>
-<ul>
+<li class="chapter" data-level="20" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html"><i class="fa fa-check"></i><b>20</b> Indice <span class="math inline">\(\alpha\)</span> de Fisher</a><ul>
 <li class="chapter" data-level="20.1" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html#construction"><i class="fa fa-check"></i><b>20.1</b> Construction</a></li>
 <li class="chapter" data-level="20.2" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html#variantes"><i class="fa fa-check"></i><b>20.2</b> Variantes</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html"><i class="fa fa-check"></i><b>21</b> Accumulation de la diversité locale</a>
-<ul>
+<li class="chapter" data-level="21" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html"><i class="fa fa-check"></i><b>21</b> Accumulation de la diversité locale</a><ul>
 <li class="chapter" data-level="21.1" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#courbes-daccumulation"><i class="fa fa-check"></i><b>21.1</b> Courbes d’accumulation</a></li>
 <li class="chapter" data-level="21.2" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#sec:Extrapolation"><i class="fa fa-check"></i><b>21.2</b> Extrapolation</a></li>
 <li class="chapter" data-level="21.3" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#influence-de-la-structure-spatiale"><i class="fa fa-check"></i><b>21.3</b> Influence de la structure spatiale</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html"><i class="fa fa-check"></i><b>22</b> Diversité régionale</a>
-<ul>
-<li class="chapter" data-level="22.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:Arrhenius"><i class="fa fa-check"></i><b>22.1</b> La relation d’Arrhenius</a>
-<ul>
+<li class="chapter" data-level="22" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html"><i class="fa fa-check"></i><b>22</b> Diversité régionale</a><ul>
+<li class="chapter" data-level="22.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:Arrhenius"><i class="fa fa-check"></i><b>22.1</b> La relation d’Arrhenius</a><ul>
 <li class="chapter" data-level="22.1.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#loi-de-puissance"><i class="fa fa-check"></i><b>22.1.1</b> Loi de puissance</a></li>
 <li class="chapter" data-level="22.1.2" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#le-modèle-de-plotkin"><i class="fa fa-check"></i><b>22.1.2</b> Le modèle de Plotkin</a></li>
 </ul></li>
@@ -439,17 +393,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.4" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:spatialSynthese"><i class="fa fa-check"></i><b>22.4</b> Synthèse</a></li>
 <li class="chapter" data-level="22.5" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#estimation-de-la-richesse-à-partir-de-placettes-distantes"><i class="fa fa-check"></i><b>22.5</b> Estimation de la richesse à partir de placettes distantes</a></li>
 </ul></li>
-<li class="chapter" data-level="23" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html"><i class="fa fa-check"></i><b>23</b> Diversité <span class="math inline">\(\beta\)</span> spatialement explicite</a>
-<ul>
+<li class="chapter" data-level="23" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html"><i class="fa fa-check"></i><b>23</b> Diversité <span class="math inline">\(\beta\)</span> spatialement explicite</a><ul>
 <li class="chapter" data-level="23.1" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html#sec:SimpsonSpatial"><i class="fa fa-check"></i><b>23.1</b> L’indice de Simpson spatialement explicite</a></li>
 <li class="chapter" data-level="23.2" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html#le-variogramme-de-complémentarité"><i class="fa fa-check"></i><b>23.2</b> Le variogramme de complémentarité</a></li>
 </ul></li>
 <li class="part"><span><b>VII Conclusion</b></span></li>
-<li class="chapter" data-level="24" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html"><i class="fa fa-check"></i><b>24</b> Synthèse</a>
-<ul>
+<li class="chapter" data-level="24" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html"><i class="fa fa-check"></i><b>24</b> Synthèse</a><ul>
 <li class="chapter" data-level="24.1" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#entropie-et-diversité-1"><i class="fa fa-check"></i><b>24.1</b> Entropie et diversité</a></li>
-<li class="chapter" data-level="24.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#ordres-particuliers-de-diversité"><i class="fa fa-check"></i><b>24.2</b> Ordres particuliers de diversité</a>
-<ul>
+<li class="chapter" data-level="24.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#ordres-particuliers-de-diversité"><i class="fa fa-check"></i><b>24.2</b> Ordres particuliers de diversité</a><ul>
 <li class="chapter" data-level="24.2.1" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#estimation-2"><i class="fa fa-check"></i><b>24.2.1</b> Estimation</a></li>
 <li class="chapter" data-level="24.2.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#partition"><i class="fa fa-check"></i><b>24.2.2</b> Partition</a></li>
 <li class="chapter" data-level="24.2.3" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#égalité-des-diversités"><i class="fa fa-check"></i><b>24.2.3</b> Égalité des diversités</a></li>
@@ -477,7 +428,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="sec:Equitabilite" class="section level1" number="5">
+<div id="sec:Equitabilite" class="section level1">
 <h1><span class="header-section-number">5</span> Équitabilité</h1>
 <p></p>
 <div class="Essentiel">
@@ -489,12 +440,12 @@ L’indice de Pielou est la mesure d’équitabilité la plus connue. Il a été
 </p>
 </div>
 <p></p>
-<p>La régularité d’une distribution est une notion intuitivement assez simple: la faiblesse de l’écart entre la distribution réelle et une distribution parfaitement régulière <span class="citation">(<a href="references.html#ref-Lloyd1964" role="doc-biblioref">Lloyd et Ghelardi 1964</a>)</span>, vérifiant <span class="math inline">\(p_s={1}/{S}\)</span>.
+<p>La régularité d’une distribution est une notion intuitivement assez simple: la faiblesse de l’écart entre la distribution réelle et une distribution parfaitement régulière <span class="citation">(Lloyd et Ghelardi <a href="#ref-Lloyd1964" role="doc-biblioref">1964</a>)</span>, vérifiant <span class="math inline">\(p_s={1}/{S}\)</span>.
 Des difficultés apparaissent quand il s’agit de comparer l’équitabilité de communautés de richesses différentes.
 L’approche axiomatique est présentée, puis les différents indices de la littérature et enfin la généralisation de l’indice de Pielou, en cohérence avec l’entropie HCDT.</p>
-<div id="approche-axiomatique" class="section level2" number="5.1">
+<div id="approche-axiomatique" class="section level2">
 <h2><span class="header-section-number">5.1</span> Approche axiomatique</h2>
-<p>Une approche axiomatique a été développée par la littérature, revue par <span class="citation"><a href="references.html#ref-Jost2010" role="doc-biblioref">Jost</a> (<a href="references.html#ref-Jost2010" role="doc-biblioref">2010b</a>)</span> ou <span class="citation"><a href="references.html#ref-Tuomisto2012" role="doc-biblioref">Tuomisto</a> (<a href="references.html#ref-Tuomisto2012" role="doc-biblioref">2012</a>)</span> Les propriétés fondamentales sont les critères de <span class="citation"><a href="references.html#ref-Dalton1920" role="doc-biblioref">Dalton</a> (<a href="references.html#ref-Dalton1920" role="doc-biblioref">1920</a>)</span>:</p>
+<p>Une approche axiomatique a été développée par la littérature, revue par <span class="citation">Jost (<a href="#ref-Jost2010" role="doc-biblioref">2010</a><a href="#ref-Jost2010" role="doc-biblioref">b</a>)</span> ou <span class="citation">Tuomisto (<a href="#ref-Tuomisto2012" role="doc-biblioref">2012</a>)</span> Les propriétés fondamentales sont les critères de <span class="citation">Dalton (<a href="#ref-Dalton1920" role="doc-biblioref">1920</a>)</span>:</p>
 <ul>
 <li>L’équitabilité augmente quand un individu est transféré d’une espèce fréquente à une espèce rare;</li>
 <li>L’équitabilité diminue quand une espèce rare est ajoutée;</li>
@@ -509,14 +460,14 @@ Figure 5.1: Tuomisto2012
 </p>
 </div>
 <p></p>
-<p>Un critère supplémentaire établi par <span class="citation"><a href="references.html#ref-Smith1996" role="doc-biblioref">B. Smith et Wilson</a> (<a href="references.html#ref-Smith1996" role="doc-biblioref">1996</a>)</span>, complété par <span class="citation"><a href="references.html#ref-Gosselin2001" role="doc-biblioref">Gosselin</a> (<a href="references.html#ref-Gosselin2001" role="doc-biblioref">2001</a>)</span> est la compatibilité avec la courbe de <span class="citation"><a href="references.html#ref-Lorenz1905" role="doc-biblioref">Lorenz</a> (<a href="references.html#ref-Lorenz1905" role="doc-biblioref">1905</a>)</span>, construite en classant les espèces de la moins fréquente à la plus fréquente, et en traçant le cumul des fréquences en fonction du rang <span class="citation">(figure <a href="5-sec-Equitabilite.html#fig:Tuomisto2012">5.1</a>, <a href="references.html#ref-Tuomisto2012" role="doc-biblioref">Tuomisto 2012</a>)</span>: une communauté parfaitement équitable est représentée par la bissectrice.
-La surface entre la courbe réelle et la bissectrice est très utilisée en économie pour mesurer l’inégalité sous le nom d’“indice de Gini” <span class="citation">(<a href="references.html#ref-Gini1912" role="doc-biblioref">Gini 1912</a>; <a href="references.html#ref-Ceriani2012" role="doc-biblioref">Ceriani et Verme 2012</a>)</span>:</p>
+<p>Un critère supplémentaire établi par <span class="citation">Smith et Wilson (<a href="#ref-Smith1996" role="doc-biblioref">1996</a>)</span>, complété par <span class="citation">Gosselin (<a href="#ref-Gosselin2001" role="doc-biblioref">2001</a>)</span> est la compatibilité avec la courbe de <span class="citation">Lorenz (<a href="#ref-Lorenz1905" role="doc-biblioref">1905</a>)</span>, construite en classant les espèces de la moins fréquente à la plus fréquente, et en traçant le cumul des fréquences en fonction du rang <span class="citation">(figure <a href="5-sec-Equitabilite.html#fig:Tuomisto2012">5.1</a>, Tuomisto <a href="#ref-Tuomisto2012" role="doc-biblioref">2012</a>)</span>: une communauté parfaitement équitable est représentée par la bissectrice.
+La surface entre la courbe réelle et la bissectrice est très utilisée en économie pour mesurer l’inégalité sous le nom d’“indice de Gini” <span class="citation">(Gini <a href="#ref-Gini1912" role="doc-biblioref">1912</a>; Ceriani et Verme <a href="#ref-Ceriani2012" role="doc-biblioref">2012</a>)</span>:</p>
 <ul>
 <li>Compatibilité avec la courbe de Lorenz: l’équitabilité augmente pour une communauté si sa courbe de Lorenz est plus proche de la bissectrice.
 Si les courbes de deux communautés se croisent, l’ordre de leurs équitabilités est imprévisible.</li>
 </ul>
-<p>Ce critère est remis en cause par <span class="citation"><a href="references.html#ref-Ricotta2004" role="doc-biblioref">Ricotta</a> (<a href="references.html#ref-Ricotta2004" role="doc-biblioref">2004b</a>)</span>: il est incompatible <span class="citation">(<a href="references.html#ref-Routledge1983" role="doc-biblioref">Routledge 1983</a>)</span> avec le critère de continuité retenu pour les mesures de diversité: l’introduction d’une espèce supplémentaire avec une probabilité infinitésimale peut modifier considérablement l’équitabilité.</p>
-<p>L’invariance par réplication est une propriété nécessaire (mais pas suffisante) à la compatibilité avec la courbe de Lorenz <span class="citation">(<a href="references.html#ref-Ricotta2004" role="doc-biblioref">Ricotta 2004b</a>)</span>:</p>
+<p>Ce critère est remis en cause par <span class="citation">Ricotta (<a href="#ref-Ricotta2004" role="doc-biblioref">2004</a><a href="#ref-Ricotta2004" role="doc-biblioref">b</a>)</span>: il est incompatible <span class="citation">(Routledge <a href="#ref-Routledge1983" role="doc-biblioref">1983</a>)</span> avec le critère de continuité retenu pour les mesures de diversité: l’introduction d’une espèce supplémentaire avec une probabilité infinitésimale peut modifier considérablement l’équitabilité.</p>
+<p>L’invariance par réplication est une propriété nécessaire (mais pas suffisante) à la compatibilité avec la courbe de Lorenz <span class="citation">(Ricotta <a href="#ref-Ricotta2004" role="doc-biblioref">2004</a><a href="#ref-Ricotta2004" role="doc-biblioref">b</a>)</span>:</p>
 <ul>
 <li>Invariance par réplication: l’équitabilité ne change pas si chaque espèce est remplacée par plusieurs nouvelles espèces ayant la même abondance.</li>
 </ul>
@@ -524,11 +475,11 @@ Si les courbes de deux communautés se croisent, l’ordre de leurs équitabilit
 L’argumentation de Jost est la plus convaincante: une communauté d’une richesse donnée dans laquelle tous les individus (à l’exception d’un nombre négligeable) sont concentrés dans une seule espèce atteint le niveau minimum d’équitabilité.
 Si elle est dupliquée, les individus seront répartis dans deux espèces et non une: la nouvelle communauté n’atteindra pas le niveau minimum d’équitabilité, il est donc souhaitable que la mesure d’équitabilité augmente.</p>
 </div>
-<div id="indice-classiques" class="section level2" number="5.2">
+<div id="indice-classiques" class="section level2">
 <h2><span class="header-section-number">5.2</span> Indice classiques</h2>
-<div id="indice-de-bulla" class="section level3" number="5.2.1">
+<div id="indice-de-bulla" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Indice de Bulla</h3>
-<p>L’indice d’équitabilité de <span class="citation"><a href="references.html#ref-Bulla1994" role="doc-biblioref">Bulla</a> (<a href="references.html#ref-Bulla1994" role="doc-biblioref">1994</a>)</span> respecte les critères de Smith et Wilson:
+<p>L’indice d’équitabilité de <span class="citation">Bulla (<a href="#ref-Bulla1994" role="doc-biblioref">1994</a>)</span> respecte les critères de Smith et Wilson:
 <span class="math display" id="eq:Bulla">\[\begin{equation}
   \tag{5.1}
   O = \sum_s{\min(p_s,\frac{1}{S})}.
@@ -542,40 +493,40 @@ Bulla le normalise pour qu’il soit compris entre 0 et 1:
 <p>La valeur minimale de <span class="math inline">\(O\)</span> est <span class="math inline">\({1}/{S}\)</span>.
 Bulla considère que ce n’est pas le cas si les effectifs sont entiers et fournit une valeur exacte dépendant du nombre d’espèces.</p>
 </div>
-<div id="indice-de-gini" class="section level3" number="5.2.2">
+<div id="indice-de-gini" class="section level3">
 <h3><span class="header-section-number">5.2.2</span> Indice de Gini</h3>
 <p>L’indice de Gini est le double de la surface comprise entre la courbe de Lorenz et la bissectrice (figure <a href="5-sec-Equitabilite.html#fig:Tuomisto2012">5.1</a>).</p>
 </div>
-<div id="rapports-de-moyennes" class="section level3" number="5.2.3">
+<div id="rapports-de-moyennes" class="section level3">
 <h3><span class="header-section-number">5.2.3</span> Rapports de moyennes</h3>
-<p><span class="citation"><a href="references.html#ref-Taillie1979" role="doc-biblioref">Taillie</a> (<a href="references.html#ref-Taillie1979" role="doc-biblioref">1979</a>)</span> propose le rapport de la moyenne géométrique ou de la moyenne harmonique à la moyenne arithmétique des probabilités.</p>
+<p><span class="citation">Taillie (<a href="#ref-Taillie1979" role="doc-biblioref">1979</a>)</span> propose le rapport de la moyenne géométrique ou de la moyenne harmonique à la moyenne arithmétique des probabilités.</p>
 </div>
-<div id="ratios-de-hill" class="section level3" number="5.2.4">
+<div id="ratios-de-hill" class="section level3">
 <h3><span class="header-section-number">5.2.4</span> Ratios de Hill</h3>
-<p><span class="citation"><a href="references.html#ref-Hill1973" role="doc-biblioref">Hill</a> (<a href="references.html#ref-Hill1973" role="doc-biblioref">1973</a>)</span> utilise les rapports entre nombres effectifs d’espèces d’ordres différents comme mesure d’équitabilité.
-<span class="math inline">\(E_{1,0} = {^{1}\!D}/{^{0}\!D}\)</span> avait déjà été proposé par <span class="citation"><a href="references.html#ref-Sheldon1969" role="doc-biblioref">Sheldon</a> (<a href="references.html#ref-Sheldon1969" role="doc-biblioref">1969</a>)</span>.
-<span class="citation"><a href="references.html#ref-Peet1974" role="doc-biblioref">Peet</a> (<a href="references.html#ref-Peet1974" role="doc-biblioref">1974</a>)</span> le normalise en retirant au numérateur et au dénominateur leur valeur minimale, c’est-à-dire 1.</p>
-<p>La version normalisée de <span class="math inline">\(E_{2,1}\)</span> est recommandée par <span class="citation"><a href="references.html#ref-Alatalo1981" role="doc-biblioref">Alatalo</a> (<a href="references.html#ref-Alatalo1981" role="doc-biblioref">1981</a>)</span>.</p>
+<p><span class="citation">Hill (<a href="#ref-Hill1973" role="doc-biblioref">1973</a>)</span> utilise les rapports entre nombres effectifs d’espèces d’ordres différents comme mesure d’équitabilité.
+<span class="math inline">\(E_{1,0} = {^{1}\!D}/{^{0}\!D}\)</span> avait déjà été proposé par <span class="citation">Sheldon (<a href="#ref-Sheldon1969" role="doc-biblioref">1969</a>)</span>.
+<span class="citation">Peet (<a href="#ref-Peet1974" role="doc-biblioref">1974</a>)</span> le normalise en retirant au numérateur et au dénominateur leur valeur minimale, c’est-à-dire 1.</p>
+<p>La version normalisée de <span class="math inline">\(E_{2,1}\)</span> est recommandée par <span class="citation">Alatalo (<a href="#ref-Alatalo1981" role="doc-biblioref">1981</a>)</span>.</p>
 </div>
-<div id="synthèse-1" class="section level3" number="5.2.5">
+<div id="synthèse-1" class="section level3">
 <h3><span class="header-section-number">5.2.5</span> Synthèse</h3>
-<p><span class="citation"><a href="references.html#ref-Ricotta2001" role="doc-biblioref">Ricotta et al.</a> (<a href="references.html#ref-Ricotta2001" role="doc-biblioref">2001</a>)</span> testent ces indices sur 65 jeux de données différents pour observer leurs corrélations.
+<p><span class="citation">Ricotta et al. (<a href="#ref-Ricotta2001" role="doc-biblioref">2001</a>)</span> testent ces indices sur 65 jeux de données différents pour observer leurs corrélations.
 Tous sont compatibles avec la courbe de Lorenz.
 Ils concluent que les indices se répartissent en deux groupes: la plupart sont sensibles aux abondances relatives des espèces rares.
 <span class="math inline">\(E_{\infty,0}\)</span> et, dans une moindre mesure, <span class="math inline">\(E_{2,0}\)</span> sont plus sensibles aux espèces fréquentes.</p>
 </div>
 </div>
-<div id="indice-alternatifs" class="section level2" number="5.3">
+<div id="indice-alternatifs" class="section level2">
 <h2><span class="header-section-number">5.3</span> Indice alternatifs</h2>
-<div id="variance-de-la-rareté" class="section level3" number="5.3.1">
+<div id="variance-de-la-rareté" class="section level3">
 <h3><span class="header-section-number">5.3.1</span> Variance de la rareté</h3>
-<p><span class="citation"><a href="references.html#ref-Engen1977" role="doc-biblioref">Engen</a> (<a href="references.html#ref-Engen1977" role="doc-biblioref">1977</a>)</span> définit comme mesure d’équitabilité la variance de la rareté (la fonction d’information) de l’entropie de Shannon (<span class="math inline">\(-\ln p\)</span>):
+<p><span class="citation">Engen (<a href="#ref-Engen1977" role="doc-biblioref">1977</a>)</span> définit comme mesure d’équitabilité la variance de la rareté (la fonction d’information) de l’entropie de Shannon (<span class="math inline">\(-\ln p\)</span>):
 <span class="math display" id="eq:Engen1977">\[\begin{equation}
   \tag{5.3}
   E_\mathit{VS} = \sum_{s}{p_s(\ln p_s)^2}-(\sum_s{p_s \ln p_s})^2.
 \end{equation}\]</span></p>
 <p>Sa valeur est nulle si les espèces sont équiprobables.</p>
-<p><span class="citation"><a href="references.html#ref-Ricotta2003b" role="doc-biblioref">Ricotta</a> (<a href="references.html#ref-Ricotta2003b" role="doc-biblioref">2003</a>)</span> généralise cette mesure aux autres fonctions d’information.
+<p><span class="citation">Ricotta (<a href="#ref-Ricotta2003b" role="doc-biblioref">2003</a>)</span> généralise cette mesure aux autres fonctions d’information.
 Toutes peuvent être utilisées:</p>
 <p><span class="math display" id="eq:Ricotta2003b">\[\begin{equation}
   \tag{5.4}
@@ -583,9 +534,9 @@ Toutes peuvent être utilisées:</p>
 \end{equation}\]</span></p>
 <p>Ces mesures ne sont pas invariantes par réplication mais sont continues par rapport aux probabilités.</p>
 </div>
-<div id="non-spécificité" class="section level3" number="5.3.2">
+<div id="non-spécificité" class="section level3">
 <h3><span class="header-section-number">5.3.2</span> Non-spécificité</h3>
-<p><span class="citation"><a href="references.html#ref-Ricotta2004" role="doc-biblioref">Ricotta</a> (<a href="references.html#ref-Ricotta2004" role="doc-biblioref">2004b</a>)</span> propose un indice fondé sur les ensembles flous, utilisant les mesures de spécificité <span class="citation">(<a href="references.html#ref-Yager1992" role="doc-biblioref">Yager 1992</a>)</span>.
+<p><span class="citation">Ricotta (<a href="#ref-Ricotta2004" role="doc-biblioref">2004</a><a href="#ref-Ricotta2004" role="doc-biblioref">b</a>)</span> propose un indice fondé sur les ensembles flous, utilisant les mesures de spécificité <span class="citation">(Yager <a href="#ref-Yager1992" role="doc-biblioref">1992</a>)</span>.
 Les espèces sont classées par probabilité décroissante. La mesure de non-spécificité utilisable comme mesure d’équitabilité est</p>
 <p><span class="math display" id="eq:Ricotta2004">\[\begin{equation}
   \tag{5.5}
@@ -594,9 +545,9 @@ Les espèces sont classées par probabilité décroissante. La mesure de non-sp�
 <p>Cet indice n’est pas invariant par réplication mais est continu par rapport aux probabilités.</p>
 </div>
 </div>
-<div id="indice-de-pielou" class="section level2" number="5.4">
+<div id="indice-de-pielou" class="section level2">
 <h2><span class="header-section-number">5.4</span> Indice de Pielou</h2>
-<p>Une expression de l’équitabilité est souvent donnée à partir de l’indice de Shannon <span class="citation">(<a href="references.html#ref-Lloyd1964" role="doc-biblioref">Lloyd et Ghelardi 1964</a>; <a href="references.html#ref-Sheldon1969" role="doc-biblioref">Sheldon 1969</a>; <a href="references.html#ref-Pielou1966a" role="doc-biblioref">Pielou 1966b</a>, <a href="references.html#ref-Pielou1975" role="doc-biblioref">1975</a>)</span>.
+<p>Une expression de l’équitabilité est souvent donnée à partir de l’indice de Shannon <span class="citation">(Lloyd et Ghelardi <a href="#ref-Lloyd1964" role="doc-biblioref">1964</a>; Sheldon <a href="#ref-Sheldon1969" role="doc-biblioref">1969</a>; Pielou <a href="#ref-Pielou1966a" role="doc-biblioref">1966</a><a href="#ref-Pielou1966a" role="doc-biblioref">b</a>, <a href="#ref-Pielou1975" role="doc-biblioref">1975</a>)</span>.
 La valeur maximale de l’indice de Shannon est obtenue quand la distribution est parfaitement régulière.
 Alors: <span class="math inline">\(H_{\max}=\ln S\)</span>.
 On a donc défini l’indice, souvent appelé “indice de Pielou”:</p>
@@ -606,11 +557,11 @@ On a donc défini l’indice, souvent appelé “indice de Pielou”:</p>
 \end{equation}\]</span></p>
 <p><span class="math inline">\(J\)</span> est compris entre 0 (une seule espèce a une probabilité de 1) et 1 (toutes les espèces ont la même probabilité).</p>
 </div>
-<div id="généralisation-de-lindice-de-pielou" class="section level2" number="5.5">
+<div id="généralisation-de-lindice-de-pielou" class="section level2">
 <h2><span class="header-section-number">5.5</span> Généralisation de l’indice de Pielou</h2>
-<div id="sec:Mendes" class="section level3" number="5.5.1">
+<div id="sec:Mendes" class="section level3">
 <h3><span class="header-section-number">5.5.1</span> Mendes et al. </h3>
-<p><span class="citation"><a href="references.html#ref-Mendes2008" role="doc-biblioref">Mendes et al.</a> (<a href="references.html#ref-Mendes2008" role="doc-biblioref">2008</a>)</span> généralisent l’indice de Pielou en remplaçant l’indice de Shannon par l’entropie de Tsallis.
+<p><span class="citation">Mendes et al. (<a href="#ref-Mendes2008" role="doc-biblioref">2008</a>)</span> généralisent l’indice de Pielou en remplaçant l’indice de Shannon par l’entropie de Tsallis.
 Ils définissent</p>
 <p><span class="math display" id="eq:JMendes2008">\[\begin{equation}
   \tag{5.7}
@@ -618,9 +569,9 @@ Ils définissent</p>
 \end{equation}\]</span></p>
 <p>et tracent des profils d’équitabilité, c’est-à-dire la valeur de <span class="math inline">\(^{q}\!J^{*}\)</span> en fonction de <span class="math inline">\(q\)</span>.
 Ils observent que l’équitabilité est minimale pour une valeur particulière de <span class="math inline">\(q\)</span> qu’ils notent <span class="math inline">\(q^*\)</span> et montrent sur des exemples simulés que <span class="math inline">\(q^*\)</span> diminue avec la richesse de la communauté, mais sans en explorer complètement les propriétés.</p>
-<p><span class="math inline">\(^{2}\!J^{*}\)</span> est l’indice d’équitabilité dérivé de l’indice de diversité de Simpson par <span class="citation"><a href="references.html#ref-Hurlbert1971" role="doc-biblioref">Hurlbert</a> (<a href="references.html#ref-Hurlbert1971" role="doc-biblioref">1971</a>)</span>.</p>
+<p><span class="math inline">\(^{2}\!J^{*}\)</span> est l’indice d’équitabilité dérivé de l’indice de diversité de Simpson par <span class="citation">Hurlbert (<a href="#ref-Hurlbert1971" role="doc-biblioref">1971</a>)</span>.</p>
 </div>
-<div id="tuomisto" class="section level3" number="5.5.2">
+<div id="tuomisto" class="section level3">
 <h3><span class="header-section-number">5.5.2</span> Tuomisto</h3>
 <p>Tuomisto argumente en faveur d’une définition stricte de l’équitabilité (<em>evenness</em> en anglais, <em>equitability</em> pouvant être utilisé dans un sens plus large) en tant que ratio de Hill:</p>
 <p><span class="math display" id="eq:TuomistoEq">\[\begin{equation}
@@ -630,9 +581,9 @@ Ils observent que l’équitabilité est minimale pour une valeur particulière 
   = \frac{^{q}\!D}{S}.
 \end{equation}\]</span></p>
 <p>L’équitabilité d’ordre <span class="math inline">\(q\)</span> est le rapport de la diversité d’ordre <span class="math inline">\(q\)</span> sur la richesse.</p>
-<p>L’idée fondamentale de la notion d’équitabilité est que la mesure de la diversité doit pouvoir être partitionnée en deux composantes indépendantes: la richesse et l’équitabilité <span class="citation">(<a href="references.html#ref-Smith1996" role="doc-biblioref">B. Smith et Wilson 1996</a>)</span>.</p>
+<p>L’idée fondamentale de la notion d’équitabilité est que la mesure de la diversité doit pouvoir être partitionnée en deux composantes indépendantes: la richesse et l’équitabilité <span class="citation">(Smith et Wilson <a href="#ref-Smith1996" role="doc-biblioref">1996</a>)</span>.</p>
 </div>
-<div id="jost" class="section level3" number="5.5.3">
+<div id="jost" class="section level3">
 <h3><span class="header-section-number">5.5.3</span> Jost</h3>
 
 <p></p>
@@ -643,25 +594,25 @@ Figure 5.2: Profil d’inéquitabilité de BCI: L’inéquitabilité augmente qu
 </p>
 </div>
 <p></p>
-<p><span class="citation"><a href="references.html#ref-Jost2010" role="doc-biblioref">Jost</a> (<a href="references.html#ref-Jost2010" role="doc-biblioref">2010b</a>)</span> montre que l’indépendance est impossible dans le cadre de la décomposition multiplicative: si <span class="math inline">\(^{q}\!E={^{q}\!D/{S}}\)</span>, sa valeur minimale est contrainte par le nombre d’espèces, une communauté pauvre ne peut pas être aussi inéquitable qu’une communauté riche (propriété déjà montrée par <span class="citation"><a href="references.html#ref-Sheldon1969" role="doc-biblioref">Sheldon</a> (<a href="references.html#ref-Sheldon1969" role="doc-biblioref">1969</a>)</span> ou <span class="citation"><a href="references.html#ref-Alatalo1981" role="doc-biblioref">Alatalo</a> (<a href="references.html#ref-Alatalo1981" role="doc-biblioref">1981</a>)</span>).
+<p><span class="citation">Jost (<a href="#ref-Jost2010" role="doc-biblioref">2010</a><a href="#ref-Jost2010" role="doc-biblioref">b</a>)</span> montre que l’indépendance est impossible dans le cadre de la décomposition multiplicative: si <span class="math inline">\(^{q}\!E={^{q}\!D/{S}}\)</span>, sa valeur minimale est contrainte par le nombre d’espèces, une communauté pauvre ne peut pas être aussi inéquitable qu’une communauté riche (propriété déjà montrée par <span class="citation">Sheldon (<a href="#ref-Sheldon1969" role="doc-biblioref">1969</a>)</span> ou <span class="citation">Alatalo (<a href="#ref-Alatalo1981" role="doc-biblioref">1981</a>)</span>).
 En revanche, la richesse peut être partitionnée de façon indépendante en diversité et inéquitabilité: <span class="math inline">\(S={^{q}\!D}/{^{q}\!E}\)</span>.</p>
 <p>L’inéquitabilité <span class="math inline">\(1/{^{q}\!E}\)</span> (figure <a href="5-sec-Equitabilite.html#fig:ProfilIneqFig">5.2</a>) est un nombre effectif d’espèces: c’est la richesse d’une communauté du même niveau d’équitabilité que la communauté réelle dans laquelle tous les individus (sauf un nombre négligeable) appartiendraient à une seule espèce.</p>
 <p>Code R pour la figure <a href="5-sec-Equitabilite.html#fig:ProfilIneqFig">5.2</a>:</p>
 <p></p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="5-sec-Equitabilite.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimation du nombre d&#39;espèces</span></span>
-<span id="cb155-2"><a href="5-sec-Equitabilite.html#cb155-2" aria-hidden="true" tabindex="-1"></a>Ns <span class="ot">&lt;-</span> <span class="fu">colSums</span>(BCI)</span>
-<span id="cb155-3"><a href="5-sec-Equitabilite.html#cb155-3" aria-hidden="true" tabindex="-1"></a>UBNs <span class="ot">&lt;-</span> <span class="fu">jackknife</span>(<span class="fu">AbdFreqCount</span>(Ns), <span class="at">k =</span> <span class="dv">1</span>)<span class="sc">$</span>Nhat</span>
-<span id="cb155-4"><a href="5-sec-Equitabilite.html#cb155-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Profil</span></span>
-<span id="cb155-5"><a href="5-sec-Equitabilite.html#cb155-5" aria-hidden="true" tabindex="-1"></a>Inq <span class="ot">&lt;-</span> DivPrf <span class="ot">&lt;-</span> <span class="fu">CommunityProfile</span>(Diversity, Ns)</span>
-<span id="cb155-6"><a href="5-sec-Equitabilite.html#cb155-6" aria-hidden="true" tabindex="-1"></a>Inq<span class="sc">$</span>y <span class="ot">&lt;-</span> UBNs<span class="sc">/</span>DivPrf<span class="sc">$</span>y</span>
-<span id="cb155-7"><a href="5-sec-Equitabilite.html#cb155-7" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(Inq, <span class="at">xlab =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Inéquitabilité&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="5-sec-Equitabilite.html#cb155-1"></a><span class="co"># Estimation du nombre d&#39;espèces</span></span>
+<span id="cb155-2"><a href="5-sec-Equitabilite.html#cb155-2"></a>Ns &lt;-<span class="st"> </span><span class="kw">colSums</span>(BCI)</span>
+<span id="cb155-3"><a href="5-sec-Equitabilite.html#cb155-3"></a>UBNs &lt;-<span class="st"> </span><span class="kw">jackknife</span>(<span class="kw">AbdFreqCount</span>(Ns), <span class="dt">k =</span> <span class="dv">1</span>)<span class="op">$</span>Nhat</span>
+<span id="cb155-4"><a href="5-sec-Equitabilite.html#cb155-4"></a><span class="co"># Profil</span></span>
+<span id="cb155-5"><a href="5-sec-Equitabilite.html#cb155-5"></a>Inq &lt;-<span class="st"> </span>DivPrf &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, Ns)</span>
+<span id="cb155-6"><a href="5-sec-Equitabilite.html#cb155-6"></a>Inq<span class="op">$</span>y &lt;-<span class="st"> </span>UBNs<span class="op">/</span>DivPrf<span class="op">$</span>y</span>
+<span id="cb155-7"><a href="5-sec-Equitabilite.html#cb155-7"></a><span class="kw">autoplot</span>(Inq, <span class="dt">xlab =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Inéquitabilité&quot;</span>)</span></code></pre></div>
 <p></p>
 </div>
-<div id="synthèse-2" class="section level3" number="5.5.4">
+<div id="synthèse-2" class="section level3">
 <h3><span class="header-section-number">5.5.4</span> Synthèse</h3>
-<p>L’indice de Pielou est le plus utilisé <span class="citation">(<a href="references.html#ref-Tuomisto2012" role="doc-biblioref">Tuomisto 2012</a>)</span> mais n’est pas invariant par réplication parce qu’il ne normalise pas une diversité mais une entropie.
-Il est rejeté pour cette raison <span class="citation">(<a href="references.html#ref-Smith1996" role="doc-biblioref">B. Smith et Wilson 1996</a>; <a href="references.html#ref-Tuomisto2012" role="doc-biblioref">Tuomisto 2012</a>)</span> par une partie de la littérature.
-<span class="citation"><a href="references.html#ref-Jost2010" role="doc-biblioref">Jost</a> (<a href="references.html#ref-Jost2010" role="doc-biblioref">2010b</a>)</span> argumente au contraire en sa faveur: <span class="math inline">\(^{q}\!E\)</span> dépend de la richesse et ne peut donc pas être comparé entre communautés de richesse différente.
+<p>L’indice de Pielou est le plus utilisé <span class="citation">(Tuomisto <a href="#ref-Tuomisto2012" role="doc-biblioref">2012</a>)</span> mais n’est pas invariant par réplication parce qu’il ne normalise pas une diversité mais une entropie.
+Il est rejeté pour cette raison <span class="citation">(Smith et Wilson <a href="#ref-Smith1996" role="doc-biblioref">1996</a>; Tuomisto <a href="#ref-Tuomisto2012" role="doc-biblioref">2012</a>)</span> par une partie de la littérature.
+<span class="citation">Jost (<a href="#ref-Jost2010" role="doc-biblioref">2010</a><a href="#ref-Jost2010" role="doc-biblioref">b</a>)</span> argumente au contraire en sa faveur: <span class="math inline">\(^{q}\!E\)</span> dépend de la richesse et ne peut donc pas être comparé entre communautés de richesse différente.
 Le logarithme de <span class="math inline">\(^{q}\!E\)</span> normalisé est une meilleure généralisation de l’indice de Pielou que celle de Mendes et al.:</p>
 <p><span class="math display" id="eq:PielouJq">\[\begin{equation}
   \tag{5.9}
@@ -689,24 +640,24 @@ Figure 5.3: Profil d’équitabilité de BCI. L’équitabilité est ici normali
 <p>Un profil d’équitabilité calculé de cette façon est présenté en figure <a href="5-sec-Equitabilite.html#fig:BCIEqFig">5.3</a>, représentation alternative de la figure <a href="5-sec-Equitabilite.html#fig:ProfilIneqFig">5.2</a>.</p>
 <p>Code R supplémentaire:</p>
 <p></p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="5-sec-Equitabilite.html#cb156-1" aria-hidden="true" tabindex="-1"></a>Inq<span class="sc">$</span>y <span class="ot">&lt;-</span> <span class="fu">log</span>(DivPrf<span class="sc">$</span>y)<span class="sc">/</span><span class="fu">log</span>(UBNs)</span>
-<span id="cb156-2"><a href="5-sec-Equitabilite.html#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(Inq, <span class="at">xlab =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Indice de Pielou&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="5-sec-Equitabilite.html#cb156-1"></a>Inq<span class="op">$</span>y &lt;-<span class="st"> </span><span class="kw">log</span>(DivPrf<span class="op">$</span>y)<span class="op">/</span><span class="kw">log</span>(UBNs)</span>
+<span id="cb156-2"><a href="5-sec-Equitabilite.html#cb156-2"></a><span class="kw">autoplot</span>(Inq, <span class="dt">xlab =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Indice de Pielou&quot;</span>)</span></code></pre></div>
 <p></p>
 </div>
 </div>
-<div id="relations-empiriques-entre-richesse-et-équitabilité" class="section level2" number="5.6">
+<div id="relations-empiriques-entre-richesse-et-équitabilité" class="section level2">
 <h2><span class="header-section-number">5.6</span> Relations empiriques entre richesse et équitabilité</h2>
 <p>Au-delà de la question des contraintes mathématiques entre richesse et équtabilité traitées précédemment, il s’agit ici des relations entre les deux aspects de la diversité dans des communautés réelles.</p>
-<p><span class="citation"><a href="references.html#ref-Wilsey2005" role="doc-biblioref">Wilsey et al.</a> (<a href="references.html#ref-Wilsey2005" role="doc-biblioref">2005</a>)</span> passent en revue l’argument selon lequel richesse et équitabilité seraient toujours positivement corrélés.
+<p><span class="citation">Wilsey et al. (<a href="#ref-Wilsey2005" role="doc-biblioref">2005</a>)</span> passent en revue l’argument selon lequel richesse et équitabilité seraient toujours positivement corrélés.
 S’il est valide, la richesse peut être considérée comme une mesure suffisante de la diversité.
 À partir d’inventaires de prairies, ils montrent la très faible relation entre les deux valeurs.
-Le suivi temporel de communautés de papillons <span class="citation">(<a href="references.html#ref-MacDonald2016" role="doc-biblioref">MacDonald, Nielsen, et Acorn 2017</a>)</span> met en évidence une relation négative.
+Le suivi temporel de communautés de papillons <span class="citation">(MacDonald, Nielsen, et Acorn <a href="#ref-MacDonald2016" role="doc-biblioref">2017</a>)</span> met en évidence une relation négative.
 Les auteurs de l’étude critiquent un peu naïvement l’utilisation des nombres de Hill pour mesurer la diversité parce qu’ils confondent les effets de la richesse et de l’équitabilité: c’est justement leur but.</p>
-<p>D’un point de vue plus théorique, <span class="citation"><a href="references.html#ref-DeBenedictis1973" role="doc-biblioref">DeBenedictis</a> (<a href="references.html#ref-DeBenedictis1973" role="doc-biblioref">1973</a>)</span> étudie les contraintes numériques sur l’intervalle des valeurs possibles de l’entropie de Shannon et de l’équitabilité en fonction de la richesse.
+<p>D’un point de vue plus théorique, <span class="citation">DeBenedictis (<a href="#ref-DeBenedictis1973" role="doc-biblioref">1973</a>)</span> étudie les contraintes numériques sur l’intervalle des valeurs possibles de l’entropie de Shannon et de l’équitabilité en fonction de la richesse.
 Il ne prouve pas de corrélation entre ces valeurs pour des communautés réelles mais simplement un lien positif quand les échantillons sont de petite taille et l’effectif minimum de chaque espèce égal à 1: ces contraintes se relâchent si les donnnées sont des probabilités, pouvant tendre vers 0 pour les espèces rares, ou des abondances dans de grands échantillons.
-Cette approche est similaire à celle de <span class="citation"><a href="references.html#ref-Jost2010" role="doc-biblioref">Jost</a> (<a href="references.html#ref-Jost2010" role="doc-biblioref">2010b</a>)</span>, plus aboutie.</p>
-<p><span class="citation"><a href="references.html#ref-May1975" role="doc-biblioref">May</a> (<a href="references.html#ref-May1975" role="doc-biblioref">1975</a>)</span> montre que dans le cadre d’une distribution log-normale, la richesse, l’entropie de Simpson et l’équitabilité de Pielou sont positivement corrélées.
-Ce résultat a été étendu par <span class="citation"><a href="references.html#ref-Stirling2001" role="doc-biblioref">G. Stirling et Wilsey</a> (<a href="references.html#ref-Stirling2001" role="doc-biblioref">2001</a>)</span> aux distributions en log-séries et testé dans des communautés réelles avec des conclusions contrastées, notamment des corrélations négatives ntre richesse et équitabilité dans des communautés très riches.</p>
+Cette approche est similaire à celle de <span class="citation">Jost (<a href="#ref-Jost2010" role="doc-biblioref">2010</a><a href="#ref-Jost2010" role="doc-biblioref">b</a>)</span>, plus aboutie.</p>
+<p><span class="citation">May (<a href="#ref-May1975" role="doc-biblioref">1975</a>)</span> montre que dans le cadre d’une distribution log-normale, la richesse, l’entropie de Simpson et l’équitabilité de Pielou sont positivement corrélées.
+Ce résultat a été étendu par <span class="citation">Stirling et Wilsey (<a href="#ref-Stirling2001" role="doc-biblioref">2001</a>)</span> aux distributions en log-séries et testé dans des communautés réelles avec des conclusions contrastées, notamment des corrélations négatives ntre richesse et équitabilité dans des communautés très riches.</p>
 <p>Des simulations permettent de comprendre les corrélations dans des cas simples.</p>
 <p>La figure <a href="5-sec-Equitabilite.html#fig:SJLogNormaleFig">5.4</a> montre que l’entropie et l’équitabilité sont corrélées positivement à la richesse dans des communautés log-normales de même variance.</p>
 
@@ -720,28 +671,28 @@ Figure 5.4: Relations entre l’entropie de Shannon (a), l’indice d’équitab
 <p></p>
 <p>Code R pour réaliser les figures:</p>
 <p></p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="5-sec-Equitabilite.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Communautés de 30 à 300 espèces</span></span>
-<span id="cb157-2"><a href="5-sec-Equitabilite.html#cb157-2" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="dv">30</span><span class="sc">:</span><span class="dv">300</span></span>
-<span id="cb157-3"><a href="5-sec-Equitabilite.html#cb157-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tirage de communautés log-normales de 10000 individus</span></span>
-<span id="cb157-4"><a href="5-sec-Equitabilite.html#cb157-4" aria-hidden="true" tabindex="-1"></a>rcl <span class="ot">&lt;-</span> <span class="fu">lapply</span>(S, <span class="cf">function</span>(S) <span class="fu">rCommunity</span>(<span class="dv">1</span>, <span class="dv">10000</span>, <span class="at">S=</span>S))</span>
-<span id="cb157-5"><a href="5-sec-Equitabilite.html#cb157-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Richesse et Shannon</span></span>
-<span id="cb157-6"><a href="5-sec-Equitabilite.html#cb157-6" aria-hidden="true" tabindex="-1"></a>Sobs <span class="ot">&lt;-</span> <span class="fu">sapply</span>(rcl, Richness)</span>
-<span id="cb157-7"><a href="5-sec-Equitabilite.html#cb157-7" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="fu">sapply</span>(rcl, Shannon)</span>
-<span id="cb157-8"><a href="5-sec-Equitabilite.html#cb157-8" aria-hidden="true" tabindex="-1"></a>ggH <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(S, H), <span class="fu">aes</span>(S, H)) <span class="sc">+</span></span>
-<span id="cb157-9"><a href="5-sec-Equitabilite.html#cb157-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">scale_x_log10</span>() <span class="sc">+</span> </span>
-<span id="cb157-10"><a href="5-sec-Equitabilite.html#cb157-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;S (échelle logarithmique)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb157-11"><a href="5-sec-Equitabilite.html#cb157-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
-<span id="cb157-12"><a href="5-sec-Equitabilite.html#cb157-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Equitabilité de Pielou</span></span>
-<span id="cb157-13"><a href="5-sec-Equitabilite.html#cb157-13" aria-hidden="true" tabindex="-1"></a>J <span class="ot">&lt;-</span> H<span class="sc">/</span><span class="fu">log</span>(S)</span>
-<span id="cb157-14"><a href="5-sec-Equitabilite.html#cb157-14" aria-hidden="true" tabindex="-1"></a>ggJ <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(S, J), <span class="fu">aes</span>(S, J)) <span class="sc">+</span></span>
-<span id="cb157-15"><a href="5-sec-Equitabilite.html#cb157-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
-<span id="cb157-16"><a href="5-sec-Equitabilite.html#cb157-16" aria-hidden="true" tabindex="-1"></a>E <span class="ot">&lt;-</span> <span class="fu">sapply</span>(rcl, Simpson)</span>
-<span id="cb157-17"><a href="5-sec-Equitabilite.html#cb157-17" aria-hidden="true" tabindex="-1"></a>ggE <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(S, E), <span class="fu">aes</span>(S, E)) <span class="sc">+</span></span>
-<span id="cb157-18"><a href="5-sec-Equitabilite.html#cb157-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">tag =</span> <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb157-19"><a href="5-sec-Equitabilite.html#cb157-19" aria-hidden="true" tabindex="-1"></a>J2 <span class="ot">&lt;-</span> E<span class="sc">/</span>(<span class="dv">1-1</span><span class="sc">/</span>S)</span>
-<span id="cb157-20"><a href="5-sec-Equitabilite.html#cb157-20" aria-hidden="true" tabindex="-1"></a>ggJ2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(S, J2), <span class="fu">aes</span>(S, J2)) <span class="sc">+</span></span>
-<span id="cb157-21"><a href="5-sec-Equitabilite.html#cb157-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">tag =</span> <span class="st">&quot;d&quot;</span>)</span>
-<span id="cb157-22"><a href="5-sec-Equitabilite.html#cb157-22" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(ggH, ggJ, ggE , ggJ2, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="5-sec-Equitabilite.html#cb157-1"></a><span class="co"># Communautés de 30 à 300 espèces</span></span>
+<span id="cb157-2"><a href="5-sec-Equitabilite.html#cb157-2"></a>S &lt;-<span class="st"> </span><span class="dv">30</span><span class="op">:</span><span class="dv">300</span></span>
+<span id="cb157-3"><a href="5-sec-Equitabilite.html#cb157-3"></a><span class="co"># Tirage de communautés log-normales de 10000 individus</span></span>
+<span id="cb157-4"><a href="5-sec-Equitabilite.html#cb157-4"></a>rcl &lt;-<span class="st"> </span><span class="kw">lapply</span>(S, <span class="cf">function</span>(S) <span class="kw">rCommunity</span>(<span class="dv">1</span>, <span class="dv">10000</span>, <span class="dt">S=</span>S))</span>
+<span id="cb157-5"><a href="5-sec-Equitabilite.html#cb157-5"></a><span class="co"># Richesse et Shannon</span></span>
+<span id="cb157-6"><a href="5-sec-Equitabilite.html#cb157-6"></a>Sobs &lt;-<span class="st"> </span><span class="kw">sapply</span>(rcl, Richness)</span>
+<span id="cb157-7"><a href="5-sec-Equitabilite.html#cb157-7"></a>H &lt;-<span class="st"> </span><span class="kw">sapply</span>(rcl, Shannon)</span>
+<span id="cb157-8"><a href="5-sec-Equitabilite.html#cb157-8"></a>ggH &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, H), <span class="kw">aes</span>(S, H)) <span class="op">+</span></span>
+<span id="cb157-9"><a href="5-sec-Equitabilite.html#cb157-9"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_log10</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb157-10"><a href="5-sec-Equitabilite.html#cb157-10"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;S (échelle logarithmique)&quot;</span>) <span class="op">+</span></span>
+<span id="cb157-11"><a href="5-sec-Equitabilite.html#cb157-11"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
+<span id="cb157-12"><a href="5-sec-Equitabilite.html#cb157-12"></a><span class="co"># Equitabilité de Pielou</span></span>
+<span id="cb157-13"><a href="5-sec-Equitabilite.html#cb157-13"></a>J &lt;-<span class="st"> </span>H<span class="op">/</span><span class="kw">log</span>(S)</span>
+<span id="cb157-14"><a href="5-sec-Equitabilite.html#cb157-14"></a>ggJ &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, J), <span class="kw">aes</span>(S, J)) <span class="op">+</span></span>
+<span id="cb157-15"><a href="5-sec-Equitabilite.html#cb157-15"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb157-16"><a href="5-sec-Equitabilite.html#cb157-16"></a>E &lt;-<span class="st"> </span><span class="kw">sapply</span>(rcl, Simpson)</span>
+<span id="cb157-17"><a href="5-sec-Equitabilite.html#cb157-17"></a>ggE &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, E), <span class="kw">aes</span>(S, E)) <span class="op">+</span></span>
+<span id="cb157-18"><a href="5-sec-Equitabilite.html#cb157-18"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb157-19"><a href="5-sec-Equitabilite.html#cb157-19"></a>J2 &lt;-<span class="st"> </span>E<span class="op">/</span>(<span class="dv">1-1</span><span class="op">/</span>S)</span>
+<span id="cb157-20"><a href="5-sec-Equitabilite.html#cb157-20"></a>ggJ2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, J2), <span class="kw">aes</span>(S, J2)) <span class="op">+</span></span>
+<span id="cb157-21"><a href="5-sec-Equitabilite.html#cb157-21"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;d&quot;</span>)</span>
+<span id="cb157-22"><a href="5-sec-Equitabilite.html#cb157-22"></a><span class="kw">grid.arrange</span>(ggH, ggJ, ggE , ggJ2, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p>En revanche, dans une communauté log-normale de richesse fixe mais insuffisamment échantillonnée, les corrélations sont négatives (figure <a href="5-sec-Equitabilite.html#fig:NJLogNormaleFig">5.5</a>).
 Le sous-échantillonnage a un effet plus sévère sur la richesse que sur les entropies d’ordres supérieurs.
@@ -757,26 +708,26 @@ Figure 5.5: Relations entre l’entropie de Shannon (a), l’indice d’équitab
 <p></p>
 <p>Code R pour réaliser les figures:</p>
 <p></p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="5-sec-Equitabilite.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Communautés de taille 10 à 1000 individus; 300 sp.</span></span>
-<span id="cb158-2"><a href="5-sec-Equitabilite.html#cb158-2" aria-hidden="true" tabindex="-1"></a>rmc <span class="ot">&lt;-</span> <span class="fu">MetaCommunity</span>(<span class="fu">sapply</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">1000</span>, <span class="cf">function</span>(n) <span class="fu">rCommunity</span>(<span class="dv">1</span>, n)))</span>
-<span id="cb158-3"><a href="5-sec-Equitabilite.html#cb158-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Richesse et Shannon</span></span>
-<span id="cb158-4"><a href="5-sec-Equitabilite.html#cb158-4" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">apply</span>(rmc<span class="sc">$</span>Psi, <span class="dv">2</span>, Richness)</span>
-<span id="cb158-5"><a href="5-sec-Equitabilite.html#cb158-5" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="fu">apply</span>(rmc<span class="sc">$</span>Psi, <span class="dv">2</span>, Shannon)</span>
-<span id="cb158-6"><a href="5-sec-Equitabilite.html#cb158-6" aria-hidden="true" tabindex="-1"></a>ggH <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(S, H), <span class="fu">aes</span>(S, H)) <span class="sc">+</span></span>
-<span id="cb158-7"><a href="5-sec-Equitabilite.html#cb158-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">scale_x_log10</span>() <span class="sc">+</span> </span>
-<span id="cb158-8"><a href="5-sec-Equitabilite.html#cb158-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;S (échelle logarithmique)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb158-9"><a href="5-sec-Equitabilite.html#cb158-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
-<span id="cb158-10"><a href="5-sec-Equitabilite.html#cb158-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Equitabilité de Pielou</span></span>
-<span id="cb158-11"><a href="5-sec-Equitabilite.html#cb158-11" aria-hidden="true" tabindex="-1"></a>J <span class="ot">&lt;-</span> H<span class="sc">/</span><span class="fu">log</span>(S)</span>
-<span id="cb158-12"><a href="5-sec-Equitabilite.html#cb158-12" aria-hidden="true" tabindex="-1"></a>ggJ <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(S, J), <span class="fu">aes</span>(S, J)) <span class="sc">+</span></span>
-<span id="cb158-13"><a href="5-sec-Equitabilite.html#cb158-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
-<span id="cb158-14"><a href="5-sec-Equitabilite.html#cb158-14" aria-hidden="true" tabindex="-1"></a>E <span class="ot">&lt;-</span> <span class="fu">apply</span>(rmc<span class="sc">$</span>Psi, <span class="dv">2</span>, Simpson)</span>
-<span id="cb158-15"><a href="5-sec-Equitabilite.html#cb158-15" aria-hidden="true" tabindex="-1"></a>ggE <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(S, E), <span class="fu">aes</span>(S, E)) <span class="sc">+</span></span>
-<span id="cb158-16"><a href="5-sec-Equitabilite.html#cb158-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">tag =</span> <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb158-17"><a href="5-sec-Equitabilite.html#cb158-17" aria-hidden="true" tabindex="-1"></a>J2 <span class="ot">&lt;-</span> E<span class="sc">/</span>(<span class="dv">1-1</span><span class="sc">/</span>S)</span>
-<span id="cb158-18"><a href="5-sec-Equitabilite.html#cb158-18" aria-hidden="true" tabindex="-1"></a>ggJ2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(S, J2), <span class="fu">aes</span>(S, J2)) <span class="sc">+</span></span>
-<span id="cb158-19"><a href="5-sec-Equitabilite.html#cb158-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">tag =</span> <span class="st">&quot;d&quot;</span>)</span>
-<span id="cb158-20"><a href="5-sec-Equitabilite.html#cb158-20" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(ggH, ggJ, ggE , ggJ2, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="5-sec-Equitabilite.html#cb158-1"></a><span class="co"># Communautés de taille 10 à 1000 individus; 300 sp.</span></span>
+<span id="cb158-2"><a href="5-sec-Equitabilite.html#cb158-2"></a>rmc &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(<span class="kw">sapply</span>(<span class="dv">10</span><span class="op">:</span><span class="dv">1000</span>, <span class="cf">function</span>(n) <span class="kw">rCommunity</span>(<span class="dv">1</span>, n)))</span>
+<span id="cb158-3"><a href="5-sec-Equitabilite.html#cb158-3"></a><span class="co"># Richesse et Shannon</span></span>
+<span id="cb158-4"><a href="5-sec-Equitabilite.html#cb158-4"></a>S &lt;-<span class="st"> </span><span class="kw">apply</span>(rmc<span class="op">$</span>Psi, <span class="dv">2</span>, Richness)</span>
+<span id="cb158-5"><a href="5-sec-Equitabilite.html#cb158-5"></a>H &lt;-<span class="st"> </span><span class="kw">apply</span>(rmc<span class="op">$</span>Psi, <span class="dv">2</span>, Shannon)</span>
+<span id="cb158-6"><a href="5-sec-Equitabilite.html#cb158-6"></a>ggH &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, H), <span class="kw">aes</span>(S, H)) <span class="op">+</span></span>
+<span id="cb158-7"><a href="5-sec-Equitabilite.html#cb158-7"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_log10</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb158-8"><a href="5-sec-Equitabilite.html#cb158-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;S (échelle logarithmique)&quot;</span>) <span class="op">+</span></span>
+<span id="cb158-9"><a href="5-sec-Equitabilite.html#cb158-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
+<span id="cb158-10"><a href="5-sec-Equitabilite.html#cb158-10"></a><span class="co"># Equitabilité de Pielou</span></span>
+<span id="cb158-11"><a href="5-sec-Equitabilite.html#cb158-11"></a>J &lt;-<span class="st"> </span>H<span class="op">/</span><span class="kw">log</span>(S)</span>
+<span id="cb158-12"><a href="5-sec-Equitabilite.html#cb158-12"></a>ggJ &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, J), <span class="kw">aes</span>(S, J)) <span class="op">+</span></span>
+<span id="cb158-13"><a href="5-sec-Equitabilite.html#cb158-13"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb158-14"><a href="5-sec-Equitabilite.html#cb158-14"></a>E &lt;-<span class="st"> </span><span class="kw">apply</span>(rmc<span class="op">$</span>Psi, <span class="dv">2</span>, Simpson)</span>
+<span id="cb158-15"><a href="5-sec-Equitabilite.html#cb158-15"></a>ggE &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, E), <span class="kw">aes</span>(S, E)) <span class="op">+</span></span>
+<span id="cb158-16"><a href="5-sec-Equitabilite.html#cb158-16"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb158-17"><a href="5-sec-Equitabilite.html#cb158-17"></a>J2 &lt;-<span class="st"> </span>E<span class="op">/</span>(<span class="dv">1-1</span><span class="op">/</span>S)</span>
+<span id="cb158-18"><a href="5-sec-Equitabilite.html#cb158-18"></a>ggJ2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, J2), <span class="kw">aes</span>(S, J2)) <span class="op">+</span></span>
+<span id="cb158-19"><a href="5-sec-Equitabilite.html#cb158-19"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;d&quot;</span>)</span>
+<span id="cb158-20"><a href="5-sec-Equitabilite.html#cb158-20"></a><span class="kw">grid.arrange</span>(ggH, ggJ, ggE , ggJ2, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p>La corrélation entre richesse et équitabilité est donc positive si la richesse varie entre communautés, mais négative si ce n’est qu’un effet de l’échantillonnage.
 Les résultats sont similaires avec des communautés en log-séries: la corrélation est positive quand <span class="math inline">\(\alpha\)</span> varie, négative quand l’échantillonnage varie.</p>
@@ -786,6 +737,99 @@ Les résultats sont similaires avec des communautés en log-séries: la corréla
 
 
 
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Alatalo1981">
+<p>Alatalo, Rauno V. 1981. « Problems in the Measurement of Evenness in Ecology ». <em>Oikos</em> 37 (2): 199‑204. <a href="https://doi.org/10.2307/3544465">https://doi.org/10.2307/3544465</a>.</p>
+</div>
+<div id="ref-Bulla1994">
+<p>Bulla, Luis. 1994. « An index of evenness and its associated diversity measure ». <em>Oikos</em> 70 (1): 167‑72. <a href="https://doi.org/10.2307/3545713">https://doi.org/10.2307/3545713</a>.</p>
+</div>
+<div id="ref-Ceriani2012">
+<p>Ceriani, Lidia, et Paolo Verme. 2012. « The origins of the Gini index: extracts from Variabilità e Mutabilità (1912) by Corrado Gini ». <em>Journal of Economic Inequality</em> 10 (3): 421‑43. <a href="https://doi.org/10.1007/s10888-011-9188-x">https://doi.org/10.1007/s10888-011-9188-x</a>.</p>
+</div>
+<div id="ref-Dalton1920">
+<p>Dalton, Hugh. 1920. « The measurement of the inequality of incomes ». <em>The Economic Journal</em> 30 (119): 348‑61. <a href="https://doi.org/10.2307/2223525">https://doi.org/10.2307/2223525</a>.</p>
+</div>
+<div id="ref-DeBenedictis1973">
+<p>DeBenedictis, Paul A. 1973. « On the Correlations between Certain Diversity Indices ». <em>The American Naturalist</em> 107 (954): 295‑302. <a href="https://doi.org/10.2307/2459799">https://doi.org/10.2307/2459799</a>.</p>
+</div>
+<div id="ref-Engen1977">
+<p>Engen, Steinar. 1977. « Exponential and Logarithmic Species-Area Curves ». <em>The American Naturalist</em> 111 (979): 591‑94. <a href="https://doi.org/10.1086/283188">https://doi.org/10.1086/283188</a>.</p>
+</div>
+<div id="ref-Gini1912">
+<p>Gini, Corrado. 1912. <em>Variabilità e mutabilità</em>. Bologna: C. Cuppini.</p>
+</div>
+<div id="ref-Gosselin2001">
+<p>Gosselin, Frédéric. 2001. « Lorenz partial order: the best known logical framework to define evenness indices ». <em>Community Ecology</em> 2 (2): 197‑207. <a href="https://doi.org/10.1556/ComEc.2.2001.2.7">https://doi.org/10.1556/ComEc.2.2001.2.7</a>.</p>
+</div>
+<div id="ref-Hill1973">
+<p>Hill, M. O. 1973. « Diversity and Evenness: A Unifying Notation and Its Consequences ». <em>Ecology</em> 54 (2): 427‑32. <a href="https://doi.org/10.2307/1934352">https://doi.org/10.2307/1934352</a>.</p>
+</div>
+<div id="ref-Hurlbert1971">
+<p>Hurlbert, Stuart H. 1971. « The Nonconcept of Species Diversity: A Critique and Alternative Parameters ». <em>Ecology</em> 52 (4): 577‑86. <a href="https://doi.org/10.2307/1934145">https://doi.org/10.2307/1934145</a>.</p>
+</div>
+<div id="ref-Jost2010">
+<p>Jost, Lou. 2010b. « The Relation between Evenness and Diversity ». <em>Diversity</em> 2 (2): 207‑32. <a href="https://doi.org/10.3390/d2020207">https://doi.org/10.3390/d2020207</a>.</p>
+</div>
+<div id="ref-Lloyd1964">
+<p>Lloyd, Monte, et R J Ghelardi. 1964. « A Table for Calculating the ’Equitability’ Component of Species Diversity ». <em>Journal of Animal Ecology</em> 33 (2): 217‑25. <a href="https://doi.org/10.2307/2628">https://doi.org/10.2307/2628</a>.</p>
+</div>
+<div id="ref-Lorenz1905">
+<p>Lorenz, M. O. 1905. « Methods of Measuring the concentration of Wealth ». <em>Quarterly Publications of the American Statistical Association</em> 9: 209‑19. <a href="https://doi.org/10.1080/15225437.1905.10503443">https://doi.org/10.1080/15225437.1905.10503443</a>.</p>
+</div>
+<div id="ref-MacDonald2016">
+<p>MacDonald, Zachary G., Scott E. Nielsen, et John H. Acorn. 2017. « Negative relationships between species richness and evenness render common diversity indices inadequate for assessing long-term trends in butterfly diversity ». <em>Biodiversity and Conservation</em> 26 (3): 617‑29. <a href="https://doi.org/10.1007/s10531-016-1261-0">https://doi.org/10.1007/s10531-016-1261-0</a>.</p>
+</div>
+<div id="ref-May1975">
+<p>May, Robert M. 1975. « Patterns of species abundance and diversity ». In <em>Ecology and Evolution of Communities</em>, édité par M L Cody et J M Diamond, 81‑120. Harvard University Press.</p>
+</div>
+<div id="ref-Mendes2008">
+<p>Mendes, R. S., L. R. Evangelista, S. M. Thomaz, A. A. Agostinho, et L. C. Gomes. 2008. « A unified index to measure ecological diversity and species rarity ». <em>Ecography</em> 31 (4): 450‑56. <a href="https://doi.org/10.1111/j.0906-7590.2008.05469.x">https://doi.org/10.1111/j.0906-7590.2008.05469.x</a>.</p>
+</div>
+<div id="ref-Peet1974">
+<p>Peet, Robert K. 1974. « The measurement of species diversity ». <em>Annual review of ecology and systematics</em> 5: 285‑307. <a href="https://doi.org/10.1146/annurev.es.05.110174.001441">https://doi.org/10.1146/annurev.es.05.110174.001441</a>.</p>
+</div>
+<div id="ref-Pielou1966a">
+<p>Pielou, Evelyn C. 1966b. « The measurement of diversity in different types of biological collections ». <em>Journal of Theoretical Biology</em> 13 (C): 131‑44. <a href="https://doi.org/10.1016/0022-5193(66)90013-0">https://doi.org/10.1016/0022-5193(66)90013-0</a>.</p>
+</div>
+<div id="ref-Pielou1975">
+<p>Pielou, Evelyn C. 1975. <em>Ecological Diversity</em>. New York: Wiley.</p>
+</div>
+<div id="ref-Ricotta2003b">
+<p>Ricotta, Carlo. 2003. « On parametric evenness measures ». <em>Journal of Theoretical Biology</em> 222 (2): 189‑97. <a href="https://doi.org/10.1016/S0022-5193(03)00026-2">https://doi.org/10.1016/S0022-5193(03)00026-2</a>.</p>
+</div>
+<div id="ref-Ricotta2004">
+<p>Ricotta, Carlo. 2004b. « A recipe for unconventional evenness measures ». <em>Acta Biotheoretica</em> 52 (2): 95‑104. <a href="https://doi.org/10.1023/B:ACBI.0000043438.41888.ac">https://doi.org/10.1023/B:ACBI.0000043438.41888.ac</a>.</p>
+</div>
+<div id="ref-Ricotta2001">
+<p>Ricotta, Carlo, E. De Zuliani, A. Pacini, et Giancarlo C. Avena. 2001. « On the mutual relatedness of evenness measures ». <em>Community Ecology</em> 2 (1): 51‑56. <a href="https://doi.org/10.1556/ComEc.2.2001.1.6">https://doi.org/10.1556/ComEc.2.2001.1.6</a>.</p>
+</div>
+<div id="ref-Routledge1983">
+<p>Routledge, R. 1983. « Evenness indices: Are any admissible? » <em>Oikos</em> 40 (1): 149‑51. <a href="https://doi.org/10.2307/3544211">https://doi.org/10.2307/3544211</a>.</p>
+</div>
+<div id="ref-Sheldon1969">
+<p>Sheldon, Andrew L. 1969. « Equitability indices: dependence on the species count ». <em>Ecology</em> 50 (3): 466‑67. <a href="https://doi.org/10.2307/1933900">https://doi.org/10.2307/1933900</a>.</p>
+</div>
+<div id="ref-Smith1996">
+<p>Smith, B., et J. Bastow Wilson. 1996. « A consumer’s guide to evenness indices ». <em>Oikos</em> 76 (1): 70‑82. <a href="https://doi.org/10.2307/3545749">https://doi.org/10.2307/3545749</a>.</p>
+</div>
+<div id="ref-Stirling2001">
+<p>Stirling, Gray, et Brian J. Wilsey. 2001. « Empirical Relationships between Species Richness, Evenness, and Proportional Diversity ». <em>The American naturalist</em> 158 (3): 286‑99. <a href="https://doi.org/10.1086/321317">https://doi.org/10.1086/321317</a>.</p>
+</div>
+<div id="ref-Taillie1979">
+<p>Taillie, Charles. 1979. « Species equitability: a comparative approach ». In <em>Ecological Diversity in Theory and Practice</em>, édité par J. Frederick Grassle, Ganapati P. Patil, W. K. Smith, et Charles Taillie, 51‑62. Fairland, MD: International Cooperative Publishing House.</p>
+</div>
+<div id="ref-Tuomisto2012">
+<p>Tuomisto, Hanna. 2012. « An updated consumer’s guide to evenness and related indices ». <em>Oikos</em> 121 (8): 1203‑18. <a href="https://doi.org/10.1111/j.1600-0706.2011.19897.x">https://doi.org/10.1111/j.1600-0706.2011.19897.x</a>.</p>
+</div>
+<div id="ref-Wilsey2005">
+<p>Wilsey, Brian J., David R. Chalcraft, Christy M. Bowles, et Michael R. Willig. 2005. « Relationships among indicies suggest that richness is an imcomplete surrogate for grassland diversity ». <em>Ecology</em> 86 (5): 1178‑84. <a href="https://doi.org/10.1890/04-0394">https://doi.org/10.1890/04-0394</a>.</p>
+</div>
+<div id="ref-Yager1992">
+<p>Yager, Ronald R. 1992. « On the specificity of a possibility distribution ». <em>Fuzzy Sets and Systems</em> 50 (3): 279‑92. <a href="https://doi.org/10.1016/0165-0114(92)90226-T">https://doi.org/10.1016/0165-0114(92)90226-T</a>.</p>
+</div>
+</div>
             </section>
 
           </div>

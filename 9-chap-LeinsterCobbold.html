@@ -24,7 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2020-12-22" />
+<meta name="date" content="2020-12-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,6 @@
   
 <link rel="prev" href="8-chap-Phyloentropie.html"/>
 <link rel="next" href="10-sec-betaCadre.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,6 +50,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -63,17 +63,18 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -93,7 +94,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -145,74 +146,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Motivation</a></li>
 <li class="chapter" data-level="" data-path="notations.html"><a href="notations.html"><i class="fa fa-check"></i>Notations</a></li>
 <li class="part"><span><b>I Notions</b></span></li>
-<li class="chapter" data-level="1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html"><i class="fa fa-check"></i><b>1</b> Notions de Diversité</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#composantes"><i class="fa fa-check"></i><b>1.1</b> Composantes</a>
-<ul>
+<li class="chapter" data-level="1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html"><i class="fa fa-check"></i><b>1</b> Notions de Diversité</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#composantes"><i class="fa fa-check"></i><b>1.1</b> Composantes</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#richesse"><i class="fa fa-check"></i><b>1.1.1</b> Richesse</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#équitabilité"><i class="fa fa-check"></i><b>1.1.2</b> Équitabilité</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#disparité"><i class="fa fa-check"></i><b>1.1.3</b> Disparité</a></li>
 <li class="chapter" data-level="1.1.4" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#agrégation"><i class="fa fa-check"></i><b>1.1.4</b> Agrégation</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#niveaux-de-létude"><i class="fa fa-check"></i><b>1.2</b> Niveaux de l’étude</a>
-<ul>
+<li class="chapter" data-level="1.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#niveaux-de-létude"><i class="fa fa-check"></i><b>1.2</b> Niveaux de l’étude</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#diversité-alpha-beta-et-gamma"><i class="fa fa-check"></i><b>1.2.1</b> Diversité <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> et <span class="math inline">\(\gamma\)</span></a></li>
 <li class="chapter" data-level="1.2.2" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#décomposition"><i class="fa fa-check"></i><b>1.2.2</b> Décomposition</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="1-notions-de-diversité.html"><a href="1-notions-de-diversité.html#le-problème-de-lespèce"><i class="fa fa-check"></i><b>1.3</b> Le problème de l’espèce</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-outils.html"><a href="2-outils.html"><i class="fa fa-check"></i><b>2</b> Outils</a>
-<ul>
+<li class="chapter" data-level="2" data-path="2-outils.html"><a href="2-outils.html"><i class="fa fa-check"></i><b>2</b> Outils</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-outils.html"><a href="2-outils.html#calculs-et-données"><i class="fa fa-check"></i><b>2.1</b> Calculs et données</a></li>
 <li class="chapter" data-level="2.2" data-path="2-outils.html"><a href="2-outils.html#sad-et-sar"><i class="fa fa-check"></i><b>2.2</b> SAD et SAR</a></li>
-<li class="chapter" data-level="2.3" data-path="2-outils.html"><a href="2-outils.html#sec:Couverture"><i class="fa fa-check"></i><b>2.3</b> Taux de couverture</a>
-<ul>
+<li class="chapter" data-level="2.3" data-path="2-outils.html"><a href="2-outils.html#sec:Couverture"><i class="fa fa-check"></i><b>2.3</b> Taux de couverture</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="2-outils.html"><a href="2-outils.html#formule-des-fréquences-de-good-turing"><i class="fa fa-check"></i><b>2.3.1</b> Formule des fréquences de Good-Turing</a></li>
 <li class="chapter" data-level="2.3.2" data-path="2-outils.html"><a href="2-outils.html#taux-de-couverture-et-déficit-de-couverture"><i class="fa fa-check"></i><b>2.3.2</b> Taux de couverture et déficit de couverture</a></li>
 <li class="chapter" data-level="2.3.3" data-path="2-outils.html"><a href="2-outils.html#complétude"><i class="fa fa-check"></i><b>2.3.3</b> Complétude</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Diversité neutre d’une communauté</b></span></li>
-<li class="chapter" data-level="3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html"><i class="fa fa-check"></i><b>3</b> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span></a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Richesse"><i class="fa fa-check"></i><b>3.1</b> Richesse spécifique</a>
-<ul>
+<li class="chapter" data-level="3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html"><i class="fa fa-check"></i><b>3</b> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span></a><ul>
+<li class="chapter" data-level="3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Richesse"><i class="fa fa-check"></i><b>3.1</b> Richesse spécifique</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#techniques-destimation-non-paramétrique"><i class="fa fa-check"></i><b>3.1.1</b> Techniques d’estimation non paramétrique</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#inférence-du-nombre-despèces-à-partir-de-la-sad"><i class="fa fa-check"></i><b>3.1.2</b> Inférence du nombre d’espèces à partir de la SAD</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:RichesseSAC"><i class="fa fa-check"></i><b>3.1.3</b> Inférence du nombre d’espèces à partir de courbes d’accumulation</a></li>
 <li class="chapter" data-level="3.1.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#diversité-générique"><i class="fa fa-check"></i><b>3.1.4</b> Diversité générique</a></li>
 <li class="chapter" data-level="3.1.5" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#combien-y-a-t-il-despèces-différentes-sur-terre"><i class="fa fa-check"></i><b>3.1.5</b> Combien y a-t-il d’espèces différentes sur Terre?</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-simpson"><i class="fa fa-check"></i><b>3.2</b> Indice de Simpson</a>
-<ul>
+<li class="chapter" data-level="3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-simpson"><i class="fa fa-check"></i><b>3.2</b> Indice de Simpson</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition"><i class="fa fa-check"></i><b>3.2.1</b> Définition</a></li>
 <li class="chapter" data-level="3.2.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#estimation"><i class="fa fa-check"></i><b>3.2.2</b> Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-shannon"><i class="fa fa-check"></i><b>3.3</b> Indice de Shannon</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#indice-de-shannon"><i class="fa fa-check"></i><b>3.3</b> Indice de Shannon</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition-1"><i class="fa fa-check"></i><b>3.3.1</b> Définition</a></li>
 <li class="chapter" data-level="3.3.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:BiaisShannon"><i class="fa fa-check"></i><b>3.3.2</b> Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Hurlbert"><i class="fa fa-check"></i><b>3.4</b> Indice de Hurlbert</a>
-<ul>
+<li class="chapter" data-level="3.4" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#sec:Hurlbert"><i class="fa fa-check"></i><b>3.4</b> Indice de Hurlbert</a><ul>
 <li class="chapter" data-level="3.4.1" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#définition-2"><i class="fa fa-check"></i><b>3.4.1</b> Définition</a></li>
 <li class="chapter" data-level="3.4.2" data-path="3-chap-MesuresNeutres.html"><a href="3-chap-MesuresNeutres.html#estimation-1"><i class="fa fa-check"></i><b>3.4.2</b> Estimation</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-entropie.html"><a href="4-entropie.html"><i class="fa fa-check"></i><b>4</b> Entropie</a>
-<ul>
+<li class="chapter" data-level="4" data-path="4-entropie.html"><a href="4-entropie.html"><i class="fa fa-check"></i><b>4</b> Entropie</a><ul>
 <li class="chapter" data-level="4.1" data-path="4-entropie.html"><a href="4-entropie.html#définition-de-lentropie"><i class="fa fa-check"></i><b>4.1</b> Définition de l’entropie</a></li>
 <li class="chapter" data-level="4.2" data-path="4-entropie.html"><a href="4-entropie.html#entropie-relative"><i class="fa fa-check"></i><b>4.2</b> Entropie relative</a></li>
 <li class="chapter" data-level="4.3" data-path="4-entropie.html"><a href="4-entropie.html#lappropriation-de-lentropie-par-la-biodiversité"><i class="fa fa-check"></i><b>4.3</b> L’appropriation de l’entropie par la biodiversité</a></li>
-<li class="chapter" data-level="4.4" data-path="4-entropie.html"><a href="4-entropie.html#entropie-hcdt"><i class="fa fa-check"></i><b>4.4</b> Entropie HCDT</a>
-<ul>
+<li class="chapter" data-level="4.4" data-path="4-entropie.html"><a href="4-entropie.html#entropie-hcdt"><i class="fa fa-check"></i><b>4.4</b> Entropie HCDT</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="4-entropie.html"><a href="4-entropie.html#logarithmes-déformés"><i class="fa fa-check"></i><b>4.4.1</b> Logarithmes déformés</a></li>
 <li class="chapter" data-level="4.4.2" data-path="4-entropie.html"><a href="4-entropie.html#entropie-et-diversité"><i class="fa fa-check"></i><b>4.4.2</b> Entropie et diversité</a></li>
 <li class="chapter" data-level="4.4.3" data-path="4-entropie.html"><a href="4-entropie.html#synthèse"><i class="fa fa-check"></i><b>4.4.3</b> Synthèse</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="4-entropie.html"><a href="4-entropie.html#profils-de-diversité"><i class="fa fa-check"></i><b>4.5</b> Profils de diversité</a></li>
-<li class="chapter" data-level="4.6" data-path="4-entropie.html"><a href="4-entropie.html#estimation-de-lentropie"><i class="fa fa-check"></i><b>4.6</b> Estimation de l’entropie</a>
-<ul>
+<li class="chapter" data-level="4.6" data-path="4-entropie.html"><a href="4-entropie.html#estimation-de-lentropie"><i class="fa fa-check"></i><b>4.6</b> Estimation de l’entropie</a><ul>
 <li class="chapter" data-level="4.6.1" data-path="4-entropie.html"><a href="4-entropie.html#zhang-et-grabchak"><i class="fa fa-check"></i><b>4.6.1</b> Zhang et Grabchak</a></li>
 <li class="chapter" data-level="4.6.2" data-path="4-entropie.html"><a href="4-entropie.html#sec:BiaisHCDT"><i class="fa fa-check"></i><b>4.6.2</b> Chao et Jost</a></li>
 <li class="chapter" data-level="4.6.3" data-path="4-entropie.html"><a href="4-entropie.html#autres-méthodes"><i class="fa fa-check"></i><b>4.6.3</b> Autres méthodes</a></li>
@@ -222,33 +210,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.7" data-path="4-entropie.html"><a href="4-entropie.html#msom-et-msam"><i class="fa fa-check"></i><b>4.6.7</b> MSOM et MSAM</a></li>
 <li class="chapter" data-level="4.6.8" data-path="4-entropie.html"><a href="4-entropie.html#sec:RarExtrapol"><i class="fa fa-check"></i><b>4.6.8</b> Raréfaction et extrapolation</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="4-entropie.html"><a href="4-entropie.html#autres-approches"><i class="fa fa-check"></i><b>4.7</b> Autres approches</a>
-<ul>
+<li class="chapter" data-level="4.7" data-path="4-entropie.html"><a href="4-entropie.html#autres-approches"><i class="fa fa-check"></i><b>4.7</b> Autres approches</a><ul>
 <li class="chapter" data-level="4.7.1" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-de-rényi"><i class="fa fa-check"></i><b>4.7.1</b> L’entropie de Rényi</a></li>
 <li class="chapter" data-level="4.7.2" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-généralisée-des-mesures-dinégalité"><i class="fa fa-check"></i><b>4.7.2</b> L’entropie généralisée des mesures d’inégalité</a></li>
 <li class="chapter" data-level="4.7.3" data-path="4-entropie.html"><a href="4-entropie.html#sec:SimpsonG"><i class="fa fa-check"></i><b>4.7.3</b> L’entropie de Simpson généralisée</a></li>
 <li class="chapter" data-level="4.7.4" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-par-cas"><i class="fa fa-check"></i><b>4.7.4</b> L’entropie par cas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html"><i class="fa fa-check"></i><b>5</b> Équitabilité</a>
-<ul>
+<li class="chapter" data-level="5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html"><i class="fa fa-check"></i><b>5</b> Équitabilité</a><ul>
 <li class="chapter" data-level="5.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#approche-axiomatique"><i class="fa fa-check"></i><b>5.1</b> Approche axiomatique</a></li>
-<li class="chapter" data-level="5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-classiques"><i class="fa fa-check"></i><b>5.2</b> Indice classiques</a>
-<ul>
+<li class="chapter" data-level="5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-classiques"><i class="fa fa-check"></i><b>5.2</b> Indice classiques</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-bulla"><i class="fa fa-check"></i><b>5.2.1</b> Indice de Bulla</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-gini"><i class="fa fa-check"></i><b>5.2.2</b> Indice de Gini</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#rapports-de-moyennes"><i class="fa fa-check"></i><b>5.2.3</b> Rapports de moyennes</a></li>
 <li class="chapter" data-level="5.2.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#ratios-de-hill"><i class="fa fa-check"></i><b>5.2.4</b> Ratios de Hill</a></li>
 <li class="chapter" data-level="5.2.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#synthèse-1"><i class="fa fa-check"></i><b>5.2.5</b> Synthèse</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-alternatifs"><i class="fa fa-check"></i><b>5.3</b> Indice alternatifs</a>
-<ul>
+<li class="chapter" data-level="5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-alternatifs"><i class="fa fa-check"></i><b>5.3</b> Indice alternatifs</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#variance-de-la-rareté"><i class="fa fa-check"></i><b>5.3.1</b> Variance de la rareté</a></li>
 <li class="chapter" data-level="5.3.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#non-spécificité"><i class="fa fa-check"></i><b>5.3.2</b> Non-spécificité</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-pielou"><i class="fa fa-check"></i><b>5.4</b> Indice de Pielou</a></li>
-<li class="chapter" data-level="5.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#généralisation-de-lindice-de-pielou"><i class="fa fa-check"></i><b>5.5</b> Généralisation de l’indice de Pielou</a>
-<ul>
+<li class="chapter" data-level="5.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#généralisation-de-lindice-de-pielou"><i class="fa fa-check"></i><b>5.5</b> Généralisation de l’indice de Pielou</a><ul>
 <li class="chapter" data-level="5.5.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#sec:Mendes"><i class="fa fa-check"></i><b>5.5.1</b> Mendes et al. </a></li>
 <li class="chapter" data-level="5.5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#tuomisto"><i class="fa fa-check"></i><b>5.5.2</b> Tuomisto</a></li>
 <li class="chapter" data-level="5.5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#jost"><i class="fa fa-check"></i><b>5.5.3</b> Jost</a></li>
@@ -257,24 +240,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#relations-empiriques-entre-richesse-et-équitabilité"><i class="fa fa-check"></i><b>5.6</b> Relations empiriques entre richesse et équitabilité</a></li>
 </ul></li>
 <li class="part"><span><b>III Diversité fonctionnelle et phylogénétique</b></span></li>
-<li class="chapter" data-level="6" data-path="6-cadre.html"><a href="6-cadre.html"><i class="fa fa-check"></i><b>6</b> Cadre</a>
-<ul>
+<li class="chapter" data-level="6" data-path="6-cadre.html"><a href="6-cadre.html"><i class="fa fa-check"></i><b>6</b> Cadre</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-cadre.html"><a href="6-cadre.html#dissimilarité-et-distance"><i class="fa fa-check"></i><b>6.1</b> Dissimilarité et distance</a></li>
 <li class="chapter" data-level="6.2" data-path="6-cadre.html"><a href="6-cadre.html#sec:Dphylo"><i class="fa fa-check"></i><b>6.2</b> Distance phylogénétique</a></li>
 <li class="chapter" data-level="6.3" data-path="6-cadre.html"><a href="6-cadre.html#sec:DFonctionnelle"><i class="fa fa-check"></i><b>6.3</b> Distance fonctionnelle</a></li>
 <li class="chapter" data-level="6.4" data-path="6-cadre.html"><a href="6-cadre.html#équivalence-des-deux-diversités"><i class="fa fa-check"></i><b>6.4</b> Équivalence des deux diversités</a></li>
 <li class="chapter" data-level="6.5" data-path="6-cadre.html"><a href="6-cadre.html#typologie-des-mesures"><i class="fa fa-check"></i><b>6.5</b> Typologie des mesures</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html"><i class="fa fa-check"></i><b>7</b> Mesures particulières</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-équitabilité-et-divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1</b> Richesse, équitabilité et divergence fonctionnelle</a>
-<ul>
+<li class="chapter" data-level="7" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html"><i class="fa fa-check"></i><b>7</b> Mesures particulières</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-équitabilité-et-divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1</b> Richesse, équitabilité et divergence fonctionnelle</a><ul>
 <li class="chapter" data-level="7.1.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-fonctionnelle"><i class="fa fa-check"></i><b>7.1.1</b> Richesse fonctionnelle</a></li>
 <li class="chapter" data-level="7.1.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#equitabilité-fonctionnelle"><i class="fa fa-check"></i><b>7.1.2</b> Equitabilité fonctionnelle</a></li>
 <li class="chapter" data-level="7.1.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#divergence-fonctionnelle"><i class="fa fa-check"></i><b>7.1.3</b> Divergence fonctionnelle</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#originalité-richesse-et-équitabilité-phylogénétique"><i class="fa fa-check"></i><b>7.2</b> Originalité, richesse et équitabilité phylogénétique</a>
-<ul>
+<li class="chapter" data-level="7.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#originalité-richesse-et-équitabilité-phylogénétique"><i class="fa fa-check"></i><b>7.2</b> Originalité, richesse et équitabilité phylogénétique</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#mesures-spécifiques-doriginalité"><i class="fa fa-check"></i><b>7.2.1</b> Mesures spécifiques d’originalité</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:OrigTax"><i class="fa fa-check"></i><b>7.2.2</b> Originalité taxonomique de Ricotta</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#richesse-phylogénétique"><i class="fa fa-check"></i><b>7.2.3</b> Richesse phylogénétique</a></li>
@@ -283,8 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-de-scheiner"><i class="fa fa-check"></i><b>7.3</b> Diversité de Scheiner</a></li>
 <li class="chapter" data-level="7.4" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-de-solow-et-polasky"><i class="fa fa-check"></i><b>7.4</b> Diversité de Solow et Polasky</a></li>
 <li class="chapter" data-level="7.5" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:PDFD"><i class="fa fa-check"></i><b>7.5</b> FD et PD</a></li>
-<li class="chapter" data-level="7.6" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:Rao"><i class="fa fa-check"></i><b>7.6</b> Indice de Rao</a>
-<ul>
+<li class="chapter" data-level="7.6" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:Rao"><i class="fa fa-check"></i><b>7.6</b> Indice de Rao</a><ul>
 <li class="chapter" data-level="7.6.1" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#principe"><i class="fa fa-check"></i><b>7.6.1</b> Principe</a></li>
 <li class="chapter" data-level="7.6.2" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#formalisation"><i class="fa fa-check"></i><b>7.6.2</b> Formalisation</a></li>
 <li class="chapter" data-level="7.6.3" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#propriétés"><i class="fa fa-check"></i><b>7.6.3</b> Propriétés</a></li>
@@ -296,16 +274,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.9" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#diversité-fonctionnelle-de-chiu-et-chao"><i class="fa fa-check"></i><b>7.9</b> Diversité fonctionnelle de Chiu et Chao</a></li>
 <li class="chapter" data-level="7.10" data-path="7-mesures-particulières.html"><a href="7-mesures-particulières.html#sec:HpI1"><i class="fa fa-check"></i><b>7.10</b> <span class="math inline">\(H_p\)</span> et <span class="math inline">\(I_1\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html"><i class="fa fa-check"></i><b>8</b> Entropie phylogénétique</a>
-<ul>
+<li class="chapter" data-level="8" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html"><i class="fa fa-check"></i><b>8</b> Entropie phylogénétique</a><ul>
 <li class="chapter" data-level="8.1" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#généralisation-de-lentropie-hcdt"><i class="fa fa-check"></i><b>8.1</b> Généralisation de l’entropie HCDT</a></li>
 <li class="chapter" data-level="8.2" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#sec:phyloEstimation"><i class="fa fa-check"></i><b>8.2</b> Estimation</a></li>
 <li class="chapter" data-level="8.3" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#sec:phyloEntopieDiv"><i class="fa fa-check"></i><b>8.3</b> Entropie et diversité</a></li>
 <li class="chapter" data-level="8.4" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#diversité-individuelle"><i class="fa fa-check"></i><b>8.4</b> Diversité individuelle</a></li>
 <li class="chapter" data-level="8.5" data-path="8-chap-Phyloentropie.html"><a href="8-chap-Phyloentropie.html#arbres-non-ultramétriques"><i class="fa fa-check"></i><b>8.5</b> Arbres non ultramétriques</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html"><i class="fa fa-check"></i><b>9</b> Diversité de Leinster et Cobbold</a>
-<ul>
+<li class="chapter" data-level="9" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html"><i class="fa fa-check"></i><b>9</b> Diversité de Leinster et Cobbold</a><ul>
 <li class="chapter" data-level="9.1" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#définitions"><i class="fa fa-check"></i><b>9.1</b> Définitions</a></li>
 <li class="chapter" data-level="9.2" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-neutre"><i class="fa fa-check"></i><b>9.2</b> Diversité neutre</a></li>
 <li class="chapter" data-level="9.3" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#diversité-non-neutre"><i class="fa fa-check"></i><b>9.3</b> Diversité non neutre</a></li>
@@ -318,48 +294,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.10" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#sec:dqzSynthese"><i class="fa fa-check"></i><b>9.10</b> Synthèse</a></li>
 </ul></li>
 <li class="part"><span><b>IV Diversité beta et décomposition</b></span></li>
-<li class="chapter" data-level="10" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html"><i class="fa fa-check"></i><b>10</b> Cadre</a>
-<ul>
+<li class="chapter" data-level="10" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html"><i class="fa fa-check"></i><b>10</b> Cadre</a><ul>
 <li class="chapter" data-level="10.1" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#définition-de-la-diversité-beta-par-objectifs"><i class="fa fa-check"></i><b>10.1</b> Définition de la diversité <span class="math inline">\(\beta\)</span> par objectifs</a></li>
 <li class="chapter" data-level="10.2" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaTypo"><i class="fa fa-check"></i><b>10.2</b> Typologie des mesures</a></li>
-<li class="chapter" data-level="10.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaDecomposition"><i class="fa fa-check"></i><b>10.3</b> Décomposition de la diversité</a>
-<ul>
+<li class="chapter" data-level="10.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaDecomposition"><i class="fa fa-check"></i><b>10.3</b> Décomposition de la diversité</a><ul>
 <li class="chapter" data-level="10.3.1" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#définitions-de-la-diversité-beta-mesure-dérivée"><i class="fa fa-check"></i><b>10.3.1</b> Définitions de la diversité <span class="math inline">\(\beta\)</span>, mesure dérivée</a></li>
 <li class="chapter" data-level="10.3.2" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:DebatDecomposition"><i class="fa fa-check"></i><b>10.3.2</b> Le débat sur la décomposition</a></li>
 <li class="chapter" data-level="10.3.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#décomposition-multiplicative-de-la-diversité"><i class="fa fa-check"></i><b>10.3.3</b> Décomposition multiplicative de la diversité</a></li>
 <li class="chapter" data-level="10.3.4" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:defalpha"><i class="fa fa-check"></i><b>10.3.4</b> Définitions de la diversité <span class="math inline">\(\alpha\)</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html"><i class="fa fa-check"></i><b>11</b> Diversité de différentiation</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-de-présence-absence"><i class="fa fa-check"></i><b>11.1</b> Données de présence-absence</a>
-<ul>
+<li class="chapter" data-level="11" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html"><i class="fa fa-check"></i><b>11</b> Diversité de différentiation</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-de-présence-absence"><i class="fa fa-check"></i><b>11.1</b> Données de présence-absence</a><ul>
 <li class="chapter" data-level="11.1.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#indices-de-similarité"><i class="fa fa-check"></i><b>11.1.1</b> Indices de similarité</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#biais-destimation"><i class="fa fa-check"></i><b>11.1.2</b> Biais d’estimation</a></li>
 <li class="chapter" data-level="11.1.3" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#représentation-graphique"><i class="fa fa-check"></i><b>11.1.3</b> Représentation graphique</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance"><i class="fa fa-check"></i><b>11.2</b> Données d’abondance</a></li>
 <li class="chapter" data-level="11.3" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#emboîtement-et-substitution"><i class="fa fa-check"></i><b>11.3</b> Emboîtement et substitution</a></li>
-<li class="chapter" data-level="11.4" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance-et-similarité-des-espèces"><i class="fa fa-check"></i><b>11.4</b> Données d’abondance et similarité des espèces</a>
-<ul>
+<li class="chapter" data-level="11.4" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#données-dabondance-et-similarité-des-espèces"><i class="fa fa-check"></i><b>11.4</b> Données d’abondance et similarité des espèces</a><ul>
 <li class="chapter" data-level="11.4.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#dissimilarité-minimale-moyenne"><i class="fa fa-check"></i><b>11.4.1</b> Dissimilarité minimale moyenne</a></li>
 <li class="chapter" data-level="11.4.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#similarité-moyenne-entre-individus"><i class="fa fa-check"></i><b>11.4.2</b> Similarité moyenne entre individus</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#distance-entre-paires-de-communautés-et-diversité-beta-proportionnelle"><i class="fa fa-check"></i><b>11.5</b> Distance entre paires de communautés et diversité <span class="math inline">\(\beta\)</span> proportionnelle</a>
-<ul>
+<li class="chapter" data-level="11.5" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#distance-entre-paires-de-communautés-et-diversité-beta-proportionnelle"><i class="fa fa-check"></i><b>11.5</b> Distance entre paires de communautés et diversité <span class="math inline">\(\beta\)</span> proportionnelle</a><ul>
 <li class="chapter" data-level="11.5.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#diversité-de-simpson"><i class="fa fa-check"></i><b>11.5.1</b> Diversité de Simpson</a></li>
 <li class="chapter" data-level="11.5.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#généralisation"><i class="fa fa-check"></i><b>11.5.2</b> Généralisation</a></li>
 </ul></li>
-<li class="chapter" data-level="11.6" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#sec:TestBetaDiff"><i class="fa fa-check"></i><b>11.6</b> Tests de significativité</a>
-<ul>
+<li class="chapter" data-level="11.6" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#sec:TestBetaDiff"><i class="fa fa-check"></i><b>11.6</b> Tests de significativité</a><ul>
 <li class="chapter" data-level="11.6.1" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#test-de-non-nullité"><i class="fa fa-check"></i><b>11.6.1</b> Test de non-nullité</a></li>
 <li class="chapter" data-level="11.6.2" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html#analyse-de-la-variabilité"><i class="fa fa-check"></i><b>11.6.2</b> Analyse de la variabilité</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html"><i class="fa fa-check"></i><b>12</b> Décomposition de l’entropie HCDT</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-shannon"><i class="fa fa-check"></i><b>12.1</b> Décomposition de l’indice de Shannon</a>
-<ul>
+<li class="chapter" data-level="12" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html"><i class="fa fa-check"></i><b>12</b> Décomposition de l’entropie HCDT</a><ul>
+<li class="chapter" data-level="12.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-shannon"><i class="fa fa-check"></i><b>12.1</b> Décomposition de l’indice de Shannon</a><ul>
 <li class="chapter" data-level="12.1.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#définition-3"><i class="fa fa-check"></i><b>12.1.1</b> Définition</a></li>
 <li class="chapter" data-level="12.1.2" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:BiaisShannonBeta"><i class="fa fa-check"></i><b>12.1.2</b> Biais d’estimation</a></li>
 </ul></li>
@@ -368,30 +335,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#décomposition-de-lindice-de-gini-simpson"><i class="fa fa-check"></i><b>12.4</b> Décomposition de l’indice de Gini-Simpson</a></li>
 <li class="chapter" data-level="12.5" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:RaoDisc"><i class="fa fa-check"></i><b>12.5</b> Décomposition de l’indice de Rao</a></li>
 <li class="chapter" data-level="12.6" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#synthèse-3"><i class="fa fa-check"></i><b>12.6</b> Synthèse</a></li>
-<li class="chapter" data-level="12.7" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#normalisation"><i class="fa fa-check"></i><b>12.7</b> Normalisation</a>
-<ul>
+<li class="chapter" data-level="12.7" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#normalisation"><i class="fa fa-check"></i><b>12.7</b> Normalisation</a><ul>
 <li class="chapter" data-level="12.7.1" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#nécessité-de-normaliser-la-diversité-beta"><i class="fa fa-check"></i><b>12.7.1</b> Nécessité de normaliser la diversité <span class="math inline">\(\beta\)</span></a></li>
 <li class="chapter" data-level="12.7.2" data-path="12-chap-DedompHCDT.html"><a href="12-chap-DedompHCDT.html#sec:Chevauchement"><i class="fa fa-check"></i><b>12.7.2</b> L’indice de chevauchement <span class="math inline">\(C_{qN}\)</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><i class="fa fa-check"></i><b>13</b> Décomposition de la diversité phylogénétique et fonctionnelle</a>
-<ul>
+<li class="chapter" data-level="13" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><i class="fa fa-check"></i><b>13</b> Décomposition de la diversité phylogénétique et fonctionnelle</a><ul>
 <li class="chapter" data-level="13.1" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#décomposition-de-la-diversité-phylogénétique"><i class="fa fa-check"></i><b>13.1</b> Décomposition de la diversité phylogénétique</a></li>
 <li class="chapter" data-level="13.2" data-path="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#partitionnement-de-la-diversité-de-leinster-et-cobbold"><i class="fa fa-check"></i><b>13.2</b> Partitionnement de la diversité de Leinster et Cobbold</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html"><i class="fa fa-check"></i><b>14</b> Tests de significativité</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#test-de-non-nullité-1"><i class="fa fa-check"></i><b>14.1</b> Test de non-nullité</a>
-<ul>
+<li class="chapter" data-level="14" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html"><i class="fa fa-check"></i><b>14</b> Tests de significativité</a><ul>
+<li class="chapter" data-level="14.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#test-de-non-nullité-1"><i class="fa fa-check"></i><b>14.1</b> Test de non-nullité</a><ul>
 <li class="chapter" data-level="14.1.1" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#intervalle-de-confiance"><i class="fa fa-check"></i><b>14.1.1</b> Intervalle de confiance</a></li>
 <li class="chapter" data-level="14.1.2" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#correction-des-biais"><i class="fa fa-check"></i><b>14.1.2</b> Correction des biais</a></li>
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#analyse-de-la-variabilité-1"><i class="fa fa-check"></i><b>14.2</b> Analyse de la variabilité</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html"><i class="fa fa-check"></i><b>15</b> Autres approches</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#le-partitionnement-de-la-diversité-selon-pélissier-et-couteron"><i class="fa fa-check"></i><b>15.1</b> Le partitionnement de la diversité selon Pélissier et Couteron</a>
-<ul>
+<li class="chapter" data-level="15" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html"><i class="fa fa-check"></i><b>15</b> Autres approches</a><ul>
+<li class="chapter" data-level="15.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#le-partitionnement-de-la-diversité-selon-pélissier-et-couteron"><i class="fa fa-check"></i><b>15.1</b> Le partitionnement de la diversité selon Pélissier et Couteron</a><ul>
 <li class="chapter" data-level="15.1.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#sec:PCcadre"><i class="fa fa-check"></i><b>15.1.1</b> Cadre</a></li>
 <li class="chapter" data-level="15.1.2" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#sec:PCdecomposition"><i class="fa fa-check"></i><b>15.1.2</b> Décomposition</a></li>
 </ul></li>
@@ -399,38 +360,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>V Diversité jointe, diversité structurelle</b></span></li>
 <li class="chapter" data-level="16" data-path="16-sec-jointeCadre.html"><a href="16-sec-jointeCadre.html"><i class="fa fa-check"></i><b>16</b> Cadre</a></li>
-<li class="chapter" data-level="17" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html"><i class="fa fa-check"></i><b>17</b> Information mutuelle</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#récursivité-de-lentropie"><i class="fa fa-check"></i><b>17.1</b> Récursivité de l’entropie</a>
-<ul>
+<li class="chapter" data-level="17" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html"><i class="fa fa-check"></i><b>17</b> Information mutuelle</a><ul>
+<li class="chapter" data-level="17.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#récursivité-de-lentropie"><i class="fa fa-check"></i><b>17.1</b> Récursivité de l’entropie</a><ul>
 <li class="chapter" data-level="17.1.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#sec:jointeShannon"><i class="fa fa-check"></i><b>17.1.1</b> Entropie de Shannon</a></li>
 <li class="chapter" data-level="17.1.2" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#sec:jointeHCDT"><i class="fa fa-check"></i><b>17.1.2</b> Entropie HCDT</a></li>
 <li class="chapter" data-level="17.1.3" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#intérêt-de-linformation-mutuelle"><i class="fa fa-check"></i><b>17.1.3</b> Intérêt de l’information mutuelle</a></li>
 </ul></li>
 <li class="chapter" data-level="17.2" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#taille-de-niche"><i class="fa fa-check"></i><b>17.2</b> Taille de niche</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html"><i class="fa fa-check"></i><b>18</b> Décomposition de la diversité jointe</a>
-<ul>
+<li class="chapter" data-level="18" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html"><i class="fa fa-check"></i><b>18</b> Décomposition de la diversité jointe</a><ul>
 <li class="chapter" data-level="18.1" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html#sec:Definitions"><i class="fa fa-check"></i><b>18.1</b> Définitions</a></li>
 <li class="chapter" data-level="18.2" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html#relations-avec-dautres-mesures-de-diversité"><i class="fa fa-check"></i><b>18.2</b> Relations avec d’autres mesures de diversité</a></li>
 </ul></li>
 <li class="part"><span><b>VI Diversité spatialement explicite</b></span></li>
 <li class="chapter" data-level="19" data-path="19-sec-spatialCadre.html"><a href="19-sec-spatialCadre.html"><i class="fa fa-check"></i><b>19</b> Cadre</a></li>
-<li class="chapter" data-level="20" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html"><i class="fa fa-check"></i><b>20</b> Indice <span class="math inline">\(\alpha\)</span> de Fisher</a>
-<ul>
+<li class="chapter" data-level="20" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html"><i class="fa fa-check"></i><b>20</b> Indice <span class="math inline">\(\alpha\)</span> de Fisher</a><ul>
 <li class="chapter" data-level="20.1" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html#construction"><i class="fa fa-check"></i><b>20.1</b> Construction</a></li>
 <li class="chapter" data-level="20.2" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html#variantes"><i class="fa fa-check"></i><b>20.2</b> Variantes</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html"><i class="fa fa-check"></i><b>21</b> Accumulation de la diversité locale</a>
-<ul>
+<li class="chapter" data-level="21" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html"><i class="fa fa-check"></i><b>21</b> Accumulation de la diversité locale</a><ul>
 <li class="chapter" data-level="21.1" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#courbes-daccumulation"><i class="fa fa-check"></i><b>21.1</b> Courbes d’accumulation</a></li>
 <li class="chapter" data-level="21.2" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#sec:Extrapolation"><i class="fa fa-check"></i><b>21.2</b> Extrapolation</a></li>
 <li class="chapter" data-level="21.3" data-path="21-chap-Accumulation.html"><a href="21-chap-Accumulation.html#influence-de-la-structure-spatiale"><i class="fa fa-check"></i><b>21.3</b> Influence de la structure spatiale</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html"><i class="fa fa-check"></i><b>22</b> Diversité régionale</a>
-<ul>
-<li class="chapter" data-level="22.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:Arrhenius"><i class="fa fa-check"></i><b>22.1</b> La relation d’Arrhenius</a>
-<ul>
+<li class="chapter" data-level="22" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html"><i class="fa fa-check"></i><b>22</b> Diversité régionale</a><ul>
+<li class="chapter" data-level="22.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:Arrhenius"><i class="fa fa-check"></i><b>22.1</b> La relation d’Arrhenius</a><ul>
 <li class="chapter" data-level="22.1.1" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#loi-de-puissance"><i class="fa fa-check"></i><b>22.1.1</b> Loi de puissance</a></li>
 <li class="chapter" data-level="22.1.2" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#le-modèle-de-plotkin"><i class="fa fa-check"></i><b>22.1.2</b> Le modèle de Plotkin</a></li>
 </ul></li>
@@ -439,17 +393,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.4" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#sec:spatialSynthese"><i class="fa fa-check"></i><b>22.4</b> Synthèse</a></li>
 <li class="chapter" data-level="22.5" data-path="22-diversité-régionale.html"><a href="22-diversité-régionale.html#estimation-de-la-richesse-à-partir-de-placettes-distantes"><i class="fa fa-check"></i><b>22.5</b> Estimation de la richesse à partir de placettes distantes</a></li>
 </ul></li>
-<li class="chapter" data-level="23" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html"><i class="fa fa-check"></i><b>23</b> Diversité <span class="math inline">\(\beta\)</span> spatialement explicite</a>
-<ul>
+<li class="chapter" data-level="23" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html"><i class="fa fa-check"></i><b>23</b> Diversité <span class="math inline">\(\beta\)</span> spatialement explicite</a><ul>
 <li class="chapter" data-level="23.1" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html#sec:SimpsonSpatial"><i class="fa fa-check"></i><b>23.1</b> L’indice de Simpson spatialement explicite</a></li>
 <li class="chapter" data-level="23.2" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html#le-variogramme-de-complémentarité"><i class="fa fa-check"></i><b>23.2</b> Le variogramme de complémentarité</a></li>
 </ul></li>
 <li class="part"><span><b>VII Conclusion</b></span></li>
-<li class="chapter" data-level="24" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html"><i class="fa fa-check"></i><b>24</b> Synthèse</a>
-<ul>
+<li class="chapter" data-level="24" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html"><i class="fa fa-check"></i><b>24</b> Synthèse</a><ul>
 <li class="chapter" data-level="24.1" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#entropie-et-diversité-1"><i class="fa fa-check"></i><b>24.1</b> Entropie et diversité</a></li>
-<li class="chapter" data-level="24.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#ordres-particuliers-de-diversité"><i class="fa fa-check"></i><b>24.2</b> Ordres particuliers de diversité</a>
-<ul>
+<li class="chapter" data-level="24.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#ordres-particuliers-de-diversité"><i class="fa fa-check"></i><b>24.2</b> Ordres particuliers de diversité</a><ul>
 <li class="chapter" data-level="24.2.1" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#estimation-2"><i class="fa fa-check"></i><b>24.2.1</b> Estimation</a></li>
 <li class="chapter" data-level="24.2.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#partition"><i class="fa fa-check"></i><b>24.2.2</b> Partition</a></li>
 <li class="chapter" data-level="24.2.3" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#égalité-des-diversités"><i class="fa fa-check"></i><b>24.2.3</b> Égalité des diversités</a></li>
@@ -477,7 +428,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap:LeinsterCobbold" class="section level1" number="9">
+<div id="chap:LeinsterCobbold" class="section level1">
 <h1><span class="header-section-number">9</span> Diversité de Leinster et Cobbold</h1>
 <p></p>
 <div class="Essentiel">
@@ -486,15 +437,15 @@ La diversité de Leinster et Cobbold est l’inverse de la banalité moyenne des
 </p>
 </div>
 <p></p>
-<p>À partir de la théorie mathématique des catégories <span class="citation">(<a href="references.html#ref-Leinster2013" role="doc-biblioref">Leinster 2013</a>)</span>, <span class="citation"><a href="references.html#ref-Leinster2012" role="doc-biblioref">Leinster et Cobbold</a> (<a href="references.html#ref-Leinster2012" role="doc-biblioref">2012</a>)</span> ont proposé une mesure de diversité applicable à une communauté dont la position des espèces dans un espace multidimensionnel euclidien est connue.
+<p>À partir de la théorie mathématique des catégories <span class="citation">(Leinster <a href="#ref-Leinster2013" role="doc-biblioref">2013</a>)</span>, <span class="citation">Leinster et Cobbold (<a href="#ref-Leinster2012" role="doc-biblioref">2012</a>)</span> ont proposé une mesure de diversité applicable à une communauté dont la position des espèces dans un espace multidimensionnel euclidien est connue.
 C’est donc une mesure applicable à la diversité fonctionnelle.</p>
-<div id="définitions" class="section level2" number="9.1">
+<div id="définitions" class="section level2">
 <h2><span class="header-section-number">9.1</span> Définitions</h2>
-<p><span class="citation"><a href="references.html#ref-Leinster2012" role="doc-biblioref">Leinster et Cobbold</a> (<a href="references.html#ref-Leinster2012" role="doc-biblioref">2012</a>)</span> proposent une unification des mesures de diversité à partir de la définition de la banalité des espèces.
+<p><span class="citation">Leinster et Cobbold (<a href="#ref-Leinster2012" role="doc-biblioref">2012</a>)</span> proposent une unification des mesures de diversité à partir de la définition de la banalité des espèces.
 Une matrice carrée de dimension égale au nombre d’espèces, <span class="math inline">\(\mathbf{Z}\)</span>, décrit par ses valeurs <span class="math inline">\(z_{s,t}\)</span> la similarité entre l’espèce <span class="math inline">\(s\)</span> et l’espèce <span class="math inline">\(t\)</span> comprises entre 0 et 1 (<span class="math inline">\(z_{s,s}=1\)</span>).</p>
 <p>La banalité d’une espèce <span class="math inline">\(s\)</span> est définie par <span class="math inline">\(\sum_t{p_t z_{s,t}}\)</span>, c’est-à-dire la moyenne pondérée de sa similarité avec toutes les autres espèces: au minimum <span class="math inline">\(p_s\)</span> si elle est totalement différente des autres (approche de la diversité neutre, <span class="math inline">\(\mathbf{Z}\)</span> est la matrice identité <span class="math inline">\(\mathbf{I}_s\)</span>), au maximum 1 si toutes les espèces sont totalement similaires (<span class="math inline">\(\mathbf{Z}\)</span> ne contient que des 1).
 Une espèce rare totalement différente des autres est peu banale.</p>
-<p>La moyenne généralisée d’ordre <span class="math inline">\(r\)</span> <span class="citation">(<a href="references.html#ref-Hardy1952" role="doc-biblioref">G. H. Hardy, Littlewood, et Pólya 1952</a>)</span>, <em>generalized mean</em> ou <em>power mean</em> en anglais, est définie pour une distribution de valeurs de <span class="math inline">\(x_s\)</span> dont la probabilité d’occurrence est <span class="math inline">\(p_s\)</span> par</p>
+<p>La moyenne généralisée d’ordre <span class="math inline">\(r\)</span> <span class="citation">(Hardy, Littlewood, et Pólya <a href="#ref-Hardy1952" role="doc-biblioref">1952</a>)</span>, <em>generalized mean</em> ou <em>power mean</em> en anglais, est définie pour une distribution de valeurs de <span class="math inline">\(x_s\)</span> dont la probabilité d’occurrence est <span class="math inline">\(p_s\)</span> par</p>
 <p><span class="math display" id="eq:Hardy1952">\[\begin{equation}
   \tag{9.1}
   \bar{x}={\left(\sum_s{p_s x^r_s}\right)}^{\frac{1}{r}}.
@@ -512,15 +463,15 @@ Figure 9.1: Moyenne généralisée d’ordre <span class="math inline">\(r\)</sp
 Elle donne un fort poids aux petites valeurs de <span class="math inline">\(x_s\)</span> dans la moyenne pour les faibles valeurs de <span class="math inline">\(r\)</span> (qui peuvent être négatives), et un fort poids aux grandes valeurs quand <span class="math inline">\(r\)</span> est grand (figure <a href="9-chap-LeinsterCobbold.html#fig:MoyenneHardyFig">9.1</a>).</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 <p></p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="9-chap-LeinsterCobbold.html#cb193-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">10000</span>)</span>
-<span id="cb193-2"><a href="9-chap-LeinsterCobbold.html#cb193-2" aria-hidden="true" tabindex="-1"></a><span class="co"># La moyenne n&#39;est pas définie à r=0, décalage de 10^-8</span></span>
-<span id="cb193-3"><a href="9-chap-LeinsterCobbold.html#cb193-3" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">10</span>, .<span class="dv">1</span>) <span class="sc">+</span> <span class="fl">1E-8</span></span>
-<span id="cb193-4"><a href="9-chap-LeinsterCobbold.html#cb193-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Préparation des données</span></span>
-<span id="cb193-5"><a href="9-chap-LeinsterCobbold.html#cb193-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(r, <span class="at">Moyenne =</span> <span class="fu">sapply</span>(r, <span class="cf">function</span>(r) (<span class="fu">mean</span>(X<span class="sc">^</span>r))<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>r)))</span>
-<span id="cb193-6"><a href="9-chap-LeinsterCobbold.html#cb193-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> r, <span class="at">y =</span> Moyenne)) <span class="sc">+</span></span>
-<span id="cb193-7"><a href="9-chap-LeinsterCobbold.html#cb193-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb193-8"><a href="9-chap-LeinsterCobbold.html#cb193-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> .<span class="dv">5</span>, <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb193-9"><a href="9-chap-LeinsterCobbold.html#cb193-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="9-chap-LeinsterCobbold.html#cb193-1"></a>X &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">10000</span>)</span>
+<span id="cb193-2"><a href="9-chap-LeinsterCobbold.html#cb193-2"></a><span class="co"># La moyenne n&#39;est pas définie à r=0, décalage de 10^-8</span></span>
+<span id="cb193-3"><a href="9-chap-LeinsterCobbold.html#cb193-3"></a>r &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">10</span>, <span class="fl">.1</span>) <span class="op">+</span><span class="st"> </span><span class="fl">1E-8</span></span>
+<span id="cb193-4"><a href="9-chap-LeinsterCobbold.html#cb193-4"></a><span class="co"># Préparation des données</span></span>
+<span id="cb193-5"><a href="9-chap-LeinsterCobbold.html#cb193-5"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(r, <span class="dt">Moyenne =</span> <span class="kw">sapply</span>(r, <span class="cf">function</span>(r) (<span class="kw">mean</span>(X<span class="op">^</span>r))<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>r)))</span>
+<span id="cb193-6"><a href="9-chap-LeinsterCobbold.html#cb193-6"></a><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> r, <span class="dt">y =</span> Moyenne)) <span class="op">+</span></span>
+<span id="cb193-7"><a href="9-chap-LeinsterCobbold.html#cb193-7"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb193-8"><a href="9-chap-LeinsterCobbold.html#cb193-8"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="fl">.5</span>, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></span>
+<span id="cb193-9"><a href="9-chap-LeinsterCobbold.html#cb193-9"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p>La banalité peut s’écrire sous forme matricielle en notant <span class="math inline">\(\mathbf{p}\)</span> le vecteur des probabilités <span class="math inline">\(p_s\)</span>, on note alors <span class="math inline">\({\left(\mathbf{Zp}\right)}_s=\sum_t{p_{t}z_{s,t}}\)</span>.</p>
 <p>La banalité moyenne des espèces de la communauté est calculée en prenant <span class="math inline">\(r=q-1\)</span>:</p>
@@ -540,7 +491,7 @@ Elle donne un fort poids aux petites valeurs de <span class="math inline">\(x_s\
   ^1\!D^{\mathbf{Z}} = \frac{1}{\prod_s{{\left(\mathbf{Zp}\right)}^{p_s}_s}}.
 \end{equation}\]</span></p>
 </div>
-<div id="diversité-neutre" class="section level2" number="9.2">
+<div id="diversité-neutre" class="section level2">
 <h2><span class="header-section-number">9.2</span> Diversité neutre</h2>
 <p>Leinster et Cobbold montrent que la diversité HCDT est un cas particulier de <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span>, pour la matrice identité:</p>
 <p><span class="math display" id="eq:DqI">\[\begin{equation}
@@ -548,14 +499,14 @@ Elle donne un fort poids aux petites valeurs de <span class="math inline">\(x_s\
   ^{q}\!D={^q\!D^{\mathbf{I}}}.
 \end{equation}\]</span></p>
 </div>
-<div id="diversité-non-neutre" class="section level2" number="9.3">
+<div id="diversité-non-neutre" class="section level2">
 <h2><span class="header-section-number">9.3</span> Diversité non neutre</h2>
 <p>Une mesure de diversité non neutre est obtenue en utilisant une matrice <span class="math inline">\(\mathbf{Z}\)</span> qui contient l’information sur la similarité entre les espèces.
 La dissimilarité entre espèces peut être obtenue à partir des arbres.
 L’exemple suivant utilise les données du calcul d’originalité, section <a href="7-mesures-particulières.html#sec:MaxTheorique">7.6.5</a>.
 Pour un arbre de classe <code>hclust</code>, la fonction <code>cophenetic</code> fournit une demi-matrice de distances (classe <code>dist</code>).</p>
 <p></p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="9-chap-LeinsterCobbold.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">cophenetic</span>(hf), <span class="at">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="9-chap-LeinsterCobbold.html#cb194-1"></a><span class="kw">print</span>(<span class="kw">cophenetic</span>(hf), <span class="dt">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>##      Ess    Me    S1    Sr    Vm    Bg    Ef
 ## Me 1.224                                    
 ## S1 1.224 1.003                              
@@ -568,8 +519,8 @@ Pour un arbre de classe <code>hclust</code>, la fonction <code>cophenetic</code>
 <p>La matrice doit être normalisée puis transformée en matrice de similarité.
 Une transformation simple est 1 moins la dissimilarité (préalablement normalisée pour être comprise entre 0 et 1):</p>
 <p></p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="9-chap-LeinsterCobbold.html#cb196-1" aria-hidden="true" tabindex="-1"></a>Dis <span class="ot">&lt;-</span> <span class="fu">cophenetic</span>(hf)</span>
-<span id="cb196-2"><a href="9-chap-LeinsterCobbold.html#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>((Z <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">as.matrix</span>(Dis<span class="sc">/</span><span class="fu">max</span>(Dis))), <span class="at">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="9-chap-LeinsterCobbold.html#cb196-1"></a>Dis &lt;-<span class="st"> </span><span class="kw">cophenetic</span>(hf)</span>
+<span id="cb196-2"><a href="9-chap-LeinsterCobbold.html#cb196-2"></a><span class="kw">print</span>((Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">as.matrix</span>(Dis<span class="op">/</span><span class="kw">max</span>(Dis))), <span class="dt">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>##        Ess     Me     S1     Sr     Vm     Bg     Ef     Dg
 ## Ess 1.0000 0.8742 0.8742 0.7468 0.0000 0.0000 0.0000 0.0000
 ## Me  0.8742 1.0000 0.8969 0.7468 0.0000 0.0000 0.0000 0.0000
@@ -582,9 +533,9 @@ Une transformation simple est 1 moins la dissimilarité (préalablement normalis
 <p></p>
 <p>La diversité peut être calculée par la fonction <code>Dqz</code> de <em>entropart</em>:</p>
 <p></p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="9-chap-LeinsterCobbold.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vecteur contenant 8 espèces...</span></span>
-<span id="cb198-2"><a href="9-chap-LeinsterCobbold.html#cb198-2" aria-hidden="true" tabindex="-1"></a>(effectifs <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;data/rao.effectifs.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>, </span>
-<span id="cb198-3"><a href="9-chap-LeinsterCobbold.html#cb198-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">header =</span> T))</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="9-chap-LeinsterCobbold.html#cb198-1"></a><span class="co"># Vecteur contenant 8 espèces...</span></span>
+<span id="cb198-2"><a href="9-chap-LeinsterCobbold.html#cb198-2"></a>(effectifs &lt;-<span class="st"> </span><span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.effectifs.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, </span>
+<span id="cb198-3"><a href="9-chap-LeinsterCobbold.html#cb198-3"></a>    <span class="dt">header =</span> T))</span></code></pre></div>
 <pre><code>##     P1 P2 P3 P4
 ## Ess 97 36 34 61
 ## Me  62 24 49  4
@@ -594,22 +545,22 @@ Une transformation simple est 1 moins la dissimilarité (préalablement normalis
 ## Bg  58 49 47 19
 ## Ef   9 34 91 35
 ## Dg  98 14 95 14</code></pre>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="9-chap-LeinsterCobbold.html#cb200-1" aria-hidden="true" tabindex="-1"></a>Ps <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(effectifs)<span class="sc">/</span><span class="fu">sum</span>(effectifs)</span>
-<span id="cb200-2"><a href="9-chap-LeinsterCobbold.html#cb200-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Dqz</span>(Ps, <span class="at">q =</span> <span class="dv">2</span>, Z)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="9-chap-LeinsterCobbold.html#cb200-1"></a>Ps &lt;-<span class="st"> </span><span class="kw">rowSums</span>(effectifs)<span class="op">/</span><span class="kw">sum</span>(effectifs)</span>
+<span id="cb200-2"><a href="9-chap-LeinsterCobbold.html#cb200-2"></a><span class="kw">Dqz</span>(Ps, <span class="dt">q =</span> <span class="dv">2</span>, Z)</span></code></pre></div>
 <pre><code>##     None 
 ## 2.520938</code></pre>
 <p></p>
 <p>Dans le cas particulier <span class="math inline">\(q=2\)</span>, <span class="math inline">\(^2\!D^{\mathbf{Z}}\)</span> est égal à <span class="math inline">\(^{2}\!\bar{D}(T)\)</span>:</p>
 <p></p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="9-chap-LeinsterCobbold.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="fu">PhyloDiversity</span>(Ps, <span class="at">q =</span> <span class="dv">2</span>, phyf)<span class="sc">$</span>Total</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="9-chap-LeinsterCobbold.html#cb202-1"></a><span class="kw">PhyloDiversity</span>(Ps, <span class="dt">q =</span> <span class="dv">2</span>, phyf)<span class="op">$</span>Total</span></code></pre></div>
 <pre><code>##     None 
 ## 2.520938</code></pre>
 <p></p>
 <p>Mais ce n’est pas le cas en général.</p>
 </div>
-<div id="entropie-de-ricotta-et-szeidl" class="section level2" number="9.4">
+<div id="entropie-de-ricotta-et-szeidl" class="section level2">
 <h2><span class="header-section-number">9.4</span> Entropie de Ricotta et Szeidl</h2>
-<p><span class="citation"><a href="references.html#ref-Ricotta2006b" role="doc-biblioref">Ricotta et Szeidl</a> (<a href="references.html#ref-Ricotta2006b" role="doc-biblioref">2006</a>)</span> ont montré une similitude entre les entropies de Shannon et de Rao en généralisant l’entropie de Shannon en deux temps.
+<p><span class="citation">Ricotta et Szeidl (<a href="#ref-Ricotta2006b" role="doc-biblioref">2006</a>)</span> ont montré une similitude entre les entropies de Shannon et de Rao en généralisant l’entropie de Shannon en deux temps.
 Tout d’abord en remarquant que la probabilité d’occurrence d’une espèce est 1 moins la somme de celle des autres, d’où</p>
 <p><span class="math display" id="eq:Ricotta2006bH1">\[\begin{equation}
   \tag{9.6}
@@ -635,12 +586,12 @@ La fréquence et la banalité se confondent seulement pour la diversité neutre.
   \ln_q{^q\!D^{\mathbf{Z}}} = ^q\!H^{\mathbf{Z}}.
 \end{equation}\]</span></p>
 </div>
-<div id="définition-de-la-similarité" class="section level2" number="9.5">
+<div id="définition-de-la-similarité" class="section level2">
 <h2><span class="header-section-number">9.5</span> Définition de la similarité</h2>
 <p>La transformation d’une matrice de dissimilarité en une matrice de similarité nécessite une fonction strictement décroissante, dont le résultat est compris entre 0 et 1.
 La plus simple est
 <span class="math display">\[z_{s,t} = 1 - \frac{d_{s,t}}{\max{(d_{s,t})}}.\]</span>
-Leinster et Cobbold argumentent en faveur d’une transformation exponentielle négative, déjà utilisée par <span class="citation"><a href="references.html#ref-Nei1972" role="doc-biblioref">Nei</a> (<a href="references.html#ref-Nei1972" role="doc-biblioref">1972</a>)</span>.</p>
+Leinster et Cobbold argumentent en faveur d’une transformation exponentielle négative, déjà utilisée par <span class="citation">Nei (<a href="#ref-Nei1972" role="doc-biblioref">1972</a>)</span>.</p>
 
 <p></p>
 <div class="figure" style="text-align: center"><span id="fig:LineaireZpsqFig"></span>
@@ -650,7 +601,7 @@ Figure 9.2: Approximation de <span class="math inline">\({(\mathbf{Zp})}_{s}^{q-
 </p>
 </div>
 <p></p>
-<p>Le problème majeur de la diversité <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est qu’elle fournit souvent des valeurs presque indépendantes de <span class="math inline">\(q\)</span> quand on l’applique à une matrice de similarité fonctionnelle <span class="citation">(<a href="references.html#ref-Chiu2014b" role="doc-biblioref">Chiu et Chao 2014</a>)</span>.
+<p>Le problème majeur de la diversité <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est qu’elle fournit souvent des valeurs presque indépendantes de <span class="math inline">\(q\)</span> quand on l’applique à une matrice de similarité fonctionnelle <span class="citation">(Chiu et Chao <a href="#ref-Chiu2014b" role="doc-biblioref">2014</a>)</span>.
 De nombreux exemples, y compris dans l’article original de Leinster et Cobbold, montrent une très faible décroissance de la diversité de <span class="math inline">\(q=0\)</span> à <span class="math inline">\(q=2\)</span>.
 Ce n’est pas un problème théorique mais numérique.
 Si la banalité de l’espèce <span class="math inline">\(s\)</span> est proche de 1, sa puissance <span class="math inline">\(q\)</span> peut être approchée par son développement limité au premier ordre:
@@ -665,20 +616,20 @@ Dans les faits, cette approximation vaut pour des valeurs de banalité assez él
 Ce n’est pas un problème pour la comparaison de profils de diversité de communautés différentes calculés à partir de la même matrice de similarité mais l’interprétation de la diversité en termes de nombres effectifs d’espèces dépendant de <span class="math inline">\(q\)</span> n’est pas très intuitive.</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 <p></p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="9-chap-LeinsterCobbold.html#cb204-1" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb204-2"><a href="9-chap-LeinsterCobbold.html#cb204-2" aria-hidden="true" tabindex="-1"></a>seqZp <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.001</span>)</span>
-<span id="cb204-3"><a href="9-chap-LeinsterCobbold.html#cb204-3" aria-hidden="true" tabindex="-1"></a>gga <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">r =</span> seqZp, <span class="at">xr =</span> seqZp<span class="sc">^</span>r), <span class="fu">aes</span>(r, xr)) <span class="sc">+</span> </span>
-<span id="cb204-4"><a href="9-chap-LeinsterCobbold.html#cb204-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">1</span> <span class="sc">-</span> r, <span class="at">slope =</span> r, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, </span>
-<span id="cb204-5"><a href="9-chap-LeinsterCobbold.html#cb204-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">expression</span>(x<span class="sc">^</span>r)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
-<span id="cb204-6"><a href="9-chap-LeinsterCobbold.html#cb204-6" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.5</span></span>
-<span id="cb204-7"><a href="9-chap-LeinsterCobbold.html#cb204-7" aria-hidden="true" tabindex="-1"></a>ggb <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">r =</span> seqZp, <span class="at">xr =</span> seqZp<span class="sc">^</span>r), <span class="fu">aes</span>(r, xr)) <span class="sc">+</span> </span>
-<span id="cb204-8"><a href="9-chap-LeinsterCobbold.html#cb204-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">1</span> <span class="sc">-</span> r, <span class="at">slope =</span> r, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, </span>
-<span id="cb204-9"><a href="9-chap-LeinsterCobbold.html#cb204-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">expression</span>(x<span class="sc">^</span>r)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
-<span id="cb204-10"><a href="9-chap-LeinsterCobbold.html#cb204-10" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(gga, ggb, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="9-chap-LeinsterCobbold.html#cb204-1"></a>r &lt;-<span class="st"> </span><span class="fl">0.5</span></span>
+<span id="cb204-2"><a href="9-chap-LeinsterCobbold.html#cb204-2"></a>seqZp &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.001</span>)</span>
+<span id="cb204-3"><a href="9-chap-LeinsterCobbold.html#cb204-3"></a>gga &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">r =</span> seqZp, <span class="dt">xr =</span> seqZp<span class="op">^</span>r), <span class="kw">aes</span>(r, xr)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb204-4"><a href="9-chap-LeinsterCobbold.html#cb204-4"></a><span class="st">    </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>r, <span class="dt">slope =</span> r, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb204-5"><a href="9-chap-LeinsterCobbold.html#cb204-5"></a>    <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="kw">expression</span>(x<span class="op">^</span>r)) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
+<span id="cb204-6"><a href="9-chap-LeinsterCobbold.html#cb204-6"></a>r &lt;-<span class="st"> </span><span class="fl">-0.5</span></span>
+<span id="cb204-7"><a href="9-chap-LeinsterCobbold.html#cb204-7"></a>ggb &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">r =</span> seqZp, <span class="dt">xr =</span> seqZp<span class="op">^</span>r), <span class="kw">aes</span>(r, xr)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb204-8"><a href="9-chap-LeinsterCobbold.html#cb204-8"></a><span class="st">    </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>r, <span class="dt">slope =</span> r, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb204-9"><a href="9-chap-LeinsterCobbold.html#cb204-9"></a>    <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="kw">expression</span>(x<span class="op">^</span>r)) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb204-10"><a href="9-chap-LeinsterCobbold.html#cb204-10"></a><span class="kw">grid.arrange</span>(gga, ggb, <span class="dt">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p>La transformation exponentielle négative,
 <span class="math display">\[z_{s,t} = e^{-u \frac{d_{s,t}}{\max{(d_{s,t})}}},\]</span>
-est justifiée par <span class="citation"><a href="references.html#ref-Leinster2013" role="doc-biblioref">Leinster</a> (<a href="references.html#ref-Leinster2013" role="doc-biblioref">2013</a>)</span>.
+est justifiée par <span class="citation">Leinster (<a href="#ref-Leinster2013" role="doc-biblioref">2013</a>)</span>.
 <span class="math inline">\(u\)</span> est une constante positive.
 Plus <span class="math inline">\(u\)</span> est grand, plus la transformation est convexe: les similarités sont tassées vers 0 (figure <a href="9-chap-LeinsterCobbold.html#fig:EchelleFig">9.3</a>).</p>
 
@@ -692,11 +643,11 @@ Figure 9.3: Transformation des distances (en abscisse) en similarités (en ordon
 <p></p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 <p></p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="9-chap-LeinsterCobbold.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">01</span>)), <span class="fu">aes</span>(x)) <span class="sc">+</span> </span>
-<span id="cb205-2"><a href="9-chap-LeinsterCobbold.html#cb205-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x) <span class="fu">exp</span>(<span class="sc">-</span>x)) <span class="sc">+</span></span>
-<span id="cb205-3"><a href="9-chap-LeinsterCobbold.html#cb205-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x) <span class="fu">exp</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>x), <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb205-4"><a href="9-chap-LeinsterCobbold.html#cb205-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x) <span class="fu">exp</span>(<span class="sc">-</span><span class="dv">10</span><span class="sc">*</span>x), <span class="at">lty =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb205-5"><a href="9-chap-LeinsterCobbold.html#cb205-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">exp</span>(<span class="sc">-</span>ux)))</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="9-chap-LeinsterCobbold.html#cb205-1"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">.01</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb205-2"><a href="9-chap-LeinsterCobbold.html#cb205-2"></a><span class="st">  </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> <span class="cf">function</span>(x) <span class="kw">exp</span>(<span class="op">-</span>x)) <span class="op">+</span></span>
+<span id="cb205-3"><a href="9-chap-LeinsterCobbold.html#cb205-3"></a><span class="st">  </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> <span class="cf">function</span>(x) <span class="kw">exp</span>(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>x), <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></span>
+<span id="cb205-4"><a href="9-chap-LeinsterCobbold.html#cb205-4"></a><span class="st">  </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> <span class="cf">function</span>(x) <span class="kw">exp</span>(<span class="op">-</span><span class="dv">10</span><span class="op">*</span>x), <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
+<span id="cb205-5"><a href="9-chap-LeinsterCobbold.html#cb205-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="kw">expression</span>(<span class="kw">exp</span>(<span class="op">-</span>ux)))</span></code></pre></div>
 <p></p>
 <p>Augmenter la valeur de <span class="math inline">\(u\)</span> diminue les similarités et donc la banalité des espèces, ce qui règle (arbitrairement) le problème de la faible sensibilité de la diversité au paramètre <span class="math inline">\(q\)</span>.</p>
 <p>Du point de vue théorique, l’ordre des valeurs de la matrice des distances est justifié (par les différences entre traits fonctionnels par exemple) mais leur distribution ne l’est pas: elle n’est que la conséquence de la méthode de calcul.
@@ -708,11 +659,11 @@ Modifier <span class="math inline">\(u\)</span> modifie la magnitude de l’espa
 Quand <span class="math inline">\(u \to +\infty\)</span>, <span class="math inline">\(\mathbf{Z} \to \mathbf{I}_s\)</span>: la diversité tend vers la diversité neutre.
 Leinster et Cobbold suggèrent de comparer les profils de diversité en fonction à la fois de <span class="math inline">\(q\)</span> et de <span class="math inline">\(u\)</span>.</p>
 </div>
-<div id="sec:dqzEstimation" class="section level2" number="9.6">
+<div id="sec:dqzEstimation" class="section level2">
 <h2><span class="header-section-number">9.6</span> Estimation</h2>
 <p>Comme les autres mesures de diversité, <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est sujette au biais d’estimation.
-Deux estimateurs réduisant le biais existent <span class="citation">(<a href="references.html#ref-Marcon2014e" role="doc-biblioref">Marcon, Zhang, et Hérault 2014</a>)</span>.
-Le premier utilise la technique de <span class="citation"><a href="references.html#ref-Chao2003" role="doc-biblioref">Chao et Shen</a> (<a href="references.html#ref-Chao2003" role="doc-biblioref">2003</a>)</span> déjà vue pour la correction du biais de l’entropie de Shannon <a href="3-chap-MesuresNeutres.html#eq:ChaoShen">(3.37)</a>.
+Deux estimateurs réduisant le biais existent <span class="citation">(Marcon, Zhang, et Hérault <a href="#ref-Marcon2014e" role="doc-biblioref">2014</a>)</span>.
+Le premier utilise la technique de <span class="citation">Chao et Shen (<a href="#ref-Chao2003" role="doc-biblioref">2003</a>)</span> déjà vue pour la correction du biais de l’entropie de Shannon <a href="3-chap-MesuresNeutres.html#eq:ChaoShen">(3.37)</a>.
 L’estimateur de <span class="math inline">\(^q\!H^{\mathbf{Z}}\)</span> est</p>
 <p><span class="math display" id="eq:EstHqz">\[\begin{equation}
   \tag{9.9}
@@ -727,7 +678,7 @@ L’estimateur de <span class="math inline">\(^q\!H^{\mathbf{Z}}\)</span> est</p
 \end{equation}\]</span></p>
 <p>L’estimateur de la diversité est <span class="math inline">\(^q\!{\tilde{D}}^{\mathbf{Z}} = e^{^q\!{\tilde{H}}^{\mathbf{Z}}}_q\)</span>.</p>
 <p>L’autre estimateur suppose que la similarité des espèces non observées avec toutes les autres est la similarité moyenne observée.
-L’estimation utilise la technique de <span class="citation"><a href="references.html#ref-Zhang2014" role="doc-biblioref">Z. Zhang et Grabchak</a> (<a href="references.html#ref-Zhang2014" role="doc-biblioref">2016</a>)</span>, qui consiste à développer l’estimateur en série entière au voisinage de <span class="math inline">\(p_s=1\)</span>.
+L’estimation utilise la technique de <span class="citation">Zhang et Grabchak (<a href="#ref-Zhang2014" role="doc-biblioref">2016</a>)</span>, qui consiste à développer l’estimateur en série entière au voisinage de <span class="math inline">\(p_s=1\)</span>.
 L’estimateur de <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est, pour <span class="math inline">\(q\ne 1\)</span>,</p>
 <p><span class="math display" id="eq:EstDqz">\[\begin{equation}
   \tag{9.11}
@@ -771,18 +722,18 @@ L’estimateur de <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est, p
 \end{equation}\]</span></p>
 <p>Le package <em>entropart</em> fournit les fonctions <code>Dqz</code> et <code>HqZ</code> pour calculer ces estimateurs.</p>
 <p></p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="9-chap-LeinsterCobbold.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Paracou618)</span>
-<span id="cb206-2"><a href="9-chap-LeinsterCobbold.html#cb206-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
-<span id="cb206-3"><a href="9-chap-LeinsterCobbold.html#cb206-3" aria-hidden="true" tabindex="-1"></a>DistanceMatrix <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(Paracou618.dist)</span>
-<span id="cb206-4"><a href="9-chap-LeinsterCobbold.html#cb206-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrice de similarité</span></span>
-<span id="cb206-5"><a href="9-chap-LeinsterCobbold.html#cb206-5" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> DistanceMatrix<span class="sc">/</span><span class="fu">max</span>(DistanceMatrix)</span>
-<span id="cb206-6"><a href="9-chap-LeinsterCobbold.html#cb206-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcul de la diversité</span></span>
-<span id="cb206-7"><a href="9-chap-LeinsterCobbold.html#cb206-7" aria-hidden="true" tabindex="-1"></a><span class="fu">Dqz</span>(Paracou618.MC<span class="sc">$</span>Ns, <span class="at">q =</span> <span class="dv">1</span>, Z)</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="9-chap-LeinsterCobbold.html#cb206-1"></a><span class="kw">data</span>(Paracou618)</span>
+<span id="cb206-2"><a href="9-chap-LeinsterCobbold.html#cb206-2"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
+<span id="cb206-3"><a href="9-chap-LeinsterCobbold.html#cb206-3"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Paracou618.dist)</span>
+<span id="cb206-4"><a href="9-chap-LeinsterCobbold.html#cb206-4"></a><span class="co"># Matrice de similarité</span></span>
+<span id="cb206-5"><a href="9-chap-LeinsterCobbold.html#cb206-5"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>DistanceMatrix<span class="op">/</span><span class="kw">max</span>(DistanceMatrix)</span>
+<span id="cb206-6"><a href="9-chap-LeinsterCobbold.html#cb206-6"></a><span class="co"># Calcul de la diversité</span></span>
+<span id="cb206-7"><a href="9-chap-LeinsterCobbold.html#cb206-7"></a><span class="kw">Dqz</span>(Paracou618.MC<span class="op">$</span>Ns, <span class="dt">q =</span> <span class="dv">1</span>, Z)</span></code></pre></div>
 <pre><code>##     Best 
 ## 1.488083</code></pre>
 <p></p>
 </div>
-<div id="diversité-phylogénétique" class="section level2" number="9.7">
+<div id="diversité-phylogénétique" class="section level2">
 <h2><span class="header-section-number">9.7</span> Diversité phylogénétique</h2>
 
 <p></p>
@@ -793,9 +744,10 @@ Figure 9.4: Arbre phylogénétique ou fonctionnel hypothétique. 5 espèces sont
 </p>
 </div>
 <p></p>
-<p>La diversité phylogénétique <span class="math inline">\(^{q}\!\bar{D}(T)\)</span> appliquée à un arbre ultramétrique est un cas particulier de <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> pour une matrice <span class="math inline">\(\mathbf{Z}\)</span> dont les lignes et colonnes sont la similarité des “espèces historiques” <span class="citation">(<a href="references.html#ref-Leinster2012" role="doc-biblioref">Leinster et Cobbold 2012</a>, proposition A7)</span>, c’est-à-dire les couples (espèce actuelle; branche ancestrale).</p>
+<p>La diversité phylogénétique <span class="math inline">\(^{q}\!\bar{D}(T)\)</span> appliquée à un arbre ultramétrique est un cas particulier de <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> pour une matrice <span class="math inline">\(\mathbf{Z}\)</span> dont les lignes et colonnes sont la similarité des “espèces historiques” <span class="citation">(Leinster et Cobbold <a href="#ref-Leinster2012" role="doc-biblioref">2012</a>, proposition A7)</span>, c’est-à-dire les couples (espèce actuelle; branche ancestrale).</p>
 
 <p></p>
+
 <p></p>
 <p>Par exemple, l’espèce 1 et les branches <span class="math inline">\(b_{1,1}\)</span> et <span class="math inline">\(b_{3,1}\)</span> fournissent les deux premières lignes et colonnes de la matrice; l’espèce 5 et les branches <span class="math inline">\(b_{1,5}\)</span> et <span class="math inline">\(b_{2,3}\)</span>, les deux dernières.</p>
 <p>La diversité phylogénétique <span class="math inline">\(^{q}\!\hat{D}(T)\)</span> est obtenue quand les éléments de la matrice <span class="math inline">\(\mathbf{Z}\)</span> suivent les règles suivantes: les éléments de toutes les colonnes correspondant à une espèce donnée (par exemple les deux premières colonnes qui correspondent à l’espèce 1) valent 1 pour toutes les lignes correspondant à une branche dont l’espèce descend (les trois lignes correspondant aux branches <span class="math inline">\(b_{1,1}\)</span> et <span class="math inline">\(b_{3,1}\)</span>); les éléments dont l’espèce en colonne ne descend pas de la branche en ligne valent 0.
@@ -810,7 +762,7 @@ Cependant, le calcul de <span class="math inline">\(^q\!{\hat{D}}^{\mathbf{Z}}\)
 <p>Pour un arbre non ultramétrique, il est possible de définir une matrice <span class="math inline">\(\mathbf{Z}\)</span> similaire à celle de la table <a href="#tab:MatricePhylo"><strong>??</strong></a>, mais ses valeurs non nulles ne sont pas égales à 1.
 Elles sont égales au rapport de <span class="math inline">\(\bar{T}\)</span>, la longueur moyenne des branches pondérée par la fréquence des espèces, sur la longueur de la branche: elles dépendent donc des fréquences des espèces et empêchent par conséquent la comparaison de la diversité entre communautés différentes.</p>
 </div>
-<div id="diversité-individuelle-1" class="section level2" number="9.8">
+<div id="diversité-individuelle-1" class="section level2">
 <h2><span class="header-section-number">9.8</span> Diversité individuelle</h2>
 <p>La diversité <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> et tous ses cas particuliers (phylodiversité et diversité neutre) peuvent être envisagés au niveau individuel plutôt qu’au niveau de l’espèce.</p>
 <p>Le calcul de la diversité n’est pas affecté par le remplacement d’une espèce par deux espèces identiques.
@@ -819,7 +771,7 @@ L’opération peut être répétée jusqu’à la désagrégation complète de 
 Il n’y donc pas de différence entre la mesure de la diversité individuelle et celle de la diversité spécifique qui n’est qu’une façon pratique de regrouper des individus ayant la même banalité.
 Dit autrement, l’entropie d’une communauté est la somme des entropie de ses espèces, qui n’est que la somme pondérée des entropies individuelles si tous les individus d’une espèce ont la même entropie.</p>
 <p>La variabilité intraspécifique peut être traitée par un raisonnement similaire.
-L’idée d’intégrer aux mesures de diversité la possibilité que tous les individus d’une espèce ne soient pas semblables émerge dans la littérature <span class="citation">(<a href="references.html#ref-Pavoine2014b" role="doc-biblioref">Pavoine et Ricotta 2014</a>; <a href="references.html#ref-Chiu2014b" role="doc-biblioref">Chiu et Chao 2014</a>)</span>.
+L’idée d’intégrer aux mesures de diversité la possibilité que tous les individus d’une espèce ne soient pas semblables émerge dans la littérature <span class="citation">(Pavoine et Ricotta <a href="#ref-Pavoine2014b" role="doc-biblioref">2014</a>; Chiu et Chao <a href="#ref-Chiu2014b" role="doc-biblioref">2014</a>)</span>.
 Mais si des individus de la même espèce ne sont pas totalement similaires, ils ne peuvent pas être regroupés en prenant pour similarité de l’espèce avec elle-même une valeur unique qui résumerait la similarité entre les individus (au lieu de 1) pour tous les ordres de diversité.</p>
 <p>Formellement, si l’espèce <span class="math inline">\(s\)</span> est composée de deux groupes <span class="math inline">\(s&#39;\)</span> et <span class="math inline">\(s&#39;&#39;\)</span>, la banalité du groupe <span class="math inline">\(s&#39;\)</span> est
 <span class="math display">\[{\left(\mathbf{Zp}\right)}_{s&#39;}=\sum_{t \ne s&#39;, s&#39;&#39;}{p_{t}z_{s&#39;,t}} + p_{s&#39;} + p_{s&#39;&#39;}z_{s&#39;,s&#39;&#39;},\]</span>
@@ -842,49 +794,49 @@ La valeur de <span class="math inline">\(z_{s,s}\)</span> peut être cherchée p
 Se limiter à <span class="math inline">\(q=2\)</span> simplifie le problème.</p>
 <p>L’exemple suivant considère deux espèces, dont une comprenant deux groupes:</p>
 <p></p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="9-chap-LeinsterCobbold.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Similarité entre les deux groupes</span></span>
-<span id="cb208-2"><a href="9-chap-LeinsterCobbold.html#cb208-2" aria-hidden="true" tabindex="-1"></a>zs12 <span class="ot">&lt;-</span> <span class="fl">0.9</span></span>
-<span id="cb208-3"><a href="9-chap-LeinsterCobbold.html#cb208-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilités des deux groupes</span></span>
-<span id="cb208-4"><a href="9-chap-LeinsterCobbold.html#cb208-4" aria-hidden="true" tabindex="-1"></a>ps1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">5</span></span>
-<span id="cb208-5"><a href="9-chap-LeinsterCobbold.html#cb208-5" aria-hidden="true" tabindex="-1"></a>ps2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">5</span></span>
-<span id="cb208-6"><a href="9-chap-LeinsterCobbold.html#cb208-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrice de similarité</span></span>
-<span id="cb208-7"><a href="9-chap-LeinsterCobbold.html#cb208-7" aria-hidden="true" tabindex="-1"></a>(Z2s <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, zs12, <span class="fl">0.5</span>, zs12, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="9-chap-LeinsterCobbold.html#cb208-1"></a><span class="co"># Similarité entre les deux groupes</span></span>
+<span id="cb208-2"><a href="9-chap-LeinsterCobbold.html#cb208-2"></a>zs12 &lt;-<span class="st"> </span><span class="fl">0.9</span></span>
+<span id="cb208-3"><a href="9-chap-LeinsterCobbold.html#cb208-3"></a><span class="co"># Probabilités des deux groupes</span></span>
+<span id="cb208-4"><a href="9-chap-LeinsterCobbold.html#cb208-4"></a>ps1 &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">5</span></span>
+<span id="cb208-5"><a href="9-chap-LeinsterCobbold.html#cb208-5"></a>ps2 &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">5</span></span>
+<span id="cb208-6"><a href="9-chap-LeinsterCobbold.html#cb208-6"></a><span class="co"># Matrice de similarité</span></span>
+<span id="cb208-7"><a href="9-chap-LeinsterCobbold.html#cb208-7"></a>(Z2s &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>, zs12, <span class="fl">0.5</span>, zs12, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>), <span class="dt">nrow =</span> <span class="dv">3</span>))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]  1.0  0.9  0.5
 ## [2,]  0.9  1.0  0.5
 ## [3,]  0.5  0.5  1.0</code></pre>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="9-chap-LeinsterCobbold.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilités</span></span>
-<span id="cb210-2"><a href="9-chap-LeinsterCobbold.html#cb210-2" aria-hidden="true" tabindex="-1"></a>(P2s <span class="ot">&lt;-</span> <span class="fu">c</span>(ps1, ps2, <span class="dv">1</span> <span class="sc">-</span> ps1 <span class="sc">-</span> ps2))</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="9-chap-LeinsterCobbold.html#cb210-1"></a><span class="co"># Probabilités</span></span>
+<span id="cb210-2"><a href="9-chap-LeinsterCobbold.html#cb210-2"></a>(P2s &lt;-<span class="st"> </span><span class="kw">c</span>(ps1, ps2, <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>ps1 <span class="op">-</span><span class="st"> </span>ps2))</span></code></pre></div>
 <pre><code>## [1] 0.2 0.2 0.6</code></pre>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="9-chap-LeinsterCobbold.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Diversité</span></span>
-<span id="cb212-2"><a href="9-chap-LeinsterCobbold.html#cb212-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Dqz</span>(P2s, <span class="dv">2</span>, Z2s)</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="9-chap-LeinsterCobbold.html#cb212-1"></a><span class="co"># Diversité</span></span>
+<span id="cb212-2"><a href="9-chap-LeinsterCobbold.html#cb212-2"></a><span class="kw">Dqz</span>(P2s, <span class="dv">2</span>, Z2s)</span></code></pre></div>
 <pre><code>##     None 
 ## 1.329787</code></pre>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="9-chap-LeinsterCobbold.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Similarité intraspécifique après regroupement</span></span>
-<span id="cb214-2"><a href="9-chap-LeinsterCobbold.html#cb214-2" aria-hidden="true" tabindex="-1"></a>(zss <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> ps1 <span class="sc">*</span> ps2<span class="sc">/</span>(ps1 <span class="sc">+</span> ps2)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (zs12 <span class="sc">-</span> <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="9-chap-LeinsterCobbold.html#cb214-1"></a><span class="co"># Similarité intraspécifique après regroupement</span></span>
+<span id="cb214-2"><a href="9-chap-LeinsterCobbold.html#cb214-2"></a>(zss &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>ps1 <span class="op">*</span><span class="st"> </span>ps2<span class="op">/</span>(ps1 <span class="op">+</span><span class="st"> </span>ps2)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>(zs12 <span class="op">-</span><span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
 <pre><code>## [1] 0.95</code></pre>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="9-chap-LeinsterCobbold.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrice de similarité après regroupement</span></span>
-<span id="cb216-2"><a href="9-chap-LeinsterCobbold.html#cb216-2" aria-hidden="true" tabindex="-1"></a>(Z1s <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(zss, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="9-chap-LeinsterCobbold.html#cb216-1"></a><span class="co"># Matrice de similarité après regroupement</span></span>
+<span id="cb216-2"><a href="9-chap-LeinsterCobbold.html#cb216-2"></a>(Z1s &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(zss, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>), <span class="dt">nrow =</span> <span class="dv">2</span>))</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,] 0.95  0.5
 ## [2,] 0.50  1.0</code></pre>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="9-chap-LeinsterCobbold.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilité après regroupement</span></span>
-<span id="cb218-2"><a href="9-chap-LeinsterCobbold.html#cb218-2" aria-hidden="true" tabindex="-1"></a>(P1s <span class="ot">&lt;-</span> <span class="fu">c</span>(ps1 <span class="sc">+</span> ps2, <span class="dv">1</span> <span class="sc">-</span> ps1 <span class="sc">-</span> ps2))</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="9-chap-LeinsterCobbold.html#cb218-1"></a><span class="co"># Probabilité après regroupement</span></span>
+<span id="cb218-2"><a href="9-chap-LeinsterCobbold.html#cb218-2"></a>(P1s &lt;-<span class="st"> </span><span class="kw">c</span>(ps1 <span class="op">+</span><span class="st"> </span>ps2, <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>ps1 <span class="op">-</span><span class="st"> </span>ps2))</span></code></pre></div>
 <pre><code>## [1] 0.4 0.6</code></pre>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="9-chap-LeinsterCobbold.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Diversité</span></span>
-<span id="cb220-2"><a href="9-chap-LeinsterCobbold.html#cb220-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Dqz</span>(P1s, <span class="dv">2</span>, Z1s)</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="9-chap-LeinsterCobbold.html#cb220-1"></a><span class="co"># Diversité</span></span>
+<span id="cb220-2"><a href="9-chap-LeinsterCobbold.html#cb220-2"></a><span class="kw">Dqz</span>(P1s, <span class="dv">2</span>, Z1s)</span></code></pre></div>
 <pre><code>##     None 
 ## 1.329787</code></pre>
 <p></p>
 <p>En pratique, si les similarités entre individus ou groupes sont connues, le regroupement n’a aucun intérêt.
 Mais en absence de données individuelles, il est possible de choisir arbitrairement une similarité intraspécifique différente de 1 (ou de façon équivalente une distance différente de 0) pour calculer une diversité d’ordre fixé, de préférence 2.</p>
 </div>
-<div id="diversité-des-valeurs-propres" class="section level2" number="9.9">
+<div id="diversité-des-valeurs-propres" class="section level2">
 <h2><span class="header-section-number">9.9</span> Diversité des valeurs propres</h2>
-<p>L’approche de <span class="citation"><a href="references.html#ref-Pavoine2014" role="doc-biblioref">Pavoine et Izsák</a> (<a href="references.html#ref-Pavoine2014" role="doc-biblioref">2014</a>)</span> permet de prendre en compte la variabilité intraspécifique de façon rigoureuse.
+<p>L’approche de <span class="citation">Pavoine et Izsák (<a href="#ref-Pavoine2014" role="doc-biblioref">2014</a>)</span> permet de prendre en compte la variabilité intraspécifique de façon rigoureuse.
 Pour mesurer la diversité neutre, les espèces sont placées dans un espace multidimensionnel, de dimension <span class="math inline">\(S\)</span>.
 Chaque espèce est représentée par un vecteur de longueur <span class="math inline">\(p_s\)</span> sur son axe.
-Cette représentation a été utilisée par <span class="citation"><a href="references.html#ref-Campos2009" role="doc-biblioref">Campos et Isaza</a> (<a href="references.html#ref-Campos2009" role="doc-biblioref">2009</a>)</span> qui ont relié la diversité de Simpson au volume de la sphère sur laquelle se trouve le point définissant la communauté (figure <a href="9-chap-LeinsterCobbold.html#fig:Campos2009">9.5</a>).</p>
+Cette représentation a été utilisée par <span class="citation">Campos et Isaza (<a href="#ref-Campos2009" role="doc-biblioref">2009</a>)</span> qui ont relié la diversité de Simpson au volume de la sphère sur laquelle se trouve le point définissant la communauté (figure <a href="9-chap-LeinsterCobbold.html#fig:Campos2009">9.5</a>).</p>
 
 <p></p>
 <div class="figure" style="text-align: center"><span id="fig:Campos2009"></span>
@@ -910,38 +862,38 @@ Le carré de la norme du vecteur de l’espèce <span class="math inline">\(s\)<
 <p>Si <span class="math inline">\(\mathbf{Z}=\mathbf{I}_s\)</span>, l’ACP ne modifie pas le nuage de points original et <span class="math inline">\(^q\!D^{\mathbf{Z}}(\Lambda)={^{q}\!D}\)</span>.</p>
 <p>L’exemple suivant calcule la diversité de la méta-communauté <code>Paracou618</code> selon la matrice de distances <code>Paracou618.dist</code>.</p>
 <p></p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="9-chap-LeinsterCobbold.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilités</span></span>
-<span id="cb222-2"><a href="9-chap-LeinsterCobbold.html#cb222-2" aria-hidden="true" tabindex="-1"></a>Ps <span class="ot">&lt;-</span> Paracou618.MC<span class="sc">$</span>Ps[Paracou618.MC<span class="sc">$</span>Ps <span class="sc">&gt;</span> <span class="dv">0</span>]</span>
-<span id="cb222-3"><a href="9-chap-LeinsterCobbold.html#cb222-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
-<span id="cb222-4"><a href="9-chap-LeinsterCobbold.html#cb222-4" aria-hidden="true" tabindex="-1"></a>DistanceMatrix <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(Paracou618.dist)</span>
-<span id="cb222-5"><a href="9-chap-LeinsterCobbold.html#cb222-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Mise en correspondance de la matrice et du vecteur de</span></span>
-<span id="cb222-6"><a href="9-chap-LeinsterCobbold.html#cb222-6" aria-hidden="true" tabindex="-1"></a><span class="co"># probabilités</span></span>
-<span id="cb222-7"><a href="9-chap-LeinsterCobbold.html#cb222-7" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> DistanceMatrix[<span class="fu">names</span>(Ps), <span class="fu">names</span>(Ps)]</span>
-<span id="cb222-8"><a href="9-chap-LeinsterCobbold.html#cb222-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalisation</span></span>
-<span id="cb222-9"><a href="9-chap-LeinsterCobbold.html#cb222-9" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> D<span class="sc">/</span><span class="fu">max</span>(D)</span>
-<span id="cb222-10"><a href="9-chap-LeinsterCobbold.html#cb222-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformation en matrice de similarité</span></span>
-<span id="cb222-11"><a href="9-chap-LeinsterCobbold.html#cb222-11" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> D</span>
-<span id="cb222-12"><a href="9-chap-LeinsterCobbold.html#cb222-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrice diagonale contenant les probabilités</span></span>
-<span id="cb222-13"><a href="9-chap-LeinsterCobbold.html#cb222-13" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> <span class="fu">diag</span>(Ps)</span>
-<span id="cb222-14"><a href="9-chap-LeinsterCobbold.html#cb222-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrice des espèces (les lignes de Sp sont les coordonnées</span></span>
-<span id="cb222-15"><a href="9-chap-LeinsterCobbold.html#cb222-15" aria-hidden="true" tabindex="-1"></a><span class="co"># des vecteurs)</span></span>
-<span id="cb222-16"><a href="9-chap-LeinsterCobbold.html#cb222-16" aria-hidden="true" tabindex="-1"></a>Sp <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(Q) <span class="sc">%*%</span> <span class="fu">sqrt</span>(Z) <span class="sc">%*%</span> <span class="fu">sqrt</span>(Q)</span>
-<span id="cb222-17"><a href="9-chap-LeinsterCobbold.html#cb222-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Valeurs propres normalisées</span></span>
-<span id="cb222-18"><a href="9-chap-LeinsterCobbold.html#cb222-18" aria-hidden="true" tabindex="-1"></a>Lambda <span class="ot">&lt;-</span> <span class="fu">svd</span>(Sp)<span class="sc">$</span>d</span>
-<span id="cb222-19"><a href="9-chap-LeinsterCobbold.html#cb222-19" aria-hidden="true" tabindex="-1"></a>Mu <span class="ot">&lt;-</span> Lambda<span class="sc">/</span><span class="fu">sum</span>(Lambda)</span>
-<span id="cb222-20"><a href="9-chap-LeinsterCobbold.html#cb222-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparaison des valeurs à q=2</span></span>
-<span id="cb222-21"><a href="9-chap-LeinsterCobbold.html#cb222-21" aria-hidden="true" tabindex="-1"></a><span class="fu">Diversity</span>(Mu, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="9-chap-LeinsterCobbold.html#cb222-1"></a><span class="co"># Probabilités</span></span>
+<span id="cb222-2"><a href="9-chap-LeinsterCobbold.html#cb222-2"></a>Ps &lt;-<span class="st"> </span>Paracou618.MC<span class="op">$</span>Ps[Paracou618.MC<span class="op">$</span>Ps <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>]</span>
+<span id="cb222-3"><a href="9-chap-LeinsterCobbold.html#cb222-3"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
+<span id="cb222-4"><a href="9-chap-LeinsterCobbold.html#cb222-4"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Paracou618.dist)</span>
+<span id="cb222-5"><a href="9-chap-LeinsterCobbold.html#cb222-5"></a><span class="co"># Mise en correspondance de la matrice et du vecteur de</span></span>
+<span id="cb222-6"><a href="9-chap-LeinsterCobbold.html#cb222-6"></a><span class="co"># probabilités</span></span>
+<span id="cb222-7"><a href="9-chap-LeinsterCobbold.html#cb222-7"></a>D &lt;-<span class="st"> </span>DistanceMatrix[<span class="kw">names</span>(Ps), <span class="kw">names</span>(Ps)]</span>
+<span id="cb222-8"><a href="9-chap-LeinsterCobbold.html#cb222-8"></a><span class="co"># Normalisation</span></span>
+<span id="cb222-9"><a href="9-chap-LeinsterCobbold.html#cb222-9"></a>D &lt;-<span class="st"> </span>D<span class="op">/</span><span class="kw">max</span>(D)</span>
+<span id="cb222-10"><a href="9-chap-LeinsterCobbold.html#cb222-10"></a><span class="co"># Transformation en matrice de similarité</span></span>
+<span id="cb222-11"><a href="9-chap-LeinsterCobbold.html#cb222-11"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>D</span>
+<span id="cb222-12"><a href="9-chap-LeinsterCobbold.html#cb222-12"></a><span class="co"># Matrice diagonale contenant les probabilités</span></span>
+<span id="cb222-13"><a href="9-chap-LeinsterCobbold.html#cb222-13"></a>Q &lt;-<span class="st"> </span><span class="kw">diag</span>(Ps)</span>
+<span id="cb222-14"><a href="9-chap-LeinsterCobbold.html#cb222-14"></a><span class="co"># Matrice des espèces (les lignes de Sp sont les coordonnées</span></span>
+<span id="cb222-15"><a href="9-chap-LeinsterCobbold.html#cb222-15"></a><span class="co"># des vecteurs)</span></span>
+<span id="cb222-16"><a href="9-chap-LeinsterCobbold.html#cb222-16"></a>Sp &lt;-<span class="st"> </span><span class="kw">sqrt</span>(Q) <span class="op">%*%</span><span class="st"> </span><span class="kw">sqrt</span>(Z) <span class="op">%*%</span><span class="st"> </span><span class="kw">sqrt</span>(Q)</span>
+<span id="cb222-17"><a href="9-chap-LeinsterCobbold.html#cb222-17"></a><span class="co"># Valeurs propres normalisées</span></span>
+<span id="cb222-18"><a href="9-chap-LeinsterCobbold.html#cb222-18"></a>Lambda &lt;-<span class="st"> </span><span class="kw">svd</span>(Sp)<span class="op">$</span>d</span>
+<span id="cb222-19"><a href="9-chap-LeinsterCobbold.html#cb222-19"></a>Mu &lt;-<span class="st"> </span>Lambda<span class="op">/</span><span class="kw">sum</span>(Lambda)</span>
+<span id="cb222-20"><a href="9-chap-LeinsterCobbold.html#cb222-20"></a><span class="co"># Comparaison des valeurs à q=2</span></span>
+<span id="cb222-21"><a href="9-chap-LeinsterCobbold.html#cb222-21"></a><span class="kw">Diversity</span>(Mu, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##     None 
 ## 1.540061</code></pre>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="9-chap-LeinsterCobbold.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Diversité de Rao</span></span>
-<span id="cb224-2"><a href="9-chap-LeinsterCobbold.html#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Dqz</span>(Ps, <span class="dv">2</span>, Z)</span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="9-chap-LeinsterCobbold.html#cb224-1"></a><span class="co"># Diversité de Rao</span></span>
+<span id="cb224-2"><a href="9-chap-LeinsterCobbold.html#cb224-2"></a><span class="kw">Dqz</span>(Ps, <span class="dv">2</span>, Z)</span></code></pre></div>
 <pre><code>##     None 
 ## 1.490786</code></pre>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="9-chap-LeinsterCobbold.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La valeur à q=0 est le nombre d&#39;espèces</span></span>
-<span id="cb226-2"><a href="9-chap-LeinsterCobbold.html#cb226-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Diversity</span>(Mu, <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="9-chap-LeinsterCobbold.html#cb226-1"></a><span class="co"># La valeur à q=0 est le nombre d&#39;espèces</span></span>
+<span id="cb226-2"><a href="9-chap-LeinsterCobbold.html#cb226-2"></a><span class="kw">Diversity</span>(Mu, <span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## None 
 ##  229</code></pre>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="9-chap-LeinsterCobbold.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(Ps)</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="9-chap-LeinsterCobbold.html#cb228-1"></a><span class="kw">length</span>(Ps)</span></code></pre></div>
 <pre><code>## [1] 229</code></pre>
 <p></p>
 <p>La valeur de la diversité des valeurs propres est différente de celle de la diversité de Rao à cause des approximations numériques liées au calcul des valeurs propres (qui nécessitent l’inversion d’une matrice carrée de dimension <span class="math inline">\(S\)</span>).
@@ -958,10 +910,10 @@ Figure 9.6: Profil de diversité des valeurs propres de la méta-communauté <co
 <p></p>
 <p>Code R pour la figure:</p>
 <p></p>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="9-chap-LeinsterCobbold.html#cb230-1" aria-hidden="true" tabindex="-1"></a>DqZLambda <span class="ot">&lt;-</span> <span class="fu">CommunityProfile</span>(Diversity, Mu)</span>
-<span id="cb230-2"><a href="9-chap-LeinsterCobbold.html#cb230-2" aria-hidden="true" tabindex="-1"></a>Xlab <span class="ot">&lt;-</span> <span class="st">&quot;Ordre de diversité&quot;</span></span>
-<span id="cb230-3"><a href="9-chap-LeinsterCobbold.html#cb230-3" aria-hidden="true" tabindex="-1"></a>Ylab <span class="ot">&lt;-</span> <span class="st">&quot;Diversité&quot;</span></span>
-<span id="cb230-4"><a href="9-chap-LeinsterCobbold.html#cb230-4" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(DqZLambda, <span class="at">xlab =</span> Xlab, <span class="at">ylab =</span> Ylab) <span class="sc">+</span> <span class="fu">scale_y_log10</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="9-chap-LeinsterCobbold.html#cb230-1"></a>DqZLambda &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, Mu)</span>
+<span id="cb230-2"><a href="9-chap-LeinsterCobbold.html#cb230-2"></a>Xlab &lt;-<span class="st"> &quot;Ordre de diversité&quot;</span></span>
+<span id="cb230-3"><a href="9-chap-LeinsterCobbold.html#cb230-3"></a>Ylab &lt;-<span class="st"> &quot;Diversité&quot;</span></span>
+<span id="cb230-4"><a href="9-chap-LeinsterCobbold.html#cb230-4"></a><span class="kw">autoplot</span>(DqZLambda, <span class="dt">xlab =</span> Xlab, <span class="dt">ylab =</span> Ylab) <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_log10</span>()</span></code></pre></div>
 <p></p>
 <p>La diversité des valeurs propres permet de ramener le problème de la diversité d’espèces partiellement similaires au calcul de la diversité neutre d’une communauté d’espèces composites totalement dissimilaires.</p>
 <p>Les éléments de la diagonale de la matrice de similarité ne sont pas forcément égaux à 1: des valeurs inférieures correspondent à la variabilité intraspécifique, selon le mécanisme de regroupement traité au paragraphe précédent.
@@ -977,7 +929,7 @@ Il n’existe pas de technique pour corriger ce biais d’estimation.</p>
 <p>La composition de la communauté en espèces composites dépend à la fois de la matrice de similarité et des probabilités des espèces réelles.
 Elle est donc unique pour chaque communauté, ce qui empêche toute décomposition de la diversité selon les méthodes présentées plus loin.</p>
 </div>
-<div id="sec:dqzSynthese" class="section level2" number="9.10">
+<div id="sec:dqzSynthese" class="section level2">
 <h2><span class="header-section-number">9.10</span> Synthèse</h2>
 <p><span class="math inline">\(^{q}\!D(T)\)</span> est l’exponentielle d’ordre <span class="math inline">\(q\)</span> de la moyenne pondérée de l’entropie HCDT calculée à chaque période de l’arbre phylogénétique.</p>
 <p><span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est l’exponentielle d’ordre <span class="math inline">\(q\)</span> de l’entropie de Ricotta et Szeidl, mais aussi l’inverse de la banalité moyenne des espèces de la communauté.</p>
@@ -998,19 +950,19 @@ Figure 9.7: Diversité phylogénétique (l’arbre est une taxonomie) d’ordre 
 <p></p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 <p></p>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="9-chap-LeinsterCobbold.html#cb231-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="fl">0.1</span>))</span>
-<span id="cb231-2"><a href="9-chap-LeinsterCobbold.html#cb231-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Réutilisation de Paracou618.Taxonomy au format phylog (cf.</span></span>
-<span id="cb231-3"><a href="9-chap-LeinsterCobbold.html#cb231-3" aria-hidden="true" tabindex="-1"></a><span class="co"># calcul de FAD)</span></span>
-<span id="cb231-4"><a href="9-chap-LeinsterCobbold.html#cb231-4" aria-hidden="true" tabindex="-1"></a>DistanceMatrix <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(Tree<span class="sc">$</span>Wdist<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span>)</span>
-<span id="cb231-5"><a href="9-chap-LeinsterCobbold.html#cb231-5" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> DistanceMatrix<span class="sc">/</span><span class="fu">max</span>(DistanceMatrix)</span>
-<span id="cb231-6"><a href="9-chap-LeinsterCobbold.html#cb231-6" aria-hidden="true" tabindex="-1"></a>Divqz <span class="ot">&lt;-</span> <span class="fu">sapply</span>(q, <span class="cf">function</span>(q) <span class="fu">Dqz</span>(Paracou618.MC<span class="sc">$</span>Ps, q, Z))</span>
-<span id="cb231-7"><a href="9-chap-LeinsterCobbold.html#cb231-7" aria-hidden="true" tabindex="-1"></a>Divq <span class="ot">&lt;-</span> <span class="fu">sapply</span>(q, <span class="cf">function</span>(q) <span class="fu">ChaoPD</span>(Paracou618.MC<span class="sc">$</span>Ps, <span class="at">q =</span> q, </span>
-<span id="cb231-8"><a href="9-chap-LeinsterCobbold.html#cb231-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">PhyloTree =</span> Paracou618.Taxonomy))</span>
-<span id="cb231-9"><a href="9-chap-LeinsterCobbold.html#cb231-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(q, Divq, Divqz), <span class="fu">aes</span>(q)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> Divqz)) <span class="sc">+</span> </span>
-<span id="cb231-10"><a href="9-chap-LeinsterCobbold.html#cb231-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> Divq), <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Diversité&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="9-chap-LeinsterCobbold.html#cb231-1"></a>q &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="fl">0.1</span>))</span>
+<span id="cb231-2"><a href="9-chap-LeinsterCobbold.html#cb231-2"></a><span class="co"># Réutilisation de Paracou618.Taxonomy au format phylog (cf.</span></span>
+<span id="cb231-3"><a href="9-chap-LeinsterCobbold.html#cb231-3"></a><span class="co"># calcul de FAD)</span></span>
+<span id="cb231-4"><a href="9-chap-LeinsterCobbold.html#cb231-4"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Tree<span class="op">$</span>Wdist<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb231-5"><a href="9-chap-LeinsterCobbold.html#cb231-5"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>DistanceMatrix<span class="op">/</span><span class="kw">max</span>(DistanceMatrix)</span>
+<span id="cb231-6"><a href="9-chap-LeinsterCobbold.html#cb231-6"></a>Divqz &lt;-<span class="st"> </span><span class="kw">sapply</span>(q, <span class="cf">function</span>(q) <span class="kw">Dqz</span>(Paracou618.MC<span class="op">$</span>Ps, q, Z))</span>
+<span id="cb231-7"><a href="9-chap-LeinsterCobbold.html#cb231-7"></a>Divq &lt;-<span class="st"> </span><span class="kw">sapply</span>(q, <span class="cf">function</span>(q) <span class="kw">ChaoPD</span>(Paracou618.MC<span class="op">$</span>Ps, <span class="dt">q =</span> q, </span>
+<span id="cb231-8"><a href="9-chap-LeinsterCobbold.html#cb231-8"></a>    <span class="dt">PhyloTree =</span> Paracou618.Taxonomy))</span>
+<span id="cb231-9"><a href="9-chap-LeinsterCobbold.html#cb231-9"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(q, Divq, Divqz), <span class="kw">aes</span>(q)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> Divqz)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb231-10"><a href="9-chap-LeinsterCobbold.html#cb231-10"></a><span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> Divq), <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Diversité&quot;</span>)</span></code></pre></div>
 <p></p>
 <p><span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est particulièrement intéressante pour mesurer la diversité fonctionnelle, souvent définie à partir d’une matrice de distances entre les espèces.
-La transformation d’une matrice en un arbre phylogénétique déforme les données <span class="citation">(<a href="references.html#ref-Pavoine2005a" role="doc-biblioref">Pavoine, Ollier, et Dufour 2005</a>; <a href="references.html#ref-Podani2006" role="doc-biblioref">Podani et Schmera 2006</a>, <a href="references.html#ref-Podani2007" role="doc-biblioref">2007</a>)</span>.
+La transformation d’une matrice en un arbre phylogénétique déforme les données <span class="citation">(Pavoine, Ollier, et Dufour <a href="#ref-Pavoine2005a" role="doc-biblioref">2005</a>; Podani et Schmera <a href="#ref-Podani2006" role="doc-biblioref">2006</a>, <a href="#ref-Podani2007" role="doc-biblioref">2007</a>)</span>.
 La diversité de Leinster et Cobbold est calculée directement à partir de la matrice.</p>
 <p>Si l’arbre phylogénétique n’est pas ultramétrique, le calcul de la diversité est possible, mais la matrice <span class="math inline">\(\mathbf{Z}\)</span> contient alors des valeurs comprises entre 0 et 1 qui dépendent des effectifs des espèces actuelles (ils interviennent dans le calcul de la hauteur de l’arbre qui est la moyenne de la longueur des branches).
 La dépendance entre similarité et fréquence des espèces constitue un problème théorique qui empêche d’interpréter la diversité calculée à partir d’un arbre non ultramétrique.</p>
@@ -1022,6 +974,54 @@ En revanche, la prise en compte de la variabilité intraspécifique par une simi
 
 
 
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Campos2009">
+<p>Campos, Diógenes, et José Fernando Isaza. 2009. « A geometrical index for measuring species diversity ». <em>Ecological Indicators</em> 9 (4): 651‑58. <a href="https://doi.org/10.1016/j.ecolind.2008.07.007">https://doi.org/10.1016/j.ecolind.2008.07.007</a>.</p>
+</div>
+<div id="ref-Chao2003">
+<p>Chao, Anne, et Tsung-Jen Shen. 2003. « Nonparametric estimation of Shannon’s index of diversity when there are unseen species in sample ». <em>Environmental and Ecological Statistics</em> 10 (4): 429‑43. <a href="https://doi.org/10.1023/A:1026096204727">https://doi.org/10.1023/A:1026096204727</a>.</p>
+</div>
+<div id="ref-Chiu2014b">
+<p>Chiu, Chun-Huo, et Anne Chao. 2014. « Distance-based functional diversity measures and their decomposition: a framework based on hill numbers ». <em>PloS one</em> 9 (7): e100014. <a href="https://doi.org/10.1371/journal.pone.0100014">https://doi.org/10.1371/journal.pone.0100014</a>.</p>
+</div>
+<div id="ref-Hardy1952">
+<p>Hardy, G. H., J. E. Littlewood, et G. Pólya. 1952. <em>Inequalities</em>. Cambridge University Press. <a href="http://books.google.com/books?id=t1RCSP8YKt8C">http://books.google.com/books?id=t1RCSP8YKt8C</a>.</p>
+</div>
+<div id="ref-Leinster2013">
+<p>Leinster, Tom. 2013. « The Magnitude of Metric Spaces ». <em>Documenta Mathematica</em> 18: 857‑905.</p>
+</div>
+<div id="ref-Leinster2012">
+<p>Leinster, Tom, et Christina Cobbold. 2012. « Measuring diversity: the importance of species similarity ». <em>Ecology</em> 93 (3): 477‑89. <a href="https://doi.org/10.1890/10-2402.1">https://doi.org/10.1890/10-2402.1</a>.</p>
+</div>
+<div id="ref-Marcon2014e">
+<p>Marcon, Eric, Zhiyi Zhang, et Bruno Hérault. 2014. « The Decomposition of Similarity-Based Diversity and its Bias Correction ». <em>HAL</em> 00989454 (version 3). <a href="https://hal-agroparistech.archives-ouvertes.fr/hal-00989454v3/">https://hal-agroparistech.archives-ouvertes.fr/hal-00989454v3/</a>.</p>
+</div>
+<div id="ref-Nei1972">
+<p>Nei, Masatoshi. 1972. « Genetic Distance between Populations ». <em>The American Naturalist</em> 106 (949): 283‑92. <a href="https://doi.org/10.2307/2459777">https://doi.org/10.2307/2459777</a>.</p>
+</div>
+<div id="ref-Pavoine2014">
+<p>Pavoine, Sandrine, et János Izsák. 2014. « New biodiversity measure that includes consistent interspecific and intraspecific components ». <em>Methods in Ecology and Evolution</em> 5 (2): 165‑72. <a href="https://doi.org/10.1111/2041-210X.12142">https://doi.org/10.1111/2041-210X.12142</a>.</p>
+</div>
+<div id="ref-Pavoine2005a">
+<p>Pavoine, Sandrine, Sébastien Ollier, et Anne-Béatrice Dufour. 2005. « Is the originality of a species measurable? » <em>Ecology Letters</em> 8: 579‑86. <a href="https://doi.org/10.1111/j.1461-0248.2005.00752.x">https://doi.org/10.1111/j.1461-0248.2005.00752.x</a>.</p>
+</div>
+<div id="ref-Pavoine2014b">
+<p>Pavoine, Sandrine, et Carlo Ricotta. 2014. « Functional and phylogenetic similarity among communities ». <em>Methods in Ecology and Evolution</em> 5 (7): 666‑75. <a href="https://doi.org/10.1111/2041-210X.12193">https://doi.org/10.1111/2041-210X.12193</a>.</p>
+</div>
+<div id="ref-Podani2006">
+<p>Podani, János, et Dénes Schmera. 2006. « On dendrogram-based measures of functional diversity ». <em>Oikos</em> 115 (1): 179‑85. <a href="https://doi.org/10.1111/j.2006.0030-1299.15048.x">https://doi.org/10.1111/j.2006.0030-1299.15048.x</a>.</p>
+</div>
+<div id="ref-Podani2007">
+<p>Podani, János, et Dénes Schmera. 2007. « How should a dendrogram-based measure of functional diversity function? A rejoinder to Petchey and Gaston ». <em>Oikos</em> 116 (8): 1427‑30. <a href="https://doi.org/10.1111/j.2007.0030-1299.16160.x">https://doi.org/10.1111/j.2007.0030-1299.16160.x</a>.</p>
+</div>
+<div id="ref-Ricotta2006b">
+<p>Ricotta, Carlo, et Laszlo Szeidl. 2006. « Towards a unifying approach to diversity measures: Bridging the gap between the Shannon entropy and Rao’s quadratic index ». <em>Theoretical Population Biology</em> 70 (3): 237‑43. <a href="https://doi.org/10.1016/j.tpb.2006.06.003">https://doi.org/10.1016/j.tpb.2006.06.003</a>.</p>
+</div>
+<div id="ref-Zhang2014">
+<p>Zhang, Zhiyi, et Michael Grabchak. 2016. « Entropic Representation and Estimation of Diversity Indices ». <em>Journal of Nonparametric Statistics</em> 28 (3): 563‑75. <a href="https://doi.org/10.1080/10485252.2016.1190357">https://doi.org/10.1080/10485252.2016.1190357</a>.</p>
+</div>
+</div>
             </section>
 
           </div>
