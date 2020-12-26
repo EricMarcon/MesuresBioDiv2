@@ -1,16 +1,21 @@
 %%% Complete the preamble of the LaTeX template
 %%%------------------------------------------------------------------------------
 
-%% Bug de bookdown: ne traite plus la déclaration "otherlangs" dans le préambule
-% Pour charger les langues, écriture ici en dur du produit de bookdown
-% Corrigé le 22/11/2019. A retester régulièrement: supprimer ces lignes si la compilation fonctionne sans elles.
-\usepackage{polyglossia}
-  \setmainlanguage[variant=american]{english}
-  \setotherlanguage[]{french}
-% Bug persistant le 28/02/2020
-
 % Environnement "Essentiel" en début de chapitre
 \usepackage[tikz]{bclogo}
 \newenvironment{Essentiel}
   {\begin{bclogo}[logo=\bctrombone, noborder=true, couleur=lightgray!50]{L'essentiel}\parindent0pt}
   {\end{bclogo}}
+% Utilisation :
+%
+%```{block, type='Essentiel'}
+% Texte à mettre en valeur
+% ```
+
+% Blocs de code taille scriptsize
+\let\oldverbatim\verbatim
+\def\verbatim{\oldverbatim\scriptsize}
+% Utilisation :
+% S'applique aux blocs de code et résultats du code R
+% opts_chunk$set(size="scriptsize") s'applique au code et ses résultats
+% Si désaccord sur les résultats, \def\verbatim{...} est prioritaire
