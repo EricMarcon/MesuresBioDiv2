@@ -5,7 +5,7 @@
 \PassOptionsToPackage{unicode=true}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 $if(colorlinks)$
-  \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
 $endif$
 
 
@@ -18,15 +18,15 @@ $endif$
 
 % Font family: lmodern by default
 $if(fontfamily)$
-  \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
+\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
-  \usepackage{lmodern}
+\usepackage{lmodern}
 $endif$
 
 % Double (or whatever) spacing
 $if(linestretch)$
-  \usepackage{setspace}
-  \setstretch{$linestretch$}
+\usepackage{setspace}
+\setstretch{$linestretch$}
 $endif$
 
 \usepackage{amssymb, amsmath}
@@ -34,40 +34,40 @@ $endif$
 
 % mathspec: arbitrary math fonts
 $if(mathspec)$
-  \usepackage{mathspec}
+\usepackage{mathspec}
 $else$
-  \usepackage{unicode-math}
+\usepackage{unicode-math}
 $endif$
 \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 
 % More font families
 $for(fontfamilies)$
-  \newfontfamily{$fontfamilies.name$}[$fontfamilies.options$]{$fontfamilies.font$}
+\newfontfamily{$fontfamilies.name$}[$fontfamilies.options$]{$fontfamilies.font$}
 $endfor$
 % Main font
 $if(mainfont)$
-  \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
+\setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
 $endif$
 % Specific sanserif font
 $if(sansfont)$
-    \setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
+\setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
 $endif$
 % Specific monotype font
 $if(monofont)$
-    \setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
+\setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
 $endif$
 % Specific math font
 $if(mathfont)$
 $if(mathspec)$
-  \setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+\setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
 $else$
-  \setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+\setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
 $endif$
 $endif$
 % Chinese, Japanese, Corean fonts
 $if(CJKmainfont)$
-  \usepackage{xeCJK}
-  \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
+\usepackage{xeCJK}
+\setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
 $endif$
 
 % Use upquote if available, for straight quotes in verbatim environments
@@ -80,7 +80,7 @@ $endif$
 
 % Verbatim in note
 $if(verbatim-in-note)$
-  \usepackage{fancyvrb}
+\usepackage{fancyvrb}
 $endif$
 
 $if(colorlinks)$
@@ -88,7 +88,7 @@ $if(colorlinks)$
 $endif$
 
 $if(verbatim-in-note)$
-  \VerbatimFootnotes % allows verbatim text in footnotes
+\VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
 
 % Geometry package
@@ -98,12 +98,12 @@ $endif$
 
 % Listings package
 $if(listings)$
-  \usepackage{listings}
-  \newcommand{\passthrough}[1]{#1}
+\usepackage{listings}
+\newcommand{\passthrough}[1]{#1}
 $endif$
 
 $if(lhs)$
-  \lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
+\lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
 $endif$
 
 $if(highlighting-macros)$
@@ -112,23 +112,23 @@ $endif$
 
 % Tables
 $if(tables)$
-  \usepackage{longtable,booktabs,tabu}
-  % Fix footnotes in tables (requires footnote package)
-  \IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+\usepackage{longtable,booktabs,tabu}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
 $endif$
 
 % Graphics
 $if(graphics)$
-  \usepackage{graphicx,grffile}
-  \graphicspath{{images/}}
-  \makeatletter
-  \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-  \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-  \makeatother
-  % Scale images if necessary, so that they will not overflow the page
-  % margins by default, and it is still possible to overwrite the defaults
-  % using explicit options in \includegraphics[width, height, ...]{}
-  \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\usepackage{graphicx,grffile}
+\graphicspath{{images/}}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 $endif$
 
 $if(links-as-notes)$
@@ -147,9 +147,9 @@ $endif$
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 $if(numbersections)$
-  \setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
 $else$
-  \setcounter{secnumdepth}{0}
+\setcounter{secnumdepth}{0}
 $endif$
 
 % set default figure placement to htbp
@@ -165,26 +165,12 @@ $endfor$
 \usepackage{enumitem}
 
 $if(lang)$
-$if(babel-newcommands)$
-  $babel-newcommands$
-$endif$
-  % load polyglossia as late as possible as it *could* call bidi if RTL lang (e.g. Hebrew or Arabic)
-  \usepackage{polyglossia}
-  \setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
+\usepackage{polyglossia}
+\setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
 $for(polyglossia-otherlangs)$
-  \setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
+\setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
 $endfor$
 $endif$
-
-$if(dir)$
-  % load bidi as late as possible as it modifies e.g. graphicx
-  $if(latex-dir-rtl)$
-  \usepackage[RTLdocument]{bidi}
-  $else$
-  \usepackage{bidi}
-  $endif$
-$endif$
-
 
 $if(natbib)$
 \usepackage[$natbiboptions$]{natbib}
@@ -198,30 +184,45 @@ $for(bibliography)$
 $endfor$
 $endif$
 
+% cslreferences environment required by pandoc > 2.7
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
+  {\par}
+$endif$
+
 % Specific commands for EcoFoG style. Must come after biblatex.
 \usepackage{latex/BookTemplate}
+
+% PDF title page to insert
+$if(pdftitlepage)$
+\usepackage{pdfpages}
+$endif$
 
 % Hyperref comes last
 \usepackage{hyperref}
 \hypersetup{
 $if(title-meta)$
-            pdftitle={$title-meta$},
+  pdftitle={$title-meta$},
 $endif$
 $if(author-meta)$
-            pdfauthor={$author-meta$},
+  pdfauthor={$author-meta$},
 $endif$
 $if(keywords)$
-            pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
+  pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
 $endif$
 $if(colorlinks)$
-            colorlinks=true,
-            linkcolor=$if(linkcolor)$$linkcolor$$else$Maroon$endif$,
-            citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
-            urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
+  colorlinks=true,
+  linkcolor=$if(linkcolor)$$linkcolor$$else$Maroon$endif$,
+  citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
+  urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
 $else$
-            pdfborder={0 0 0},
+  pdfborder={0 0 0},
 $endif$
-            breaklinks=true}
+  breaklinks=true}
 
 % Don't use monospace font for urls
 \urlstyle{same}
@@ -287,46 +288,12 @@ $endif$
     \includegraphics[width=5cm]{Logo-Lab}\\ \bigskip
 		UMR \'Ecologie des forêts de Guyane\\
 		\url{http://www.ecofog.gf}\\[3\baselineskip]
-		Les opinions émises par les auteurs sont personnelles et n’engagent ni l’UMR EcoFoG ni ses tutelles.
+		Les opinions émises par les auteurs sont personnelles et n'engagent ni l'UMR EcoFoG ni ses tutelles.
 
     \tiny{Photographie en couverture: Hadrien Lalagüe}
 	\end{textblock}
 	\newpage
 }
-
-% PhD / HDR Thesis
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-$if(PhD-HDR)$
-\usepackage[DocType=$PhD-HDR.DocType$, ED=$PhD-HDR.ED$, Ets=$PhD-HDR.Ets$, DIS=$PhD-HDR.DIS$]{latex/pdgUniv}
-
-\specialty{$PhD-HDR.speciality$}
-\defencedate{$PhD-HDR.defence-date$}
-\lab{$PhD-HDR.lab$}
-% ==================
-% Setup people like your boss, the jury team and the referees
-% - First you need to define how number they will be in each category
-%   It is done with the commands \nboss{n}, \nreferee{n} and \njudge{n}.
-%   You can define more people in each category than the number given
-%   but only the first "\npeople" will be print.
-% - Then use the command \makesomeone{<category>}{<number>}{<name>}{<status>}{<other>}
-%   where:
-%     <category> should be select in ['boss', 'referee', 'judge']
-%     <number>   is the rank for printing the person.
-%                Only number <= "\npeople" will be printed
-%     <name>     First name and las name of the people
-%     <status>   Is (s)he a "charg\'e de recher" ou un "professeur d'universit\'e"...
-%     <other>    What ever string you want to add (laboratory, jury member place...).
-\njudge{$PhD-HDR.njudge$}
-$if(PhD-HDR.jury1)$\makesomeone{$PhD-HDR.jury1.category$}{1}{$PhD-HDR.jury1.name$}{$PhD-HDR.jury1.status$}{$PhD-HDR.jury1.other$}$endif$
-$if(PhD-HDR.jury2)$\makesomeone{$PhD-HDR.jury2.category$}{2}{$PhD-HDR.jury2.name$}{$PhD-HDR.jury2.status$}{$PhD-HDR.jury2.other$}$endif$
-$if(PhD-HDR.jury3)$\makesomeone{$PhD-HDR.jury3.category$}{3}{$PhD-HDR.jury3.name$}{$PhD-HDR.jury3.status$}{$PhD-HDR.jury3.other$}$endif$
-$if(PhD-HDR.jury4)$\makesomeone{$PhD-HDR.jury4.category$}{4}{$PhD-HDR.jury4.name$}{$PhD-HDR.jury4.status$}{$PhD-HDR.jury4.other$}$endif$
-$if(PhD-HDR.jury5)$\makesomeone{$PhD-HDR.jury5.category$}{5}{$PhD-HDR.jury5.name$}{$PhD-HDR.jury5.status$}{$PhD-HDR.jury5.other$}$endif$
-$if(PhD-HDR.jury6)$\makesomeone{$PhD-HDR.jury6.category$}{6}{$PhD-HDR.jury6.name$}{$PhD-HDR.jury6.status$}{$PhD-HDR.jury6.other$}$endif$
-$if(PhD-HDR.jury7)$\makesomeone{$PhD-HDR.jury7.category$}{7}{$PhD-HDR.jury7.name$}{$PhD-HDR.jury7.status$}{$PhD-HDR.jury7.other$}$endif$
-
-$endif$
 
 
 % End of preamble
@@ -339,18 +306,14 @@ $endif$
 % Title page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+$if(pdftitlepage)$
+\includepdf[pages=1]{$pdftitlepage$}
+\cleardoublepage
+$endif$
+
 $if(maintitlepage)$
 \MainTitlePage[$maintitlepage.epigraph$]
 $endif$
-
-$if(PhD-HDR)$
-\makeflyleaf
-\newpage
-~
-\newpage
-$endif$
-
-
 
 
 % Before Body
