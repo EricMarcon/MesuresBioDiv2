@@ -4,7 +4,7 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode=true}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-  \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
 
 
 \documentclass[
@@ -15,7 +15,7 @@
   ]{memoir}
 
 % Font family: lmodern by default
-  \usepackage{lmodern}
+\usepackage{lmodern}
 
 % Double (or whatever) spacing
 
@@ -23,7 +23,7 @@
 \usepackage{ifxetex,ifluatex}
 
 % mathspec: arbitrary math fonts
-  \usepackage{unicode-math}
+\usepackage{unicode-math}
 \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 
 % More font families
@@ -93,21 +93,21 @@
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 
 % Tables
-  \usepackage{longtable,booktabs,tabu}
-  % Fix footnotes in tables (requires footnote package)
-  \IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+\usepackage{longtable,booktabs,tabu}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
 
 % Graphics
-  \usepackage{graphicx,grffile}
-  \graphicspath{{images/}}
-  \makeatletter
-  \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-  \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-  \makeatother
-  % Scale images if necessary, so that they will not overflow the page
-  % margins by default, and it is still possible to overwrite the defaults
-  % using explicit options in \includegraphics[width, height, ...]{}
-  \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\usepackage{graphicx,grffile}
+\graphicspath{{images/}}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 
 
@@ -115,7 +115,7 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-  \setcounter{secnumdepth}{5}
+\setcounter{secnumdepth}{5}
 
 % set default figure placement to htbp
 \makeatletter
@@ -126,19 +126,43 @@
 %%% Complete the preamble of the LaTeX template
 %%%------------------------------------------------------------------------------
 
-%% Bug de bookdown: ne traite plus la déclaration "otherlangs" dans le préambule
-% Pour charger les langues, écriture ici en dur du produit de bookdown
-% Corrigé le 22/11/2019. A retester régulièrement: supprimer ces lignes si la compilation fonctionne sans elles.
-\usepackage{polyglossia}
-  \setmainlanguage[variant=american]{english}
-  \setotherlanguage[]{french}
-% Bug persistant le 28/02/2020
+%%% Packages
+\usepackage{lipsum} % Dummy text.
+% Utilisation :
+% Ajouter ici d'éventuels packages LaTeX
 
-% Environnement "Essentiel" en début de chapitre
+
+%%% Environnement "Essentiel" en début de chapitre
 \usepackage[tikz]{bclogo}
 \newenvironment{Essentiel}
   {\begin{bclogo}[logo=\bctrombone, noborder=true, couleur=lightgray!50]{L'essentiel}\parindent0pt}
   {\end{bclogo}}
+% Utilisation :
+%
+%```{block, type='Essentiel'}
+% Texte à mettre en valeur
+% ```
+
+%%% Blocs de code taille scriptsize
+\let\oldverbatim\verbatim
+\def\verbatim{\oldverbatim\scriptsize}
+% Utilisation :
+% S'applique aux blocs de code et résultats du code R
+% opts_chunk$set(size="scriptsize") s'applique au code et ses résultats
+% Si désaccord sur les résultats, \def\verbatim{...} est prioritaire
+
+
+%%% Langues supplémentaires.
+% Commenter pour désactiver, décommenter pour activer
+% Référence: https://mirrors.chevalier.io/CTAN/macros/unicodetex/latex/polyglossia/polyglossia.pdf (table 3)
+\usepackage{polyglossia}
+% fr-FR
+\setotherlanguage[]{french}
+% Au choix: Anglais en-GB ou en-US (défaut)
+%\setotherlanguage[variant=british]{english}
+\setotherlanguage[]{english}
+% pt-BR
+%\setotherlanguage[variant=brazilian]{portuguese}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -156,29 +180,30 @@
 
 \usepackage{enumitem}
 
-  % load polyglossia as late as possible as it *could* call bidi if RTL lang (e.g. Hebrew or Arabic)
-  \usepackage{polyglossia}
-  \setmainlanguage[]{french}
-
-
+\usepackage{polyglossia}
+\setmainlanguage[]{french}
 
 
 \usepackage[style=authoryear-ibid,backend=biber,citestyle=verbose-inote,pageref=true,isbn=false,backref=true,giveninits=true,uniquename=init,maxcitenames=2,maxbibnames=150,sorting=nyt,sortcites=false]{biblatex}
 \addbibresource{library.bib}
 
+% cslreferences environment required by pandoc > 2.7
+
 % Specific commands for EcoFoG style. Must come after biblatex.
 \usepackage{latex/BookTemplate}
+
+% PDF title page to insert
 
 % Hyperref comes last
 \usepackage{hyperref}
 \hypersetup{
-            pdftitle={Mesures de la Biodiversité},
-            pdfauthor={Eric Marcon},
-            colorlinks=true,
-            linkcolor=Maroon,
-            citecolor=Blue,
-            urlcolor=Blue,
-            breaklinks=true}
+  pdftitle={Mesures de la Biodiversité},
+  pdfauthor={Eric Marcon},
+  colorlinks=true,
+  linkcolor=Maroon,
+  citecolor=Blue,
+  urlcolor=Blue,
+  breaklinks=true}
 
 % Don't use monospace font for urls
 \urlstyle{same}
@@ -193,7 +218,7 @@
 \author{Eric Marcon}
 
 
-\date{2020-12-25}
+\date{2021-01-11}
 
 
 % Main title page with filigrane
@@ -232,16 +257,12 @@
     \includegraphics[width=5cm]{Logo-Lab}\\ \bigskip
 		UMR \'Ecologie des forêts de Guyane\\
 		\url{http://www.ecofog.gf}\\[3\baselineskip]
-		Les opinions émises par les auteurs sont personnelles et n’engagent ni l’UMR EcoFoG ni ses tutelles.
+		Les opinions émises par les auteurs sont personnelles et n'engagent ni l'UMR EcoFoG ni ses tutelles.
 
     \tiny{Photographie en couverture: Hadrien Lalagüe}
 	\end{textblock}
 	\newpage
 }
-
-% PhD / HDR Thesis
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 
 % End of preamble
@@ -253,6 +274,7 @@
 
 % Title page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \MainTitlePage[Ce document est réalisé de façon dynamique et reproductible grâce à:
 
@@ -267,9 +289,6 @@ Son code source est sur GitHub: \url{https://github.com/EricMarcon/MesuresBioDiv
 Le texte mis à jour en continu peut être lu sur \url{https://ericmarcon.github.io/MesuresBioDiv2/}.
 
 Les versions d'étape sont déposées sur HAL: \url{https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/}.]
-
-
-
 
 
 % Before Body
