@@ -1487,7 +1487,7 @@ L'inverse de $^q\!D^{\mathbf{Z}}_\gamma$ est la moyenne généralisée d'ordre $
 \begin{equation}
   (\#eq:Dqzgamma)
   \frac{1}{^q\!D^{\mathbf{Z}}_\gamma}
-  ={\left[\sum_i{p_s{{\left(\mathbf{Zp}\right)}_s}^{q-1}}\right]}^{\frac{1}{q-1}}
+  ={\left[\sum_s{p_s{{\left(\mathbf{Zp}\right)}_s}^{q-1}}\right]}^{\frac{1}{q-1}}
 \end{equation}
 
 Partant de $^{q}\!D_{\gamma} = {^{q}\!D_{\alpha}} {^{q}\!D_{\beta}}$ et de la définition de Routledge de la diversité $\alpha$, on obtient
