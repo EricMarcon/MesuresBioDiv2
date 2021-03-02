@@ -25,7 +25,7 @@ jobs:
         shell: Rscript {0}
       - name: Render book
         run: |
-          bookdown::render_book("index.Rmd", "bookdown::pdf_book")
+#          bookdown::render_book("index.Rmd", "bookdown::pdf_book")
           bookdown::render_book("index.Rmd", "bookdown::gitbook")
         shell: Rscript {0}
       - name: Upload artifact
