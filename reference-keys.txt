@@ -208,9 +208,11 @@ eq:EstHqz2
 eq:EstH1z2
 eq:EstLHqz2
 fig:ArbreA6
+tab:MatricePhylo
 fig:Campos2009
 fig:DqZLambdaFig
 fig:ComparaisonDqFig
+tab:Notations
 fig:Anderson2011a
 fig:Anderson2011b
 eq:DecompDq
@@ -259,6 +261,7 @@ fig:Corde
 eq:Corde
 eq:Hellinger
 fig:BCICordeFig
+tab:DecShannon
 eq:EstHbetai
 eq:Zhang2014a
 eq:DecompHq
@@ -272,6 +275,7 @@ eq:DecSimpsons
 eq:SimpsonNei
 eq:Dqgamma
 eq:Egamma
+tab:Decomposition
 eq:DHdelta
 eq:Raobeta
 fig:BetaSampleFig
@@ -288,7 +292,9 @@ eq:Dqzbeta
 eq:Dqzgamma
 eq:Dbeta
 fig:DivestFig
+tab:Couteron
 eq:TSS
+tab:Notations2
 eq:Recursivite1
 eq:Recursivite2
 eq:Baez2011a

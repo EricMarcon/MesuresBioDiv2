@@ -24,7 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-02-02" />
+<meta name="date" content="2021-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -430,13 +432,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="tests-de-significativité" class="section level1">
 <h1><span class="header-section-number">14</span> Tests de significativité</h1>
-<p></p>
+
 <div class="Essentiel">
 <p>
 Les tests de significativité permettent d’affirmer que des communautés sont réellement différentiées. En complément, les intervalles de confiance des mesures de diversité peuvent être calculés sous l’hypothèse d’une distribution multinomiale.
 </p>
 </div>
-<p></p>
+
 <p>La diversité <span class="math inline">\(\beta\)</span> calculée entre plusieurs échantillons successifs d’une même communauté n’est pas nulle: par simple fluctuation des effectifs due au hasard, les distributions des échantillons ne sont pas identiques.
 Des tests statistiques ont été développés pour rejeter cette hypothèse nulle à partir de données d’inventaires.</p>
 <p>Ce chapitre ne traite pas de la diversité de différentiation: les tests correspondants ont été présentés en section <a href="11-chap-BetaPaires.html#sec:TestBetaDiff">11.6</a>.</p>
@@ -459,20 +461,20 @@ Il peut arriver que les deux communautés soient plus semblables que sous l’hy
 <p>L’intervalle de confiance de l’estimateur de <span class="math inline">\(H_{\beta}\)</span> <span class="citation">(Marcon et al. <a href="#ref-Marcon2014a" role="doc-biblioref">2014</a>)</span> peut être calculé en simulant les communautés par des tirages dans des lois multinomiales suivant leurs fréquences: <span class="math inline">\({\mathcal M}\left(n_{+i},{n_si}/{n_+i}\right)\)</span>.</p>
 <p>Si l’intervalle de confiance ne contient pas 0, l’égalité des distributions est rejetée.</p>
 
-<p></p>
+
 <div class="figure" style="text-align: center"><span id="fig:DivestFig"></span>
 <img src="MesuresBD_files/figure-html/DivestFig-1.png" alt="Estimation de la diversité de la méta-communauté Paracou618." width="100%" />
 <p class="caption">
 Figure 14.1: Estimation de la diversité de la méta-communauté <code>Paracou618</code>.
 </p>
 </div>
-<p></p>
+
 <p>Calcul sous R: la fonction <code>DivEst</code> produit un graphique avec l’intervalle de confiance (figure <a href="14-tests-de-significativité.html#fig:DivestFig">14.1</a>).</p>
 <p>Code R:</p>
-<p></p>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="14-tests-de-significativité.html#cb283-1"></a>de &lt;-<span class="st"> </span><span class="kw">DivEst</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Simulations =</span> <span class="dv">1000</span>)</span>
-<span id="cb283-2"><a href="14-tests-de-significativité.html#cb283-2"></a><span class="kw">plot</span>(de)</span></code></pre></div>
-<p></p>
+
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="14-tests-de-significativité.html#cb285-1"></a>de &lt;-<span class="st"> </span><span class="kw">DivEst</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Simulations =</span> <span class="dv">1000</span>)</span>
+<span id="cb285-2"><a href="14-tests-de-significativité.html#cb285-2"></a><span class="kw">plot</span>(de)</span></code></pre></div>
+
 <p>Par défaut, <code>DivEst</code> ne corrige pas les biais d’estimation.
 Les résultats sont présentés sous forme de diversité et non d’entropie, la valeur attendue en cas d’égalité des communautés est 1.</p>
 </div>

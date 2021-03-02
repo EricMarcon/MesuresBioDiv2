@@ -24,7 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-02-02" />
+<meta name="date" content="2021-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -430,13 +432,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="diversité-régionale" class="section level1">
 <h1><span class="header-section-number">22</span> Diversité régionale</h1>
-<p></p>
+
 <div class="Essentiel">
 <p>
 La relation d’Arrhenius prévoit que logarithme du nombre d’espèces soit proportionnel au logarithme de la surface (de façon équivalente, que le nombre d’espèces soit proportionnel à la surface à une puissance <span class="math inline"><span class="math inline">\(z\)</span></span> constante). Elle est plus robuste à l’échelle régionale que le modèle de Gleason qui prédit que le nombre d’espèces, plutôt que son logarithme, soit en relation linéaire avec le logarithme de la surface (très proche du modèle de Fisher dans lequel le nombre d’espèces est proportionnel au logarithme du nombre d’individus échantillonnés à partir d’une certaine surface).
 </p>
 </div>
-<p></p>
+
 <p>En forêt tempérée, toutes les espèces d’un habitat sont rencontrées sur une surface inférieure à l’hectare.
 L’<em>aire minimale</em> est la surface nécessaire à échantillonner pour caractériser une <em>association végétale</em>, dans l’approche de la phytosociologie fondée par <span class="citation">Braun-Blanquet (<a href="#ref-Braun-Blanquet1928" role="doc-biblioref">1928</a>)</span> et plus largement <span class="citation">(Greig-Smith <a href="#ref-Greig-Smith1983" role="doc-biblioref">1983</a>)</span>, même si son intérêt est discuté <span class="citation">(McGuinness <a href="#ref-McGuinness1984" role="doc-biblioref">1984</a>)</span>: elle ne contient pas toutes les espèces mais un sous-ensemble caractéristique.
 Elle est de l’ordre de 200 m² en Europe <span class="citation">(Chytrý et Otýpková <a href="#ref-Chytry2003" role="doc-biblioref">2003</a>)</span>.
@@ -450,14 +452,14 @@ Il ne s’agit donc pas d’estimer un nombre d’espèces asymptotique pour une
 <div id="sec:Arrhenius" class="section level2">
 <h2><span class="header-section-number">22.1</span> La relation d’Arrhenius</h2>
 
-<p></p>
+
 <div class="figure" style="text-align: center"><span id="fig:Williamson2001"></span>
 <img src="images/Williamson2001.png" alt="Logarithme du nombre d’espèces en fonction du logarithme de la surface échantillonnée. Les données sont des relevés d’espèces natives sur 104 sites de taille variable à travers le monde. Les symboles correspondent à divers types d’habitats (îles ou continent, réserves ou non) sans intérêt ici. La valeur de \(z\) est 0,27." width="80%" />
 <p class="caption">
 Figure 22.1: Logarithme du nombre d’espèces en fonction du logarithme de la surface échantillonnée. Les données sont des relevés d’espèces natives sur 104 sites de taille variable à travers le monde. Les symboles correspondent à divers types d’habitats (îles ou continent, réserves ou non) sans intérêt ici. La valeur de <span class="math inline">\(z\)</span> est 0,27.
 </p>
 </div>
-<p></p>
+
 <div id="loi-de-puissance" class="section level3">
 <h3><span class="header-section-number">22.1.1</span> Loi de puissance</h3>
 <p><span class="citation">Arrhenius (<a href="#ref-Arrhenius1921" role="doc-biblioref">1921</a>)</span> a établi le modèle de base, dit <em>loi de puissance</em>:</p>
@@ -489,28 +491,28 @@ Sur un même territoire, le rapport entre le nombre d’espèces de deux taxons 
 <p><span class="citation">Plotkin, Potts, Yu, et al. (<a href="#ref-Plotkin2000" role="doc-biblioref">2000</a>)</span> ont eu accès à de grands échantillons (5 placettes de 50 hectares de forêt dans l’ensemble du monde tropical, figure <a href="22-diversité-régionale.html#fig:CTFS">22.2</a>, toutes déterminées correctement sur le plan botanique et dans lesquels chaque arbre est positionné).
 Ils montrent que le modèle d’Arrhenius comme les SAD classiques rendent mal compte de la réalité (figure <a href="22-diversité-régionale.html#fig:Plotkin2000">22.3</a>a) quand on les compare aux courbes d’accumulation à l’échelle locale.</p>
 
-<p></p>
+
 <div class="figure" style="text-align: center"><span id="fig:CTFS"></span>
 <img src="images/CTFS.png" alt="Les cinq dispositifs de Plotkin et al. Chaque dispositif mesure 50 ha et toutes les tiges de diamètre supérieur à 1 cm sont cartographiées et déterminées." width="80%" />
 <p class="caption">
 Figure 22.2: Les cinq dispositifs de Plotkin <em>et al</em>. Chaque dispositif mesure 50 ha et toutes les tiges de diamètre supérieur à 1 cm sont cartographiées et déterminées.
 </p>
 </div>
-<p></p>
+
 <p><span class="citation">Harte, Kinzig, et Green (<a href="#ref-Harte1999" role="doc-biblioref">1999</a>)</span> ont montré que la loi de puissance était équivalente au modèle d’autosimilarité, dérivé de la théorie des fractales.
 On considère un rectangle <span class="math inline">\(A_i\)</span> dont le rapport longueur sur largeur vaut <span class="math inline">\(\sqrt{2}\)</span>.
 On obtient le rectangle <span class="math inline">\(A_{i+1}\)</span> en plaçant deux rectangles <span class="math inline">\(A_i\)</span> côte à côte (et donc le rectangle <span class="math inline">\(A_{i-1}\)</span> en coupant <span class="math inline">\(A_i\)</span> en deux).
 <span class="math inline">\(\hat{S}^{A_i}\)</span> est le nombre d’espèces rencontrées dans <span class="math inline">\(A_i\)</span>.
 On définit enfin <span class="math inline">\(a_i=\hat{S}^{A_{i-1}}/\hat{S}^{A_i}\)</span> le facteur de diminution du nombre d’espèces (dit <em>paramètre de persistance</em>) lié à la division par 2 de la taille du rectangle.</p>
 
-<p></p>
+
 <div class="figure" style="text-align: center"><span id="fig:Plotkin2000"></span>
 <img src="images/Plotkin2000.png" alt="Courbes aire-espèces (a) et paramètre de persistance en fonction de la surface (b) dans 5 forêts tropicales. Le modèle d’Arrhenius est représentée par le parallélogramme sur la figure a, pour une gamme de valeurs de la constante. Elle implique que la relation aire-espèces représentée en logarithmes soit une droite, dont la position dépend de la constante, ce qui n’est visiblement pas le cas." width="80%" />
 <p class="caption">
 Figure 22.3: Courbes aire-espèces (a) et paramètre de persistance en fonction de la surface (b) dans 5 forêts tropicales. Le modèle d’Arrhenius est représentée par le parallélogramme sur la figure a, pour une gamme de valeurs de la constante. Elle implique que la relation aire-espèces représentée en logarithmes soit une droite, dont la position dépend de la constante, ce qui n’est visiblement pas le cas.
 </p>
 </div>
-<p></p>
+
 <p>S’il s’agit d’une constante, <span class="math inline">\(a\)</span>, indépendante de la taille du rectangle, l’habitat est dit auto-similaire: l’augmentation du nombre d’espèces ne dépend pas de l’échelle d’observation Si cette condition est respectée, le nombre d’espèces suit la loi de puissance, et <span class="math inline">\(a=2^{-z}\)</span>.
 Pour la valeur classique de <span class="math inline">\(z=0,25\)</span>, <span class="math inline">\(a=0,84\)</span>.
 La figure <a href="22-diversité-régionale.html#fig:Plotkin2000">22.3</a>b <span class="citation">(Plotkin, Potts, Yu, et al. <a href="#ref-Plotkin2000" role="doc-biblioref">2000</a>)</span> présente la valeur de <span class="math inline">\(a_i\)</span> en fonction de la surface échantillonnée.
@@ -526,14 +528,14 @@ Celle de degré 1 est retenue par les auteurs pour estimer le nombre d’espèce
   \hat{S}^{A} = cA^z e^{-kA}.
 \end{equation}\]</span></p>
 
-<p></p>
+
 <div class="figure" style="text-align: center"><span id="fig:Plotkin2000b"></span>
 <img src="images/Plotkin2000b.png" alt="Performance du modèle de Plotkin face à des distributions théoriques: SAD log-normales, modèles de Fisher et Broken Stick de MacArthur. La courbe représente le nombre d’espèces rencontrées à Pasoh sur des surfaces de 0 à 50 ha. Les données observées sont des tirages aléatoires d’échantillons de la surface souhaitée. L’écart-type est représenté (l’intervalle de fluctuation à 95% est de l’ordre de 2 écart-types). Les valeurs issues du modèle ont été obtenues par un paramétrage de \(k\) et \(z\) sur 25 ha, supposé valide également sur les autres forêts. Le paramétrage de \(c\) est obtenu par un échantillon d’un hectare, répété 1000 fois pour obtenir un intervalle de confiance. L’intervalle de fluctuation à 95% est ici encore de l’ordre de deux écart-types." width="80%" />
 <p class="caption">
 Figure 22.4: Performance du modèle de Plotkin face à des distributions théoriques: SAD log-normales, modèles de Fisher et Broken Stick de MacArthur. La courbe représente le nombre d’espèces rencontrées à Pasoh sur des surfaces de 0 à 50 ha. Les données observées sont des tirages aléatoires d’échantillons de la surface souhaitée. L’écart-type est représenté (l’intervalle de fluctuation à 95% est de l’ordre de 2 écart-types). Les valeurs issues du modèle ont été obtenues par un paramétrage de <span class="math inline">\(k\)</span> et <span class="math inline">\(z\)</span> sur 25 ha, supposé valide également sur les autres forêts. Le paramétrage de <span class="math inline">\(c\)</span> est obtenu par un échantillon d’un hectare, répété 1000 fois pour obtenir un intervalle de confiance. L’intervalle de fluctuation à 95% est ici encore de l’ordre de deux écart-types.
 </p>
 </div>
-<p></p>
+
 <p>Ce modèle contient un paramètre <span class="math inline">\(k\)</span> en plus de la loi de puissance.
 Les auteurs ont établi que les paramètres <span class="math inline">\(k\)</span> et <span class="math inline">\(z\)</span> étaient très proches pour les cinq forêts (<span class="math inline">\(z=0,125\)</span> et <span class="math inline">\(k=0,0541\)</span> à Pasoh), et que leur estimation sur une forêt permettait de prédire avec une très bonne précision la richesse des autres, à partir d’un échantillon d’un hectare nécessaire pour obtenir le paramètre <span class="math inline">\(c\)</span>.
 La figure <a href="22-diversité-régionale.html#fig:Plotkin2000b">22.4</a> compare les performances de cette méthode (<em>persistence method</em>), de la loi de puissance 0,25 (loi log-normale) et du modèle de Fisher.</p>
@@ -554,14 +556,14 @@ Les travaux ultérieurs lui donneront tort <span class="citation">(Williamson, G
 <div id="le-modèle-de-placement-aléatoire" class="section level2">
 <h2><span class="header-section-number">22.3</span> Le modèle de placement aléatoire</h2>
 
-<p></p>
+
 <div class="figure" style="text-align: center"><span id="fig:Coleman1982"></span>
 <img src="images/Coleman1982.png" alt="Relation aire-espèce de Coleman. Les axes sont en échelle logarithmique. Les points représentent des relevés de nombre d’espèces d’oiseaux (en 1979) en fonction de la taille des îles où elles se trouvaient. La ligne en pointillés courts est l’ajustement d’une loi de puissance (modèle d’Arrhenius). Les pointillés long correspondent du modèle de Gleason. La courbe continue est l’ajustement du modèle de placement aléatoire. Un test de qualité d’ajustement montre que le modèle de placement aléatoire est le plus proche des données." width="80%" />
 <p class="caption">
 Figure 22.5: Relation aire-espèce de Coleman. Les axes sont en échelle logarithmique. Les points représentent des relevés de nombre d’espèces d’oiseaux (en 1979) en fonction de la taille des îles où elles se trouvaient. La ligne en pointillés courts est l’ajustement d’une loi de puissance (modèle d’Arrhenius). Les pointillés long correspondent du modèle de Gleason. La courbe continue est l’ajustement du modèle de placement aléatoire. Un test de qualité d’ajustement montre que le modèle de placement aléatoire est le plus proche des données.
 </p>
 </div>
-<p></p>
+
 <p>En concurrence au modèle de <span class="citation">Preston (<a href="#ref-Preston1962" role="doc-biblioref">1962</a>)</span> prédisant une SAR en forme de loi de puissance, Coleman <span class="citation">(<a href="#ref-Coleman1981" role="doc-biblioref">1981</a>; <a href="#ref-Coleman1982" role="doc-biblioref">1982</a>)</span> propose le modèle de placement aléatoire (<em>random placement</em>).
 L’idée sous-jacente est que certaines communautés ont une composition “aléatoire”, c’est-à-dire issues d’un simple échantillonnage de la méta-communauté.
 Coleman ne prétend pas que la SAR des arbres de forêt tropicale suive son modèle, mais que ce soit le cas par exemple pour les oiseaux à une échelle spatiale limitée.</p>
@@ -604,14 +606,14 @@ Dans ce cas, la SAR a la forme de la courbe de la figure <a href="22-diversité-
 Mais la dispersion est limitée, et la distribution de la communauté locale est plus compliquée.
 <span class="citation">McGill (<a href="#ref-McGill2003" role="doc-biblioref">2003</a>)</span> montre qu’une SAD log-normale s’ajuste mieux aux données que le modèle neutre selon les résultats de Hubbell.
 <span class="citation">Volkov et al. (<a href="#ref-Volkov2003" role="doc-biblioref">2003</a>)</span> établissent la SAD neutre de façon analytique qui s’ajuste mieux aux données que le modèle log-normal, mais la traduction en SAR n’est pas faite.</p>
-<p></p>
+
 <div class="figure" style="text-align: center"><span id="fig:Grilli2012"></span>
 <img src="images/Grilli2012.png" alt="Relation aire-espèce triphasique [@Grilli2012]. Zone B: relation d'Arrhenius." width="80%" />
 <p class="caption">
 Figure 22.6: Relation aire-espèce triphasique <span class="citation">(Grilli et al. <a href="#ref-Grilli2012" role="doc-biblioref">2012</a>)</span>. Zone B: relation d’Arrhenius.
 </p>
 </div>
-<p></p>
+
 <p>Le meilleur modèle à l’échelle locale est donc celui de <span class="citation">Plotkin, Potts, Yu, et al. (<a href="#ref-Plotkin2000" role="doc-biblioref">2000</a>)</span>, qui réfute à la fois Gleason et Arrhenius.
 La SAC est concave sur une échelle log-log (figure <a href="22-diversité-régionale.html#fig:Plotkin2000">22.3</a>).</p>
 <p>L’utilisation de l’indice <span class="math inline">\(\alpha\)</span> de Fisher est sujette à caution puisque la SAC locale ne correspond pas au modèle (figure <a href="22-diversité-régionale.html#fig:Plotkin2000b">22.4</a>).
