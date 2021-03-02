@@ -51,8 +51,6 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -432,28 +430,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="sec:betaCadre" class="section level1">
 <h1><span class="header-section-number">10</span> Cadre</h1>
-
-
-
+<p></p>
+<p></p>
+<p></p>
 <div class="Essentiel">
 <p>
 La diversité <span class="math inline"><span class="math inline">\(\beta\)</span></span> désigne la différentiation entre communautés, c’est-à-dire une mesure de divergence de composition spécifique entre elle, ou bien la divergence entre elles et leur assemblage, appelée diversité proportionnelle. La conciliation de ces deux définitions fait toujours l’objet de recherches.
 </p>
 </div>
-
+<p></p>
 <p>La notion de diversité <span class="math inline">\(\beta\)</span> a été introduite par <span class="citation">Whittaker (<a href="#ref-Whittaker1960" role="doc-biblioref">1960</a>)</span>, page 320, comme le niveau de changement dans la composition des communautés, ou le degré de différenciation des communautés, en relation avec les changements de milieu.
 La traduction de cette notion intuitive en une définition sans ambiguïté est encore une question de recherche et de débats.</p>
 <p><span class="citation">Anderson et al. (<a href="#ref-Anderson2011" role="doc-biblioref">2011</a>)</span> fournissent une revue des analyses utiles de la diversité <span class="math inline">\(\beta\)</span> en forme de guide à destination des écologues reprise ici en introduction.
 La distinction entre diversité de différenciation et diversité proportionnelle est présentée ensuite.</p>
 <p>Pour simplifier l’exposé, les individus seront échantillonnés dans des communautés, appartenant à une méta-communauté.
-Le tableau <a href="10-sec-betaCadre.html#tab:Notations">10.1</a> résume les notations.</p>
+Le tableau <a href="#tab:Notations"><strong>??</strong></a> résume les notations.</p>
 <p>Des exemples montrent comment calculer cette diversité, principalement à l’aide du package <em>entropart</em>.
 Le package contient les données d’inventaire de deux hectares du dispositif de Paracou.
 Les données sont organisées dans le package sous la forme d’un objet <code>MetaCommunity</code> qui contient notamment la matrice des <span class="math inline">\(n_{s,i}\)</span>.
 Les parcelles de Paracou sont dans l’objet <code>Paracou618.MC</code>.</p>
-
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="10-sec-betaCadre.html#cb234-1"></a><span class="kw">library</span>(entropart)</span>
-<span id="cb234-2"><a href="10-sec-betaCadre.html#cb234-2"></a><span class="kw">summary</span>(Paracou618.MC)</span></code></pre></div>
+<p></p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="10-sec-betaCadre.html#cb232-1"></a><span class="kw">library</span>(entropart)</span>
+<span id="cb232-2"><a href="10-sec-betaCadre.html#cb232-2"></a><span class="kw">summary</span>(Paracou618.MC)</span></code></pre></div>
 <pre><code>## Meta-community (class &#39;MetaCommunity&#39;) made of 1124 individuals in 2 
 ## communities and 425 species. 
 ## 
@@ -467,83 +465,34 @@ Les parcelles de Paracou sont dans l’objet <code>Paracou618.MC</code>.</p>
 ## Community sample coverages are: 
 ##      P006      P018 
 ## 0.8943859 0.8463782</code></pre>
+<p></p>
 
+<p></p>
 
-
-<table class="table table-striped" style="font-size: 9px; margin-left: auto; margin-right: auto;">
-<caption style="font-size: initial !important;">
-<span id="tab:Notations">Table 10.1: </span>Notations des effectifs, tableau espèces-communautés.
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-Communauté <span class="math inline">\(i\)</span>
-</th>
-<th style="text-align:left;">
-<span class="math inline">\(\dots\)</span> Total: méta-communauté
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Espèce <span class="math inline">\(s\)</span>
-</td>
-<td style="text-align:left;">
-<span class="math inline">\(n_{s,i}\)</span>: nombre d’individus de l’espèce <span class="math inline">\(s\)</span> dans la communauté <span class="math inline">\(i\)</span>. <span class="math inline">\(\hat{p}_{s|i}=n_{s,i}/n_{+i}\)</span> est l’estimateur de la probabilité <span class="math inline">\(p_{s|i}\)</span> qu’un individu de la communauté <span class="math inline">\(i\)</span> soit de l’espèce <span class="math inline">\(s\)</span>.
-</td>
-<td style="text-align:left;">
-<span class="math inline">\(n_{s+}=\sum_i{n_{s,i}}\)</span>. <span class="math inline">\(p_s=\sum_i{w_{i}p_{s|i}}\)</span>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="math inline">\(\dots\)</span>
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Total
-</td>
-<td style="text-align:left;">
-<span class="math inline">\(n_{s+}=\sum_i{n_{s,i}}\)</span>. <span class="math inline">\(p_s=\sum_i{w_{i}p_{s|i}}\)</span>
-</td>
-<td style="text-align:left;">
-<span class="math inline">\(n\)</span>: nombre total d’individus échantillonnés
-</td>
-</tr>
-</tbody>
-</table>
-
+<p></p>
 <div id="définition-de-la-diversité-beta-par-objectifs" class="section level2">
 <h2><span class="header-section-number">10.1</span> Définition de la diversité <span class="math inline">\(\beta\)</span> par objectifs</h2>
 <p><span class="citation">Anderson et al. (<a href="#ref-Anderson2011" role="doc-biblioref">2011</a>)</span> proposent une revue des définitions de la diversité <span class="math inline">\(\beta\)</span> selon les analyses écologiques auxquelles elles peuvent contribuer plutôt que selon leurs propriétés mathématiques.</p>
 <p>Deux types de diversité <span class="math inline">\(\beta\)</span> peuvent être définies <span class="citation">(Vellend <a href="#ref-Vellend2001" role="doc-biblioref">2001</a>)</span> en accord avec les notions originales de Whittaker: le <em>remplacement</em> (<em>turnover</em>) des espèces le long d’un gradient environnemental, spatial ou temporel et la <em>variation</em> de la composition spécifique entre communautés, qui diffèrent de la méta-communauté et entre elles.
 Ces deux définitions sont présentées sur les figures <a href="10-sec-betaCadre.html#fig:Anderson2011a">10.1</a> et <a href="10-sec-betaCadre.html#fig:Anderson2011b">10.2</a> <span class="citation">(Anderson et al. <a href="#ref-Anderson2011" role="doc-biblioref">2011</a>)</span>.</p>
 
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:Anderson2011a"></span>
 <img src="images/Anderson2011a.png" alt="Diversité \(\beta\) liée au remplacement des espèces le long d’un gradient. \(\Delta{y}\) est la mesure de la dissimilarité entre deux communautés. \(\mathbf{x}\) est un gradient environnemental, spatial ou temporel. \(\Delta{x}\) est l’écart entre deux points du gradient." width="80%" />
 <p class="caption">
 Figure 10.1: Diversité <span class="math inline">\(\beta\)</span> liée au remplacement des espèces le long d’un gradient. <span class="math inline">\(\Delta{y}\)</span> est la mesure de la dissimilarité entre deux communautés. <span class="math inline">\(\mathbf{x}\)</span> est un gradient environnemental, spatial ou temporel. <span class="math inline">\(\Delta{x}\)</span> est l’écart entre deux points du gradient.
 </p>
 </div>
+<p></p>
 
-
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:Anderson2011b"></span>
 <img src="images/Anderson2011b.png" alt="Diversité \(\beta\) liée à la variation de la composition spécifique. \(\beta_W\) est le rapport entre la diversité \(\gamma\) et la diversité \(\alpha\), \(\beta_{Add}\) leur différence. \(d_{ij}\) est la dissimilarité entre les communautés \(i\) et \(j\). \(\hat{\sigma}^2\) est la variance de cette dissimilarité, \(\bar{d}\) sa moyenne. Si \(d\) est une distance euclidienne, \(\bar{d}_{cen}\) est la distance moyenne des communautés à leur centre de gravité." width="80%" />
 <p class="caption">
 Figure 10.2: Diversité <span class="math inline">\(\beta\)</span> liée à la variation de la composition spécifique. <span class="math inline">\(\beta_W\)</span> est le rapport entre la diversité <span class="math inline">\(\gamma\)</span> et la diversité <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta_{Add}\)</span> leur différence. <span class="math inline">\(d_{ij}\)</span> est la dissimilarité entre les communautés <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span>. <span class="math inline">\(\hat{\sigma}^2\)</span> est la variance de cette dissimilarité, <span class="math inline">\(\bar{d}\)</span> sa moyenne. Si <span class="math inline">\(d\)</span> est une distance euclidienne, <span class="math inline">\(\bar{d}_{cen}\)</span> est la distance moyenne des communautés à leur centre de gravité.
 </p>
 </div>
-
+<p></p>
 <p>Les mesures de remplacement ne sont pas traitées en détail dans ce chapitre mais simplement présentées ici.</p>
 <p>La plus simple (figure <a href="10-sec-betaCadre.html#fig:Anderson2011a">10.1</a>, T1) est la dissimilarité entre deux communautés notée <span class="math inline">\(\Delta{y}\)</span>.
 De nombreuses mesures de dissimilarité existent, elles sont détaillées dans le chapitre <a href="11-chap-BetaPaires.html#chap:BetaPaires">11</a>.

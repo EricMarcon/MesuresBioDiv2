@@ -51,8 +51,6 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -432,17 +430,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="décomposition-de-la-diversité-phylogénétique-et-fonctionnelle" class="section level1">
 <h1><span class="header-section-number">13</span> Décomposition de la diversité phylogénétique et fonctionnelle</h1>
-
+<p></p>
 <div class="Essentiel">
 <p>
 L’entropie phylogénétique et l’entropie de Ricotta et Szeidl se décomposent comme l’entropie HCDT. La diversité <span class="math inline"><span class="math inline">\(\beta\)</span></span> phylogénétique et la diversité <span class="math inline"><span class="math inline">\(\beta\)</span></span> de Leinster et Cobbold sont des nombres effectifs de communautés, c’est-à-dire des communautés de même poids et dont les espèces seraient totalement dissimilaires qui fourniraient la même entropie <span class="math inline"><span class="math inline">\(\beta\)</span></span> que les communautés réelles.
 </p>
 </div>
-
+<p></p>
 <p>L’entropie phylogénétique est une combinaison linéaire de l’entropie HCDT donc sa décomposition est identique <span class="citation">(Marcon et Hérault <a href="#ref-Marcon2014b" role="doc-biblioref">2015</a><a href="#ref-Marcon2014b" role="doc-biblioref">a</a>)</span>.</p>
 <div id="décomposition-de-la-diversité-phylogénétique" class="section level2">
 <h2><span class="header-section-number">13.1</span> Décomposition de la diversité phylogénétique</h2>
-<p>En combinant l’équation <a href="8-chap-Phyloentropie.html#eq:Hbarq">(8.1)</a> et le tableau <a href="12-chap-DedompHCDT.html#tab:Decomposition">12.2</a>, on obtient</p>
+<p>En combinant l’équation <a href="8-chap-Phyloentropie.html#eq:Hbarq">(8.1)</a> et le tableau <a href="#tab:Decomposition"><strong>??</strong></a>, on obtient</p>
 <p><span class="math display" id="eq:Hqbar">\[\begin{equation}
   \tag{13.1}
   ^{q}\!\bar{H}_{\gamma}\left(T\right)
@@ -467,10 +465,10 @@ L’entropie phylogénétique et l’entropie de Ricotta et Szeidl se décompose
 <p>La décomposition de l’entropie phylogénétique au sens de <span class="citation">Allen, Kon, et Bar-Yam (<a href="#ref-Allen2009" role="doc-biblioref">2009</a>)</span>, c’est-à-dire dans la cas particulier <span class="math inline">\(q=1\)</span>, a été établie par <span class="citation">Mouchet et Mouillot (<a href="#ref-Mouchet2011" role="doc-biblioref">2011</a>)</span>.</p>
 <p>La fonction <code>DivPart</code> de <em>entropart</em> permet de décomposer l’entropie.
 Les résultats contiennent la valeur de la diversité:</p>
-
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-1"></a><span class="kw">data</span>(Paracou618)</span>
-<span id="cb280-2"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-2"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb280-3"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-3"></a>                <span class="dt">Tree =</span> Paracou618.Taxonomy))</span></code></pre></div>
+<p></p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb278-1"></a><span class="kw">data</span>(Paracou618)</span>
+<span id="cb278-2"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb278-2"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>,</span>
+<span id="cb278-3"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb278-3"></a>                <span class="dt">Tree =</span> Paracou618.Taxonomy))</span></code></pre></div>
 <pre><code>## HCDT diversity partitioning of order 1 of metaCommunity Paracou618.MC
 ##  with correction: UnveilJ UnveilJ UnveilJ
 ## Phylogenetic or functional diversity was calculated
@@ -488,37 +486,37 @@ Les résultats contiennent la valeur de la diversité:</p>
 ## [1] 1.273686
 ## Gamma diversity of the metacommunity: 
 ## [1] 55.64502</code></pre>
+<p></p>
 
-
-
+<p></p>
 <div class="figure" style="text-align: center"><span id="fig:DivPartFig"></span>
 <img src="MesuresBD_files/figure-html/DivPartFig-1.png" alt="Représentation graphique de la diversité des deux parcelles du jeu de données Paracou618. Les rectangles transparents représentent la diversité neutre, les rectangles hachurés la diversité phylogénétique (l’arbre est la taxonomie des espèces, \(q=1\)). Dans chaque cas, le rectangle le plus large, de hauteur 1, représente la diversité \(\\gamma\). Le rectangle plus haut a pour largeur et longueur les diversités \(\alpha\) et \(\beta\). Les surfaces des deux rectangles sont identiques." width="80%" />
 <p class="caption">
 Figure 13.1: Représentation graphique de la diversité des deux parcelles du jeu de données <code>Paracou618</code>. Les rectangles transparents représentent la diversité neutre, les rectangles hachurés la diversité phylogénétique (l’arbre est la taxonomie des espèces, <span class="math inline">\(q=1\)</span>). Dans chaque cas, le rectangle le plus large, de hauteur 1, représente la diversité <span class="math inline">\(\\gamma\)</span>. Le rectangle plus haut a pour largeur et longueur les diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span>. Les surfaces des deux rectangles sont identiques.
 </p>
 </div>
-
+<p></p>
 <p>La figure <a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#fig:DivPartFig">13.1</a> donne une représentation graphique de la décomposition de la diversité.
 La différence de taille entre les rectangles hachurés et les rectangles transparents est due à la prise en compte de la phylogénie.
 La diversité <span class="math inline">\(\gamma\)</span> (rectangles de hauteur 1) est égale au produit des diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span> (côtés du rectangle plus haut).
 Si les communautés étaient de même poids et complètement différentes, c’est à dire contenant des espèces totalement dissimilaires entre communautés <span class="citation">(Pavoine, Marcon, et Ricotta <a href="#ref-Pavoine2015a" role="doc-biblioref">2016</a>)</span>, la hauteur du rectangle serait égale à leur nombre (2 ici).</p>
 <p>Code pour réaliser la figure:</p>
-
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-1"></a>q &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb282-2"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-2"></a>Neutre &lt;-<span class="st"> </span><span class="kw">DivPart</span>(q, Paracou618.MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb282-3"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-3"></a><span class="kw">plot</span>(<span class="kw">c</span>(<span class="dv">0</span>, Neutre<span class="op">$</span>GammaDiversity), <span class="kw">c</span>(<span class="dv">0</span>, Paracou618.MC<span class="op">$</span>Ncommunities),</span>
-<span id="cb282-4"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-4"></a>     <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, </span>
-<span id="cb282-5"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-5"></a>     <span class="dt">xlab =</span> <span class="kw">expression</span>(<span class="kw">paste</span>(alpha, <span class="st">&quot; / &quot;</span>, gamma, <span class="st">&quot; diversity&quot;</span>)), </span>
-<span id="cb282-6"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-6"></a>     <span class="dt">ylab =</span> <span class="kw">expression</span>(<span class="kw">paste</span>(beta, <span class="st">&quot; diversity&quot;</span>)))</span>
-<span id="cb282-7"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-7"></a><span class="kw">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, Neutre<span class="op">$</span>GammaDiversity, <span class="dv">1</span>, <span class="dt">lty=</span><span class="dv">2</span>)</span>
-<span id="cb282-8"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-8"></a><span class="kw">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, Neutre<span class="op">$</span>TotalAlphaDiversity, Neutre<span class="op">$</span>TotalBetaDiversity, </span>
-<span id="cb282-9"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-9"></a>     <span class="dt">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb282-10"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-10"></a>Phylo &lt;-<span class="st"> </span><span class="kw">DivPart</span>(q, Paracou618.MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb282-11"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-11"></a>                 <span class="dt">Tree =</span> Paracou618.Taxonomy)</span>
-<span id="cb282-12"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-12"></a><span class="kw">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, Phylo<span class="op">$</span>GammaDiversity, <span class="dv">1</span>, <span class="dt">angle=</span><span class="dv">135</span>, <span class="dt">density=</span><span class="dv">10</span>)</span>
-<span id="cb282-13"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-13"></a><span class="kw">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, Phylo<span class="op">$</span>TotalAlphaDiversity, Phylo<span class="op">$</span>TotalBetaDiversity,</span>
-<span id="cb282-14"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb282-14"></a>     <span class="dt">density =</span> <span class="dv">10</span>)</span></code></pre></div>
-
+<p></p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-1"></a>q &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb280-2"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-2"></a>Neutre &lt;-<span class="st"> </span><span class="kw">DivPart</span>(q, Paracou618.MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb280-3"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-3"></a><span class="kw">plot</span>(<span class="kw">c</span>(<span class="dv">0</span>, Neutre<span class="op">$</span>GammaDiversity), <span class="kw">c</span>(<span class="dv">0</span>, Paracou618.MC<span class="op">$</span>Ncommunities),</span>
+<span id="cb280-4"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-4"></a>     <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, </span>
+<span id="cb280-5"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-5"></a>     <span class="dt">xlab =</span> <span class="kw">expression</span>(<span class="kw">paste</span>(alpha, <span class="st">&quot; / &quot;</span>, gamma, <span class="st">&quot; diversity&quot;</span>)), </span>
+<span id="cb280-6"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-6"></a>     <span class="dt">ylab =</span> <span class="kw">expression</span>(<span class="kw">paste</span>(beta, <span class="st">&quot; diversity&quot;</span>)))</span>
+<span id="cb280-7"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-7"></a><span class="kw">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, Neutre<span class="op">$</span>GammaDiversity, <span class="dv">1</span>, <span class="dt">lty=</span><span class="dv">2</span>)</span>
+<span id="cb280-8"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-8"></a><span class="kw">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, Neutre<span class="op">$</span>TotalAlphaDiversity, Neutre<span class="op">$</span>TotalBetaDiversity, </span>
+<span id="cb280-9"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-9"></a>     <span class="dt">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb280-10"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-10"></a>Phylo &lt;-<span class="st"> </span><span class="kw">DivPart</span>(q, Paracou618.MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb280-11"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-11"></a>                 <span class="dt">Tree =</span> Paracou618.Taxonomy)</span>
+<span id="cb280-12"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-12"></a><span class="kw">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, Phylo<span class="op">$</span>GammaDiversity, <span class="dv">1</span>, <span class="dt">angle=</span><span class="dv">135</span>, <span class="dt">density=</span><span class="dv">10</span>)</span>
+<span id="cb280-13"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-13"></a><span class="kw">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, Phylo<span class="op">$</span>TotalAlphaDiversity, Phylo<span class="op">$</span>TotalBetaDiversity,</span>
+<span id="cb280-14"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-14"></a>     <span class="dt">density =</span> <span class="dv">10</span>)</span></code></pre></div>
+<p></p>
 </div>
 <div id="partitionnement-de-la-diversité-de-leinster-et-cobbold" class="section level2">
 <h2><span class="header-section-number">13.2</span> Partitionnement de la diversité de Leinster et Cobbold</h2>
@@ -564,13 +562,13 @@ Formellement:</p>
 \end{equation}\]</span></p>
 <p>De la même façon que <span class="math inline">\(1/^q\!D^{\mathbf{Z}}_\gamma\)</span> est la banalité moyenne des espèces, <span class="math inline">\(^q\!D^{\mathbf{Z}}_\beta\)</span> est la banalité moyenne normalisée des communautés, où la banalité normalisée de la communauté <span class="math inline">\(i\)</span> est définie comme <span class="math inline">\({\left(1/^q_i\!D^{\mathbf{Z}}_\alpha\right)}/{\left(1/^q\!D^{\mathbf{Z}}_\gamma\right)}\)</span>, c’est-à-dire la banalité moyenne de ses espèces divisée par celle de la méta-communauté.</p>
 <p>La fonction <code>DivPart</code> (comme les autres fonctions avancées de <em>entropart</em>) supporte la décomposition de la diversité de Leinster et Cobbold quand une matrice de similarité lui est passée comme argument à la place d’un arbre phylogénétique pour le calcul de la phylodiversité HCDT:</p>
-
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-1"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
-<span id="cb283-2"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-2"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Paracou618.dist)</span>
-<span id="cb283-3"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-3"></a><span class="co"># Transformation en matrice de similarité</span></span>
-<span id="cb283-4"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-4"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>DistanceMatrix<span class="op">/</span><span class="kw">max</span>(DistanceMatrix)</span>
-<span id="cb283-5"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-5"></a><span class="co"># Partition de la diversité</span></span>
-<span id="cb283-6"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-6"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Z =</span> Z, <span class="dt">Biased =</span> <span class="ot">FALSE</span>))</span></code></pre></div>
+<p></p>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb281-1"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
+<span id="cb281-2"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb281-2"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Paracou618.dist)</span>
+<span id="cb281-3"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb281-3"></a><span class="co"># Transformation en matrice de similarité</span></span>
+<span id="cb281-4"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb281-4"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>DistanceMatrix<span class="op">/</span><span class="kw">max</span>(DistanceMatrix)</span>
+<span id="cb281-5"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb281-5"></a><span class="co"># Partition de la diversité</span></span>
+<span id="cb281-6"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb281-6"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Z =</span> Z, <span class="dt">Biased =</span> <span class="ot">FALSE</span>))</span></code></pre></div>
 <pre><code>## Similarity-based diversity partitioning of order 1 of metaCommunity 
 ## Paracou618.MC
 ##  with correction: Best
@@ -589,7 +587,7 @@ Formellement:</p>
 ## Gamma diversity of the metacommunity: 
 ##     Best 
 ## 1.488083</code></pre>
-
+<p></p>
 <p>Le partitionnement de la diversité fonctionnelle de la méta-communauté <code>Paracou618.MC</code> selon la matrice de distances des traits fonctionnels montre que la diversité <span class="math inline">\(\beta\)</span> est extrêmement faible entre les deux parcelles.</p>
 </div>
 </div>

@@ -51,8 +51,6 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -601,13 +599,13 @@ En revanche, la richesse peut être partitionnée de façon indépendante en div
 <p>L’inéquitabilité <span class="math inline">\(1/{^{q}\!E}\)</span> (figure <a href="5-sec-Equitabilite.html#fig:ProfilIneqFig">5.2</a>) est un nombre effectif d’espèces: c’est la richesse d’une communauté du même niveau d’équitabilité que la communauté réelle dans laquelle tous les individus (sauf un nombre négligeable) appartiendraient à une seule espèce.</p>
 <p>Code R pour la figure <a href="5-sec-Equitabilite.html#fig:ProfilIneqFig">5.2</a>:</p>
 <p></p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="5-sec-Equitabilite.html#cb157-1"></a><span class="co"># Estimation du nombre d&#39;espèces</span></span>
-<span id="cb157-2"><a href="5-sec-Equitabilite.html#cb157-2"></a>Ns &lt;-<span class="st"> </span><span class="kw">colSums</span>(BCI)</span>
-<span id="cb157-3"><a href="5-sec-Equitabilite.html#cb157-3"></a>UBNs &lt;-<span class="st"> </span><span class="kw">jackknife</span>(<span class="kw">AbdFreqCount</span>(Ns), <span class="dt">k =</span> <span class="dv">1</span>)<span class="op">$</span>Nhat</span>
-<span id="cb157-4"><a href="5-sec-Equitabilite.html#cb157-4"></a><span class="co"># Profil</span></span>
-<span id="cb157-5"><a href="5-sec-Equitabilite.html#cb157-5"></a>Inq &lt;-<span class="st"> </span>DivPrf &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, Ns)</span>
-<span id="cb157-6"><a href="5-sec-Equitabilite.html#cb157-6"></a>Inq<span class="op">$</span>y &lt;-<span class="st"> </span>UBNs<span class="op">/</span>DivPrf<span class="op">$</span>y</span>
-<span id="cb157-7"><a href="5-sec-Equitabilite.html#cb157-7"></a><span class="kw">autoplot</span>(Inq, <span class="dt">xlab =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Inéquitabilité&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="5-sec-Equitabilite.html#cb155-1"></a><span class="co"># Estimation du nombre d&#39;espèces</span></span>
+<span id="cb155-2"><a href="5-sec-Equitabilite.html#cb155-2"></a>Ns &lt;-<span class="st"> </span><span class="kw">colSums</span>(BCI)</span>
+<span id="cb155-3"><a href="5-sec-Equitabilite.html#cb155-3"></a>UBNs &lt;-<span class="st"> </span><span class="kw">jackknife</span>(<span class="kw">AbdFreqCount</span>(Ns), <span class="dt">k =</span> <span class="dv">1</span>)<span class="op">$</span>Nhat</span>
+<span id="cb155-4"><a href="5-sec-Equitabilite.html#cb155-4"></a><span class="co"># Profil</span></span>
+<span id="cb155-5"><a href="5-sec-Equitabilite.html#cb155-5"></a>Inq &lt;-<span class="st"> </span>DivPrf &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, Ns)</span>
+<span id="cb155-6"><a href="5-sec-Equitabilite.html#cb155-6"></a>Inq<span class="op">$</span>y &lt;-<span class="st"> </span>UBNs<span class="op">/</span>DivPrf<span class="op">$</span>y</span>
+<span id="cb155-7"><a href="5-sec-Equitabilite.html#cb155-7"></a><span class="kw">autoplot</span>(Inq, <span class="dt">xlab =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Inéquitabilité&quot;</span>)</span></code></pre></div>
 <p></p>
 </div>
 <div id="synthèse-2" class="section level3">
@@ -642,8 +640,8 @@ Figure 5.3: Profil d’équitabilité de BCI. L’équitabilité est ici normali
 <p>Un profil d’équitabilité calculé de cette façon est présenté en figure <a href="5-sec-Equitabilite.html#fig:BCIEqFig">5.3</a>, représentation alternative de la figure <a href="5-sec-Equitabilite.html#fig:ProfilIneqFig">5.2</a>.</p>
 <p>Code R supplémentaire:</p>
 <p></p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="5-sec-Equitabilite.html#cb158-1"></a>Inq<span class="op">$</span>y &lt;-<span class="st"> </span><span class="kw">log</span>(DivPrf<span class="op">$</span>y)<span class="op">/</span><span class="kw">log</span>(UBNs)</span>
-<span id="cb158-2"><a href="5-sec-Equitabilite.html#cb158-2"></a><span class="kw">autoplot</span>(Inq, <span class="dt">xlab =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Indice de Pielou&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="5-sec-Equitabilite.html#cb156-1"></a>Inq<span class="op">$</span>y &lt;-<span class="st"> </span><span class="kw">log</span>(DivPrf<span class="op">$</span>y)<span class="op">/</span><span class="kw">log</span>(UBNs)</span>
+<span id="cb156-2"><a href="5-sec-Equitabilite.html#cb156-2"></a><span class="kw">autoplot</span>(Inq, <span class="dt">xlab =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Indice de Pielou&quot;</span>)</span></code></pre></div>
 <p></p>
 </div>
 </div>
@@ -673,28 +671,28 @@ Figure 5.4: Relations entre l’entropie de Shannon (a), l’indice d’équitab
 <p></p>
 <p>Code R pour réaliser les figures:</p>
 <p></p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="5-sec-Equitabilite.html#cb159-1"></a><span class="co"># Communautés de 30 à 300 espèces</span></span>
-<span id="cb159-2"><a href="5-sec-Equitabilite.html#cb159-2"></a>S &lt;-<span class="st"> </span><span class="dv">30</span><span class="op">:</span><span class="dv">300</span></span>
-<span id="cb159-3"><a href="5-sec-Equitabilite.html#cb159-3"></a><span class="co"># Tirage de communautés log-normales de 10000 individus</span></span>
-<span id="cb159-4"><a href="5-sec-Equitabilite.html#cb159-4"></a>rcl &lt;-<span class="st"> </span><span class="kw">lapply</span>(S, <span class="cf">function</span>(S) <span class="kw">rCommunity</span>(<span class="dv">1</span>, <span class="dv">10000</span>, <span class="dt">S=</span>S))</span>
-<span id="cb159-5"><a href="5-sec-Equitabilite.html#cb159-5"></a><span class="co"># Richesse et Shannon</span></span>
-<span id="cb159-6"><a href="5-sec-Equitabilite.html#cb159-6"></a>Sobs &lt;-<span class="st"> </span><span class="kw">sapply</span>(rcl, Richness)</span>
-<span id="cb159-7"><a href="5-sec-Equitabilite.html#cb159-7"></a>H &lt;-<span class="st"> </span><span class="kw">sapply</span>(rcl, Shannon)</span>
-<span id="cb159-8"><a href="5-sec-Equitabilite.html#cb159-8"></a>ggH &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, H), <span class="kw">aes</span>(S, H)) <span class="op">+</span></span>
-<span id="cb159-9"><a href="5-sec-Equitabilite.html#cb159-9"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_log10</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb159-10"><a href="5-sec-Equitabilite.html#cb159-10"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;S (échelle logarithmique)&quot;</span>) <span class="op">+</span></span>
-<span id="cb159-11"><a href="5-sec-Equitabilite.html#cb159-11"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
-<span id="cb159-12"><a href="5-sec-Equitabilite.html#cb159-12"></a><span class="co"># Equitabilité de Pielou</span></span>
-<span id="cb159-13"><a href="5-sec-Equitabilite.html#cb159-13"></a>J &lt;-<span class="st"> </span>H<span class="op">/</span><span class="kw">log</span>(S)</span>
-<span id="cb159-14"><a href="5-sec-Equitabilite.html#cb159-14"></a>ggJ &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, J), <span class="kw">aes</span>(S, J)) <span class="op">+</span></span>
-<span id="cb159-15"><a href="5-sec-Equitabilite.html#cb159-15"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
-<span id="cb159-16"><a href="5-sec-Equitabilite.html#cb159-16"></a>E &lt;-<span class="st"> </span><span class="kw">sapply</span>(rcl, Simpson)</span>
-<span id="cb159-17"><a href="5-sec-Equitabilite.html#cb159-17"></a>ggE &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, E), <span class="kw">aes</span>(S, E)) <span class="op">+</span></span>
-<span id="cb159-18"><a href="5-sec-Equitabilite.html#cb159-18"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb159-19"><a href="5-sec-Equitabilite.html#cb159-19"></a>J2 &lt;-<span class="st"> </span>E<span class="op">/</span>(<span class="dv">1-1</span><span class="op">/</span>S)</span>
-<span id="cb159-20"><a href="5-sec-Equitabilite.html#cb159-20"></a>ggJ2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, J2), <span class="kw">aes</span>(S, J2)) <span class="op">+</span></span>
-<span id="cb159-21"><a href="5-sec-Equitabilite.html#cb159-21"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;d&quot;</span>)</span>
-<span id="cb159-22"><a href="5-sec-Equitabilite.html#cb159-22"></a><span class="kw">grid.arrange</span>(ggH, ggJ, ggE , ggJ2, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="5-sec-Equitabilite.html#cb157-1"></a><span class="co"># Communautés de 30 à 300 espèces</span></span>
+<span id="cb157-2"><a href="5-sec-Equitabilite.html#cb157-2"></a>S &lt;-<span class="st"> </span><span class="dv">30</span><span class="op">:</span><span class="dv">300</span></span>
+<span id="cb157-3"><a href="5-sec-Equitabilite.html#cb157-3"></a><span class="co"># Tirage de communautés log-normales de 10000 individus</span></span>
+<span id="cb157-4"><a href="5-sec-Equitabilite.html#cb157-4"></a>rcl &lt;-<span class="st"> </span><span class="kw">lapply</span>(S, <span class="cf">function</span>(S) <span class="kw">rCommunity</span>(<span class="dv">1</span>, <span class="dv">10000</span>, <span class="dt">S=</span>S))</span>
+<span id="cb157-5"><a href="5-sec-Equitabilite.html#cb157-5"></a><span class="co"># Richesse et Shannon</span></span>
+<span id="cb157-6"><a href="5-sec-Equitabilite.html#cb157-6"></a>Sobs &lt;-<span class="st"> </span><span class="kw">sapply</span>(rcl, Richness)</span>
+<span id="cb157-7"><a href="5-sec-Equitabilite.html#cb157-7"></a>H &lt;-<span class="st"> </span><span class="kw">sapply</span>(rcl, Shannon)</span>
+<span id="cb157-8"><a href="5-sec-Equitabilite.html#cb157-8"></a>ggH &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, H), <span class="kw">aes</span>(S, H)) <span class="op">+</span></span>
+<span id="cb157-9"><a href="5-sec-Equitabilite.html#cb157-9"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_log10</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb157-10"><a href="5-sec-Equitabilite.html#cb157-10"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;S (échelle logarithmique)&quot;</span>) <span class="op">+</span></span>
+<span id="cb157-11"><a href="5-sec-Equitabilite.html#cb157-11"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
+<span id="cb157-12"><a href="5-sec-Equitabilite.html#cb157-12"></a><span class="co"># Equitabilité de Pielou</span></span>
+<span id="cb157-13"><a href="5-sec-Equitabilite.html#cb157-13"></a>J &lt;-<span class="st"> </span>H<span class="op">/</span><span class="kw">log</span>(S)</span>
+<span id="cb157-14"><a href="5-sec-Equitabilite.html#cb157-14"></a>ggJ &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, J), <span class="kw">aes</span>(S, J)) <span class="op">+</span></span>
+<span id="cb157-15"><a href="5-sec-Equitabilite.html#cb157-15"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb157-16"><a href="5-sec-Equitabilite.html#cb157-16"></a>E &lt;-<span class="st"> </span><span class="kw">sapply</span>(rcl, Simpson)</span>
+<span id="cb157-17"><a href="5-sec-Equitabilite.html#cb157-17"></a>ggE &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, E), <span class="kw">aes</span>(S, E)) <span class="op">+</span></span>
+<span id="cb157-18"><a href="5-sec-Equitabilite.html#cb157-18"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb157-19"><a href="5-sec-Equitabilite.html#cb157-19"></a>J2 &lt;-<span class="st"> </span>E<span class="op">/</span>(<span class="dv">1-1</span><span class="op">/</span>S)</span>
+<span id="cb157-20"><a href="5-sec-Equitabilite.html#cb157-20"></a>ggJ2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, J2), <span class="kw">aes</span>(S, J2)) <span class="op">+</span></span>
+<span id="cb157-21"><a href="5-sec-Equitabilite.html#cb157-21"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;d&quot;</span>)</span>
+<span id="cb157-22"><a href="5-sec-Equitabilite.html#cb157-22"></a><span class="kw">grid.arrange</span>(ggH, ggJ, ggE , ggJ2, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p>En revanche, dans une communauté log-normale de richesse fixe mais insuffisamment échantillonnée, les corrélations sont négatives (figure <a href="5-sec-Equitabilite.html#fig:NJLogNormaleFig">5.5</a>).
 Le sous-échantillonnage a un effet plus sévère sur la richesse que sur les entropies d’ordres supérieurs.
@@ -710,26 +708,26 @@ Figure 5.5: Relations entre l’entropie de Shannon (a), l’indice d’équitab
 <p></p>
 <p>Code R pour réaliser les figures:</p>
 <p></p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="5-sec-Equitabilite.html#cb160-1"></a><span class="co"># Communautés de taille 10 à 1000 individus; 300 sp.</span></span>
-<span id="cb160-2"><a href="5-sec-Equitabilite.html#cb160-2"></a>rmc &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(<span class="kw">sapply</span>(<span class="dv">10</span><span class="op">:</span><span class="dv">1000</span>, <span class="cf">function</span>(n) <span class="kw">rCommunity</span>(<span class="dv">1</span>, n)))</span>
-<span id="cb160-3"><a href="5-sec-Equitabilite.html#cb160-3"></a><span class="co"># Richesse et Shannon</span></span>
-<span id="cb160-4"><a href="5-sec-Equitabilite.html#cb160-4"></a>S &lt;-<span class="st"> </span><span class="kw">apply</span>(rmc<span class="op">$</span>Psi, <span class="dv">2</span>, Richness)</span>
-<span id="cb160-5"><a href="5-sec-Equitabilite.html#cb160-5"></a>H &lt;-<span class="st"> </span><span class="kw">apply</span>(rmc<span class="op">$</span>Psi, <span class="dv">2</span>, Shannon)</span>
-<span id="cb160-6"><a href="5-sec-Equitabilite.html#cb160-6"></a>ggH &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, H), <span class="kw">aes</span>(S, H)) <span class="op">+</span></span>
-<span id="cb160-7"><a href="5-sec-Equitabilite.html#cb160-7"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_log10</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb160-8"><a href="5-sec-Equitabilite.html#cb160-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;S (échelle logarithmique)&quot;</span>) <span class="op">+</span></span>
-<span id="cb160-9"><a href="5-sec-Equitabilite.html#cb160-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
-<span id="cb160-10"><a href="5-sec-Equitabilite.html#cb160-10"></a><span class="co"># Equitabilité de Pielou</span></span>
-<span id="cb160-11"><a href="5-sec-Equitabilite.html#cb160-11"></a>J &lt;-<span class="st"> </span>H<span class="op">/</span><span class="kw">log</span>(S)</span>
-<span id="cb160-12"><a href="5-sec-Equitabilite.html#cb160-12"></a>ggJ &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, J), <span class="kw">aes</span>(S, J)) <span class="op">+</span></span>
-<span id="cb160-13"><a href="5-sec-Equitabilite.html#cb160-13"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
-<span id="cb160-14"><a href="5-sec-Equitabilite.html#cb160-14"></a>E &lt;-<span class="st"> </span><span class="kw">apply</span>(rmc<span class="op">$</span>Psi, <span class="dv">2</span>, Simpson)</span>
-<span id="cb160-15"><a href="5-sec-Equitabilite.html#cb160-15"></a>ggE &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, E), <span class="kw">aes</span>(S, E)) <span class="op">+</span></span>
-<span id="cb160-16"><a href="5-sec-Equitabilite.html#cb160-16"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb160-17"><a href="5-sec-Equitabilite.html#cb160-17"></a>J2 &lt;-<span class="st"> </span>E<span class="op">/</span>(<span class="dv">1-1</span><span class="op">/</span>S)</span>
-<span id="cb160-18"><a href="5-sec-Equitabilite.html#cb160-18"></a>ggJ2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, J2), <span class="kw">aes</span>(S, J2)) <span class="op">+</span></span>
-<span id="cb160-19"><a href="5-sec-Equitabilite.html#cb160-19"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;d&quot;</span>)</span>
-<span id="cb160-20"><a href="5-sec-Equitabilite.html#cb160-20"></a><span class="kw">grid.arrange</span>(ggH, ggJ, ggE , ggJ2, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="5-sec-Equitabilite.html#cb158-1"></a><span class="co"># Communautés de taille 10 à 1000 individus; 300 sp.</span></span>
+<span id="cb158-2"><a href="5-sec-Equitabilite.html#cb158-2"></a>rmc &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(<span class="kw">sapply</span>(<span class="dv">10</span><span class="op">:</span><span class="dv">1000</span>, <span class="cf">function</span>(n) <span class="kw">rCommunity</span>(<span class="dv">1</span>, n)))</span>
+<span id="cb158-3"><a href="5-sec-Equitabilite.html#cb158-3"></a><span class="co"># Richesse et Shannon</span></span>
+<span id="cb158-4"><a href="5-sec-Equitabilite.html#cb158-4"></a>S &lt;-<span class="st"> </span><span class="kw">apply</span>(rmc<span class="op">$</span>Psi, <span class="dv">2</span>, Richness)</span>
+<span id="cb158-5"><a href="5-sec-Equitabilite.html#cb158-5"></a>H &lt;-<span class="st"> </span><span class="kw">apply</span>(rmc<span class="op">$</span>Psi, <span class="dv">2</span>, Shannon)</span>
+<span id="cb158-6"><a href="5-sec-Equitabilite.html#cb158-6"></a>ggH &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, H), <span class="kw">aes</span>(S, H)) <span class="op">+</span></span>
+<span id="cb158-7"><a href="5-sec-Equitabilite.html#cb158-7"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_log10</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb158-8"><a href="5-sec-Equitabilite.html#cb158-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;S (échelle logarithmique)&quot;</span>) <span class="op">+</span></span>
+<span id="cb158-9"><a href="5-sec-Equitabilite.html#cb158-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
+<span id="cb158-10"><a href="5-sec-Equitabilite.html#cb158-10"></a><span class="co"># Equitabilité de Pielou</span></span>
+<span id="cb158-11"><a href="5-sec-Equitabilite.html#cb158-11"></a>J &lt;-<span class="st"> </span>H<span class="op">/</span><span class="kw">log</span>(S)</span>
+<span id="cb158-12"><a href="5-sec-Equitabilite.html#cb158-12"></a>ggJ &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, J), <span class="kw">aes</span>(S, J)) <span class="op">+</span></span>
+<span id="cb158-13"><a href="5-sec-Equitabilite.html#cb158-13"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb158-14"><a href="5-sec-Equitabilite.html#cb158-14"></a>E &lt;-<span class="st"> </span><span class="kw">apply</span>(rmc<span class="op">$</span>Psi, <span class="dv">2</span>, Simpson)</span>
+<span id="cb158-15"><a href="5-sec-Equitabilite.html#cb158-15"></a>ggE &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, E), <span class="kw">aes</span>(S, E)) <span class="op">+</span></span>
+<span id="cb158-16"><a href="5-sec-Equitabilite.html#cb158-16"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb158-17"><a href="5-sec-Equitabilite.html#cb158-17"></a>J2 &lt;-<span class="st"> </span>E<span class="op">/</span>(<span class="dv">1-1</span><span class="op">/</span>S)</span>
+<span id="cb158-18"><a href="5-sec-Equitabilite.html#cb158-18"></a>ggJ2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(S, J2), <span class="kw">aes</span>(S, J2)) <span class="op">+</span></span>
+<span id="cb158-19"><a href="5-sec-Equitabilite.html#cb158-19"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;d&quot;</span>)</span>
+<span id="cb158-20"><a href="5-sec-Equitabilite.html#cb158-20"></a><span class="kw">grid.arrange</span>(ggH, ggJ, ggE , ggJ2, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p>La corrélation entre richesse et équitabilité est donc positive si la richesse varie entre communautés, mais négative si ce n’est qu’un effet de l’échantillonnage.
 Les résultats sont similaires avec des communautés en log-séries: la corrélation est positive quand <span class="math inline">\(\alpha\)</span> varie, négative quand l’échantillonnage varie.</p>

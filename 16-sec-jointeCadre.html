@@ -51,8 +51,6 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -432,8 +430,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="sec:jointeCadre" class="section level1">
 <h1><span class="header-section-number">16</span> Cadre</h1>
-
-
+<p></p>
+<p></p>
 <p>Gregorius <span class="citation">(<a href="#ref-Gregorius2010" role="doc-biblioref">2010</a>, <a href="#ref-Gregorius2014" role="doc-biblioref">2014</a>)</span> argumente en faveur de la prise en compte de ce qu’il définit comme la “diversité jointe” dans le cadre classique où les classes sont des communautés pour des raisons fondamentales de définition de la diversité.
 Son approche consiste à traiter de façon symétrique l’appartenance à une classe ou à une espèce: contrairement aux chapitres précédents où l’échantillonnage des individus avait lieu séparément dans chaque communauté, l’échantillonnage a lieu ici globalement dans la méta-communauté et l’appartenance d’un individu à une communauté apporte autant d’information que son appartenance à une espèce.
 Cette approche convient bien à des questions de choix de localisation traités en économie (voir par exemple la définition de la localisation globale <span class="citation">(Cutrini <a href="#ref-Cutrini2010" role="doc-biblioref">2010</a>)</span>, qui traite de façon symétrique le secteur d’activité et la région d’implantation des firmes).
@@ -446,60 +444,11 @@ En plus des espèces, d’autres critères (par exemple les classes de diamètre
 Une revue des approches utilisées pour décrire cette structure, et plus particulièrement sa complexité, est fournie par Bacaro et al. Certaines se sont attachées à définir une mesure de diversité structurelle: notamment, <span class="citation">Das et Nautiyal (<a href="#ref-Das2004" role="doc-biblioref">2004</a>)</span> définissent un indice qui prend en compte la variabilité des diamètres.</p>
 <p>Bacaro et al. suggèrent d’utiliser l’entropie de Shannon pour mesurer la diversité structurelle.
 Cette idée est explorée ici pour définir une mesure de diversité bidimensionnelle (croisant par exemple les espèces et les classes de diamètres) et étendue à la diversité HCDT.</p>
-<p>Pour la suite, les données sont organisées comme dans le tableau <a href="16-sec-jointeCadre.html#tab:Notations2">16.1</a>: les individus appartiennent à l’espèce <span class="math inline">\(s\)</span> et à la classe <span class="math inline">\(i\)</span> avec la probabilité <span class="math inline">\(p_{s,i}\)</span> telle que <span class="math inline">\(\sum_s{\sum_i{p_{s,i}}}=1\)</span> (au lieu de <span class="math inline">\(\sum_i{p_{s|i}}=1\)</span> dans les chapitres précédents).</p>
+<p>Pour la suite, les données sont organisées comme dans le tableau <a href="#tab:Notations2"><strong>??</strong></a>: les individus appartiennent à l’espèce <span class="math inline">\(s\)</span> et à la classe <span class="math inline">\(i\)</span> avec la probabilité <span class="math inline">\(p_{s,i}\)</span> telle que <span class="math inline">\(\sum_s{\sum_i{p_{s,i}}}=1\)</span> (au lieu de <span class="math inline">\(\sum_i{p_{s|i}}=1\)</span> dans les chapitres précédents).</p>
 
+<p></p>
 
-<table class="table table-striped" style="font-size: 9px; margin-left: auto; margin-right: auto;">
-<caption style="font-size: initial !important;">
-<span id="tab:Notations2">Table 16.1: </span>Notations des effectifs, tableau espèces-classes.
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-Classe <span class="math inline">\(i\)</span>
-</th>
-<th style="text-align:left;">
-<span class="math inline">\(\dots\)</span> Total: Communauté
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Espèce <span class="math inline">\(s\)</span>
-</td>
-<td style="text-align:left;">
-<span class="math inline">\(n_{s,i}\)</span>: nombre d’individus de l’espèce <span class="math inline">\(s\)</span> dans la classe <span class="math inline">\(i\)</span>. <span class="math inline">\(\hat{p}_{s|i}=n_{s,i}/n_{+i}\)</span> est l’estimateur de la probabilité <span class="math inline">\(p_{s|i}\)</span> qu’un individu de la classe <span class="math inline">\(i\)</span> soit de l’espèce <span class="math inline">\(s\)</span>.
-</td>
-<td style="text-align:left;">
-<span class="math inline">\(n_{s+}=\sum_i{n_{s,i}}\)</span>. <span class="math inline">\(p_s=\sum_i{w_{i}p_{s|i}}\)</span>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="math inline">\(\dots\)</span>
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Total
-</td>
-<td style="text-align:left;">
-<span class="math inline">\(n_{+i}\)</span>: nombre d’individus de la classe. <span class="math inline">\({n_{+i}}/{n}=w_i\)</span>: poids de la classe
-</td>
-<td style="text-align:left;">
-<span class="math inline">\(n\)</span>: nombre total d’individus échantillonnés
-</td>
-</tr>
-</tbody>
-</table>
-
+<p></p>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">

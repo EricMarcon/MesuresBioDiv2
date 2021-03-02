@@ -51,8 +51,6 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -485,8 +483,8 @@ Dans le dernier cas, la correction de <code>Tsallis</code> est appliquée à cha
 <p>Exemple: le package contient les données d’inventaire de deux hectares du dispositif de Paracou et la taxonomie des espèces concernées.
 Le calcul de l’indice de Rao, corrigé du biais d’estimation utilise le code suivant:</p>
 <p></p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="8-chap-Phyloentropie.html#cb191-1"></a><span class="kw">data</span>(Paracou618)</span>
-<span id="cb191-2"><a href="8-chap-Phyloentropie.html#cb191-2"></a><span class="kw">PhyloEntropy</span>(Paracou618.MC<span class="op">$</span>Ns, <span class="dv">2</span>, Paracou618.Taxonomy)</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="8-chap-Phyloentropie.html#cb189-1"></a><span class="kw">data</span>(Paracou618)</span>
+<span id="cb189-2"><a href="8-chap-Phyloentropie.html#cb189-2"></a><span class="kw">PhyloEntropy</span>(Paracou618.MC<span class="op">$</span>Ns, <span class="dv">2</span>, Paracou618.Taxonomy)</span></code></pre></div>
 <pre><code>## $Distribution
 ## [1] &quot;Paracou618.MC$Ns&quot;
 ## 
@@ -546,7 +544,7 @@ Les diversités <span class="math inline">\(^{q}_{k}\!D\)</span> calculées à c
 <p>La fonction <code>PhyloDiversity</code> de <em>entropart</em> permet de calculer <span class="math inline">\(^{q}\!\bar{D}(T)\)</span> avec ou sans correction de biais, selon qu’elle traite un vecteur d’abondances ou de probabilités.
 À la suite de l’exemple précédent, les résultats sont présentés sous forme de diversité au lieu d’entropie:</p>
 <p></p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="8-chap-Phyloentropie.html#cb193-1"></a><span class="kw">PhyloDiversity</span>(Paracou618.MC<span class="op">$</span>Ns, <span class="dv">2</span>, Paracou618.Taxonomy)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="8-chap-Phyloentropie.html#cb191-1"></a><span class="kw">PhyloDiversity</span>(Paracou618.MC<span class="op">$</span>Ns, <span class="dv">2</span>, Paracou618.Taxonomy)</span></code></pre></div>
 <pre><code>## $Distribution
 ## [1] &quot;Paracou618.MC$Ns&quot;
 ## 
