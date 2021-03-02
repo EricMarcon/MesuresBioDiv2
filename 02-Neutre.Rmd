@@ -1491,7 +1491,7 @@ Les auteurs montrent que leur mesure est la somme de l'entropie de Shannon et de
 
 Tsallis a montré que les indices de Simpson et de Shannon étaient des cas particuliers d'entropie généralisée, retrouvant, sans faire le rapprochement [@Ricotta2005], la définition d'un indice de diversité de @Patil1982.
 
-Ces résultats ont été complétés par d'autres et repris en écologie par @Keylock2005 et Jost (-@Jost2006; -@Jost2007). 
+Ces résultats ont été complétés par d'autres et repris en écologie par @Keylock2005 et Jost [-@Jost2006; -@Jost2007]. 
 Là encore:
 
 * Le nombre d'espèces moins 1 est $^{0}\!H$;
