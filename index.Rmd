@@ -2,6 +2,7 @@
 title: "Mesures de la Biodiversité"
 author: "Eric Marcon"
 date: "`r Sys.Date()`"
+github-repo: EricMarcon/MesuresBioDiv2
 biblio-style: authoryear-ibid
 bibliography: library.bib
 cite-style: verbose-inote

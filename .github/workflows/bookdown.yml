@@ -20,7 +20,8 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "bookdown", "tinytex"))
-          tinytex::install_tinytex()
+          # installation LaTeX HS sur GH Actions 8/3/21. Force mirror
+          tinytex::install_tinytex(repository="https://mirror.las.iastate.edu/tex-archive/")
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Render book
