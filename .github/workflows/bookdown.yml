@@ -26,8 +26,8 @@ jobs:
         shell: Rscript {0}
       - name: Render book
         run: |
-          bookdown::render_book("index.Rmd", "bookdown::pdf_book")
-          bookdown::render_book("index.Rmd", "bookdown::gitbook")
+          bookdown::render_book("index.Rmd", "bookdown::pdf_book", envir = new.env())
+          bookdown::render_book("index.Rmd", "bookdown::gitbook", envir = new.env())
         shell: Rscript {0}
       - name: Upload artifact
         uses: actions/upload-artifact@v1
