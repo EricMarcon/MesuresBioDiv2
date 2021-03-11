@@ -11,8 +11,8 @@ bookdown::gitbook:
       after: |
         <li><a href="https://github.com/EricMarcon/MesuresBioDiv2" target="blank">Publié avec bookdown, hébergé sur GitHub</a></li>
     download: "pdf"
-    includes:
-      in_header: gtag.js
+  includes:
+    in_header: gtag.js
   split_by: "chapter+number"
 bookdown::pdf_book:
   template: latex/template.tex
