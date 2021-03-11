@@ -24,10 +24,13 @@ jobs:
           tinytex::install_tinytex(repository="https://mirror.las.iastate.edu/tex-archive/")
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
-      - name: Render book
+      - name: Render pdf book
         run: |
-          bookdown::render_book("index.Rmd", "bookdown::pdf_book", envir = new.env())
-          bookdown::render_book("index.Rmd", "bookdown::gitbook", envir = new.env())
+          bookdown::render_book("index.Rmd", "bookdown::pdf_book")
+        shell: Rscript {0}
+      - name: Render gitbook
+        run: |
+          bookdown::render_book("index.Rmd", "bookdown::gitbook")
         shell: Rscript {0}
       - name: Upload artifact
         uses: actions/upload-artifact@v1
