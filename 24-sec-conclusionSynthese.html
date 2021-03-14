@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="24 Synthèse | Mesures de la Biodiversité." />
-  
+  <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="24 Synthèse | Mesures de la Biodiversité" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-03-02" />
+<meta name="date" content="2021-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -430,8 +432,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="sec:conclusionSynthese" class="section level1">
 <h1><span class="header-section-number">24</span> Synthèse</h1>
-<p></p>
-<p></p>
+
+
 <p>La biodiversité peut être mesurée de nombreuses façons.
 La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire.
 D’autres mesures de diversité ont été présentées ici, d’autres encore peuvent être trouvées dans la littérature.
@@ -440,14 +442,14 @@ La diversité de Hurlbert possède toutes ses propriétés et une correction tr�
 <div id="entropie-et-diversité-1" class="section level2">
 <h2><span class="header-section-number">24.1</span> Entropie et diversité</h2>
 
-<p></p>
+
 <div class="figure" style="text-align: center"><span id="fig:ConclusionFig"></span>
 <img src="images/ConclusionFig.png" alt="Généralisation des mesures classiques de diversité. La figure présente les mesures d’entropie, qui peuvent toutes être transformées en mesures de diversité au sens strict. Toutes ces entropies sont des cas particuliers de l’entropie de Ricotta et Szeidl, qui peut être transformée en diversité de Leinster et Cobbold." width="60%" />
 <p class="caption">
 Figure 24.1: Généralisation des mesures classiques de diversité. La figure présente les mesures d’entropie, qui peuvent toutes être transformées en mesures de diversité au sens strict. Toutes ces entropies sont des cas particuliers de l’entropie de Ricotta et Szeidl, qui peut être transformée en diversité de Leinster et Cobbold.
 </p>
 </div>
-<p></p>
+
 <p>L’entropie est la surprise moyenne fournie par les individus d’une communauté.
 Le choix de la fonction d’information qui mesure cette surprise à partir des probabilités d’occurrence des espèces (ou d’autres catégories) permet de définir les mesures de diversités neutres, fonctionnelles ou phylogénétique présentées ici.</p>
 <p>L’entropie est transformée en diversité au sens strict par une fonction croissante (l’exponentielle déformée), ce qui simplifie son interprétation en tant que nombre équivalent d’espèces, dans une distribution idéale dans laquelle toutes les espèces seraient équifréquentes.</p>
@@ -595,9 +597,9 @@ Une approche similaire mais plus exhaustive <span class="citation">(Ceballos, Eh
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
+"github": true,
+"facebook": false,
+"twitter": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,

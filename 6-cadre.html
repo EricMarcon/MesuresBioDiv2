@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="6 Cadre | Mesures de la Biodiversité." />
-  
+  <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="6 Cadre | Mesures de la Biodiversité" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-03-02" />
+<meta name="date" content="2021-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -454,9 +456,9 @@ L’entropie phylogénétique et la diversité de Leinster et Cobbold sont ensui
 <p>Des exemples montrent comment calculer cette diversité, principalement à l’aide du package <em>entropart</em>.
 Le package contient les données d’inventaire de deux hectares du dispositif de Paracou et la taxonomie des espèces concernées:</p>
 <p></p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="6-cadre.html#cb159-1"></a><span class="kw">library</span>(<span class="st">&quot;entropart&quot;</span>)</span>
-<span id="cb159-2"><a href="6-cadre.html#cb159-2"></a><span class="co"># Chargement du jeu de données</span></span>
-<span id="cb159-3"><a href="6-cadre.html#cb159-3"></a><span class="kw">data</span>(Paracou618)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="6-cadre.html#cb161-1"></a><span class="kw">library</span>(<span class="st">&quot;entropart&quot;</span>)</span>
+<span id="cb161-2"><a href="6-cadre.html#cb161-2"></a><span class="co"># Chargement du jeu de données</span></span>
+<span id="cb161-3"><a href="6-cadre.html#cb161-3"></a><span class="kw">data</span>(Paracou618)</span></code></pre></div>
 <p></p>
 <div id="dissimilarité-et-distance" class="section level2">
 <h2><span class="header-section-number">6.1</span> Dissimilarité et distance</h2>
@@ -752,9 +754,9 @@ Elles sont détaillées au chapitre suivant.</p>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
+"github": true,
+"facebook": false,
+"twitter": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,

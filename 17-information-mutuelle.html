@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="17 Information mutuelle | Mesures de la Biodiversité." />
-  
+  <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="17 Information mutuelle | Mesures de la Biodiversité" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-03-02" />
+<meta name="date" content="2021-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -430,7 +432,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="information-mutuelle" class="section level1">
 <h1><span class="header-section-number">17</span> Information mutuelle</h1>
-<p></p>
+
 <div class="Essentiel">
 <p>
 La récursivité est une propriété importante de l’entropie de Shannon qui permet d’envisager la diversité de façon multidimensionnelle, par exemple la diversité des espèces et des classes de diamètre des arbres d’une forêt (appelée diversité structurelle). La récursivité apporte des résultats nettement moins intéressants quand l’entropie HCDT est considérée.
@@ -439,7 +441,7 @@ La récursivité est une propriété importante de l’entropie de Shannon qui p
 Le nombre effectif d’habitats occupés par une espèce peut être interprété comme la taille de sa niche écologique: la mesure de la diversité des communautés peut apporter une information aussi intéressante que la diversité des espèces.
 </p>
 </div>
-<p></p>
+
 <p>Plusieurs mesures de diversité ont été construite autour de l’information mutuelle.
 Elles sont présentées ici après leur propriété mathématique fondamentale: la récursivité de l’entropie.</p>
 <div id="récursivité-de-lentropie" class="section level2">
@@ -523,7 +525,7 @@ L’information mutuelle de l’entropie HCDT n’a donc qu’un intérêt limit
 <h2><span class="header-section-number">17.2</span> Taille de niche</h2>
 <p><span class="citation">Allan (<a href="#ref-Allan1975" role="doc-biblioref">1975</a>)</span> présente plusieurs décompositions de l’entropie jointe (de Shannon) fondées sur l’information mutuelle, dans une matrice en trois dimensions: microhabitats <span class="math inline">\(\times\)</span> sites <span class="math inline">\(\times\)</span> espèces.</p>
 <p>Après <span class="citation">Levins (<a href="#ref-Levins1968" role="doc-biblioref">1968</a>)</span>, <span class="citation">Colwell et Futuyma (<a href="#ref-Colwell1971" role="doc-biblioref">1971</a>)</span> et <span class="citation">Pielou (<a href="#ref-Pielou1972" role="doc-biblioref">1972</a>)</span>, Allan s’intéresse notamment à la taille de la niche (<em>niche width</em>) des espèces.
-Si les classes de la matrice espèces-classes (Table <a href="#tab:Notations2"><strong>??</strong></a>) sont des habitats distincts les uns des autres, la diversité des habitats occupés par une espèce est la taille de sa niche, et la diversité <span class="math inline">\(\gamma\)</span> mesurée sur l’ensemble des habitats peut être comprise comme le chevauchement des niches <span class="citation">(Pielou <a href="#ref-Pielou1972" role="doc-biblioref">1972</a>)</span>.
+Si les classes de la matrice espèces-classes (Table <a href="16-sec-jointeCadre.html#tab:Notations2">16.1</a>) sont des habitats distincts les uns des autres, la diversité des habitats occupés par une espèce est la taille de sa niche, et la diversité <span class="math inline">\(\gamma\)</span> mesurée sur l’ensemble des habitats peut être comprise comme le chevauchement des niches <span class="citation">(Pielou <a href="#ref-Pielou1972" role="doc-biblioref">1972</a>)</span>.
 La taille de la niche peut être mesurée par l’entropie de Shannon, mais aussi le nombre de Hill d’ordre 2, qui est donc le nombre effectif d’habitats de Simpson <span class="citation">(Levins <a href="#ref-Levins1968" role="doc-biblioref">1968</a>)</span>.</p>
 <p>Cette approche est très similaire à celle des économistes qui utilisent l’indice de Theil comme mesure de concentration spatiale, en intégrant une signification écologique si les localisations possibles correspondent à des habitats différents: une espèce présente dans tous les habitats avec la même probabilité est aussi généraliste que possible.</p>
 <p><span class="citation">Colwell et Futuyma (<a href="#ref-Colwell1971" role="doc-biblioref">1971</a>)</span> traitent le problème posé par le fait que les habitats pris en compte dans l’échantillonnage ne sont pas totalement distincts.
@@ -594,9 +596,9 @@ Pour revenir au cas simple dans lequel les habitats ont des poids égaux, les co
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
+"github": true,
+"facebook": false,
+"twitter": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,

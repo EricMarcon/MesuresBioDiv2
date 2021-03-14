@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="15 Autres approches | Mesures de la Biodiversité." />
-  
+  <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="15 Autres approches | Mesures de la Biodiversité" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-03-02" />
+<meta name="date" content="2021-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
 <script>
@@ -436,13 +438,81 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sec:PCcadre" class="section level3">
 <h3><span class="header-section-number">15.1.1</span> Cadre</h3>
 
-<p></p>
 
-<p></p>
+<table class="table table-striped" style="font-size: 8px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:Couteron">Table 15.1: </span>Tableau d’occurrence des espèces.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Forêt <span class="math inline">\(k\)</span>, Parcelle <span class="math inline">\(j\)</span>, Placette <span class="math inline">\(i\)</span>, Arbre <span class="math inline">\(h\)</span>
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(\dots\)</span> Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Famille <span class="math inline">\(u\)</span>
+</td>
+<td style="text-align:left;">
+Genre <span class="math inline">\(t\)</span>
+</td>
+<td style="text-align:left;">
+Espèce <span class="math inline">\(s\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(n_{sh}=1\)</span> si l’arbre <span class="math inline">\(h\)</span> appartient à l’espèce <span class="math inline">\(s\)</span>, <span class="math inline">\(0\)</span> sinon. <span class="math inline">\(n_{s\cdot}={n_{s+}}/{n}\)</span>
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(\dots\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\dots\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\dots\)</span>
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(q_{+h}=p_{+h}=1\)</span>
+</td>
+<td style="text-align:left;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+
 <p>Un cadre général de partitionnement de la diversité, applicable aux trois indices classiques, est proposé par <span class="citation">Pélissier et Couteron (<a href="#ref-Pelissier2007" role="doc-biblioref">2007</a>)</span>, en conclusion d’une série d’articles <span class="citation">(Pélissier et al. <a href="#ref-Pelissier2003" role="doc-biblioref">2003</a>; Couteron et Pélissier <a href="#ref-Couteron2004" role="doc-biblioref">2004</a>)</span>.</p>
 <p>Les données sont désagrégées jusqu’au niveau de l’individu.
 Suivant les notations précédentes, les placettes sont considérées comme le regroupement d’arbres, indicés par <span class="math inline">\(h\)</span>.</p>
-<p>Le tableau <a href="#tab:Couteron"><strong>??</strong></a> est appelé tableau d’occurrence des espèces.
+<p>Le tableau <a href="15-sec-betaAutres.html#tab:Couteron">15.1</a> est appelé tableau d’occurrence des espèces.
 Il ne contient que des 0 et des 1.
 Chaque arbre (colonne) a une seule valeur 1 dans la cellule correspondant à son espèce.</p>
 <p>Un arbre moyen s’il pouvait exister appartiendrait partiellement à chaque espèce, proportionnellement à son effectif.
@@ -543,9 +613,9 @@ Ce n’est pas la diversité <span class="math inline">\({KW}_{\rho}\)</span> de
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
+"github": true,
+"facebook": false,
+"twitter": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
