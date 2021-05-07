@@ -2,18 +2,32 @@
 title: "Mesures de la Biodiversité"
 author: "Eric Marcon"
 date: "`r Sys.Date()`"
+output: pdf_document
+url: https://github.com/EricMarcon/MesuresBioDiv2
 github-repo: EricMarcon/MesuresBioDiv2
-biblio-style: authoryear-ibid
-bibliography: library.bib
-cite-style: verbose-inote
-classoption:
-- extrafontsizes
-- onecolumn
-- openright
-colorlinks: yes
+maintitlepage:
+  epigraph: |
+    \end{itemize}
+    Ce document est réalisé de façon dynamique et reproductible grâce à:
+    \begin{itemize}
+      \item \LaTeX, dans sa distribution Miktex (\url{http://miktex.org/}) et la classe memoir (\url{http://www.ctan.org/pkg/memoir}).
+      \item R (\url{http://www.r-project.org/}) et RStudio (\url{http://www.rstudio.com/})
+      \item bookdown (\url{http://bookdown.org/})
+    Son code source est sur GitHub: \url{https://github.com/EricMarcon/MesuresBioDiv2/}.
+    Le texte mis à jour en continu peut être lu sur \url{https://ericmarcon.github.io/MesuresBioDiv2/}.
+    Les versions d'étape sont déposées sur HAL: \url{https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/}.
+  credits: |
+    Photographie en couverture: Hadrien Lalagüe
+filigrane: Filigrane
+lang: fr-FR
+otherlangs: en-US
+papersize: A4
+fontsize: 11pt
+toc-depth: 3
+bibliography: references.bib
 biblatexoptions:
 - backend=biber
-- citestyle=verbose-inote
+- style=verbose-inote
 - pageref=true
 - isbn=false
 - backref=true
@@ -23,54 +37,38 @@ biblatexoptions:
 - maxbibnames=150
 - sorting=nyt
 - sortcites=false
-description: Mesures de la Biodiversité.
-documentclass: memoir
-fig_crop: yes
-fontsize: 11pt
-fourthpagefontsize: normalsize
-graphics: yes
-lang: fr
-link-citations: yes
-maintitlepage:
-  epigraph: |
-    Ce document est réalisé de façon dynamique et reproductible grâce à:
-
-    \begin{itemize}
-      \item \LaTeX, dans sa distribution Miktex (\url{http://miktex.org/}) et la classe memoir (\url{http://www.ctan.org/pkg/memoir}).
-      \item R (\url{http://www.r-project.org/}) et RStudio (\url{http://www.rstudio.com/})
-      \item bookdown (\url{http://bookdown.org/})
-    \end{itemize}
-    
-    Son code source est sur GitHub: \url{https://github.com/EricMarcon/MesuresBioDiv2/}.
-    
-    Le texte mis à jour en continu peut être lu sur \url{https://ericmarcon.github.io/MesuresBioDiv2/}.
-    
-    Les versions d'étape sont déposées sur HAL: \url{https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/}.
-
-otherlangs:
-- en-US
-- en-GB
-- fr
-papersize: A4
-resume: |
+chaptersummary: L'essentiel
+backcover:
+- language: french
+  abstract: |
+    La biodiversité peut être mesurée de nombreuses façons.
   
-  La biodiversité peut être mesurée de nombreuses façons.
-
-  La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire. 
-  L’entropie est la surprise moyenne fournie par les individus d’une communauté.
-  Le choix de la fonction d’information qui mesure cette surprise à partir des probabilités d’occurence des espèces (ou d’autres catégories) permet de définir les mesures de diversités neutres, fonctionnelles ou phylogénétique présentées ici. 
-  L’entropie est transformée en diversité au sens strict par une fonction croissante (l’exponentielle déformée), ce qui simplifie son interprétation en tant que nombre équivalent d’espèces.
-
-  L’entropie phylogénétique généralise les indices de diversité classique, intègre si nécessaire la distance entre espèces, peut être écomposée et corrigée des biais d’estimation.
-  Sa transformation en diversité au sens strict permet d’interpréter les valeurs sous une forme unique : un nombre équivalent d’espèces et un nombre équivalent de communautés. 
-  La diversité de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet d’autres définitions de la distance entre espèces. 
-
-  Le paramétrage des mesures (l’ordre de la diversité) permet de donner plus ou moins d’importance aux espèces rares et de tracer des profils de diversité. 
-
-  La construction de ce cadre méthodologique est présentée en détail ainsi que plusieurs approches différentes, qui constituent l'état de l'art de la mesure de la biodiversité.
+    La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire. 
+    L’entropie est la surprise moyenne fournie par les individus d’une communauté.
+    Le choix de la fonction d’information qui mesure cette surprise à partir des probabilités d’occurence des espèces (ou d’autres catégories) permet de définir les mesures de diversités neutres, fonctionnelles ou phylogénétique présentées ici. 
+    L’entropie est transformée en diversité au sens strict par une fonction croissante (l’exponentielle déformée), ce qui simplifie son interprétation en tant que nombre équivalent d’espèces.
+  
+    L’entropie phylogénétique généralise les indices de diversité classique, intègre si nécessaire la distance entre espèces, peut être écomposée et corrigée des biais d’estimation.
+    Sa transformation en diversité au sens strict permet d’interpréter les valeurs sous une forme unique : un nombre équivalent d’espèces et un nombre équivalent de communautés. 
+    La diversité de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet d’autres définitions de la distance entre espèces. 
+  
+    Le paramétrage des mesures (l’ordre de la diversité) permet de donner plus ou moins d’importance aux espèces rares et de tracer des profils de diversité. 
+  
+    La construction de ce cadre méthodologique est présentée en détail ainsi que plusieurs approches différentes, qui constituent l'état de l'art de la mesure de la biodiversité.
+  abstractlabel: Résumé
+backcoverfontsize: normalsize
+fig_crop: yes
+documentclass: memoir
+classoption:
+- extrafontsizes
+- onecolumn
+- openright
 site: bookdown::bookdown_site
 always_allow_html: yes
-toc-depth: 3
+graphics: yes
+link-citations: yes
+colorlinks: yes
+description: Mesures de la Biodiversité.
 ---
 
 <!-- Commande nécessaire pour la copie de l'icône "Essentiel" en HTML--> 
@@ -87,9 +85,18 @@ InstallPackages <- function(Packages) {
   }
   invisible(sapply(Packages, InstallPackage))
 }
+
 # Basic packages
-InstallPackages(c("bookdown", "devtools", "formatR", "kableExtra", "knitr", "rmarkdown"))
-library("kableExtra") # Mandatory to load css and more
+InstallPackages(c("bookdown", "formatR", "kableExtra", "magick", "ragg"))
+
+# kableExtra must be loaded 
+if (knitr::opts_knit$get("rmarkdown.pandoc.to") == "docx") {
+  # Word output (https://stackoverflow.com/questions/35144130/in-knitr-how-can-i-test-for-if-the-output-will-be-pdf-or-word)
+  # Do not use autoformat (https://github.com/haozhu233/kableExtra/issues/308)
+  options(kableExtra.auto_format = FALSE)
+}
+library("kableExtra")
+
 # Chunk font size hook: allows size='small' or any valid Latex font size in chunk options
 def.chunk.hook  <- knitr::knit_hooks$get("chunk")
 knitr::knit_hooks$set(chunk = function(x, options) {

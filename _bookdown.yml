@@ -1,4 +1,3 @@
 book_filename: "MesuresBD"
-repo: "https://github.com/EricMarcon/MesuresBioDiv2"
 output_dir: "docs"
 delete_merged_file: true
