@@ -32,7 +32,7 @@ Enfin, la diversité $\beta$ spatialement explicite est introduite au chapitre \
 
 # Indice $\alpha$ de Fisher {#chap:Fisher}
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
 L'Indice $\alpha$ de Fisher est la pente de la relation linéaire entre le nombre d'espèces observées et le logarithme du nombre d'individus inventoriés.
   Cette relation correspond à une distribution d'abondance des espèces en log-séries, valide à l'échelle de la méta-communauté.
   Son utilisation à l'échelle locale est discutable.
@@ -255,7 +255,7 @@ ggplot(data.frame(x = log(1:ncol(Inventaire)), y = nEspeces)) +
 
 # Accumulation de la diversité locale {#chap:Accumulation}
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   La courbe d'accumulation (SAC) décrit comment la richesse, ou la diversité, augmente en fonction de l'effort d'échantillonnage.
   Sous l'hypothèse d'un tirage multinomial des individus observés, les formules de raréfaction (estimation du nombre d'espèces pour une surface inférieure à celle inventoriée) sont bien contenues.
   La structure spatiale rend les observations dépendantes entre elles et doit être prise en compte.
@@ -593,7 +593,7 @@ La distribution des espèces non observées peut maintenant être estimée dans 
 
 # Diversité régionale
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   La relation d'Arrhenius prévoit que logarithme du nombre d'espèces soit proportionnel au logarithme de la surface (de façon équivalente, que le nombre d'espèces soit proportionnel à la surface à une puissance $z$ constante).
   Elle est plus robuste à l'échelle régionale que le modèle de Gleason qui prédit que le nombre d'espèces, plutôt que son logarithme, soit en relation linéaire avec le logarithme de la surface (très proche du modèle de Fisher dans lequel le nombre d'espèces est proportionnel au logarithme du nombre d'individus échantillonnés à partir d'une certaine surface). 
 ```
@@ -845,7 +845,7 @@ Cette méthode permet l'extrapolation à de très grandes surfaces de mesures de
 # Diversité $\beta$ spatialement explicite {#chap:betasp}
 
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   L'indice de Simpson spatialement explicite ou le variogramme de complémentarité relient la diversité $\beta$ à la distance entre communautés.
 ```
 

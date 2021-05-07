@@ -8,7 +8,7 @@ library("ade4")
 ```
 
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   La diversité $\beta$ désigne la différentiation entre communautés, c'est-à-dire une mesure de divergence de composition spécifique entre elle, ou bien la divergence entre elles et leur assemblage, appelée diversité proportionnelle.
   La conciliation de ces deux définitions fait toujours l'objet de recherches.
 ```
@@ -231,7 +231,7 @@ La dépendance entre $^{q}\!D_{\beta}$ et $^{q}\!D_{\alpha}$ est le prix à paye
 
 # Diversité de différentiation {#chap:BetaPaires}
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   La diversité $\beta$ de différentiation mesure la dissimilarité entre communautés, généralement considérées par paires.
   Les dissimilarités les plus connues sont celles de Jaccard ou de Sørensen.
   Ces mesures peuvent prendre en compte la seule présence ou absence des espèces, leur abondance ou même la similarité entre les espèces, peuvent être traitées par l'analyse multivariée et être testées contre l'hypothèse de nullité de la dissimilarité.
@@ -847,7 +847,7 @@ La méthode de permutation originale est inappropriée et donc corrigée [@Bacar
 # Décomposition de l'entropie HCDT {#chap:DedompHCDT}
 
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   L'entropie HCDT $\gamma$ peut être décomposée en somme de l'entropie $\alpha$ et la moyenne de la divergence entre la distribution de chaque communauté et celle de la méta-communauté.
   L'entropie $\beta$ est donc interprétable comme le gain d'information apporté par la connaissance de la distribution détaillée des communautés en plus de celle, aggrégée, de la méta-communauté.
   L'entropie $\beta$ va de pair avec le nombre effectif de communautés, c'est-à-dire le nombre de communautés de même poids, sans aucune espèce commune, qui fourniraient la même valeur d'entropie $\beta$ que les communautés réelles.
@@ -1362,7 +1362,7 @@ Sa valeur peut être négative pour $q<1$, on se limitera donc à $q \ge 1$.
 
 # Décomposition de la diversité phylogénétique et fonctionnelle
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   L'entropie phylogénétique et l'entropie de Ricotta et Szeidl se décomposent comme l'entropie HCDT.
   La diversité $\beta$ phylogénétique et la diversité $\beta$ de Leinster et Cobbold sont des nombres effectifs de communautés, c'est-à-dire des communautés de même poids et dont les espèces seraient totalement dissimilaires qui fourniraient la même entropie $\beta$ que les communautés réelles.
 ```
@@ -1517,7 +1517,7 @@ Le partitionnement de la diversité fonctionnelle de la méta-communauté `Parac
 
 # Tests de significativité
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   Les tests de significativité permettent d'affirmer que des communautés sont réellement différentiées. En complément, les intervalles de confiance des mesures de diversité peuvent être calculés sous l'hypothèse d'une distribution multinomiale.
 ```
 
