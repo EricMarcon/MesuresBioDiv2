@@ -46,10 +46,7 @@
 \usepackage{xcolor}
 
 
-% Geometry package
-
 % Listings package
-
 
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -123,46 +120,8 @@
 \makeatother
 
 % Include headers (preamble.tex) here
-%%% Complete the preamble of the LaTeX template
-%%%------------------------------------------------------------------------------
-
-%%% Packages
-\usepackage{lipsum} % Dummy text.
-% Utilisation :
-% Ajouter ici d'éventuels packages LaTeX
-
-
-%%% Environnement "Essentiel" en début de chapitre
-\usepackage[tikz]{bclogo}
-\newenvironment{Essentiel}
-  {\begin{bclogo}[logo=\bctrombone, noborder=true, couleur=lightgray!50]{L'essentiel}\parindent0pt}
-  {\end{bclogo}}
-% Utilisation :
-%
-%```{block, type='Essentiel'}
-% Texte à mettre en valeur
-% ```
-
-%%% Blocs de code taille scriptsize
-\let\oldverbatim\verbatim
-\def\verbatim{\oldverbatim\scriptsize}
-% Utilisation :
-% S'applique aux blocs de code et résultats du code R
-% opts_chunk$set(size="scriptsize") s'applique au code et ses résultats
-% Si désaccord sur les résultats, \def\verbatim{...} est prioritaire
-
-
-%%% Langues supplémentaires.
-% Commenter pour désactiver, décommenter pour activer
-% Référence: https://mirrors.chevalier.io/CTAN/macros/unicodetex/latex/polyglossia/polyglossia.pdf (table 3)
-\usepackage{polyglossia}
-% fr-FR
-\setotherlanguage[]{french}
-% Au choix: Anglais en-GB ou en-US (défaut)
-%\setotherlanguage[variant=british]{english}
-\setotherlanguage[]{english}
-% pt-BR
-%\setotherlanguage[variant=brazilian]{portuguese}
+% Add LaTeX code into the preamble of the document here
+\hyphenation{bio-di-ver-si-ty sap-lings}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -180,51 +139,116 @@
 
 \usepackage{enumitem}
 
+% Polyglossia
 \usepackage{polyglossia}
-\setmainlanguage[]{french}
+\setmainlanguage{fr-FR}
+\setotherlanguage{en-US}
 
-
-\usepackage[style=authoryear-ibid,backend=biber,citestyle=verbose-inote,pageref=true,isbn=false,backref=true,giveninits=true,uniquename=init,maxcitenames=2,maxbibnames=150,sorting=nyt,sortcites=false]{biblatex}
-\addbibresource{library.bib}
+\usepackage[backend=biber,style=verbose-inote,pageref=true,isbn=false,backref=true,giveninits=true,uniquename=init,maxcitenames=2,maxbibnames=150,sorting=nyt,sortcites=false]{biblatex}
+\addbibresource{references.bib}
 
 % cslreferences environment required by pandoc > 2.7
 
-% Specific commands for EcoFoG style. Must come after biblatex.
-\usepackage{latex/BookTemplate}
 
-% PDF title page to insert
-
-% Hyperref comes last
-\usepackage{hyperref}
-\hypersetup{
-  pdftitle={Mesures de la Biodiversité},
-  pdfauthor={Eric Marcon},
-  colorlinks=true,
-  linkcolor=Maroon,
-  citecolor=Blue,
-  urlcolor=Blue,
-  breaklinks=true}
-
-% Don't use monospace font for urls
-\urlstyle{same}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% memoiR format
 
 
-% Title, author, etc. from YAML to LaTeX
+% Chapter Summary environment 
+\usepackage[tikz]{bclogo}
+\newenvironment{Summary}
+  {\begin{bclogo}[logo=\bctrombone, noborder=true, couleur=lightgray!50]{L'Essentiel}\parindent0pt}
+  {\end{bclogo}}
+% Syntax:
+%
+%```{block, type='Summary'}
+% Deliver message here.
+% ```
+
+
+% scriptsize code 
+\let\oldverbatim\verbatim
+\def\verbatim{\oldverbatim\scriptsize}
+% Applies to code blocks and R code results
+% code chunk options size='scriptsize' applies only to R code and results
+% if the code chunk sets a different size, \def\verbatim{...} is prioritary for code results 
+
+
+% Layout
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Mesures de la Biodiversité}
+% Based on memoir, style companion
+\newcommand{\MemoirChapStyle}{companion}
+\newcommand{\MemoirPageStyle}{companion}
+
+% Space between paragraphs
+\RequirePackage{parskip}
+	\abnormalparskip{3pt}
+
+% Adjust margin paragraphs vertical position
+\RequirePackage{marginfix}
 
 
-\author{Eric Marcon}
+% Margins
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% allow use of '-',+','/' ans '*' to make simple length computation
+\RequirePackage{calc}
 
-\date{2021-03-14}
+% Full-width figures utilities
+\newlength\widthw % full width
+\newlength{\rf}
+\newcommand*{\definesHSpace}{
+  \strictpagecheck % slower but efficient detection of odd/even pages
+  \checkoddpage
+  \ifoddpage
+  \setlength{\rf}{0mm}
+  \else
+  \setlength{\rf}{\marginparsep+\marginparwidth}
+  \fi
+}
+
+\makeatletter
+% 1" margins for the front matter.
+\newcommand*{\SmallMargins}{
+  \setlrmarginsandblock{1in}{1in}{*}
+  \setmarginnotes{0.1in}{0.1in}{0.1in}
+  \setulmarginsandblock{1.5in}{1in}{*}
+  \checkandfixthelayout
+  \ch@ngetext
+  \clearpage
+  \setlength{\widthw}{\textwidth+\marginparsep+\marginparwidth}
+  \footnotesatfoot
+  \chapterstyle{\MemoirChapStyle}	% Chapter and page styles must be recalled
+  \pagestyle{\MemoirPageStyle}
+}
+
+% 3" outer margin for the main matter
+\newcommand*{\LargeMargins}{
+  \setlrmarginsandblock{1in}{3in}{*}
+  \setmarginnotes{0.2in}{1.8in}{0.1in}
+  \setsidecaps{0.2in}{1.8in}
+  \setulmarginsandblock{1.5in}{1in}{*}
+  \checkandfixthelayout
+  \ch@ngetext
+  \clearpage
+  \setlength{\widthw}{\textwidth+\marginparsep+\marginparwidth}
+  \footnotesinmargin
+  \chapterstyle{\MemoirChapStyle}	% Chapter and page styles must be recalled
+  \pagestyle{\MemoirPageStyle}
+}
+
+\makeatother
+
+% Figure captions and footnotes in outer margins
+\usepackage[margincaption,outercaption,ragged,wide]{sidecap}
+%\sidecapmargin{outer}
 
 
 % Main title page with filigrane
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\MainTitlePage}[1][]{
+\newcommand{\MainTitlePage}[2]{
 	\SmallMargins % Margins
 	\pagestyle{empty} % No header/footer
 	~\\ % Print a character or the page will not exist
@@ -241,10 +265,10 @@
 		\flushright
 		{\fontfamily{qtm}\Large \theauthor}
 	\end{textblock}
-	\begin{textblock}{120}[1, 1](225, 297)
+		\begin{textblock}{120}[1, 1](225, 297)
 		\includegraphics[width=10cm]{Filigrane}
 	 \end{textblock}
-	\begin{textblock}{140}[0, 1](50, 262)
+		\begin{textblock}{140}[0, 1](50, 262)
 		\normalfont	Version: \thedate
 	\end{textblock}
 	\newpage
@@ -254,15 +278,128 @@
 	\end{textblock}
 	\begin{textblock}{140}[0,1](40, 270)
 		\centering
-    \includegraphics[width=5cm]{Logo-Lab}\\ \bigskip
-		UMR \'Ecologie des forêts de Guyane\\
-		\url{http://www.ecofog.gf}\\[3\baselineskip]
-		Les opinions émises par les auteurs sont personnelles et n'engagent ni l'UMR EcoFoG ni ses tutelles.
-
-    \tiny{Photographie en couverture: Hadrien Lalagüe}
+    \includegraphics[width=5cm]{logo}\\ \bigskip
+    #2
 	\end{textblock}
 	\newpage
 }
+
+
+% Clear page and open an even one (\clearpage opens an odd one)
+\newcommand{\evenpage}{
+  \clearpage
+	\strictpagecheck % slower but efficient detection of odd/even pages
+  \checkoddpage
+  \ifoddpage
+    \thispagestyle{empty}
+    ~\\ % Print a character or the page will not exist
+    \newpage
+  \else
+    % do nothing
+  \fi
+}
+
+% Text blocks
+\RequirePackage[absolute,overlay]{textpos}
+	\setlength{\TPHorizModule}{1mm}
+	\setlength{\TPVertModule}{1mm}
+
+
+%% PDF title page to insert
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage[strict,autostyle]{csquotes}
+% Repeated citation as author-year-title instead of author-title (modification of footcite:note in verbose-inote.cbx)
+\renewbibmacro*{footcite:note}{%
+	\ifnameundef{labelname}
+		{\printfield{label}}
+		{\printnames{labelname}}
+	\setunit*{\nameyeardelim}
+	\iffieldundef{labelyear}
+		{}
+		{\printtext[parens]{\printfield{labelyear}\printfield{userb}}.}
+	\ifsamepage{\the\value{instcount}}{\csuse{cbx@f@\thefield{entrykey}}}
+		{}
+		{\setunit*{\nametitledelim} \printfield[title]{labeltitle}}
+	\setunit*{\addcomma\space}
+	\printtext{
+		\bibstring{seenote}\addnbspace
+		\ref{cbx@\csuse{cbx@f@\thefield{entrykey}}}
+		\iftoggle{cbx:pageref}
+		{
+			\ifsamepage{\the\value{instcount}}	{\csuse{cbx@f@\thefield{entrykey}}}
+			{}
+			{\addcomma\space\bibstring{page}\addnbspace
+			\pageref{cbx@\csuse{cbx@f@\thefield{entrykey}}}
+			}
+		}
+		{}
+	}
+}
+% Normal text in citations, to allow \textcite
+\AtEveryCite{\renewcommand*{\mkbibnamefamily}[1]{\textnormal{#1}}}
+% Add url's to computer softfware and @Misc in general, delete it in other cases
+% in citations...
+\AtEveryCitekey{%
+  \ifentrytype{misc}{%
+  }{%
+  \clearfield{url}%
+  \clearfield{urldate}%
+  }%
+}
+% ... and in bibliography
+\AtEveryBibitem{%
+  \ifentrytype{misc}{%
+  }{%
+  \clearfield{url}%
+  \clearfield{urldate}%
+}%
+}
+
+
+%% Table of Contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fix the typesetting of the part number
+\renewcommand\partnumberlinebox[2]{#2\ ---\ }
+
+
+% Fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Font size of side captions and side notes
+\captionnamefont{\scriptsize}
+\captiontitlefont{\scriptsize}
+\renewcommand{\footnotesize}{\tiny}
+
+
+% Hyperref comes last
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={Mesures de la Biodiversité},
+  pdfauthor={Eric Marcon},
+  colorlinks=true,
+  linkcolor=Maroon,
+  citecolor=Blue,
+  urlcolor=Blue,
+  breaklinks=true}
+
+% Don't use monospace font for urls
+\urlstyle{same}
+
+
+% Title, author, date from YAML to LaTeX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Mesures de la Biodiversité}
+
+\author{Eric Marcon}
+
+\date{2021-05-07}
 
 
 % End of preamble
@@ -276,7 +413,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\MainTitlePage[Ce document est réalisé de façon dynamique et reproductible grâce à:
+\MainTitlePage{Ce document est réalisé de façon dynamique et reproductible grâce à:
 
 \begin{itemize}
   \item \LaTeX, dans sa distribution Miktex (\url{http://miktex.org/}) et la classe memoir (\url{http://www.ctan.org/pkg/memoir}).
@@ -288,7 +425,7 @@ Son code source est sur GitHub: \url{https://github.com/EricMarcon/MesuresBioDiv
 
 Le texte mis à jour en continu peut être lu sur \url{https://ericmarcon.github.io/MesuresBioDiv2/}.
 
-Les versions d'étape sont déposées sur HAL: \url{https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/}.]
+Les versions d'étape sont déposées sur HAL: \url{https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/}.}{Photographie en couverture: Hadrien Lalagüe}
 
 
 % Before Body
@@ -316,15 +453,15 @@ Les versions d'étape sont déposées sur HAL: \url{https://hal-agroparistech.ar
 \chapter*{Motivation}\label{motivation}}
 \addcontentsline{toc}{chapter}{Motivation}
 
-Le terme \emph{biodiversity} est attribué \autocite{Meine2006} à Walter Rosen, un membre du \emph{National Research Council} américain, qui a commencé à contracter les termes \emph{biological diversity} pendant la préparation d'un colloque dont les actes seront publiés sous le titre ``Biodiversity'' \autocite{Wilson1988}.
+Le terme \emph{biodiversity} est attribué \autocite{Meine2006} à Walter Rosen, un membre du \emph{National Research Council} américain, qui a commencé à contracter les termes \emph{biological diversity} pendant la préparation d'un colloque dont les actes seront publiés sous le titre \enquote{Biodiversity} \autocite{Wilson1988}.
 La question de la diversité biologique intéressait les écologues bien avant l'invention de la biodiversité, mais le néologisme a connu un succès fulgurant \autocite{Blandin2014} en même temps qu'il devenait une notion floue, dans lequel chacun peut placer ce qu'il souhaite y trouver, au point de lui retirer son caractère scientifique \autocite{Delord2014}.
 Une cause de ce glissement est que la biodiversité a été nommée pour attirer l'attention sur son érosion, en lien avec la biologie de la conservation.
 Cette érosion concernant potentiellement de nombreux aspects du monde vivant, la définition de la biodiversité fluctue selon les besoins: \textcite{DeLong1996} en recense 85 dans les dix premières années de littérature.
 Les indicateurs de la biodiversité peuvent englober bien d'autres choses que la diversité du vivant: le nombre d'espèces menacées (par exemple la liste rouge de l'IUCN), la taille des populations ou la surface des écosystèmes préservés, la dégradation des habitats, la menace pesant sur des espèces emblématiques\ldots{}
 Une mesure rigoureuse et cohérente de la diversité peut pourtant être construite pour clarifier beaucoup (mais pas tous) des concepts qui constituent la biodiversité.
 
-Dans l'introduction du premier chapitre des actes de ce qui était devenu le ``Forum sur la Biodiversité'', Wilson utilise le mot dans le sens étroit de nombres d'espèces.
-L'élargissement de la notion aux ``systèmes naturels'' et à l'opposé à la diversité génétique intraspécifique est venu du monde de la conservation \autocite{Speth1992}.
+Dans l'introduction du premier chapitre des actes de ce qui était devenu le \enquote{Forum sur la Biodiversité}, Wilson utilise le mot dans le sens étroit de nombres d'espèces.
+L'élargissement de la notion aux \enquote{systèmes naturels} et à l'opposé à la diversité génétique intraspécifique est venu du monde de la conservation \autocite{Speth1992}.
 La déclaration de Michel Loreau, président du du comité scientifique de la conférence de Paris en 2005 \autocite{Loreau2005} en donne une définition aboutie:
 
 \begin{quote}
@@ -584,9 +721,9 @@ Une analyse historique et philosophique en est faite par \textcite{Richards2010}
 L'autre aspect, avec des conséquences pratiques plus immédiates, concerne leur délimitation.
 \textcite{Mayden1997} recense 22 définitions différentes du concept d'espèce.
 
-Le concept le plus répandu est celui d'espèce \emph{biologique} \autocite{Dobzhansky1937}: un ``groupe de populations naturelles isolées reproductivement les unes des autres'' \autocite{Mayr1942}.
+Le concept le plus répandu est celui d'espèce \emph{biologique} \autocite{Dobzhansky1937}: un \enquote{groupe de populations naturelles isolées reproductivement les unes des autres} \autocite{Mayr1942}.
 Lorsque les populations d'une espèce sont isolées géographiquement, leur capacité à se reproduire ensemble est toute théorique (et d'ailleurs rarement vérifiée expérimentalement).
-Des populations allopatriques n'ont pas de flux de gènes réels entre elles et peuvent être considérées comme des espèces distinctes selon le concept d'espèce \emph{phylogénétique}: ``le plus petit groupe identifiable d'individus avec un pattern commun d'ancêtres et de descendants'' \autocite{Cracraft1983}.
+Des populations allopatriques n'ont pas de flux de gènes réels entre elles et peuvent être considérées comme des espèces distinctes selon le concept d'espèce \emph{phylogénétique}: \enquote{le plus petit groupe identifiable d'individus avec un pattern commun d'ancêtres et de descendants} \autocite{Cracraft1983}.
 C'est l'unité génétique détectée par la méthode du coalescent pour la délimitation des espèces \autocite{Sukumaran2017}.
 Le nombre d'espèces phylogénétiques est bien supérieur au nombre d'espèces biologiques.
 Enfin, \textcite{VanValen1976} définit les espèces par la niche écologique qu'elles occupent (à partir de l'exemple des chênes blancs européens) plutôt que par les flux de gènes (permanents entre les espèces distinctes): le concept \emph{écologique} d'espèce est proche de celui de complexe d'espèces \autocite[ensemble d'espèces voisines échangeant des gènes,][]{Pernes1984}.
@@ -602,7 +739,7 @@ L'approche phylogénétique (Chapitre \ref{chap:Phyloentropie}) permet de contou
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 La diversité peut être décrite localement par une courbe d'accumulation
 (SAC) qui représente le nombre d'espèces échantillonnées en fonction de
 l'effort. À une échelle plus large, cette courbe s'appelle relation
@@ -615,7 +752,7 @@ Le taux de couverture est la somme des probabilités des espèces
 observées étant donné l'effort d'échantillonnage. Il peut être estimé
 précisément à partir des données d'inventaire. Le taux de complétude est
 la proportion (en nombre) des espèces observées.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -1035,13 +1172,13 @@ La complétude du même échantillon d'arbres de forêt tropicale que dans l'exe
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 Les indices classiques de diversité sont ceux de Shannon et de Simpson,
 et la richesse spécifique. Ils peuvent être estimés à partir des données
 d'inventaire. L'estimation de la richesse est particulièrement difficile
 et fait l'objet d'une abondante littérature: les estimateurs
 non-paramétriques (Chao et Jackknife) sont les plus utilisés.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -3071,7 +3208,7 @@ Le calcul de la diversité de Hurlbert est possible dans \emph{entropart}:
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 L'entropie est la surprise moyenne apportée par l'observation des
 individus d'une communauté, d'autant plus grande qu'un individu
 appartient à une espèce plus rare. L'entropie HCDT permet d'unifier les
@@ -3090,7 +3227,7 @@ fonction de son ordre et permettent la comparaison de communautés.
 L'estimation de la diversité est difficile pour des ordres inférieurs à
 \(0,5\) dans des taxocènes très divers comme les arbres des forêts
 tropicales.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -3114,7 +3251,7 @@ La présence de \(r_s\) dans l'échantillon est peu étonnante si \(p_s\) est gr
 En revanche, si \(p_s\) est petite, la présence de \(r_s\) est surprenante.
 On définit donc une fonction d'information, \(I(p_s)\), décroissante quand la probabilité augmente, de \(I(0)>0\) (éventuellement \(+\infty\)) à \(I(1)=0\).
 Chaque valeur observée dans l'échantillon apporte une certaine quantité d'information, dont la somme est l'information de l'échantillon.
-\textcite{Patil1982} appellent l'information ``rareté''.
+\textcite{Patil1982} appellent l'information \enquote{rareté}.
 
 La quantité d'information attendue de l'expérience est \(\sum^S_{s=1}{p_s I(p_s) = H(\mathbf{p})}\).
 Si on choisit \(I\left(p_s\right)=-\ln\left(p_s\right)\), \(H\left(\mathbf{p}\right)\) est l'indice de Shannon, mais bien d'autres formes de \(I\left(p_s\right)\) sont possibles.
@@ -3317,7 +3454,7 @@ Il montre que \(^{q}\!R\) respecte les 3 axiomes.
   ^{q}\!D = {\left(\sum^S_{s=1}{p^q_s}\right)}^{\frac{1}{1-q}}.
 \end{equation}
 
-Le souci de Hill était de rendre les indices de diversité intelligibles après l'article remarqué de \textcite{Hurlbert1971} intitulé ``le non-concept de diversité spécifique''.
+Le souci de Hill était de rendre les indices de diversité intelligibles après l'article remarqué de \textcite{Hurlbert1971} intitulé \enquote{le non-concept de diversité spécifique}.
 Hurlbert reprochait à la littérature sur la diversité sa trop grande abstraction et son éloignement des réalités biologiques, notamment en fournissant des exemples dans lesquels l'ordre des communautés n'est pas le même selon l'indice de diversité choisi.
 Les nombres de Hill sont le nombre d'espèces équiprobables donnant la même valeur de diversité que la distribution observée.
 Ils sont des transformations simples des indices classiques:
@@ -3334,7 +3471,7 @@ Ils sont des transformations simples des indices classiques:
 
 Ces résultats avaient déjà été obtenus avec une autre approche par \textcite{MacArthur1965} et repris par \textcite{Adelman1969} dans la littérature économique.
 
-Les nombres de Hill sont des ``nombres effectifs'' ou ``nombres équivalents''.
+Les nombres de Hill sont des \enquote{nombres effectifs} ou \enquote{nombres équivalents}.
 Le concept a été défini rigoureusement par \textcite{Gregorius1991}, d'après \textcite{Wright1931} (qui avait le premier défini la taille effective d'une population): étant donné une variable caractéristique (ici, l'entropie) fonction seulement d'une variable numérique (ici, le nombre d'espèces) dans un cas idéal (ici, l'équiprobabilité des espèces), le nombre effectif est la valeur de la variable numérique pour laquelle la variable caractéristique est celle du jeu de données.
 
 \textcite{Gregorius2014} montre que de nombreux autres indices de diversité sont acceptables dans le sens où ils vérifient les axiomes précédents et, de plus, que la diversité d'un assemblage de communautés est obligatoirement supérieure à la diversité moyenne de ces communautés (l'égalité n'étant possible que si les communautés sont toutes identiques).
@@ -3536,11 +3673,11 @@ On voit immédiatement que l'entropie de Tsallis est le logarithme d'ordre \(q\)
 
 L'entropie est utile pour les calculs: la correction des biais d'estimation notamment.
 Les nombres de Hill, ou \emph{nombres équivalents d'espèces} ou \emph{nombres effectif d'espèces} permettent une appréhension plus intuitive de la notion de biodiversité \autocite{Jost2006}.
-En raison de leurs propriétés, notamment de décomposition (voir le chapitre \ref{chap:DedompHCDT}), \textcite{Jost2007} les appelle ``vraie diversité''.
+En raison de leurs propriétés, notamment de décomposition (voir le chapitre \ref{chap:DedompHCDT}), \textcite{Jost2007} les appelle \enquote{vraie diversité}.
 \textcite{Hoffmann2008} critiquent cette définition totalitaire et fournissent une revue historique plus lointaine sur les origines de ces mesures.
-\textcite{Jost2009} reconnaît qu'un autre terme aurait pu être choisi (``diversité neutre'' ou ``diversité mathématique'' par exemple).
+\textcite{Jost2009} reconnaît qu'un autre terme aurait pu être choisi (\enquote{diversité neutre} ou \enquote{diversité mathématique} par exemple).
 
-\textcite{Dauby2012} écrivent ``diversité au sens strict''; \textcite{Gregorius2010} ``diversité explicite''.
+\textcite{Dauby2012} écrivent \enquote{diversité au sens strict}; \textcite{Gregorius2010} \enquote{diversité explicite}.
 
 Quoi qu'il en soit, les nombres de Hill respectent le principe de réplication (voir \textcite{Chao2010}, section 3 pour une discussion et un historique): si \(I\) communautés de même taille, de même niveau de diversité \(D\), mais sans espèces en commun sont regroupées dans une méta-communauté, la diversité de la méta-communauté doit être \(I\times D\).
 
@@ -3561,7 +3698,7 @@ L'intérêt de ces approches est de fournir une définition paramétrique de la 
   Le biais d'estimation est sensible;
 \item
   \(^{2}\!D\) est l'inverse de l'indice de concentration de Gini-Simpson donne moins d'importance aux espèces rares.
-  \textcite{Hill1973} l'appelle ``le nombre d'espèces très abondantes''.
+  \textcite{Hill1973} l'appelle \enquote{le nombre d'espèces très abondantes}.
   Il comptabilise les interactions possibles entre paires d'individus: les espèces rares interviennent dans peu de paires, et influent peu sur l'indice.
   En conséquence, le biais d'estimation est très petit; de plus, un estimateur non biaisé existe;
 \item
@@ -3682,8 +3819,14 @@ Code R:
 \CommentTok{# Elimination des espèces absentes des deux parcelles}
 \NormalTok{Psi <-}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Psi[Paracou618.MC}\OperatorTok{$}\NormalTok{Ps }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{, }
 \NormalTok{    ])}
-\NormalTok{Psi[, }\DecValTok{1}\NormalTok{] }\OperatorTok{%<>%}\StringTok{ }\NormalTok{sort }\OperatorTok{%>%}\StringTok{ }\NormalTok{cumsum }\OperatorTok{%>%}\StringTok{ }\NormalTok{rev}
-\NormalTok{Psi[, }\DecValTok{2}\NormalTok{] }\OperatorTok{%<>%}\StringTok{ }\NormalTok{sort }\OperatorTok{%>%}\StringTok{ }\NormalTok{cumsum }\OperatorTok{%>%}\StringTok{ }\NormalTok{rev}
+\NormalTok{Psi[, }\DecValTok{1}\NormalTok{] }\OperatorTok{%<>%}
+\StringTok{    }\NormalTok{sort }\OperatorTok{%>%}
+\StringTok{    }\NormalTok{cumsum }\OperatorTok{%>%}
+\StringTok{    }\NormalTok{rev}
+\NormalTok{Psi[, }\DecValTok{2}\NormalTok{] }\OperatorTok{%<>%}
+\StringTok{    }\NormalTok{sort }\OperatorTok{%>%}
+\StringTok{    }\NormalTok{cumsum }\OperatorTok{%>%}
+\StringTok{    }\NormalTok{rev}
 \NormalTok{Psi}\OperatorTok{$}\NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(Psi)}
 \KeywordTok{ggplot}\NormalTok{(Psi, }\KeywordTok{aes}\NormalTok{(x)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_path}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ P006)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_path}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ P018), }
     \DataTypeTok{lty =} \DecValTok{2}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x =} \StringTok{"Espèces"}\NormalTok{, }\DataTypeTok{y =} \StringTok{"Fréquence"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{scale_x_log10}\NormalTok{()}
@@ -3880,7 +4023,7 @@ L'estimateur de Chao et Shen peut être amélioré \autocite{Marcon2015a} en est
 Enfin, la distribution des espèces non échantillonnées peut être ajoutée en estimant leur nombre et en choisissant une loi.
 \textcite{Chao2014c} ont utilisé l'estimateur Chao1 et une distribution géométrique.
 L'estimateur jackknife \autocite{Burnham1979} est plus versatile parce que son ordre peut être adapté aux données quand l'effort d'échantillonnage est trop faible pour que l'estimateur Chao1 soit performant \autocite{Brose2003}.
-Un simple estimateur plug-in, appelé ``estimateur révélé'', peut ensuite être appliqué à cette distribution révélée \autocite{Marcon2015a}.
+Un simple estimateur plug-in, appelé \enquote{estimateur révélé}, peut ensuite être appliqué à cette distribution révélée \autocite{Marcon2015a}.
 
 L'estimateur du taux de couverture généralisé ne fait aucune hypothèse sur les espèces non observées, et n'utilise que le taux de couverture et la technique de Horvitz-Thompson pour estimer leur contribution.
 L'estimateur révélé ne tente aucune correction mais utilise l'estimation la meilleure possible pour la distribution des probabilités.
@@ -4313,7 +4456,7 @@ La mesure normalisée est appelée \emph{case-based entropy} en anglais et vaut
 \end{equation}
 
 \(\mathit{D_c}={^{1}\!D}\) quand toute la communauté est prise en compte (\(c=1\)).
-Les auteurs s'intéressent principalement à la courbe de \(C_c\) en fonction de \(c\) pour montrer \autocite{Castellani2016} que la contribution à la diversité totale des 40\% des composants les moints complexes de systèmes très divers (``des galaxies au gènes'') atteint toujours au moins 60\%, ce résultat étant interprété comme une loi universelle de limitation de la complexité.
+Les auteurs s'intéressent principalement à la courbe de \(C_c\) en fonction de \(c\) pour montrer \autocite{Castellani2016} que la contribution à la diversité totale des 40\% des composants les moints complexes de systèmes très divers (\enquote{des galaxies au gènes}) atteint toujours au moins 60\%, ce résultat étant interprété comme une loi universelle de limitation de la complexité.
 
 Cette mesure peut être étendue à l'entropie HCDT sans difficulté:
 \begin{equation}
@@ -4329,14 +4472,14 @@ Il ne s'agit pas d'une décomposition de la diversité au sens classique du term
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 L'équitabilité mesure l'écart entre la distribution observée et une
 distribution uniforme.
 
 L'indice de Pielou est la mesure d'équitabilité la plus connue. Il a été
 généralisé pour permettre de pondérer plus ou moins les espèces rares,
 de la même façon que l'entropie HCDT.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -4375,7 +4518,7 @@ Une approche axiomatique a été développée par la littérature, revue par \te
 \normalsize
 
 Un critère supplémentaire établi par \textcite{Smith1996}, complété par \textcite{Gosselin2001} est la compatibilité avec la courbe de \textcite{Lorenz1905}, construite en classant les espèces de la moins fréquente à la plus fréquente, et en traçant le cumul des fréquences en fonction du rang \autocite[figure \ref{fig:Tuomisto2012},][]{Tuomisto2012}: une communauté parfaitement équitable est représentée par la bissectrice.
-La surface entre la courbe réelle et la bissectrice est très utilisée en économie pour mesurer l'inégalité sous le nom d'``indice de Gini'' \autocite{Gini1912,Ceriani2012}:
+La surface entre la courbe réelle et la bissectrice est très utilisée en économie pour mesurer l'inégalité sous le nom d'\enquote{indice de Gini} \autocite{Gini1912,Ceriani2012}:
 
 \begin{itemize}
 \tightlist
@@ -4490,7 +4633,7 @@ Cet indice n'est pas invariant par réplication mais est continu par rapport aux
 Une expression de l'équitabilité est souvent donnée à partir de l'indice de Shannon \autocite{Lloyd1964,Sheldon1969,Pielou1966a,Pielou1975}.
 La valeur maximale de l'indice de Shannon est obtenue quand la distribution est parfaitement régulière.
 Alors: \(H_{\max}=\ln S\).
-On a donc défini l'indice, souvent appelé ``indice de Pielou'':
+On a donc défini l'indice, souvent appelé \enquote{indice de Pielou}:
 
 \begin{equation}
   \label{eq:JPielou}
@@ -4766,14 +4909,14 @@ Les résultats sont similaires avec des communautés en log-séries: la corréla
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 La diversité fonctionnelle ou phylogénétique prend en compte la
 proximité des espèces entre elles. Généralement, la distance entre
 espèces est évaluée dans l'espace des traits, approximation de l'espace
 des niches, pour la diversité fonctionnelle et dans un dendrogramme
 représentant la phylogénie ou la taxonomie pour la diversité
 phylogénétique.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -4998,14 +5141,14 @@ Elles sont détaillées au chapitre suivant.
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 De nombreuses mesures de diversité fonctionnelle ou phylogénétique ont
 été développées pour combiner le mieux possible la richesse et la
 régularité de la distribution des espèces dans l'espace des niches ou la
 phylogénie. Certaines (PD, FD, l'entropie quadratique de Rao, \(H_p\) et
 \(I_1\)) seront unifiées au chapitre suivant dans le cadre de l'entropie
 phylogénétique.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -5100,7 +5243,7 @@ Après transformation de la matrice de distance en dendrogramme fonctionnel, év
 
 L'équitabilité fonctionnelle, ou régularité \autocite{Pavoine2011}, rend compte de l'homogénéité de l'occupation des niches.
 
-L'indice d'équitabilité de \textcite{Mouillot2005a}, que les auteurs nomment ``indice de régularité fonctionnelle'', est inspiré de l'indice d'équitabilité de Bulla \eqref{eq:Bulla}.
+L'indice d'équitabilité de \textcite{Mouillot2005a}, que les auteurs nomment \enquote{indice de régularité fonctionnelle}, est inspiré de l'indice d'équitabilité de Bulla \eqref{eq:Bulla}.
 C'est un indice unidimensionnel: un seul trait est pris en compte.
 Les espèces sont classées par valeur croissante du trait.
 L'équitabilité maximale est obtenue si l'écart entre deux valeurs de traits est proportionnel aux abondances cumulées des deux espèces.
@@ -5694,7 +5837,7 @@ L'indice de Rao est une mesure de divergence pondérée. Son utilisation s'est l
 
 À partir de relevés fournissant la fréquence de chaque espèce par communauté et d'une matrice de dissimilarité entre paires d'espèces, l'indice de \textcite{Rao1982} donne la dissimilarité moyenne entre deux individus choisis au hasard.
 
-L'indice de Rao est souvent appelé ``entropie quadratique'' en raison de sa forme mathématique.
+L'indice de Rao est souvent appelé \enquote{entropie quadratique} en raison de sa forme mathématique.
 
 \hypertarget{formalisation}{%
 \subsection{Formalisation}\label{formalisation}}
@@ -6120,7 +6263,7 @@ Dans un arbre parfaitement régulier, toutes les branches sont de longueur 1 et 
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 L'entropie phylogénétique est la moyenne de l'entropie HCDT le long d'un
 arbre phylogénétique. Son estimation est simplement celle de l'entropie
 HCDT à chaque période de l'arbre. Elle va de pair avec la diversité
@@ -6129,7 +6272,7 @@ nombre d'espèces équiprobables, dans un arbre où toutes les espèces
 descendraient d'un ancêtre unique, dont l'entropie serait la même que
 celle de la communauté réelle. Dans un tel arbre, la diversité
 phylogénétique se réduit à la diversité neutre.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -6367,7 +6510,7 @@ Dans l'état actuel des connaissances, aucune méthode n'est applicable de faço
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 La diversité de Leinster et Cobbold est l'inverse de la banalité moyenne
 des espèces, qui est elle-même la similarité moyenne d'une espèce aux
 autres. Elle va de pair avec l'entropie de Ricotta et Szeidl, dont la
@@ -6375,7 +6518,7 @@ fonction d'information est le logarithme déformé de l'inverse la
 banalité. La diversité peut être calculée directement à partir de la
 distance entre espèces, sans recourir à un dendrogramme intermédiaire
 qui déformerait la topologie des espèces.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -6846,7 +6989,7 @@ Le package \emph{entropart} fournit les fonctions \texttt{Dqz} et \texttt{HqZ} p
 
 \normalsize
 
-La diversité phylogénétique \(^{q}\!\bar{D}(T)\) appliquée à un arbre ultramétrique est un cas particulier de \(^q\!D^{\mathbf{Z}}\) pour une matrice \(\mathbf{Z}\) dont les lignes et colonnes sont la similarité des ``espèces historiques'' \autocite[proposition A7]{Leinster2012}, c'est-à-dire les couples (espèce actuelle; branche ancestrale).
+La diversité phylogénétique \(^{q}\!\bar{D}(T)\) appliquée à un arbre ultramétrique est un cas particulier de \(^q\!D^{\mathbf{Z}}\) pour une matrice \(\mathbf{Z}\) dont les lignes et colonnes sont la similarité des \enquote{espèces historiques} \autocite[proposition A7]{Leinster2012}, c'est-à-dire les couples (espèce actuelle; branche ancestrale).
 
 
 
@@ -7055,12 +7198,12 @@ Cette représentation a été utilisée par \textcite{Campos2009} qui ont relié
 La matrice de similarité entre les espèces \(\mathbf{Z}\) permet d'affiner la représentation.
 Soit la matrice \(\mathbf{C}=\sqrt{\mathbf{Z}}\).
 Chaque espèce \(s\) est maintenant représentée par le vecteur dont la coordonnée sur l'axe \(t\) est \(\sqrt{p_s p_t}c_{s,t}\).
-Les axes correspondent aux espèces ``pures'', totalement dissimilaires, les vecteurs des espèces réelles prennent en compte la similarité.
+Les axes correspondent aux espèces \enquote{pures}, totalement dissimilaires, les vecteurs des espèces réelles prennent en compte la similarité.
 Dans le cas extrême de la diversité neutre, \(\mathbf{C}=\mathbf{I}\), chaque espèce est située uniquement sur son axe.
 Dans l'autre cas extrême de totale similarité, où \(\mathbf{C}\) ne contient que des 1, toutes les espèces sont colinéaires.
 
 Il est possible de calculer les \(S\) valeurs propres notées \(\lambda_s\) de la matrice des coordonnées des espèces et de les normaliser: \(\mu_s={\lambda_s}/{\sum_s{\lambda_s}}\).
-La communauté peut maintenant être représentée par ses valeurs propres \(\mu_s\) correspondant à la proportion d'une ``espèce composite'' pure sur chaque axe généré par les vecteurs propres: cette transformation est une ACP non centrée, non réduite.
+La communauté peut maintenant être représentée par ses valeurs propres \(\mu_s\) correspondant à la proportion d'une \enquote{espèce composite} pure sur chaque axe généré par les vecteurs propres: cette transformation est une ACP non centrée, non réduite.
 La diversité HCDT des valeurs propres est la diversité de la communauté, qui sera notée ici \(^q\!D^{\mathbf{Z}}(\Lambda)\).
 
 La définition de cette diversité autorise toute matrice \(\mathbf{C}\) symétrique, dont les valeurs de similarité sont positives ou nulles, strictement positives sur la diagonale.
@@ -7267,13 +7410,13 @@ En revanche, la prise en compte de la variabilité intraspécifique par une simi
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 La diversité \(\beta\) désigne la différentiation entre communautés,
 c'est-à-dire une mesure de divergence de composition spécifique entre
 elle, ou bien la divergence entre elles et leur assemblage, appelée
 diversité proportionnelle. La conciliation de ces deux définitions fait
 toujours l'objet de recherches.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -7419,7 +7562,7 @@ Cette approche utilitaire est complétée par le cadre théorique de \textcite{J
   La diversité proportionnelle (\emph{proportional diversity}), diversité \(\beta\) qui se construit par différence ou rapport des diversités \(\gamma\) et \(\alpha\). \textcite{Marcon2014a} ont montré qu'avec une décomposition appropriée de la diversité, la diversité proportionnelle est aussi la divergence entre la distribution des communautés locales et celle de la méta-communauté: la diversité \(\beta\) mesure alors à quel point les unités spatiales sont différentes de leur assemblage plutôt qu'entre elles.
 \end{itemize}
 
-Dans son article fondateur, \textcite{Whittaker1960} définit la diversité \(\beta\) comme le niveau de changement dans la composition des communautés, la nomme ``diversité secondaire'' et lui attribue la lettre \(\beta\) en référence à la diversité ``primaire'' mesurable par l'indice \(\alpha\) de Fisher \autocite{Fisher1943}, voir le chapitre \ref{chap:Fisher}.
+Dans son article fondateur, \textcite{Whittaker1960} définit la diversité \(\beta\) comme le niveau de changement dans la composition des communautés, la nomme \enquote{diversité secondaire} et lui attribue la lettre \(\beta\) en référence à la diversité \enquote{primaire} mesurable par l'indice \(\alpha\) de Fisher \autocite{Fisher1943}, voir le chapitre \ref{chap:Fisher}.
 Il illustre cette définition par une mesure de différentiation: l'indice de Jaccard, mais utilise ensuite une mesure proportionnelle: le rapport des indice \(\alpha\) de l'assemblage des communautés à sa moyenne sur les communautés.
 La conciliation des deux approches n'est pas simple.
 \textcite{Gregorius2016} montre notamment que les mesures habituelles de diversité proportionnelle ne rendent pas compte correctement de la différentiation.
@@ -7462,8 +7605,8 @@ Toutes ont en commun:
   \end{itemize}
 \end{itemize}
 
-L'utilisation des nombres de Hill, la mesure locale de la diversité \(\alpha\) et la définition de la diversité \(\beta\) comme rapport des diversités \(\gamma\) et \(\alpha\) permet de définir la ``vraie diversité'' \autocite{Jost2006,Jost2007} \(\beta\) qui est un nombre de communautés équivalentes (\emph{compositionnal units}) similaire au nombre d'espèces équivalentes des diversités \(\alpha\) et \(\gamma\).
-\textcite{Tuomisto2011} milite pour que le terme diversité soit réservé à la vraie diversité (homogène à un nombre d'espèces) et que les autres mesures soient appelées différemment: ``entropie'' de Shannon ou ``probabilité'' de Gini-Simpson notamment.
+L'utilisation des nombres de Hill, la mesure locale de la diversité \(\alpha\) et la définition de la diversité \(\beta\) comme rapport des diversités \(\gamma\) et \(\alpha\) permet de définir la \enquote{vraie diversité} \autocite{Jost2006,Jost2007} \(\beta\) qui est un nombre de communautés équivalentes (\emph{compositionnal units}) similaire au nombre d'espèces équivalentes des diversités \(\alpha\) et \(\gamma\).
+\textcite{Tuomisto2011} milite pour que le terme diversité soit réservé à la vraie diversité (homogène à un nombre d'espèces) et que les autres mesures soient appelées différemment: \enquote{entropie} de Shannon ou \enquote{probabilité} de Gini-Simpson notamment.
 
 \hypertarget{sec:DebatDecomposition}{%
 \subsection{Le débat sur la décomposition}\label{sec:DebatDecomposition}}
@@ -7475,7 +7618,7 @@ Il a posé le principe que la diversité \(\gamma\) devait être le produit des 
 
 \textcite{Lande1996} a une approche additive et postule que les mesures de diversité doivent être concaves: la diversité d'un jeu de données regroupant plusieurs communautés doit être supérieure ou égale à la somme pondérée des diversités dans chaque communauté.
 De cette façon, il est possible de définir une diversité totale égale à la somme pondérée des diversités \(\alpha\) (intra-communautés) et \(\beta\) (inter-communautés), toutes les diversités étant positives ou nulles.
-Il note que ``la partition serait plus facilement interprétable si les différentes composantes de la diversité pouvaient être exprimés au moyen de la même formule'' (ce qui n'est en fait jamais le cas).
+Il note que \enquote{la partition serait plus facilement interprétable si les différentes composantes de la diversité pouvaient être exprimés au moyen de la même formule} (ce qui n'est en fait jamais le cas).
 Une revue sur les avantages de la décomposition additive est proposée par \textcite{Veech2002}.
 
 Un débat assez stérile a découlé de l'opposition entre les deux approches, principalement dû à la transformation logarithmique \autocite{Ricotta2005a}, à des définitions imprécises et des démonstrations empiriques remises en question \autocite{Baselga2010a,Veech2010a}.
@@ -7500,7 +7643,7 @@ Enfin, \textcite{Marcon2014a} généralisent ce résultat à toutes les mesures 
 
 \(^{q}\!D_{\alpha}\) et \(^{q}\!D_{\gamma}\) sont les nombres de Hill d'ordre \(q\) égaux aux diversités \(\alpha\) et \(\gamma\).
 Ce sont des nombres équivalents d'espèces.
-\(^{q}\!D_{\beta}\) est le ``nombre de communautés effectives'' ou ``nombre équivalent de communautés'', c'est-à-dire le nombre de communautés de poids égal ne possédant aucune espèce en commun (et dont la dissimilarité entre les espèces de communautés différentes est maximale quand la diversité est phylogénétique ou fonctionnelle) \autocite{Pavoine2015a}, qui fourniraient la même valeur de diversité \(\beta\).
+\(^{q}\!D_{\beta}\) est le \enquote{nombre de communautés effectives} ou \enquote{nombre équivalent de communautés}, c'est-à-dire le nombre de communautés de poids égal ne possédant aucune espèce en commun (et dont la dissimilarité entre les espèces de communautés différentes est maximale quand la diversité est phylogénétique ou fonctionnelle) \autocite{Pavoine2015a}, qui fourniraient la même valeur de diversité \(\beta\).
 
 La diversité \(\beta\) est indépendante de la diversité \(\alpha\) si les poids des communautés sont égaux.
 L'\emph{indépendance} signifie que la valeur de \(^{q}\!D_{\beta}\) n'est pas contrainte par celle de \(^{q}\!D_{\alpha}\).
@@ -7566,7 +7709,7 @@ La dépendance entre \(^{q}\!D_{\beta}\) et \(^{q}\!D_{\alpha}\) est le prix à 
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 La diversité \(\beta\) de différentiation mesure la dissimilarité entre
 communautés, généralement considérées par paires. Les dissimilarités les
 plus connues sont celles de Jaccard ou de Sørensen. Ces mesures peuvent
@@ -7574,7 +7717,7 @@ prendre en compte la seule présence ou absence des espèces, leur
 abondance ou même la similarité entre les espèces, peuvent être traitées
 par l'analyse multivariée et être testées contre l'hypothèse de nullité
 de la dissimilarité.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -8135,7 +8278,7 @@ Dans certains cas présentés ici, la diversité de différentiation est parfait
 En représentant les communautés dans l'espace des espèces, la norme du vecteur de la communauté \(i\) est \({\sum_s{p_{s|i}^2}}\), c'est-à-dire 1 moins l'entropie de Simpson.
 La représentation graphique de l'ACP (non centrée, non réduite) montre les communautés les moins diverses (les plus éloignées de l'origine du repère).
 Ter Braak \emph{définit} la diversité \(\beta\) comme la distance entre deux communautés (et la moyenne des distances entre paires de communautés si leur nombre est supérieur à 2).
-Cette ``définition'' est valide puisque cette distance est la composante inter de la décomposition de l'entropie \(\beta\) de Simpson \eqref{eq:SimpsonNei}.
+Cette \enquote{définition} est valide puisque cette distance est la composante inter de la décomposition de l'entropie \(\beta\) de Simpson \eqref{eq:SimpsonNei}.
 
 
 
@@ -8342,7 +8485,7 @@ La méthode de permutation originale est inappropriée et donc corrigée \autoci
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 L'entropie HCDT \(\gamma\) peut être décomposée en somme de l'entropie
 \(\alpha\) et la moyenne de la divergence entre la distribution de
 chaque communauté et celle de la méta-communauté. L'entropie \(\beta\)
@@ -8355,7 +8498,7 @@ la même valeur d'entropie \(\beta\) que les communautés réelles. La
 diversité \(\gamma\) se décompose donc en produit du nombre effectif
 d'espèces de la diversité \(\alpha\) et du nombre effectif de
 communautés.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -8603,7 +8746,7 @@ La décomposition de l'entropie est faite en écrivant le logarithme d'ordre \(q
 \end{equation}
 
 Ceci est la décomposition de \textcite{Jost2007}.
-Jost désigne sous le nom de ``composante \(\beta\) de l'entropie'' le logarithme d'ordre \(q\) de la diversité, qu'il note \(H_B\).
+Jost désigne sous le nom de \enquote{composante \(\beta\) de l'entropie} le logarithme d'ordre \(q\) de la diversité, qu'il note \(H_B\).
 La décomposition n'est pas additive, mais \(H_B\) est indépendant de l'entropie \(\alpha\).
 
 Les deux derniers termes peuvent être regroupés et réarrangés pour obtenir \(^{q}\!H_{\beta}\) conformément à la décomposition additive de l'équation \eqref{eq:DecompHq}:
@@ -9073,7 +9216,7 @@ Un autre cas est envisageable : les communautés peuvent être des échantillons
 La diversité \(\beta\) mesure alors la variabilité de l'échantillonnage à l'intérieur de la méta-communauté à une échelle donnée.
 Pour une taille d'échantillon fixée (par exemple un hectare de forêt), la diversité \(\beta\) ne dépend pas du nombre de communautés: l'entropie \(\beta\) est l'espérance (estimée par la moyenne, équation \eqref{eq:ContributionBeta} de la divergence de Jensen-Shannon entre la distribution des espèces d'une communauté et celle de la méta-communauté, fixe.
 Cette variabilité dépend de l'échelle de l'échantillonnage dans le sens où elle diminue si les échantillons sont de taille plus grande: l'entropie \(\alpha\) de deux hectares de forêts est la diversité \(\alpha\) moyenne de chacun des deux hectares plus l'entropie \(\beta\) entre eux.
-L'entropie \(\beta\) entre les échantillons de deux hectares est donc diminuée de cette entropie \(\beta\) ``intra'' qui est absorbée par la nouvelle entropie \(\alpha\) quand la taille des échantillons augmente.
+L'entropie \(\beta\) entre les échantillons de deux hectares est donc diminuée de cette entropie \(\beta\) \enquote{intra} qui est absorbée par la nouvelle entropie \(\alpha\) quand la taille des échantillons augmente.
 
 
 
@@ -9174,14 +9317,14 @@ Sa valeur peut être négative pour \(q<1\), on se limitera donc à \(q \ge 1\).
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 L'entropie phylogénétique et l'entropie de Ricotta et Szeidl se
 décomposent comme l'entropie HCDT. La diversité \(\beta\) phylogénétique
 et la diversité \(\beta\) de Leinster et Cobbold sont des nombres
 effectifs de communautés, c'est-à-dire des communautés de même poids et
 dont les espèces seraient totalement dissimilaires qui fourniraient la
 même entropie \(\beta\) que les communautés réelles.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -9404,12 +9547,12 @@ Le partitionnement de la diversité fonctionnelle de la méta-communauté \textt
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 Les tests de significativité permettent d'affirmer que des communautés
 sont réellement différentiées. En complément, les intervalles de
 confiance des mesures de diversité peuvent être calculés sous
 l'hypothèse d'une distribution multinomiale.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -9609,7 +9752,7 @@ Ce n'est pas la diversité \({KW}_{\rho}\) de l'assemblage des populations, ce q
 
 \normalsize
 
-Gregorius \autocite*{Gregorius2010,Gregorius2014} argumente en faveur de la prise en compte de ce qu'il définit comme la ``diversité jointe'' dans le cadre classique où les classes sont des communautés pour des raisons fondamentales de définition de la diversité.
+Gregorius \autocite*{Gregorius2010,Gregorius2014} argumente en faveur de la prise en compte de ce qu'il définit comme la \enquote{diversité jointe} dans le cadre classique où les classes sont des communautés pour des raisons fondamentales de définition de la diversité.
 Son approche consiste à traiter de façon symétrique l'appartenance à une classe ou à une espèce: contrairement aux chapitres précédents où l'échantillonnage des individus avait lieu séparément dans chaque communauté, l'échantillonnage a lieu ici globalement dans la méta-communauté et l'appartenance d'un individu à une communauté apporte autant d'information que son appartenance à une espèce.
 Cette approche convient bien à des questions de choix de localisation traités en économie (voir par exemple la définition de la localisation globale \autocite{Cutrini2010}, qui traite de façon symétrique le secteur d'activité et la région d'implantation des firmes).
 L'entropie des lignes est alors la diversité de localisation des firmes; son complément à la valeur maximale est une mesure de concentration spatiale (l'indice de Theil pour \(q=1\)).
@@ -9654,7 +9797,7 @@ Total & $n_{+i}$: nombre d'individus de la classe.\ ${n_{+i}}/{n}=w_i$: poids de
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 La récursivité est une propriété importante de l'entropie de Shannon qui
 permet d'envisager la diversité de façon multidimensionnelle, par
 exemple la diversité des espèces et des classes de diamètre des arbres
@@ -9666,7 +9809,7 @@ Le nombre effectif d'habitats occupés par une espèce peut être
 interprété comme la taille de sa niche écologique: la mesure de la
 diversité des communautés peut apporter une information aussi
 intéressante que la diversité des espèces.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -9792,12 +9935,12 @@ Pour revenir au cas simple dans lequel les habitats ont des poids égaux, les co
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 La diversité jointe peut être décomposée en diversité \(\gamma\)
 (elle-même décomposable en diversités \(\alpha\) et \(\beta\)) et
 réplication, égale au nombre effectif de répétitions de l'assemblage des
 communautés nécessaire pour obtenir la diversité jointe réelle.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -9808,7 +9951,7 @@ On se place dans le cadre d'un échantillonnage global de la méta-communauté, 
 \section{Définitions}\label{sec:Definitions}}
 
 La diversité \(\beta\) mesure la divergence entre la distribution moyenne des espèces dans les communautés et leur distribution dans la méta-communauté.
-Gregorius la qualifie de ``diversité de répartition'' (\emph{apportionment}) \autocite{Gregorius2014}.
+Gregorius la qualifie de \enquote{diversité de répartition} (\emph{apportionment}) \autocite{Gregorius2014}.
 L'exemple suivant mesure la diversité \(\beta\) dans une méta-communauté très simple (figure \ref{fig:Repartition1Fig}):
 
 \scriptsize
@@ -9975,7 +10118,7 @@ La distribution de référence pour définir ce nombre effectif correspond à l'
 Le nombre effectif est alors \(SI\).
 Si nombre effectif d'espèces est égal à la diversité \(\gamma\), le rapport entre la diversité jointe et la diversité \(\gamma\), noté \(^{q}\!R_{c}\), est le nombre effectif de méta-communautés identiques produisant la diversité jointe observée.
 Il mesure la \emph{réplication des communautés} et complète la diversité \(\gamma\) en fournissant un niveau d'information supplémentaire.
-Gregorius le qualifie de ``diversité de différenciation'' (\emph{differentiation}) parce que \(^{q}\!R_{c}\) compare la distribution réelle à une distribution de référence, et pas seulement les distributions des communautés entre elles.
+Gregorius le qualifie de \enquote{diversité de différenciation} (\emph{differentiation}) parce que \(^{q}\!R_{c}\) compare la distribution réelle à une distribution de référence, et pas seulement les distributions des communautés entre elles.
 En résumé:
 
 \begin{itemize}
@@ -10164,13 +10307,13 @@ Enfin, la diversité \(\beta\) spatialement explicite est introduite au chapitre
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 L'Indice \(\alpha\) de Fisher est la pente de la relation linéaire entre
 le nombre d'espèces observées et le logarithme du nombre d'individus
 inventoriés. Cette relation correspond à une distribution d'abondance
 des espèces en log-séries, valide à l'échelle de la méta-communauté. Son
 utilisation à l'échelle locale est discutable.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -10283,7 +10426,7 @@ Le code R nécessaire pour réaliser la figure est:
 
 On notera que la distribution de \({\pi}_{s,\nu}\) décrit, pour une espèce, la probabilité d'être représentée par \(\nu\) individus.
 Ce n'est pas la distribution des probabilités \(p_s\), qui donnent la probabilité qu'un individu appartienne à l'espèce \(s\).
-Une courbe représentant les valeurs de \({\pi}_{s,\nu}\) en fonction de leur rang n'est donc pas un diagramme rang-abondance, mais un ``pseudo-RAC'' \autocite{Izsak2012}.
+Une courbe représentant les valeurs de \({\pi}_{s,\nu}\) en fonction de leur rang n'est donc pas un diagramme rang-abondance, mais un \enquote{pseudo-RAC} \autocite{Izsak2012}.
 
 La variance de la loi binomiale négative varie en sens inverse du paramètre \(k\).
 En appliquant son modèle à des données, Fisher remarque que \(k \to 0\), ce qui correspond à une distribution comprenant de nombreuses espèces de fréquences très variables, donc un pseudo-RAC décroissant rapidement, et retient cette propriété pour la suite de son raisonnement.
@@ -10532,7 +10675,7 @@ Code R pour réaliser la figure:
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 La courbe d'accumulation (SAC) décrit comment la richesse, ou la
 diversité, augmente en fonction de l'effort d'échantillonnage. Sous
 l'hypothèse d'un tirage multinomial des individus observés, les formules
@@ -10540,7 +10683,7 @@ de raréfaction (estimation du nombre d'espèces pour une surface
 inférieure à celle inventoriée) sont bien contenues. La structure
 spatiale rend les observations dépendantes entre elles et doit être
 prise en compte.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -10606,7 +10749,7 @@ Le code R nécessaire pour réaliser la figure est:
 \normalsize
 
 Pour une surface donnée, le nombre d'individus est une variable aléatoire.
-Dans ce cas, la SAC (dépendant de la surface) est différente de la courbe de raréfaction (fonction du nombre d'individus) de Gotelli et Colwell, que \textcite{Coleman1981} nomme ``courbe du collecteur''.
+Dans ce cas, la SAC (dépendant de la surface) est différente de la courbe de raréfaction (fonction du nombre d'individus) de Gotelli et Colwell, que \textcite{Coleman1981} nomme \enquote{courbe du collecteur}.
 
 La SAC théorique en fonction de la surface contient une incertitude concernant le nombre d'individus.
 Si la densité \(\lambda_s\) (nombre d'individus par unité de surface) des espèces peut être connue (estimée en comptant les individus) ou si les probabilités \(p_s\) sont issues d'un modèle (log-séries, log-normal\ldots), le nombre d'individus observés de l'espèce \(s\) suit une loi de Poisson d'espérance \(A\hat{\lambda}_s\) ou, de façon équivalente \autocite[pages 204-205]{Pielou1969}, \(np_s\) (dans ce deuxième cas, \(n\) est l'estimateur de \(N\), la variable aléatoire correspondant à la taille de l'échantillon).
@@ -10965,7 +11108,7 @@ La distribution des espèces non observées peut maintenant être estimée dans 
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 La relation d'Arrhenius prévoit que logarithme du nombre d'espèces soit
 proportionnel au logarithme de la surface (de façon équivalente, que le
 nombre d'espèces soit proportionnel à la surface à une puissance \(z\)
@@ -10975,7 +11118,7 @@ soit en relation linéaire avec le logarithme de la surface (très proche
 du modèle de Fisher dans lequel le nombre d'espèces est proportionnel au
 logarithme du nombre d'individus échantillonnés à partir d'une certaine
 surface).
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -11027,7 +11170,7 @@ On notera que le nombre d'espèces est clairement fini dans ce cadre, mais que l
 La loi de puissance peut donc être bornée.
 Le glissement d'un modèle de biogéographie des îles à un cadre plus général est faisable simplement, à la manière de \textcite{Hubbell2001} pour la théorie neutre: chaque île peut être considérée comme une communauté locale issue d'une méta-communauté régionale.
 
-La distribution log-normale de Preston, dite ``canonique'' assumait une relation particulière entre le nombre d'espèces et le nombre d'individus, pour laquelle \textcite{May1975} a montré que la valeur exacte de \(z\) est 0,25.
+La distribution log-normale de Preston, dite \enquote{canonique} assumait une relation particulière entre le nombre d'espèces et le nombre d'individus, pour laquelle \textcite{May1975} a montré que la valeur exacte de \(z\) est 0,25.
 Les résultats empiriques ultérieurs \autocite{May1975,May2000}, pour des lois quelconques, non canoniques, ont fourni des valeurs généralement comprises entre 0,2 et 0,3.
 Une large méta-analyse \autocite{Drakare2006} à partir de 794 SAR d'origine très différentes fournit une moyenne de 0,27, comme la méta-analyse de la figure \ref{fig:Williamson2001} extraite de \textcite{Williamson2001} à partir de données de \textcite{Lonsdale1999}, mais avec une certaine variabilité que les auteurs relient à l'échelle spatiale, au type d'organismes et aux habitats échantillonnés, mais aussi à la technique d'échantillonnage.
 
@@ -11158,7 +11301,7 @@ Gleason propose une relation dans laquelle le nombre d'espèces (et non son loga
 \normalsize
 
 En concurrence au modèle de \textcite{Preston1962} prédisant une SAR en forme de loi de puissance, Coleman \autocite*{Coleman1981,Coleman1982} propose le modèle de placement aléatoire (\emph{random placement}).
-L'idée sous-jacente est que certaines communautés ont une composition ``aléatoire'', c'est-à-dire issues d'un simple échantillonnage de la méta-communauté.
+L'idée sous-jacente est que certaines communautés ont une composition \enquote{aléatoire}, c'est-à-dire issues d'un simple échantillonnage de la méta-communauté.
 Coleman ne prétend pas que la SAR des arbres de forêt tropicale suive son modèle, mais que ce soit le cas par exemple pour les oiseaux à une échelle spatiale limitée.
 
 Plusieurs îles (communautés locales) de taille relative \(p_i\) appartiennent à un ensemble (méta-communautés) dans lequel la distribution des espèces \(\mathbf{n}\), est considéré comme connue.
@@ -11277,11 +11420,11 @@ Cette méthode permet l'extrapolation à de très grandes surfaces de mesures de
 
 \scriptsize
 
-\begin{Essentiel}
+\begin{Summary}
 L'indice de Simpson spatialement explicite ou le variogramme de
 complémentarité relient la diversité \(\beta\) à la distance entre
 communautés.
-\end{Essentiel}
+\end{Summary}
 
 \normalsize
 
@@ -11293,7 +11436,7 @@ Elle peut être reliée à la distance entre les communautés pour définir une 
 
 \textcite{Chave2002} écrivent un modèle neutre de dispersion des espèces forestières, appliqué à l'échelle de l'Amazonie occidentale\autocite{Condit2002}.
 Ils définissent dans ce cadre la fonction \(F(r)\) égale à la probabilité que deux individus situés à distance \(r\) l'un de l'autre soient de la même espèce, c'est-a-dire l'indice de concentration de Simpson \eqref{eq:SimpsonD}, appliqué à des paires d'individus distants.
-\(\beta_s(r)=1-F(r)\) est appelé ``indice de Simpson spatialement explicite'' par \textcite{Shen2013}
+\(\beta_s(r)=1-F(r)\) est appelé \enquote{indice de Simpson spatialement explicite} par \textcite{Shen2013}
 En pratique il est estimé à partir d'individus situés dans des parcelles distantes de \(r\), l'ordre de grandeur de \(r\) étant nettement plus grand que la taille des parcelles.
 
 De la même façon que l'indice de Simpson est généralisable à l'indice de Rao, \(\beta_s(r)\) est généralisable à \(\beta_{phy}(r)\), l'indice de Rao spatialement explicite, égal à la divergence moyenne entre deux individus situés à distance \(r\).
@@ -11350,7 +11493,7 @@ La semi-variance de ce vecteur de composition spécifique est
 
 \(\|\mathbf{s_i}-\mathbf{s_j}\|\) est la distance euclidienne entre les deux vecteurs.
 Puisque \(\hat{\gamma}(r)\) est la somme des semi-variances spécifiques, c'est un estimateur de l'espérance du nombre d'espèces présentes sur une seule parcelle de chaque paire.
-Le variogramme de la composition spécifique est appelé ``variogramme de complémentarité'' pour cette raison.
+Le variogramme de la composition spécifique est appelé \enquote{variogramme de complémentarité} pour cette raison.
 
 \textcite{Bacaro2007a} l'utilisent en tant que mesure de diversité \(\beta\).
 
@@ -11504,7 +11647,6 @@ La recherche sur la mesure de la diversité est très active, ce document évolu
 \backmatter
 \SmallMargins
 
-%
 \twocolumn
 \renewcommand*{\bibfont}{\scriptsize}
 \printbibliography
@@ -11535,7 +11677,7 @@ La recherche sur la mesure de la diversité est très active, ce document évolu
 \begin{description}
 
 \selectlanguage{french}
-\item[Résumé:]
+\item[Résumé]
 La biodiversité peut être mesurée de nombreuses façons.
 
 La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire.
@@ -11550,15 +11692,14 @@ La diversité de Leinster et Cobbold généralise à son tour la diversité phyl
 Le paramétrage des mesures (l'ordre de la diversité) permet de donner plus ou moins d'importance aux espèces rares et de tracer des profils de diversité.
 
 La construction de ce cadre méthodologique est présentée en détail ainsi que plusieurs approches différentes, qui constituent l'état de l'art de la mesure de la biodiversité.
-
+\item[]
+.
 ~\\
-
-
 
 \end{description}
 
 \end{normalsize}
 
 \vspace*{\fill}
-\centering\includegraphics[width=.3\textwidth]{images/Logo-Lab}
+\centering\includegraphics[width=.3\textwidth]{images/logo}
 \end{document}
