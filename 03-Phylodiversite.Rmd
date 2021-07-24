@@ -8,7 +8,7 @@ library("gridExtra")
 ```
 
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
 La diversité fonctionnelle ou phylogénétique prend en compte la proximité des espèces entre elles.
   Généralement, la distance entre espèces est évaluée dans l'espace des traits, approximation de l'espace des niches, pour la diversité fonctionnelle et dans un dendrogramme représentant la phylogénie ou la taxonomie pour la diversité phylogénétique.
 ```
@@ -184,7 +184,7 @@ Elles sont détaillées au chapitre suivant.
 
 # Mesures particulières
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   De nombreuses mesures de diversité fonctionnelle ou phylogénétique ont été développées pour combiner le mieux possible la richesse et la régularité de la distribution des espèces dans l'espace des niches ou la phylogénie.
   Certaines (PD, FD, l'entropie quadratique de Rao, $H_p$ et $I_1$) seront unifiées au chapitre suivant dans le cadre de l'entropie phylogénétique.
 ```
@@ -1002,7 +1002,7 @@ Dans un arbre parfaitement régulier, toutes les branches sont de longueur 1 et 
 
 # Entropie phylogénétique {#chap:Phyloentropie}
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   L'entropie phylogénétique est la moyenne de l'entropie HCDT le long d'un arbre phylogénétique.
   Son estimation est simplement celle de l'entropie HCDT à chaque période de l'arbre.
   Elle va de pair avec la diversité phylogénétique qui est son nombre effectif d'espèces, c'est-à-dire le nombre d'espèces équiprobables, dans un arbre où toutes les espèces descendraient d'un ancêtre unique, dont l'entropie serait la même que celle de la communauté réelle.
@@ -1140,7 +1140,7 @@ Dans l'état actuel des connaissances, aucune méthode n'est applicable de faço
 # Diversité de Leinster et Cobbold {#chap:LeinsterCobbold}
 
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   La diversité de Leinster et Cobbold est l'inverse de la banalité moyenne des espèces, qui est elle-même la similarité moyenne d'une espèce aux autres.
   Elle va de pair avec l'entropie de Ricotta et Szeidl, dont la fonction d'information est le logarithme déformé de l'inverse la banalité.
   La diversité peut être calculée directement à partir de la distance entre espèces, sans recourir à un dendrogramme intermédiaire qui déformerait la topologie des espèces.

@@ -8,7 +8,7 @@ library("ade4")
 ```
 
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   La diversité $\beta$ désigne la différentiation entre communautés, c'est-à-dire une mesure de divergence de composition spécifique entre elle, ou bien la divergence entre elles et leur assemblage, appelée diversité proportionnelle.
   La conciliation de ces deux définitions fait toujours l'objet de recherches.
 ```
@@ -231,7 +231,7 @@ La dépendance entre $^{q}\!D_{\beta}$ et $^{q}\!D_{\alpha}$ est le prix à paye
 
 # Diversité de différentiation {#chap:BetaPaires}
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   La diversité $\beta$ de différentiation mesure la dissimilarité entre communautés, généralement considérées par paires.
   Les dissimilarités les plus connues sont celles de Jaccard ou de Sørensen.
   Ces mesures peuvent prendre en compte la seule présence ou absence des espèces, leur abondance ou même la similarité entre les espèces, peuvent être traitées par l'analyse multivariée et être testées contre l'hypothèse de nullité de la dissimilarité.
@@ -1517,7 +1517,7 @@ Le partitionnement de la diversité fonctionnelle de la méta-communauté `Parac
 
 # Tests de significativité
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   Les tests de significativité permettent d'affirmer que des communautés sont réellement différentiées. En complément, les intervalles de confiance des mesures de diversité peuvent être calculés sous l'hypothèse d'une distribution multinomiale.
 ```
 

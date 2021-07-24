@@ -45,7 +45,7 @@ knitr::kable(Notations, caption="(ref:Notations2)", longtable = FALSE, booktabs 
 
 # Information mutuelle
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
 La récursivité est une propriété importante de l'entropie de Shannon qui permet d'envisager la diversité de façon multidimensionnelle, par exemple la diversité des espèces et des classes de diamètre des arbres d'une forêt (appelée diversité structurelle). La récursivité apporte des résultats nettement moins intéressants quand l'entropie HCDT est considérée.
   
   Le nombre effectif d'habitats occupés par une espèce peut être interprété comme la taille de sa niche écologique: la mesure de la diversité des communautés peut apporter une information aussi intéressante que la diversité des espèces.
@@ -165,7 +165,7 @@ Pour revenir au cas simple dans lequel les habitats ont des poids égaux, les co
 
 # Décomposition de la diversité jointe {#chap:DiversiteJointe}
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   La diversité jointe peut être décomposée en diversité $\gamma$ (elle-même décomposable en diversités $\alpha$ et $\beta$) et réplication, égale au nombre effectif de répétitions de l'assemblage des communautés nécessaire pour obtenir la diversité jointe réelle.
 ```
 

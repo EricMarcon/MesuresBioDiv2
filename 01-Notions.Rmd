@@ -136,7 +136,7 @@ L'approche phylogénétique (Chapitre \@ref(chap:Phyloentropie)) permet de conto
 
 # Outils
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   La diversité peut être décrite localement par une courbe d'accumulation (SAC) qui représente le nombre d'espèces échantillonnées en fonction de l'effort.
   À une échelle plus large, cette courbe s'appelle relation aire-espèces (SAR).
   
