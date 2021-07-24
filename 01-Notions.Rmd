@@ -7,7 +7,7 @@ output:
 
 # Notions de Diversité
 
-```{r, echo=FALSE, message=FALSE}
+```{r, include=FALSE}
 library("tidyverse")
 ```
 
