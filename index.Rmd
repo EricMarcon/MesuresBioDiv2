@@ -3,18 +3,16 @@ title: "Mesures de la Biodiversité"
 author: "Eric Marcon"
 date: "`r format(Sys.Date(), '%d/%m/%Y')`"
 url: "https://github.com/EricMarcon/MesuresBioDiv2/"
-description: Définitions, estimation et décompositon de la biodiversité
+description: "Définitions, estimation et décompositon de la biodiversité"
 # Title page
 maintitlepage:
   epigraph: |
     Ce document est réalisé de façon dynamique et reproductible grâce à:
-
     \begin{itemize}
       \item \LaTeX, dans sa distribution Miktex (\url{http://miktex.org/}) et la classe memoir (\url{http://www.ctan.org/pkg/memoir}).
       \item R (\url{http://www.r-project.org/}) et RStudio (\url{http://www.rstudio.com/})
       \item bookdown (\url{http://bookdown.org/})
     \end{itemize}
-    
     Son code source est sur GitHub: \url{https://github.com/EricMarcon/MesuresBioDiv2/}.
     
     Le texte mis à jour en continu peut être lu sur \url{https://ericmarcon.github.io/MesuresBioDiv2/}.
@@ -40,8 +38,9 @@ MemoirChapStyle: companion
 MemoirPageStyle: companion
 # Margins
 largemargins: true
+smallmargin: 1.5in
 largemargin: 3in
-marginnote:  1.8in
+marginnote: 1.8in
 spinemargin: 1.2in
 uppermargin: 1.5in
 lowermargin: 1in
@@ -51,9 +50,9 @@ toc-depth: 2
 secnum-depth: section
 # List of tables / Figures
 lot: false
-lof: true
+lof: false
 # Bibliography
-bibliography: library.bib
+bibliography: references.bib
 biblatexoptions:
   - backend=biber
   - style=verbose-inote
@@ -66,6 +65,7 @@ biblatexoptions:
   - maxbibnames=150
   - sorting=nyt
   - sortcites=false
+longbibliography: true
 # Chapter summary text
 chaptersummary: L'essentiel
 # Back Cover
