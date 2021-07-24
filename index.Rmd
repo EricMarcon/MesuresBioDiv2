@@ -20,6 +20,9 @@ maintitlepage:
     Le texte mis à jour en continu peut être lu sur \url{https://ericmarcon.github.io/MesuresBioDiv2/}.
     
     Les versions d'étape sont déposées sur HAL: \url{https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/}.
+  credits: |
+    Photographie en couverture: Hadrien Lalagüe
+  filigrane: filigrane
 # Language
 lang: fr-FR
 otherlangs: [en-US]
@@ -96,7 +99,7 @@ colorlinks: true
 ---
 
 <!-- Commande nécessaire pour la copie de l'icône "Essentiel" en HTML--> 
-<img src="images/Essentiel.png" alt="image" hidden/>
+<img src="images/trombone.png" alt="image" hidden/>
 
 ```{r, include=FALSE}
 ### Utilities. Do not modify.
@@ -110,14 +113,23 @@ InstallPackages <- function(Packages) {
   invisible(sapply(Packages, InstallPackage))
 }
 # Basic packages
-InstallPackages(c("bookdown", "devtools", "formatR", "kableExtra", "knitr", "rmarkdown"))
-library("kableExtra") # Mandatory to load css and more
+InstallPackages(c("bookdown", "formatR", "kableExtra", "magick", "ragg"))
+# kableExtra must be loaded 
+if (knitr::opts_knit$get("rmarkdown.pandoc.to") == "docx") {
+  # Word output (https://stackoverflow.com/questions/35144130/in-knitr-how-can-i-test-for-if-the-output-will-be-pdf-or-word)
+  # Do not use autoformat (https://github.com/haozhu233/kableExtra/issues/308)
+  options(kableExtra.auto_format = FALSE)
+}
+library("kableExtra")
 # Chunk font size hook: allows size='small' or any valid Latex font size in chunk options
 def.chunk.hook  <- knitr::knit_hooks$get("chunk")
 knitr::knit_hooks$set(chunk = function(x, options) {
   x <- def.chunk.hook(x, options)
   ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
 })
+# Figures with side captions
+if (rmarkdown::metadata$largemargins)
+  knitr::opts_chunk$set(fig.env='SCfigure')
 ```
 
 
@@ -135,11 +147,18 @@ if (!"SpatDiv" %in% installed.packages()[, 1]) {
 }
 # knitr options
 knitr::opts_chunk$set(
-  cache=TRUE, warning=FALSE, 
-  fig.env='SCfigure', fig.asp=.75, fig.align='center', out.width='80%', 
-  dev = "ragg_png",
-  tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=60), size="scriptsize",
-  knitr.graphics.auto_pdf = TRUE)
+  cache=FALSE, # Cache chunk results
+  echo = TRUE, # Show/Hide R chunks
+  warning=FALSE, # Show/Hide warnings
+  # Figure alignment and size
+  fig.align='center', out.width='80%', fig.asp=.75,
+  # Graphic devices (ragg_png is better than standard png)
+  dev = c("ragg_png", "pdf"),
+  # Code chunk format
+  tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=60),
+  size="scriptsize", knitr.graphics.auto_pdf = TRUE
+  )
+options(width=60)
 # ggplot style
 library("tidyverse")
 theme_set(theme_bw())

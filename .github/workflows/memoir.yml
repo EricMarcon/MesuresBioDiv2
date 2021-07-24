@@ -23,9 +23,12 @@ jobs:
           tinytex::install_tinytex()
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
-      - name: Render book
+      - name: Render pdf book
         run: |
           bookdown::render_book("index.Rmd", "bookdown::pdf_book")
+        shell: Rscript {0}
+      - name: Render gitbook
+        run: |
           bookdown::render_book("index.Rmd", "bookdown::gitbook")
         shell: Rscript {0}
       - name: Upload artifact

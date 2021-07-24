@@ -1,6 +1,6 @@
 Package: MesuresBioDiv2
 Title: Mesures de la Biodiversité
-Version: 1.0.0
+Version: 6.dev
 Authors@R: c(
   person("Eric", "Marcon", , "e.marcon@free.fr", c("aut", "cre"))
   )

@@ -1,6 +1,10 @@
 bookdown::gitbook:
   css: style.css
   config:
+    sharing:
+      github: yes
+      facebook: false
+      twitter: yes
     toc:
       before: |
         <li><a href="./">Mesures de la Biodiversité</a></li>
@@ -20,8 +24,3 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: biblatex
   keep_tex: yes
-bookdown::epub_book: default
-bookdown::html_book:
-  theme: sandstone
-  toc: yes
-  css: toc.css

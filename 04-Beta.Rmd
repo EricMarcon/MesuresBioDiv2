@@ -847,7 +847,7 @@ La méthode de permutation originale est inappropriée et donc corrigée [@Bacar
 # Décomposition de l'entropie HCDT {#chap:DedompHCDT}
 
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   L'entropie HCDT $\gamma$ peut être décomposée en somme de l'entropie $\alpha$ et la moyenne de la divergence entre la distribution de chaque communauté et celle de la méta-communauté.
   L'entropie $\beta$ est donc interprétable comme le gain d'information apporté par la connaissance de la distribution détaillée des communautés en plus de celle, aggrégée, de la méta-communauté.
   L'entropie $\beta$ va de pair avec le nombre effectif de communautés, c'est-à-dire le nombre de communautés de même poids, sans aucune espèce commune, qui fourniraient la même valeur d'entropie $\beta$ que les communautés réelles.
@@ -1362,7 +1362,7 @@ Sa valeur peut être négative pour $q<1$, on se limitera donc à $q \ge 1$.
 
 # Décomposition de la diversité phylogénétique et fonctionnelle
 
-```{block, type='Essentiel'}
+```{block, type='Summary'}
   L'entropie phylogénétique et l'entropie de Ricotta et Szeidl se décomposent comme l'entropie HCDT.
   La diversité $\beta$ phylogénétique et la diversité $\beta$ de Leinster et Cobbold sont des nombres effectifs de communautés, c'est-à-dire des communautés de même poids et dont les espèces seraient totalement dissimilaires qui fourniraient la même entropie $\beta$ que les communautés réelles.
 ```
@@ -1487,7 +1487,7 @@ L'inverse de $^q\!D^{\mathbf{Z}}_\gamma$ est la moyenne généralisée d'ordre $
 \begin{equation}
   (\#eq:Dqzgamma)
   \frac{1}{^q\!D^{\mathbf{Z}}_\gamma}
-  ={\left[\sum_i{p_s{{\left(\mathbf{Zp}\right)}_s}^{q-1}}\right]}^{\frac{1}{q-1}}
+  ={\left[\sum_s{p_s{{\left(\mathbf{Zp}\right)}_s}^{q-1}}\right]}^{\frac{1}{q-1}}
 \end{equation}
 
 Partant de $^{q}\!D_{\gamma} = {^{q}\!D_{\alpha}} {^{q}\!D_{\beta}}$ et de la définition de Routledge de la diversité $\alpha$, on obtient
