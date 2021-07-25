@@ -1,4 +1,6 @@
+\SmallMargins
 # (PART) Diversité spatialement explicite {-}
+\LargeMargins
 
 # Cadre {#sec:spatialCadre}
 

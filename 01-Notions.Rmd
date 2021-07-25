@@ -3,7 +3,9 @@ output:
   pdf_document: default
   html_document: default
 ---
+\SmallMargins
 # (PART) Notions {-}
+\LargeMargins
 
 # Notions de Diversité
 

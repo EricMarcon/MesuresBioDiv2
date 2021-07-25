@@ -1,4 +1,6 @@
+\SmallMargins
 # (PART) Diversité beta et décomposition {-}
+\LargeMargins
 
 # Cadre {#sec:betaCadre}
 
