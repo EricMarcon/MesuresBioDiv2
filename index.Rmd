@@ -4,6 +4,7 @@ author: "Eric Marcon"
 date: "`r format(Sys.Date(), '%d/%m/%Y')`"
 url: "https://github.com/EricMarcon/MesuresBioDiv2/"
 description: "Définitions, estimation et décompositon de la biodiversité"
+cover-image: image/logo.png
 # Title page
 maintitlepage:
   epigraph: |
