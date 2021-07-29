@@ -5,26 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité</title>
-  <meta name="description" content="13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité." />
+  <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2" />
+  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   
-  <meta property="og:description" content="13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité." />
-  <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
+  <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
+  
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité" />
   
-  <meta name="twitter:description" content="13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité." />
+  <meta name="twitter:description" content="Définitions, estimation et décompositon de la biodiversité" />
   
 
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -474,7 +473,8 @@ Les résultats contiennent la valeur de la diversité:</p>
 <div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-1"></a><span class="kw">data</span>(Paracou618)</span>
 <span id="cb280-2"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-2"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>,</span>
 <span id="cb280-3"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb280-3"></a>                <span class="dt">Tree =</span> Paracou618.Taxonomy))</span></code></pre></div>
-<pre><code>## HCDT diversity partitioning of order 1 of metaCommunity Paracou618.MC
+<pre><code>## HCDT diversity partitioning of order 1 of metaCommunity 
+## Paracou618.MC
 ##  with correction: UnveilJ UnveilJ UnveilJ
 ## Phylogenetic or functional diversity was calculated
 ## according to the tree 
@@ -574,8 +574,8 @@ Formellement:</p>
 <span id="cb283-4"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-4"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>DistanceMatrix<span class="op">/</span><span class="kw">max</span>(DistanceMatrix)</span>
 <span id="cb283-5"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-5"></a><span class="co"># Partition de la diversité</span></span>
 <span id="cb283-6"><a href="13-décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html#cb283-6"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Z =</span> Z, <span class="dt">Biased =</span> <span class="ot">FALSE</span>))</span></code></pre></div>
-<pre><code>## Similarity-based diversity partitioning of order 1 of metaCommunity 
-## Paracou618.MC
+<pre><code>## Similarity-based diversity partitioning of order 1 
+## of metaCommunity Paracou618.MC
 ##  with correction: Best
 ## Phylogenetic or functional entropy was calculated
 ## according to the similarity matrix 

@@ -5,26 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité</title>
-  <meta name="description" content="3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité." />
+  <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2" />
+  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   
-  <meta property="og:description" content="3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité." />
-  <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
+  <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
+  
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité" />
   
-  <meta name="twitter:description" content="3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité." />
+  <meta name="twitter:description" content="Définitions, estimation et décompositon de la biodiversité" />
   
 
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -436,8 +435,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="chap:MesuresNeutres" class="section level1">
 <h1><span class="header-section-number">3</span> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span></h1>
 <p></p>
-<p></p>
-<p></p>
 <div class="Summary">
 <p>
 Les indices classiques de diversité sont ceux de Shannon et de Simpson, et la richesse spécifique. Ils peuvent être estimés à partir des données d’inventaire. L’estimation de la richesse est particulièrement difficile et fait l’objet d’une abondante littérature: les estimateurs non-paramétriques (Chao et Jackknife) sont les plus utilisés.
@@ -666,8 +663,8 @@ Figure 3.1: Echantillon de 1000 individus tiré dans une communauté log-normale
 <span id="cb26-2"><a href="3-chap-MesuresNeutres.html#cb26-2"></a><span class="co"># observées</span></span>
 <span id="cb26-3"><a href="3-chap-MesuresNeutres.html#cb26-3"></a>(Sn &lt;-<span class="st"> </span><span class="kw">mean</span>(<span class="kw">colSums</span>(<span class="kw">rmultinom</span>(<span class="dv">1000</span>, N, Ps) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)))</span></code></pre></div>
 <pre><code>## [1] 120.565</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="3-chap-MesuresNeutres.html#cb28-1"></a><span class="co"># Vérification: nombre d&#39;espèces observées en moyenne et non</span></span>
-<span id="cb28-2"><a href="3-chap-MesuresNeutres.html#cb28-2"></a><span class="co"># observées</span></span>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="3-chap-MesuresNeutres.html#cb28-1"></a><span class="co"># Vérification: nombre d&#39;espèces observées en moyenne et</span></span>
+<span id="cb28-2"><a href="3-chap-MesuresNeutres.html#cb28-2"></a><span class="co"># non observées</span></span>
 <span id="cb28-3"><a href="3-chap-MesuresNeutres.html#cb28-3"></a>Sn <span class="op">+</span><span class="st"> </span>f0</span></code></pre></div>
 <pre><code>## [1] 300.0225</code></pre>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="3-chap-MesuresNeutres.html#cb30-1"></a><span class="co"># Nombre total d&#39;espèces dans la communauté</span></span>
@@ -717,7 +714,8 @@ Figure 3.1: Echantillon de 1000 individus tiré dans une communauté log-normale
 ## I(1/n.seq^3)  5.071e+11  2.669e+09   190.0   &lt;2e-16 ***
 ## I(1/n.seq^4) -1.145e+14  8.003e+11  -143.1   &lt;2e-16 ***
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 3.757 on 4497 degrees of freedom
 ## Multiple R-squared:  0.9992, Adjusted R-squared:  0.9992 
@@ -783,8 +781,10 @@ Le tableau d’entrée est un <code>dataframe</code> contenant, pour chaque esp�
 <p>Comparaison des fonctions sur l’ensemble du dispositif BCI (<span class="math inline">\(s^{n}_{\ne 0}=225\)</span>, <span class="math inline">\(s_{1}=19\)</span>):</p>
 <p></p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="3-chap-MesuresNeutres.html#cb39-1"></a><span class="kw">specpool</span>(BCI)</span></code></pre></div>
-<pre><code>##     Species     chao chao.se  jack1 jack1.se    jack2     boot  boot.se  n
-## All     225 236.3732 6.54361 245.58 5.650522 247.8722 235.6862 3.468888 50</code></pre>
+<pre><code>##     Species     chao chao.se  jack1 jack1.se    jack2
+## All     225 236.3732 6.54361 245.58 5.650522 247.8722
+##         boot  boot.se  n
+## All 235.6862 3.468888 50</code></pre>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="3-chap-MesuresNeutres.html#cb41-1"></a><span class="kw">library</span>(<span class="st">&quot;SPECIES&quot;</span>)</span>
 <span id="cb41-2"><a href="3-chap-MesuresNeutres.html#cb41-2"></a><span class="co"># Distribution du nombre d&#39;espèces (vecteur: </span></span>
 <span id="cb41-3"><a href="3-chap-MesuresNeutres.html#cb41-3"></a><span class="co"># noms = nombre d&#39;individus</span></span>
@@ -876,7 +876,7 @@ La complétude est <span class="math inline">\({225}/{244}=92\%\)</span>, dans l
 ##       lb  ub
 ## [1,] 423 519</code></pre>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="3-chap-MesuresNeutres.html#cb51-1"></a><span class="co"># Complétude</span></span>
-<span id="cb51-2"><a href="3-chap-MesuresNeutres.html#cb51-2"></a><span class="kw">as.numeric</span>(<span class="kw">Richness</span>(Paracou6, <span class="dt">Correction =</span> <span class="st">&quot;None&quot;</span>)<span class="op">/</span><span class="kw">Richness</span>(Paracou6, </span>
+<span id="cb51-2"><a href="3-chap-MesuresNeutres.html#cb51-2"></a><span class="kw">as.numeric</span>(<span class="kw">Richness</span>(Paracou6, <span class="dt">Correction =</span> <span class="st">&quot;None&quot;</span>)<span class="op">/</span><span class="kw">Richness</span>(Paracou6,</span>
 <span id="cb51-3"><a href="3-chap-MesuresNeutres.html#cb51-3"></a>    <span class="dt">Correction =</span> <span class="st">&quot;Jackknife&quot;</span>))</span></code></pre></div>
 <pre><code>## [1] 0.7091295</code></pre>
 <p></p>
@@ -981,7 +981,7 @@ Figure 3.5: Ajustement du modèle de Preston aux données de BCI.
 <span id="cb64-8"><a href="3-chap-MesuresNeutres.html#cb64-8"></a>DistNs.SPECIES &lt;-<span class="st"> </span><span class="kw">AbdFreqCount</span>(Ns)</span>
 <span id="cb64-9"><a href="3-chap-MesuresNeutres.html#cb64-9"></a><span class="co"># Regroupement de la queue de distribution: la longueur du</span></span>
 <span id="cb64-10"><a href="3-chap-MesuresNeutres.html#cb64-10"></a><span class="co"># vecteur est limitée à 25 pour alléger les calculs.</span></span>
-<span id="cb64-11"><a href="3-chap-MesuresNeutres.html#cb64-11"></a>DistNs.SPECIES[<span class="dv">25</span>, <span class="dv">2</span>] &lt;-<span class="st"> </span><span class="kw">sum</span>(DistNs.SPECIES[<span class="dv">25</span><span class="op">:</span><span class="kw">nrow</span>(DistNs.SPECIES), </span>
+<span id="cb64-11"><a href="3-chap-MesuresNeutres.html#cb64-11"></a>DistNs.SPECIES[<span class="dv">25</span>, <span class="dv">2</span>] &lt;-<span class="st"> </span><span class="kw">sum</span>(DistNs.SPECIES[<span class="dv">25</span><span class="op">:</span><span class="kw">nrow</span>(DistNs.SPECIES),</span>
 <span id="cb64-12"><a href="3-chap-MesuresNeutres.html#cb64-12"></a>    <span class="dv">2</span>])</span>
 <span id="cb64-13"><a href="3-chap-MesuresNeutres.html#cb64-13"></a>DistNs.SPECIES &lt;-<span class="st"> </span>DistNs.SPECIES[<span class="dv">1</span><span class="op">:</span><span class="dv">25</span>, ]</span>
 <span id="cb64-14"><a href="3-chap-MesuresNeutres.html#cb64-14"></a><span class="kw">unpmle</span>(DistNs.SPECIES)</span></code></pre></div>
@@ -1047,7 +1047,7 @@ Pour <span class="math inline">\(\hat{S}\)</span>, le nombre total d’espèces 
 Le résultat se trouve en figure <a href="3-chap-MesuresNeutres.html#fig:SobLLorFig">3.7</a>.</p>
 <p></p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="3-chap-MesuresNeutres.html#cb72-1"></a><span class="co"># Ajustement du modèle</span></span>
-<span id="cb72-2"><a href="3-chap-MesuresNeutres.html#cb72-2"></a>(nlsfit &lt;-<span class="st"> </span><span class="kw">nls</span>(nEspeces <span class="op">~</span><span class="st"> </span>S <span class="op">*</span><span class="st"> </span>nArbres<span class="op">/</span>(K <span class="op">+</span><span class="st"> </span>nArbres), <span class="dt">data =</span> <span class="kw">list</span>(nArbres, </span>
+<span id="cb72-2"><a href="3-chap-MesuresNeutres.html#cb72-2"></a>(nlsfit &lt;-<span class="st"> </span><span class="kw">nls</span>(nEspeces <span class="op">~</span><span class="st"> </span>S <span class="op">*</span><span class="st"> </span>nArbres<span class="op">/</span>(K <span class="op">+</span><span class="st"> </span>nArbres), <span class="dt">data =</span> <span class="kw">list</span>(nArbres,</span>
 <span id="cb72-3"><a href="3-chap-MesuresNeutres.html#cb72-3"></a>    nEspeces), <span class="dt">start =</span> <span class="kw">list</span>(<span class="dt">K =</span> <span class="kw">max</span>(nArbres)<span class="op">/</span><span class="dv">4</span>, <span class="dt">S =</span> <span class="kw">max</span>(nEspeces))))</span></code></pre></div>
 <pre><code>## Nonlinear regression model
 ##   model: nEspeces ~ S * nArbres/(K + nArbres)
@@ -1085,7 +1085,7 @@ Ses données sont utilisées ici:</p>
 Le paramètre <span class="math inline">\(K\)</span> peut être estimé plus précisément par résolution numérique de l’équation exacte du maximum de vraisemblance:</p>
 <p></p>
 <div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="3-chap-MesuresNeutres.html#cb78-1"></a><span class="co"># Equation que Khat doit annuler</span></span>
-<span id="cb78-2"><a href="3-chap-MesuresNeutres.html#cb78-2"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>(Khat) Sxy <span class="op">+</span><span class="st"> </span>Khat <span class="op">*</span><span class="st"> </span>Sxx <span class="op">-</span><span class="st"> </span>(Syy <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>Khat <span class="op">*</span><span class="st"> </span>Sxy <span class="op">+</span><span class="st"> </span></span>
+<span id="cb78-2"><a href="3-chap-MesuresNeutres.html#cb78-2"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>(Khat) Sxy <span class="op">+</span><span class="st"> </span>Khat <span class="op">*</span><span class="st"> </span>Sxx <span class="op">-</span><span class="st"> </span>(Syy <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>Khat <span class="op">*</span><span class="st"> </span>Sxy <span class="op">+</span></span>
 <span id="cb78-3"><a href="3-chap-MesuresNeutres.html#cb78-3"></a><span class="st">    </span>Khat <span class="op">*</span><span class="st"> </span>Khat <span class="op">*</span><span class="st"> </span>Sxx) <span class="op">*</span><span class="st"> </span><span class="kw">sum</span>(Xi<span class="op">/</span>(Yi <span class="op">+</span><span class="st"> </span>Khat <span class="op">*</span><span class="st"> </span>Xi)<span class="op">/</span>N)</span>
 <span id="cb78-4"><a href="3-chap-MesuresNeutres.html#cb78-4"></a><span class="co"># Résolution numérique, l&#39;intervalle de recherche doit être</span></span>
 <span id="cb78-5"><a href="3-chap-MesuresNeutres.html#cb78-5"></a><span class="co"># fourni</span></span>
@@ -1140,7 +1140,7 @@ Si la probabilité de trouver une nouvelle espèce est proportionnelle au nombre
 \end{equation}\]</span></p>
 <p>Les paramètres peuvent être estimés par la méthode des moindres carrés:</p>
 <p></p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="3-chap-MesuresNeutres.html#cb86-1"></a>(nlsexp &lt;-<span class="st"> </span><span class="kw">nls</span>(nEspeces <span class="op">~</span><span class="st"> </span>S <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">exp</span>(K <span class="op">*</span><span class="st"> </span>nArbres)), <span class="dt">data =</span> <span class="kw">list</span>(nArbres, </span>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="3-chap-MesuresNeutres.html#cb86-1"></a>(nlsexp &lt;-<span class="st"> </span><span class="kw">nls</span>(nEspeces <span class="op">~</span><span class="st"> </span>S <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">exp</span>(K <span class="op">*</span><span class="st"> </span>nArbres)), <span class="dt">data =</span> <span class="kw">list</span>(nArbres,</span>
 <span id="cb86-2"><a href="3-chap-MesuresNeutres.html#cb86-2"></a>    nEspeces), <span class="dt">start =</span> <span class="kw">list</span>(<span class="dt">S =</span> <span class="kw">max</span>(nEspeces), <span class="dt">K =</span> <span class="dv">-1</span><span class="op">/</span><span class="dv">1000</span>)))</span></code></pre></div>
 <pre><code>## Nonlinear regression model
 ##   model: nEspeces ~ S * (1 - exp(K * nArbres))
@@ -1162,8 +1162,8 @@ Un paramètre supplémentaire pour obtenir l’asymptote est nécessaire et abou
 \end{equation}\]</span></p>
 <p>Les paramètres à estimer sont <span class="math inline">\(z\)</span>, <span class="math inline">\(a\)</span> et <span class="math inline">\(c\)</span>.</p>
 <p></p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="3-chap-MesuresNeutres.html#cb88-1"></a>(nlslog &lt;-<span class="st"> </span><span class="kw">nls</span>(nEspeces <span class="op">~</span><span class="st"> </span><span class="dv">1</span><span class="op">/</span>z <span class="op">*</span><span class="st"> </span><span class="kw">log</span>(a<span class="op">/</span>c <span class="op">-</span><span class="st"> </span>(a <span class="op">-</span><span class="st"> </span>c)<span class="op">/</span>c <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>c <span class="op">*</span><span class="st"> </span></span>
-<span id="cb88-2"><a href="3-chap-MesuresNeutres.html#cb88-2"></a><span class="st">    </span>z <span class="op">*</span><span class="st"> </span>nArbres)), <span class="dt">data =</span> <span class="kw">list</span>(nArbres, nEspeces), <span class="dt">start =</span> <span class="kw">list</span>(<span class="dt">z =</span> <span class="fl">0.05</span>, </span>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="3-chap-MesuresNeutres.html#cb88-1"></a>(nlslog &lt;-<span class="st"> </span><span class="kw">nls</span>(nEspeces <span class="op">~</span><span class="st"> </span><span class="dv">1</span><span class="op">/</span>z <span class="op">*</span><span class="st"> </span><span class="kw">log</span>(a<span class="op">/</span>c <span class="op">-</span><span class="st"> </span>(a <span class="op">-</span><span class="st"> </span>c)<span class="op">/</span>c <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>c <span class="op">*</span></span>
+<span id="cb88-2"><a href="3-chap-MesuresNeutres.html#cb88-2"></a><span class="st">    </span>z <span class="op">*</span><span class="st"> </span>nArbres)), <span class="dt">data =</span> <span class="kw">list</span>(nArbres, nEspeces), <span class="dt">start =</span> <span class="kw">list</span>(<span class="dt">z =</span> <span class="fl">0.05</span>,</span>
 <span id="cb88-3"><a href="3-chap-MesuresNeutres.html#cb88-3"></a>    <span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">c =</span> <span class="fl">0.001</span>)))</span></code></pre></div>
 <pre><code>## Nonlinear regression model
 ##   model: nEspeces ~ 1/z * log(a/c - (a - c)/c * exp(-c * z * nArbres))
@@ -1277,9 +1277,10 @@ Le nombre d’espèces doit être estimé par les méthodes présentées plus ha
 <p>Le calcul de l’indice de Simpson peut se faire avec la fonction <code>diversity</code> disponible dans le package <em>vegan</em> de R ou avec la fonction <code>Simpson</code> du package <em>entropart</em>:</p>
 <p></p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="3-chap-MesuresNeutres.html#cb93-1"></a><span class="kw">data</span>(BCI)</span>
-<span id="cb93-2"><a href="3-chap-MesuresNeutres.html#cb93-2"></a><span class="co"># as.ProbaVector() transforme les abondances en probabilités</span></span>
-<span id="cb93-3"><a href="3-chap-MesuresNeutres.html#cb93-3"></a>Ps &lt;-<span class="st"> </span><span class="kw">as.ProbaVector</span>(<span class="kw">colSums</span>(BCI))</span>
-<span id="cb93-4"><a href="3-chap-MesuresNeutres.html#cb93-4"></a><span class="kw">Simpson</span>(Ps)</span></code></pre></div>
+<span id="cb93-2"><a href="3-chap-MesuresNeutres.html#cb93-2"></a><span class="co"># as.ProbaVector() transforme les abondances en</span></span>
+<span id="cb93-3"><a href="3-chap-MesuresNeutres.html#cb93-3"></a><span class="co"># probabilités</span></span>
+<span id="cb93-4"><a href="3-chap-MesuresNeutres.html#cb93-4"></a>Ps &lt;-<span class="st"> </span><span class="kw">as.ProbaVector</span>(<span class="kw">colSums</span>(BCI))</span>
+<span id="cb93-5"><a href="3-chap-MesuresNeutres.html#cb93-5"></a><span class="kw">Simpson</span>(Ps)</span></code></pre></div>
 <pre><code>##      None 
 ## 0.9736755</code></pre>
 <p></p>

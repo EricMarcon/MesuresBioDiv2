@@ -5,26 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>20 Indice \(\alpha\) de Fisher | Mesures de la Biodiversité</title>
-  <meta name="description" content="20 Indice \(\alpha\) de Fisher | Mesures de la Biodiversité." />
+  <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="20 Indice \(\alpha\) de Fisher | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2" />
+  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   
-  <meta property="og:description" content="20 Indice \(\alpha\) de Fisher | Mesures de la Biodiversité." />
-  <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
+  <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
+  
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="20 Indice \(\alpha\) de Fisher | Mesures de la Biodiversité" />
   
-  <meta name="twitter:description" content="20 Indice \(\alpha\) de Fisher | Mesures de la Biodiversité." />
+  <meta name="twitter:description" content="Définitions, estimation et décompositon de la biodiversité" />
   
 
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -548,9 +547,10 @@ Le résultat est très différent parce que l’approximation de l’égalité d
 
 <div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="20-chap-Fisher.html#cb308-1"></a><span class="kw">library</span>(<span class="st">&quot;vegan&quot;</span>)</span>
 <span id="cb308-2"><a href="20-chap-Fisher.html#cb308-2"></a><span class="kw">data</span>(BCI)</span>
-<span id="cb308-3"><a href="20-chap-Fisher.html#cb308-3"></a><span class="co"># Ns est un vecteur contenant les effectifs de chaque espèce</span></span>
-<span id="cb308-4"><a href="20-chap-Fisher.html#cb308-4"></a>Ns &lt;-<span class="st"> </span><span class="kw">colSums</span>(BCI)</span>
-<span id="cb308-5"><a href="20-chap-Fisher.html#cb308-5"></a><span class="kw">fisher.alpha</span>(Ns)</span></code></pre></div>
+<span id="cb308-3"><a href="20-chap-Fisher.html#cb308-3"></a><span class="co"># Ns est un vecteur contenant les effectifs de chaque</span></span>
+<span id="cb308-4"><a href="20-chap-Fisher.html#cb308-4"></a><span class="co"># espèce</span></span>
+<span id="cb308-5"><a href="20-chap-Fisher.html#cb308-5"></a>Ns &lt;-<span class="st"> </span><span class="kw">colSums</span>(BCI)</span>
+<span id="cb308-6"><a href="20-chap-Fisher.html#cb308-6"></a><span class="kw">fisher.alpha</span>(Ns)</span></code></pre></div>
 <pre><code>## [1] 35.05475</code></pre>
 <div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="20-chap-Fisher.html#cb310-1"></a><span class="kw">library</span>(<span class="st">&quot;untb&quot;</span>)</span></code></pre></div>
 <pre><code>## Registered S3 method overwritten by &#39;untb&#39;:
@@ -621,7 +621,7 @@ L’indice Q est calculé:</p>
 <span id="cb318-7"><a href="20-chap-Fisher.html#cb318-7"></a><span class="co"># Nombre total d&#39;espèces</span></span>
 <span id="cb318-8"><a href="20-chap-Fisher.html#cb318-8"></a>S &lt;-<span class="st"> </span><span class="kw">max</span>(nEspeces)</span>
 <span id="cb318-9"><a href="20-chap-Fisher.html#cb318-9"></a><span class="co"># Premier et troisièmes quartiles</span></span>
-<span id="cb318-10"><a href="20-chap-Fisher.html#cb318-10"></a>Q13 &lt;-<span class="st"> </span><span class="kw">which</span>(nEspeces <span class="op">&gt;=</span><span class="st"> </span><span class="kw">max</span>(nEspeces)<span class="op">/</span><span class="dv">4</span> <span class="op">&amp;</span><span class="st"> </span>nEspeces <span class="op">&lt;=</span><span class="st"> </span><span class="kw">max</span>(nEspeces) <span class="op">*</span><span class="st"> </span></span>
+<span id="cb318-10"><a href="20-chap-Fisher.html#cb318-10"></a>Q13 &lt;-<span class="st"> </span><span class="kw">which</span>(nEspeces <span class="op">&gt;=</span><span class="st"> </span><span class="kw">max</span>(nEspeces)<span class="op">/</span><span class="dv">4</span> <span class="op">&amp;</span><span class="st"> </span>nEspeces <span class="op">&lt;=</span><span class="st"> </span><span class="kw">max</span>(nEspeces) <span class="op">*</span></span>
 <span id="cb318-11"><a href="20-chap-Fisher.html#cb318-11"></a><span class="st">    </span><span class="dv">3</span><span class="op">/</span><span class="dv">4</span>)</span>
 <span id="cb318-12"><a href="20-chap-Fisher.html#cb318-12"></a>nq1 &lt;-<span class="st"> </span><span class="kw">min</span>(Q13)</span>
 <span id="cb318-13"><a href="20-chap-Fisher.html#cb318-13"></a>nq3 &lt;-<span class="st"> </span><span class="kw">max</span>(Q13)</span>

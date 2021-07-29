@@ -5,26 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>21 Accumulation de la diversité locale | Mesures de la Biodiversité</title>
-  <meta name="description" content="21 Accumulation de la diversité locale | Mesures de la Biodiversité." />
+  <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="21 Accumulation de la diversité locale | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2" />
+  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   
-  <meta property="og:description" content="21 Accumulation de la diversité locale | Mesures de la Biodiversité." />
-  <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
+  <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
+  
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="21 Accumulation de la diversité locale | Mesures de la Biodiversité" />
   
-  <meta name="twitter:description" content="21 Accumulation de la diversité locale | Mesures de la Biodiversité." />
+  <meta name="twitter:description" content="Définitions, estimation et décompositon de la biodiversité" />
   
 
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -638,8 +637,8 @@ où <span class="math inline">\(n_0\)</span> est la taille de l’inventaire de 
 <div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="21-chap-Accumulation.html#cb324-1"></a><span class="co"># Extrapolation jusqu&#39;à</span></span>
 <span id="cb324-2"><a href="21-chap-Accumulation.html#cb324-2"></a>Nmax &lt;-<span class="st"> </span><span class="dv">25000</span></span>
 <span id="cb324-3"><a href="21-chap-Accumulation.html#cb324-3"></a><span class="co"># SAC réelle, obtenue par la somme des entropies de Simpson</span></span>
-<span id="cb324-4"><a href="21-chap-Accumulation.html#cb324-4"></a><span class="co"># généralisées Calcul de p(1-p)^r pour toutes les espèces (en</span></span>
-<span id="cb324-5"><a href="21-chap-Accumulation.html#cb324-5"></a><span class="co"># lignes) et tous les r (en colonnes)</span></span>
+<span id="cb324-4"><a href="21-chap-Accumulation.html#cb324-4"></a><span class="co"># généralisées Calcul de p(1-p)^r pour toutes les espèces</span></span>
+<span id="cb324-5"><a href="21-chap-Accumulation.html#cb324-5"></a><span class="co"># (en lignes) et tous les r (en colonnes)</span></span>
 <span id="cb324-6"><a href="21-chap-Accumulation.html#cb324-6"></a>GSsr &lt;-<span class="st"> </span>Ps <span class="op">*</span><span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>Nmax, <span class="cf">function</span>(r) (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>Ps)<span class="op">^</span>r)</span>
 <span id="cb324-7"><a href="21-chap-Accumulation.html#cb324-7"></a><span class="co"># Simpson généralisé pour tous les r</span></span>
 <span id="cb324-8"><a href="21-chap-Accumulation.html#cb324-8"></a>GSr &lt;-<span class="st"> </span><span class="kw">colSums</span>(GSsr)</span>
@@ -647,14 +646,14 @@ où <span class="math inline">\(n_0\)</span> est la taille de l’inventaire de 
 <span id="cb324-10"><a href="21-chap-Accumulation.html#cb324-10"></a>SAC &lt;-<span class="st"> </span><span class="kw">cumsum</span>(GSr)</span>
 <span id="cb324-11"><a href="21-chap-Accumulation.html#cb324-11"></a><span class="co"># Fonction d&#39;extrapolation de la SAC</span></span>
 <span id="cb324-12"><a href="21-chap-Accumulation.html#cb324-12"></a>ExtraSAC &lt;-<span class="st"> </span><span class="cf">function</span>(Ns, N) {</span>
-<span id="cb324-13"><a href="21-chap-Accumulation.html#cb324-13"></a>    <span class="co"># Ns est le vecteur des abondances de l&#39;échantillon, N est le</span></span>
-<span id="cb324-14"><a href="21-chap-Accumulation.html#cb324-14"></a>    <span class="co"># vecteur des tailles à extrapoler</span></span>
+<span id="cb324-13"><a href="21-chap-Accumulation.html#cb324-13"></a>    <span class="co"># Ns est le vecteur des abondances de l&#39;échantillon, N</span></span>
+<span id="cb324-14"><a href="21-chap-Accumulation.html#cb324-14"></a>    <span class="co"># est le vecteur des tailles à extrapoler</span></span>
 <span id="cb324-15"><a href="21-chap-Accumulation.html#cb324-15"></a>    n0 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns)</span>
 <span id="cb324-16"><a href="21-chap-Accumulation.html#cb324-16"></a>    Sn0 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
 <span id="cb324-17"><a href="21-chap-Accumulation.html#cb324-17"></a>    f1 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</span>
 <span id="cb324-18"><a href="21-chap-Accumulation.html#cb324-18"></a>    f2 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns <span class="op">==</span><span class="st"> </span><span class="dv">2</span>)</span>
 <span id="cb324-19"><a href="21-chap-Accumulation.html#cb324-19"></a>    <span class="co"># Extrapolation à chaque taille</span></span>
-<span id="cb324-20"><a href="21-chap-Accumulation.html#cb324-20"></a>    <span class="kw">vapply</span>(N, <span class="cf">function</span>(n) Sn0 <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>f1 <span class="op">-</span><span class="st"> </span>f2 <span class="op">-</span><span class="st"> </span>(<span class="dv">3</span> <span class="op">*</span><span class="st"> </span>f1 <span class="op">-</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>f2) <span class="op">*</span><span class="st"> </span></span>
+<span id="cb324-20"><a href="21-chap-Accumulation.html#cb324-20"></a>    <span class="kw">vapply</span>(N, <span class="cf">function</span>(n) Sn0 <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>f1 <span class="op">-</span><span class="st"> </span>f2 <span class="op">-</span><span class="st"> </span>(<span class="dv">3</span> <span class="op">*</span><span class="st"> </span>f1 <span class="op">-</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>f2) <span class="op">*</span></span>
 <span id="cb324-21"><a href="21-chap-Accumulation.html#cb324-21"></a><span class="st">        </span>n0<span class="op">/</span>n <span class="op">-</span><span class="st"> </span>(f2 <span class="op">-</span><span class="st"> </span>f1) <span class="op">*</span><span class="st"> </span>(n0<span class="op">/</span>n)<span class="op">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
 <span id="cb324-22"><a href="21-chap-Accumulation.html#cb324-22"></a>}</span>
 <span id="cb324-23"><a href="21-chap-Accumulation.html#cb324-23"></a><span class="co"># Taille de l&#39;échantillon</span></span>

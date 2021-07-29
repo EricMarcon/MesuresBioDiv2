@@ -5,26 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>12 Décomposition de l’entropie HCDT | Mesures de la Biodiversité</title>
-  <meta name="description" content="12 Décomposition de l’entropie HCDT | Mesures de la Biodiversité." />
+  <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="12 Décomposition de l’entropie HCDT | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2" />
+  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   
-  <meta property="og:description" content="12 Décomposition de l’entropie HCDT | Mesures de la Biodiversité." />
-  <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
+  <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
+  
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="12 Décomposition de l’entropie HCDT | Mesures de la Biodiversité" />
   
-  <meta name="twitter:description" content="12 Décomposition de l’entropie HCDT | Mesures de la Biodiversité." />
+  <meta name="twitter:description" content="Définitions, estimation et décompositon de la biodiversité" />
   
 
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -529,8 +528,8 @@ La décomposition ou le regroupement peuvent être effectués sur un nombre quel
 
 <div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="12-chap-DedompHCDT.html#cb248-1"></a><span class="co"># Pas de correction du biais d&#39;estimation</span></span>
 <span id="cb248-2"><a href="12-chap-DedompHCDT.html#cb248-2"></a><span class="kw">summary</span>(<span class="kw">BetaEntropy</span>(Paracou618.MC, <span class="dt">q =</span> <span class="dv">1</span>, <span class="dt">Correction =</span> <span class="st">&quot;None&quot;</span>))</span></code></pre></div>
-<pre><code>## Neutral beta entropy of order 1 of metaCommunity Paracou618.MC with correction: 
-## None 
+<pre><code>## Neutral beta entropy of order 1 of metaCommunity 
+## Paracou618.MC with correction: None 
 ## 
 ## Entropy of communities: 
 ##      P006      P018 
@@ -550,8 +549,8 @@ L’estimateur corrigé de <span class="math inline">\(_iH_{\beta}\)</span> est<
 <p>Calcul sous R: <code>BetaEntropy</code> applique cette correction:</p>
 
 <div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="12-chap-DedompHCDT.html#cb250-1"></a><span class="kw">summary</span>(<span class="kw">BetaEntropy</span>(Paracou618.MC, <span class="dt">q =</span> <span class="dv">1</span>, <span class="dt">Correction =</span> <span class="st">&quot;ChaoShen&quot;</span>))</span></code></pre></div>
-<pre><code>## Neutral beta entropy of order 1 of metaCommunity Paracou618.MC with correction: 
-## ChaoShen 
+<pre><code>## Neutral beta entropy of order 1 of metaCommunity 
+## Paracou618.MC with correction: ChaoShen 
 ## 
 ## Entropy of communities: 
 ##      P006      P018 
@@ -570,7 +569,7 @@ Dans ce cas, l’entropie <span class="math inline">\(\beta\)</span> est égale 
 Comme chaque terme du calcul est une entropie <span class="math inline">\(\alpha\)</span>, il peut être corrigé selon l’équation @ref(eq:Chao2013 pour obtenir un estimateur moins biaisé de <span class="math inline">\(H_{\beta}\)</span>.</p>
 <p>Calcul sous R:</p>
 
-<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="12-chap-DedompHCDT.html#cb252-1"></a><span class="kw">Shannon</span>(Paracou618.MC<span class="op">$</span>Ns) <span class="op">+</span><span class="st"> </span><span class="kw">Shannon</span>(<span class="kw">colSums</span>(Paracou618.MC<span class="op">$</span>Nsi)) <span class="op">-</span><span class="st"> </span></span>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="12-chap-DedompHCDT.html#cb252-1"></a><span class="kw">Shannon</span>(Paracou618.MC<span class="op">$</span>Ns) <span class="op">+</span><span class="st"> </span><span class="kw">Shannon</span>(<span class="kw">colSums</span>(Paracou618.MC<span class="op">$</span>Nsi)) <span class="op">-</span></span>
 <span id="cb252-2"><a href="12-chap-DedompHCDT.html#cb252-2"></a><span class="st">    </span><span class="kw">Shannon</span>(Paracou618.MC<span class="op">$</span>Nsi)</span></code></pre></div>
 <pre><code>##   UnveilJ 
 ## 0.3439827</code></pre>
@@ -588,7 +587,7 @@ Comme chaque terme du calcul est une entropie <span class="math inline">\(\alpha
 
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="12-chap-DedompHCDT.html#cb254-1"></a><span class="co"># Divergence de Kullback-Leibler entre chaque communauté de</span></span>
 <span id="cb254-2"><a href="12-chap-DedompHCDT.html#cb254-2"></a><span class="co"># Paracou618.MC et la métacommunauté</span></span>
-<span id="cb254-3"><a href="12-chap-DedompHCDT.html#cb254-3"></a>(Beta &lt;-<span class="st"> </span><span class="kw">apply</span>(Paracou618.MC<span class="op">$</span>Nsi, <span class="dv">2</span>, ShannonBeta, <span class="dt">Nexp =</span> Paracou618.MC<span class="op">$</span>Ns, </span>
+<span id="cb254-3"><a href="12-chap-DedompHCDT.html#cb254-3"></a>(Beta &lt;-<span class="st"> </span><span class="kw">apply</span>(Paracou618.MC<span class="op">$</span>Nsi, <span class="dv">2</span>, ShannonBeta, <span class="dt">Nexp =</span> Paracou618.MC<span class="op">$</span>Ns,</span>
 <span id="cb254-4"><a href="12-chap-DedompHCDT.html#cb254-4"></a>    <span class="dt">Correction =</span> <span class="st">&quot;ZhangGrabchak&quot;</span>))</span></code></pre></div>
 <pre><code>##      P006      P018 
 ## 0.1442318 0.2994995</code></pre>
@@ -874,8 +873,8 @@ La divergence entre communautés est construite à partir des entropies de chacu
 <p>L’exemple suivant utilise les communautés du fichier <code>rao.effectifs.csv</code> :</p>
 
 <div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="12-chap-DedompHCDT.html#cb264-1"></a><span class="co"># Vecteur contenant 8 espèces...</span></span>
-<span id="cb264-2"><a href="12-chap-DedompHCDT.html#cb264-2"></a>(effectifs &lt;-<span class="st"> </span><span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.effectifs.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, </span>
-<span id="cb264-3"><a href="12-chap-DedompHCDT.html#cb264-3"></a>    <span class="dt">header =</span> T))</span></code></pre></div>
+<span id="cb264-2"><a href="12-chap-DedompHCDT.html#cb264-2"></a>(<span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.effectifs.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">header =</span> T) -&gt;</span>
+<span id="cb264-3"><a href="12-chap-DedompHCDT.html#cb264-3"></a><span class="st">    </span>effectifs)</span></code></pre></div>
 <pre><code>##     P1 P2 P3 P4
 ## Ess 97 36 34 61
 ## Me  62 24 49  4
@@ -886,13 +885,15 @@ La divergence entre communautés est construite à partir des entropies de chacu
 ## Ef   9 34 91 35
 ## Dg  98 14 95 14</code></pre>
 <div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="12-chap-DedompHCDT.html#cb266-1"></a><span class="co"># Lecture des données : traits pour 34 espèces</span></span>
-<span id="cb266-2"><a href="12-chap-DedompHCDT.html#cb266-2"></a>traits &lt;-<span class="st"> </span><span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.traits.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">header =</span> T)</span>
-<span id="cb266-3"><a href="12-chap-DedompHCDT.html#cb266-3"></a><span class="co"># ACP sur les traits foliaires</span></span>
-<span id="cb266-4"><a href="12-chap-DedompHCDT.html#cb266-4"></a>pcaf &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(traits, <span class="dt">scale =</span> T, <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>)</span>
-<span id="cb266-5"><a href="12-chap-DedompHCDT.html#cb266-5"></a><span class="co"># CAH Ward des traits foliaires</span></span>
-<span id="cb266-6"><a href="12-chap-DedompHCDT.html#cb266-6"></a>hf &lt;-<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">dist</span>(pcaf<span class="op">$</span>tab), <span class="st">&quot;ward.D&quot;</span>)</span>
-<span id="cb266-7"><a href="12-chap-DedompHCDT.html#cb266-7"></a><span class="co"># Transformation de l&#39;arbre du format hclust au format phylog</span></span>
-<span id="cb266-8"><a href="12-chap-DedompHCDT.html#cb266-8"></a>phyf &lt;-<span class="st"> </span><span class="kw">hclust2phylog</span>(hf)</span></code></pre></div>
+<span id="cb266-2"><a href="12-chap-DedompHCDT.html#cb266-2"></a><span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.traits.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">header =</span> T) -&gt;</span>
+<span id="cb266-3"><a href="12-chap-DedompHCDT.html#cb266-3"></a><span class="st">    </span>traits</span>
+<span id="cb266-4"><a href="12-chap-DedompHCDT.html#cb266-4"></a><span class="co"># ACP sur les traits foliaires</span></span>
+<span id="cb266-5"><a href="12-chap-DedompHCDT.html#cb266-5"></a>pcaf &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(traits, <span class="dt">scale =</span> T, <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>)</span>
+<span id="cb266-6"><a href="12-chap-DedompHCDT.html#cb266-6"></a><span class="co"># CAH Ward des traits foliaires</span></span>
+<span id="cb266-7"><a href="12-chap-DedompHCDT.html#cb266-7"></a>hf &lt;-<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">dist</span>(pcaf<span class="op">$</span>tab), <span class="st">&quot;ward.D&quot;</span>)</span>
+<span id="cb266-8"><a href="12-chap-DedompHCDT.html#cb266-8"></a><span class="co"># Transformation de l&#39;arbre du format hclust au format</span></span>
+<span id="cb266-9"><a href="12-chap-DedompHCDT.html#cb266-9"></a><span class="co"># phylog</span></span>
+<span id="cb266-10"><a href="12-chap-DedompHCDT.html#cb266-10"></a>phyf &lt;-<span class="st"> </span><span class="kw">hclust2phylog</span>(hf)</span></code></pre></div>
 
 <p>Il contient 4 communautés.</p>
 <p>Pour obtenir tous les éléments de l’équation <a href="12-chap-DedompHCDT.html#eq:Raobeta">(12.15)</a>:</p>
@@ -922,7 +923,7 @@ La divergence entre communautés est construite à partir des entropies de chacu
 <li>La variabilité inter-communautés peut être calculée par <code>divc</code> en utilisant la distance fournie par <code>disc</code>, en définissant la matrice des poids (égale aux effectifs):</li>
 </ul>
 
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="12-chap-DedompHCDT.html#cb273-1"></a><span class="kw">divc</span>(<span class="kw">as.data.frame</span>(<span class="kw">colSums</span>(effectifs)), <span class="kw">disc</span>(effectifs[<span class="kw">names</span>(phyf<span class="op">$</span>leaves), </span>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="12-chap-DedompHCDT.html#cb273-1"></a><span class="kw">divc</span>(<span class="kw">as.data.frame</span>(<span class="kw">colSums</span>(effectifs)), <span class="kw">disc</span>(effectifs[<span class="kw">names</span>(phyf<span class="op">$</span>leaves),</span>
 <span id="cb273-2"><a href="12-chap-DedompHCDT.html#cb273-2"></a>    ], phyf<span class="op">$</span>Wdist))</span></code></pre></div>
 <pre><code>##                    diversity
 ## colSums(effectifs) 0.2362187</code></pre>
@@ -953,8 +954,8 @@ Ce résultat a été obtenu pour les arbres ultramétriques dans le cadre plus g
 <pre><code>## HCDT diversity partitioning of order 2 of metaCommunity MC
 ## 
 ## Phylogenetic or functional diversity was calculated
-## according to the tree phyf 
-## 
+## according to the tree 
+## phyf 
 ## 
 ## Diversity is not normalized 
 ## 

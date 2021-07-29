@@ -5,26 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Entropie | Mesures de la Biodiversité</title>
-  <meta name="description" content="4 Entropie | Mesures de la Biodiversité." />
+  <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Entropie | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2" />
+  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   
-  <meta property="og:description" content="4 Entropie | Mesures de la Biodiversité." />
-  <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
+  <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
+  
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="4 Entropie | Mesures de la Biodiversité" />
   
-  <meta name="twitter:description" content="4 Entropie | Mesures de la Biodiversité." />
+  <meta name="twitter:description" content="Définitions, estimation et décompositon de la biodiversité" />
   
 
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -492,9 +491,9 @@ Figure 4.1: Fonctions d’information utilisées dans le nombre d’espèces (tr
 <div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="4-entropie.html#cb132-1"></a>I0 &lt;-<span class="st"> </span><span class="cf">function</span>(p) (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>p)<span class="op">/</span>p</span>
 <span id="cb132-2"><a href="4-entropie.html#cb132-2"></a>I1 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="op">-</span><span class="kw">log</span>(p)</span>
 <span id="cb132-3"><a href="4-entropie.html#cb132-3"></a>I2 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>p</span>
-<span id="cb132-4"><a href="4-entropie.html#cb132-4"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> I0) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb132-5"><a href="4-entropie.html#cb132-5"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> I1, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> I2, </span>
-<span id="cb132-6"><a href="4-entropie.html#cb132-6"></a>    <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;p&quot;</span>, </span>
+<span id="cb132-4"><a href="4-entropie.html#cb132-4"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> I0) <span class="op">+</span></span>
+<span id="cb132-5"><a href="4-entropie.html#cb132-5"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> I1, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> I2,</span>
+<span id="cb132-6"><a href="4-entropie.html#cb132-6"></a>    <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;p&quot;</span>,</span>
 <span id="cb132-7"><a href="4-entropie.html#cb132-7"></a>    <span class="dt">y =</span> <span class="st">&quot;I(p)&quot;</span>)</span></code></pre></div>
 <p></p>
 
@@ -512,8 +511,8 @@ Figure 4.2: Valeur de <span class="math inline">\(p_{s}I(p_s)\)</span> dans le n
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="4-entropie.html#cb133-1"></a>H0 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>p</span>
 <span id="cb133-2"><a href="4-entropie.html#cb133-2"></a>H1 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="op">-</span>p <span class="op">*</span><span class="st"> </span><span class="kw">log</span>(p)</span>
 <span id="cb133-3"><a href="4-entropie.html#cb133-3"></a>H2 &lt;-<span class="st"> </span><span class="cf">function</span>(p) p <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>p)</span>
-<span id="cb133-4"><a href="4-entropie.html#cb133-4"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="fl">0.001</span>, <span class="dv">1</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> H0) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb133-5"><a href="4-entropie.html#cb133-5"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> H1, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> H2, </span>
+<span id="cb133-4"><a href="4-entropie.html#cb133-4"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="fl">0.001</span>, <span class="dv">1</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> H0) <span class="op">+</span></span>
+<span id="cb133-5"><a href="4-entropie.html#cb133-5"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> H1, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> H2,</span>
 <span id="cb133-6"><a href="4-entropie.html#cb133-6"></a>    <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;p&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;H(p)&quot;</span>)</span></code></pre></div>
 <p></p>
 </div>
@@ -556,9 +555,9 @@ Les valeurs de chaque terme de la divergence sont représentées en figure <a hr
 <span id="cb134-2"><a href="4-entropie.html#cb134-2"></a>KB &lt;-<span class="st"> </span><span class="cf">function</span>(p, q) p <span class="op">*</span><span class="st"> </span><span class="kw">log</span>(p<span class="op">/</span>q)</span>
 <span id="cb134-3"><a href="4-entropie.html#cb134-3"></a>xyz &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">outer</span>(p, q, <span class="dt">FUN =</span> <span class="st">&quot;KB&quot;</span>))</span>
 <span id="cb134-4"><a href="4-entropie.html#cb134-4"></a><span class="kw">library</span>(<span class="st">&quot;sp&quot;</span>)</span>
-<span id="cb134-5"><a href="4-entropie.html#cb134-5"></a><span class="kw">image</span>(xyz, <span class="dt">col =</span> <span class="kw">bpy.colors</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">cutoff.tails =</span> <span class="fl">0.3</span>, <span class="dt">alpha =</span> <span class="fl">0.6</span>), </span>
+<span id="cb134-5"><a href="4-entropie.html#cb134-5"></a><span class="kw">image</span>(xyz, <span class="dt">col =</span> <span class="kw">bpy.colors</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">cutoff.tails =</span> <span class="fl">0.3</span>, <span class="dt">alpha =</span> <span class="fl">0.6</span>),</span>
 <span id="cb134-6"><a href="4-entropie.html#cb134-6"></a>    <span class="dt">xlab =</span> <span class="st">&quot;q&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;p&quot;</span>, <span class="dt">asp =</span> <span class="dv">1</span>)</span>
-<span id="cb134-7"><a href="4-entropie.html#cb134-7"></a><span class="kw">contour</span>(xyz, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="fl">0.3</span>, <span class="dv">0</span>, <span class="fl">0.1</span>), <span class="kw">c</span>(<span class="fl">0.2</span>, <span class="fl">0.5</span>), <span class="kw">seq</span>(<span class="dv">1</span>, </span>
+<span id="cb134-7"><a href="4-entropie.html#cb134-7"></a><span class="kw">contour</span>(xyz, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="fl">0.3</span>, <span class="dv">0</span>, <span class="fl">0.1</span>), <span class="kw">c</span>(<span class="fl">0.2</span>, <span class="fl">0.5</span>), <span class="kw">seq</span>(<span class="dv">1</span>,</span>
 <span id="cb134-8"><a href="4-entropie.html#cb134-8"></a>    <span class="dv">4</span>, <span class="dv">1</span>)), <span class="dt">labcex =</span> <span class="dv">1</span>, <span class="dt">add =</span> T)</span></code></pre></div>
 <p></p>
 </div>
@@ -830,7 +829,7 @@ Figure 4.6: Profil de queue de distribution calculé pour les deux parcelles de 
 <p>Code R:</p>
 <p></p>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="4-entropie.html#cb141-1"></a><span class="co"># Elimination des espèces absentes des deux parcelles</span></span>
-<span id="cb141-2"><a href="4-entropie.html#cb141-2"></a>Psi &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(Paracou618.MC<span class="op">$</span>Psi[Paracou618.MC<span class="op">$</span>Ps <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, </span>
+<span id="cb141-2"><a href="4-entropie.html#cb141-2"></a>Psi &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(Paracou618.MC<span class="op">$</span>Psi[Paracou618.MC<span class="op">$</span>Ps <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>,</span>
 <span id="cb141-3"><a href="4-entropie.html#cb141-3"></a>    ])</span>
 <span id="cb141-4"><a href="4-entropie.html#cb141-4"></a>Psi[, <span class="dv">1</span>] <span class="op">%&lt;&gt;%</span></span>
 <span id="cb141-5"><a href="4-entropie.html#cb141-5"></a><span class="st">    </span>sort <span class="op">%&gt;%</span></span>
@@ -841,7 +840,7 @@ Figure 4.6: Profil de queue de distribution calculé pour les deux parcelles de 
 <span id="cb141-10"><a href="4-entropie.html#cb141-10"></a><span class="st">    </span>cumsum <span class="op">%&gt;%</span></span>
 <span id="cb141-11"><a href="4-entropie.html#cb141-11"></a><span class="st">    </span>rev</span>
 <span id="cb141-12"><a href="4-entropie.html#cb141-12"></a>Psi<span class="op">$</span>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(Psi)</span>
-<span id="cb141-13"><a href="4-entropie.html#cb141-13"></a><span class="kw">ggplot</span>(Psi, <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_path</span>(<span class="kw">aes</span>(<span class="dt">y =</span> P006)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_path</span>(<span class="kw">aes</span>(<span class="dt">y =</span> P018), </span>
+<span id="cb141-13"><a href="4-entropie.html#cb141-13"></a><span class="kw">ggplot</span>(Psi, <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_path</span>(<span class="kw">aes</span>(<span class="dt">y =</span> P006)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_path</span>(<span class="kw">aes</span>(<span class="dt">y =</span> P018),</span>
 <span id="cb141-14"><a href="4-entropie.html#cb141-14"></a>    <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Espèces&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Fréquence&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_log10</span>()</span></code></pre></div>
 <p></p>
 <p>Les coordonnées des points du profil sont définies par

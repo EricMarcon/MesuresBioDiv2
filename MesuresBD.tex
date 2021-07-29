@@ -1,10 +1,12 @@
-% template adapted from https://github.com/jgm/pandoc-templates/blob/master/default.latex
+% Template adapted from https://github.com/jgm/pandoc-templates/blob/master/default.latex
+% To be used with XeLaTex in memoiR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode=true}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+% Right to left support
 
 
 \documentclass[
@@ -14,40 +16,38 @@
   extrafontsizes,onecolumn,openright
   ]{memoir}
 
-% Font family: lmodern by default
-\usepackage{lmodern}
-
 % Double (or whatever) spacing
 
+% Math
 \usepackage{amssymb, amsmath}
-\usepackage{ifxetex,ifluatex}
-
 % mathspec: arbitrary math fonts
 \usepackage{unicode-math}
-\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 
-% More font families
+% Fonts
+\usepackage{lmodern}
+\usepackage{fontspec}
 % Main font
 % Specific sanserif font
 % Specific monotype font
 % Specific math font
 % Chinese, Japanese, Corean fonts
 
-% Use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% Use microtype if available
-\IfFileExists{microtype.sty}{%
+% Use upquote for straight quotes in verbatim environments
+\usepackage{upquote}
+% Use microtype
 \usepackage[]{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
 
 % Verbatim in note
 
+% Color links
 \usepackage{xcolor}
 
+% Strikeout
 
-% Listings package
-
+% Necessary for code chunks
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -89,6 +89,8 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 
+% Listings package
+
 % Tables
 \usepackage{longtable,booktabs,tabu}
 % Fix footnotes in tables (requires footnote package)
@@ -106,37 +108,20 @@
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
-
-
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
+% Prevent overfull lines
+\setlength{\emergencystretch}{3em}  
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-\setcounter{secnumdepth}{5}
+% Number sections for memoir (secnumdepth counter is ignored)
+\setsecnumdepth{section}
 
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
 
-% Include headers (preamble.tex) here
-% Add LaTeX code into the preamble of the document here
-\hyphenation{bio-di-ver-si-ty sap-lings}
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{colortbl}
-\usepackage{pdflscape}
-\usepackage{tabu}
-\usepackage{threeparttable}
-\usepackage{threeparttablex}
-\usepackage[normalem]{ulem}
-\usepackage{makecell}
-\usepackage{xcolor}
-
+% Spacing in lists
 \usepackage{enumitem}
 
 % Polyglossia
@@ -144,27 +129,27 @@
 \setmainlanguage{fr-FR}
 \setotherlanguage{en-US}
 
+% BibLaTeX
 \usepackage[backend=biber,style=verbose-inote,pageref=true,isbn=false,backref=true,giveninits=true,uniquename=init,maxcitenames=2,maxbibnames=150,sorting=nyt,sortcites=false]{biblatex}
 \addbibresource{references.bib}
 
 % cslreferences environment required by pandoc > 2.7
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % memoiR format
-
 
 % Chapter Summary environment 
 \usepackage[tikz]{bclogo}
 \newenvironment{Summary}
-  {\begin{bclogo}[logo=\bctrombone, noborder=true, couleur=lightgray!50]{L'Essentiel}\parindent0pt}
+  {\begin{bclogo}[logo=\bctrombone, noborder=true, couleur=lightgray!50]{L'essentiel}\parindent0pt}
   {\end{bclogo}}
 % Syntax:
 %
 %```{block, type='Summary'}
 % Deliver message here.
 % ```
-
 
 % scriptsize code 
 \let\oldverbatim\verbatim
@@ -182,18 +167,18 @@
 \newcommand{\MemoirPageStyle}{companion}
 
 % Space between paragraphs
-\RequirePackage{parskip}
-	\abnormalparskip{3pt}
+\usepackage{parskip}
+  \abnormalparskip{3pt}
 
 % Adjust margin paragraphs vertical position
-\RequirePackage{marginfix}
+\usepackage{marginfix}
 
 
 % Margins
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % allow use of '-',+','/' ans '*' to make simple length computation
-\RequirePackage{calc}
+\usepackage{calc}
 
 % Full-width figures utilities
 \newlength\widthw % full width
@@ -211,21 +196,21 @@
 \makeatletter
 % 1" margins for the front matter.
 \newcommand*{\SmallMargins}{
-  \setlrmarginsandblock{1in}{1in}{*}
+  \setlrmarginsandblock{1.2in}{1.5in}{*}
   \setmarginnotes{0.1in}{0.1in}{0.1in}
-  \setulmarginsandblock{1.5in}{1in}{*}
+ \setulmarginsandblock{1.5in}{1in}{*}
   \checkandfixthelayout
   \ch@ngetext
   \clearpage
   \setlength{\widthw}{\textwidth+\marginparsep+\marginparwidth}
   \footnotesatfoot
-  \chapterstyle{\MemoirChapStyle}	% Chapter and page styles must be recalled
+  \chapterstyle{\MemoirChapStyle}  % Chapter and page styles must be recalled
   \pagestyle{\MemoirPageStyle}
 }
 
 % 3" outer margin for the main matter
 \newcommand*{\LargeMargins}{
-  \setlrmarginsandblock{1in}{3in}{*}
+  \setlrmarginsandblock{1.2in}{3in}{*}
   \setmarginnotes{0.2in}{1.8in}{0.1in}
   \setsidecaps{0.2in}{1.8in}
   \setulmarginsandblock{1.5in}{1in}{*}
@@ -234,61 +219,64 @@
   \clearpage
   \setlength{\widthw}{\textwidth+\marginparsep+\marginparwidth}
   \footnotesinmargin
-  \chapterstyle{\MemoirChapStyle}	% Chapter and page styles must be recalled
+  \chapterstyle{\MemoirChapStyle}  % Chapter and page styles must be recalled
   \pagestyle{\MemoirPageStyle}
 }
-
 \makeatother
 
 % Figure captions and footnotes in outer margins
 \usepackage[margincaption,outercaption,ragged,wide]{sidecap}
-%\sidecapmargin{outer}
 
 
 % Main title page with filigrane
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\MainTitlePage}[2]{
-	\SmallMargins % Margins
-	\pagestyle{empty} % No header/footer
-	~\\ % Print a character or the page will not exist
-	\begin{textblock}{2}(30,10)
-		\rule{1pt}{\paperheight-20mm}
-	\end{textblock}
-	\begin{textblock}{140}(50, 45)
-		\flushright
-		\begin{Spacing}{3}
-			{\fontfamily{qtm}\selectfont\fontsize{45}{45}\selectfont \textsc{\thetitle}}
-		\end{Spacing}
-	\end{textblock}
-	\begin{textblock}{140}(50, 125)
-		\flushright
-		{\fontfamily{qtm}\Large \theauthor}
-	\end{textblock}
-		\begin{textblock}{120}[1, 1](225, 297)
-		\includegraphics[width=10cm]{Filigrane}
-	 \end{textblock}
-		\begin{textblock}{140}[0, 1](50, 262)
-		\normalfont	Version: \thedate
-	\end{textblock}
-	\newpage
-	~\\ % Print a character or the page will not exist
-	\begin{textblock}{140}(40, 40)
-		#1
-	\end{textblock}
-	\begin{textblock}{140}[0,1](40, 270)
-		\centering
-    \includegraphics[width=5cm]{logo}\\ \bigskip
-    #2
-	\end{textblock}
-	\newpage
-}
+% Text blocks
+\usepackage[absolute,overlay]{textpos}
+  \setlength{\TPHorizModule}{1mm}
+  \setlength{\TPVertModule}{1mm}
 
+\newcommand{\MainTitlePage}[2]{
+  \SmallMargins % Margins
+  \pagestyle{empty} % No header/footer
+  \textblockorigin{\stockwidth-\paperwidth-\trimedge}{\trimtop} % recto
+  \begin{textblock*}{2mm}(\spinemargin/2,\uppermargin/2)
+    \rule{1pt}{\paperheight-\uppermargin}
+  \end{textblock*}
+  \begin{textblock*}{\paperwidth*2/3}(\paperwidth/5, \paperheight/5)
+    \flushright
+    \begin{Spacing}{3}
+      {\fontfamily{qtm}\selectfont\fontsize{45}{45}\selectfont\textsc{\thetitle}}
+    \end{Spacing}
+  \end{textblock*}
+    \begin{textblock*}{\paperwidth/2}[1, 1](\paperwidth, \paperheight)
+    \includegraphics[width=\paperwidth/2]{filigrane}
+  \end{textblock*}
+  \begin{textblock*}{\paperwidth*2/3}(\spinemargin, \paperheight/2)
+    {\fontfamily{qtm}\huge\theauthor}
+  \end{textblock*}
+    \begin{textblock*}{\paperwidth*2/3}[0, 1](\spinemargin, \uppermargin+\textheight)
+    \normalfont\thedate
+  \end{textblock*}
+  ~\\ % Print a character or the page will not exist
+  \newpage
+  \textblockorigin{\trimedge}{\trimtop} % verso
+  \begin{textblock*}{\textwidth}(\paperwidth-\spinemargin-\textwidth, \uppermargin)
+    #1
+  \end{textblock*}
+  \begin{textblock*}{\textwidth}[0,1](\paperwidth-\spinemargin-\textwidth, \uppermargin+\textheight+\footskip)
+    \centering
+    \includegraphics[width=\paperwidth/4]{logo}\\ \bigskip
+    #2
+  \end{textblock*}
+  ~\\ % Print a character or the page will not exist
+  \newpage
+}
 
 % Clear page and open an even one (\clearpage opens an odd one)
 \newcommand{\evenpage}{
   \clearpage
-	\strictpagecheck % slower but efficient detection of odd/even pages
+  \strictpagecheck % slower but efficient detection of odd/even pages
   \checkoddpage
   \ifoddpage
     \thispagestyle{empty}
@@ -299,46 +287,42 @@
   \fi
 }
 
-% Text blocks
-\RequirePackage[absolute,overlay]{textpos}
-	\setlength{\TPHorizModule}{1mm}
-	\setlength{\TPVertModule}{1mm}
-
 
 %% PDF title page to insert
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
 %% Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[strict,autostyle]{csquotes}
+\usepackage[strict,autostyle]{csquotes}
 % Repeated citation as author-year-title instead of author-title (modification of footcite:note in verbose-inote.cbx)
 \renewbibmacro*{footcite:note}{%
-	\ifnameundef{labelname}
-		{\printfield{label}}
-		{\printnames{labelname}}
-	\setunit*{\nameyeardelim}
-	\iffieldundef{labelyear}
-		{}
-		{\printtext[parens]{\printfield{labelyear}\printfield{userb}}.}
-	\ifsamepage{\the\value{instcount}}{\csuse{cbx@f@\thefield{entrykey}}}
-		{}
-		{\setunit*{\nametitledelim} \printfield[title]{labeltitle}}
-	\setunit*{\addcomma\space}
-	\printtext{
-		\bibstring{seenote}\addnbspace
-		\ref{cbx@\csuse{cbx@f@\thefield{entrykey}}}
-		\iftoggle{cbx:pageref}
-		{
-			\ifsamepage{\the\value{instcount}}	{\csuse{cbx@f@\thefield{entrykey}}}
-			{}
-			{\addcomma\space\bibstring{page}\addnbspace
-			\pageref{cbx@\csuse{cbx@f@\thefield{entrykey}}}
-			}
-		}
-		{}
-	}
+  \ifnameundef{labelname}
+    {\printfield{label}}
+    {\printnames{labelname}}
+  \setunit*{\nameyeardelim}
+  \iffieldundef{labelyear}
+    {}
+    {\printtext[parens]{\printfield{labelyear}\printfield{userb}}.}
+  \ifsamepage{\the\value{instcount}}{\csuse{cbx@f@\thefield{entrykey}}}
+    {}
+    {\setunit*{\nametitledelim} \printfield[title]{labeltitle}}
+  \setunit*{\addcomma\space}
+  \printtext{
+    \bibstring{seenote}\addnbspace
+    \ref{cbx@\csuse{cbx@f@\thefield{entrykey}}}
+    \iftoggle{cbx:pageref}
+    {
+      \ifsamepage{\the\value{instcount}}  {\csuse{cbx@f@\thefield{entrykey}}}
+      {}
+      {\addcomma\space\bibstring{page}\addnbspace
+      \pageref{cbx@\csuse{cbx@f@\thefield{entrykey}}}
+      }
+    }
+    {}
+  }
 }
 % Normal text in citations, to allow \textcite
 \AtEveryCite{\renewcommand*{\mkbibnamefamily}[1]{\textnormal{#1}}}
@@ -360,9 +344,9 @@
 }%
 }
 
-
 %% Table of Contents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % fix the typesetting of the part number
 \renewcommand\partnumberlinebox[2]{#2\ ---\ }
 
@@ -375,9 +359,9 @@
 \captiontitlefont{\scriptsize}
 \renewcommand{\footnotesize}{\tiny}
 
-
 % Hyperref comes last
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{hyperref}
 \hypersetup{
   pdftitle={Mesures de la Biodiversité},
@@ -399,7 +383,26 @@
 
 \author{Eric Marcon}
 
-\date{2021-05-07}
+\date{29/07/2021}
+
+
+% Include headers (preamble.tex) here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 
 
 % End of preamble
@@ -440,7 +443,7 @@ Les versions d'étape sont déposées sur HAL: \url{https://hal-agroparistech.ar
 \LargeMargins
 {
 \hypersetup{linkcolor=}
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{2}
 \tableofcontents
 }
 
@@ -580,15 +583,15 @@ Si l'exposant n'est pas noté, l'échantillon n'est pas précisé et peut être 
 
 \mainmatter
 
+\SmallMargins
+
 \hypertarget{part-notions}{%
 \part{Notions}\label{part-notions}}
 
+\LargeMargins
+
 \hypertarget{notions-de-diversituxe9}{%
 \chapter{Notions de Diversité}\label{notions-de-diversituxe9}}
-
-\scriptsize
-
-\normalsize
 
 \hypertarget{composantes}{%
 \section{Composantes}\label{composantes}}
@@ -1160,15 +1163,15 @@ La complétude du même échantillon d'arbres de forêt tropicale que dans l'exe
 
 \normalsize
 
+\SmallMargins
+
 \hypertarget{part-diversituxe9-neutre-dune-communautuxe9}{%
 \part{Diversité neutre d'une communauté}\label{part-diversituxe9-neutre-dune-communautuxe9}}
 
+\LargeMargins
+
 \hypertarget{chap:MesuresNeutres}{%
 \chapter{\texorpdfstring{Mesures neutres de la diversité \(\alpha\) ou \(\gamma\)}{Mesures neutres de la diversité \textbackslash alpha ou \textbackslash gamma}}\label{chap:MesuresNeutres}}
-
-\scriptsize
-
-\normalsize
 
 \scriptsize
 
@@ -1506,8 +1509,8 @@ Il est possible de vérifier que l'espérance du nombre d'espèces non observée
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Vérification: nombre d'espèces observées en moyenne et non}
-\CommentTok{# observées}
+\CommentTok{# Vérification: nombre d'espèces observées en moyenne et}
+\CommentTok{# non observées}
 \NormalTok{Sn }\OperatorTok{+}\StringTok{ }\NormalTok{f0}
 \end{Highlighting}
 \end{Shaded}
@@ -1597,7 +1600,8 @@ La courbe peut être approchée par une série de puissances négatives de \(n\)
 ## I(1/n.seq^3)  5.071e+11  2.669e+09   190.0   <2e-16 ***
 ## I(1/n.seq^4) -1.145e+14  8.003e+11  -143.1   <2e-16 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Signif. codes:  
+## 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Residual standard error: 3.757 on 4497 degrees of freedom
 ## Multiple R-squared:  0.9992, Adjusted R-squared:  0.9992 
@@ -1711,8 +1715,10 @@ Comparaison des fonctions sur l'ensemble du dispositif BCI (\(s^{n}_{\ne 0}=225\
 \end{Shaded}
 
 \begin{verbatim}
-##     Species     chao chao.se  jack1 jack1.se    jack2     boot  boot.se  n
-## All     225 236.3732 6.54361 245.58 5.650522 247.8722 235.6862 3.468888 50
+##     Species     chao chao.se  jack1 jack1.se    jack2
+## All     225 236.3732 6.54361 245.58 5.650522 247.8722
+##         boot  boot.se  n
+## All 235.6862 3.468888 50
 \end{verbatim}
 
 \begin{Shaded}
@@ -1865,7 +1871,7 @@ La parcelle 6 de Paracou nécessite l'estimateur jackknife 2:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Complétude}
-\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{Richness}\NormalTok{(Paracou6, }\DataTypeTok{Correction =} \StringTok{"None"}\NormalTok{)}\OperatorTok{/}\KeywordTok{Richness}\NormalTok{(Paracou6, }
+\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{Richness}\NormalTok{(Paracou6, }\DataTypeTok{Correction =} \StringTok{"None"}\NormalTok{)}\OperatorTok{/}\KeywordTok{Richness}\NormalTok{(Paracou6,}
     \DataTypeTok{Correction =} \StringTok{"Jackknife"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
@@ -2062,7 +2068,7 @@ Le calcul est possible avec la librairie \emph{SPECIES} de R:
 \NormalTok{DistNs.SPECIES <-}\StringTok{ }\KeywordTok{AbdFreqCount}\NormalTok{(Ns)}
 \CommentTok{# Regroupement de la queue de distribution: la longueur du}
 \CommentTok{# vecteur est limitée à 25 pour alléger les calculs.}
-\NormalTok{DistNs.SPECIES[}\DecValTok{25}\NormalTok{, }\DecValTok{2}\NormalTok{] <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(DistNs.SPECIES[}\DecValTok{25}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(DistNs.SPECIES), }
+\NormalTok{DistNs.SPECIES[}\DecValTok{25}\NormalTok{, }\DecValTok{2}\NormalTok{] <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(DistNs.SPECIES[}\DecValTok{25}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(DistNs.SPECIES),}
     \DecValTok{2}\NormalTok{])}
 \NormalTok{DistNs.SPECIES <-}\StringTok{ }\NormalTok{DistNs.SPECIES[}\DecValTok{1}\OperatorTok{:}\DecValTok{25}\NormalTok{, ]}
 \KeywordTok{unpmle}\NormalTok{(DistNs.SPECIES)}
@@ -2177,7 +2183,7 @@ Le résultat se trouve en figure \ref{fig:SobLLorFig}.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Ajustement du modèle}
-\NormalTok{(nlsfit <-}\StringTok{ }\KeywordTok{nls}\NormalTok{(nEspeces }\OperatorTok{~}\StringTok{ }\NormalTok{S }\OperatorTok{*}\StringTok{ }\NormalTok{nArbres}\OperatorTok{/}\NormalTok{(K }\OperatorTok{+}\StringTok{ }\NormalTok{nArbres), }\DataTypeTok{data =} \KeywordTok{list}\NormalTok{(nArbres, }
+\NormalTok{(nlsfit <-}\StringTok{ }\KeywordTok{nls}\NormalTok{(nEspeces }\OperatorTok{~}\StringTok{ }\NormalTok{S }\OperatorTok{*}\StringTok{ }\NormalTok{nArbres}\OperatorTok{/}\NormalTok{(K }\OperatorTok{+}\StringTok{ }\NormalTok{nArbres), }\DataTypeTok{data =} \KeywordTok{list}\NormalTok{(nArbres,}
 \NormalTok{    nEspeces), }\DataTypeTok{start =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{K =} \KeywordTok{max}\NormalTok{(nArbres)}\OperatorTok{/}\DecValTok{4}\NormalTok{, }\DataTypeTok{S =} \KeywordTok{max}\NormalTok{(nEspeces))))}
 \end{Highlighting}
 \end{Shaded}
@@ -2245,7 +2251,7 @@ Le paramètre \(K\) peut être estimé plus précisément par résolution numér
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Equation que Khat doit annuler}
-\NormalTok{f <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(Khat) Sxy }\OperatorTok{+}\StringTok{ }\NormalTok{Khat }\OperatorTok{*}\StringTok{ }\NormalTok{Sxx }\OperatorTok{-}\StringTok{ }\NormalTok{(Syy }\OperatorTok{+}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{Khat }\OperatorTok{*}\StringTok{ }\NormalTok{Sxy }\OperatorTok{+}\StringTok{ }
+\NormalTok{f <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(Khat) Sxy }\OperatorTok{+}\StringTok{ }\NormalTok{Khat }\OperatorTok{*}\StringTok{ }\NormalTok{Sxx }\OperatorTok{-}\StringTok{ }\NormalTok{(Syy }\OperatorTok{+}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{Khat }\OperatorTok{*}\StringTok{ }\NormalTok{Sxy }\OperatorTok{+}
 \StringTok{    }\NormalTok{Khat }\OperatorTok{*}\StringTok{ }\NormalTok{Khat }\OperatorTok{*}\StringTok{ }\NormalTok{Sxx) }\OperatorTok{*}\StringTok{ }\KeywordTok{sum}\NormalTok{(Xi}\OperatorTok{/}\NormalTok{(Yi }\OperatorTok{+}\StringTok{ }\NormalTok{Khat }\OperatorTok{*}\StringTok{ }\NormalTok{Xi)}\OperatorTok{/}\NormalTok{N)}
 \CommentTok{# Résolution numérique, l'intervalle de recherche doit être}
 \CommentTok{# fourni}
@@ -2354,7 +2360,7 @@ Les paramètres peuvent être estimés par la méthode des moindres carrés:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{(nlsexp <-}\StringTok{ }\KeywordTok{nls}\NormalTok{(nEspeces }\OperatorTok{~}\StringTok{ }\NormalTok{S }\OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\KeywordTok{exp}\NormalTok{(K }\OperatorTok{*}\StringTok{ }\NormalTok{nArbres)), }\DataTypeTok{data =} \KeywordTok{list}\NormalTok{(nArbres, }
+\NormalTok{(nlsexp <-}\StringTok{ }\KeywordTok{nls}\NormalTok{(nEspeces }\OperatorTok{~}\StringTok{ }\NormalTok{S }\OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\KeywordTok{exp}\NormalTok{(K }\OperatorTok{*}\StringTok{ }\NormalTok{nArbres)), }\DataTypeTok{data =} \KeywordTok{list}\NormalTok{(nArbres,}
 \NormalTok{    nEspeces), }\DataTypeTok{start =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{S =} \KeywordTok{max}\NormalTok{(nEspeces), }\DataTypeTok{K =} \DecValTok{-1}\OperatorTok{/}\DecValTok{1000}\NormalTok{)))}
 \end{Highlighting}
 \end{Shaded}
@@ -2390,8 +2396,8 @@ Les paramètres à estimer sont \(z\), \(a\) et \(c\).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{(nlslog <-}\StringTok{ }\KeywordTok{nls}\NormalTok{(nEspeces }\OperatorTok{~}\StringTok{ }\DecValTok{1}\OperatorTok{/}\NormalTok{z }\OperatorTok{*}\StringTok{ }\KeywordTok{log}\NormalTok{(a}\OperatorTok{/}\NormalTok{c }\OperatorTok{-}\StringTok{ }\NormalTok{(a }\OperatorTok{-}\StringTok{ }\NormalTok{c)}\OperatorTok{/}\NormalTok{c }\OperatorTok{*}\StringTok{ }\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\NormalTok{c }\OperatorTok{*}\StringTok{ }
-\StringTok{    }\NormalTok{z }\OperatorTok{*}\StringTok{ }\NormalTok{nArbres)), }\DataTypeTok{data =} \KeywordTok{list}\NormalTok{(nArbres, nEspeces), }\DataTypeTok{start =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{z =} \FloatTok{0.05}\NormalTok{, }
+\NormalTok{(nlslog <-}\StringTok{ }\KeywordTok{nls}\NormalTok{(nEspeces }\OperatorTok{~}\StringTok{ }\DecValTok{1}\OperatorTok{/}\NormalTok{z }\OperatorTok{*}\StringTok{ }\KeywordTok{log}\NormalTok{(a}\OperatorTok{/}\NormalTok{c }\OperatorTok{-}\StringTok{ }\NormalTok{(a }\OperatorTok{-}\StringTok{ }\NormalTok{c)}\OperatorTok{/}\NormalTok{c }\OperatorTok{*}\StringTok{ }\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\NormalTok{c }\OperatorTok{*}
+\StringTok{    }\NormalTok{z }\OperatorTok{*}\StringTok{ }\NormalTok{nArbres)), }\DataTypeTok{data =} \KeywordTok{list}\NormalTok{(nArbres, nEspeces), }\DataTypeTok{start =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{z =} \FloatTok{0.05}\NormalTok{,}
     \DataTypeTok{a =} \DecValTok{1}\NormalTok{, }\DataTypeTok{c =} \FloatTok{0.001}\NormalTok{)))}
 \end{Highlighting}
 \end{Shaded}
@@ -2562,7 +2568,8 @@ Le calcul de l'indice de Simpson peut se faire avec la fonction \texttt{diversit
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{data}\NormalTok{(BCI)}
-\CommentTok{# as.ProbaVector() transforme les abondances en probabilités}
+\CommentTok{# as.ProbaVector() transforme les abondances en}
+\CommentTok{# probabilités}
 \NormalTok{Ps <-}\StringTok{ }\KeywordTok{as.ProbaVector}\NormalTok{(}\KeywordTok{colSums}\NormalTok{(BCI))}
 \KeywordTok{Simpson}\NormalTok{(Ps)}
 \end{Highlighting}
@@ -3298,9 +3305,9 @@ Le code R nécessaire pour réaliser la figure est:
 \NormalTok{I0 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(p) (}\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{p)}\OperatorTok{/}\NormalTok{p}
 \NormalTok{I1 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(p) }\OperatorTok{-}\KeywordTok{log}\NormalTok{(p)}
 \NormalTok{I2 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(p) }\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{p}
-\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{)), }\KeywordTok{aes}\NormalTok{(x)) }\OperatorTok{+}\StringTok{ }\KeywordTok{stat_function}\NormalTok{(}\DataTypeTok{fun =}\NormalTok{ I0) }\OperatorTok{+}\StringTok{ }
-\StringTok{    }\KeywordTok{stat_function}\NormalTok{(}\DataTypeTok{fun =}\NormalTok{ I1, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{stat_function}\NormalTok{(}\DataTypeTok{fun =}\NormalTok{ I2, }
-    \DataTypeTok{lty =} \DecValTok{3}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{coord_cartesian}\NormalTok{(}\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{)) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x =} \StringTok{"p"}\NormalTok{, }
+\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{)), }\KeywordTok{aes}\NormalTok{(x)) }\OperatorTok{+}\StringTok{ }\KeywordTok{stat_function}\NormalTok{(}\DataTypeTok{fun =}\NormalTok{ I0) }\OperatorTok{+}
+\StringTok{    }\KeywordTok{stat_function}\NormalTok{(}\DataTypeTok{fun =}\NormalTok{ I1, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{stat_function}\NormalTok{(}\DataTypeTok{fun =}\NormalTok{ I2,}
+    \DataTypeTok{lty =} \DecValTok{3}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{coord_cartesian}\NormalTok{(}\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{)) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x =} \StringTok{"p"}\NormalTok{,}
     \DataTypeTok{y =} \StringTok{"I(p)"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -3333,8 +3340,8 @@ Code R:
 \NormalTok{H0 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(p) }\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{p}
 \NormalTok{H1 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(p) }\OperatorTok{-}\NormalTok{p }\OperatorTok{*}\StringTok{ }\KeywordTok{log}\NormalTok{(p)}
 \NormalTok{H2 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(p) p }\OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{p)}
-\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.001}\NormalTok{, }\DecValTok{1}\NormalTok{)), }\KeywordTok{aes}\NormalTok{(x)) }\OperatorTok{+}\StringTok{ }\KeywordTok{stat_function}\NormalTok{(}\DataTypeTok{fun =}\NormalTok{ H0) }\OperatorTok{+}\StringTok{ }
-\StringTok{    }\KeywordTok{stat_function}\NormalTok{(}\DataTypeTok{fun =}\NormalTok{ H1, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{stat_function}\NormalTok{(}\DataTypeTok{fun =}\NormalTok{ H2, }
+\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.001}\NormalTok{, }\DecValTok{1}\NormalTok{)), }\KeywordTok{aes}\NormalTok{(x)) }\OperatorTok{+}\StringTok{ }\KeywordTok{stat_function}\NormalTok{(}\DataTypeTok{fun =}\NormalTok{ H0) }\OperatorTok{+}
+\StringTok{    }\KeywordTok{stat_function}\NormalTok{(}\DataTypeTok{fun =}\NormalTok{ H1, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{stat_function}\NormalTok{(}\DataTypeTok{fun =}\NormalTok{ H2,}
     \DataTypeTok{lty =} \DecValTok{3}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x =} \StringTok{"p"}\NormalTok{, }\DataTypeTok{y =} \StringTok{"H(p)"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -3398,9 +3405,9 @@ Le code R nécessaire pour réaliser la figure est:
 \NormalTok{KB <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(p, q) p }\OperatorTok{*}\StringTok{ }\KeywordTok{log}\NormalTok{(p}\OperatorTok{/}\NormalTok{q)}
 \NormalTok{xyz <-}\StringTok{ }\KeywordTok{t}\NormalTok{(}\KeywordTok{outer}\NormalTok{(p, q, }\DataTypeTok{FUN =} \StringTok{"KB"}\NormalTok{))}
 \KeywordTok{library}\NormalTok{(}\StringTok{"sp"}\NormalTok{)}
-\KeywordTok{image}\NormalTok{(xyz, }\DataTypeTok{col =} \KeywordTok{bpy.colors}\NormalTok{(}\DataTypeTok{n =} \DecValTok{100}\NormalTok{, }\DataTypeTok{cutoff.tails =} \FloatTok{0.3}\NormalTok{, }\DataTypeTok{alpha =} \FloatTok{0.6}\NormalTok{), }
+\KeywordTok{image}\NormalTok{(xyz, }\DataTypeTok{col =} \KeywordTok{bpy.colors}\NormalTok{(}\DataTypeTok{n =} \DecValTok{100}\NormalTok{, }\DataTypeTok{cutoff.tails =} \FloatTok{0.3}\NormalTok{, }\DataTypeTok{alpha =} \FloatTok{0.6}\NormalTok{),}
     \DataTypeTok{xlab =} \StringTok{"q"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"p"}\NormalTok{, }\DataTypeTok{asp =} \DecValTok{1}\NormalTok{)}
-\KeywordTok{contour}\NormalTok{(xyz, }\DataTypeTok{levels =} \KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\OperatorTok{-}\FloatTok{0.3}\NormalTok{, }\DecValTok{0}\NormalTok{, }\FloatTok{0.1}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\FloatTok{0.2}\NormalTok{, }\FloatTok{0.5}\NormalTok{), }\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }
+\KeywordTok{contour}\NormalTok{(xyz, }\DataTypeTok{levels =} \KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\OperatorTok{-}\FloatTok{0.3}\NormalTok{, }\DecValTok{0}\NormalTok{, }\FloatTok{0.1}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\FloatTok{0.2}\NormalTok{, }\FloatTok{0.5}\NormalTok{), }\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{,}
     \DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{)), }\DataTypeTok{labcex =} \DecValTok{1}\NormalTok{, }\DataTypeTok{add =}\NormalTok{ T)}
 \end{Highlighting}
 \end{Shaded}
@@ -3817,7 +3824,7 @@ Code R:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Elimination des espèces absentes des deux parcelles}
-\NormalTok{Psi <-}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Psi[Paracou618.MC}\OperatorTok{$}\NormalTok{Ps }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{, }
+\NormalTok{Psi <-}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Psi[Paracou618.MC}\OperatorTok{$}\NormalTok{Ps }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{,}
 \NormalTok{    ])}
 \NormalTok{Psi[, }\DecValTok{1}\NormalTok{] }\OperatorTok{%<>%}
 \StringTok{    }\NormalTok{sort }\OperatorTok{%>%}
@@ -3828,7 +3835,7 @@ Code R:
 \StringTok{    }\NormalTok{cumsum }\OperatorTok{%>%}
 \StringTok{    }\NormalTok{rev}
 \NormalTok{Psi}\OperatorTok{$}\NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(Psi)}
-\KeywordTok{ggplot}\NormalTok{(Psi, }\KeywordTok{aes}\NormalTok{(x)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_path}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ P006)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_path}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ P018), }
+\KeywordTok{ggplot}\NormalTok{(Psi, }\KeywordTok{aes}\NormalTok{(x)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_path}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ P006)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_path}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ P018),}
     \DataTypeTok{lty =} \DecValTok{2}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x =} \StringTok{"Espèces"}\NormalTok{, }\DataTypeTok{y =} \StringTok{"Fréquence"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{scale_x_log10}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
@@ -4897,15 +4904,15 @@ Code R pour réaliser les figures:
 La corrélation entre richesse et équitabilité est donc positive si la richesse varie entre communautés, mais négative si ce n'est qu'un effet de l'échantillonnage.
 Les résultats sont similaires avec des communautés en log-séries: la corrélation est positive quand \(\alpha\) varie, négative quand l'échantillonnage varie.
 
+\SmallMargins
+
 \hypertarget{part-diversituxe9-fonctionnelle-et-phyloguxe9nuxe9tique}{%
 \part{Diversité fonctionnelle et phylogénétique}\label{part-diversituxe9-fonctionnelle-et-phyloguxe9nuxe9tique}}
 
+\LargeMargins
+
 \hypertarget{cadre}{%
 \chapter{Cadre}\label{cadre}}
-
-\scriptsize
-
-\normalsize
 
 \scriptsize
 
@@ -5965,7 +5972,8 @@ Le fichier \texttt{rao.traits.csv} contient une espèce par ligne, identifiée p
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Lecture des données: traits pour 34 espèces}
-\NormalTok{traits <-}\StringTok{ }\KeywordTok{read.csv2}\NormalTok{(}\StringTok{"data/rao.traits.csv"}\NormalTok{, }\DataTypeTok{row.names =} \DecValTok{1}\NormalTok{, }\DataTypeTok{header =}\NormalTok{ T)}
+\KeywordTok{read.csv2}\NormalTok{(}\StringTok{"data/rao.traits.csv"}\NormalTok{, }\DataTypeTok{row.names =} \DecValTok{1}\NormalTok{, }\DataTypeTok{header =}\NormalTok{ T) ->}
+\StringTok{    }\NormalTok{traits}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6062,7 +6070,8 @@ Le résultat de la classification est un objet \texttt{hclust} (figure \ref{fig:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Transformation de l'arbre du format hclust au format phylog}
+\CommentTok{# Transformation de l'arbre du format hclust au format}
+\CommentTok{# phylog}
 \NormalTok{phyf <-}\StringTok{ }\KeywordTok{hclust2phylog}\NormalTok{(hf)}
 \end{Highlighting}
 \end{Shaded}
@@ -6675,8 +6684,8 @@ La diversité peut être calculée par la fonction \texttt{Dqz} de \emph{entropa
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Vecteur contenant 8 espèces...}
-\NormalTok{(effectifs <-}\StringTok{ }\KeywordTok{read.csv2}\NormalTok{(}\StringTok{"data/rao.effectifs.csv"}\NormalTok{, }\DataTypeTok{row.names =} \DecValTok{1}\NormalTok{, }
-    \DataTypeTok{header =}\NormalTok{ T))}
+\NormalTok{(}\KeywordTok{read.csv2}\NormalTok{(}\StringTok{"data/rao.effectifs.csv"}\NormalTok{, }\DataTypeTok{row.names =} \DecValTok{1}\NormalTok{, }\DataTypeTok{header =}\NormalTok{ T) ->}
+\StringTok{    }\NormalTok{effectifs)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6807,12 +6816,12 @@ Le code R nécessaire pour réaliser la figure est:
 \begin{Highlighting}[]
 \NormalTok{r <-}\StringTok{ }\FloatTok{0.5}
 \NormalTok{seqZp <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{0.001}\NormalTok{)}
-\NormalTok{gga <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{r =}\NormalTok{ seqZp, }\DataTypeTok{xr =}\NormalTok{ seqZp}\OperatorTok{^}\NormalTok{r), }\KeywordTok{aes}\NormalTok{(r, xr)) }\OperatorTok{+}\StringTok{ }
-\StringTok{    }\KeywordTok{geom_line}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_abline}\NormalTok{(}\DataTypeTok{intercept =} \DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{r, }\DataTypeTok{slope =}\NormalTok{ r, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }
+\NormalTok{gga <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{r =}\NormalTok{ seqZp, }\DataTypeTok{xr =}\NormalTok{ seqZp}\OperatorTok{^}\NormalTok{r), }\KeywordTok{aes}\NormalTok{(r, xr)) }\OperatorTok{+}
+\StringTok{    }\KeywordTok{geom_line}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_abline}\NormalTok{(}\DataTypeTok{intercept =} \DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{r, }\DataTypeTok{slope =}\NormalTok{ r, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{,}
     \DataTypeTok{lty =} \DecValTok{2}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y =} \KeywordTok{expression}\NormalTok{(x}\OperatorTok{^}\NormalTok{r)) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{tag =} \StringTok{"a"}\NormalTok{)}
 \NormalTok{r <-}\StringTok{ }\FloatTok{-0.5}
-\NormalTok{ggb <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{r =}\NormalTok{ seqZp, }\DataTypeTok{xr =}\NormalTok{ seqZp}\OperatorTok{^}\NormalTok{r), }\KeywordTok{aes}\NormalTok{(r, xr)) }\OperatorTok{+}\StringTok{ }
-\StringTok{    }\KeywordTok{geom_line}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_abline}\NormalTok{(}\DataTypeTok{intercept =} \DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{r, }\DataTypeTok{slope =}\NormalTok{ r, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }
+\NormalTok{ggb <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{r =}\NormalTok{ seqZp, }\DataTypeTok{xr =}\NormalTok{ seqZp}\OperatorTok{^}\NormalTok{r), }\KeywordTok{aes}\NormalTok{(r, xr)) }\OperatorTok{+}
+\StringTok{    }\KeywordTok{geom_line}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_abline}\NormalTok{(}\DataTypeTok{intercept =} \DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{r, }\DataTypeTok{slope =}\NormalTok{ r, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{,}
     \DataTypeTok{lty =} \DecValTok{2}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y =} \KeywordTok{expression}\NormalTok{(x}\OperatorTok{^}\NormalTok{r)) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{tag =} \StringTok{"b"}\NormalTok{)}
 \KeywordTok{grid.arrange}\NormalTok{(gga, ggb, }\DataTypeTok{ncol =} \DecValTok{2}\NormalTok{)}
 \end{Highlighting}
@@ -7232,8 +7241,8 @@ L'exemple suivant calcule la diversité de la méta-communauté \texttt{Paracou6
 \NormalTok{Z <-}\StringTok{ }\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{D}
 \CommentTok{# Matrice diagonale contenant les probabilités}
 \NormalTok{Q <-}\StringTok{ }\KeywordTok{diag}\NormalTok{(Ps)}
-\CommentTok{# Matrice des espèces (les lignes de Sp sont les coordonnées}
-\CommentTok{# des vecteurs)}
+\CommentTok{# Matrice des espèces (les lignes de Sp sont les}
+\CommentTok{# coordonnées des vecteurs)}
 \NormalTok{Sp <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(Q) }\OperatorTok{%*%}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(Z) }\OperatorTok{%*%}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(Q)}
 \CommentTok{# Valeurs propres normalisées}
 \NormalTok{Lambda <-}\StringTok{ }\KeywordTok{svd}\NormalTok{(Sp)}\OperatorTok{$}\NormalTok{d}
@@ -7374,14 +7383,14 @@ Le code R nécessaire pour réaliser la figure est:
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{q <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{3}\NormalTok{, }\FloatTok{0.1}\NormalTok{))}
-\CommentTok{# Réutilisation de Paracou618.Taxonomy au format phylog (cf.}
-\CommentTok{# calcul de FAD)}
+\CommentTok{# Réutilisation de Paracou618.Taxonomy au format phylog}
+\CommentTok{# (cf. calcul de FAD)}
 \NormalTok{DistanceMatrix <-}\StringTok{ }\KeywordTok{as.matrix}\NormalTok{(Tree}\OperatorTok{$}\NormalTok{Wdist}\OperatorTok{^}\DecValTok{2}\OperatorTok{/}\DecValTok{2}\NormalTok{)}
 \NormalTok{Z <-}\StringTok{ }\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{DistanceMatrix}\OperatorTok{/}\KeywordTok{max}\NormalTok{(DistanceMatrix)}
 \NormalTok{Divqz <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(q, }\ControlFlowTok{function}\NormalTok{(q) }\KeywordTok{Dqz}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Ps, q, Z))}
-\NormalTok{Divq <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(q, }\ControlFlowTok{function}\NormalTok{(q) }\KeywordTok{ChaoPD}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Ps, }\DataTypeTok{q =}\NormalTok{ q, }
+\NormalTok{Divq <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(q, }\ControlFlowTok{function}\NormalTok{(q) }\KeywordTok{ChaoPD}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Ps, }\DataTypeTok{q =}\NormalTok{ q,}
     \DataTypeTok{PhyloTree =}\NormalTok{ Paracou618.Taxonomy))}
-\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(q, Divq, Divqz), }\KeywordTok{aes}\NormalTok{(q)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_line}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ Divqz)) }\OperatorTok{+}\StringTok{ }
+\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(q, Divq, Divqz), }\KeywordTok{aes}\NormalTok{(q)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_line}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ Divqz)) }\OperatorTok{+}
 \StringTok{    }\KeywordTok{geom_line}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ Divq), }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y =} \StringTok{"Diversité"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -7398,15 +7407,15 @@ La dépendance entre similarité et fréquence des espèces constitue un problè
 Enfin, il est possible de désagréger les données jusqu'au niveau individuel si la distance entre paires d'individus est connue.
 En revanche, la prise en compte de la variabilité intraspécifique par une similarité intraspécifique inférieure à 1 n'est possible que pour un ordre de diversité fixé: il n'est pas possible d'obtenir un profil de diversité de cette façon.
 
+\SmallMargins
+
 \hypertarget{part-diversituxe9-beta-et-duxe9composition}{%
 \part{Diversité beta et décomposition}\label{part-diversituxe9-beta-et-duxe9composition}}
 
+\LargeMargins
+
 \hypertarget{sec:betaCadre}{%
 \chapter{Cadre}\label{sec:betaCadre}}
-
-\scriptsize
-
-\normalsize
 
 \scriptsize
 
@@ -7444,8 +7453,8 @@ Les parcelles de Paracou sont dans l'objet \texttt{Paracou618.MC}.
 \end{Shaded}
 
 \begin{verbatim}
-## Meta-community (class 'MetaCommunity') made of 1124 individuals in 2 
-## communities and 425 species. 
+## Meta-community (class 'MetaCommunity') made of 1124 
+## individuals in 2 communities and 425 species. 
 ## 
 ## Its sample coverage is 0.92266748426447 
 ## 
@@ -7813,7 +7822,7 @@ Code R pour la figure:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{Jaccard =} \KeywordTok{as.numeric}\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{DistJaccard}\OperatorTok{^}\DecValTok{2}\NormalTok{))) }\OperatorTok{+}\StringTok{ }
+\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{Jaccard =} \KeywordTok{as.numeric}\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{DistJaccard}\OperatorTok{^}\DecValTok{2}\NormalTok{))) }\OperatorTok{+}
 \StringTok{    }\KeywordTok{geom_density}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Jaccard))}
 \end{Highlighting}
 \end{Shaded}
@@ -7878,8 +7887,9 @@ La matrice de dissimilarité corrigée est assez différente de l'originale. L'i
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Calcul de U et V, N2Col est une matrice ou un dataframe de}
-\CommentTok{# deux colonnes contenant les effectifs de chaque parcelle}
+\CommentTok{# Calcul de U et V, N2Col est une matrice ou un dataframe}
+\CommentTok{# de deux colonnes contenant les effectifs de chaque}
+\CommentTok{# parcelle}
 \NormalTok{ChaoUV <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(N2Col) \{}
 \NormalTok{    NCommunity <-}\StringTok{ }\KeywordTok{colSums}\NormalTok{(N2Col)}
 \NormalTok{    Common <-}\StringTok{ }\NormalTok{(N2Col[, }\DecValTok{1}\NormalTok{] }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{) }\OperatorTok{&}\StringTok{ }\NormalTok{(N2Col[, }\DecValTok{2}\NormalTok{] }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{)}
@@ -7889,23 +7899,23 @@ La matrice de dissimilarité corrigée est assez différente de l'originale. L'i
 \NormalTok{    NDoubleCommon <-}\StringTok{ }\KeywordTok{colSums}\NormalTok{(Common }\OperatorTok{&}\StringTok{ }\NormalTok{Double)}
 \NormalTok{    NsCommon <-}\StringTok{ }\NormalTok{N2Col[Common, ]}
 \NormalTok{    PsCommon <-}\StringTok{ }\KeywordTok{t}\NormalTok{(}\KeywordTok{t}\NormalTok{(NsCommon)}\OperatorTok{/}\KeywordTok{colSums}\NormalTok{(N2Col))}
-\NormalTok{    U <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(PsCommon[, }\DecValTok{1}\NormalTok{]) }\OperatorTok{+}\StringTok{ }\NormalTok{(NCommunity[}\DecValTok{2}\NormalTok{] }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{NCommunity[}\DecValTok{2}\NormalTok{] }\OperatorTok{*}\StringTok{ }
-\StringTok{        }\NormalTok{NSingleCommon[}\DecValTok{2}\NormalTok{]}\OperatorTok{/}\DecValTok{2}\OperatorTok{/}\KeywordTok{max}\NormalTok{(NDoubleCommon[}\DecValTok{2}\NormalTok{], }\DecValTok{1}\NormalTok{) }\OperatorTok{*}\StringTok{ }\KeywordTok{sum}\NormalTok{(PsCommon[, }
+\NormalTok{    U <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(PsCommon[, }\DecValTok{1}\NormalTok{]) }\OperatorTok{+}\StringTok{ }\NormalTok{(NCommunity[}\DecValTok{2}\NormalTok{] }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{NCommunity[}\DecValTok{2}\NormalTok{] }\OperatorTok{*}
+\StringTok{        }\NormalTok{NSingleCommon[}\DecValTok{2}\NormalTok{]}\OperatorTok{/}\DecValTok{2}\OperatorTok{/}\KeywordTok{max}\NormalTok{(NDoubleCommon[}\DecValTok{2}\NormalTok{], }\DecValTok{1}\NormalTok{) }\OperatorTok{*}\StringTok{ }\KeywordTok{sum}\NormalTok{(PsCommon[,}
         \DecValTok{1}\NormalTok{][(NsCommon }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)[, }\DecValTok{2}\NormalTok{]])}
-\NormalTok{    V <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(PsCommon[, }\DecValTok{2}\NormalTok{]) }\OperatorTok{+}\StringTok{ }\NormalTok{(NCommunity[}\DecValTok{1}\NormalTok{] }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{NCommunity[}\DecValTok{1}\NormalTok{] }\OperatorTok{*}\StringTok{ }
-\StringTok{        }\NormalTok{NSingleCommon[}\DecValTok{1}\NormalTok{]}\OperatorTok{/}\DecValTok{2}\OperatorTok{/}\KeywordTok{max}\NormalTok{(NDoubleCommon[}\DecValTok{1}\NormalTok{], }\DecValTok{1}\NormalTok{) }\OperatorTok{*}\StringTok{ }\KeywordTok{sum}\NormalTok{(PsCommon[, }
+\NormalTok{    V <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(PsCommon[, }\DecValTok{2}\NormalTok{]) }\OperatorTok{+}\StringTok{ }\NormalTok{(NCommunity[}\DecValTok{1}\NormalTok{] }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{NCommunity[}\DecValTok{1}\NormalTok{] }\OperatorTok{*}
+\StringTok{        }\NormalTok{NSingleCommon[}\DecValTok{1}\NormalTok{]}\OperatorTok{/}\DecValTok{2}\OperatorTok{/}\KeywordTok{max}\NormalTok{(NDoubleCommon[}\DecValTok{1}\NormalTok{], }\DecValTok{1}\NormalTok{) }\OperatorTok{*}\StringTok{ }\KeywordTok{sum}\NormalTok{(PsCommon[,}
         \DecValTok{2}\NormalTok{][(NsCommon }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)[, }\DecValTok{1}\NormalTok{]])}
     \KeywordTok{return}\NormalTok{(}\KeywordTok{list}\NormalTok{(}\DataTypeTok{U =}\NormalTok{ U, }\DataTypeTok{V =}\NormalTok{ V))}
 \NormalTok{\}}
 \CommentTok{# Indice de Jaccard corrigé}
 \NormalTok{bcJaccard <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(N2Col) \{}
 \NormalTok{    ChaoEst <-}\StringTok{ }\KeywordTok{ChaoUV}\NormalTok{(N2Col)}
-    \KeywordTok{return}\NormalTok{(}\KeywordTok{min}\NormalTok{(ChaoEst}\OperatorTok{$}\NormalTok{U }\OperatorTok{*}\StringTok{ }\NormalTok{ChaoEst}\OperatorTok{$}\NormalTok{V}\OperatorTok{/}\NormalTok{(ChaoEst}\OperatorTok{$}\NormalTok{U }\OperatorTok{+}\StringTok{ }\NormalTok{ChaoEst}\OperatorTok{$}\NormalTok{V }\OperatorTok{-}\StringTok{ }
+    \KeywordTok{return}\NormalTok{(}\KeywordTok{min}\NormalTok{(ChaoEst}\OperatorTok{$}\NormalTok{U }\OperatorTok{*}\StringTok{ }\NormalTok{ChaoEst}\OperatorTok{$}\NormalTok{V}\OperatorTok{/}\NormalTok{(ChaoEst}\OperatorTok{$}\NormalTok{U }\OperatorTok{+}\StringTok{ }\NormalTok{ChaoEst}\OperatorTok{$}\NormalTok{V }\OperatorTok{-}
 \StringTok{        }\NormalTok{ChaoEst}\OperatorTok{$}\NormalTok{U }\OperatorTok{*}\StringTok{ }\NormalTok{ChaoEst}\OperatorTok{$}\NormalTok{V), }\DecValTok{1}\NormalTok{))}
 \NormalTok{\}}
 \CommentTok{# Calcul de l'indice entre les carrés i et j de BCI, i<j.}
 \NormalTok{BCIjaccard <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(i, j) \{}
-    \ControlFlowTok{if}\NormalTok{ (i }\OperatorTok{>=}\StringTok{ }\NormalTok{j) }
+    \ControlFlowTok{if}\NormalTok{ (i }\OperatorTok{>=}\StringTok{ }\NormalTok{j)}
         \KeywordTok{return}\NormalTok{(}\OtherTok{NA}\NormalTok{) }\ControlFlowTok{else} \KeywordTok{return}\NormalTok{(}\KeywordTok{bcJaccard}\NormalTok{(}\KeywordTok{t}\NormalTok{(BCI[}\KeywordTok{c}\NormalTok{(i, j), ])))}
 \NormalTok{\}}
 \CommentTok{# Calcul de la matrice de dissimilarité entre les 50 carrés}
@@ -8303,7 +8313,7 @@ Code R pour la figure:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pcaBCI <-}\StringTok{ }\KeywordTok{dudi.pca}\NormalTok{(BCI}\OperatorTok{/}\KeywordTok{rowSums}\NormalTok{(BCI), }\DataTypeTok{scannf =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{nf =} \DecValTok{2}\NormalTok{, }
+\NormalTok{pcaBCI <-}\StringTok{ }\KeywordTok{dudi.pca}\NormalTok{(BCI}\OperatorTok{/}\KeywordTok{rowSums}\NormalTok{(BCI), }\DataTypeTok{scannf =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{nf =} \DecValTok{2}\NormalTok{,}
     \DataTypeTok{center =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{scale =} \OtherTok{FALSE}\NormalTok{)}
 \KeywordTok{scatter}\NormalTok{(pcaBCI, }\DataTypeTok{posieig =} \StringTok{"bottomleft"}\NormalTok{)}
 \end{Highlighting}
@@ -8334,7 +8344,7 @@ Code R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pcaBCI <-}\StringTok{ }\KeywordTok{dudi.pca}\NormalTok{(BCI}\OperatorTok{/}\KeywordTok{rowSums}\NormalTok{(BCI), }\DataTypeTok{scannf =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{nf =} \DecValTok{2}\NormalTok{, }
+\NormalTok{pcaBCI <-}\StringTok{ }\KeywordTok{dudi.pca}\NormalTok{(BCI}\OperatorTok{/}\KeywordTok{rowSums}\NormalTok{(BCI), }\DataTypeTok{scannf =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{nf =} \DecValTok{2}\NormalTok{,}
     \DataTypeTok{center =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{scale =} \OtherTok{FALSE}\NormalTok{)}
 \KeywordTok{scatter}\NormalTok{(pcaBCI, }\DataTypeTok{clab.col =} \DecValTok{0}\NormalTok{)}
 \end{Highlighting}
@@ -8559,8 +8569,8 @@ Calcul sous R: La fonction \texttt{BetaEntropy} calcule l'entropie \(\beta\) de 
 \end{Shaded}
 
 \begin{verbatim}
-## Neutral beta entropy of order 1 of metaCommunity Paracou618.MC with correction: 
-## None 
+## Neutral beta entropy of order 1 of metaCommunity 
+## Paracou618.MC with correction: None 
 ## 
 ## Entropy of communities: 
 ##      P006      P018 
@@ -8593,8 +8603,8 @@ Calcul sous R: \texttt{BetaEntropy} applique cette correction:
 \end{Shaded}
 
 \begin{verbatim}
-## Neutral beta entropy of order 1 of metaCommunity Paracou618.MC with correction: 
-## ChaoShen 
+## Neutral beta entropy of order 1 of metaCommunity 
+## Paracou618.MC with correction: ChaoShen 
 ## 
 ## Entropy of communities: 
 ##      P006      P018 
@@ -8623,7 +8633,7 @@ Calcul sous R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{Shannon}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Ns) }\OperatorTok{+}\StringTok{ }\KeywordTok{Shannon}\NormalTok{(}\KeywordTok{colSums}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Nsi)) }\OperatorTok{-}\StringTok{ }
+\KeywordTok{Shannon}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Ns) }\OperatorTok{+}\StringTok{ }\KeywordTok{Shannon}\NormalTok{(}\KeywordTok{colSums}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Nsi)) }\OperatorTok{-}
 \StringTok{    }\KeywordTok{Shannon}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Nsi)}
 \end{Highlighting}
 \end{Shaded}
@@ -8655,7 +8665,7 @@ Cette correction est incluse dans la fonction \texttt{ShannonBeta} de \emph{entr
 \begin{Highlighting}[]
 \CommentTok{# Divergence de Kullback-Leibler entre chaque communauté de}
 \CommentTok{# Paracou618.MC et la métacommunauté}
-\NormalTok{(Beta <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Nsi, }\DecValTok{2}\NormalTok{, ShannonBeta, }\DataTypeTok{Nexp =}\NormalTok{ Paracou618.MC}\OperatorTok{$}\NormalTok{Ns, }
+\NormalTok{(Beta <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(Paracou618.MC}\OperatorTok{$}\NormalTok{Nsi, }\DecValTok{2}\NormalTok{, ShannonBeta, }\DataTypeTok{Nexp =}\NormalTok{ Paracou618.MC}\OperatorTok{$}\NormalTok{Ns,}
     \DataTypeTok{Correction =} \StringTok{"ZhangGrabchak"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
@@ -8995,8 +9005,8 @@ L'exemple suivant utilise les communautés du fichier \texttt{rao.effectifs.csv}
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Vecteur contenant 8 espèces...}
-\NormalTok{(effectifs <-}\StringTok{ }\KeywordTok{read.csv2}\NormalTok{(}\StringTok{"data/rao.effectifs.csv"}\NormalTok{, }\DataTypeTok{row.names =} \DecValTok{1}\NormalTok{, }
-    \DataTypeTok{header =}\NormalTok{ T))}
+\NormalTok{(}\KeywordTok{read.csv2}\NormalTok{(}\StringTok{"data/rao.effectifs.csv"}\NormalTok{, }\DataTypeTok{row.names =} \DecValTok{1}\NormalTok{, }\DataTypeTok{header =}\NormalTok{ T) ->}
+\StringTok{    }\NormalTok{effectifs)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -9015,12 +9025,14 @@ L'exemple suivant utilise les communautés du fichier \texttt{rao.effectifs.csv}
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Lecture des données : traits pour 34 espèces}
-\NormalTok{traits <-}\StringTok{ }\KeywordTok{read.csv2}\NormalTok{(}\StringTok{"data/rao.traits.csv"}\NormalTok{, }\DataTypeTok{row.names =} \DecValTok{1}\NormalTok{, }\DataTypeTok{header =}\NormalTok{ T)}
+\KeywordTok{read.csv2}\NormalTok{(}\StringTok{"data/rao.traits.csv"}\NormalTok{, }\DataTypeTok{row.names =} \DecValTok{1}\NormalTok{, }\DataTypeTok{header =}\NormalTok{ T) ->}
+\StringTok{    }\NormalTok{traits}
 \CommentTok{# ACP sur les traits foliaires}
 \NormalTok{pcaf <-}\StringTok{ }\KeywordTok{dudi.pca}\NormalTok{(traits, }\DataTypeTok{scale =}\NormalTok{ T, }\DataTypeTok{scannf =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{nf =} \DecValTok{2}\NormalTok{)}
 \CommentTok{# CAH Ward des traits foliaires}
 \NormalTok{hf <-}\StringTok{ }\KeywordTok{hclust}\NormalTok{(}\KeywordTok{dist}\NormalTok{(pcaf}\OperatorTok{$}\NormalTok{tab), }\StringTok{"ward.D"}\NormalTok{)}
-\CommentTok{# Transformation de l'arbre du format hclust au format phylog}
+\CommentTok{# Transformation de l'arbre du format hclust au format}
+\CommentTok{# phylog}
 \NormalTok{phyf <-}\StringTok{ }\KeywordTok{hclust2phylog}\NormalTok{(hf)}
 \end{Highlighting}
 \end{Shaded}
@@ -9097,7 +9109,7 @@ Pour obtenir tous les éléments de l'équation \eqref{eq:Raobeta}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{divc}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{colSums}\NormalTok{(effectifs)), }\KeywordTok{disc}\NormalTok{(effectifs[}\KeywordTok{names}\NormalTok{(phyf}\OperatorTok{$}\NormalTok{leaves), }
+\KeywordTok{divc}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{colSums}\NormalTok{(effectifs)), }\KeywordTok{disc}\NormalTok{(effectifs[}\KeywordTok{names}\NormalTok{(phyf}\OperatorTok{$}\NormalTok{leaves),}
 \NormalTok{    ], phyf}\OperatorTok{$}\NormalTok{Wdist))}
 \end{Highlighting}
 \end{Shaded}
@@ -9156,8 +9168,8 @@ La partition peut être faite avec la fonction \texttt{DivPart} :
 ## HCDT diversity partitioning of order 2 of metaCommunity MC
 ## 
 ## Phylogenetic or functional diversity was calculated
-## according to the tree phyf 
-## 
+## according to the tree 
+## phyf 
 ## 
 ## Diversity is not normalized 
 ## 
@@ -9378,7 +9390,8 @@ Les résultats contiennent la valeur de la diversité:
 \end{Shaded}
 
 \begin{verbatim}
-## HCDT diversity partitioning of order 1 of metaCommunity Paracou618.MC
+## HCDT diversity partitioning of order 1 of metaCommunity 
+## Paracou618.MC
 ##  with correction: UnveilJ UnveilJ UnveilJ
 ## Phylogenetic or functional diversity was calculated
 ## according to the tree 
@@ -9518,8 +9531,8 @@ La fonction \texttt{DivPart} (comme les autres fonctions avancées de \emph{entr
 \end{Shaded}
 
 \begin{verbatim}
-## Similarity-based diversity partitioning of order 1 of metaCommunity 
-## Paracou618.MC
+## Similarity-based diversity partitioning of order 1 
+## of metaCommunity Paracou618.MC
 ##  with correction: Best
 ## Phylogenetic or functional entropy was calculated
 ## according to the similarity matrix 
@@ -9742,15 +9755,15 @@ La distance entre populations \(d\) est de préférence la distance de Kosman en
 La diversité \(\gamma\) est la somme de la moyenne des diversités intra-populations \({KW}_{\rho}\) pondérées par le poids des populations et de la diversité inter-populations \({KA}_{d}\).
 Ce n'est pas la diversité \({KW}_{\rho}\) de l'assemblage des populations, ce qui limite fortement l'intérêt de cette approche.
 
+\SmallMargins
+
 \hypertarget{part-diversituxe9-jointe-diversituxe9-structurelle}{%
 \part{Diversité jointe, diversité structurelle}\label{part-diversituxe9-jointe-diversituxe9-structurelle}}
 
+\LargeMargins
+
 \hypertarget{sec:jointeCadre}{%
 \chapter{Cadre}\label{sec:jointeCadre}}
-
-\scriptsize
-
-\normalsize
 
 Gregorius \autocite*{Gregorius2010,Gregorius2014} argumente en faveur de la prise en compte de ce qu'il définit comme la \enquote{diversité jointe} dans le cadre classique où les classes sont des communautés pour des raisons fondamentales de définition de la diversité.
 Son approche consiste à traiter de façon symétrique l'appartenance à une classe ou à une espèce: contrairement aux chapitres précédents où l'échantillonnage des individus avait lieu séparément dans chaque communauté, l'échantillonnage a lieu ici globalement dans la méta-communauté et l'appartenance d'un individu à une communauté apporte autant d'information que son appartenance à une espèce.
@@ -9959,7 +9972,7 @@ L'exemple suivant mesure la diversité \(\beta\) dans une méta-communauté trè
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{q <-}\StringTok{ }\DecValTok{2}
-\NormalTok{df1 <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{Co1 =} \KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{10}\NormalTok{), }\DataTypeTok{Co2 =} \KeywordTok{c}\NormalTok{(}\DecValTok{50}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{20}\NormalTok{, }
+\NormalTok{df1 <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{Co1 =} \KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{10}\NormalTok{), }\DataTypeTok{Co2 =} \KeywordTok{c}\NormalTok{(}\DecValTok{50}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{20}\NormalTok{,}
     \DecValTok{5}\NormalTok{), }\DataTypeTok{row.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"S1"}\NormalTok{, }\StringTok{"S2"}\NormalTok{, }\StringTok{"S3"}\NormalTok{, }\StringTok{"S4"}\NormalTok{))}
 \KeywordTok{library}\NormalTok{(}\StringTok{"entropart"}\NormalTok{)}
 \NormalTok{MC1 <-}\StringTok{ }\KeywordTok{MetaCommunity}\NormalTok{(df1)}
@@ -9997,7 +10010,7 @@ Le code R nécessaire pour réaliser la figure est:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{summary}\NormalTok{(dp1 <-}\StringTok{ }\KeywordTok{DivPart}\NormalTok{(q, MC1))}
+\KeywordTok{summary}\NormalTok{(}\KeywordTok{DivPart}\NormalTok{(q, MC1) ->}\StringTok{ }\NormalTok{dp1)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -10062,7 +10075,7 @@ Le code R nécessaire pour réaliser la figure est:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{summary}\NormalTok{(dp2 <-}\StringTok{ }\KeywordTok{DivPart}\NormalTok{(q, MC2))}
+\KeywordTok{summary}\NormalTok{(}\KeywordTok{DivPart}\NormalTok{(q, MC2) ->}\StringTok{ }\NormalTok{dp2)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -10148,7 +10161,7 @@ Sa diversité jointe est 12 (le nombre de cellules non nulles dans la matrice):
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{q <-}\StringTok{ }\DecValTok{2}  \CommentTok{# Peu importe q}
-\NormalTok{df1 <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{Co1 =} \KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), }\DataTypeTok{Co2 =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{), }
+\NormalTok{df1 <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{Co1 =} \KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), }\DataTypeTok{Co2 =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{),}
     \DataTypeTok{row.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"S1"}\NormalTok{, }\StringTok{"S2"}\NormalTok{, }\StringTok{"S3"}\NormalTok{, }\StringTok{"S4"}\NormalTok{))}
 \NormalTok{df3 <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(df1, df1, df1)}
 \NormalTok{MC <-}\StringTok{ }\KeywordTok{MetaCommunity}\NormalTok{(df3)}
@@ -10186,7 +10199,7 @@ Le code R nécessaire pour réaliser la figure est:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{summary}\NormalTok{(dp <-}\StringTok{ }\KeywordTok{DivPart}\NormalTok{(q, MC))}
+\KeywordTok{summary}\NormalTok{(}\KeywordTok{DivPart}\NormalTok{(q, MC) ->}\StringTok{ }\NormalTok{dp)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -10208,7 +10221,7 @@ Le code R nécessaire pour réaliser la figure est:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{(Djointe <-}\StringTok{ }\KeywordTok{Diversity}\NormalTok{(}\KeywordTok{as.ProbaVector}\NormalTok{(df3), q))}
+\NormalTok{(}\KeywordTok{Diversity}\NormalTok{(}\KeywordTok{as.ProbaVector}\NormalTok{(df3), q) ->}\StringTok{ }\NormalTok{Djointe)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -10270,15 +10283,15 @@ Gregorius montre que \(^{q}\!R_{s}\) égale la diversité \(\alpha\) selon Jost 
   = {\left(\sum_s{\sum_i{\frac{p^q_i}{\sum_i{p^q_i}}p^q_{s|i}}}\right)}^{{1}/{\left(1-q\right)}}.
 \end{equation}
 
+\SmallMargins
+
 \hypertarget{part-diversituxe9-spatialement-explicite}{%
 \part{Diversité spatialement explicite}\label{part-diversituxe9-spatialement-explicite}}
 
+\LargeMargins
+
 \hypertarget{sec:spatialCadre}{%
 \chapter{Cadre}\label{sec:spatialCadre}}
-
-\scriptsize
-
-\normalsize
 
 De façon évidente, la richesse augmente avec la surface ou le nombre d'individus pris en compte.
 Cette constatation peut être interprétée de deux façons différentes: l'augmentation progressive de l'effort d'échantillonnage permet d'atteindre une asymptote quand la diversité est complètement inventoriée, ou, au contraire, l'augmentation de la diversité avec la surface prise en compte est une propriété intrinsèque, et aucune asymptote n'existe.
@@ -10480,7 +10493,8 @@ Le résultat est très différent parce que l'approximation de l'égalité de \(
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(}\StringTok{"vegan"}\NormalTok{)}
 \KeywordTok{data}\NormalTok{(BCI)}
-\CommentTok{# Ns est un vecteur contenant les effectifs de chaque espèce}
+\CommentTok{# Ns est un vecteur contenant les effectifs de chaque}
+\CommentTok{# espèce}
 \NormalTok{Ns <-}\StringTok{ }\KeywordTok{colSums}\NormalTok{(BCI)}
 \KeywordTok{fisher.alpha}\NormalTok{(Ns)}
 \end{Highlighting}
@@ -10617,7 +10631,7 @@ L'indice Q est calculé:
 \CommentTok{# Nombre total d'espèces}
 \NormalTok{S <-}\StringTok{ }\KeywordTok{max}\NormalTok{(nEspeces)}
 \CommentTok{# Premier et troisièmes quartiles}
-\NormalTok{Q13 <-}\StringTok{ }\KeywordTok{which}\NormalTok{(nEspeces }\OperatorTok{>=}\StringTok{ }\KeywordTok{max}\NormalTok{(nEspeces)}\OperatorTok{/}\DecValTok{4} \OperatorTok{&}\StringTok{ }\NormalTok{nEspeces }\OperatorTok{<=}\StringTok{ }\KeywordTok{max}\NormalTok{(nEspeces) }\OperatorTok{*}\StringTok{ }
+\NormalTok{Q13 <-}\StringTok{ }\KeywordTok{which}\NormalTok{(nEspeces }\OperatorTok{>=}\StringTok{ }\KeywordTok{max}\NormalTok{(nEspeces)}\OperatorTok{/}\DecValTok{4} \OperatorTok{&}\StringTok{ }\NormalTok{nEspeces }\OperatorTok{<=}\StringTok{ }\KeywordTok{max}\NormalTok{(nEspeces) }\OperatorTok{*}
 \StringTok{    }\DecValTok{3}\OperatorTok{/}\DecValTok{4}\NormalTok{)}
 \NormalTok{nq1 <-}\StringTok{ }\KeywordTok{min}\NormalTok{(Q13)}
 \NormalTok{nq3 <-}\StringTok{ }\KeywordTok{max}\NormalTok{(Q13)}
@@ -10956,8 +10970,8 @@ La méthode est testée ici sur la même communauté log-normale.
 \CommentTok{# Extrapolation jusqu'à}
 \NormalTok{Nmax <-}\StringTok{ }\DecValTok{25000}
 \CommentTok{# SAC réelle, obtenue par la somme des entropies de Simpson}
-\CommentTok{# généralisées Calcul de p(1-p)^r pour toutes les espèces (en}
-\CommentTok{# lignes) et tous les r (en colonnes)}
+\CommentTok{# généralisées Calcul de p(1-p)^r pour toutes les espèces}
+\CommentTok{# (en lignes) et tous les r (en colonnes)}
 \NormalTok{GSsr <-}\StringTok{ }\NormalTok{Ps }\OperatorTok{*}\StringTok{ }\KeywordTok{sapply}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{Nmax, }\ControlFlowTok{function}\NormalTok{(r) (}\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{Ps)}\OperatorTok{^}\NormalTok{r)}
 \CommentTok{# Simpson généralisé pour tous les r}
 \NormalTok{GSr <-}\StringTok{ }\KeywordTok{colSums}\NormalTok{(GSsr)}
@@ -10965,14 +10979,14 @@ La méthode est testée ici sur la même communauté log-normale.
 \NormalTok{SAC <-}\StringTok{ }\KeywordTok{cumsum}\NormalTok{(GSr)}
 \CommentTok{# Fonction d'extrapolation de la SAC}
 \NormalTok{ExtraSAC <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(Ns, N) \{}
-    \CommentTok{# Ns est le vecteur des abondances de l'échantillon, N est le}
-    \CommentTok{# vecteur des tailles à extrapoler}
+    \CommentTok{# Ns est le vecteur des abondances de l'échantillon, N}
+    \CommentTok{# est le vecteur des tailles à extrapoler}
 \NormalTok{    n0 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(Ns)}
 \NormalTok{    Sn0 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(Ns }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{)}
 \NormalTok{    f1 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(Ns }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)}
 \NormalTok{    f2 <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(Ns }\OperatorTok{==}\StringTok{ }\DecValTok{2}\NormalTok{)}
     \CommentTok{# Extrapolation à chaque taille}
-    \KeywordTok{vapply}\NormalTok{(N, }\ControlFlowTok{function}\NormalTok{(n) Sn0 }\OperatorTok{+}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{f1 }\OperatorTok{-}\StringTok{ }\NormalTok{f2 }\OperatorTok{-}\StringTok{ }\NormalTok{(}\DecValTok{3} \OperatorTok{*}\StringTok{ }\NormalTok{f1 }\OperatorTok{-}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{f2) }\OperatorTok{*}\StringTok{ }
+    \KeywordTok{vapply}\NormalTok{(N, }\ControlFlowTok{function}\NormalTok{(n) Sn0 }\OperatorTok{+}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{f1 }\OperatorTok{-}\StringTok{ }\NormalTok{f2 }\OperatorTok{-}\StringTok{ }\NormalTok{(}\DecValTok{3} \OperatorTok{*}\StringTok{ }\NormalTok{f1 }\OperatorTok{-}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{f2) }\OperatorTok{*}
 \StringTok{        }\NormalTok{n0}\OperatorTok{/}\NormalTok{n }\OperatorTok{-}\StringTok{ }\NormalTok{(f2 }\OperatorTok{-}\StringTok{ }\NormalTok{f1) }\OperatorTok{*}\StringTok{ }\NormalTok{(n0}\OperatorTok{/}\NormalTok{n)}\OperatorTok{^}\DecValTok{2}\NormalTok{, }\DecValTok{0}\NormalTok{)}
 \NormalTok{\}}
 \CommentTok{# Taille de l'échantillon}
@@ -11522,15 +11536,15 @@ Wagner montre que l'estimateur de la variance de la richesse spécifique par par
 Si les espèces sont distribuées indépendamment les unes des autres, la covariance est nulle pour toutes les paires d'espèces à toutes les distances.
 Le test d'égalité entre \(\operatorname{Var}(S)\) et \(\gamma_{s,t}(r)\) à chaque valeur de \(r\) (obtenu par la méthode de Monte-Carlo en redistribuant aléatoirement la présence de chaque espèce sur le même nombre de parcelles que dans les données réelles) permet de rejeter l'indépendance entre les espèces.
 
+\SmallMargins
+
 \hypertarget{part-conclusion}{%
 \part{Conclusion}\label{part-conclusion}}
 
+\LargeMargins
+
 \hypertarget{sec:conclusionSynthese}{%
 \chapter{Synthèse}\label{sec:conclusionSynthese}}
-
-\scriptsize
-
-\normalsize
 
 La biodiversité peut être mesurée de nombreuses façons.
 La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire.
@@ -11700,6 +11714,5 @@ La construction de ce cadre méthodologique est présentée en détail ainsi que
 
 \end{normalsize}
 
-\vspace*{\fill}
-\centering\includegraphics[width=.3\textwidth]{images/logo}
+
 \end{document}
