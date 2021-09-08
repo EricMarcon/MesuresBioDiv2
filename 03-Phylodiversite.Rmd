@@ -1002,7 +1002,7 @@ Dans un arbre parfaitement régulier, toutes les branches sont de longueur 1 et 
 
 
 
-# Entropie phylogénétique {#chap:Phyloentropie}
+# Entropie phylogénétique {#chap-Phyloentropie}
 
 ```{block, type='Summary'}
   L'entropie phylogénétique est la moyenne de l'entropie HCDT le long d'un arbre phylogénétique.
@@ -1139,7 +1139,7 @@ Dans l'état actuel des connaissances, aucune méthode n'est applicable de faço
 
 
 
-# Diversité de Leinster et Cobbold {#chap:LeinsterCobbold}
+# Diversité de Leinster et Cobbold {#chap-LeinsterCobbold}
 
 
 ```{block, type='Summary'}

@@ -32,7 +32,7 @@ Enfin, la diversité $\beta$ spatialement explicite est introduite au chapitre \
 
 
 
-# Indice $\alpha$ de Fisher {#chap:Fisher}
+# Indice $\alpha$ de Fisher {#chap-Fisher}
 
 ```{block, type='Summary'}
 L'Indice $\alpha$ de Fisher est la pente de la relation linéaire entre le nombre d'espèces observées et le logarithme du nombre d'individus inventoriés.
@@ -255,7 +255,7 @@ ggplot(data.frame(x = log(1:ncol(Inventaire)), y = nEspeces)) +
 
 
 
-# Accumulation de la diversité locale {#chap:Accumulation}
+# Accumulation de la diversité locale {#chap-Accumulation}
 
 ```{block, type='Summary'}
   La courbe d'accumulation (SAC) décrit comment la richesse, ou la diversité, augmente en fonction de l'effort d'échantillonnage.
@@ -844,7 +844,7 @@ Cette méthode permet l'extrapolation à de très grandes surfaces de mesures de
 
 
 
-# Diversité $\beta$ spatialement explicite {#chap:betasp}
+# Diversité $\beta$ spatialement explicite {#chap-betasp}
 
 
 ```{block, type='Summary'}

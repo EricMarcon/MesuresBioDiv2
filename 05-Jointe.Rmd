@@ -165,7 +165,7 @@ Pour revenir au cas simple dans lequel les habitats ont des poids égaux, les co
 
 
 
-# Décomposition de la diversité jointe {#chap:DiversiteJointe}
+# Décomposition de la diversité jointe {#chap-DiversiteJointe}
 
 ```{block, type='Summary'}
   La diversité jointe peut être décomposée en diversité $\gamma$ (elle-même décomposable en diversités $\alpha$ et $\beta$) et réplication, égale au nombre effectif de répétitions de l'assemblage des communautés nécessaire pour obtenir la diversité jointe réelle.
