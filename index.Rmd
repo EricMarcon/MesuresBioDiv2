@@ -1,20 +1,18 @@
 --- 
 title: "Mesures de la Biodiversité"
 author: "Eric Marcon"
-date: "`r Sys.Date()`"
-output: pdf_document
-url: https://github.com/EricMarcon/MesuresBioDiv2
-github-repo: EricMarcon/MesuresBioDiv2
+date: "`r format(Sys.Date(), '%d/%m/%Y')`"
+url: "https://github.com/EricMarcon/MesuresBioDiv2/"
+description: "Définitions, estimation et décompositon de la biodiversité"
+# Title page
 maintitlepage:
   epigraph: |
     Ce document est réalisé de façon dynamique et reproductible grâce à:
-
     \begin{itemize}
       \item \LaTeX, dans sa distribution Miktex (\url{http://miktex.org/}) et la classe memoir (\url{http://www.ctan.org/pkg/memoir}).
       \item R (\url{http://www.r-project.org/}) et RStudio (\url{http://www.rstudio.com/})
       \item bookdown (\url{http://bookdown.org/})
     \end{itemize}
-    
     Son code source est sur GitHub: \url{https://github.com/EricMarcon/MesuresBioDiv2/}.
     
     Le texte mis à jour en continu peut être lu sur \url{https://ericmarcon.github.io/MesuresBioDiv2/}.
@@ -22,61 +20,86 @@ maintitlepage:
     Les versions d'étape sont déposées sur HAL: \url{https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/}.
   credits: |
     Photographie en couverture: Hadrien Lalagüe
-filigrane: Filigrane
+  filigrane: filigrane
+# Language
 lang: fr-FR
-otherlangs: en-US
-papersize: A4
-fontsize: 11pt
-toc-depth: 3
-bibliography: references.bib
-biblatexoptions:
-- backend=biber
-- style=verbose-inote
-- pageref=true
-- isbn=false
-- backref=true
-- giveninits=true
-- uniquename=init
-- maxcitenames=2
-- maxbibnames=150
-- sorting=nyt
-- sortcites=false
-chaptersummary: L'Essentiel
-backcover:
-- language: french
-  abstract: |
-    La biodiversité peut être mesurée de nombreuses façons.
-  
-    La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire. 
-    L’entropie est la surprise moyenne fournie par les individus d’une communauté.
-    Le choix de la fonction d’information qui mesure cette surprise à partir des probabilités d’occurence des espèces (ou d’autres catégories) permet de définir les mesures de diversités neutres, fonctionnelles ou phylogénétique présentées ici. 
-    L’entropie est transformée en diversité au sens strict par une fonction croissante (l’exponentielle déformée), ce qui simplifie son interprétation en tant que nombre équivalent d’espèces.
-  
-    L’entropie phylogénétique généralise les indices de diversité classique, intègre si nécessaire la distance entre espèces, peut être écomposée et corrigée des biais d’estimation.
-    Sa transformation en diversité au sens strict permet d’interpréter les valeurs sous une forme unique : un nombre équivalent d’espèces et un nombre équivalent de communautés. 
-    La diversité de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet d’autres définitions de la distance entre espèces. 
-  
-    Le paramétrage des mesures (l’ordre de la diversité) permet de donner plus ou moins d’importance aux espèces rares et de tracer des profils de diversité. 
-  
-    La construction de ce cadre méthodologique est présentée en détail ainsi que plusieurs approches différentes, qui constituent l'état de l'art de la mesure de la biodiversité.
-  abstractlabel: Résumé
-backcoverfontsize: normalsize
-fig_crop: yes
+otherlangs: [en-US]
+# LaTeX
 documentclass: memoir
 classoption:
-- extrafontsizes
-- onecolumn
-- openright
+  - extrafontsizes
+  - onecolumn
+  - openright
+# Paper, font
+papersize: A4
+fontsize: 11pt
+# memoir Style
+MemoirChapStyle: companion
+MemoirPageStyle: companion
+# Margins
+largemargins: true
+smallmargin: 1.5in
+largemargin: 3in
+marginnote: 1.8in
+spinemargin: 1.2in
+uppermargin: 1.5in
+lowermargin: 1in
+# Table of contents
+toc-depth: 2
+# Section numbering
+secnum-depth: section
+# List of tables / Figures
+lot: false
+lof: false
+# Bibliography
+bibliography: references.bib
+biblatexoptions:
+  - backend=biber
+  - style=verbose-inote
+  - pageref=true
+  - isbn=false
+  - backref=true
+  - giveninits=true
+  - uniquename=init
+  - maxcitenames=2
+  - maxbibnames=150
+  - sorting=nyt
+  - sortcites=false
+longbibliography: true
+# Chapter summary text
+chaptersummary: L'essentiel
+# Back Cover
+backcover:
+  - language: french
+    abstract: |
+      La biodiversité peut être mesurée de nombreuses façons.
+
+      La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire. 
+      L’entropie est la surprise moyenne fournie par les individus d’une communauté.
+      Le choix de la fonction d’information qui mesure cette surprise à partir des probabilités d’occurence des espèces (ou d’autres catégories) permet de définir les mesures de diversités neutres, fonctionnelles ou phylogénétique présentées ici. 
+      L’entropie est transformée en diversité au sens strict par une fonction croissante (l’exponentielle déformée), ce qui simplifie son interprétation en tant que nombre équivalent d’espèces.
+
+      L’entropie phylogénétique généralise les indices de diversité classique, intègre si nécessaire la distance entre espèces, peut être écomposée et corrigée des biais d’estimation.
+      Sa transformation en diversité au sens strict permet d’interpréter les valeurs sous une forme unique : un nombre équivalent d’espèces et un nombre équivalent de communautés. 
+      La diversité de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet d’autres définitions de la distance entre espèces. 
+
+      Le paramétrage des mesures (l’ordre de la diversité) permet de donner plus ou moins d’importance aux espèces rares et de tracer des profils de diversité. 
+
+      La construction de ce cadre méthodologique est présentée en détail ainsi que plusieurs approches différentes, qui constituent l'état de l'art de la mesure de la biodiversité.
+    abstractlabel: Résumé
+backcoverfontsize: normalsize
+# Figure cropping may be set to no if ghostscript is not installed
+fig_crop: true
+# Do not modify
 site: bookdown::bookdown_site
-always_allow_html: yes
-graphics: yes
-link-citations: yes
-colorlinks: yes
-description: Mesures de la Biodiversité.
+always_allow_html: true
+graphics: true
+link-citations: true
+colorlinks: true
 ---
 
 <!-- Commande nécessaire pour la copie de l'icône "Essentiel" en HTML--> 
-<img src="images/Essentiel.png" alt="image" hidden/>
+<img src="images/trombone.png" alt="image" hidden/>
 
 ```{r, include=FALSE}
 ### Utilities. Do not modify.
@@ -89,10 +112,8 @@ InstallPackages <- function(Packages) {
   }
   invisible(sapply(Packages, InstallPackage))
 }
-
 # Basic packages
 InstallPackages(c("bookdown", "formatR", "kableExtra", "magick", "ragg"))
-
 # kableExtra must be loaded 
 if (knitr::opts_knit$get("rmarkdown.pandoc.to") == "docx") {
   # Word output (https://stackoverflow.com/questions/35144130/in-knitr-how-can-i-test-for-if-the-output-will-be-pdf-or-word)
@@ -100,13 +121,15 @@ if (knitr::opts_knit$get("rmarkdown.pandoc.to") == "docx") {
   options(kableExtra.auto_format = FALSE)
 }
 library("kableExtra")
-
 # Chunk font size hook: allows size='small' or any valid Latex font size in chunk options
 def.chunk.hook  <- knitr::knit_hooks$get("chunk")
 knitr::knit_hooks$set(chunk = function(x, options) {
   x <- def.chunk.hook(x, options)
   ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
 })
+# Figures with side captions
+if (rmarkdown::metadata$largemargins)
+  knitr::opts_chunk$set(fig.env='SCfigure')
 ```
 
 
@@ -124,11 +147,18 @@ if (!"SpatDiv" %in% installed.packages()[, 1]) {
 }
 # knitr options
 knitr::opts_chunk$set(
-  cache=TRUE, warning=FALSE, 
-  fig.env='SCfigure', fig.asp=.75, fig.align='center', out.width='80%', 
-  dev = "ragg_png",
-  tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=60), size="scriptsize",
-  knitr.graphics.auto_pdf = TRUE)
+  cache=TRUE, # Cache chunk results
+  echo = TRUE, # Show/Hide R chunks
+  warning=FALSE, # Show/Hide warnings
+  # Figure alignment and size
+  fig.align='center', out.width='80%', fig.asp=.75,
+  # Graphic devices (ragg_png is better than standard png)
+  dev = c("ragg_png", "pdf"),
+  # Code chunk format
+  tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=60),
+  size="scriptsize", knitr.graphics.auto_pdf = TRUE
+  )
+options(width=60)
 # ggplot style
 library("tidyverse")
 theme_set(theme_bw())

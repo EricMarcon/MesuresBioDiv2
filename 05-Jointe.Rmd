@@ -1,8 +1,10 @@
+\SmallMargins
 # (PART) Diversité jointe, diversité structurelle {-}
+\LargeMargins
 
 # Cadre {#sec:jointeCadre}
 
-```{r, echo=FALSE, message=FALSE}
+```{r, include=FALSE}
 library("tidyverse")
 ```
 

@@ -1,8 +1,10 @@
+\SmallMargins
 # (PART) Diversité beta et décomposition {-}
+\LargeMargins
 
 # Cadre {#sec:betaCadre}
 
-```{r, echo=FALSE, message=FALSE}
+```{r, include=FALSE}
 library("tidyverse")
 library("ade4")
 ```

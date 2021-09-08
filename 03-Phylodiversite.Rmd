@@ -1,8 +1,10 @@
+\SmallMargins
 # (PART) Diversité fonctionnelle et phylogénétique {-}
+\LargeMargins
 
 # Cadre
 
-```{r, echo=FALSE, message=FALSE}
+```{r, include=FALSE}
 library("tidyverse")
 library("gridExtra")
 ```

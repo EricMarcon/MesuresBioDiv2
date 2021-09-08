@@ -1,8 +1,10 @@
+\SmallMargins
 # (PART) Conclusion {-}
+\LargeMargins
 
 # Synthèse {#sec:conclusionSynthese}
 
-```{r, echo=FALSE, message=FALSE}
+```{r, include=FALSE}
 library("tidyverse")
 ```
 

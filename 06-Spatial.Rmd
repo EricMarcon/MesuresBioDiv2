@@ -1,8 +1,10 @@
+\SmallMargins
 # (PART) Diversité spatialement explicite {-}
+\LargeMargins
 
 # Cadre {#sec:spatialCadre}
 
-```{r, echo=FALSE, message=FALSE}
+```{r, include=FALSE}
 library("tidyverse")
 ```
 

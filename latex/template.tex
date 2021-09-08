@@ -1,4 +1,5 @@
-% template adapted from https://github.com/jgm/pandoc-templates/blob/master/default.latex
+% Template adapted from https://github.com/jgm/pandoc-templates/blob/master/default.latex
+% To be used with XeLaTex in memoiR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Options for packages loaded elsewhere
@@ -6,6 +7,15 @@
 \PassOptionsToPackage{hyphens}{url}
 $if(colorlinks)$
 \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+$endif$
+% Right to left support
+$if(dir)$
+  $if(latex-dir-rtl)$
+\PassOptionsToPackage{RTLdocument}{bidi}
+  $endif$
+$endif$
+$if(CJKmainfont)$
+\PassOptionsToPackage{space}{xeCJK}
 $endif$
 
 
@@ -16,34 +26,26 @@ $endif$
   $for(classoption)$$classoption$$sep$,$endfor$
   ]{$documentclass$}
 
-% Font family: lmodern by default
-$if(fontfamily)$
-\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
-$else$
-\usepackage{lmodern}
-$endif$
-
 % Double (or whatever) spacing
 $if(linestretch)$
 \usepackage{setspace}
 \setstretch{$linestretch$}
 $endif$
 
+% Math
 \usepackage{amssymb, amsmath}
-\usepackage{ifxetex,ifluatex}
-
 % mathspec: arbitrary math fonts
 $if(mathspec)$
 \usepackage{mathspec}
 $else$
 \usepackage{unicode-math}
 $endif$
-\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 
-% More font families
-$for(fontfamilies)$
-\newfontfamily{$fontfamilies.name$}[$fontfamilies.options$]{$fontfamilies.font$}
-$endfor$
+% Fonts
+\usepackage{lmodern}
+\usepackage{fontspec}
 % Main font
 $if(mainfont)$
 \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
@@ -54,51 +56,55 @@ $if(sansfont)$
 $endif$
 % Specific monotype font
 $if(monofont)$
-\setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
+\setmonofont[$for(monofontoptions)$$monofontoptions$$sep$,$endfor$]{$monofont$}
 $endif$
 % Specific math font
 $if(mathfont)$
-$if(mathspec)$
+  $if(mathspec)$
 \setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
-$else$
+  $else$
 \setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
-$endif$
+  $endif$
 $endif$
 % Chinese, Japanese, Corean fonts
 $if(CJKmainfont)$
-\usepackage{xeCJK}
-\setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
+  \usepackage{xeCJK}
+  \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
 $endif$
 
-% Use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% Use microtype if available
-\IfFileExists{microtype.sty}{%
+% Use upquote for straight quotes in verbatim environments
+\usepackage{upquote}
+% Use microtype
 \usepackage[$for(microtypeoptions)$$microtypeoptions$$sep$,$endfor$]{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
 
 % Verbatim in note
 $if(verbatim-in-note)$
 \usepackage{fancyvrb}
+\VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
 
+% Color links
 $if(colorlinks)$
 \usepackage{xcolor}
 $endif$
 
-$if(verbatim-in-note)$
-\VerbatimFootnotes % allows verbatim text in footnotes
+% Strikeout
+$if(strikeout)$
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+$endif$
+
+% Necessary for code chunks
+$if(highlighting-macros)$
+$highlighting-macros$
 $endif$
 
 % Listings package
 $if(listings)$
 \usepackage{listings}
 \newcommand{\passthrough}[1]{#1}
-$endif$
-
-$if(highlighting-macros)$
-$highlighting-macros$
 $endif$
 
 % Tables
@@ -122,37 +128,22 @@ $if(graphics)$
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 $endif$
 
-$if(links-as-notes)$
-% Make links footnotes instead of hotlinks:
-\DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
-$endif$
-
-$if(strikeout)$
-\usepackage[normalem]{ulem}
-% avoid problems with \sout in headers with hyperref:
-\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
-$endif$
-
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
+% Prevent overfull lines
+\setlength{\emergencystretch}{3em}  
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-$if(numbersections)$
-\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
-$else$
-\setcounter{secnumdepth}{0}
+% Number sections for memoir (secnumdepth counter is ignored)
+$if(secnum-depth)$
+\setsecnumdepth{$secnum-depth$}
 $endif$
 
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
 
-% Include headers (preamble.tex) here
-$for(header-includes)$
-$header-includes$
-$endfor$
-
+% Spacing in lists
 \usepackage{enumitem}
 
 % Polyglossia
@@ -164,6 +155,7 @@ $for(otherlangs)$
 $endfor$
 $endif$
 
+% BibLaTeX
 $if(biblatex)$
 \usepackage[$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$]{biblatex}
 $for(bibliography)$
@@ -182,9 +174,9 @@ $if(csl-refs)$
 $endif$
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % memoiR format
-
 
 % Chapter Summary environment 
 \usepackage[tikz]{bclogo}
@@ -196,7 +188,6 @@ $endif$
 %```{block, type='Summary'}
 % Deliver message here.
 % ```
-
 
 % scriptsize code 
 \let\oldverbatim\verbatim
@@ -210,22 +201,22 @@ $endif$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Based on memoir, style companion
-\newcommand{\MemoirChapStyle}{companion}
-\newcommand{\MemoirPageStyle}{companion}
+\newcommand{\MemoirChapStyle}{$MemoirChapStyle$}
+\newcommand{\MemoirPageStyle}{$MemoirPageStyle$}
 
 % Space between paragraphs
-\RequirePackage{parskip}
-	\abnormalparskip{3pt}
+\usepackage{parskip}
+  \abnormalparskip{3pt}
 
 % Adjust margin paragraphs vertical position
-\RequirePackage{marginfix}
+\usepackage{marginfix}
 
 
 % Margins
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % allow use of '-',+','/' ans '*' to make simple length computation
-\RequirePackage{calc}
+\usepackage{calc}
 
 % Full-width figures utilities
 \newlength\widthw % full width
@@ -243,86 +234,102 @@ $endif$
 \makeatletter
 % 1" margins for the front matter.
 \newcommand*{\SmallMargins}{
-  \setlrmarginsandblock{1in}{1in}{*}
+  \setlrmarginsandblock{$spinemargin$}{$smallmargin$}{*}
   \setmarginnotes{0.1in}{0.1in}{0.1in}
-  \setulmarginsandblock{1.5in}{1in}{*}
+ \setulmarginsandblock{$uppermargin$}{$lowermargin$}{*}
   \checkandfixthelayout
   \ch@ngetext
   \clearpage
   \setlength{\widthw}{\textwidth+\marginparsep+\marginparwidth}
   \footnotesatfoot
-  \chapterstyle{\MemoirChapStyle}	% Chapter and page styles must be recalled
+  \chapterstyle{\MemoirChapStyle}  % Chapter and page styles must be recalled
   \pagestyle{\MemoirPageStyle}
 }
 
 % 3" outer margin for the main matter
+$if(largemargins)$
 \newcommand*{\LargeMargins}{
-  \setlrmarginsandblock{1in}{3in}{*}
-  \setmarginnotes{0.2in}{1.8in}{0.1in}
-  \setsidecaps{0.2in}{1.8in}
-  \setulmarginsandblock{1.5in}{1in}{*}
+  \setlrmarginsandblock{$spinemargin$}{$largemargin$}{*}
+  \setmarginnotes{0.2in}{$marginnote$}{0.1in}
+  \setsidecaps{0.2in}{$marginnote$}
+  \setulmarginsandblock{$uppermargin$}{$lowermargin$}{*}
   \checkandfixthelayout
   \ch@ngetext
   \clearpage
   \setlength{\widthw}{\textwidth+\marginparsep+\marginparwidth}
   \footnotesinmargin
-  \chapterstyle{\MemoirChapStyle}	% Chapter and page styles must be recalled
+  \chapterstyle{\MemoirChapStyle}  % Chapter and page styles must be recalled
   \pagestyle{\MemoirPageStyle}
 }
-
+$else$
+\newcommand{\LargeMargins}{\SmallMargins}
+$endif$
 \makeatother
 
 % Figure captions and footnotes in outer margins
+$if(largemargins)$
 \usepackage[margincaption,outercaption,ragged,wide]{sidecap}
-%\sidecapmargin{outer}
+$endif$
 
 
 % Main title page with filigrane
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\MainTitlePage}[2]{
-	\SmallMargins % Margins
-	\pagestyle{empty} % No header/footer
-	~\\ % Print a character or the page will not exist
-	\begin{textblock}{2}(30,10)
-		\rule{1pt}{\paperheight-20mm}
-	\end{textblock}
-	\begin{textblock}{140}(50, 45)
-		\flushright
-		\begin{Spacing}{3}
-			{\fontfamily{qtm}\selectfont\fontsize{45}{45}\selectfont \textsc{\thetitle}}
-		\end{Spacing}
-	\end{textblock}
-	\begin{textblock}{140}(50, 125)
-		\flushright
-		{\fontfamily{qtm}\Large \theauthor}
-	\end{textblock}
-	$if(filigrane)$
-	\begin{textblock}{120}[1, 1](225, 297)
-		\includegraphics[width=10cm]{$filigrane$}
-	 \end{textblock}
-	$endif$
-	\begin{textblock}{140}[0, 1](50, 262)
-		\normalfont	Version: \thedate
-	\end{textblock}
-	\newpage
-	~\\ % Print a character or the page will not exist
-	\begin{textblock}{140}(40, 40)
-		#1
-	\end{textblock}
-	\begin{textblock}{140}[0,1](40, 270)
-		\centering
-    \includegraphics[width=5cm]{logo}\\ \bigskip
-    #2
-	\end{textblock}
-	\newpage
-}
+$if(maintitlepage)$
+% Text blocks
+\usepackage[absolute,overlay]{textpos}
+  \setlength{\TPHorizModule}{1mm}
+  \setlength{\TPVertModule}{1mm}
 
+\newcommand{\MainTitlePage}[2]{
+  \SmallMargins % Margins
+  \pagestyle{empty} % No header/footer
+  \textblockorigin{\stockwidth-\paperwidth-\trimedge}{\trimtop} % recto
+  \begin{textblock*}{2mm}(\spinemargin/2,\uppermargin/2)
+    \rule{1pt}{\paperheight-\uppermargin}
+  \end{textblock*}
+  \begin{textblock*}{\paperwidth*2/3}(\paperwidth/5, \paperheight/5)
+    \flushright
+    \begin{Spacing}{3}
+      {\fontfamily{qtm}\selectfont\fontsize{45}{45}\selectfont\textsc{\thetitle}}
+    \end{Spacing}
+  \end{textblock*}
+  $if(maintitlepage.filigrane)$
+  \begin{textblock*}{\paperwidth/2}[1, 1](\paperwidth, \paperheight)
+    \includegraphics[width=\paperwidth/2]{$maintitlepage.filigrane$}
+  \end{textblock*}
+  \begin{textblock*}{\paperwidth*2/3}(\spinemargin, \paperheight/2)
+    {\fontfamily{qtm}\huge\theauthor}
+  \end{textblock*}
+  $else$
+  \begin{textblock*}{\paperwidth*2/3}(\paperwidth/5, \paperheight/2)
+    \flushright
+    {\fontfamily{qtm}\huge\theauthor}
+  \end{textblock*}
+  $endif$
+  \begin{textblock*}{\paperwidth*2/3}[0, 1](\spinemargin, \uppermargin+\textheight)
+    \normalfont\thedate
+  \end{textblock*}
+  ~\\ % Print a character or the page will not exist
+  \newpage
+  \textblockorigin{\trimedge}{\trimtop} % verso
+  \begin{textblock*}{\textwidth}(\paperwidth-\spinemargin-\textwidth, \uppermargin)
+    #1
+  \end{textblock*}
+  \begin{textblock*}{\textwidth}[0,1](\paperwidth-\spinemargin-\textwidth, \uppermargin+\textheight+\footskip)
+    \centering
+    \includegraphics[width=\paperwidth/4]{logo}\\ \bigskip
+    #2
+  \end{textblock*}
+  ~\\ % Print a character or the page will not exist
+  \newpage
+}
+$endif$
 
 % Clear page and open an even one (\clearpage opens an odd one)
 \newcommand{\evenpage}{
   \clearpage
-	\strictpagecheck % slower but efficient detection of odd/even pages
+  \strictpagecheck % slower but efficient detection of odd/even pages
   \checkoddpage
   \ifoddpage
     \thispagestyle{empty}
@@ -333,14 +340,10 @@ $endif$
   \fi
 }
 
-% Text blocks
-\RequirePackage[absolute,overlay]{textpos}
-	\setlength{\TPHorizModule}{1mm}
-	\setlength{\TPVertModule}{1mm}
-
 
 %% PDF title page to insert
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 $if(pdftitlepage)$
 \usepackage{pdfpages}
 $endif$
@@ -349,33 +352,34 @@ $endif$
 %% Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[strict,autostyle]{csquotes}
+\usepackage[strict,autostyle]{csquotes}
 % Repeated citation as author-year-title instead of author-title (modification of footcite:note in verbose-inote.cbx)
+$if(largemargins)$
 \renewbibmacro*{footcite:note}{%
-	\ifnameundef{labelname}
-		{\printfield{label}}
-		{\printnames{labelname}}
-	\setunit*{\nameyeardelim}
-	\iffieldundef{labelyear}
-		{}
-		{\printtext[parens]{\printfield{labelyear}\printfield{userb}}.}
-	\ifsamepage{\the\value{instcount}}{\csuse{cbx@f@\thefield{entrykey}}}
-		{}
-		{\setunit*{\nametitledelim} \printfield[title]{labeltitle}}
-	\setunit*{\addcomma\space}
-	\printtext{
-		\bibstring{seenote}\addnbspace
-		\ref{cbx@\csuse{cbx@f@\thefield{entrykey}}}
-		\iftoggle{cbx:pageref}
-		{
-			\ifsamepage{\the\value{instcount}}	{\csuse{cbx@f@\thefield{entrykey}}}
-			{}
-			{\addcomma\space\bibstring{page}\addnbspace
-			\pageref{cbx@\csuse{cbx@f@\thefield{entrykey}}}
-			}
-		}
-		{}
-	}
+  \ifnameundef{labelname}
+    {\printfield{label}}
+    {\printnames{labelname}}
+  \setunit*{\nameyeardelim}
+  \iffieldundef{labelyear}
+    {}
+    {\printtext[parens]{\printfield{labelyear}\printfield{userb}}.}
+  \ifsamepage{\the\value{instcount}}{\csuse{cbx@f@\thefield{entrykey}}}
+    {}
+    {\setunit*{\nametitledelim} \printfield[title]{labeltitle}}
+  \setunit*{\addcomma\space}
+  \printtext{
+    \bibstring{seenote}\addnbspace
+    \ref{cbx@\csuse{cbx@f@\thefield{entrykey}}}
+    \iftoggle{cbx:pageref}
+    {
+      \ifsamepage{\the\value{instcount}}  {\csuse{cbx@f@\thefield{entrykey}}}
+      {}
+      {\addcomma\space\bibstring{page}\addnbspace
+      \pageref{cbx@\csuse{cbx@f@\thefield{entrykey}}}
+      }
+    }
+    {}
+  }
 }
 % Normal text in citations, to allow \textcite
 \AtEveryCite{\renewcommand*{\mkbibnamefamily}[1]{\textnormal{#1}}}
@@ -396,10 +400,11 @@ $endif$
   \clearfield{urldate}%
 }%
 }
-
+$endif$
 
 %% Table of Contents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % fix the typesetting of the part number
 \renewcommand\partnumberlinebox[2]{#2\ ---\ }
 
@@ -407,14 +412,16 @@ $endif$
 % Fonts
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+$if(largemargins)$
 % Font size of side captions and side notes
 \captionnamefont{\scriptsize}
 \captiontitlefont{\scriptsize}
 \renewcommand{\footnotesize}{\tiny}
-
+$endif$
 
 % Hyperref comes last
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{hyperref}
 \hypersetup{
 $if(title-meta)$
@@ -452,6 +459,13 @@ $if(author)$
 $endif$
 
 \date{$date$}
+
+
+% Include headers (preamble.tex) here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$for(header-includes)$
+$header-includes$
+$endfor$
 
 
 % End of preamble
@@ -512,8 +526,10 @@ $body$
 \SmallMargins
 
 $if(biblatex)$
+$if(longbibliography)$
 \twocolumn
 \renewcommand*{\bibfont}{\scriptsize}
+$endif$
 \printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
 \onecolumn
 $endif$
@@ -523,10 +539,14 @@ $endif$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 $if(lot)$
+\cleardoublepage
+\LargeMargins
 \listoftables
 $endif$
 
 $if(lof)$
+\cleardoublepage
+\LargeMargins
 \listoffigures
 $endif$
 
@@ -570,6 +590,9 @@ $if(backcoverfontsize)$
 \end{$backcoverfontsize$}
 $endif$
 
+$if(cover-image)$
 \vspace*{\fill}
 \centering\includegraphics[width=.3\textwidth]{images/logo}
+$endif$
+
 \end{document}
