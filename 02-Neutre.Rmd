@@ -2,7 +2,7 @@
 # (PART) Diversité neutre d’une communauté {-}
 \LargeMargins
 
-# Mesures neutres de la diversité $\alpha$ ou $\gamma$ {#chap:MesuresNeutres}
+# Mesures neutres de la diversité $\alpha$ ou $\gamma$ {#chap-MesuresNeutres}
 
 ```{r, include=FALSE}
 library("tidyverse")

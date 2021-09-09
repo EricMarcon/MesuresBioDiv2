@@ -231,7 +231,7 @@ La dépendance entre $^{q}\!D_{\beta}$ et $^{q}\!D_{\alpha}$ est le prix à paye
 
 
 
-# Diversité de différentiation {#chap:BetaPaires}
+# Diversité de différentiation {#chap-BetaPaires}
 
 ```{block, type='Summary'}
   La diversité $\beta$ de différentiation mesure la dissimilarité entre communautés, généralement considérées par paires.
@@ -846,7 +846,7 @@ La méthode de permutation originale est inappropriée et donc corrigée [@Bacar
 
 
 
-# Décomposition de l'entropie HCDT {#chap:DedompHCDT}
+# Décomposition de l'entropie HCDT {#chap-DedompHCDT}
 
 
 ```{block, type='Summary'}

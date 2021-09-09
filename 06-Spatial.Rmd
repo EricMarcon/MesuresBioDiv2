@@ -32,7 +32,7 @@ Enfin, la diversité $\beta$ spatialement explicite est introduite au chapitre \
 
 
 
-# Indice $\alpha$ de Fisher {#chap:Fisher}
+# Indice $\alpha$ de Fisher {#chap-Fisher}
 
 ```{block, type='Summary'}
 L'Indice $\alpha$ de Fisher est la pente de la relation linéaire entre le nombre d'espèces observées et le logarithme du nombre d'individus inventoriés.
@@ -255,7 +255,7 @@ ggplot(data.frame(x = log(1:ncol(Inventaire)), y = nEspeces)) +
 
 
 
-# Accumulation de la diversité locale {#chap:Accumulation}
+# Accumulation de la diversité locale {#chap-Accumulation}
 
 ```{block, type='Summary'}
   La courbe d'accumulation (SAC) décrit comment la richesse, ou la diversité, augmente en fonction de l'effort d'échantillonnage.
@@ -617,7 +617,7 @@ Une revue historique des théories sur la forme de la SAR est fournie par @McGui
 
 ## La relation d'Arrhenius {#sec:Arrhenius}
 
-(ref:Williamson2001) Logarithme du nombre d'espèces en fonction du logarithme de la surface échantillonnée. Les données sont des relevés d'espèces natives sur 104 sites de taille variable à travers le monde. Les symboles correspondent à divers types d'habitats (îles ou continent, réserves ou non) sans intérêt ici. La valeur de $z$ est 0,27.
+(ref:Williamson2001) Logarithme du nombre d'espèces en fonction du logarithme de la surface échantillonnée. Les données sont des relevés d'espèces natives de plantes vasculaires sur 104 sites de taille variable à travers le monde. Les symboles correspondent à divers types d'habitats (îles ou continent, réserves ou non) sans intérêt ici. La valeur de $z$ est 0,27.
 ```{r Williamson2001, fig.cap="(ref:Williamson2001)", echo=FALSE}
 knitr::include_graphics('images/Williamson2001.png')
 ```
@@ -639,7 +639,7 @@ On notera que le nombre d'espèces est clairement fini dans ce cadre, mais que l
 La loi de puissance peut donc être bornée.
 Le glissement d'un modèle de biogéographie des îles à un cadre plus général est faisable simplement, à la manière de @Hubbell2001 pour la théorie neutre: chaque île peut être considérée comme une communauté locale issue d'une méta-communauté régionale.
 
-La distribution log-normale de Preston, dite "canonique " assumait une relation particulière entre le nombre d'espèces et le nombre d'individus, pour laquelle @May1975 a montré que la valeur exacte de $z$ est 0,25.
+La distribution log-normale de Preston, dite "canonique" assumait une relation particulière entre le nombre d'espèces et le nombre d'individus, pour laquelle @May1975 a montré que la valeur exacte de $z$ est 0,25.
 Les résultats empiriques ultérieurs [@May1975; @May2000], pour des lois quelconques, non canoniques, ont fourni des valeurs généralement comprises entre 0,2 et 0,3. 
 Une large méta-analyse [@Drakare2006] à partir de 794 SAR d'origine très différentes fournit une moyenne de 0,27, comme la méta-analyse de la figure \@ref(fig:Williamson2001) extraite de @Williamson2001 à partir de données de @Lonsdale1999, mais avec une certaine variabilité que les auteurs relient à l'échelle spatiale, au type d'organismes et aux habitats échantillonnés, mais aussi à la technique d'échantillonnage.
 
@@ -844,7 +844,7 @@ Cette méthode permet l'extrapolation à de très grandes surfaces de mesures de
 
 
 
-# Diversité $\beta$ spatialement explicite {#chap:betasp}
+# Diversité $\beta$ spatialement explicite {#chap-betasp}
 
 
 ```{block, type='Summary'}
