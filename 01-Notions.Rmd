@@ -54,10 +54,13 @@ La plupart des indices courants, comme ceux de Simpson ou de Shannon, évaluent 
 
 Les mesures classiques de la diversité, dites mesures de diversité neutre (*species-neutral diversity*) ou taxonomique ne prennent pas en compte une quelconque distance entre classes. 
 Pourtant, deux espèces du même genre sont de toute évidence plus proches que deux espèces de familles différentes. 
-Les mesures de diversité phylogénétique et de diversité fonctionnelle prennent en compte cette notion, qui nécessite quelques définitions supplémentaires [@Mouillot2005; @Ricotta2007].
+Les mesures de diversité non neutres (chapitre \@ref(chap-cadrephyfonc)) prennent en compte cette notion, qui nécessite quelques définitions supplémentaires [@Mouillot2005; @Ricotta2007].
 
 La mesure de la différence entre deux classes est souvent une distance, mais parfois une mesure qui n'a pas toutes les propriétés d'une distance: une dissimilarité.
 Les mesures de *divergence* [@Pavoine2011] sont construites à partir de la dissimilarité entre les classes, avec ou sans pondération par la fréquence.
+
+Si la divergence entre espèces est une distance évolutive comme l'âge du plus récent ancêtre commun, la diversité sera dite phylogénétique.
+Si c'est une distance fonctionnelle, définie par exemple dans l'espace des traits fonctionnels, la diversité sera dite fonctionnelle.
 
 La disparité [@Runnegar1987], divergence moyenne entre deux espèces (indépendamment des fréquences), ou de façon équivalente la longueur totale des branches d'un arbre phylogénétique, est la composante qui décrit à quel point les espèces sont différentes les unes des autres.
 
@@ -71,7 +74,6 @@ Ce concept complète celui d'équitabilité dans les mesures classiques: la dive
 
 Stirling  définit la propriété d'*agrégation* comme la capacité d'une mesure de diversité à combiner explicitement les trois composantes précédentes.
 Cela ne signifie pas que les composantes contribuent indépendamment les unes des autres à la diversité [@Jost2010].
-
 
 
 ## Niveaux de l'étude
@@ -116,23 +118,25 @@ Nous appellerons *communauté* le niveau de découpage concernant la diversité 
 ## Le problème de l'espèce
 
 Évaluer la richesse spécifique suppose que les espèces soient définies clairement, ce qui n'est de toute évidence pas le cas [@Casetta2014a]. 
-Le premier aspect du problème concerne la nature des espèces: réalité naturelle ou seulement représentation simplificatrice. 
+Le premier aspect du problème concerne la nature des espèces: réalité naturelle ou seulement représentation simplificatrice.
 Une analyse historique et philosophique en est faite par @Richards2010. 
 L'autre aspect, avec des conséquences pratiques plus immédiates, concerne leur délimitation. 
-@Mayden1997 recense 22 définitions différentes du concept d'espèce.
+@Mayden1997 recense vingt-deux définitions différentes du concept d'espèce.
+@Wilkins2011 estime qu'il n'y a qu'un seul concept d'espèce mais sept définitions, c'est-à-dire sept façons de les identifier, et vingt-sept variations ou mélanges de ces définitions.
 
-Le concept le plus répandu est celui d'espèce *biologique* [@Dobzhansky1937]: un "groupe de populations naturelles isolées reproductivement les unes des autres" [@Mayr1942]. 
-Lorsque les populations d'une espèce sont isolées géographiquement, leur capacité à se reproduire ensemble est toute théorique (et d'ailleurs rarement vérifiée expérimentalement). 
-Des populations allopatriques n'ont pas de flux de gènes réels entre elles et peuvent être considérées comme des espèces distinctes selon le concept d'espèce *phylogénétique*: "le plus petit groupe identifiable d'individus avec un pattern commun d'ancêtres et de descendants" [@Cracraft1983].
+La définition historique est celle de *morphoespèce*, qui classe les espèces selon leurs formes, supposées d'abord immuables.
+La définition moderne la plus répandue est celle d'espèce *biologique* [@Dobzhansky1937]: un "groupe de populations naturelles isolées reproductivement les unes des autres" [@Mayr1942]. 
+Lorsque les populations d'une espèce sont isolées géographiquement, leur capacité à se reproduire ensemble est toute théorique (et rarement vérifiée expérimentalement). 
+Des populations allopatriques n'ont pas de flux de gènes réels entre elles et peuvent être considérées comme des espèces distinctes selon la définition d'espèce *phylogénétique*: "le plus petit groupe identifiable d'individus avec un pattern commun d'ancêtres et de descendants" [@Cracraft1983].
 C'est l'unité génétique détectée par la méthode du coalescent pour la délimitation des espèces [@Sukumaran2017].
 Le nombre d'espèces phylogénétiques est bien supérieur au nombre d'espèces biologiques. 
-Enfin, @VanValen1976 définit les espèces par la niche écologique qu'elles occupent (à partir de l'exemple des chênes blancs européens) plutôt que par les flux de gènes (permanents entre les espèces distinctes): le concept *écologique* d'espèce est proche de celui de complexe d'espèces [ensemble d'espèces voisines échangeant des gènes, @Pernes1984].
+Enfin, @VanValen1976 définit les espèces par la niche écologique qu'elles occupent (à partir de l'exemple des chênes blancs européens) plutôt que par les flux de gènes (permanents entre les espèces distinctes): la définition *écologique* d'espèce est proche du concept de complexe d'espèces [ensemble d'espèces voisines échangeant des gènes, @Pernes1984].
 
 Le choix de la définition modifie considérablement sur la quantification de la richesse [@Agapow2004]. 
 Des problèmes méthodologiques s'ajoutent aux problèmes conceptuels [@Hey2001]: la séparation ou le regroupement de plusieurs populations ou morphotypes en un nombre plus ou moins grand d'espèces est un choix qui reflète les connaissances du moment et peut évoluer [@Barberousse2014].
 
 L'impact du problème de l'espèce sur la mesure de la diversité reste sans solution à ce stade, si ce n'est d'utiliser les mêmes définitions si des communautés différentes doivent être comparées. 
-L'approche phylogénétique (Chapitre \@ref(chap:Phyloentropie)) permet de contourner le problème: si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
+L'approche phylogénétique (chapitre \@ref(chap:Phyloentropie)) permet de contourner le problème: si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
 
 
 
@@ -164,12 +168,15 @@ La liste des notations est fournie en préambule du document, on s'y référera 
 Les calculs sont réalisés dans R [@R], essentiellement avec le package *entropart* [@Marcon2014c]. 
 L'ensemble du code est disponible sur GitHub^[<https://github.com/EricMarcon/MesuresBioDiv2/>] où se trouvent les mises à jour de ce document ^[<https://ericmarcon.github.io/MesuresBioDiv2/>].
 
-Les données sont souvent celles de la parcelle 6 de Paracou en Guyane française [@Gourlet-Fleury2004], d'une surface de 6.25&nbsp;ha.
+Les données sont souvent celles de la parcelle 6 de la forêt de Paracou en Guyane française [@Gourlet-Fleury2004], d'une surface de 6.25&nbsp;ha.
 Tous les arbres de plus de 10&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) y ont été inventoriés en 2016.
-La postition de chaque arbre, son espèce et sa surface terrière sont fournis dans le package *SpatDiv*.
+La position de chaque arbre, son espèce et sa surface terrière sont fournis dans le package *SpatDiv*.
 
 D'autres exemples utilisent la parcelle forestière permanente de Barro Colorado Island, souvent abrégée BCI [@Condit2012]: 50&nbsp;ha de forêt tropicale dont les arbres de plus de 1&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) ont été inventoriés.
 Le jeu de données utilisé pour les exemples est une version réduite aux arbres de plus de 10&nbsp;cm disponible dans le package *vegan* [@Oksanen2012].
+
+Enfin, les données fournies par le package *entropart* sous le nom "Paracou618" sont deux inventaires de l'année 2012 limités à un hectare chacun dans les parcelles 6 et 18 de la forêt de Paracou.
+
 
 
 ## SAD et SAR
