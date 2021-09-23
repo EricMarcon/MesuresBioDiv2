@@ -226,7 +226,7 @@ Jost conclut donc que la décomposition n'est possible que pour des communautés
 Cette définition pose problème: alors que le choix de $q$ a pour but de donner une importance plus ou moins grande aux espèces rares, son effet est le même sur la taille des communautés La diversité dépendra essentiellement des espèces rares dans les communautés de faible poids si $q$ est petit, définissant une diversité bi-dimensionnelle. 
 Cette question est traitée en détail au chapitre \@ref(chap:DiversiteJointe).
 
-@Marcon2014a préfèrent la définition de Routledge qui est plus intuitive que garantit que la diversité $\gamma$ est supérieure à la diversité $\alpha$. 
+@Marcon2014a préfèrent la définition de Routledge qui est plus intuitive et garantit que la diversité $\gamma$ est supérieure à la diversité $\alpha$. 
 La dépendance entre $^{q}\!D_{\beta}$ et $^{q}\!D_{\alpha}$ est le prix à payer.
 
 
