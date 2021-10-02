@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Mesures particulières | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Mesures particulières | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
-  
+  <meta property="og:image" content="https://github.com/EricMarcon/MesuresBioDiv2/image/logo.png" />
   <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
   
 
@@ -19,11 +19,12 @@
   <meta name="twitter:title" content="7 Mesures particulières | Mesures de la Biodiversité" />
   
   <meta name="twitter:description" content="Définitions, estimation et décompositon de la biodiversité" />
-  
+  <meta name="twitter:image" content="https://github.com/EricMarcon/MesuresBioDiv2/image/logo.png" />
 
 <meta name="author" content="Eric Marcon" />
 
 
+<meta name="date" content="2021-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +33,8 @@
   
 <link rel="prev" href="6-cadre.html"/>
 <link rel="next" href="8-chap-Phyloentropie.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -40,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -221,27 +222,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.7.4" data-path="4-entropie.html"><a href="4-entropie.html#lentropie-par-cas"><i class="fa fa-check"></i><b>4.7.4</b> L’entropie par cas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html"><i class="fa fa-check"></i><b>5</b> Équitabilité</a><ul>
-<li class="chapter" data-level="5.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#approche-axiomatique"><i class="fa fa-check"></i><b>5.1</b> Approche axiomatique</a></li>
-<li class="chapter" data-level="5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-classiques"><i class="fa fa-check"></i><b>5.2</b> Indice classiques</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-bulla"><i class="fa fa-check"></i><b>5.2.1</b> Indice de Bulla</a></li>
-<li class="chapter" data-level="5.2.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-gini"><i class="fa fa-check"></i><b>5.2.2</b> Indice de Gini</a></li>
-<li class="chapter" data-level="5.2.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#rapports-de-moyennes"><i class="fa fa-check"></i><b>5.2.3</b> Rapports de moyennes</a></li>
-<li class="chapter" data-level="5.2.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#ratios-de-hill"><i class="fa fa-check"></i><b>5.2.4</b> Ratios de Hill</a></li>
-<li class="chapter" data-level="5.2.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#synthèse-1"><i class="fa fa-check"></i><b>5.2.5</b> Synthèse</a></li>
+<li class="chapter" data-level="5" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html"><i class="fa fa-check"></i><b>5</b> Équitabilité</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#approche-axiomatique"><i class="fa fa-check"></i><b>5.1</b> Approche axiomatique</a></li>
+<li class="chapter" data-level="5.2" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#indice-classiques"><i class="fa fa-check"></i><b>5.2</b> Indice classiques</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#indice-de-bulla"><i class="fa fa-check"></i><b>5.2.1</b> Indice de Bulla</a></li>
+<li class="chapter" data-level="5.2.2" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#indice-de-gini"><i class="fa fa-check"></i><b>5.2.2</b> Indice de Gini</a></li>
+<li class="chapter" data-level="5.2.3" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#rapports-de-moyennes"><i class="fa fa-check"></i><b>5.2.3</b> Rapports de moyennes</a></li>
+<li class="chapter" data-level="5.2.4" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#ratios-de-hill"><i class="fa fa-check"></i><b>5.2.4</b> Ratios de Hill</a></li>
+<li class="chapter" data-level="5.2.5" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#synthèse-1"><i class="fa fa-check"></i><b>5.2.5</b> Synthèse</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-alternatifs"><i class="fa fa-check"></i><b>5.3</b> Indice alternatifs</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#variance-de-la-rareté"><i class="fa fa-check"></i><b>5.3.1</b> Variance de la rareté</a></li>
-<li class="chapter" data-level="5.3.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#non-spécificité"><i class="fa fa-check"></i><b>5.3.2</b> Non-spécificité</a></li>
+<li class="chapter" data-level="5.3" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#indice-alternatifs"><i class="fa fa-check"></i><b>5.3</b> Indice alternatifs</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#variance-de-la-rareté"><i class="fa fa-check"></i><b>5.3.1</b> Variance de la rareté</a></li>
+<li class="chapter" data-level="5.3.2" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#non-spécificité"><i class="fa fa-check"></i><b>5.3.2</b> Non-spécificité</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#indice-de-pielou"><i class="fa fa-check"></i><b>5.4</b> Indice de Pielou</a></li>
-<li class="chapter" data-level="5.5" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#généralisation-de-lindice-de-pielou"><i class="fa fa-check"></i><b>5.5</b> Généralisation de l’indice de Pielou</a><ul>
-<li class="chapter" data-level="5.5.1" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#sec:Mendes"><i class="fa fa-check"></i><b>5.5.1</b> Mendes et al. </a></li>
-<li class="chapter" data-level="5.5.2" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#tuomisto"><i class="fa fa-check"></i><b>5.5.2</b> Tuomisto</a></li>
-<li class="chapter" data-level="5.5.3" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#jost"><i class="fa fa-check"></i><b>5.5.3</b> Jost</a></li>
-<li class="chapter" data-level="5.5.4" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#synthèse-2"><i class="fa fa-check"></i><b>5.5.4</b> Synthèse</a></li>
+<li class="chapter" data-level="5.4" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#indice-de-pielou"><i class="fa fa-check"></i><b>5.4</b> Indice de Pielou</a></li>
+<li class="chapter" data-level="5.5" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#généralisation-de-lindice-de-pielou"><i class="fa fa-check"></i><b>5.5</b> Généralisation de l’indice de Pielou</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#sec:Mendes"><i class="fa fa-check"></i><b>5.5.1</b> Mendes et al. </a></li>
+<li class="chapter" data-level="5.5.2" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#tuomisto"><i class="fa fa-check"></i><b>5.5.2</b> Tuomisto</a></li>
+<li class="chapter" data-level="5.5.3" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#jost"><i class="fa fa-check"></i><b>5.5.3</b> Jost</a></li>
+<li class="chapter" data-level="5.5.4" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#synthèse-2"><i class="fa fa-check"></i><b>5.5.4</b> Synthèse</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="5-sec-Equitabilite.html"><a href="5-sec-Equitabilite.html#relations-empiriques-entre-richesse-et-équitabilité"><i class="fa fa-check"></i><b>5.6</b> Relations empiriques entre richesse et équitabilité</a></li>
+<li class="chapter" data-level="5.6" data-path="5-sec:Equitabilite.html"><a href="5-sec:Equitabilite.html#relations-empiriques-entre-richesse-et-équitabilité"><i class="fa fa-check"></i><b>5.6</b> Relations empiriques entre richesse et équitabilité</a></li>
 </ul></li>
 <li class="part"><span><b>III Diversité fonctionnelle et phylogénétique</b></span></li>
 <li class="chapter" data-level="6" data-path="6-cadre.html"><a href="6-cadre.html"><i class="fa fa-check"></i><b>6</b> Cadre</a><ul>
@@ -298,14 +299,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.10" data-path="9-chap-LeinsterCobbold.html"><a href="9-chap-LeinsterCobbold.html#sec:dqzSynthese"><i class="fa fa-check"></i><b>9.10</b> Synthèse</a></li>
 </ul></li>
 <li class="part"><span><b>IV Diversité beta et décomposition</b></span></li>
-<li class="chapter" data-level="10" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html"><i class="fa fa-check"></i><b>10</b> Cadre</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#définition-de-la-diversité-beta-par-objectifs"><i class="fa fa-check"></i><b>10.1</b> Définition de la diversité <span class="math inline">\(\beta\)</span> par objectifs</a></li>
-<li class="chapter" data-level="10.2" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaTypo"><i class="fa fa-check"></i><b>10.2</b> Typologie des mesures</a></li>
-<li class="chapter" data-level="10.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:betaDecomposition"><i class="fa fa-check"></i><b>10.3</b> Décomposition de la diversité</a><ul>
-<li class="chapter" data-level="10.3.1" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#définitions-de-la-diversité-beta-mesure-dérivée"><i class="fa fa-check"></i><b>10.3.1</b> Définitions de la diversité <span class="math inline">\(\beta\)</span>, mesure dérivée</a></li>
-<li class="chapter" data-level="10.3.2" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:DebatDecomposition"><i class="fa fa-check"></i><b>10.3.2</b> Le débat sur la décomposition</a></li>
-<li class="chapter" data-level="10.3.3" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#décomposition-multiplicative-de-la-diversité"><i class="fa fa-check"></i><b>10.3.3</b> Décomposition multiplicative de la diversité</a></li>
-<li class="chapter" data-level="10.3.4" data-path="10-sec-betaCadre.html"><a href="10-sec-betaCadre.html#sec:defalpha"><i class="fa fa-check"></i><b>10.3.4</b> Définitions de la diversité <span class="math inline">\(\alpha\)</span></a></li>
+<li class="chapter" data-level="10" data-path="10-sec:betaCadre.html"><a href="10-sec:betaCadre.html"><i class="fa fa-check"></i><b>10</b> Cadre</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-sec:betaCadre.html"><a href="10-sec:betaCadre.html#définition-de-la-diversité-beta-par-objectifs"><i class="fa fa-check"></i><b>10.1</b> Définition de la diversité <span class="math inline">\(\beta\)</span> par objectifs</a></li>
+<li class="chapter" data-level="10.2" data-path="10-sec:betaCadre.html"><a href="10-sec:betaCadre.html#sec:betaTypo"><i class="fa fa-check"></i><b>10.2</b> Typologie des mesures</a></li>
+<li class="chapter" data-level="10.3" data-path="10-sec:betaCadre.html"><a href="10-sec:betaCadre.html#sec:betaDecomposition"><i class="fa fa-check"></i><b>10.3</b> Décomposition de la diversité</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="10-sec:betaCadre.html"><a href="10-sec:betaCadre.html#définitions-de-la-diversité-beta-mesure-dérivée"><i class="fa fa-check"></i><b>10.3.1</b> Définitions de la diversité <span class="math inline">\(\beta\)</span>, mesure dérivée</a></li>
+<li class="chapter" data-level="10.3.2" data-path="10-sec:betaCadre.html"><a href="10-sec:betaCadre.html#sec:DebatDecomposition"><i class="fa fa-check"></i><b>10.3.2</b> Le débat sur la décomposition</a></li>
+<li class="chapter" data-level="10.3.3" data-path="10-sec:betaCadre.html"><a href="10-sec:betaCadre.html#décomposition-multiplicative-de-la-diversité"><i class="fa fa-check"></i><b>10.3.3</b> Décomposition multiplicative de la diversité</a></li>
+<li class="chapter" data-level="10.3.4" data-path="10-sec:betaCadre.html"><a href="10-sec:betaCadre.html#sec:defalpha"><i class="fa fa-check"></i><b>10.3.4</b> Définitions de la diversité <span class="math inline">\(\alpha\)</span></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="11-chap-BetaPaires.html"><a href="11-chap-BetaPaires.html"><i class="fa fa-check"></i><b>11</b> Diversité de différentiation</a><ul>
@@ -355,15 +356,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14.2" data-path="14-tests-de-significativité.html"><a href="14-tests-de-significativité.html#analyse-de-la-variabilité-1"><i class="fa fa-check"></i><b>14.2</b> Analyse de la variabilité</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html"><i class="fa fa-check"></i><b>15</b> Autres approches</a><ul>
-<li class="chapter" data-level="15.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#le-partitionnement-de-la-diversité-selon-pélissier-et-couteron"><i class="fa fa-check"></i><b>15.1</b> Le partitionnement de la diversité selon Pélissier et Couteron</a><ul>
-<li class="chapter" data-level="15.1.1" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#sec:PCcadre"><i class="fa fa-check"></i><b>15.1.1</b> Cadre</a></li>
-<li class="chapter" data-level="15.1.2" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#sec:PCdecomposition"><i class="fa fa-check"></i><b>15.1.2</b> Décomposition</a></li>
+<li class="chapter" data-level="15" data-path="15-sec:betaAutres.html"><a href="15-sec:betaAutres.html"><i class="fa fa-check"></i><b>15</b> Autres approches</a><ul>
+<li class="chapter" data-level="15.1" data-path="15-sec:betaAutres.html"><a href="15-sec:betaAutres.html#le-partitionnement-de-la-diversité-selon-pélissier-et-couteron"><i class="fa fa-check"></i><b>15.1</b> Le partitionnement de la diversité selon Pélissier et Couteron</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="15-sec:betaAutres.html"><a href="15-sec:betaAutres.html#sec:PCcadre"><i class="fa fa-check"></i><b>15.1.1</b> Cadre</a></li>
+<li class="chapter" data-level="15.1.2" data-path="15-sec:betaAutres.html"><a href="15-sec:betaAutres.html#sec:PCdecomposition"><i class="fa fa-check"></i><b>15.1.2</b> Décomposition</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="15-sec-betaAutres.html"><a href="15-sec-betaAutres.html#diversité-de-kosman"><i class="fa fa-check"></i><b>15.2</b> Diversité de Kosman</a></li>
+<li class="chapter" data-level="15.2" data-path="15-sec:betaAutres.html"><a href="15-sec:betaAutres.html#diversité-de-kosman"><i class="fa fa-check"></i><b>15.2</b> Diversité de Kosman</a></li>
 </ul></li>
 <li class="part"><span><b>V Diversité jointe, diversité structurelle</b></span></li>
-<li class="chapter" data-level="16" data-path="16-sec-jointeCadre.html"><a href="16-sec-jointeCadre.html"><i class="fa fa-check"></i><b>16</b> Cadre</a></li>
+<li class="chapter" data-level="16" data-path="16-sec:jointeCadre.html"><a href="16-sec:jointeCadre.html"><i class="fa fa-check"></i><b>16</b> Cadre</a></li>
 <li class="chapter" data-level="17" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html"><i class="fa fa-check"></i><b>17</b> Information mutuelle</a><ul>
 <li class="chapter" data-level="17.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#récursivité-de-lentropie"><i class="fa fa-check"></i><b>17.1</b> Récursivité de l’entropie</a><ul>
 <li class="chapter" data-level="17.1.1" data-path="17-information-mutuelle.html"><a href="17-information-mutuelle.html#sec:jointeShannon"><i class="fa fa-check"></i><b>17.1.1</b> Entropie de Shannon</a></li>
@@ -377,7 +378,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.2" data-path="18-chap-DiversiteJointe.html"><a href="18-chap-DiversiteJointe.html#relations-avec-dautres-mesures-de-diversité"><i class="fa fa-check"></i><b>18.2</b> Relations avec d’autres mesures de diversité</a></li>
 </ul></li>
 <li class="part"><span><b>VI Diversité spatialement explicite</b></span></li>
-<li class="chapter" data-level="19" data-path="19-sec-spatialCadre.html"><a href="19-sec-spatialCadre.html"><i class="fa fa-check"></i><b>19</b> Cadre</a></li>
+<li class="chapter" data-level="19" data-path="19-sec:spatialCadre.html"><a href="19-sec:spatialCadre.html"><i class="fa fa-check"></i><b>19</b> Cadre</a></li>
 <li class="chapter" data-level="20" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html"><i class="fa fa-check"></i><b>20</b> Indice <span class="math inline">\(\alpha\)</span> de Fisher</a><ul>
 <li class="chapter" data-level="20.1" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html#construction"><i class="fa fa-check"></i><b>20.1</b> Construction</a></li>
 <li class="chapter" data-level="20.2" data-path="20-chap-Fisher.html"><a href="20-chap-Fisher.html#variantes"><i class="fa fa-check"></i><b>20.2</b> Variantes</a></li>
@@ -402,14 +403,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="23.2" data-path="23-chap-betasp.html"><a href="23-chap-betasp.html#le-variogramme-de-complémentarité"><i class="fa fa-check"></i><b>23.2</b> Le variogramme de complémentarité</a></li>
 </ul></li>
 <li class="part"><span><b>VII Conclusion</b></span></li>
-<li class="chapter" data-level="24" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html"><i class="fa fa-check"></i><b>24</b> Synthèse</a><ul>
-<li class="chapter" data-level="24.1" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#entropie-et-diversité-1"><i class="fa fa-check"></i><b>24.1</b> Entropie et diversité</a></li>
-<li class="chapter" data-level="24.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#ordres-particuliers-de-diversité"><i class="fa fa-check"></i><b>24.2</b> Ordres particuliers de diversité</a><ul>
-<li class="chapter" data-level="24.2.1" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#estimation-2"><i class="fa fa-check"></i><b>24.2.1</b> Estimation</a></li>
-<li class="chapter" data-level="24.2.2" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#partition"><i class="fa fa-check"></i><b>24.2.2</b> Partition</a></li>
-<li class="chapter" data-level="24.2.3" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#égalité-des-diversités"><i class="fa fa-check"></i><b>24.2.3</b> Égalité des diversités</a></li>
+<li class="chapter" data-level="24" data-path="24-sec:conclusionSynthese.html"><a href="24-sec:conclusionSynthese.html"><i class="fa fa-check"></i><b>24</b> Synthèse</a><ul>
+<li class="chapter" data-level="24.1" data-path="24-sec:conclusionSynthese.html"><a href="24-sec:conclusionSynthese.html#entropie-et-diversité-1"><i class="fa fa-check"></i><b>24.1</b> Entropie et diversité</a></li>
+<li class="chapter" data-level="24.2" data-path="24-sec:conclusionSynthese.html"><a href="24-sec:conclusionSynthese.html#ordres-particuliers-de-diversité"><i class="fa fa-check"></i><b>24.2</b> Ordres particuliers de diversité</a><ul>
+<li class="chapter" data-level="24.2.1" data-path="24-sec:conclusionSynthese.html"><a href="24-sec:conclusionSynthese.html#estimation-2"><i class="fa fa-check"></i><b>24.2.1</b> Estimation</a></li>
+<li class="chapter" data-level="24.2.2" data-path="24-sec:conclusionSynthese.html"><a href="24-sec:conclusionSynthese.html#partition"><i class="fa fa-check"></i><b>24.2.2</b> Partition</a></li>
+<li class="chapter" data-level="24.2.3" data-path="24-sec:conclusionSynthese.html"><a href="24-sec:conclusionSynthese.html#égalité-des-diversités"><i class="fa fa-check"></i><b>24.2.3</b> Égalité des diversités</a></li>
 </ul></li>
-<li class="chapter" data-level="24.3" data-path="24-sec-conclusionSynthese.html"><a href="24-sec-conclusionSynthese.html#limites"><i class="fa fa-check"></i><b>24.3</b> Limites</a></li>
+<li class="chapter" data-level="24.3" data-path="24-sec:conclusionSynthese.html"><a href="24-sec:conclusionSynthese.html#limites"><i class="fa fa-check"></i><b>24.3</b> Limites</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -474,7 +475,7 @@ L’étendue fonctionnelle peut être moyennée sur plusieurs traits.</p>
 Les valeurs de traits individuelles sont nécessaires: l’étendue des valeurs d’un trait est définie comme l’union des étendues des valeurs de chaque espèce.</p>
 
 <p></p>
-<div class="figure" style="text-align: center"><span id="fig:Schleuter2010"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Schleuter2010"></span>
 <img src="images/Schleuter2010.png" alt="Fonction d’appartenance de l’espace des niches de Schleuter et al., en une dimension. \(x\), en ordonnée, est la valeur du trait considéré. Chaque espèce est considérée comme un ensemble flou dans l’espace des traits. Quatre espèces sont représentées, avec leur fonction d’appartenance \(f_s(x)\). Le volume de l’espace des traits occupé, \(\mathit{FR}_{Im}\), est obtenu en intégrant les fonctions d’appartenance: c’est la zone grisée de la figure." width="80%" />
 <p class="caption">
 Figure 7.1: Fonction d’appartenance de l’espace des niches de Schleuter et al., en une dimension. <span class="math inline">\(x\)</span>, en ordonnée, est la valeur du trait considéré. Chaque espèce est considérée comme un ensemble flou dans l’espace des traits. Quatre espèces sont représentées, avec leur fonction d’appartenance <span class="math inline">\(f_s(x)\)</span>. Le volume de l’espace des traits occupé, <span class="math inline">\(\mathit{FR}_{Im}\)</span>, est obtenu en intégrant les fonctions d’appartenance: c’est la zone grisée de la figure.
@@ -506,7 +507,7 @@ La fonction d’appartenance de l’espèce <span class="math inline">\(s\)</spa
 <div id="equitabilité-fonctionnelle" class="section level3">
 <h3><span class="header-section-number">7.1.2</span> Equitabilité fonctionnelle</h3>
 <p>L’équitabilité fonctionnelle, ou régularité <span class="citation">(Pavoine et Bonsall <a href="#ref-Pavoine2011" role="doc-biblioref">2011</a>)</span>, rend compte de l’homogénéité de l’occupation des niches.</p>
-<p>L’indice d’équitabilité de <span class="citation">Mouillot, Mason, et al. (<a href="#ref-Mouillot2005a" role="doc-biblioref">2005</a>)</span>, que les auteurs nomment “indice de régularité fonctionnelle”, est inspiré de l’indice d’équitabilité de Bulla <a href="5-sec-Equitabilite.html#eq:Bulla">(5.1)</a>.
+<p>L’indice d’équitabilité de <span class="citation">Mouillot, Mason, et al. (<a href="#ref-Mouillot2005a" role="doc-biblioref">2005</a>)</span>, que les auteurs nomment “indice de régularité fonctionnelle”, est inspiré de l’indice d’équitabilité de Bulla <a href="5-sec:Equitabilite.html#eq:Bulla">(5.1)</a>.
 C’est un indice unidimensionnel: un seul trait est pris en compte.
 Les espèces sont classées par valeur croissante du trait.
 L’équitabilité maximale est obtenue si l’écart entre deux valeurs de traits est proportionnel aux abondances cumulées des deux espèces.
@@ -601,7 +602,7 @@ Dans l’arbre de la figure <a href="7-mesures-particulières.html#fig:ArbreA4">
 Les valeurs de <span class="math inline">\(\mathit{TD}_s\)</span> sont respectivement <span class="math inline">\({1}/{4}\)</span> et <span class="math inline">\({1}/{6}\)</span> après normalisation.</p>
 
 <p></p>
-<div class="figure" style="text-align: center"><span id="fig:ArbreA4"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ArbreA4"></span>
 <img src="images/ArbreA.png" alt="Arbre phylogénétique ou fonctionnel hypothétique. L’arbre comprend 5 espèces dont les probabilités sont notées \(p_s\), 3 périodes de durées \(T_k\) délimitées par les noeuds. Les branches sont notées \(b\) et indicées par la période à laquelle elles se terminent et un numéro d’ordre." width="80%" />
 <p class="caption">
 Figure 7.2: Arbre phylogénétique ou fonctionnel hypothétique. L’arbre comprend 5 espèces dont les probabilités sont notées <span class="math inline">\(p_s\)</span>, 3 périodes de durées <span class="math inline">\(T_k\)</span> délimitées par les noeuds. Les branches sont notées <span class="math inline">\(b\)</span> et indicées par la période à laquelle elles se terminent et un numéro d’ordre.
@@ -616,7 +617,7 @@ Clairement, la diversité phylogénétique PD (section <a href="7-mesures-partic
 <h3><span class="header-section-number">7.2.2</span> Originalité taxonomique de Ricotta</h3>
 
 <p></p>
-<div class="figure" style="text-align: center"><span id="fig:HurlbertCFig"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:HurlbertCFig"></span>
 <img src="MesuresBD_files/figure-html/HurlbertCFig-1.png" alt="Contribution des espèces à l’indice de Hurlbert. Les contributions de 4 espèces d’une communauté à l’indice sont représentées en fonction de la taille de l’échantillon \(n\). Les fréquences des espèces sont lisibles pour \(n = 1\): une espèce fréquente (probabilité égale à 0,7, supérieure à \(1/S\)), deux espèces peu fréquentes (0,19 et 0,1), et une espèce rare (0,01). Quand \(n\) est assez grand, toutes les contributions tendent vers \(1/S = 1/4\) (ligne horizontale)." width="80%" />
 <p class="caption">
 Figure 7.3: Contribution des espèces à l’indice de Hurlbert. Les contributions de 4 espèces d’une communauté à l’indice sont représentées en fonction de la taille de l’échantillon <span class="math inline">\(n\)</span>. Les fréquences des espèces sont lisibles pour <span class="math inline">\(n = 1\)</span>: une espèce fréquente (probabilité égale à 0,7, supérieure à <span class="math inline">\(1/S\)</span>), deux espèces peu fréquentes (0,19 et 0,1), et une espèce rare (0,01). Quand <span class="math inline">\(n\)</span> est assez grand, toutes les contributions tendent vers <span class="math inline">\(1/S = 1/4\)</span> (ligne horizontale).
@@ -695,7 +696,7 @@ La mesure d’équitabilité est
   \mathit{PAE} = \frac{\mathit{PD} + \sum_s{l(b_{1,s})(n_s-1)}}{\mathit{PD} + (\frac{n}{S}-1)\sum_s{l(b_{1,s})} }.
 \end{equation}\]</span></p>
 <p></p>
-<div class="figure" style="text-align: center"><span id="fig:ArbreA3"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ArbreA3"></span>
 <img src="images/ArbreA.png" alt="Arbre phylogénétique ou fonctionnel hypothétique." width="80%" />
 <p class="caption">
 Figure 7.4: Arbre phylogénétique ou fonctionnel hypothétique.
@@ -799,7 +800,7 @@ La mesure de biodiversité est la diversité des volumes occupés par les espèc
 <p>En se limitant à deux dimensions pour la lisibilité, la figure <a href="7-mesures-particulières.html#fig:ScheinerPsfsFig">7.5</a> présente les rectangles correspondant à la diversité d’abondance et fonctionnelle occupés par les espèces de la méta-communauté <code>Paracou618</code>, classées par fréquences décroissantes.</p>
 
 <p></p>
-<div class="figure" style="text-align: center"><span id="fig:ScheinerPsfsFig"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ScheinerPsfsFig"></span>
 <img src="MesuresBD_files/figure-html/ScheinerPsfsFig-1.png" alt="Rectangles de surface fréquence \(\times\) taille de niche des espèces de la méta-communauté Paracou618. La diversité de Scheiner \(^{q}\!D(AF)\) est la diversité de leur surface." width="80%" />
 <p class="caption">
 Figure 7.5: Rectangles de surface fréquence <span class="math inline">\(\times\)</span> taille de niche des espèces de la méta-communauté <code>Paracou618</code>. La diversité de Scheiner <span class="math inline">\(^{q}\!D(AF)\)</span> est la diversité de leur surface.
@@ -844,7 +845,7 @@ Figure 7.5: Rectangles de surface fréquence <span class="math inline">\(\times\
 <p>Le profil de diversité d’abondance et fonctionnelle est en figure <a href="7-mesures-particulières.html#fig:ProfilDqAFFig">7.6</a>.</p>
 
 <p></p>
-<div class="figure" style="text-align: center"><span id="fig:ProfilDqAFFig"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ProfilDqAFFig"></span>
 <img src="MesuresBD_files/figure-html/ProfilDqAFFig-1.png" alt="Profil de diversité d’abondance et fonctionnelle de Scheiner de la méta-communauté Paracou618. Pointillés longs: diversité d’abondance; pointillés courts: diversité fonctionnelle; trait plein: diversité d’abondance et fonctionnelle." width="80%" />
 <p class="caption">
 Figure 7.6: Profil de diversité d’abondance et fonctionnelle de Scheiner de la méta-communauté <code>Paracou618</code>. Pointillés longs: diversité d’abondance; pointillés courts: diversité fonctionnelle; trait plein: diversité d’abondance et fonctionnelle.
@@ -885,7 +886,7 @@ Si les espèces sont infiniment éloignées les unes des autres, <span class="ma
 <h2><span class="header-section-number">7.5</span> FD et PD</h2>
 
 <p></p>
-<div class="figure" style="text-align: center"><span id="fig:Arbre"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Arbre"></span>
 <img src="images/Arbre.png" alt="Arbre phylogénétique ou fonctionnel hypothétique. (a) Arbre complet. 5 espèces sont présentes (\(S = 5\)). Une période de l’arbre est définie entre deux noeuds successifs: l’arbre contient \(K = 3\) périodes. Les hauteurs des périodes sont notées \(T_k\). À chaque période correspond un arbre plus simple: (b) pour la période 2, (c) pour la période 3 dans lequel les espèces originales sont regroupées. Le nombre de feuilles de ces arbres est noté \(L_k\). Les probabilités pour un individu d’appartenir à une feuille sont notées \(u_{k,l}\)." width="80%" />
 <p class="caption">
 Figure 7.7: Arbre phylogénétique ou fonctionnel hypothétique. (a) Arbre complet. 5 espèces sont présentes (<span class="math inline">\(S = 5\)</span>). Une période de l’arbre est définie entre deux noeuds successifs: l’arbre contient <span class="math inline">\(K = 3\)</span> périodes. Les hauteurs des périodes sont notées <span class="math inline">\(T_k\)</span>. À chaque période correspond un arbre plus simple: (b) pour la période 2, (c) pour la période 3 dans lequel les espèces originales sont regroupées. Le nombre de feuilles de ces arbres est noté <span class="math inline">\(L_k\)</span>. Les probabilités pour un individu d’appartenir à une feuille sont notées <span class="math inline">\(u_{k,l}\)</span>.
@@ -1014,7 +1015,7 @@ Le fichier <code>rao.traits.csv</code> contient une espèce par ligne, identifi�
 <span id="cb184-2"><a href="7-mesures-particulières.html#cb184-2"></a>pcaf &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(traits, <span class="dt">scale =</span> T, <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p></p>
-<div class="figure" style="text-align: center"><span id="fig:PCAFFig"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:PCAFFig"></span>
 <img src="MesuresBD_files/figure-html/PCAFFig-1.png" alt="Analyse en composante principale des traits foliaires" width="80%" />
 <p class="caption">
 Figure 7.8: Analyse en composante principale des traits foliaires
@@ -1031,7 +1032,7 @@ Figure 7.8: Analyse en composante principale des traits foliaires
 <div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="7-mesures-particulières.html#cb186-1"></a><span class="kw">scatter</span>(pcaf)</span></code></pre></div>
 <p></p>
 <p></p>
-<div class="figure" style="text-align: center"><span id="fig:HclustFig"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:HclustFig"></span>
 <img src="MesuresBD_files/figure-html/HclustFig-1.png" alt="Arbre phylogénétique issu de la classification automatique." width="80%" />
 <p class="caption">
 Figure 7.9: Arbre phylogénétique issu de la classification automatique.
@@ -1051,7 +1052,7 @@ Figure 7.9: Arbre phylogénétique issu de la classification automatique.
 <p>Le résultat est en figure <a href="7-mesures-particulières.html#fig:PhylogRaoFig">7.10</a>.</p>
 
 <p></p>
-<div class="figure" style="text-align: center"><span id="fig:PhylogRaoFig"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:PhylogRaoFig"></span>
 <img src="MesuresBD_files/figure-html/PhylogRaoFig-1.png" alt="Présentation de l’arbre phylogénétique avec la contribution de chacune des variables." width="80%" />
 <p class="caption">
 Figure 7.10: Présentation de l’arbre phylogénétique avec la contribution de chacune des variables.
@@ -1067,7 +1068,7 @@ Dans cet exemple, les deux premiers axes de l’ACP rendent compte de presque to
 Le nuage de points est pratiquement contenu dans un plan alors que sa représentation en distance ultramétrique est une hypersphère en 7 dimensions.</p>
 <p>Le calcul de l’originalité des espèces utilise la fonction <code>originality</code> (figure <a href="7-mesures-particulières.html#fig:originalityFig">7.11</a>).</p>
 <p></p>
-<div class="figure" style="text-align: center"><span id="fig:originalityFig"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:originalityFig"></span>
 <img src="MesuresBD_files/figure-html/originalityFig-1.png" alt="Originalité des espèces." width="80%" />
 <p class="caption">
 Figure 7.11: Originalité des espèces.
@@ -1146,7 +1147,7 @@ Le nombre effectif de paires est <span class="math inline">\([^{q}\!D(Q)]^2\)</s
 <p>Simultanément, <span class="citation">Pavoine, Love, et Bonsall (<a href="#ref-Pavoine2009a" role="doc-biblioref">2009</a>)</span> et <span class="citation">Allen, Kon, et Bar-Yam (<a href="#ref-Allen2009" role="doc-biblioref">2009</a>)</span> ont proposé la généralisation de l’indice de Shannon à la diversité phylogénétique.
 La présentation de Allen et al. est donnée ici, celle de Pavoine et al., plus générale, sera détaillée dans le paragraphe suivant.</p>
 <p></p>
-<div class="figure" style="text-align: center"><span id="fig:ArbreA2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ArbreA2"></span>
 <img src="images/ArbreA.png" alt="Arbre phylogénétique ou fonctionnel hypothétique." width="80%" />
 <p class="caption">
 Figure 7.12: Arbre phylogénétique ou fonctionnel hypothétique.
@@ -1367,7 +1368,6 @@ L’arbre possède 7 branches.</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1407,6 +1407,10 @@ gitbook.start({
 "text": null
 },
 "download": ["MesuresBD.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
