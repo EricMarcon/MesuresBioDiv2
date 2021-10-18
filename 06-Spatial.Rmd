@@ -269,7 +269,7 @@ Les propriétés des courbes d'accumulation ont été largement étudiées dans 
 L'influence de la structure spatiale est considérable mais souvent négligée parce que difficile à prendre en compte.
 Quelques méthodes sont pourtant applicables.
 
-## Courbes d'accumulation
+## Courbes d'accumulation {#sec:SAC}
 
 On suppose que la communauté locale est de taille fixe et contient donc un nombre fixe d'espèces, et que leur découverte progressive aboutira à une asymptote de la SAC.
 
