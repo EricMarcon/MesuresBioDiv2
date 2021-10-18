@@ -2,101 +2,83 @@
 title: "Mesures de la Biodiversité"
 author: "Eric Marcon"
 date: "`r format(Sys.Date(), '%d/%m/%Y')`"
-url: "https://github.com/EricMarcon/MesuresBioDiv2/"
-description: "Définitions, estimation et décompositon de la biodiversité"
+url: https://github.com/EricMarcon/MesuresBioDiv2/
+description: Définitions, estimation et décompositon de la biodiversité
 cover-image: image/logo.png
-# Title page
 maintitlepage:
   epigraph: |
-    Ce document est réalisé de façon dynamique et reproductible grâce à:
     \begin{itemize}
+    \end{itemize}
+    Ce document est réalisé de façon dynamique et reproductible grâce à:
       \item \LaTeX, dans sa distribution Miktex (\url{http://miktex.org/}) et la classe memoir (\url{http://www.ctan.org/pkg/memoir}).
       \item R (\url{http://www.r-project.org/}) et RStudio (\url{http://www.rstudio.com/})
       \item bookdown (\url{http://bookdown.org/})
-    \end{itemize}
     Son code source est sur GitHub: \url{https://github.com/EricMarcon/MesuresBioDiv2/}.
-    
     Le texte mis à jour en continu peut être lu sur \url{https://ericmarcon.github.io/MesuresBioDiv2/}.
-    
     Les versions d'étape sont déposées sur HAL: \url{https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/}.
   credits: |
     Photographie en couverture: Hadrien Lalagüe
   filigrane: filigrane
-# Language
 lang: fr-FR
-otherlangs: [en-US]
-# LaTeX
+otherlangs: en-US
 documentclass: memoir
 classoption:
-  - extrafontsizes
-  - onecolumn
-  - openright
-# Paper, font
+- extrafontsizes
+- onecolumn
+- openright
 papersize: A4
 fontsize: 11pt
-# memoir Style
 MemoirChapStyle: companion
 MemoirPageStyle: companion
-# Margins
-largemargins: true
+largemargins: yes
 smallmargin: 1.5in
 largemargin: 3in
 marginnote: 1.8in
 spinemargin: 1.2in
 uppermargin: 1.5in
 lowermargin: 1in
-# Table of contents
 toc-depth: 2
-# Section numbering
 secnum-depth: section
-# List of tables / Figures
-lot: false
-lof: false
-# Bibliography
+lot: no
+lof: no
 bibliography: references.bib
 biblatexoptions:
-  - backend=biber
-  - style=verbose-inote
-  - pageref=true
-  - isbn=false
-  - backref=true
-  - giveninits=true
-  - uniquename=init
-  - maxcitenames=2
-  - maxbibnames=150
-  - sorting=nyt
-  - sortcites=false
-longbibliography: true
-# Chapter summary text
+- backend=biber
+- style=verbose-inote
+- pageref=true
+- isbn=false
+- backref=true
+- giveninits=true
+- uniquename=init
+- maxcitenames=2
+- maxbibnames=150
+- sorting=nyt
+- sortcites=false
+longbibliography: yes
 chaptersummary: L'essentiel
-# Back Cover
 backcover:
-  - language: french
-    abstract: |
-      La biodiversité peut être mesurée de nombreuses façons.
-
-      La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire. 
-      L’entropie est la surprise moyenne fournie par les individus d’une communauté.
-      Le choix de la fonction d’information qui mesure cette surprise à partir des probabilités d’occurence des espèces (ou d’autres catégories) permet de définir les mesures de diversités neutres, fonctionnelles ou phylogénétique présentées ici. 
-      L’entropie est transformée en diversité au sens strict par une fonction croissante (l’exponentielle déformée), ce qui simplifie son interprétation en tant que nombre équivalent d’espèces.
-
-      L’entropie phylogénétique généralise les indices de diversité classique, intègre si nécessaire la distance entre espèces, peut être écomposée et corrigée des biais d’estimation.
-      Sa transformation en diversité au sens strict permet d’interpréter les valeurs sous une forme unique : un nombre équivalent d’espèces et un nombre équivalent de communautés. 
-      La diversité de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet d’autres définitions de la distance entre espèces. 
-
-      Le paramétrage des mesures (l’ordre de la diversité) permet de donner plus ou moins d’importance aux espèces rares et de tracer des profils de diversité. 
-
-      La construction de ce cadre méthodologique est présentée en détail ainsi que plusieurs approches différentes, qui constituent l'état de l'art de la mesure de la biodiversité.
-    abstractlabel: Résumé
+- language: french
+  abstract: |
+    La biodiversité peut être mesurée de nombreuses façons.
+  
+    La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire.
+    L’entropie est la surprise moyenne fournie par les individus d’une communauté.
+    Le choix de la fonction d’information qui mesure cette surprise à partir des probabilités d’occurence des espèces (ou d’autres catégories) permet de définir les mesures de diversités neutres, fonctionnelles ou phylogénétique présentées ici.
+    L’entropie est transformée en diversité au sens strict par une fonction croissante (l’exponentielle déformée), ce qui simplifie son interprétation en tant que nombre équivalent d’espèces.
+    
+    L’entropie phylogénétique généralise les indices de diversité classique, intègre si nécessaire la distance entre espèces, peut être écomposée et corrigée des biais d’estimation.
+    Sa transformation en diversité au sens strict permet d’interpréter les valeurs sous une forme unique : un nombre équivalent d’espèces et un nombre équivalent de communautés.
+    
+    La diversité de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet d’autres définitions de la distance entre espèces. 
+    Le paramétrage des mesures (l’ordre de la diversité) permet de donner plus ou moins d’importance aux espèces rares et de tracer des profils de diversité. \n\nLa construction de ce cadre méthodologique est présentée en détail ainsi que plusieurs approches différentes, qui constituent l'état de l'art de la mesure de la biodiversité.
+  abstractlabel: Résumé
 backcoverfontsize: normalsize
-# Figure cropping may be set to no if ghostscript is not installed
-fig_crop: true
-# Do not modify
+fig_crop: yes
 site: bookdown::bookdown_site
-always_allow_html: true
-graphics: true
-link-citations: true
-colorlinks: true
+always_allow_html: yes
+graphics: yes
+link-citations: yes
+colorlinks: yes
 ---
 
 <!-- Commande nécessaire pour la copie de l'icône "Essentiel" en HTML--> 
@@ -138,8 +120,8 @@ if (rmarkdown::metadata$largemargins)
 ### Customized options for this book
 # Add necessary packages here
 Packages <- c("ade4", "adespatial", "entropart", "entropy", "EntropyEstimation", 
-              "GoFKernel", "gridExtra","iNEXT", "magrittr", "ragg", "sp", "SPECIES", 
-              "tidyverse", "untb", "vegan")
+              "GoFKernel", "gridExtra","iNEXT", "magrittr", "ragg", "sads", "sp", 
+              "SPECIES", "tidyverse", "untb", "vegan")
 # Install them if necessary
 InstallPackages(Packages)
 # GitHub packages
@@ -203,6 +185,41 @@ On se référera par exemple à @Chapin2000 pour une revue sur cette question, @
 
 La mesure de la diversité est un sujet important en tant que tel [@Purvis2000], pour permettre de formaliser les concepts et de les appliquer à la réalité. 
 La question est loin d'être épuisée, et fait toujours l'objet d'une recherche active et de controverses [@Ricotta2005b].
+
+
+# Calculs et données {-}
+
+La présentation des mesures de diversité est donnée avec un usage intensif du formalisme mathématique.
+La liste des notations est fournie ci-dessous, on s'y référera autant que nécessaire.
+
+Les calculs sont réalisés dans R [@R], essentiellement avec le package *entropart* [@Marcon2014c]. 
+L'ensemble du code est disponible sur GitHub^[<https://github.com/EricMarcon/MesuresBioDiv2/>] où se trouvent les mises à jour de ce document^[<https://ericmarcon.github.io/MesuresBioDiv2/>].
+
+Les données sont souvent celles de la parcelle 6 de la forêt de Paracou en Guyane française [@Gourlet-Fleury2004], d'une surface de 6.25&nbsp;ha.
+Tous les arbres de plus de 10&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) y ont été inventoriés en 2016.
+La position de chaque arbre, son espèce et sa surface terrière sont fournis dans le package *SpatDiv*.
+
+(ref:Paracou6MapFig) Carte de la parcelle 6 de Paracou. Les points représentent les arbres. Leur taille est proportionnelle à leur surface terrière. Seules les espèces les plus fréquentes sont identifiées sur la carte.
+```{r Paracou6MapFig, echo=FALSE, results='hide', fig.width=6, fig.height=6, ref.label='Paracou6MapCode', fig.cap="(ref:Paracou6MapFig)"}
+```
+
+Le code R pour réaliser la figure est le suivant:
+```{r Paracou6MapCode, eval=FALSE, message=FALSE}
+library("dbmss")
+library("SpatDiv")
+autoplot(Paracou6, labelSize =expression(paste("Surface terrière (", cm^2, ")")), labelColor="Espèce")
+```
+
+```{r packagesDonnees, echo=FALSE}
+library("vegan")
+data(BCI)
+library("entropart")
+```
+
+D'autres exemples utilisent la parcelle forestière permanente de Barro Colorado Island, souvent abrégée BCI [@Condit2012]: 50&nbsp;ha de forêt tropicale dont les arbres de plus de 1&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) ont été inventoriés.
+Le jeu de données utilisé pour les exemples est une version réduite aux arbres de plus de 10&nbsp;cm disponible dans le package *vegan* [@Oksanen2012], soient `r sum(BCI)` arbres dans `r ncol(BCI)` espèces.
+
+Enfin, les données fournies par le package *entropart* sous le nom "Paracou618" sont deux inventaires de l'année 2012 limités à un hectare chacun dans les parcelles 6 et 18 de la forêt de Paracou, soient `r Paracou618.MC$N` arbres dans `r sum(Paracou618.MC$Ns>0)` espèces.
 
 
 # Notations {-}
@@ -295,6 +312,7 @@ $s^{n}_{\nu}$ peut être considéré comme une réalisation de $S^{n}_{\nu}$.
 \noindent $\mathrm{\Psi}(\cdot)$: la fonction digamma.
 
 \noindent $\binom{n}{k}$: le nombre de combinaisons de $k$ éléments parmi $n$: $$\binom{n}{k}=\frac{n!}{k!\,(n-k)!}$$.
+
 
 
 <!-- La commande \mainmatter marque le début du corps du document LaTeX--> 

@@ -1,7 +1,7 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 \SmallMargins
 # (PART) Notions {-}
@@ -54,10 +54,13 @@ La plupart des indices courants, comme ceux de Simpson ou de Shannon, évaluent 
 
 Les mesures classiques de la diversité, dites mesures de diversité neutre (*species-neutral diversity*) ou taxonomique ne prennent pas en compte une quelconque distance entre classes. 
 Pourtant, deux espèces du même genre sont de toute évidence plus proches que deux espèces de familles différentes. 
-Les mesures de diversité phylogénétique et de diversité fonctionnelle prennent en compte cette notion, qui nécessite quelques définitions supplémentaires [@Mouillot2005; @Ricotta2007].
+Les mesures de diversité non neutres (chapitre \@ref(chap-cadrephyfonc)) prennent en compte cette notion, qui nécessite quelques définitions supplémentaires [@Mouillot2005; @Ricotta2007].
 
 La mesure de la différence entre deux classes est souvent une distance, mais parfois une mesure qui n'a pas toutes les propriétés d'une distance: une dissimilarité.
 Les mesures de *divergence* [@Pavoine2011] sont construites à partir de la dissimilarité entre les classes, avec ou sans pondération par la fréquence.
+
+Si la divergence entre espèces est une distance évolutive comme l'âge du plus récent ancêtre commun, la diversité sera dite phylogénétique.
+Si c'est une distance fonctionnelle, définie par exemple dans l'espace des traits fonctionnels, la diversité sera dite fonctionnelle.
 
 La disparité [@Runnegar1987], divergence moyenne entre deux espèces (indépendamment des fréquences), ou de façon équivalente la longueur totale des branches d'un arbre phylogénétique, est la composante qui décrit à quel point les espèces sont différentes les unes des autres.
 
@@ -71,7 +74,6 @@ Ce concept complète celui d'équitabilité dans les mesures classiques: la dive
 
 Stirling  définit la propriété d'*agrégation* comme la capacité d'une mesure de diversité à combiner explicitement les trois composantes précédentes.
 Cela ne signifie pas que les composantes contribuent indépendamment les unes des autres à la diversité [@Jost2010].
-
 
 
 ## Niveaux de l'étude
@@ -113,26 +115,29 @@ Il est donc important de définir une mesure qui ne dépende pas de ce découpag
 Nous appellerons *communauté* le niveau de découpage concernant la diversité $\alpha$ et *méta-communauté* le niveau de regroupement pour l'estimation de la diversité $\gamma$.
 
 
+
 ## Le problème de l'espèce
 
-Évaluer la richesse spécifique suppose que les espèces soient définies clairement, ce qui n'est de toute évidence pas le cas [@Casetta2014a]. 
-Le premier aspect du problème concerne la nature des espèces: réalité naturelle ou seulement représentation simplificatrice. 
+Évaluer la richesse spécifique suppose que les espèces soient définies clairement, ce qui n'est de toute évidence pas le cas [@Casetta2014]. 
+Le premier aspect du problème concerne la nature des espèces: réalité naturelle ou seulement représentation simplificatrice.
 Une analyse historique et philosophique en est faite par @Richards2010. 
 L'autre aspect, avec des conséquences pratiques plus immédiates, concerne leur délimitation. 
-@Mayden1997 recense 22 définitions différentes du concept d'espèce.
+@Mayden1997 recense vingt-deux définitions différentes du concept d'espèce.
+@Wilkins2011 estime qu'il n'y a qu'un seul concept d'espèce mais sept définitions, c'est-à-dire sept façons de les identifier, et vingt-sept variations ou mélanges de ces définitions.
 
-Le concept le plus répandu est celui d'espèce *biologique* [@Dobzhansky1937]: un "groupe de populations naturelles isolées reproductivement les unes des autres" [@Mayr1942]. 
-Lorsque les populations d'une espèce sont isolées géographiquement, leur capacité à se reproduire ensemble est toute théorique (et d'ailleurs rarement vérifiée expérimentalement). 
-Des populations allopatriques n'ont pas de flux de gènes réels entre elles et peuvent être considérées comme des espèces distinctes selon le concept d'espèce *phylogénétique*: "le plus petit groupe identifiable d'individus avec un pattern commun d'ancêtres et de descendants" [@Cracraft1983].
+La définition historique est celle de *morphoespèce*, qui classe les espèces selon leurs formes, supposées d'abord immuables.
+La définition moderne la plus répandue est celle d'espèce *biologique* [@Dobzhansky1937]: un "groupe de populations naturelles isolées reproductivement les unes des autres" [@Mayr1942]. 
+Lorsque les populations d'une espèce sont isolées géographiquement, leur capacité à se reproduire ensemble est toute théorique (et rarement vérifiée expérimentalement). 
+Des populations allopatriques n'ont pas de flux de gènes réels entre elles et peuvent être considérées comme des espèces distinctes selon la définition d'espèce *phylogénétique*: "le plus petit groupe identifiable d'individus avec un pattern commun d'ancêtres et de descendants" [@Cracraft1983].
 C'est l'unité génétique détectée par la méthode du coalescent pour la délimitation des espèces [@Sukumaran2017].
 Le nombre d'espèces phylogénétiques est bien supérieur au nombre d'espèces biologiques. 
-Enfin, @VanValen1976 définit les espèces par la niche écologique qu'elles occupent (à partir de l'exemple des chênes blancs européens) plutôt que par les flux de gènes (permanents entre les espèces distinctes): le concept *écologique* d'espèce est proche de celui de complexe d'espèces [ensemble d'espèces voisines échangeant des gènes, @Pernes1984].
+Enfin, @VanValen1976 définit les espèces par la niche écologique qu'elles occupent (à partir de l'exemple des chênes blancs européens) plutôt que par les flux de gènes (permanents entre les espèces distinctes): la définition *écologique* d'espèce est proche du concept de complexe d'espèces [ensemble d'espèces voisines échangeant des gènes, @Pernes1984].
 
 Le choix de la définition modifie considérablement sur la quantification de la richesse [@Agapow2004]. 
 Des problèmes méthodologiques s'ajoutent aux problèmes conceptuels [@Hey2001]: la séparation ou le regroupement de plusieurs populations ou morphotypes en un nombre plus ou moins grand d'espèces est un choix qui reflète les connaissances du moment et peut évoluer [@Barberousse2014].
 
 L'impact du problème de l'espèce sur la mesure de la diversité reste sans solution à ce stade, si ce n'est d'utiliser les mêmes définitions si des communautés différentes doivent être comparées. 
-L'approche phylogénétique (Chapitre \@ref(chap:Phyloentropie)) permet de contourner le problème: si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
+L'approche phylogénétique (chapitre \@ref(chap:Phyloentropie)) permet de contourner le problème: si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
 
 
 
@@ -155,42 +160,21 @@ Les relations décrivant le nombre d'espèces en fonction de la taille de l'éch
 La mesure de l'exhaustivité de l'échantillonnage par le taux de couverture sera la base de l'estimation de la diversité à partir de données réelles.
 
 
+## Courbes d'accumulation
 
-## Calculs et données
-
-La présentation des mesures de diversité est donnée avec un usage intensif du formalisme mathématique.
-La liste des notations est fournie en préambule du document, on s'y référera autant que nécessaire.
-
-Les calculs sont réalisés dans R [@R], essentiellement avec le package *entropart* [@Marcon2014c]. 
-L'ensemble du code est disponible sur GitHub^[<https://github.com/EricMarcon/MesuresBioDiv2/>] où se trouvent les mises à jour de ce document ^[<https://ericmarcon.github.io/MesuresBioDiv2/>].
-
-Les données sont souvent celles de la parcelle 6 de Paracou en Guyane française [@Gourlet-Fleury2004], d'une surface de 6.25&nbsp;ha.
-Tous les arbres de plus de 10&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) y ont été inventoriés en 2016.
-La postition de chaque arbre, son espèce et sa surface terrière sont fournis dans le package *SpatDiv*.
-
-D'autres exemples utilisent la parcelle forestière permanente de Barro Colorado Island, souvent abrégée BCI [@Condit2012]: 50&nbsp;ha de forêt tropicale dont les arbres de plus de 1&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) ont été inventoriés.
-Le jeu de données utilisé pour les exemples est une version réduite aux arbres de plus de 10&nbsp;cm disponible dans le package *vegan* [@Oksanen2012].
-
-
-## SAD et SAR
-
-
-(ref:SARFig) Courbe d'accumulation des espèces d'arbres du dispositif de Barro Colorado Island. Le nombre d'espèces est cumulé dans l'ordre des carrés d'un hectare du dispositif.
-```{r SARFig, echo=FALSE, results='hide', message=FALSE, ref.label='SARCode',  fig.cap="(ref:SARFig)"}
+(ref:SACFig) Courbe d'accumulation des espèces d'arbres du dispositif de Barro Colorado Island. Le nombre d'espèces est cumulé dans l'ordre des carrés d'un hectare du dispositif.
+```{r SACFig, echo=FALSE, results='hide', message=FALSE, ref.label='SACCode',  fig.cap="(ref:SACFig)"}
 ```
 
-La courbe aire-espèces (SAR: *Species Area Relationship*) représente le nombre d'espèces observées en fonction de la surface échantillonnée (figure \@ref(fig:Williamson2001)).
-Il existe plusieurs façons de prendre en compte cette relation [@Scheiner2003], classables en deux grandes familles [@Dengler2009]:
+Evaluer la diversité d'une communauté nécessite en pratique de l'inventorier. 
+Le nombre d'espèces découvertes en fonction de l'effort d'échantillonnage permet de tracer une courbe d'accumulation (SAC: *Species Acumulation Curve*).
+Une courbe de raréfaction (*Rarefaction Curve*) peut être calculée en réduisant par des outils statistiques l'effort d'échantillonnage réel pour obtenir une SAC théorique, libérée des aléas de l'ordre de prise en compte des données.
 
-* Dans une SAR au sens strict, chaque point représente une communauté. 
-  La question traitée est la relation entre le nombre d'espèces et la taille de chaque communauté;
-* Si les points représentent un effort d'échantillonnage différent dans même communauté, on parle de courbe d'accumulation (SAC: *Species Acumulation Curve*). Une courbe de raréfaction (*Rarefaction Curve*) peut être calculée en réduisant par des outils statistiques l'effort d'échantillonnage réel pour obtenir une SAC théorique, libérée des aléas de l'ordre de prise en compte des données.
-
-La figure \@ref(fig:SARFig) montre l'accumulation des espèces pour les données de BCI.
+La figure \@ref(fig:SACFig) montre l'accumulation des espèces pour les données de BCI.
 Une SAC peut être tracée en fonction de la surface, du nombre d'individus ou du nombres de placettes d'échantillonnage, selon les besoins.
 
 Code R pour réaliser la figure \@ref(fig:SARFig):
-```{r SARCode, eval=FALSE, tidy=FALSE}
+```{r SACCode, eval=FALSE, tidy=FALSE}
 library("vegan")
 data(BCI)
 Cumul <- apply(BCI, 2, cumsum)
@@ -203,55 +187,33 @@ SARplot <- ggplot(data.frame(A = 0:50,
 SARplot
 ```
 
-La distribution de l'abondance des espèces (SAD: *Species Abundance Distribution*) est la loi qui donne l'abondance attendue de chaque espèce d'une communauté. 
-Les espèces ne sont pas identifiées individuellement, mais par le nombre d'individus leur appartenant.
+Les courbes d'accumulation peuvent aussi concerner la diversité (voir le chapitre \@ref(chap-Accumulation)), mesurée au-delà du nombre d'espèces. 
+
+Plus généralement, une courbe aire-espèces (SAR: *Species Area Relationship*) représente le nombre d'espèces observées en fonction de la surface échantillonnée (figure \@ref(fig:Williamson2001)).
+Il existe plusieurs façons de prendre en compte cette relation [@Scheiner2003], classables en deux grandes familles [@Dengler2009]:
+
+* Dans une SAR au sens strict, chaque point représente une communauté. 
+  La question traitée est la relation entre le nombre d'espèces et la taille de chaque communauté, en lien avec des processus écologiques;
+* Une courbe d'accumulation (SAC) ne représente que l'effet statistique de l'échantillonnage.
+  Pour éviter toute confusion, le terme SAR ne doit pas être utilisé pour décrire une SAC.
 
 
-(ref:SADFig) Histogramme des fréquences (diagramme de Preston) des arbres du dispositif de Barro Colorado Island. En abscisse: le nombre d'arbres de chaque espèce (en logarithme); en ordonnée: le nombre d'espèces.
-```{r SADFig, echo=FALSE, results='hide', message=FALSE, ref.label='SADCode', fig.cap="(ref:SADFig)"}
-```
+## Diversité asymptotique
 
-Elle peut être représentée sous la forme d'un histogramme des fréquences (diagramme de @Preston1948, figure \@ref(fig:SADFig)) ou bien d'un diagramme rang-abondance (RAC: *Rank Abundance Curve* ou diagramme de @Whittaker1965, figure \@ref(fig:RACFig)). 
-Le RAC est souvent utilisé pour reconnaître des distributions connues. 
-@Izsak2012 ont étudié les propriétés des RAC pour les principales SAD.
+Augmenter l'effort d'échantillonnage peut permettre d'atteindre un stade où la diversité n'augmente plus: sa valeur est appelée *diversité asymptotique*.
+Dans des communautés très diverses comme les forêts tropicales, la diversité asymptotique ne peut en général pas être observée sur le terrain à cause de la variabilité de l'environnement: l'augmentation de la surface inventoriée amène à échantillonner dans des communautés différentes avant d'atteindre la diversité asymptotique de la communauté étudiée. 
+La diversité asymptotique est donc celle d'une communauté théorique qui n'existe généralement pas.
+En d'autres termes, c'est la diversité d'une communauté dont l'inventaire disponible serait un échantillon représentatif.
 
-(ref:RACFig) Diagramme rang-abondance (diagramme de Whittaker) des arbres du dispositif de Barro Colorado Island. Les points sont les données: en abscisse: le rang de l'espèce, à partir de la plus abondante; en ordonnée: l'abondance de l'espèce. La courbe est l'ajustement d'une distribution log-normale.
-```{r RACFig, echo=FALSE, results='hide', message=FALSE, ref.label='RACCode',  fig.cap="(ref:RACFig)"}
-```
-
-Code de la figure \@ref(fig:SADFig):
-```{r SADCode, eval=FALSE, tidy=FALSE}
-Ns <- sort(colSums(BCI), decr = TRUE)
-N <- sum(Ns)
-SADhist <- ggplot(data.frame(Ns), aes(Ns)) + 
-  geom_histogram(bins=nclass.Sturges(log(Ns)), 
-       color="black", fill="white", boundary = 0) +
-  scale_x_log10() +
-  labs(x="Effectifs (échelle logarithmique)", 
-       y="Nombre d'espèces")
-SADhist
-```
-
-Code de la figure \@ref(fig:RACFig):
-```{r RACCode, eval=FALSE, tidy=FALSE}
-library("entropart")
-autoplot(as.AbdVector(Ns), Distribution = "lnorm")
-```
-
-Les SAD ne sont pas traitées en détail ici: on se reportera à @Magurran1988, @McGill2007 et Izsák et Pavoine. 
-Les SAD nécessaires à la compréhension de la suite sont:
-
-* La distribution géométrique [@Motomura1932; @Whittaker1972];
-* La distribution en log-séries de @Fisher1943;
-* La distribution log-normale [@Preston1948];
-* Le modèle Broken Stick [@MacArthur1957].
+Evaluer la diversité asymptotique nécessite d'utiliser des estimateurs de diversité, dont la précision dépend de l'exhaustivité de l'échantillonnage.
+La diversité peut aussi être estimée pour un effort donné: un hectare de forêt ou 5000 arbres par exemple, ou encore un taux de couverture choisi, qui décrit mieux la qualité de l'échantillonnage.
 
 
 ## Taux de couverture {#sec:Couverture}
 
 ### Formule des fréquences de Good-Turing
 
-La relation fondamentale entre les fréquences des espèces est due à Turing et a été publiée par @Good1953.
+La relation fondamentale entre les fréquences des espèces dans un échantillon est due à Turing et a été publiée par @Good1953.
 En absence de toute information sur la loi de distribution des espèces, en supposant seulement que les individus sont tirés indépendamment les uns des autres selon une loi multinomiale respectant ces probabilités, la formule de Good-Turing relie la probabilité moyenne $\alpha_\nu$ d'une espèce représentée $\nu$ fois (c'est-à-dire par $\nu$ individus) au rapport entre les nombres d'espèces représentées $\nu+1$ fois et $\nu$ fois:
 
 \begin{equation}
@@ -349,6 +311,7 @@ Dans le package *entropart*, la fonction `Coverage` calcule les trois estimateur
 
 ```{r CoverageBCI}
 library("entropart")
+Ns <- colSums(BCI)
 Coverage(Ns)
 ```
 
@@ -400,3 +363,201 @@ as.numeric(Obs/Est)
 # Completeness
 as.numeric(Obs/Est)
 ```
+
+
+## Distribution de l'abondance des espèces (SAD)
+
+La distribution de l'abondance des espèces (SAD: *Species Abundance Distribution*) est la loi statistique qui donne l'abondance attendue de chaque espèce d'une communauté. 
+Les espèces ne sont pas identifiées individuellement, mais par le nombre d'individus leur appartenant.
+
+(ref:SADFig) Histogramme des fréquences (diagramme de Preston) des arbres du dispositif de Barro Colorado Island. En abscisse: le nombre d'arbres de chaque espèce (en logarithme); en ordonnée: le nombre d'espèces.
+```{r SADFig, echo=FALSE, results='hide', message=FALSE, ref.label='SADCode', fig.cap="(ref:SADFig)"}
+```
+
+Elle peut être représentée sous la forme d'un histogramme des fréquences (diagramme de @Preston1948, figure \@ref(fig:SADFig)) ou bien d'un diagramme rang-abondance (RAC: *Rank Abundance Curve* ou diagramme de @Whittaker1965, figure \@ref(fig:RACFig)). 
+Le RAC est souvent utilisé pour reconnaître des distributions connues. 
+@Izsak2012 ont étudié les propriétés des RAC pour les principales SAD.
+
+(ref:RACFig) Diagramme rang-abondance (diagramme de Whittaker) des arbres du dispositif de Barro Colorado Island. Les points sont les données: en abscisse: le rang de l'espèce, à partir de la plus abondante; en ordonnée: l'abondance de l'espèce. La courbe est l'ajustement d'une distribution log-normale.
+```{r RACFig, echo=FALSE, results='hide', message=FALSE, ref.label='RACCode',  fig.cap="(ref:RACFig)"}
+```
+
+Code de la figure \@ref(fig:SADFig):
+```{r SADCode, eval=FALSE, tidy=FALSE}
+Ns <- sort(colSums(BCI), decreasing = TRUE)
+N <- sum(Ns)
+SADhist <- ggplot(data.frame(Ns), aes(Ns)) + 
+  geom_histogram(bins=nclass.Sturges(log(Ns)), 
+       color="black", fill="white", boundary = 0) +
+  scale_x_log10() +
+  labs(x="Effectifs (échelle logarithmique)", 
+       y="Nombre d'espèces")
+SADhist
+```
+
+Code de la figure \@ref(fig:RACFig):
+```{r RACCode, eval=FALSE, tidy=FALSE}
+library("entropart")
+autoplot(as.AbdVector(Ns), Distribution = "lnorm")
+```
+
+
+Les SAD sont traitées en détail par @Magurran1988 ou @McGill2007.
+Les principales distributions, nécessaires à la compréhension de la suite sont présentées ici:
+
+* La distribution en log-séries de @Fisher1943;
+* La distribution géométrique [@Motomura1932; @Whittaker1972];
+* La distribution log-normale [@Preston1948];
+* Le modèle Broken Stick [@MacArthur1957].
+
+(ref:DistributionsFig) Diagramme rang-fréquence des distributions de probabilité classiques. Toutes les distributions sont de 100 espèces. Les probabilités inférieures à $10^{-6}$ ne sont pas affichées. Les paramètres choisis sont $\alpha=11$ pour la distribution log-séries, $k=0,2$ pour la distribution géométrique et $\sigma=2$ pour la distribution log-normale.
+```{r DistributionsFig, echo=FALSE, results='hide', message=FALSE, warning=FALSE, ref.label='DistributionsCode',  fig.cap="(ref:DistributionsFig)"}
+```
+
+Code de la figure \@ref(fig:DistributionsFig):
+```{r DistributionsCode, eval=FALSE, tidy=FALSE}
+library("entropart")
+# Tirage d'une communauté en log-séries
+lseries <- rCommunity(1, size=1E5, Distribution="lseries", alpha=11)
+# Nombre d'espèces de référence
+S <- length(lseries)
+# Part des ressources accaparées dans la distribution géométrique
+prob=0.2
+# Calcul des probabilités de la distribution géométrique
+geom <- prob/(1-(1-prob)^S)*(1-prob)^(0:(S-1))
+# Dispersion de la loi lognormale
+sd <- 2
+# Tirage de S valeurs dans une loi lognormale
+Nslnorm <- rlnorm(S, 0, sd)
+# Normalisation pour obtenir des probabilités
+lnorm <- Nslnorm/sum(Nslnorm)
+# Tirage des probabilités de la distribution broken stick
+bstick <- c(cuts <- sort(stats::runif(S-1)), 1)- c(0, cuts)
+# Graphique
+tibble(Rang=1:S,
+      `Log-Séries`=sort(lseries/sum(lseries), decreasing=TRUE),
+      `Géometrique`=sort(geom, decreasing=TRUE),
+      `Log-Normale`=sort(lnorm, decreasing=TRUE),
+      `Broken Stick`=sort(bstick, decreasing=TRUE)) %>% 
+  pivot_longer(cols=-Rang) %>% 
+  ggplot() +
+  geom_line(aes(x=Rang, y=value, color=name)) +
+  scale_y_log10(limits=c(1E-6, NA)) +
+  labs(y="Probabilité", color="Distribution")
+```
+
+Formellement, la distribution des probabilités des espèces, notées $p_s$, est à établir.
+
+
+### La distribution en log-séries
+
+Cette distribution est traitée en détail dans le chapitre \@ref(chap-Fisher).
+
+Le nombre d'espèces est lié au nombre d'individus par la relation ${\mathbb E}(S^n)=\alpha\ln(1+n/\alpha)$ où $S^n$ indique le nombre d'espèces observées dans un échantillon de $n$ individus.
+$\alpha$ est le paramètre qui fixe la pente de la partie linéaire de la relation, valide dès que $n>>\alpha$, où le nombre d'espèces $S^n$ augmente proportionnellement au logarithme du nombre d'individus $\ln(n)$.
+
+La distribution a été obtenue à partir d'inventaires de communautés de papillons en Malaisie et en Angleterre.
+Le modèle est tombé en désuétude faute de confirmation empirique à l'échelle de la communauté, avant d'être remis en valeur par la théorie neutre [@Hubbell2001] dans lequel la distribution de la *méta-communauté* est en log-séries.
+
+
+### La distribution Broken Stick
+
+Si les espèces se partagent les ressources ou l'espace des niches, représentées par un bâton, par un processus de cassure aléatoire et simultanée (précisément, les $S-1$ cassures du bâton sont distribuées uniformément sur sa longueur) et que leur abondance est proportionnelle à la quantité de ressources ou d'espace de niche obtenus, alors leur distribution suit le modèle Broken Stick de @MacArthur1957.
+
+Parmi les distributions classiques, c'est la plus équitable: la distribution uniforme des probabilités ($p_s=1/S$ pour tout $s$) n'est jamais approchée.
+
+Elle est peu observée empiriquement.
+
+
+### La distribution log-normale
+
+Dans une distribution log-normale, le logarithme des probabilités des espèces (notées $p_s$ pour l'espèce $s$) suit une loi normale.
+L'écart-type $\sigma$ de cette distribution règle l'équitabilité de la distribution.
+Son espérance est obtenue à partir du nombre d'espèces et de $\sigma$, pour que la somme des probabilités égale 1.
+
+@May1975 explique cette distribution par le théorème de la limite centrale: la variable aléatoire valant 1 si un individu est de l'espèce $s$ et 0 sinon est le produit de nombreuses variables de loi inconnues valant 1 en cas de succès (germination d'une graine, survie à de nombreux évènements...).
+Le logarithme de ce produit est une somme de variables aléatoire dont la loi est forcément normale par application du théorème de la limite centrale.
+
+D'autres arguments existent dans la littérature.
+Par exemple, @Engen1996 obtiennent une distribution normale à partir d'un modèle de dynamique des populations.
+
+La distribution log-normale décrit assez bien (mais pas exactement) une communauté locale dans le cadre de la théorie neutre [@Hubbell2001] comme le montre la figure \@ref(fig:RACFig).
+Le nombre d'espèces rares est un peu surestimé.
+La distribution exacte est donnée par @Volkov2003.
+
+La distribution est aussi le résultat d'un algorithme de bâton brisé (*broken stick*) séquentiel:
+
+- Si la première espèce accapare une partie des ressources (représentées par un bâton) aléatoirement (précisément, l'emplacement de la cassure suit une loi uniforme),
+- Si chaque espèce répète le même processus sur le reste des ressources laissé par les précédentes,
+- Si l'abondance de chaque espèce est proportionnelle aux ressources dont elle dispose,
+- Alors la distribution des espèces est log-normale.
+
+
+### La distribution géométrique
+
+Si les espèces se partagent les ressources selon un algorithme *broken stick* séquentiel (comme dans la distribution log-normale) mais de proportion fixe $0<k<1$, alors la distribution obtenue est géométrique.
+Les abondances successives sont proportionnelles à $k, k(1-k), k(1-k)^2, \dots, k(1-k)^s, \dots, k(1-k)^S$.
+
+Ce modèle a été établi par @Motomura1932 cité par @May1975.
+Ses propriétés ont été étudiées par @Whittaker1972.
+
+C'est la distribution qui traduit l'absence de relation entre la taille de l'échantillon et l'abondance des espèces [@Pueyo2007]: la distribution du logarithme de ses probabilités est uniforme.
+En d'autre termes, l'ordre de grandeur de l'abondance d'une espèce est uniformément distribué. 
+
+La distribution est observée dans les communautés pionnières [@Bazzaz1975], peu diverses, ou les communautés microbiennes [@Haegeman2013].
+
+
+### Synthèse
+
+La figure \@ref(fig:DistributionsFig) est inspirée de la figure très connue de @Magurran1988.
+Elle montre bien une gradation en termes de décroissance de probabilité entre des distributions de même richesse: de la plus équitable (broken stick) à la plus inéquitable (géométrique).
+Elle doit être nuancée: la proportion $k$ de la distribution géométrique fixe la pente de la droite qui la représente sur la figure.
+$k=10\%$ sur la figure: une valeur plus faible diminuerait la pente.
+De même, l'écart-type de la distribution log-normale décrit sa dispersion.
+Une valeur supérieure augmenterait sa décroissance.
+
+La simulation de ces quatre distributions peut être réalisée par la fonction `rCommunity()` du package *entropart*, où l'argument `Distribution` peut valoir "bstick", "lnorm", "geom" ou "lseries".
+La simulation des communautés autres que log-séries passe par le tirage des probabilités des espèces (le calcul est déterministe dans le cas de la distribution géométrique) puis le tirage d'un nombre d'individus dans une loi multinomiale respectant ces probabilités et l'effectif total.
+
+Les fonction `RACbstick()`, `RAClnorm()`, `RACgeom()` et `RAClseries()` permettent d'inférer à partir d'un vecteur d'abondance les paramètres d'une distribution.
+La distribution correspondant au modèle estimé peut être affichée sur la figure Rang-Abondance (figure \@ref(fig:SADFig)).
+
+Le package *sads* fournit les fonctions classiques de R (densité de probabilité, cumulative, quantile, simulation) pour les distributions utiles en écologie, au-delà de celles présentées ici.
+La distribution de Volkov notamment peut être simulée.
+Les fonctions `fitxxx()` complètent les fonctions `RACxxx()` d'*entropart*.
+
+Le code suivant montre comment ajuster une distribution log-normale aux données de BCI avec *entropart* ou *sads*.
+
+```{r BCIfit1, warning=FALSE}
+# entropart
+library("entropart")
+fit_entropart_lnorm <- RAClnorm(Ns)
+# Affichage des paramètres estimés
+fit_entropart_lnorm$mu  
+fit_entropart_lnorm$sigma  
+# sads
+library("sads")
+# Estimation. Les données sont tronquées: les espèces observées 0 fois ne sont pas comptées.
+fit_sads_lnorm <- fitlnorm(Ns, trunc=0)
+fit_sads_lnorm@fullcoef
+```
+
+L'ajustement du modèle de Volkov peut être comparé à celui d'une distribution log-normale.
+
+```{r BCIfit2, warning=FALSE}
+# Ajustement du modèle de Volkov
+fit_volkov <- fitvolkov(Ns)
+fit_volkov@fullcoef
+# Comparaison graphique des deux modèles. Log-normal en rouge.
+plot(as.AbdVector(Ns), Distribution="lnorm")
+# Volkov en vert
+lines(sort(rvolkov(length(Ns), fit_volkov@fullcoef[1], fit_volkov@fullcoef[2], fit_volkov@fullcoef[3]), decreasing=TRUE), col="green")
+# Comparaison des vraisemblances
+fit_sads_lnorm@min
+fit_volkov@min
+```
+Les paramètres du modèle de communauté locale de la théorie neutre sont $\theta$, le "nombre fondamental" égal à deux fois le nombre d'espèces apparaissant par pas de temps dans la méta-communauté, $m$, le taux de migration, et $J$, la taille de la communauté locale.
+
+Graphiquement, l'ajustement des deux modèles est très proche.
+La différence entre les logarithmes de vraisemblance des deux modèles est d'environ 7 au profit du modèle de Volkov, au prix d'un seul paramètre supplémentaire.
+Selon le critère d'information d'Akaike [AIC: @Akaike1998], l'ajustement est meilleur mais la différence est petite et la complexité du modèle et des calculs pour l'estimer ne se justifient pas en général: le modèle de Volkov est très peu utilisé en pratique.

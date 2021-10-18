@@ -2,7 +2,7 @@
 # (PART) Diversité fonctionnelle et phylogénétique {-}
 \LargeMargins
 
-# Cadre
+# Cadre {#chap-cadrephyfonc}
 
 ```{r, include=FALSE}
 library("tidyverse")

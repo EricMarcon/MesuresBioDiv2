@@ -24,6 +24,7 @@ Imports:
   magrittr,
   ragg,
   rmarkdown,
+  sads,
   sp,
   SPECIES,
   tidyverse,
