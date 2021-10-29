@@ -27,6 +27,7 @@ Imports:
   sads,
   sp,
   SPECIES,
+  SpatDiv,
   tidyverse,
   untb,
   vegan
