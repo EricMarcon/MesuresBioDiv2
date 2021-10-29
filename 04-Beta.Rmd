@@ -2,7 +2,7 @@
 # (PART) Diversité beta et décomposition {-}
   \LargeMargins
 
-# Cadre {#sec:betaCadre}
+# Cadre {#sec-betaCadre}
 
 ```{r, include=FALSE}
 library("tidyverse")
@@ -84,7 +84,7 @@ La dissimilarité de chaque paire de communautés est confrontée à son écart 
 Les deux analyses précédentes peuvent être combinées pour mesurer le remplacement des espèces selon deux gradients emboîtés (T6).
 
 Une variation sur le modèle T2 consiste à le représenter sous la forme d'un modèle de décroissance en fonction de la distance [@Nekola1999], éventuellement pour plusieurs groupes de communautés (figure \@ref(fig:Anderson2011a), T4 et T5). 
-L'indice de Simpson spatialement explicite (Section \@ref(sec:SimpsonSpatial)) entre dans ce cadre bien qu'il soit construit différemment.
+L'indice de Simpson spatialement explicite (Section \@ref(sec-SimpsonSpatial)) entre dans ce cadre bien qu'il soit construit différemment.
 
 Les mesures de variation (figure \@ref(fig:Anderson2011b), V1) concernent la dissimilarité entre plusieurs communautés ou entre chaque communauté et la méta-communauté.
 L'équivalence de ces deux concepts n'est pas évidente: elle a été montrée pour les mesures de dissimilarité entre paires de communautés par @Legendre1999; @Legendre2001; @Legendre2005 et pour l'entropie de Rao par @Pavoine2004 mais reste une question ouverte pour l'entropie HCDT en général.
@@ -98,7 +98,7 @@ La diversité $\beta$ peut être décomposée en niveaux hiérarchiques emboît�
 D'autres analyses sont bien sûr envisageables, comme la comparaison de la forme de la courbe de dissimilarité moyenne entre paires de communautés en fonction de la distance à des patrons connus, issus de simulation de processus à identifier [@Rejou-Mechain2011].
 
 
-## Typologie des mesures  {#sec:betaTypo}
+## Typologie des mesures  {#sec-betaTypo}
 
 Cette approche utilitaire est complétée par le cadre théorique de @Jurasinski2009 qui distinguent plusieurs types de mesures de diversité:
 
@@ -112,7 +112,7 @@ La conciliation des deux approches n'est pas simple.
 @Gregorius2016 montre notamment que les mesures habituelles de diversité proportionnelle ne rendent pas compte correctement de la différentiation.
 
 
-## Décomposition de la diversité {#sec:betaDecomposition}
+## Décomposition de la diversité {#sec-betaDecomposition}
 
 La façon de décomposer la diversité, aboutissant donc à une diversité $\beta$ proportionnelle, ne fait pas consensus.
 Les éléments du débat sont présentés ici.
@@ -133,7 +133,7 @@ Toutes ont en commun:
 L'utilisation des nombres de Hill, la mesure locale de la diversité $\alpha$ et la définition de la diversité $\beta$ comme rapport des diversités $\gamma$ et $\alpha$ permet de définir la "vraie diversité" [@Jost2006; @Jost2007] $\beta$ qui est un nombre de communautés équivalentes (*compositionnal units*) similaire au nombre d'espèces équivalentes des diversités $\alpha$ et $\gamma$. 
 @Tuomisto2011 milite pour que le terme diversité soit réservé à la vraie diversité (homogène à un nombre d'espèces) et que les autres mesures soient appelées différemment: "entropie" de Shannon ou "probabilité" de Gini-Simpson notamment.
 
-### Le débat sur la décomposition {#sec:DebatDecomposition}
+### Le débat sur la décomposition {#sec-DebatDecomposition}
 
 L'objectif est de décomposer la diversité totale, notée $\gamma$ en une composante inter-groupes, notée $\beta$ et une composante intra-groupes notée $\alpha$.
 
@@ -175,7 +175,7 @@ L'*indépendance* signifie que la valeur de $^{q}\!D_{\beta}$ n'est pas contrain
 Cette propriété est souvent considérée comme importante [@Wilson1984; @Gregorius2010], et sera discutée largement ici.
 
 
-### Définitions de la diversité $\alpha$ {#sec:defalpha}
+### Définitions de la diversité $\alpha$ {#sec-defalpha}
 
 La diversité $\alpha$ est calculée pour chaque communauté, et notée $^q_iD_{\alpha}$ (l'entropie correspondante est notée $^{q}_{i}\!H_{\alpha}$). 
 La diversité $\alpha$ de la méta-communauté est intuitivement la moyenne de celle des communautés. 
@@ -581,7 +581,7 @@ $\min{d_{s,2}}$ désigne la dissimilarité entre l'espèce $s$ présente dans la
 $\min{d_{t,1}}$ est la même notation pour l'espèce $t$ de la deuxième communauté et l'espèces la plus proche dans la communauté 1.
 Ces valeurs sont nulles pour toutes les espèces communes.
 
-$\pi_{s(n)}$ désigne la contribution de l'espèce $s$ à l'indice de Hurlbert, déjà vue dans le cadre de l'originalité taxonomique (Section \@ref(sec:OrigTax)).
+$\pi_{s(n)}$ désigne la contribution de l'espèce $s$ à l'indice de Hurlbert, déjà vue dans le cadre de l'originalité taxonomique (Section \@ref(sec-OrigTax)).
 La contribution des espèces rares augmente avec le paramètre $n$ (figure \@ref(fig:HurlbertCFig)).
 Pour chaque communauté, la moyenne des dissimilarités minimales entre chaque espèce et l'autre communauté est calculée, pondérée par la contribution de l'espèce à l'indice de Hurlbert.
 
@@ -628,7 +628,7 @@ Les fréquences des espèces dans les deux communautés sont $\mathbf{p}$ et $\m
 La similarité moyenne dans chaque communauté est $\sum_{s,t}{p_s p_t z_{s,t}}$ et $\sum_{s,t}{q_s q_t z_{s,t}}$. 
 La similarité moyenne des paires d'individus de communautés différentes est $\sum_{s,t}{p_s q_t z_{s,t}}$.
 
-La dissimilarité entre communautés de Rao (Section \@ref(sec:RaoDisc)) peut être normalisée (en la divisant par sa valeur maximale pour qu'elle soit comprise entre 0 et 1) puis transformée en similarité (en prenant son complément à 1) pour obtenir
+La dissimilarité entre communautés de Rao (Section \@ref(sec-RaoDisc)) peut être normalisée (en la divisant par sa valeur maximale pour qu'elle soit comprise entre 0 et 1) puis transformée en similarité (en prenant son complément à 1) pour obtenir
 
 \begin{equation}
   (\#eq:SorensenAbd)
@@ -800,7 +800,7 @@ scatter(pcoaBCI)
 
 
 
-## Tests de significativité {#sec:TestBetaDiff}
+## Tests de significativité {#sec-TestBetaDiff}
 
 ### Test de non-nullité
 
@@ -908,7 +908,7 @@ Calcul sous R: La fonction `BetaEntropy` calcule l'entropie $\beta$ de la méta-
 summary(BetaEntropy (Paracou618.MC, q=1, Correction = "None"))
 ```
 
-### Biais d'estimation {#sec:BiaisShannonBeta}
+### Biais d'estimation {#sec-BiaisShannonBeta}
 
 L'estimateur du taux de couverture de la communauté $i$ est noté $\hat{C}_i$, le taux de couverture total $\hat{C}$. 
 L'estimateur corrigé de $_iH_{\beta}$ est
@@ -963,7 +963,7 @@ sum(Paracou618.MC$Wi * Beta)
 ```
 
 La correction de Zhang et Grabchak réduit beaucoup plus fortement l'estimation que celle de Chao et Shen. 
-Le meilleur estimateur peut être évalué à partir de la différence entre les entropies $\gamma$ et $\alpha$, corrigées par le meilleur estimateur disponible (celui de Chao, Wang et Jost, voir section \@ref(sec:BiaisShannon)):
+Le meilleur estimateur peut être évalué à partir de la différence entre les entropies $\gamma$ et $\alpha$, corrigées par le meilleur estimateur disponible (celui de Chao, Wang et Jost, voir section \@ref(sec-BiaisShannon)):
 
 ```{r bcShannonAlpha}
 # Entropie alpha de chaque communauté de Paracou618.MC
@@ -1114,7 +1114,7 @@ $G_{s,t}={D_{s,t}}/{H_t}$ est la différenciation relative.
 L'entropie $E_{\beta}$ calculée de cette manière est égale à $^{2}\!H_{\beta}$ calculée à l'équation \@ref(eq:Hqbeta) pour le cas général, mais la contribution de chaque communauté est différente: la décomposition de la variance est une façon alternative de décomposer l'entropie, valable uniquement pour l'entropie de Simpson.
 
 Cette décomposition est remise en cause par Jost [@Jost2007; -@Jost2008] qui a généré le débat [@Heller2009; @Ryman2009; @Jost2009a; @Whitlock2011]. 
-$E_{\gamma}$ étant inférieure ou égale à 1, $E_{\beta}$ n'est pas indépendante de $E_{\alpha}$: seule la décomposition multiplicative permet l'indépendance, et Jost propose d'utiliser une transformation de $^{2}\!D_{\beta}$ comme mesure de différenciation (voir section \@ref(sec:Chevauchement)). @Gregorius2014 montre que ce problème n'est pas limité à l'entropie de Simpson mais s'applique à toutes les entropies HCDT d'ordre supérieur à 1.
+$E_{\gamma}$ étant inférieure ou égale à 1, $E_{\beta}$ n'est pas indépendante de $E_{\alpha}$: seule la décomposition multiplicative permet l'indépendance, et Jost propose d'utiliser une transformation de $^{2}\!D_{\beta}$ comme mesure de différenciation (voir section \@ref(sec-Chevauchement)). @Gregorius2014 montre que ce problème n'est pas limité à l'entropie de Simpson mais s'applique à toutes les entropies HCDT d'ordre supérieur à 1.
 
 Jost postule que la diversité $\beta$ de Simpson a la même relation à $E_{\beta}$ que les diversités $\alpha$ et $\gamma$,
 
@@ -1155,9 +1155,9 @@ knitr::kable(Decomposition, caption="(ref:Decomposition)", longtable = FALSE, bo
 
 Le nombre équivalent de communautés a une forme légèrement différente d'un nombre de Hill (tableau \@ref(tab:Decomposition)).
 
-## Décomposition de l'indice de Rao {#sec:RaoDisc}
+## Décomposition de l'indice de Rao {#sec-RaoDisc}
 
-Les notations sont celles de la présentation de l'indice de Rao, section \@ref(sec:Rao).
+Les notations sont celles de la présentation de l'indice de Rao, section \@ref(sec-Rao).
 
 La diversité de la méta-communauté, peut être décomposée en une somme (pondérée) de diversités intra et une diversité inter [@Pavoine2004] en définissant une dissimilarité entre les communautés $i$ et $j$:
 
@@ -1335,7 +1335,7 @@ L'estimation de la diversité présente les difficultés classiques dues au biai
 
 La diversité $\beta$ ne doit donc pas être normalisée systématiquement, mais seulement dans le premier cas.
 
-### L'indice de chevauchement $C_{qN}$ {#sec:Chevauchement}
+### L'indice de chevauchement $C_{qN}$ {#sec-Chevauchement}
 
 Plutôt qu'une simple normalisation, @Chao2008 définissent un indice de chevauchement, c'est-à-dire la proportion d'espèces partagées en moyenne par une communauté. 
 Si $N$ communautés (le nombre de communautés est noté $N$ ici et non $I$ pour conserver le nom de l'indice établi dans la littérature) de mêmes diversités $\alpha$ et $\gamma$ que les données, contenaient chacune $S$ espèces équifréquentes, dont $A$ seraient communes à toutes les communautés et les autres représentées dans une seule, $A/S$ serait cet indice de chevauchement.
@@ -1527,7 +1527,7 @@ Le partitionnement de la diversité fonctionnelle de la méta-communauté `Parac
 La diversité $\beta$ calculée entre plusieurs échantillons successifs d'une même communauté n'est pas nulle: par simple fluctuation des effectifs due au hasard, les distributions des échantillons ne sont pas identiques.
 Des tests statistiques ont été développés pour rejeter cette hypothèse nulle à partir de données d'inventaires.
 
-Ce chapitre ne traite pas de la diversité de différentiation: les tests correspondants ont été présentés en section \@ref(sec:TestBetaDiff).
+Ce chapitre ne traite pas de la diversité de différentiation: les tests correspondants ont été présentés en section \@ref(sec-TestBetaDiff).
 
 ## Test de non-nullité
 
@@ -1589,14 +1589,14 @@ Sa valeur observée est comparée à la distribution de sa valeur simulée en re
 
 
 
-# Autres approches {#sec:betaAutres}
+# Autres approches {#sec-betaAutres}
 
 Des définitions différentes de la diversité $\beta$ ou du partitionnement de la diversité sont présentées ici parce qu'elles sont importantes dans la littérature même si elles n'entrent pas dans le cadre précédent.
 
 
 ## Le partitionnement de la diversité selon Pélissier et Couteron
 
-### Cadre {#sec:PCcadre}
+### Cadre {#sec-PCcadre}
 
 (ref:Couteron) Tableau d'occurrence des espèces.
 ```{r Couteron, echo=FALSE, warning=FALSE}
@@ -1638,7 +1638,7 @@ Si le poids $w_s$ vaut toujours 1, $\mathit{TSS}/{n}$ est l'indice de Simpson.
 Si $w_s={\ln{\left(1/{n_{s\cdot}}\right)}/{\left(1-n_{s\cdot}\right)}}$, on obtient l'indice de Shannon, et $w_s={1}/{w_{s\cdot}}$ donne le nombre d'espèces moins 1.
 
 
-### Décomposition {#sec:PCdecomposition}
+### Décomposition {#sec-PCdecomposition}
 
 L'intérêt de la méthode est de permettre l'utilisation de modèles linéaires et des outils informatiques associés classiques pour décomposer la diversité de différentes manières. 
 Nous nous intéresserons ici à la décomposition de la diversité totale $\gamma$ en diversités $\alpha$ et $\beta$. 

@@ -2,7 +2,7 @@
 # (PART) Diversité jointe, diversité structurelle {-}
   \LargeMargins
 
-# Cadre {#sec:jointeCadre}
+# Cadre {#sec-jointeCadre}
 
 ```{r, include=FALSE}
 library("tidyverse")
@@ -59,7 +59,7 @@ Elles sont présentées ici après leur propriété mathématique fondamentale: 
 
 ## Récursivité de l'entropie
 
-### Entropie de Shannon {#sec:jointeShannon}
+### Entropie de Shannon {#sec-jointeShannon}
 
 L'entropie de Shannon (et ses multiples) sont les seules fonctions $H$ telles que 
 
@@ -78,7 +78,7 @@ et
 Cette propriété est appelée récursivité [@Bacaro2013]. 
 Le premier terme de chaque équation est la différence entre l'entropie de la distribution complète ($p_{s,i}$), c'est-à-dire la diversité jointe de Gregorius qui sera appelée plutôt entropie jointe ici, et celle de la distribution marginale (l'entropie de la distribution des classes ou celle des espèces). 
 Une démonstration rigoureuse est fournie par @Baez2011 d'après @Faddeev1956, mais il s'agit d'un résultat assez répandu dans la littérature, sous des formes diverses[@Aczel1975; @Renyi1961; @Bourguignon1979]. 
-$H(\{p_{s,i}\})-H(\{p_i\})-H(\{p_s\})$ est l'information mutuelle, vue en section \@ref(sec:BiaisShannonBeta).
+$H(\{p_{s,i}\})-H(\{p_i\})-H(\{p_s\})$ est l'information mutuelle, vue en section \@ref(sec-BiaisShannonBeta).
 
 Le terme de droite de l'équation \@ref(eq:Recursivite1) est l'entropie $\alpha$ de l'ensemble des classes si on les pondère par $p_i$ car ${p_{s,i}}/{p_i}=p_{s|i}$. 
 Par ailleurs, $H(\{p_s\})$ est l'entropie $\gamma$. 
@@ -93,7 +93,7 @@ Si les colonnes sont les classes de diamètre par exemple, les informations four
 * La diversité jointe est le nombre effectif de catégories (espèces $\times$ classes de diamètre) de la communauté.
 
 
-### Entropie HCDT {#sec:jointeHCDT}
+### Entropie HCDT {#sec-jointeHCDT}
 
 @Baez2011 généralisent la récursivité à l'entropie HCDT et montrent que
 
@@ -176,7 +176,7 @@ La décomposition de la diversité jointe [@Gregorius2009a; @Gregorius2010] comp
 On se place dans le cadre d'un échantillonnage global de la méta-communauté, dans lequel le poids de chaque communauté est égal à la probabilité qu'un individu lui appartienne, et non un choix arbitraire.
 
 
-## Définitions {#sec:Definitions}
+## Définitions {#sec-Definitions}
 
 La diversité $\beta$ mesure la divergence entre la distribution moyenne des espèces dans les communautés et leur distribution dans la méta-communauté. 
 Gregorius la qualifie de "diversité de répartition" (*apportionment*) [@Gregorius2014]. 

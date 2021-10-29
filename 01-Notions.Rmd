@@ -202,7 +202,7 @@ En d'autres termes, c'est la diversité d'une communauté dont l'inventaire disp
 Evaluer la diversité asymptotique nécessite d'utiliser des estimateurs de diversité, dont la précision dépend de l'exhaustivité de l'échantillonnage.
 La diversité peut aussi être estimée pour un effort donné: un hectare de forêt ou 5000 arbres par exemple, ou encore un taux de couverture choisi, qui décrit mieux la qualité de l'échantillonnage.
 
-## Taux de couverture {#sec:Couverture}
+## Taux de couverture {#sec-Couverture}
 
 ### Formule des fréquences de Good-Turing
 
@@ -227,7 +227,7 @@ Alors, $\alpha_\nu$ est estimé par
   \hat{\alpha}_\nu = \frac{\left(\nu+1 \right) s^{n}_{\nu+1}}{\left(n-\nu \right) s^{n}_{\nu} + \left(\nu+1 \right) s^{n}_{\nu+1}}.
 \end{equation}
 
-Ce nouvel estimateur est à la base de l'estimateur de Chao amélioré et des estimateurs d'entropie de Chao et Jost (sections \@ref(sec:BiaisShannon) et \@ref(sec:BiaisHCDT)).
+Ce nouvel estimateur est à la base de l'estimateur de Chao amélioré et des estimateurs d'entropie de Chao et Jost (sections \@ref(sec-BiaisShannon) et \@ref(sec-BiaisHCDT)).
 
 
 ### Taux de couverture et déficit de couverture
@@ -282,7 +282,7 @@ Où $t^{n}_{1-\alpha/2}$ est le quantile d'une loi de Student à $n$ degrés de 
 
 
 Un autre estimateur est utilisé dans le logiciel SPADE [@Chao2010a] et son portage sous R, le package *spadeR* [@Chao2016c].
-Il est la base des estimateurs d'entropie de Chao et Jost (section \@ref(sec:BiaisHCDT)).
+Il est la base des estimateurs d'entropie de Chao et Jost (section \@ref(sec-BiaisHCDT)).
 L'estimation de l'équation \@ref(eq:CsansBiais) donne la relation
 \begin{equation}
   (\#eq:hatC2)
@@ -334,7 +334,7 @@ Le cas des populations de taille finie est traité par @Chao2012 et @Hwang2014.
 La complétude de l'échantillonnage est la proportion du nombre d'espèces observées: $s^{n}_{\ne 0}/{S}$.
 Elle compte simplement les espèces et ne doit pas être confondue avec la couverture qui somme leurs probabilités: le taux de complétude est toujours très inférieur au taux de couverture parce que les espèces non échantillonnées sont les plus rares.
 
-La complétude du même échantillon d'arbres de forêt tropicale que dans l'exemple précédent peut être estimée en divisant le nombre d'espèces observées par le nombre d'espèces estimées (voir section \@ref(sec:Richesse)).
+La complétude du même échantillon d'arbres de forêt tropicale que dans l'exemple précédent peut être estimée en divisant le nombre d'espèces observées par le nombre d'espèces estimées (voir section \@ref(sec-Richesse)).
 À BCI: 
 
 ```{r CompletenessBCI}

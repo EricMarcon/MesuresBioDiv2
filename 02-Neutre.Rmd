@@ -32,7 +32,7 @@ Elles sont sujettes à des biais d'estimation [@Mouillot1999], notamment (mais p
 Au chapitre suivant, l'entropie HCDT permettra d'unifier ces mesures et les nombres de Hill, et de leur donner un sens intuitif.
 
 
-## Richesse spécifique {#sec:Richesse}
+## Richesse spécifique {#sec-Richesse}
 
 La richesse est tout simplement le nombre d'espèces présentes dans le taxocène considéré.
 C'est la mesure conceptuellement la plus simple mais pratiquement la plus délicate dans des systèmes très riches comme les forêts tropicales: même avec des efforts d'inventaire considérables, il n'est en général pas possible de relever toutes les espèces rares, ce qui implique de recourir à des modèles mathématiques pour en estimer le nombre.
@@ -443,11 +443,11 @@ length(Ps) + sum((1-Ps)^N)
 ```
 
 
-#### Choix de l'estimateur {#sec:ChoixEstimateur}
+#### Choix de l'estimateur {#sec-ChoixEstimateur}
 
 Des tests poussés ont été menés par @Brose2003 pour permettre le choix du meilleur estimateur de la richesse en fonction de la complétude de l'échantillonnage $s^{n}_{\ne 0}/{S}$. 
 Les auteurs appellent cette proportion couverture (*coverage*). 
-Le terme *completeness* a été proposé par @Beck2010 pour éviter la confusion avec le taux de couverture défini par Good (vu en section \@ref(sec:Couverture)). 
+Le terme *completeness* a été proposé par @Beck2010 pour éviter la confusion avec le taux de couverture défini par Good (vu en section \@ref(sec-Couverture)). 
 La complétude est inférieure à la couverture: toutes les espèces ont le même poids alors que les espèces manquantes sont plus rares et pénalisent moins le taux de couverture.
 
 (ref:Brose2003) Arbre de décision du meilleur estimateur du nombre d'espèces.
@@ -462,7 +462,7 @@ Le choix dépend principalement de la complétude (*coverage* sur la figure).
 Une première estimation est nécessaire par plusieurs estimateurs. 
 Si les résultats sont cohérents, choisir un estimateur jackknife d'ordre d'autant plus faible que la complétude est grande. 
 Au-delà de 96\%, le nombre d'espèces observé est plus performant parce que les jackknifes surestiment $S$. 
-S'ils sont incohérents (intervalle des estimations supérieur à 50\% de leur moyenne), le critère majeur est l'équitabilité (voir section \@ref(sec:Equitabilite)). 
+S'ils sont incohérents (intervalle des estimations supérieur à 50\% de leur moyenne), le critère majeur est l'équitabilité (voir section \@ref(sec-Equitabilite)). 
 Si elle est faible (de l'ordre de 0,5-0,6), les estimateurs jackknife 2 à 4 sont performants, l'ordre diminuant avec l'intensité d'échantillonnage (forte: 10\%, faible: 0,5\% de la communauté). 
 Pour une forte équitabilité (0,8-0,9), on préférera jackknife 1 ou 2.
 
@@ -488,7 +488,7 @@ Quand le seuil de 0,6 est dépassé, la valeur de l'estimateur de Chao devient s
 Ce seuil est cohérent avec les règles de @Brose2003.
 
 
-#### Prédiction de la richesse d'un nouvel échantillon {#sec:Extrapol}
+#### Prédiction de la richesse d'un nouvel échantillon {#sec-Extrapol}
 
 La prédiction du nombre d'espèces $\hat{S'}$ découvert dans une nouvelle placette d'un habitat dans lequel on a déjà échantillonné est une question importante, par exemple pour évaluer le nombre d'espèces préservées dans le cadre d'une mise en réserve, ou évaluer le nombre d'espèces perdues en réduisant la surface d'une forêt.
 
@@ -528,7 +528,7 @@ ggplot(data.frame(x = c(1, 10000)), aes(x)) +
   labs(x = "n'", y = "S'")
 ```
 
-La question de l'extrapolation de la richesse est traitée plus en détail dans les sections \@ref(sec:RarExtrapol) et \@ref(sec:Extrapolation).
+La question de l'extrapolation de la richesse est traitée plus en détail dans les sections \@ref(sec-RarExtrapol) et \@ref(sec-Extrapolation).
 
 
 ### Inférence du nombre d'espèces à partir de la SAD
@@ -602,7 +602,7 @@ pcg(DistNs.SPECIES)
 ```
 
 
-### Inférence du nombre d'espèces à partir de courbes d'accumulation {#sec:RichesseSAC}
+### Inférence du nombre d'espèces à partir de courbes d'accumulation {#sec-RichesseSAC}
 
 Cette approche consiste à extrapoler la courbe d'accumulation observée.
 
@@ -846,7 +846,7 @@ Tout d'abord, la probabilité que deux individus soient de la même espèce, sou
 \end{equation}
 
 L'indice de Simpson est parfois considéré comme une mesure d'équitabilité [@Olszewski2004] mais il varie avec la richesse: cette approche est donc erronnée.
-@Hurlbert1971 l'a divisé par sa valeur maximale $1-{1}/{S}$ pour obtenir une mesure d'équitabilité valide généralisée plus tard par @Mendes2008, voir section \@ref(sec:Mendes).
+@Hurlbert1971 l'a divisé par sa valeur maximale $1-{1}/{S}$ pour obtenir une mesure d'équitabilité valide généralisée plus tard par @Mendes2008, voir section \@ref(sec-Mendes).
 Le nombre d'espèces doit être estimé par les méthodes présentées plus haut, pour ne pas dépendre de la taille de l'échantillon.
 
 
@@ -984,7 +984,7 @@ digamma(fisher.alpha(colSums(BCI))+1)-digamma(1)
 La sous-estimation est assez sévère sur cet exemple.
 
 
-### Estimation {#sec:BiaisShannon}
+### Estimation {#sec-BiaisShannon}
 
 @Basharin1959 a montré que l'estimateur de l'indice de Shannon était biaisé parce que des espèces ne sont pas échantillonnées. 
 Si $S$ est le nombre d'espèces réel et $n$ le nombre d'individus échantillonnés, le biais est
@@ -1017,7 +1017,7 @@ Multiplier les fréquences observées par le taux de couverture permet d'obtenir
 Le terme au dénominateur est la correction de @Horvitz1952: chaque terme de la somme est divisé par la probabilité d'observer au moins une fois l'espèce correspondante. 
 Il tend vers 1 quand la taille de l'échantillon augmente.
 
-@Beck2010 montrent que la correction du biais est efficace, même à des niveaux de complétude de l'échantillonnage (voir section \@ref(sec:ChoixEstimateur)) très faibles. @Vu2007 étudient la vitesse de convergence de l'estimateur. 
+@Beck2010 montrent que la correction du biais est efficace, même à des niveaux de complétude de l'échantillonnage (voir section \@ref(sec-ChoixEstimateur)) très faibles. @Vu2007 étudient la vitesse de convergence de l'estimateur. 
 
 @Zhang2012 définit l'indice de Simpson généralisé:
 
@@ -1202,7 +1202,7 @@ Appliqué à des données de biodiversité aquatique, l'estimateur de James-Stei
 
 
 
-## Indice de Hurlbert {#sec:Hurlbert}
+## Indice de Hurlbert {#sec-Hurlbert}
 
 ### Définition
 
@@ -1475,7 +1475,7 @@ Un nombre équivalent d'espèces existe pour tous ces indices, il est toujours �
 \end{equation}
 
 D'autres entropies ont été utlisées, avec plus ou moins de succès.
-Par exemple, @Ricotta2003c proposent d'utiliser la fonction d'information $I(p_s)=-\ln(k_s)$ où $k_s$ est la dissimilarité totale de l'espèce $s$ avec les autres (par exemple, la somme des distances aux autres espèces dans un arbre phylogénétique, voir section \@ref(sec:Dphylo)), normalisée pour que $\sum_s{k_s}=1$.
+Par exemple, @Ricotta2003c proposent d'utiliser la fonction d'information $I(p_s)=-\ln(k_s)$ où $k_s$ est la dissimilarité totale de l'espèce $s$ avec les autres (par exemple, la somme des distances aux autres espèces dans un arbre phylogénétique, voir section \@ref(sec-Dphylo)), normalisée pour que $\sum_s{k_s}=1$.
 Ainsi, les espèces les plus originales apportent peu d'information, ce qui n'est pas très intuitif.
 Les auteurs montrent que leur mesure est la somme de l'entropie de Shannon et de la divergence de Kullback-Leibler entre les probabilités et les dissimilarités des espèces.
 @Ricotta2006b ont défini plus tard une entropie augmentant avec l'originalité de chaque espèce, présentée au chapitre \@ref(chap-LeinsterCobbold).
@@ -1664,7 +1664,7 @@ Diversity(Ps, q)
 
 Les propriétés mathématiques de la diversité ne sont pas celles de l'entropie. 
 L'entropie doit être une fonction concave des probabilités comme on l'a vu plus haut, mais pas la diversité (un exemple de confusion est fourni par @Gadagkar1989, qui reproche à $^{2}\!D$ de ne pas être concave). 
-L'entropie est une moyenne pondérée par les probabilités de la fonction d'information, c'est donc une fonction linéaire des probabilités, propriété importante pour définir l'entropie $\alpha$ (section \@ref(sec:defalpha)) comme la moyenne des entropies de plusieurs communautés, ou l'entropie phylogénétique (chapitre \@ref(chap-Phyloentropie)) comme la moyenne de l'entropie sur les périodes d'un arbre. 
+L'entropie est une moyenne pondérée par les probabilités de la fonction d'information, c'est donc une fonction linéaire des probabilités, propriété importante pour définir l'entropie $\alpha$ (section \@ref(sec-defalpha)) comme la moyenne des entropies de plusieurs communautés, ou l'entropie phylogénétique (chapitre \@ref(chap-Phyloentropie)) comme la moyenne de l'entropie sur les périodes d'un arbre. 
 La diversité n'est pas une fonction linéaire des probabilités: la diversité moyenne n'est en général pas la moyenne des diversités.
 
 
@@ -1710,7 +1710,7 @@ q.seq <- seq(0, 2, .1)
 @Pallmann2012 ont développé un test statistique pour comparer la diversité de deux communautés pour plusieurs valeurs de $q$ simultanément.
 
 @Liu2006 nomment *séparables* des communautés dont les profils ne se croisent pas.
-Ils montrent que des communautés peuvent être séparables en selon un profil de diversité de $^{q}\!D$ sans l'être forcément selon un profil de diversité de Hurlbert (section \@ref(sec:Hurlbert)), et inversement.
+Ils montrent que des communautés peuvent être séparables en selon un profil de diversité de $^{q}\!D$ sans l'être forcément selon un profil de diversité de Hurlbert (section \@ref(sec-Hurlbert)), et inversement.
 Ils montrent que les communautés séparables selon un troisième type de profil, celui de la queue de distribution [@Patil1982], le sont dans tous les cas.
 Le profil de la queue de distribution est construit en classant les espèces de la plus fréquente à la plus rare et en traçant la probabilité qu'un individu appartienne à une espèce plus rare que l'espèce en abscisse (figure \@ref(fig:ProfilQueueFig)).
 
@@ -1787,7 +1787,7 @@ Diversity(Paracou618.MC$Ns, q=1, Correction="ZhangGrabchak")
 ```
 
 
-### Chao et Jost {#sec:BiaisHCDT}
+### Chao et Jost {#sec-BiaisHCDT}
 
 @Chao2015 complètent cet estimateur par une estimation du biais résiduel, selon la même démarche que pour l'entropie de Shannon [@Chao2013].
 $h_q$ s'écrit sous la forme de la somme infinie des entropies de Simpson généralisées: $h_q = \sum_{k=0}^{\infty}{\binom{q-1}{k}(-1)^k\zeta_{1,k}}$.
@@ -1809,7 +1809,7 @@ La formule du nombre de combinaisons est généralisée aux valeurs de $q-1$ non
 Cet estimateur est le plus performant. Quand $q \to 1$, il tend vers l'estimateur de l'entropie de Shannon de @Chao2013, équation \@ref(eq:Chao2013).
 Quand $q=0$, l'estimateur se réduit à Chao1. Pour toutes les valeurs entières de $q$ supérieures ou égales à 2, il se réduit à l'estimateur \@ref(eq:HqZhang), identique à l'estimateur de Lande pour $q=2$, et est sans biais.
 
-L'estimateur est obtenu à partir de celui du taux de couverture extrapolé (section \@ref(sec:Couverture)) fourni par @Chao2012b, annexe E, sans le détail de la démonstration présenté ici.
+L'estimateur est obtenu à partir de celui du taux de couverture extrapolé (section \@ref(sec-Couverture)) fourni par @Chao2012b, annexe E, sans le détail de la démonstration présenté ici.
 L'espérance conditionnelle du taux de couverture dans un échantillon de taille $n+m$ compte-tenu des effectifs observés, notés $\{n_s\}$, est
 
 \begin{equation}
@@ -2014,7 +2014,7 @@ Une approche alternative consiste à modéliser la probabilité d'observation co
 Ces méthodes ont l'avantage de fournir une distribution de probabilité des paramètres des modèles, et donc de la diversité qui est calculée comme une quantité dérivée. Leur faiblesse est qu'ils dépendent de la loi choisie. Une revue complète est fournie par @Iknayan2014
 
 
-### Raréfaction et extrapolation {#sec:RarExtrapol}
+### Raréfaction et extrapolation {#sec-RarExtrapol}
 
 @Chao2014 étendent l'approche de @Gotelli2001 aux nombres de Hill et fournissent les méthodes nécessaires au calcul de courbes de raréfaction et d'extrapolation de l'estimateur de $^{q}\!D$ en fonction de la taille de l'échantillon ou du taux de couverture.
 
@@ -2087,7 +2087,7 @@ Elle généralise donc l'indice de @Theil1967:
 \end{equation}
 
 
-### L'entropie de Simpson généralisée {#sec:SimpsonG}
+### L'entropie de Simpson généralisée {#sec-SimpsonG}
 
 L'entropie de Simpson généralisée a été introduite dans une classe d'indices plus générale \@ref(eq:zeta) par @Zhang2010 et étudiée en détail par @Zhang2014.
 L'entropie d'ordre $r>0$ est
@@ -2250,7 +2250,7 @@ Il ne s'agit pas d'une décomposition de la diversité au sens classique du term
 
 
 
-# Équitabilité {#sec:Equitabilite}
+# Équitabilité {#sec-Equitabilite}
 
 ```{block, type='Summary'}
   L'équitabilité mesure l'écart entre la distribution observée et une distribution uniforme.
@@ -2395,7 +2395,7 @@ $J$ est compris entre 0 (une seule espèce a une probabilité de 1) et 1 (toutes
 
 ## Généralisation de l'indice de Pielou
 
-### Mendes et al. {#sec:Mendes}
+### Mendes et al. {#sec-Mendes}
 
 @Mendes2008 généralisent l'indice de Pielou en remplaçant l'indice de Shannon par l'entropie de Tsallis. 
 Ils définissent

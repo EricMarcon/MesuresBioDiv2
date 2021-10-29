@@ -2,7 +2,7 @@
 # (PART) Conclusion {-}
   \LargeMargins
 
-# Synthèse {#sec:conclusionSynthese}
+# Synthèse {#sec-conclusionSynthese}
 
 ```{r, include=FALSE}
 library("tidyverse")

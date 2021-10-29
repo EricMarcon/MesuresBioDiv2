@@ -2,7 +2,7 @@
 # (PART) Diversité spatialement explicite {-}
   \LargeMargins
 
-# Cadre {#sec:spatialCadre}
+# Cadre {#sec-spatialCadre}
 
 ```{r, include=FALSE}
 library("tidyverse")
@@ -18,7 +18,7 @@ Il est tentant dans ce cadre de chercher un indicateur de la richesse indépenda
 L'approche la plus simple consiste à normaliser le nombre d'espèces observées.
 @Menhinick1964 a proposé l'indice ${S^{n}}/{\sqrt{n}}$ à peu près constant dans des communautés d'insectes.
 L'indice de @Margalef1958a est ${S^{n} -1}/{\ln{n}}$, adapté à une communauté de plancton.
-Les deux supposent implicitement une forme de la courbe d'accumulation des espèces:  dans le premier cas, proportionnelle à la racine du nombre d'individus, dans le second à son logarithme (comme dans la relation de @Gleason1922, page \@ref(sec:Gleason)).
+Les deux supposent implicitement une forme de la courbe d'accumulation des espèces:  dans le premier cas, proportionnelle à la racine du nombre d'individus, dans le second à son logarithme (comme dans la relation de @Gleason1922, page \@ref(sec-Gleason)).
 Aucune de ces normalisations ne fonctionne en général [@Magurran2004, p. 77].
 L'indice de Fisher [@Fisher1943], construit à partir d'un modèle explicite de distribution des probabilités des espèces, a nettement plus de succès.
 Il est présenté au chapitre suivant.
@@ -264,12 +264,12 @@ ggplot(data.frame(x = log(1:ncol(Inventaire)), y = nEspeces)) +
 ```
 
 
-Les propriétés des courbes d'accumulation ont été largement étudiées dans la littérature, notamment pour prédire la richesse spécifique (section \@ref(sec:RichesseSAC)).
+Les propriétés des courbes d'accumulation ont été largement étudiées dans la littérature, notamment pour prédire la richesse spécifique (section \@ref(sec-RichesseSAC)).
 
 L'influence de la structure spatiale est considérable mais souvent négligée parce que difficile à prendre en compte.
 Quelques méthodes sont pourtant applicables.
 
-## Courbes d'accumulation {#sec:SAC}
+## Courbes d'accumulation {#sec-SAC}
 
 On suppose que la communauté locale est de taille fixe et contient donc un nombre fixe d'espèces, et que leur découverte progressive aboutira à une asymptote de la SAC.
 
@@ -314,7 +314,7 @@ Elle est toutefois toujours présentée comme une courbe lissée passant par les
 ```
 
 Une difficulté supplémentaire consiste à prendre en compte les espèces non échantillonnées en appliquant des techniques statistiques pour réduire le biais qu'elles induisent [@Colwell2012].
-Dans ce but, la SAC théorique peut être construite [@Chao2013] comme la somme des entropies de Simpson généralisées [@Zhang2010], présentées en section \@ref(sec:SimpsonG).
+Dans ce but, la SAC théorique peut être construite [@Chao2013] comme la somme des entropies de Simpson généralisées [@Zhang2010], présentées en section \@ref(sec-SimpsonG).
 
 La courbe obtenue (figure \@ref(fig:SACzetaFig)) est la même que par raréfaction, sans les problèmes d'estimation.
 Son intervalle de confiance n'est pas représenté: l'estimation est sans biais et a une variance très petite; d'autre part, la variabilité de l'échantillonnage prise en compte dans la figure \@ref(fig:specaccumFig) est ignorée ici. La fonction `GenSimp.z` est fournie par le package *EntropyEstimation* [@Cao2014].
@@ -334,9 +334,9 @@ ggplot(data.frame(x = 0:(sum(Ns)-1),
 ```
 
 
-## Extrapolation {#sec:Extrapolation}
+## Extrapolation {#sec-Extrapolation}
 
-L'extrapolation de la SAC est un cas particulier de celle de la diversité, déjà vue en section \@ref(sec:RarExtrapol).
+L'extrapolation de la SAC est un cas particulier de celle de la diversité, déjà vue en section \@ref(sec-RarExtrapol).
 
 @Beguinot2015 a une approche différente.
 Il considère la SAC comme une fonction continue et infiniment dérivable de la taille de l'échantillon.
@@ -365,7 +365,7 @@ La somme est infinie mais ses termes décroissent rapidement.
 Le nombre de termes à prendre en compte est d'autant plus grand que $\frac{\delta n}{n}$, le niveau d'extrapolation, est grand.
 L'auteur conseille de ne pas pousser l'extrapolation au delà du double de $n$.
 
-Cette méthode est comparée à l'extrapolation de la diversité d'ordre 0 (section \@ref(sec:RarExtrapol)) et à l'estimateur de @Shen2003 (section \@ref(sec:Extrapol)) dans l'illustration suivante.
+Cette méthode est comparée à l'extrapolation de la diversité d'ordre 0 (section \@ref(sec-RarExtrapol)) et à l'estimateur de @Shen2003 (section \@ref(sec-Extrapol)) dans l'illustration suivante.
 
 Une communauté théorique log-normale de 300 espèces est créée.
 Des inventaires de 1000 individus sont simulés et les trois méthodes d'extrapolation de la richesse spécifique sont appliquées pour estimer la richesse d'un échantillon de 1800 individus.
@@ -615,7 +615,7 @@ Une revue historique des théories sur la forme de la SAR est fournie par @McGui
 
 
 
-## La relation d'Arrhenius {#sec:Arrhenius}
+## La relation d'Arrhenius {#sec-Arrhenius}
 
 (ref:Williamson2001) Logarithme du nombre d'espèces en fonction du logarithme de la surface échantillonnée. Les données sont des relevés d'espèces natives de plantes vasculaires sur 104 sites de taille variable à travers le monde. Les symboles correspondent à divers types d'habitats (îles ou continent, réserves ou non) sans intérêt ici. La valeur de $z$ est 0,27.
 ```{r Williamson2001, fig.cap="(ref:Williamson2001)", echo=FALSE}
@@ -711,7 +711,7 @@ Les auteurs ont établi que les paramètres $k$ et $z$ étaient très proches po
 La figure \@ref(fig:Plotkin2000b) compare les performances de cette méthode (*persistence method*), de la loi de puissance 0,25 (loi log-normale) et du modèle de Fisher.
 
 
-## Le modèle de Gleason {#sec:Gleason}
+## Le modèle de Gleason {#sec-Gleason}
 
 @Gleason1922 réfute le travail d'Arrhenius [-@Arrhenius1921] à partir de l'argument selon lequel le nombre d'espèces doit se stabiliser quand la surface augmente, au risque de prévoir une richesse beaucoup trop élevée pour de grandes surfaces. 
 Les travaux ultérieurs lui donneront tort [@Williamson2001].
@@ -759,7 +759,7 @@ La courbe est tracée pour les valeurs de $p-i$ entre 0 et 1.
 La fonction `specaccum` de *vegan* permet de calculer une SAC selon ce modèle.
 
 
-## Synthèse {#sec:spatialSynthese}
+## Synthèse {#sec-spatialSynthese}
 
 La relation d'Arrhenius est plus robuste que celle de Gleason, selon les résultats empiriques et des considérations théoriques [@GarciaMartin2006], y compris de thermodynamique [@Wurtz2008].
 
@@ -856,7 +856,7 @@ La diversité $\beta$ de différentiation mesure à quel point deux communautés
 Elle peut être reliée à la distance entre les communautés pour définir une diversité $\beta$ spatialement explicite.
 
 
-## L'indice de Simpson spatialement explicite {#sec:SimpsonSpatial}
+## L'indice de Simpson spatialement explicite {#sec-SimpsonSpatial}
 
 @Chave2002 écrivent un modèle neutre de dispersion des espèces forestières, appliqué à l'échelle de l'Amazonie occidentale[@Condit2002]. 
 Ils définissent dans ce cadre la fonction $F(r)$ égale à la probabilité que deux individus situés à distance $r$ l'un de l'autre soient de la même espèce, c'est-a-dire l'indice de concentration de Simpson \@ref(eq:SimpsonD), appliqué à des paires d'individus distants. 
@@ -865,7 +865,7 @@ En pratique il est estimé à partir d'individus situés dans des parcelles dist
 
 De la même façon que l'indice de Simpson est généralisable à l'indice de Rao, $\beta_s(r)$ est généralisable à $\beta_{phy}(r)$, l'indice de Rao spatialement explicite, égal à la divergence moyenne entre deux individus situés à distance $r$.
 
-Les deux mesures sont des entropies $\beta$, au sens où ce sont des diversités de différenciation [@Jurasinski2009], voir section \@ref(sec:DebatDecomposition), qui mesurent à quel point des unités spatiales distantes de $r$ sont différentes. 
+Les deux mesures sont des entropies $\beta$, au sens où ce sont des diversités de différenciation [@Jurasinski2009], voir section \@ref(sec-DebatDecomposition), qui mesurent à quel point des unités spatiales distantes de $r$ sont différentes. 
 Ce ne sont pas des mesures de diversité proportionnelle parce que ce ne sont pas les différences entre les entropies $\gamma$ (de la méta-communauté composée de toutes les parcelles) et $\alpha$ (la moyenne des entropies des parcelles). 
 L'avantage de ces mesures est d'être facilement interprétables, estimables sans biais (en tant qu'entropies de Simpson ou de Rao), et indépendantes de la diversité $\alpha$.
 

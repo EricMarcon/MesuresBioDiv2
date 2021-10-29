@@ -24,7 +24,7 @@ Intuitivement, l'idée qu'une communauté de $S$ espèces toutes de genres diff�
 Il s'agit donc de caractériser la différence entre deux classes d'objets, puis de construire des mesures de diversité en rapport [@Pielou1975; @May1990a; @Cousins1991].
 En écologie, ces différences sont fonctionnelles ou phylogénétiques, définissant la diversité fonctionnelle [@Tilman1997] ou la diversité phylogénétique (*phylodiversity*) [@Webb2006].
 
-Les premières propositions de ce type d'indices sont dues à @Rao1982 (voir section \@ref(sec:Rao)) puis, avec nettement moins de succès, @Vane-Wright1991 et @Warwick1995. 
+Les premières propositions de ce type d'indices sont dues à @Rao1982 (voir section \@ref(sec-Rao)) puis, avec nettement moins de succès, @Vane-Wright1991 et @Warwick1995. 
 @Chave2007 montrent que la diversité neutre prédit mal la diversité phylogénétique (calculée par l'entropie quadratique de Rao).
 
 De nombreuses mesures de diversité ont été créées et plusieurs revues permettent d'en faire le tour. [@Ricotta2007; @Vellend2010]
@@ -74,7 +74,7 @@ knitr::include_graphics('images/ArbreA.png')
 La façon exacte de mesurer les longueurs de branche est illustrée par la figure \@ref(fig:ArbreA1): la distance entre les espèces 1 et 2 est $T_1+T_2$, elle est égale à $T_1$ entre les espèces 4 et 5. 
 La distance est la hauteur du premier noeud commun.
 
-## Distance phylogénétique {#sec:Dphylo}
+## Distance phylogénétique {#sec-Dphylo}
 
 La façon la plus évidente de définir une distance entre espèces est d'utiliser la taxonomie [@Clarke2001, Warwick2001], en attribuant une distance arbitraire (par exemple 1) à deux espèces du même genre, une autre (par exemple 2) à deux espèces de la même famille, etc. 
 La distance définie est ultramétrique.
@@ -95,7 +95,7 @@ L'entropie phylogénétique (voir chapitre \@ref(chap-Phyloentropie)) utilise un
 
 
 
-## Distance fonctionnelle {#sec:DFonctionnelle}
+## Distance fonctionnelle {#sec-DFonctionnelle}
 
 L'approche fonctionnelle est différente. 
 Chaque espèce ou individu est représenté par ses valeurs de traits dans un espace multidimensionnel. 
@@ -116,7 +116,7 @@ La formule de Gower, étendue par @Podani1999 puis @Pavoine2009b à d'autres typ
 * Les valeurs manquantes sont simplement ignorées et n'entrent pas dans la moyenne.
 
 Une matrice de distances entre espèces est construite de cette façon. 
-@Podani2006 suggèrent d'utiliser ensuite une classification hiérarchique par UPGMA [@Sokal1958] qu'ils montrent être la plus robuste (pour le calcul de FD, voir section \@ref(sec:PDFD)) à l'ajout ou au retrait d'un trait ou d'une espèce.
+@Podani2006 suggèrent d'utiliser ensuite une classification hiérarchique par UPGMA [@Sokal1958] qu'ils montrent être la plus robuste (pour le calcul de FD, voir section \@ref(sec-PDFD)) à l'ajout ou au retrait d'un trait ou d'une espèce.
 @Mouchet2008 suggèrent plutôt d'appliquer toutes les méthodes de classification et de retenir à la fin l'arbre dont la distribution des distances entre espèces dans l'arbre est la plus proche de la distribution des distances dans la matrice de dissimilarités: cette proximité est mesurée par la corrélation cophénétique, c'est-à-dire le coefficient de corrélation entre les valeurs de distances [@Sokal1962; @Legendre2012].
 Un arbre consensus [@Felsenstein2004] est souvent plus proche de la matrice de distance.
 
@@ -366,7 +366,7 @@ L'indice est
 
 Sa forme lui permet d'être compris entre 0 et 1.
 
-@Laliberte2010 généralisent $\mathit{FD}_{m}$ en proposant l'usage de n'importe quelle dissimilarité entre espèces, obtenue à partir de la méthode de Gower (vue en section \@ref(sec:DFonctionnelle)), autorisant des variables qualitatives et des données manquantes, au-delà de la seule distance euclidienne entre traits quantitatifs.
+@Laliberte2010 généralisent $\mathit{FD}_{m}$ en proposant l'usage de n'importe quelle dissimilarité entre espèces, obtenue à partir de la méthode de Gower (vue en section \@ref(sec-DFonctionnelle)), autorisant des variables qualitatives et des données manquantes, au-delà de la seule distance euclidienne entre traits quantitatifs.
 Ils fournissent le package *FD* pour calculer leur indice $\mathit{FDis}$ et ceux de 
 @Villeger2008a.
 
@@ -391,10 +391,10 @@ knitr::include_graphics('images/ArbreA.png')
 
 La particularité évolutive [@Isaac2007] (*evolutive distinctiveness*, $\mathit{ED}_s$) de l'espèce $s$ est la somme de la longueur des branches qui la relient à la racine de l'arbre, partagées entre tous les descendants de chaque branche.
 Pour l'espèce 3 de la figure \@ref(fig:ArbreA4), $\mathit{ED}_3$ est égal à $l(b_{1,3})$, la longueur de la branche terminale propre à l'espèce 3, plus un tiers de la longueur de la branche qui relie la racine de l'arbre à la polytomie dont l'espèce 3 est issue.
-Clairement, la diversité phylogénétique PD (section \@ref(sec:PDFD)) est la somme des particularités évolutives de toutes les espèces de l'arbre.
+Clairement, la diversité phylogénétique PD (section \@ref(sec-PDFD)) est la somme des particularités évolutives de toutes les espèces de l'arbre.
 
 
-### Originalité taxonomique de Ricotta {#sec:OrigTax}
+### Originalité taxonomique de Ricotta {#sec-OrigTax}
 
 (ref:HurlbertCFig) Contribution des espèces à l'indice de Hurlbert. Les contributions de 4 espèces d'une communauté à l'indice sont représentées en fonction de la taille de l'échantillon $n$. Les fréquences des espèces sont lisibles pour $n = 1$: une espèce fréquente (probabilité égale à 0,7, supérieure à $1/S$), deux espèces peu fréquentes (0,19 et 0,1), et une espèce rare (0,01). Quand $n$ est assez grand, toutes les contributions tendent vers $1/S = 1/4$ (ligne horizontale).
 ```{r HurlbertCFig, echo=FALSE, results='hide', ref.label='HurlbertCCode', fig.cap="(ref:HurlbertCFig)"}
@@ -469,7 +469,7 @@ La variabilité phylogénétique des espèces [@Helmus2007] (*Phylogenetic Speci
 La distance moyenne entre deux espèces est dans ce cadre proportionnelle à la covariance de leurs traits fonctionnels.
 La richesse phylogénétique des espèces, PSR, est PSV multipliée par le nombre d'espèces: c'est l'équivalent taxonomique de FAD.
 
-La diversité FD de Faith (section \@ref(sec:PDFD)), égale à la somme des longueurs des branches de l'arbre, semble avoir fait consensus, d'où un moindre développement des mesures de richesse que dans la littérature fonctionnelle.
+La diversité FD de Faith (section \@ref(sec-PDFD)), égale à la somme des longueurs des branches de l'arbre, semble avoir fait consensus, d'où un moindre développement des mesures de richesse que dans la littérature fonctionnelle.
 
 
 ### Indices de Cadotte
@@ -688,7 +688,7 @@ Si les espèces sont infiniment éloignées les unes des autres, $\mathbf{Z}$ es
 À l'opposé, si toutes les espèces sont identiques, $\mathbf{Z}$ ne contient que des 1 et la diversité vaut 1.
 
 
-## FD et PD {#sec:PDFD}
+## FD et PD {#sec-PDFD}
 
 (ref:Arbre) Arbre phylogénétique ou fonctionnel hypothétique. (a) Arbre complet. 5 espèces sont présentes ($S = 5$). Une période de l'arbre est définie entre deux noeuds successifs: l'arbre contient $K = 3$ périodes. Les hauteurs des périodes sont notées $T_k$. À chaque période correspond un arbre plus simple: (b) pour la période 2, (c) pour la période 3 dans lequel les espèces originales sont regroupées. Le nombre de feuilles de ces arbres est noté $L_k$. Les probabilités pour un individu d'appartenir à une feuille sont notées $u_{k,l}$.
 ```{r Arbre, fig.cap="(ref:Arbre)", echo=FALSE}
@@ -731,7 +731,7 @@ Diverses optimisations économiques sont possibles, dont le choix des espèces �
 
 
 
-## Indice de Rao {#sec:Rao}
+## Indice de Rao {#sec-Rao}
 
 L'indice de Rao est une mesure de divergence pondérée. Son utilisation s'est largement développée depuis le début des années 2000 [@Izsak2000; @Shimatani2001a;  @Botta-Dukat2005; @Escalas2013] en raison de ses propriétés particulièrement intéressantes.
 
@@ -786,7 +786,7 @@ Rao(Ps, Paracou618.Taxonomy)
 Le package *ADE4* permet le calcul avec la fonction `divc` qui utilise un format différent pour les probabilités et surtout la matrice des racines carrées du double des distances de l'objet `phylog` (chaque élément de `\$Wdist` vaut $\sqrt{2\delta_{s's''}}$.
 Cette particularité d'*ADE4* vient de l'analyse multivariée [@Champely2002]: l'entropie quadratique de Rao peut être représentée dans l'espace euclidien engendré par une matrice de distances $\mathbf{D}$ entre espèces (par une Analyse en Coordonnées Principales, PCoA).
 L'inertie des points représentants les espèces, précisément la moyenne des carrés des distances entre les espèces et leur centre de gravité (les probabilités $\mathbf{p}$ des espèces constituent leur poids), est alors égale à l'entropie de Rao $H_{\mathbf{\Delta}}\left(\mathbf{p}\right)$, où la matrice de distances $\mathbf{\Delta}$ est ${\mathbf{D}^{\circ2}}/{2}$: les valeurs de  $\mathbf{\Delta}$ valent la moitié du carré de celles de $\mathbf{D}$.
-Cette représentation est étendue dans la double analyse en composantes principales de @Pavoine2004, section \@ref(sec:RaoDisc).
+Cette représentation est étendue dans la double analyse en composantes principales de @Pavoine2004, section \@ref(sec-RaoDisc).
 
 Dans *ADE4*, les arbres phylogénétiques sont donc stockés sous la forme d'objets de type `phylog` où la matrice des distances (`\$Wdist`) est $\mathbf{D}$ mais les longueurs des branches de l'arbre (`\$droot`) correspondent aux valeurs de $\mathbf{\Delta}$.
 
@@ -803,7 +803,7 @@ divc(as.data.frame (Paracou618.MC$Psi), Paracou618.Taxonomy$Wdist)
 apply(Paracou618.MC$Psi, 2, Rao, Tree=Paracou618.Taxonomy)
 ```
 
-### Maximum théorique {#sec:MaxTheorique}
+### Maximum théorique {#sec-MaxTheorique}
 
 @Pavoine2005a ont défini l'originalité d'une espèce comme sa fréquence maximisant l'entropie quadratique, sachant la matrice de distances entre espèces. 
 Les espèces les plus originales sont celles ayant le moins d'espèces proches dans la classification.
@@ -974,7 +974,7 @@ Enfin, cette définition de la diversité ne respecte pas le principe de @Solow1
 
 
 
-## $H_p$ et $I_1$ {#sec:HpI1}
+## $H_p$ et $I_1$ {#sec-HpI1}
 
 Simultanément, @Pavoine2009a et @Allen2009 ont proposé la généralisation de l'indice de Shannon à la diversité phylogénétique. 
 La présentation de Allen et al. est donnée ici, celle de Pavoine et al., plus générale, sera détaillée dans le paragraphe suivant.
@@ -1053,7 +1053,7 @@ On peut les interpréter intuitivement comme une somme pondérée par la longueu
 En remontant dans l'arbre, les classes se confondent et la diversité diminue progressivement. 
 Deux classes peu distantes, comme les espèces 3 à 5 de la figure \@ref(fig:ArbreA5), apportent peu de diversité supplémentaire par rapport à une situation où les deux espèces seraient confondues (et leurs effectifs ajoutés), contrairement aux espèces 1 et 2.
 
-## Estimation {#sec:phyloEstimation}
+## Estimation {#sec-phyloEstimation}
 
 La correction du biais d'estimation applicable à l'entropie généralisée l'est aussi à chaque période de l'arbre. 
 Les biais sont de moins en moins importants quand on se rapproche de la racine de l'arbre: il est de moins en moins probable de ne pas observer une classe quand les classes sont de plus en plus vastes. 
@@ -1072,7 +1072,7 @@ PhyloEntropy(Paracou618.MC$Ns, 2, Paracou618.Taxonomy)
 
 La fonction retourne la valeur de $^{q}_{k}\!H$ dans chaque intervalle (l'arbre est ici une taxonomie espèce-genre-famille, correspondant aux limites des périodes (`Cuts`) 1, 2 et 3 dont l'entropie va en décroissant) et la valeur de $^{q}\!\bar{H}(T)$.
 
-## Entropie et diversité {#sec:phyloEntopieDiv}
+## Entropie et diversité {#sec-phyloEntopieDiv}
 
 La diversité phylogénétique est le nombre d'espèces équifréquentes et dont la distance à toutes les autres dans la phylogénie est maximale, dont l'entropie serait égale à l'entropie observée.
 
@@ -1095,7 +1095,7 @@ Le nombre effectif d'espèces de l'entropie de Rao, ${^{2}\!\bar{D}}(T)=\frac{1}
   =\left( \sum_b{\frac{l(b)}{T} p(b)^q} \right)^{\frac{1}{1-q}}.
 \end{equation}
 
-La somme est sur l'ensemble des branches de l'arbre, défini de façon identique à celle de @Allen2009 \@ref(sec:HpI1).
+La somme est sur l'ensemble des branches de l'arbre, défini de façon identique à celle de @Allen2009 \@ref(sec-HpI1).
 
 Les entropies ont un comportement linéaire: elles s'additionnent tout au long de l'arbre pour donner $^{q}\!\bar{H}(T)$. 
 Les diversités $^{q}_{k}\!D$ calculées à chaque période ne peuvent pas être sommées sur le modèle de l'équation \@ref(eq:Hbarq): $^{q}\!\bar{D}(T)$ n'est *pas* la moyenne pondérée des diversités aux différentes périodes, sauf dans le cas particulier $q=1$ où, comme pour la décomposition de l'indice de Shannon, il en est la moyenne géométrique pondérée.
@@ -1230,7 +1230,7 @@ Leinster et Cobbold montrent que la diversité HCDT est un cas particulier de $^
 
 Une mesure de diversité non neutre est obtenue en utilisant une matrice $\mathbf{Z}$ qui contient l'information sur la similarité entre les espèces. 
 La dissimilarité entre espèces peut être obtenue à partir des arbres. 
-L'exemple suivant utilise les données du calcul d'originalité, section \@ref(sec:MaxTheorique). 
+L'exemple suivant utilise les données du calcul d'originalité, section \@ref(sec-MaxTheorique). 
 Pour un arbre de classe `hclust`, la fonction `cophenetic` fournit une demi-matrice de distances (classe `dist`).
 
 ```{r DqZ1}
@@ -1376,7 +1376,7 @@ Quand $u \to +\infty$, $\mathbf{Z} \to \mathbf{I}_s$: la diversité tend vers la
 Leinster et Cobbold suggèrent de comparer les profils de diversité en fonction à la fois de $q$ et de $u$.
 
 
-## Estimation {#sec:dqzEstimation}
+## Estimation {#sec-dqzEstimation}
 
 Comme les autres mesures de diversité, $^q\!D^{\mathbf{Z}}$ est sujette au biais d'estimation. 
 Deux estimateurs réduisant le biais existent [@Marcon2014e]. 
@@ -1677,7 +1677,7 @@ Elle est donc unique pour chaque communauté, ce qui empêche toute décompositi
 
 
 
-## Synthèse {#sec:dqzSynthese}
+## Synthèse {#sec-dqzSynthese}
 
 $^{q}\!D(T)$ est l'exponentielle d'ordre $q$ de la moyenne pondérée de l'entropie HCDT calculée à chaque période de l'arbre phylogénétique.
 
