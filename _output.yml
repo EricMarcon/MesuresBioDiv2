@@ -2,9 +2,9 @@ bookdown::gitbook:
   css: style.css
   config:
     sharing:
-      github: yes
+      github: true
       facebook: false
-      twitter: yes
+      twitter: true
     toc:
       before: |
         <li><a href="./">Mesures de la Biodiversité</a></li>
@@ -13,7 +13,6 @@ bookdown::gitbook:
     download: "pdf"
   includes:
     in_header: gtag.js
-  split_by: "chapter+number"
 bookdown::pdf_book:
   template: latex/template.tex
   pandoc_args: --top-level-division=chapter
@@ -23,4 +22,4 @@ bookdown::pdf_book:
     after_body: latex/after_body.tex
   latex_engine: xelatex
   citation_package: biblatex
-  keep_tex: yes
+  keep_tex: true
