@@ -383,7 +383,7 @@
 
 \author{Eric Marcon}
 
-\date{02/10/2021}
+\date{29/10/2021}
 
 
 % Include headers (preamble.tex) here
@@ -425,9 +425,7 @@
 \end{itemize}
 
 Son code source est sur GitHub: \url{https://github.com/EricMarcon/MesuresBioDiv2/}.
-
 Le texte mis à jour en continu peut être lu sur \url{https://ericmarcon.github.io/MesuresBioDiv2/}.
-
 Les versions d'étape sont déposées sur HAL: \url{https://hal-agroparistech.archives-ouvertes.fr/cel-01205813/}.}{Photographie en couverture: Hadrien Lalagüe}
 
 
@@ -487,6 +485,55 @@ On se référera par exemple à \textcite{Chapin2000} pour une revue sur cette q
 
 La mesure de la diversité est un sujet important en tant que tel \autocite{Purvis2000}, pour permettre de formaliser les concepts et de les appliquer à la réalité.
 La question est loin d'être épuisée, et fait toujours l'objet d'une recherche active et de controverses \autocite{Ricotta2005b}.
+
+\hypertarget{calculs-et-donnuxe9es}{%
+\chapter*{Calculs et données}\label{calculs-et-donnuxe9es}}
+\addcontentsline{toc}{chapter}{Calculs et données}
+
+La présentation des mesures de diversité est donnée avec un usage intensif du formalisme mathématique.
+La liste des notations est fournie ci-dessous, on s'y référera autant que nécessaire.
+
+Les calculs sont réalisés dans R \autocite{R}, essentiellement avec le package \emph{entropart} \autocite{Marcon2014c}.
+L'ensemble du code est disponible sur GitHub\footnote{\url{https://github.com/EricMarcon/MesuresBioDiv2/}} où se trouvent les mises à jour de ce document\footnote{\url{https://ericmarcon.github.io/MesuresBioDiv2/}}.
+
+Les données sont souvent celles de la parcelle 6 de la forêt de Paracou (figure \ref{fig:Paracou6MapFig} en Guyane française \autocite{Gourlet-Fleury2004}, d'une surface de 6.25~ha.
+Tous les arbres de plus de 10~cm de diamètre à hauteur de poitrine (DBH: \emph{Diameter at Breast Height}) y ont été inventoriés en 2016.
+La position de chaque arbre, son espèce et sa surface terrière sont fournis dans le package \emph{SpatDiv}.
+
+D'autres exemples utilisent la parcelle forestière permanente de Barro Colorado Island, souvent abrégée BCI \autocite{Condit2012}: 50~ha de forêt tropicale dont les arbres de plus de 1~cm de diamètre à hauteur de poitrine (DBH: \emph{Diameter at Breast Height}) ont été inventoriés.
+Le jeu de données utilisé pour les exemples est une version réduite aux arbres de plus de 10~cm disponible dans le package \emph{vegan} \autocite{Oksanen2012}, soient 21457 arbres dans 225 espèces.
+
+Enfin, les données fournies par le package \emph{entropart} sous le nom \enquote{Paracou618} sont deux inventaires de l'année 2012 limités à un hectare chacun dans les parcelles 6 et 18 de la forêt de Paracou, soient 1124 arbres dans 229 espèces.
+
+
+
+\scriptsize
+
+\begin{SCfigure}
+
+{\centering \includegraphics[width=1\linewidth]{MesuresBD_files/figure-latex/Paracou6MapFig-1} 
+
+}
+
+\caption{Carte de la parcelle 6 de Paracou. Les points représentent les arbres. Leur taille est proportionnelle à leur surface terrière. Seules les espèces les plus fréquentes sont identifiées sur la carte.}\label{fig:Paracou6MapFig}
+\end{SCfigure}
+
+\normalsize
+
+Le code R pour réaliser la figure est le suivant:
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"dbmss"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(}\StringTok{"SpatDiv"}\NormalTok{)}
+\KeywordTok{autoplot}\NormalTok{(Paracou6, }\DataTypeTok{labelSize =} \KeywordTok{expression}\NormalTok{(}\KeywordTok{paste}\NormalTok{(}\StringTok{"Surface terrière ("}\NormalTok{,}
+\NormalTok{    cm}\OperatorTok{^}\DecValTok{2}\NormalTok{, }\StringTok{")"}\NormalTok{)), }\DataTypeTok{labelColor =} \StringTok{"Espèce"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\normalsize
 
 \hypertarget{notations}{%
 \chapter*{Notations}\label{notations}}
@@ -583,15 +630,11 @@ Si l'exposant n'est pas noté, l'échantillon n'est pas précisé et peut être 
 
 \mainmatter
 
-\SmallMargins
-
 \hypertarget{part-notions}{%
 \part{Notions}\label{part-notions}}
 
-\LargeMargins
-
-\hypertarget{notions-de-diversituxe9}{%
-\chapter{Notions de Diversité}\label{notions-de-diversituxe9}}
+\hypertarget{chap-Notions}{%
+\chapter{Notions de Diversité}\label{chap-Notions}}
 
 \hypertarget{composantes}{%
 \section{Composantes}\label{composantes}}
@@ -649,10 +692,13 @@ La plupart des indices courants, comme ceux de Simpson ou de Shannon, évaluent 
 
 Les mesures classiques de la diversité, dites mesures de diversité neutre (\emph{species-neutral diversity}) ou taxonomique ne prennent pas en compte une quelconque distance entre classes.
 Pourtant, deux espèces du même genre sont de toute évidence plus proches que deux espèces de familles différentes.
-Les mesures de diversité phylogénétique et de diversité fonctionnelle prennent en compte cette notion, qui nécessite quelques définitions supplémentaires \autocite{Mouillot2005,Ricotta2007}.
+Les mesures de diversité non neutres (chapitre \ref{chap-cadrephyfonc}) prennent en compte cette notion, qui nécessite quelques définitions supplémentaires \autocite{Mouillot2005,Ricotta2007}.
 
 La mesure de la différence entre deux classes est souvent une distance, mais parfois une mesure qui n'a pas toutes les propriétés d'une distance: une dissimilarité.
 Les mesures de \emph{divergence} \autocite{Pavoine2011} sont construites à partir de la dissimilarité entre les classes, avec ou sans pondération par la fréquence.
+
+Si la divergence entre espèces est une distance évolutive comme l'âge du plus récent ancêtre commun, la diversité sera dite phylogénétique.
+Si c'est une distance fonctionnelle, définie par exemple dans l'espace des traits fonctionnels, la diversité sera dite fonctionnelle.
 
 La disparité \autocite{Runnegar1987}, divergence moyenne entre deux espèces (indépendamment des fréquences), ou de façon équivalente la longueur totale des branches d'un arbre phylogénétique, est la composante qui décrit à quel point les espèces sont différentes les unes des autres.
 
@@ -670,7 +716,7 @@ Cela ne signifie pas que les composantes contribuent indépendamment les unes de
 \hypertarget{niveaux-de-luxe9tude}{%
 \section{Niveaux de l'étude}\label{niveaux-de-luxe9tude}}
 
-La diversité est classiquement estimée à plusieurs niveaux emboîtés, nommés \(\alpha\), \(\beta\) et \(\gamma\) par \textcite[page 320]{Whittaker1960} qui a nommé \(\alpha\) la diversité locale qu'il mesurait avec l'indice \(\alpha\) de Fisher (voir le chapitre \ref{chap:Fisher}) et a utilisé les lettres suivantes selon ses besoins.
+La diversité est classiquement estimée à plusieurs niveaux emboîtés, nommés \(\alpha\), \(\beta\) et \(\gamma\) par \textcite[page 320]{Whittaker1960} qui a nommé \(\alpha\) la diversité locale qu'il mesurait avec l'indice \(\alpha\) de Fisher (voir le chapitre \ref{chap-Fisher}) et a utilisé les lettres suivantes selon ses besoins.
 
 \hypertarget{diversituxe9-alpha-beta-et-gamma}{%
 \subsection{\texorpdfstring{Diversité \(\alpha\), \(\beta\) et \(\gamma\)}{Diversité \textbackslash alpha, \textbackslash beta et \textbackslash gamma}}\label{diversituxe9-alpha-beta-et-gamma}}
@@ -718,27 +764,29 @@ Nous appellerons \emph{communauté} le niveau de découpage concernant la divers
 \hypertarget{le-probluxe8me-de-lespuxe8ce}{%
 \section{Le problème de l'espèce}\label{le-probluxe8me-de-lespuxe8ce}}
 
-Évaluer la richesse spécifique suppose que les espèces soient définies clairement, ce qui n'est de toute évidence pas le cas \autocite{Casetta2014a}.
+Évaluer la richesse spécifique suppose que les espèces soient définies clairement, ce qui n'est de toute évidence pas le cas \autocite{Casetta2014}.
 Le premier aspect du problème concerne la nature des espèces: réalité naturelle ou seulement représentation simplificatrice.
 Une analyse historique et philosophique en est faite par \textcite{Richards2010}.
 L'autre aspect, avec des conséquences pratiques plus immédiates, concerne leur délimitation.
-\textcite{Mayden1997} recense 22 définitions différentes du concept d'espèce.
+\textcite{Mayden1997} recense vingt-deux définitions différentes du concept d'espèce.
+\textcite{Wilkins2011} estime qu'il n'y a qu'un seul concept d'espèce mais sept définitions, c'est-à-dire sept façons de les identifier, et vingt-sept variations ou mélanges de ces définitions.
 
-Le concept le plus répandu est celui d'espèce \emph{biologique} \autocite{Dobzhansky1937}: un \enquote{groupe de populations naturelles isolées reproductivement les unes des autres} \autocite{Mayr1942}.
-Lorsque les populations d'une espèce sont isolées géographiquement, leur capacité à se reproduire ensemble est toute théorique (et d'ailleurs rarement vérifiée expérimentalement).
-Des populations allopatriques n'ont pas de flux de gènes réels entre elles et peuvent être considérées comme des espèces distinctes selon le concept d'espèce \emph{phylogénétique}: \enquote{le plus petit groupe identifiable d'individus avec un pattern commun d'ancêtres et de descendants} \autocite{Cracraft1983}.
+La définition historique est celle de \emph{morphoespèce}, qui classe les espèces selon leurs formes, supposées d'abord immuables.
+La définition moderne la plus répandue est celle d'espèce \emph{biologique} \autocite{Dobzhansky1937}: un \enquote{groupe de populations naturelles isolées reproductivement les unes des autres} \autocite{Mayr1942}.
+Lorsque les populations d'une espèce sont isolées géographiquement, leur capacité à se reproduire ensemble est toute théorique (et rarement vérifiée expérimentalement).
+Des populations allopatriques n'ont pas de flux de gènes réels entre elles et peuvent être considérées comme des espèces distinctes selon la définition d'espèce \emph{phylogénétique}: \enquote{le plus petit groupe identifiable d'individus avec un pattern commun d'ancêtres et de descendants} \autocite{Cracraft1983}.
 C'est l'unité génétique détectée par la méthode du coalescent pour la délimitation des espèces \autocite{Sukumaran2017}.
 Le nombre d'espèces phylogénétiques est bien supérieur au nombre d'espèces biologiques.
-Enfin, \textcite{VanValen1976} définit les espèces par la niche écologique qu'elles occupent (à partir de l'exemple des chênes blancs européens) plutôt que par les flux de gènes (permanents entre les espèces distinctes): le concept \emph{écologique} d'espèce est proche de celui de complexe d'espèces \autocite[ensemble d'espèces voisines échangeant des gènes,][]{Pernes1984}.
+Enfin, \textcite{VanValen1976} définit les espèces par la niche écologique qu'elles occupent (à partir de l'exemple des chênes blancs européens) plutôt que par les flux de gènes (permanents entre les espèces distinctes): la définition \emph{écologique} d'espèce est proche du concept de complexe d'espèces \autocite[ensemble d'espèces voisines échangeant des gènes,][]{Pernes1984}.
 
 Le choix de la définition modifie considérablement sur la quantification de la richesse \autocite{Agapow2004}.
 Des problèmes méthodologiques s'ajoutent aux problèmes conceptuels \autocite{Hey2001}: la séparation ou le regroupement de plusieurs populations ou morphotypes en un nombre plus ou moins grand d'espèces est un choix qui reflète les connaissances du moment et peut évoluer \autocite{Barberousse2014}.
 
 L'impact du problème de l'espèce sur la mesure de la diversité reste sans solution à ce stade, si ce n'est d'utiliser les mêmes définitions si des communautés différentes doivent être comparées.
-L'approche phylogénétique (Chapitre \ref{chap:Phyloentropie}) permet de contourner le problème: si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
+L'approche phylogénétique (chapitre \ref{chap-Phyloentropie}) permet de contourner le problème: si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
 
-\hypertarget{outils}{%
-\chapter{Outils}\label{outils}}
+\hypertarget{chap-Outils}{%
+\chapter{Outils}\label{chap-Outils}}
 
 \scriptsize
 
@@ -763,24 +811,8 @@ Quelques outils sont nécessaires avant d'entrer dans le coeur du sujet.
 Les relations décrivant le nombre d'espèces en fonction de la taille de l'échantillon (relations aire-espèces) et la distribution de l'abondance des espèces sont importants pour les écologues.
 La mesure de l'exhaustivité de l'échantillonnage par le taux de couverture sera la base de l'estimation de la diversité à partir de données réelles.
 
-\hypertarget{calculs-et-donnuxe9es}{%
-\section{Calculs et données}\label{calculs-et-donnuxe9es}}
-
-La présentation des mesures de diversité est donnée avec un usage intensif du formalisme mathématique.
-La liste des notations est fournie en préambule du document, on s'y référera autant que nécessaire.
-
-Les calculs sont réalisés dans R \autocite{R}, essentiellement avec le package \emph{entropart} \autocite{Marcon2014c}.
-L'ensemble du code est disponible sur GitHub\footnote{\url{https://github.com/EricMarcon/MesuresBioDiv2/}} où se trouvent les mises à jour de ce document \footnote{\url{https://ericmarcon.github.io/MesuresBioDiv2/}}.
-
-Les données sont souvent celles de la parcelle 6 de Paracou en Guyane française \autocite{Gourlet-Fleury2004}, d'une surface de 6.25~ha.
-Tous les arbres de plus de 10~cm de diamètre à hauteur de poitrine (DBH: \emph{Diameter at Breast Height}) y ont été inventoriés en 2016.
-La postition de chaque arbre, son espèce et sa surface terrière sont fournis dans le package \emph{SpatDiv}.
-
-D'autres exemples utilisent la parcelle forestière permanente de Barro Colorado Island, souvent abrégée BCI \autocite{Condit2012}: 50~ha de forêt tropicale dont les arbres de plus de 1~cm de diamètre à hauteur de poitrine (DBH: \emph{Diameter at Breast Height}) ont été inventoriés.
-Le jeu de données utilisé pour les exemples est une version réduite aux arbres de plus de 10~cm disponible dans le package \emph{vegan} \autocite{Oksanen2012}.
-
-\hypertarget{sad-et-sar}{%
-\section{SAD et SAR}\label{sad-et-sar}}
+\hypertarget{courbes-daccumulation}{%
+\section{Courbes d'accumulation}\label{courbes-daccumulation}}
 
 
 
@@ -788,31 +820,23 @@ Le jeu de données utilisé pour les exemples est une version réduite aux arbre
 
 \begin{SCfigure}
 
-{\centering \includegraphics[width=0.8\linewidth]{MesuresBD_files/figure-latex/SARFig-1} 
+{\centering \includegraphics[width=0.8\linewidth]{MesuresBD_files/figure-latex/SACFig-1} 
 
 }
 
-\caption{Courbe d'accumulation des espèces d'arbres du dispositif de Barro Colorado Island. Le nombre d'espèces est cumulé dans l'ordre des carrés d'un hectare du dispositif.}\label{fig:SARFig}
+\caption{Courbe d'accumulation des espèces d'arbres du dispositif de Barro Colorado Island. Le nombre d'espèces est cumulé dans l'ordre des carrés d'un hectare du dispositif.}\label{fig:SACFig}
 \end{SCfigure}
 
 \normalsize
 
-La courbe aire-espèces (SAR: \emph{Species Area Relationship}) représente le nombre d'espèces observées en fonction de la surface échantillonnée (figure \ref{fig:Williamson2001}).
-Il existe plusieurs façons de prendre en compte cette relation \autocite{Scheiner2003}, classables en deux grandes familles \autocite{Dengler2009}:
+Evaluer la diversité d'une communauté nécessite en pratique de l'inventorier.
+Le nombre d'espèces découvertes en fonction de l'effort d'échantillonnage permet de tracer une courbe d'accumulation (SAC: \emph{Species Acumulation Curve}).
+Une courbe de raréfaction (\emph{Rarefaction Curve}) peut être calculée en réduisant par des outils statistiques l'effort d'échantillonnage réel pour obtenir une SAC théorique, libérée des aléas de l'ordre de prise en compte des données.
 
-\begin{itemize}
-\tightlist
-\item
-  Dans une SAR au sens strict, chaque point représente une communauté.
-  La question traitée est la relation entre le nombre d'espèces et la taille de chaque communauté;
-\item
-  Si les points représentent un effort d'échantillonnage différent dans même communauté, on parle de courbe d'accumulation (SAC: \emph{Species Acumulation Curve}). Une courbe de raréfaction (\emph{Rarefaction Curve}) peut être calculée en réduisant par des outils statistiques l'effort d'échantillonnage réel pour obtenir une SAC théorique, libérée des aléas de l'ordre de prise en compte des données.
-\end{itemize}
-
-La figure \ref{fig:SARFig} montre l'accumulation des espèces pour les données de BCI.
+La figure \ref{fig:SACFig} montre l'accumulation des espèces pour les données de BCI.
 Une SAC peut être tracée en fonction de la surface, du nombre d'individus ou du nombres de placettes d'échantillonnage, selon les besoins.
 
-Code R pour réaliser la figure \ref{fig:SARFig}:
+Code R pour réaliser la figure \ref{fig:SACFig}:
 
 \scriptsize
 
@@ -833,98 +857,39 @@ Code R pour réaliser la figure \ref{fig:SARFig}:
 
 \normalsize
 
-La distribution de l'abondance des espèces (SAD: \emph{Species Abundance Distribution}) est la loi qui donne l'abondance attendue de chaque espèce d'une communauté.
-Les espèces ne sont pas identifiées individuellement, mais par le nombre d'individus leur appartenant.
+Les courbes d'accumulation peuvent aussi concerner la diversité (voir le chapitre \ref{chap-Accumulation}), mesurée au-delà du nombre d'espèces.
 
-
-
-\scriptsize
-
-\begin{SCfigure}
-
-{\centering \includegraphics[width=0.8\linewidth]{MesuresBD_files/figure-latex/SADFig-1} 
-
-}
-
-\caption{Histogramme des fréquences (diagramme de Preston) des arbres du dispositif de Barro Colorado Island. En abscisse: le nombre d'arbres de chaque espèce (en logarithme); en ordonnée: le nombre d'espèces.}\label{fig:SADFig}
-\end{SCfigure}
-
-\normalsize
-
-Elle peut être représentée sous la forme d'un histogramme des fréquences (diagramme de \textcite{Preston1948}, figure \ref{fig:SADFig}) ou bien d'un diagramme rang-abondance (RAC: \emph{Rank Abundance Curve} ou diagramme de \textcite{Whittaker1965}, figure \ref{fig:RACFig}).
-Le RAC est souvent utilisé pour reconnaître des distributions connues.
-\textcite{Izsak2012} ont étudié les propriétés des RAC pour les principales SAD.
-
-
-
-\scriptsize
-
-\begin{SCfigure}
-
-{\centering \includegraphics[width=0.8\linewidth]{MesuresBD_files/figure-latex/RACFig-1} 
-
-}
-
-\caption{Diagramme rang-abondance (diagramme de Whittaker) des arbres du dispositif de Barro Colorado Island. Les points sont les données: en abscisse: le rang de l'espèce, à partir de la plus abondante; en ordonnée: l'abondance de l'espèce. La courbe est l'ajustement d'une distribution log-normale.}\label{fig:RACFig}
-\end{SCfigure}
-
-\normalsize
-
-Code de la figure \ref{fig:SADFig}:
-
-\scriptsize
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{Ns <-}\StringTok{ }\KeywordTok{sort}\NormalTok{(}\KeywordTok{colSums}\NormalTok{(BCI), }\DataTypeTok{decr =} \OtherTok{TRUE}\NormalTok{)}
-\NormalTok{N <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(Ns)}
-\NormalTok{SADhist <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(Ns), }\KeywordTok{aes}\NormalTok{(Ns)) }\OperatorTok{+}\StringTok{ }
-\StringTok{  }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{bins=}\KeywordTok{nclass.Sturges}\NormalTok{(}\KeywordTok{log}\NormalTok{(Ns)), }
-       \DataTypeTok{color=}\StringTok{"black"}\NormalTok{, }\DataTypeTok{fill=}\StringTok{"white"}\NormalTok{, }\DataTypeTok{boundary =} \DecValTok{0}\NormalTok{) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{scale_x_log10}\NormalTok{() }\OperatorTok{+}
-\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Effectifs (échelle logarithmique)"}\NormalTok{, }
-       \DataTypeTok{y=}\StringTok{"Nombre d'espèces"}\NormalTok{)}
-\NormalTok{SADhist}
-\end{Highlighting}
-\end{Shaded}
-
-\normalsize
-
-Code de la figure \ref{fig:RACFig}:
-
-\scriptsize
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(}\StringTok{"entropart"}\NormalTok{)}
-\KeywordTok{autoplot}\NormalTok{(}\KeywordTok{as.AbdVector}\NormalTok{(Ns), }\DataTypeTok{Distribution =} \StringTok{"lnorm"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\normalsize
-
-Les SAD ne sont pas traitées en détail ici: on se reportera à \textcite{Magurran1988}, \textcite{McGill2007} et Izsák et Pavoine.
-Les SAD nécessaires à la compréhension de la suite sont:
+Plus généralement, une courbe aire-espèces (SAR: \emph{Species Area Relationship}) représente le nombre d'espèces observées en fonction de la surface échantillonnée (figure \ref{fig:Williamson2001}).
+Il existe plusieurs façons de prendre en compte cette relation \autocite{Scheiner2003}, classables en deux grandes familles \autocite{Dengler2009}:
 
 \begin{itemize}
 \tightlist
 \item
-  La distribution géométrique \autocite{Motomura1932,Whittaker1972};
+  Dans une SAR au sens strict, chaque point représente une communauté.
+  La question traitée est la relation entre le nombre d'espèces et la taille de chaque communauté, en lien avec des processus écologiques;
 \item
-  La distribution en log-séries de \textcite{Fisher1943};
-\item
-  La distribution log-normale \autocite{Preston1948};
-\item
-  Le modèle Broken Stick \autocite{MacArthur1957}.
+  Une courbe d'accumulation (SAC) ne représente que l'effet statistique de l'échantillonnage.
+  Pour éviter toute confusion, le terme SAR ne doit pas être utilisé pour décrire une SAC.
 \end{itemize}
 
-\hypertarget{sec:Couverture}{%
-\section{Taux de couverture}\label{sec:Couverture}}
+\hypertarget{diversituxe9-asymptotique}{%
+\section{Diversité asymptotique}\label{diversituxe9-asymptotique}}
+
+Augmenter l'effort d'échantillonnage peut permettre d'atteindre un stade où la diversité n'augmente plus: sa valeur est appelée \emph{diversité asymptotique}.
+Dans des communautés très diverses comme les forêts tropicales, la diversité asymptotique ne peut en général pas être observée sur le terrain à cause de la variabilité de l'environnement: l'augmentation de la surface inventoriée amène à échantillonner dans des communautés différentes avant d'atteindre la diversité asymptotique de la communauté étudiée.
+La diversité asymptotique est donc celle d'une communauté théorique qui n'existe généralement pas.
+En d'autres termes, c'est la diversité d'une communauté dont l'inventaire disponible serait un échantillon représentatif.
+
+Evaluer la diversité asymptotique nécessite d'utiliser des estimateurs de diversité, dont la précision dépend de l'exhaustivité de l'échantillonnage.
+La diversité peut aussi être estimée pour un effort donné: un hectare de forêt ou 5000 arbres par exemple, ou encore un taux de couverture choisi, qui décrit mieux la qualité de l'échantillonnage.
+
+\hypertarget{sec-Couverture}{%
+\section{Taux de couverture}\label{sec-Couverture}}
 
 \hypertarget{formule-des-fruxe9quences-de-good-turing}{%
 \subsection{Formule des fréquences de Good-Turing}\label{formule-des-fruxe9quences-de-good-turing}}
 
-La relation fondamentale entre les fréquences des espèces est due à Turing et a été publiée par \textcite{Good1953}.
+La relation fondamentale entre les fréquences des espèces dans un échantillon est due à Turing et a été publiée par \textcite{Good1953}.
 En absence de toute information sur la loi de distribution des espèces, en supposant seulement que les individus sont tirés indépendamment les uns des autres selon une loi multinomiale respectant ces probabilités, la formule de Good-Turing relie la probabilité moyenne \(\alpha_\nu\) d'une espèce représentée \(\nu\) fois (c'est-à-dire par \(\nu\) individus) au rapport entre les nombres d'espèces représentées \(\nu+1\) fois et \(\nu\) fois:
 
 \begin{equation}
@@ -945,7 +910,7 @@ Alors, \(\alpha_\nu\) est estimé par
   \hat{\alpha}_\nu = \frac{\left(\nu+1 \right) s^{n}_{\nu+1}}{\left(n-\nu \right) s^{n}_{\nu} + \left(\nu+1 \right) s^{n}_{\nu+1}}.
 \end{equation}
 
-Ce nouvel estimateur est à la base de l'estimateur de Chao amélioré et des estimateurs d'entropie de Chao et Jost (sections \ref{sec:BiaisShannon} et \ref{sec:BiaisHCDT}).
+Ce nouvel estimateur est à la base de l'estimateur de Chao amélioré et des estimateurs d'entropie de Chao et Jost (sections \ref{sec-BiaisShannon} et \ref{sec-BiaisHCDT}).
 
 \hypertarget{taux-de-couverture-et-duxe9ficit-de-couverture}{%
 \subsection{Taux de couverture et déficit de couverture}\label{taux-de-couverture-et-duxe9ficit-de-couverture}}
@@ -999,7 +964,7 @@ En se limitant à \(\nu=1\), l'estimateur se réduit à celui de Good.
 Où \(t^{n}_{1-\alpha/2}\) est le quantile d'une loi de Student à \(n\) degrés de libertés au seuil de risque \(\alpha\), classiquement 1,96 pour \(n\) grand et \(\alpha=5\%\).
 
 Un autre estimateur est utilisé dans le logiciel SPADE \autocite{Chao2010a} et son portage sous R, le package \emph{spadeR} \autocite{Chao2016c}.
-Il est la base des estimateurs d'entropie de Chao et Jost (section \ref{sec:BiaisHCDT}).
+Il est la base des estimateurs d'entropie de Chao et Jost (section \ref{sec-BiaisHCDT}).
 L'estimation de l'équation \eqref{eq:CsansBiais} donne la relation
 \begin{equation}
   \label{eq:hatC2}
@@ -1023,6 +988,7 @@ Dans le package \emph{entropart}, la fonction \texttt{Coverage} calcule les troi
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(}\StringTok{"entropart"}\NormalTok{)}
+\NormalTok{Ns <-}\StringTok{ }\KeywordTok{colSums}\NormalTok{(BCI)}
 \KeywordTok{Coverage}\NormalTok{(Ns)}
 \end{Highlighting}
 \end{Shaded}
@@ -1042,15 +1008,6 @@ Il est moindre sur les 6.25~ha de la parcelle 6 de Paracou:
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(}\StringTok{"SpatDiv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Loading required package: Rcpp
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \KeywordTok{Coverage}\NormalTok{(}\KeywordTok{as.AbdVector}\NormalTok{(Paracou6))}
 \end{Highlighting}
 \end{Shaded}
@@ -1080,14 +1037,14 @@ Le cas des populations de taille finie est traité par \textcite{Chao2012} et \t
 La complétude de l'échantillonnage est la proportion du nombre d'espèces observées: \(s^{n}_{\ne 0}/{S}\).
 Elle compte simplement les espèces et ne doit pas être confondue avec la couverture qui somme leurs probabilités: le taux de complétude est toujours très inférieur au taux de couverture parce que les espèces non échantillonnées sont les plus rares.
 
-La complétude du même échantillon d'arbres de forêt tropicale que dans l'exemple précédent peut être estimée en divisant le nombre d'espèces observées par le nombre d'espèces estimées (voir section \ref{sec:Richesse}).
+La complétude du même échantillon d'arbres de forêt tropicale que dans l'exemple précédent peut être estimée en divisant le nombre d'espèces observées par le nombre d'espèces estimées (voir section \ref{sec-Richesse}).
 À BCI:
 
 \scriptsize
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Species observed}
+\CommentTok{# Espèces observées}
 \NormalTok{(Obs <-}\StringTok{ }\KeywordTok{Richness}\NormalTok{(Ns, }\DataTypeTok{Correction =} \StringTok{"None"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
@@ -1099,7 +1056,7 @@ La complétude du même échantillon d'arbres de forêt tropicale que dans l'exe
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Estimated richness}
+\CommentTok{# Richesse estimée}
 \NormalTok{(Est <-}\StringTok{ }\KeywordTok{Richness}\NormalTok{(Ns, }\DataTypeTok{Correction =} \StringTok{"Jackknife"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
@@ -1111,7 +1068,7 @@ La complétude du même échantillon d'arbres de forêt tropicale que dans l'exe
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Completeness}
+\CommentTok{# Complétude}
 \KeywordTok{as.numeric}\NormalTok{(Obs}\OperatorTok{/}\NormalTok{Est)}
 \end{Highlighting}
 \end{Shaded}
@@ -1128,7 +1085,7 @@ La complétude du même échantillon d'arbres de forêt tropicale que dans l'exe
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Species observed}
+\CommentTok{# Espèces observées}
 \NormalTok{(Obs <-}\StringTok{ }\KeywordTok{Richness}\NormalTok{(Paracou6, }\DataTypeTok{Correction =} \StringTok{"None"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
@@ -1140,7 +1097,7 @@ La complétude du même échantillon d'arbres de forêt tropicale que dans l'exe
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Estimated richness}
+\CommentTok{# Richesse estimée}
 \NormalTok{(Est <-}\StringTok{ }\KeywordTok{Richness}\NormalTok{(Paracou6, }\DataTypeTok{Correction =} \StringTok{"Jackknife"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
@@ -1152,7 +1109,7 @@ La complétude du même échantillon d'arbres de forêt tropicale que dans l'exe
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Completeness}
+\CommentTok{# Complétude}
 \KeywordTok{as.numeric}\NormalTok{(Obs}\OperatorTok{/}\NormalTok{Est)}
 \end{Highlighting}
 \end{Shaded}
@@ -1163,12 +1120,390 @@ La complétude du même échantillon d'arbres de forêt tropicale que dans l'exe
 
 \normalsize
 
-\SmallMargins
+\hypertarget{distribution-de-labondance-des-espuxe8ces-sad}{%
+\section{Distribution de l'abondance des espèces (SAD)}\label{distribution-de-labondance-des-espuxe8ces-sad}}
+
+La distribution de l'abondance des espèces (SAD: \emph{Species Abundance Distribution}) est la loi statistique qui donne l'abondance attendue de chaque espèce d'une communauté.
+Les espèces ne sont pas identifiées individuellement, mais par le nombre d'individus leur appartenant.
+
+
+
+\scriptsize
+
+\begin{SCfigure}
+
+{\centering \includegraphics[width=0.8\linewidth]{MesuresBD_files/figure-latex/SADFig-1} 
+
+}
+
+\caption{Histogramme des fréquences (diagramme de Preston) des arbres du dispositif de Barro Colorado Island. En abscisse: le nombre d'arbres de chaque espèce (en logarithme); en ordonnée: le nombre d'espèces.}\label{fig:SADFig}
+\end{SCfigure}
+
+\normalsize
+
+Elle peut être représentée sous la forme d'un histogramme des fréquences (diagramme de \textcite{Preston1948}, figure \ref{fig:SADFig}) ou bien d'un diagramme rang-abondance (RAC: \emph{Rank Abundance Curve} ou diagramme de \textcite{Whittaker1965}, figure \ref{fig:RACFig}).
+Le RAC est souvent utilisé pour reconnaître des distributions connues.
+\textcite{Izsak2012} ont étudié les propriétés des RAC pour les principales SAD.
+
+
+
+\scriptsize
+
+\begin{SCfigure}
+
+{\centering \includegraphics[width=0.8\linewidth]{MesuresBD_files/figure-latex/RACFig-1} 
+
+}
+
+\caption{Diagramme rang-abondance (diagramme de Whittaker) des arbres du dispositif de Barro Colorado Island. Les points sont les données: en abscisse: le rang de l'espèce, à partir de la plus abondante; en ordonnée: l'abondance de l'espèce. La courbe est l'ajustement d'une distribution log-normale.}\label{fig:RACFig}
+\end{SCfigure}
+
+\normalsize
+
+Code de la figure \ref{fig:SADFig}:
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Ns <-}\StringTok{ }\KeywordTok{sort}\NormalTok{(}\KeywordTok{colSums}\NormalTok{(BCI), }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{N <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(Ns)}
+\NormalTok{SADhist <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(Ns), }\KeywordTok{aes}\NormalTok{(Ns)) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{bins=}\KeywordTok{nclass.Sturges}\NormalTok{(}\KeywordTok{log}\NormalTok{(Ns)), }
+       \DataTypeTok{color=}\StringTok{"black"}\NormalTok{, }\DataTypeTok{fill=}\StringTok{"white"}\NormalTok{, }\DataTypeTok{boundary =} \DecValTok{0}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_x_log10}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Effectifs (échelle logarithmique)"}\NormalTok{, }
+       \DataTypeTok{y=}\StringTok{"Nombre d'espèces"}\NormalTok{)}
+\NormalTok{SADhist}
+\end{Highlighting}
+\end{Shaded}
+
+\normalsize
+
+Code de la figure \ref{fig:RACFig}:
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"entropart"}\NormalTok{)}
+\KeywordTok{autoplot}\NormalTok{(}\KeywordTok{as.AbdVector}\NormalTok{(Ns), }\DataTypeTok{Distribution =} \StringTok{"lnorm"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\normalsize
+
+Les SAD sont traitées en détail par \textcite{Magurran1988} ou \textcite{McGill2007}.
+Les principales distributions, nécessaires à la compréhension de la suite sont présentées ici:
+
+\begin{itemize}
+\tightlist
+\item
+  La distribution en log-séries de \textcite{Fisher1943};
+\item
+  La distribution géométrique \autocite{Motomura1932,Whittaker1972};
+\item
+  La distribution log-normale \autocite{Preston1948};
+\item
+  Le modèle Broken Stick \autocite{MacArthur1957}.
+\end{itemize}
+
+Formellement, la distribution des probabilités des espèces, notées \(p_s\), est à établir.
+
+\hypertarget{la-distribution-en-log-suxe9ries}{%
+\subsection{La distribution en log-séries}\label{la-distribution-en-log-suxe9ries}}
+
+Cette distribution est traitée en détail dans le chapitre \ref{chap-Fisher}.
+
+Le nombre d'espèces est lié au nombre d'individus par la relation \({\mathbb E}(S^n)=\alpha\ln(1+n/\alpha)\) où \(S^n\) indique le nombre d'espèces observées dans un échantillon de \(n\) individus.
+\(\alpha\) est le paramètre qui fixe la pente de la partie linéaire de la relation, valide dès que \(n>>\alpha\), où le nombre d'espèces \(S^n\) augmente proportionnellement au logarithme du nombre d'individus \(\ln(n)\).
+
+La distribution a été obtenue à partir d'inventaires de communautés de papillons en Malaisie et en Angleterre.
+Le modèle est tombé en désuétude faute de confirmation empirique à l'échelle de la communauté, avant d'être remis en valeur par la théorie neutre \autocite{Hubbell2001} dans lequel la distribution de la \emph{méta-communauté} est en log-séries.
+
+\hypertarget{la-distribution-broken-stick}{%
+\subsection{La distribution Broken Stick}\label{la-distribution-broken-stick}}
+
+Si les espèces se partagent les ressources ou l'espace des niches, représentées par un bâton, par un processus de cassure aléatoire et simultanée (précisément, les \(S-1\) cassures du bâton sont distribuées uniformément sur sa longueur) et que leur abondance est proportionnelle à la quantité de ressources ou d'espace de niche obtenus, alors leur distribution suit le modèle Broken Stick de \textcite{MacArthur1957}.
+
+Parmi les distributions classiques, c'est la plus équitable: la distribution uniforme des probabilités (\(p_s=1/S\) pour tout \(s\)) n'est jamais approchée.
+
+Elle est peu observée empiriquement.
+
+\hypertarget{la-distribution-log-normale}{%
+\subsection{La distribution log-normale}\label{la-distribution-log-normale}}
+
+Dans une distribution log-normale, le logarithme des probabilités des espèces (notées \(p_s\) pour l'espèce \(s\)) suit une loi normale.
+L'écart-type \(\sigma\) de cette distribution règle l'équitabilité de la distribution.
+Son espérance est obtenue à partir du nombre d'espèces et de \(\sigma\), pour que la somme des probabilités égale 1.
+
+\textcite{May1975} explique cette distribution par le théorème de la limite centrale: la variable aléatoire valant 1 si un individu est de l'espèce \(s\) et 0 sinon est le produit de nombreuses variables de loi inconnues valant 1 en cas de succès (germination d'une graine, survie à de nombreux évènements\ldots).
+Le logarithme de ce produit est une somme de variables aléatoire dont la loi est forcément normale par application du théorème de la limite centrale.
+
+D'autres arguments existent dans la littérature.
+Par exemple, \textcite{Engen1996} obtiennent une distribution normale à partir d'un modèle de dynamique des populations.
+
+La distribution log-normale décrit assez bien (mais pas exactement) une communauté locale dans le cadre de la théorie neutre \autocite{Hubbell2001} comme le montre la figure \ref{fig:RACFig}.
+Le nombre d'espèces rares est un peu surestimé.
+La distribution exacte est donnée par \textcite{Volkov2003}.
+
+La distribution est aussi le résultat d'un algorithme de bâton brisé (\emph{broken stick}) séquentiel:
+
+\begin{itemize}
+\tightlist
+\item
+  Si la première espèce accapare une partie des ressources (représentées par un bâton) aléatoirement (précisément, l'emplacement de la cassure suit une loi uniforme),
+\item
+  Si chaque espèce répète le même processus sur le reste des ressources laissé par les précédentes,
+\item
+  Si l'abondance de chaque espèce est proportionnelle aux ressources dont elle dispose,
+\item
+  Alors la distribution des espèces est log-normale.
+\end{itemize}
+
+\hypertarget{la-distribution-guxe9omuxe9trique}{%
+\subsection{La distribution géométrique}\label{la-distribution-guxe9omuxe9trique}}
+
+Si les espèces se partagent les ressources selon un algorithme \emph{broken stick} séquentiel (comme dans la distribution log-normale) mais de proportion fixe \(0<k<1\), alors la distribution obtenue est géométrique.
+Les abondances successives sont proportionnelles à \(k, k(1-k), k(1-k)^2, \dots, k(1-k)^s, \dots, k(1-k)^S\).
+
+Ce modèle a été établi par \textcite{Motomura1932} cité par \textcite{May1975}.
+Ses propriétés ont été étudiées par \textcite{Whittaker1972}.
+
+C'est la distribution qui traduit l'absence de relation entre la taille de l'échantillon et l'abondance des espèces \autocite{Pueyo2007}: la distribution du logarithme de ses probabilités est uniforme.
+En d'autre termes, l'ordre de grandeur de l'abondance d'une espèce est uniformément distribué.
+
+La distribution est observée dans les communautés pionnières \autocite{Bazzaz1975}, peu diverses, ou les communautés microbiennes \autocite{Haegeman2013}.
+
+\hypertarget{synthuxe8se}{%
+\subsection{Synthèse}\label{synthuxe8se}}
+
+
+
+\scriptsize
+
+\begin{SCfigure}
+
+{\centering \includegraphics[width=1\linewidth]{MesuresBD_files/figure-latex/DistributionsFig-1} 
+
+}
+
+\caption{Diagramme rang-fréquence des distributions de probabilité classiques. Toutes les distributions sont de 100 espèces. Les probabilités inférieures à \(10^{-6}\) ne sont pas affichées. Les paramètres choisis sont \(\alpha=11\) pour la distribution log-séries, \(k=0,2\) pour la distribution géométrique et \(\sigma=2\) pour la distribution log-normale.}\label{fig:DistributionsFig}
+\end{SCfigure}
+
+\normalsize
+
+La figure \ref{fig:DistributionsFig} est inspirée de la figure très connue de \textcite{Magurran1988}.
+Elle montre bien une gradation en termes de décroissance de probabilité entre des distributions de même richesse: de la plus équitable (broken stick) à la plus inéquitable (géométrique).
+Elle doit être nuancée: la proportion \(k\) de la distribution géométrique fixe la pente de la droite qui la représente sur la figure.
+\(k=10\%\) sur la figure: une valeur plus faible diminuerait la pente.
+De même, l'écart-type de la distribution log-normale décrit sa dispersion.
+Une valeur supérieure augmenterait sa décroissance.
+
+Le code utilisé pour produire la figure \ref{fig:DistributionsFig} est le suivant:
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"entropart"}\NormalTok{)}
+\CommentTok{# Tirage d'une communauté en log-séries}
+\NormalTok{lseries <-}\StringTok{ }\KeywordTok{rCommunity}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{size=}\FloatTok{1E5}\NormalTok{, }\DataTypeTok{Distribution=}\StringTok{"lseries"}\NormalTok{, }\DataTypeTok{alpha=}\DecValTok{11}\NormalTok{)}
+\CommentTok{# Nombre d'espèces de référence}
+\NormalTok{S <-}\StringTok{ }\KeywordTok{length}\NormalTok{(lseries)}
+\CommentTok{# Part des ressources accaparées dans la distribution géométrique}
+\NormalTok{prob=}\FloatTok{0.2}
+\CommentTok{# Calcul des probabilités de la distribution géométrique}
+\NormalTok{geom <-}\StringTok{ }\NormalTok{prob}\OperatorTok{/}\NormalTok{(}\DecValTok{1}\OperatorTok{-}\NormalTok{(}\DecValTok{1}\OperatorTok{-}\NormalTok{prob)}\OperatorTok{^}\NormalTok{S)}\OperatorTok{*}\NormalTok{(}\DecValTok{1}\OperatorTok{-}\NormalTok{prob)}\OperatorTok{^}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{(S}\DecValTok{-1}\NormalTok{))}
+\CommentTok{# Dispersion de la loi lognormale}
+\NormalTok{sd <-}\StringTok{ }\DecValTok{2}
+\CommentTok{# Tirage de S valeurs dans une loi lognormale}
+\NormalTok{Nslnorm <-}\StringTok{ }\KeywordTok{rlnorm}\NormalTok{(S, }\DecValTok{0}\NormalTok{, sd)}
+\CommentTok{# Normalisation pour obtenir des probabilités}
+\NormalTok{lnorm <-}\StringTok{ }\NormalTok{Nslnorm}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(Nslnorm)}
+\CommentTok{# Tirage des probabilités de la distribution broken stick}
+\NormalTok{bstick <-}\StringTok{ }\KeywordTok{c}\NormalTok{(cuts <-}\StringTok{ }\KeywordTok{sort}\NormalTok{(stats}\OperatorTok{::}\KeywordTok{runif}\NormalTok{(S}\DecValTok{-1}\NormalTok{)), }\DecValTok{1}\NormalTok{)}\OperatorTok{-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, cuts)}
+\CommentTok{# Graphique}
+\KeywordTok{tibble}\NormalTok{(}\DataTypeTok{Rang=}\DecValTok{1}\OperatorTok{:}\NormalTok{S,}
+      \StringTok{`}\DataTypeTok{Log-Séries}\StringTok{`}\NormalTok{=}\KeywordTok{sort}\NormalTok{(lseries}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(lseries), }\DataTypeTok{decreasing=}\OtherTok{TRUE}\NormalTok{),}
+      \StringTok{`}\DataTypeTok{Géometrique}\StringTok{`}\NormalTok{=}\KeywordTok{sort}\NormalTok{(geom, }\DataTypeTok{decreasing=}\OtherTok{TRUE}\NormalTok{),}
+      \StringTok{`}\DataTypeTok{Log-Normale}\StringTok{`}\NormalTok{=}\KeywordTok{sort}\NormalTok{(lnorm, }\DataTypeTok{decreasing=}\OtherTok{TRUE}\NormalTok{),}
+      \StringTok{`}\DataTypeTok{Broken Stick}\StringTok{`}\NormalTok{=}\KeywordTok{sort}\NormalTok{(bstick, }\DataTypeTok{decreasing=}\OtherTok{TRUE}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{pivot_longer}\NormalTok{(}\DataTypeTok{cols=}\OperatorTok{-}\NormalTok{Rang) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{Rang, }\DataTypeTok{y=}\NormalTok{value, }\DataTypeTok{color=}\NormalTok{name)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_y_log10}\NormalTok{(}\DataTypeTok{limits=}\KeywordTok{c}\NormalTok{(}\FloatTok{1E-6}\NormalTok{, }\OtherTok{NA}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y=}\StringTok{"Probabilité"}\NormalTok{, }\DataTypeTok{color=}\StringTok{"Distribution"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\normalsize
+
+La simulation de ces quatre distributions peut être réalisée par la fonction \texttt{rCommunity()} du package \emph{entropart}, où l'argument \texttt{Distribution} peut valoir \enquote{bstick}, \enquote{lnorm}, \enquote{geom} ou \enquote{lseries}.
+La simulation des communautés autres que log-séries passe par le tirage des probabilités des espèces (le calcul est déterministe dans le cas de la distribution géométrique) puis le tirage d'un nombre d'individus dans une loi multinomiale respectant ces probabilités et l'effectif total.
+
+Les fonction \texttt{RACbstick()}, \texttt{RAClnorm()}, \texttt{RACgeom()} et \texttt{RAClseries()} permettent d'inférer à partir d'un vecteur d'abondance les paramètres d'une distribution.
+La distribution correspondant au modèle estimé peut être affichée sur la figure Rang-Abondance (figure \ref{fig:SADFig}).
+
+Le package \emph{sads} fournit les fonctions classiques de R (densité de probabilité, cumulative, quantile, simulation) pour les distributions utiles en écologie, au-delà de celles présentées ici.
+La distribution de Volkov notamment peut être simulée.
+Les fonctions \texttt{fitxxx()} complètent les fonctions \texttt{RACxxx()} d'\emph{entropart}.
+
+Le code suivant montre comment ajuster une distribution log-normale aux données de BCI avec \emph{entropart} ou \emph{sads}.
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# entropart}
+\KeywordTok{library}\NormalTok{(}\StringTok{"entropart"}\NormalTok{)}
+\NormalTok{fit_entropart_lnorm <-}\StringTok{ }\KeywordTok{RAClnorm}\NormalTok{(Ns)}
+\CommentTok{# Affichage des paramètres estimés}
+\NormalTok{fit_entropart_lnorm}\OperatorTok{$}\NormalTok{mu}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.142695
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit_entropart_lnorm}\OperatorTok{$}\NormalTok{sigma}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.791177
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# sads}
+\KeywordTok{library}\NormalTok{(}\StringTok{"sads"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: bbmle
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: stats4
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'bbmle'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:dplyr':
+## 
+##     slice
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Estimation. Les données sont tronquées: les espèces}
+\CommentTok{# observées 0 fois ne sont pas comptées.}
+\NormalTok{fit_sads_lnorm <-}\StringTok{ }\KeywordTok{fitlnorm}\NormalTok{(Ns, }\DataTypeTok{trunc =} \DecValTok{0}\NormalTok{)}
+\NormalTok{fit_sads_lnorm}\OperatorTok{@}\NormalTok{fullcoef}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  meanlog    sdlog 
+## 3.142695 1.787195
+\end{verbatim}
+
+\normalsize
+
+L'ajustement du modèle de Volkov peut être comparé à celui d'une distribution log-normale.
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Ajustement du modèle de Volkov}
+\NormalTok{fit_volkov <-}\StringTok{ }\KeywordTok{fitvolkov}\NormalTok{(Ns)}
+\NormalTok{fit_volkov}\OperatorTok{@}\NormalTok{fullcoef}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        theta            m            J 
+## 4.767437e+01 9.237586e-02 2.145700e+04
+\end{verbatim}
+
+\normalsize
+
+Graphiquement, l'ajustement est très proche mais la distribution de Volkov prévoit explicitement des effectifs égaux parce qu'entiers.
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Comparaison graphique des deux modèles. Log-normal en}
+\CommentTok{# rouge.}
+\KeywordTok{plot}\NormalTok{(}\KeywordTok{as.AbdVector}\NormalTok{(Ns), }\DataTypeTok{Distribution =} \StringTok{"lnorm"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $mu
+## [1] 3.142695
+## 
+## $sigma
+## [1] 1.791177
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Volkov en vert}
+\KeywordTok{lines}\NormalTok{(}\KeywordTok{sort}\NormalTok{(}\KeywordTok{rvolkov}\NormalTok{(}\KeywordTok{length}\NormalTok{(Ns), fit_volkov}\OperatorTok{@}\NormalTok{fullcoef[}\DecValTok{1}\NormalTok{], fit_volkov}\OperatorTok{@}\NormalTok{fullcoef[}\DecValTok{2}\NormalTok{],}
+\NormalTok{    fit_volkov}\OperatorTok{@}\NormalTok{fullcoef[}\DecValTok{3}\NormalTok{]), }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{), }\DataTypeTok{col =} \StringTok{"green"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.8\linewidth]{MesuresBD_files/figure-latex/BCIfit3-1} \end{center}
+
+\normalsize
+
+Les vraisemblances sont proches.
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Comparaison des vraisemblances}
+\NormalTok{fit_sads_lnorm}\OperatorTok{@}\NormalTok{min}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1157.013
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit_volkov}\OperatorTok{@}\NormalTok{min}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1150.182
+\end{verbatim}
+
+\normalsize
+
+Les paramètres du modèle de communauté locale de la théorie neutre sont \(\theta\), le \enquote{nombre fondamental} égal à deux fois le nombre d'espèces apparaissant par pas de temps dans la méta-communauté, \(m\), le taux de migration, et \(J\), la taille de la communauté locale.
+
+La différence entre les logarithmes de vraisemblance des deux modèles est d'environ 7 au profit du modèle de Volkov, au prix d'un seul paramètre supplémentaire.
+Selon le critère d'information d'Akaike \autocite[AIC:][]{Akaike1998}, l'ajustement est meilleur mais la différence est petite et la complexité du modèle et des calculs pour l'estimer ne se justifient pas en général: le modèle de Volkov est très peu utilisé en pratique.
 
 \hypertarget{part-diversituxe9-neutre-dune-communautuxe9}{%
 \part{Diversité neutre d'une communauté}\label{part-diversituxe9-neutre-dune-communautuxe9}}
-
-\LargeMargins
 
 \hypertarget{chap-MesuresNeutres}{%
 \chapter{\texorpdfstring{Mesures neutres de la diversité \(\alpha\) ou \(\gamma\)}{Mesures neutres de la diversité \textbackslash alpha ou \textbackslash gamma}}\label{chap-MesuresNeutres}}
@@ -1193,15 +1528,15 @@ La diversité neutre est souvent appelée diversité taxonomique \autocite{Devic
 Ce type de mesure n'a de sens qu'à l'intérieur d'un taxocène bien défini: sommer un nombre d'espèces d'insectes à un nombre d'espèces de mammifères a peu d'intérêt.
 Ces méthodes ne sont donc pas forcément les plus adaptées à la conservation: à grande échelle, des indicateurs de biodiversité \autocite{Balmford2003} peuvent être plus pertinents.
 D'autre part, les communautés sont considérées comme limitées, avec un nombre d'espèces fini: la courbe d'accumulation des espèces atteint donc théoriquement une asymptote quand l'effort d'inventaire est suffisant.
-Cette approche est opposée à celle, traitée dans les chapitres \ref{chap:Fisher} et suivants, qui considère que la diversité augmente indéfiniment avec la surface \autocite{Williamson2001}, que ce soit par changement d'échelle (élargir l'inventaire ajoute de nouvelles communautés) ou, plus théoriquement, parce que les communautés réelles sont considérées comme un tirage aléatoire parmi une infinités d'espèces \autocite{Fisher1943}.
+Cette approche est opposée à celle, traitée dans les chapitres \ref{chap-Fisher} et suivants, qui considère que la diversité augmente indéfiniment avec la surface \autocite{Williamson2001}, que ce soit par changement d'échelle (élargir l'inventaire ajoute de nouvelles communautés) ou, plus théoriquement, parce que les communautés réelles sont considérées comme un tirage aléatoire parmi une infinités d'espèces \autocite{Fisher1943}.
 
 Les mesures présentées ici sont les plus utilisées: richesse, indices de Shannon et de Simpson, et l'indice de Hurlbert.
 Elles sont sujettes à des biais d'estimation \autocite{Mouillot1999}, notamment (mais pas seulement) à cause des espèces non échantillonnées.
 
 Au chapitre suivant, l'entropie HCDT permettra d'unifier ces mesures et les nombres de Hill, et de leur donner un sens intuitif.
 
-\hypertarget{sec:Richesse}{%
-\section{Richesse spécifique}\label{sec:Richesse}}
+\hypertarget{sec-Richesse}{%
+\section{Richesse spécifique}\label{sec-Richesse}}
 
 La richesse est tout simplement le nombre d'espèces présentes dans le taxocène considéré.
 C'est la mesure conceptuellement la plus simple mais pratiquement la plus délicate dans des systèmes très riches comme les forêts tropicales: même avec des efforts d'inventaire considérables, il n'est en général pas possible de relever toutes les espèces rares, ce qui implique de recourir à des modèles mathématiques pour en estimer le nombre.
@@ -1287,7 +1622,7 @@ Il s'agit d'un estimateur minimum: l'espérance du nombre d'espèces est supéri
   s^{n}_{0} = S e^{-kn},
 \end{equation}
 où \(k\) est un réel strictement positif.
-Cette relation est cohérente avec un échantillonnage poissonien dans lequel la densité des individus est constante: voir le chapitre \ref{chap:Accumulation}.
+Cette relation est cohérente avec un échantillonnage poissonien dans lequel la densité des individus est constante: voir le chapitre \ref{chap-Accumulation}.
 
 Si aucune espèce n'est observée deux fois, l'estimateur est remplacé par
 \begin{equation}
@@ -1492,7 +1827,7 @@ Il est possible de vérifier que l'espérance du nombre d'espèces non observée
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 179.4575
+## [1] 169.9725
 \end{verbatim}
 
 \begin{Shaded}
@@ -1504,7 +1839,7 @@ Il est possible de vérifier que l'espérance du nombre d'espèces non observée
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 120.565
+## [1] 129.987
 \end{verbatim}
 
 \begin{Shaded}
@@ -1516,7 +1851,7 @@ Il est possible de vérifier que l'espérance du nombre d'espèces non observée
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 300.0225
+## [1] 299.9595
 \end{verbatim}
 
 \begin{Shaded}
@@ -1591,21 +1926,21 @@ La courbe peut être approchée par une série de puissances négatives de \(n\)
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -8.4563 -3.0845  0.1785  3.6379 21.2393 
+## -8.8796 -3.2632  0.1727  3.8447 22.2823 
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## I(1/n.seq)    5.787e+05  7.548e+02   766.7   <2e-16 ***
-## I(1/n.seq^2) -7.975e+08  2.652e+06  -300.8   <2e-16 ***
-## I(1/n.seq^3)  5.071e+11  2.669e+09   190.0   <2e-16 ***
-## I(1/n.seq^4) -1.145e+14  8.003e+11  -143.1   <2e-16 ***
+## I(1/n.seq)    5.662e+05  7.979e+02   709.5   <2e-16 ***
+## I(1/n.seq^2) -8.026e+08  2.803e+06  -286.3   <2e-16 ***
+## I(1/n.seq^3)  5.184e+11  2.821e+09   183.7   <2e-16 ***
+## I(1/n.seq^4) -1.180e+14  8.461e+11  -139.5   <2e-16 ***
 ## ---
 ## Signif. codes:  
 ## 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 3.757 on 4497 degrees of freedom
-## Multiple R-squared:  0.9992, Adjusted R-squared:  0.9992 
-## F-statistic: 1.482e+06 on 4 and 4497 DF,  p-value: < 2.2e-16
+## Residual standard error: 3.972 on 4497 degrees of freedom
+## Multiple R-squared:  0.9991, Adjusted R-squared:  0.9991 
+## F-statistic: 1.212e+06 on 4 and 4497 DF,  p-value: < 2.2e-16
 \end{verbatim}
 
 \normalsize
@@ -1800,12 +2135,12 @@ L'estimateur du bootstrap est calculable simplement:
 
 \normalsize
 
-\hypertarget{sec:ChoixEstimateur}{%
-\subsubsection{Choix de l'estimateur}\label{sec:ChoixEstimateur}}
+\hypertarget{sec-ChoixEstimateur}{%
+\subsubsection{Choix de l'estimateur}\label{sec-ChoixEstimateur}}
 
 Des tests poussés ont été menés par \textcite{Brose2003} pour permettre le choix du meilleur estimateur de la richesse en fonction de la complétude de l'échantillonnage \(s^{n}_{\ne 0}/{S}\).
 Les auteurs appellent cette proportion couverture (\emph{coverage}).
-Le terme \emph{completeness} a été proposé par \textcite{Beck2010} pour éviter la confusion avec le taux de couverture défini par Good (vu en section \ref{sec:Couverture}).
+Le terme \emph{completeness} a été proposé par \textcite{Beck2010} pour éviter la confusion avec le taux de couverture défini par Good (vu en section \ref{sec-Couverture}).
 La complétude est inférieure à la couverture: toutes les espèces ont le même poids alors que les espèces manquantes sont plus rares et pénalisent moins le taux de couverture.
 
 
@@ -1829,7 +2164,7 @@ Le choix dépend principalement de la complétude (\emph{coverage} sur la figure
 Une première estimation est nécessaire par plusieurs estimateurs.
 Si les résultats sont cohérents, choisir un estimateur jackknife d'ordre d'autant plus faible que la complétude est grande.
 Au-delà de 96\%, le nombre d'espèces observé est plus performant parce que les jackknifes surestiment \(S\).
-S'ils sont incohérents (intervalle des estimations supérieur à 50\% de leur moyenne), le critère majeur est l'équitabilité (voir section \ref{sec:Equitabilite}).
+S'ils sont incohérents (intervalle des estimations supérieur à 50\% de leur moyenne), le critère majeur est l'équitabilité (voir section \ref{sec-Equitabilite}).
 Si elle est faible (de l'ordre de 0,5-0,6), les estimateurs jackknife 2 à 4 sont performants, l'ordre diminuant avec l'intensité d'échantillonnage (forte: 10\%, faible: 0,5\% de la communauté).
 Pour une forte équitabilité (0,8-0,9), on préférera jackknife 1 ou 2.
 
@@ -1892,8 +2227,8 @@ Le ratio des singletons sur les doubletons diminue quand l'échantillonnage appr
 Quand le seuil de 0,6 est dépassé, la valeur de l'estimateur de Chao devient supérieur au jacknife 2 et doit être utilisé.
 Ce seuil est cohérent avec les règles de \textcite{Brose2003}.
 
-\hypertarget{sec:Extrapol}{%
-\subsubsection{Prédiction de la richesse d'un nouvel échantillon}\label{sec:Extrapol}}
+\hypertarget{sec-Extrapol}{%
+\subsubsection{Prédiction de la richesse d'un nouvel échantillon}\label{sec-Extrapol}}
 
 La prédiction du nombre d'espèces \(\hat{S'}\) découvert dans une nouvelle placette d'un habitat dans lequel on a déjà échantillonné est une question importante, par exemple pour évaluer le nombre d'espèces préservées dans le cadre d'une mise en réserve, ou évaluer le nombre d'espèces perdues en réduisant la surface d'une forêt.
 
@@ -1976,7 +2311,7 @@ Le code R nécessaire pour réaliser la figure est:
 
 \normalsize
 
-La question de l'extrapolation de la richesse est traitée plus en détail dans les sections \ref{sec:RarExtrapol} et \ref{sec:Extrapolation}.
+La question de l'extrapolation de la richesse est traitée plus en détail dans les sections \ref{sec-RarExtrapol} et \ref{sec-Extrapolation}.
 
 \hypertarget{infuxe9rence-du-nombre-despuxe8ces-uxe0-partir-de-la-sad}{%
 \subsection{Inférence du nombre d'espèces à partir de la SAD}\label{infuxe9rence-du-nombre-despuxe8ces-uxe0-partir-de-la-sad}}
@@ -2050,7 +2385,7 @@ Le code R nécessaire pour réaliser la figure est:
 \hypertarget{maximum-de-vraisemblance-dune-distribution-de-fisher}{%
 \subsubsection{Maximum de vraisemblance d'une distribution de Fisher}\label{maximum-de-vraisemblance-dune-distribution-de-fisher}}
 
-\textcite{Norris1998} supposent que la distribution des espèces suit le modèle de Fisher (voir chapitre \ref{chap:Fisher}) et infèrent le nombre d'espèces par maximum de vraisemblance non paramétrique (ils ne cherchent pas à inférer les paramètres de la loi de probabilité de \(p_s\) mais seulement à ajuster au mieux le modèle de Poisson aux valeurs de \({\hat{p}}_s\) observées).
+\textcite{Norris1998} supposent que la distribution des espèces suit le modèle de Fisher (voir chapitre \ref{chap-Fisher}) et infèrent le nombre d'espèces par maximum de vraisemblance non paramétrique (ils ne cherchent pas à inférer les paramètres de la loi de probabilité de \(p_s\) mais seulement à ajuster au mieux le modèle de Poisson aux valeurs de \({\hat{p}}_s\) observées).
 
 Le calcul est possible avec la librairie \emph{SPECIES} de R:
 
@@ -2138,8 +2473,8 @@ Son défaut est qu'il nécessite un très long temps de calcul (plusieurs heures
 
 \normalsize
 
-\hypertarget{sec:RichesseSAC}{%
-\subsection{Inférence du nombre d'espèces à partir de courbes d'accumulation}\label{sec:RichesseSAC}}
+\hypertarget{sec-RichesseSAC}{%
+\subsection{Inférence du nombre d'espèces à partir de courbes d'accumulation}\label{sec-RichesseSAC}}
 
 Cette approche consiste à extrapoler la courbe d'accumulation observée.
 
@@ -2228,7 +2563,7 @@ Ses données sont utilisées ici:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1.75511
+## [1] 1.712278
 \end{verbatim}
 
 \begin{Shaded}
@@ -2238,7 +2573,7 @@ Ses données sont utilisées ici:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 223.8645
+## [1] 223.6211
 \end{verbatim}
 
 \normalsize
@@ -2261,7 +2596,7 @@ Le paramètre \(K\) peut être estimé plus précisément par résolution numér
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1.755126
+## [1] 1.712293
 \end{verbatim}
 
 \begin{Shaded}
@@ -2271,7 +2606,7 @@ Le paramètre \(K\) peut être estimé plus précisément par résolution numér
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 223.8647
+## [1] 223.6213
 \end{verbatim}
 
 \normalsize
@@ -2515,7 +2850,7 @@ Le nombre total d'espèces estimé est 8,7 millions, tous règnes confondus, dan
 \normalsize
 
 En se limitant aux arbres, l'estimation se monte à 16000 espèces pour l'Amazonie \autocite{TerSteege2013}, de l'ordre de 5000 pour l'Afrique et entre 40000 et 53000 pour l'ensemble des tropiques \autocite{Slik2015} (donc pour l'ensemble de la planète, le nombre d'espèces non-tropicales étant négligeable).
-Ces estimations sont obtenues par extrapolation du modèle en log-séries (chapitre \ref{chap:Fisher}) et sont sujettes au paradoxe de Fisher: les espèces représentées par un très petit nombre d'individu dans le modèle, notamment les singletons, sont les plus nombreuses.
+Ces estimations sont obtenues par extrapolation du modèle en log-séries (chapitre \ref{chap-Fisher}) et sont sujettes au paradoxe de Fisher: les espèces représentées par un très petit nombre d'individu dans le modèle, notamment les singletons, sont les plus nombreuses.
 Une discussion approfondie est donnée par \textcite{Hubbell2015}: les espèces récemment apparues au sens du modèle ne sont pas détectables avant plusieurs générations, créant un décalage entre le nombre d'espèces reconnues par la taxonomie et modèle.
 
 \textcite{Wilson2012} compilent les relevés du nombre d'espèces de plantes vasculaires en fonction de la surface et retiennent uniquement les plus riches à chaque échelle spatiale (du millimètre carré à l'hectare).
@@ -2551,7 +2886,7 @@ Tout d'abord, la probabilité que deux individus soient de la même espèce, sou
 \end{equation}
 
 L'indice de Simpson est parfois considéré comme une mesure d'équitabilité \autocite{Olszewski2004} mais il varie avec la richesse: cette approche est donc erronnée.
-\textcite{Hurlbert1971} l'a divisé par sa valeur maximale \(1-{1}/{S}\) pour obtenir une mesure d'équitabilité valide généralisée plus tard par \textcite{Mendes2008}, voir section \ref{sec:Mendes}.
+\textcite{Hurlbert1971} l'a divisé par sa valeur maximale \(1-{1}/{S}\) pour obtenir une mesure d'équitabilité valide généralisée plus tard par \textcite{Mendes2008}, voir section \ref{sec-Mendes}.
 Le nombre d'espèces doit être estimé par les méthodes présentées plus haut, pour ne pas dépendre de la taille de l'échantillon.
 
 L'estimateur du maximum de vraisemblance de l'indice est
@@ -2733,8 +3068,8 @@ La distribution de l'estimateur est connue \autocite{Hutcheson1970} mais elle es
 
 La sous-estimation est assez sévère sur cet exemple.
 
-\hypertarget{sec:BiaisShannon}{%
-\subsection{Estimation}\label{sec:BiaisShannon}}
+\hypertarget{sec-BiaisShannon}{%
+\subsection{Estimation}\label{sec-BiaisShannon}}
 
 \textcite{Basharin1959} a montré que l'estimateur de l'indice de Shannon était biaisé parce que des espèces ne sont pas échantillonnées.
 Si \(S\) est le nombre d'espèces réel et \(n\) le nombre d'individus échantillonnés, le biais est
@@ -2766,7 +3101,7 @@ Multiplier les fréquences observées par le taux de couverture permet d'obtenir
 Le terme au dénominateur est la correction de \textcite{Horvitz1952}: chaque terme de la somme est divisé par la probabilité d'observer au moins une fois l'espèce correspondante.
 Il tend vers 1 quand la taille de l'échantillon augmente.
 
-\textcite{Beck2010} montrent que la correction du biais est efficace, même à des niveaux de complétude de l'échantillonnage (voir section \ref{sec:ChoixEstimateur}) très faibles. \textcite{Vu2007} étudient la vitesse de convergence de l'estimateur.
+\textcite{Beck2010} montrent que la correction du biais est efficace, même à des niveaux de complétude de l'échantillonnage (voir section \ref{sec-ChoixEstimateur}) très faibles. \textcite{Vu2007} étudient la vitesse de convergence de l'estimateur.
 
 \textcite{Zhang2012} définit l'indice de Simpson généralisé:
 
@@ -2844,7 +3179,7 @@ L'indice de Shannon est concave (figure \ref{fig:ShannonFig}) donc son estimateu
 
 \normalsize
 
-Code de la figure \ref{fig:SARFig}:
+Code de la figure \ref{fig:SACFig}:
 
 \scriptsize
 
@@ -3104,8 +3439,8 @@ Leur utilisation dans l'estimateur plug-in donne le même résultat:
 
 Appliqué à des données de biodiversité aquatique, l'estimateur de James-Stein obtient de meilleurs résultats que celui de Chao et Shen \autocite{Liu2015} quand l'échantillonnage est réduit.
 
-\hypertarget{sec:Hurlbert}{%
-\section{Indice de Hurlbert}\label{sec:Hurlbert}}
+\hypertarget{sec-Hurlbert}{%
+\section{Indice de Hurlbert}\label{sec-Hurlbert}}
 
 \hypertarget{duxe9finition-2}{%
 \subsection{Définition}\label{duxe9finition-2}}
@@ -3391,7 +3726,7 @@ Quelques formes possibles de \(H(\mathbf{q},\mathbf{p})\) sont:
 
 \normalsize
 
-L'entropie relative est essentielle pour la définition de la diversité \(\beta\) présentée dans le chapitre \ref{chap:DedompHCDT}.
+L'entropie relative est essentielle pour la définition de la diversité \(\beta\) présentée dans le chapitre \ref{chap-DedompHCDT}.
 En se limitant à la diversité \(\alpha\), on peut remarquer que l'indice de Shannon est la divergence de Kullback-Leibler entre la distribution observée et l'équiprobabilité des espèces \autocite{Marcon2012a}.
 Les valeurs de chaque terme de la divergence sont représentées en figure \ref{fig:KullbackLeiblerFig}.
 
@@ -3494,10 +3829,10 @@ Un nombre équivalent d'espèces existe pour tous ces indices, il est toujours �
 \end{equation}
 
 D'autres entropies ont été utlisées, avec plus ou moins de succès.
-Par exemple, \textcite{Ricotta2003c} proposent d'utiliser la fonction d'information \(I(p_s)=-\ln(k_s)\) où \(k_s\) est la dissimilarité totale de l'espèce \(s\) avec les autres (par exemple, la somme des distances aux autres espèces dans un arbre phylogénétique, voir section \ref{sec:Dphylo}), normalisée pour que \(\sum_s{k_s}=1\).
+Par exemple, \textcite{Ricotta2003c} proposent d'utiliser la fonction d'information \(I(p_s)=-\ln(k_s)\) où \(k_s\) est la dissimilarité totale de l'espèce \(s\) avec les autres (par exemple, la somme des distances aux autres espèces dans un arbre phylogénétique, voir section \ref{sec-Dphylo}), normalisée pour que \(\sum_s{k_s}=1\).
 Ainsi, les espèces les plus originales apportent peu d'information, ce qui n'est pas très intuitif.
 Les auteurs montrent que leur mesure est la somme de l'entropie de Shannon et de la divergence de Kullback-Leibler entre les probabilités et les dissimilarités des espèces.
-\textcite{Ricotta2006b} ont défini plus tard une entropie augmentant avec l'originalité de chaque espèce, présentée au chapitre \ref{chap:LeinsterCobbold}.
+\textcite{Ricotta2006b} ont défini plus tard une entropie augmentant avec l'originalité de chaque espèce, présentée au chapitre \ref{chap-LeinsterCobbold}.
 
 \hypertarget{entropie-hcdt}{%
 \section{Entropie HCDT}\label{entropie-hcdt}}
@@ -3526,7 +3861,7 @@ Là encore:
 
 L'entropie HCDT est particulièrement attractive parce que sa relation avec la diversité au sens strict est simple, après introduction du formalisme adapté (les logarithmes déformés).
 Son biais d'estimation peut être corrigé globalement, et non seulement pour les cas particuliers (nombre d'espèces, Shannon, Simpson).
-Enfin, sa décomposition sera présentée en détail dans le chapitre \ref{chap:DedompHCDT}.
+Enfin, sa décomposition sera présentée en détail dans le chapitre \ref{chap-DedompHCDT}.
 
 \hypertarget{logarithmes-duxe9formuxe9s}{%
 \subsection{Logarithmes déformés}\label{logarithmes-duxe9formuxe9s}}
@@ -3680,7 +4015,7 @@ On voit immédiatement que l'entropie de Tsallis est le logarithme d'ordre \(q\)
 
 L'entropie est utile pour les calculs: la correction des biais d'estimation notamment.
 Les nombres de Hill, ou \emph{nombres équivalents d'espèces} ou \emph{nombres effectif d'espèces} permettent une appréhension plus intuitive de la notion de biodiversité \autocite{Jost2006}.
-En raison de leurs propriétés, notamment de décomposition (voir le chapitre \ref{chap:DedompHCDT}), \textcite{Jost2007} les appelle \enquote{vraie diversité}.
+En raison de leurs propriétés, notamment de décomposition (voir le chapitre \ref{chap-DedompHCDT}), \textcite{Jost2007} les appelle \enquote{vraie diversité}.
 \textcite{Hoffmann2008} critiquent cette définition totalitaire et fournissent une revue historique plus lointaine sur les origines de ces mesures.
 \textcite{Jost2009} reconnaît qu'un autre terme aurait pu être choisi (\enquote{diversité neutre} ou \enquote{diversité mathématique} par exemple).
 
@@ -3734,11 +4069,11 @@ Le calcul de \(^{q}\!D\) peut se faire avec la fonction \texttt{Diversity} de la
 
 Les propriétés mathématiques de la diversité ne sont pas celles de l'entropie.
 L'entropie doit être une fonction concave des probabilités comme on l'a vu plus haut, mais pas la diversité (un exemple de confusion est fourni par \textcite{Gadagkar1989}, qui reproche à \(^{2}\!D\) de ne pas être concave).
-L'entropie est une moyenne pondérée par les probabilités de la fonction d'information, c'est donc une fonction linéaire des probabilités, propriété importante pour définir l'entropie \(\alpha\) (section \ref{sec:defalpha}) comme la moyenne des entropies de plusieurs communautés, ou l'entropie phylogénétique (chapitre \ref{chap:Phyloentropie}) comme la moyenne de l'entropie sur les périodes d'un arbre.
+L'entropie est une moyenne pondérée par les probabilités de la fonction d'information, c'est donc une fonction linéaire des probabilités, propriété importante pour définir l'entropie \(\alpha\) (section \ref{sec-defalpha}) comme la moyenne des entropies de plusieurs communautés, ou l'entropie phylogénétique (chapitre \ref{chap-Phyloentropie}) comme la moyenne de l'entropie sur les périodes d'un arbre.
 La diversité n'est pas une fonction linéaire des probabilités: la diversité moyenne n'est en général pas la moyenne des diversités.
 
-\hypertarget{synthuxe8se}{%
-\subsection{Synthèse}\label{synthuxe8se}}
+\hypertarget{synthuxe8se-1}{%
+\subsection{Synthèse}\label{synthuxe8se-1}}
 
 L'inverse de la probabilité d'une espèce, \(1/p_s\), définit sa rareté.
 L'entropie est la moyenne du logarithme de la rareté:
@@ -3798,7 +4133,7 @@ Code R pour réaliser la figure \ref{fig:ProfilDivFig}:
 \textcite{Pallmann2012} ont développé un test statistique pour comparer la diversité de deux communautés pour plusieurs valeurs de \(q\) simultanément.
 
 \textcite{Liu2006} nomment \emph{séparables} des communautés dont les profils ne se croisent pas.
-Ils montrent que des communautés peuvent être séparables en selon un profil de diversité de \(^{q}\!D\) sans l'être forcément selon un profil de diversité de Hurlbert (section \ref{sec:Hurlbert}), et inversement.
+Ils montrent que des communautés peuvent être séparables en selon un profil de diversité de \(^{q}\!D\) sans l'être forcément selon un profil de diversité de Hurlbert (section \ref{sec-Hurlbert}), et inversement.
 Ils montrent que les communautés séparables selon un troisième type de profil, celui de la queue de distribution \autocite{Patil1982}, le sont dans tous les cas.
 Le profil de la queue de distribution est construit en classant les espèces de la plus fréquente à la plus rare et en traçant la probabilité qu'un individu appartienne à une espèce plus rare que l'espèce en abscisse (figure \ref{fig:ProfilQueueFig}).
 
@@ -3917,8 +4252,8 @@ Dans \emph{entropart}, utiliser \texttt{Tsallis} et \texttt{Diversity}:
 
 \normalsize
 
-\hypertarget{sec:BiaisHCDT}{%
-\subsection{Chao et Jost}\label{sec:BiaisHCDT}}
+\hypertarget{sec-BiaisHCDT}{%
+\subsection{Chao et Jost}\label{sec-BiaisHCDT}}
 
 \textcite{Chao2015} complètent cet estimateur par une estimation du biais résiduel, selon la même démarche que pour l'entropie de Shannon \autocite{Chao2013}.
 \(h_q\) s'écrit sous la forme de la somme infinie des entropies de Simpson généralisées: \(h_q = \sum_{k=0}^{\infty}{\binom{q-1}{k}(-1)^k\zeta_{1,k}}\).
@@ -3946,7 +4281,7 @@ La formule du nombre de combinaisons est généralisée aux valeurs de \(q-1\) n
 Cet estimateur est le plus performant. Quand \(q \to 1\), il tend vers l'estimateur de l'entropie de Shannon de \textcite{Chao2013}, équation \eqref{eq:Chao2013}.
 Quand \(q=0\), l'estimateur se réduit à Chao1. Pour toutes les valeurs entières de \(q\) supérieures ou égales à 2, il se réduit à l'estimateur \eqref{eq:HqZhang}, identique à l'estimateur de Lande pour \(q=2\), et est sans biais.
 
-L'estimateur est obtenu à partir de celui du taux de couverture extrapolé (section \ref{sec:Couverture}) fourni par \textcite{Chao2012b}, annexe E, sans le détail de la démonstration présenté ici.
+L'estimateur est obtenu à partir de celui du taux de couverture extrapolé (section \ref{sec-Couverture}) fourni par \textcite{Chao2012b}, annexe E, sans le détail de la démonstration présenté ici.
 L'espérance conditionnelle du taux de couverture dans un échantillon de taille \(n+m\) compte-tenu des effectifs observés, notés \(\{n_s\}\), est
 
 \begin{equation}
@@ -4184,8 +4519,8 @@ Ils nécessitent de choisir une loi de probabilité d'observation des espèces c
 Une approche alternative consiste à modéliser la probabilité d'observation comme la combinaison d'une probabilité de présence et d'une probabilité de détection \autocite{Broms2014}.
 Ces méthodes ont l'avantage de fournir une distribution de probabilité des paramètres des modèles, et donc de la diversité qui est calculée comme une quantité dérivée. Leur faiblesse est qu'ils dépendent de la loi choisie. Une revue complète est fournie par \textcite{Iknayan2014}
 
-\hypertarget{sec:RarExtrapol}{%
-\subsection{Raréfaction et extrapolation}\label{sec:RarExtrapol}}
+\hypertarget{sec-RarExtrapol}{%
+\subsection{Raréfaction et extrapolation}\label{sec-RarExtrapol}}
 
 \textcite{Chao2014} étendent l'approche de \textcite{Gotelli2001} aux nombres de Hill et fournissent les méthodes nécessaires au calcul de courbes de raréfaction et d'extrapolation de l'estimateur de \(^{q}\!D\) en fonction de la taille de l'échantillon ou du taux de couverture.
 
@@ -4210,7 +4545,7 @@ L'entropie d'ordre \(q\) de \textcite{Renyi1961} est
 
 C'est le logarithme naturel des nombres de \textcite{Hill1973} qui ont été définis à partir d'elle.
 L'entropie de Rényi a connu un succès important en tant que seule mesure d'entropie généralisée jusqu'à la diffusion de l'entropie HCDT.
-Son défaut est qu'elle n'est pas forcément concave \autocite{Beck2009}, ce qui empêche sa décomposition (voir chapitre \ref{chap:DedompHCDT}).
+Son défaut est qu'elle n'est pas forcément concave \autocite{Beck2009}, ce qui empêche sa décomposition (voir chapitre \ref{chap-DedompHCDT}).
 
 \hypertarget{lentropie-guxe9nuxe9ralisuxe9e-des-mesures-dinuxe9galituxe9}{%
 \subsection{L'entropie généralisée des mesures d'inégalité}\label{lentropie-guxe9nuxe9ralisuxe9e-des-mesures-dinuxe9galituxe9}}
@@ -4253,8 +4588,8 @@ Elle généralise donc l'indice de \textcite{Theil1967}:
   I_r = \frac{1}{q S^{1-q}}\left( \ln_q{S} - ^{q}\!H \right).
 \end{equation}
 
-\hypertarget{sec:SimpsonG}{%
-\subsection{L'entropie de Simpson généralisée}\label{sec:SimpsonG}}
+\hypertarget{sec-SimpsonG}{%
+\subsection{L'entropie de Simpson généralisée}\label{sec-SimpsonG}}
 
 L'entropie de Simpson généralisée a été introduite dans une classe d'indices plus générale \eqref{eq:zeta} par \textcite{Zhang2010} et étudiée en détail par \textcite{Zhang2014}.
 L'entropie d'ordre \(r>0\) est
@@ -4474,8 +4809,8 @@ Cette mesure peut être étendue à l'entropie HCDT sans difficulté:
 La méthode peut être appliquée pour évaluer la contribution de n'importe quel partie de la communauté à la diversité totale.
 Il ne s'agit pas d'une décomposition de la diversité au sens classique du terme, qui consiste à partitionner la diversité totale en diversité intra et inter-groupes, mais plutôt d'une façon de prendre en compte les caractéristiques des espèces dans une approche non-neutre.
 
-\hypertarget{sec:Equitabilite}{%
-\chapter{Équitabilité}\label{sec:Equitabilite}}
+\hypertarget{sec-Equitabilite}{%
+\chapter{Équitabilité}\label{sec-Equitabilite}}
 
 \scriptsize
 
@@ -4589,8 +4924,8 @@ L'indice de Gini est le double de la surface comprise entre la courbe de Lorenz 
 
 La version normalisée de \(E_{2,1}\) est recommandée par \textcite{Alatalo1981}.
 
-\hypertarget{synthuxe8se-1}{%
-\subsection{Synthèse}\label{synthuxe8se-1}}
+\hypertarget{synthuxe8se-2}{%
+\subsection{Synthèse}\label{synthuxe8se-2}}
 
 \textcite{Ricotta2001} testent ces indices sur 65 jeux de données différents pour observer leurs corrélations.
 Tous sont compatibles avec la courbe de Lorenz.
@@ -4652,8 +4987,8 @@ On a donc défini l'indice, souvent appelé \enquote{indice de Pielou}:
 \hypertarget{guxe9nuxe9ralisation-de-lindice-de-pielou}{%
 \section{Généralisation de l'indice de Pielou}\label{guxe9nuxe9ralisation-de-lindice-de-pielou}}
 
-\hypertarget{sec:Mendes}{%
-\subsection{Mendes et al.~}\label{sec:Mendes}}
+\hypertarget{sec-Mendes}{%
+\subsection{Mendes et al.~}\label{sec-Mendes}}
 
 \textcite{Mendes2008} généralisent l'indice de Pielou en remplaçant l'indice de Shannon par l'entropie de Tsallis.
 Ils définissent
@@ -4725,8 +5060,8 @@ Code R pour la figure \ref{fig:ProfilIneqFig}:
 
 \normalsize
 
-\hypertarget{synthuxe8se-2}{%
-\subsection{Synthèse}\label{synthuxe8se-2}}
+\hypertarget{synthuxe8se-3}{%
+\subsection{Synthèse}\label{synthuxe8se-3}}
 
 L'indice de Pielou est le plus utilisé \autocite{Tuomisto2012} mais n'est pas invariant par réplication parce qu'il ne normalise pas une diversité mais une entropie.
 Il est rejeté pour cette raison \autocite{Smith1996,Tuomisto2012} par une partie de la littérature.
@@ -4904,15 +5239,11 @@ Code R pour réaliser les figures:
 La corrélation entre richesse et équitabilité est donc positive si la richesse varie entre communautés, mais négative si ce n'est qu'un effet de l'échantillonnage.
 Les résultats sont similaires avec des communautés en log-séries: la corrélation est positive quand \(\alpha\) varie, négative quand l'échantillonnage varie.
 
-\SmallMargins
-
 \hypertarget{part-diversituxe9-fonctionnelle-et-phyloguxe9nuxe9tique}{%
 \part{Diversité fonctionnelle et phylogénétique}\label{part-diversituxe9-fonctionnelle-et-phyloguxe9nuxe9tique}}
 
-\LargeMargins
-
-\hypertarget{cadre}{%
-\chapter{Cadre}\label{cadre}}
+\hypertarget{chap-cadrephyfonc}{%
+\chapter{Cadre}\label{chap-cadrephyfonc}}
 
 \scriptsize
 
@@ -4935,7 +5266,7 @@ Intuitivement, l'idée qu'une communauté de \(S\) espèces toutes de genres dif
 Il s'agit donc de caractériser la différence entre deux classes d'objets, puis de construire des mesures de diversité en rapport \autocite{Pielou1975,May1990a,Cousins1991}.
 En écologie, ces différences sont fonctionnelles ou phylogénétiques, définissant la diversité fonctionnelle \autocite{Tilman1997} ou la diversité phylogénétique (\emph{phylodiversity}) \autocite{Webb2006}.
 
-Les premières propositions de ce type d'indices sont dues à \textcite{Rao1982} (voir section \ref{sec:Rao}) puis, avec nettement moins de succès, \textcite{Vane-Wright1991} et \textcite{Warwick1995}.
+Les premières propositions de ce type d'indices sont dues à \textcite{Rao1982} (voir section \ref{sec-Rao}) puis, avec nettement moins de succès, \textcite{Vane-Wright1991} et \textcite{Warwick1995}.
 \textcite{Chave2007} montrent que la diversité neutre prédit mal la diversité phylogénétique (calculée par l'entropie quadratique de Rao).
 
 De nombreuses mesures de diversité ont été créées et plusieurs revues permettent d'en faire le tour. \autocite{Ricotta2007,Vellend2010}
@@ -5012,8 +5343,8 @@ Les distances obtenues en mesurant les longueurs des branches d'un dendrogramme 
 La façon exacte de mesurer les longueurs de branche est illustrée par la figure \ref{fig:ArbreA1}: la distance entre les espèces 1 et 2 est \(T_1+T_2\), elle est égale à \(T_1\) entre les espèces 4 et 5.
 La distance est la hauteur du premier noeud commun.
 
-\hypertarget{sec:Dphylo}{%
-\section{Distance phylogénétique}\label{sec:Dphylo}}
+\hypertarget{sec-Dphylo}{%
+\section{Distance phylogénétique}\label{sec-Dphylo}}
 
 La façon la plus évidente de définir une distance entre espèces est d'utiliser la taxonomie \autocite[Warwick2001]{Clarke2001}, en attribuant une distance arbitraire (par exemple 1) à deux espèces du même genre, une autre (par exemple 2) à deux espèces de la même famille, etc.
 La distance définie est ultramétrique.
@@ -5029,10 +5360,10 @@ Une méthode pour dater une phylogénie est fournie par \textcite{Chave2007}
 Dans tous les cas, la distance est une mesure de la divergence évolutive.
 Du point de vue de la biologie de la conservation, chaque espèce accumule une quantité d'évolution, interprétée comme une quantité d'information \autocite{Crozier1997} dont le maximum doit être préservé.
 
-L'entropie phylogénétique (voir chapitre \ref{chap:Phyloentropie}) utilise un arbre phylogénétique pour mesurer la diversité.
+L'entropie phylogénétique (voir chapitre \ref{chap-Phyloentropie}) utilise un arbre phylogénétique pour mesurer la diversité.
 
-\hypertarget{sec:DFonctionnelle}{%
-\section{Distance fonctionnelle}\label{sec:DFonctionnelle}}
+\hypertarget{sec-DFonctionnelle}{%
+\section{Distance fonctionnelle}\label{sec-DFonctionnelle}}
 
 L'approche fonctionnelle est différente.
 Chaque espèce ou individu est représenté par ses valeurs de traits dans un espace multidimensionnel.
@@ -5060,14 +5391,14 @@ La formule de Gower, étendue par \textcite{Podani1999} puis \textcite{Pavoine20
 \end{itemize}
 
 Une matrice de distances entre espèces est construite de cette façon.
-\textcite{Podani2006} suggèrent d'utiliser ensuite une classification hiérarchique par UPGMA \autocite{Sokal1958} qu'ils montrent être la plus robuste (pour le calcul de FD, voir section \ref{sec:PDFD}) à l'ajout ou au retrait d'un trait ou d'une espèce.
+\textcite{Podani2006} suggèrent d'utiliser ensuite une classification hiérarchique par UPGMA \autocite{Sokal1958} qu'ils montrent être la plus robuste (pour le calcul de FD, voir section \ref{sec-PDFD}) à l'ajout ou au retrait d'un trait ou d'une espèce.
 \textcite{Mouchet2008} suggèrent plutôt d'appliquer toutes les méthodes de classification et de retenir à la fin l'arbre dont la distribution des distances entre espèces dans l'arbre est la plus proche de la distribution des distances dans la matrice de dissimilarités: cette proximité est mesurée par la corrélation cophénétique, c'est-à-dire le coefficient de corrélation entre les valeurs de distances \autocite{Sokal1962,Legendre2012}.
 Un arbre consensus \autocite{Felsenstein2004} est souvent plus proche de la matrice de distance.
 
 Un dendrogramme fonctionnel n'a pas d'interprétation aussi claire qu'un arbre phylogénétique qui représente le processus de l'évolution.
 Il peut être interprété comme la représentation à des échelles de plus en plus grossières en allant vers le haut de l'arbre de regroupements fonctionnels dans des niches de plus en plus vastes.
 
-La transformation d'une matrice (non ultramétrique) en dendrogramme déforme la topologie des espèces \autocite{Pavoine2005a,Podani2007}: une mesure de diversité qui utilise directement la matrice est préférable, c'est un intérêt de la diversité de Leinster et Cobbold (voir chapitre \ref{chap:LeinsterCobbold}).
+La transformation d'une matrice (non ultramétrique) en dendrogramme déforme la topologie des espèces \autocite{Pavoine2005a,Podani2007}: une mesure de diversité qui utilise directement la matrice est préférable, c'est un intérêt de la diversité de Leinster et Cobbold (voir chapitre \ref{chap-LeinsterCobbold}).
 \textcite{Maire2015} ont défini une mesure de qualité d'un espace fonctionnel, \emph{mSD}, comme l'écart quadratique moyen entre les distances fonctionnelles entre espèces dans l'espace utilisé (par exemple les distances cophénétiques dans un dendrogramme fonctionnel) et les distances originales (dans la matrice de distance à partir de laquelle l'arbre a été obtenu).
 Dans la matrice originale, les valeurs de traits sont centrées et réduites, et la hauteur du dendrogramme est fixée pour que la distance cophénétique maximale soit égale à la distance originale maximale.
 
@@ -5327,10 +5658,42 @@ Un arbre au format \texttt{phylo} du package \emph{ape} nécessite une conversio
 \CommentTok{# donc les diviser par deux.}
 \NormalTok{phyTree}\OperatorTok{$}\NormalTok{edge.length <-}\StringTok{ }\NormalTok{phyTree}\OperatorTok{$}\NormalTok{edge.length}\OperatorTok{/}\DecValTok{2}
 \KeywordTok{library}\NormalTok{(}\StringTok{"ape"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'ape'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:spatstat.geom':
+## 
+##     edges, rotate
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{# Conversion au format hclust}
 \NormalTok{hTree <-}\StringTok{ }\KeywordTok{as.hclust.phylo}\NormalTok{(phyTree)}
 \CommentTok{# Conversion au format phylog}
 \KeywordTok{library}\NormalTok{(}\StringTok{"ade4"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'ade4'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:spatstat.geom':
+## 
+##     disc
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{Tree <-}\StringTok{ }\KeywordTok{hclust2phylog}\NormalTok{(hTree)}
 \CommentTok{# Tree$Wdist contient les valeurs de sqrt(2*distance)}
 \NormalTok{(FAD <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(Tree}\OperatorTok{$}\NormalTok{Wdist}\OperatorTok{^}\DecValTok{2}\OperatorTok{/}\DecValTok{2}\NormalTok{))}
@@ -5369,7 +5732,7 @@ L'indice est
 
 Sa forme lui permet d'être compris entre 0 et 1.
 
-\textcite{Laliberte2010} généralisent \(\mathit{FD}_{m}\) en proposant l'usage de n'importe quelle dissimilarité entre espèces, obtenue à partir de la méthode de Gower (vue en section \ref{sec:DFonctionnelle}), autorisant des variables qualitatives et des données manquantes, au-delà de la seule distance euclidienne entre traits quantitatifs.
+\textcite{Laliberte2010} généralisent \(\mathit{FD}_{m}\) en proposant l'usage de n'importe quelle dissimilarité entre espèces, obtenue à partir de la méthode de Gower (vue en section \ref{sec-DFonctionnelle}), autorisant des variables qualitatives et des données manquantes, au-delà de la seule distance euclidienne entre traits quantitatifs.
 Ils fournissent le package \emph{FD} pour calculer leur indice \(\mathit{FDis}\) et ceux de
 \textcite{Villeger2008a}.
 
@@ -5402,10 +5765,10 @@ Les valeurs de \(\mathit{TD}_s\) sont respectivement \({1}/{4}\) et \({1}/{6}\) 
 
 La particularité évolutive \autocite{Isaac2007} (\emph{evolutive distinctiveness}, \(\mathit{ED}_s\)) de l'espèce \(s\) est la somme de la longueur des branches qui la relient à la racine de l'arbre, partagées entre tous les descendants de chaque branche.
 Pour l'espèce 3 de la figure \ref{fig:ArbreA4}, \(\mathit{ED}_3\) est égal à \(l(b_{1,3})\), la longueur de la branche terminale propre à l'espèce 3, plus un tiers de la longueur de la branche qui relie la racine de l'arbre à la polytomie dont l'espèce 3 est issue.
-Clairement, la diversité phylogénétique PD (section \ref{sec:PDFD}) est la somme des particularités évolutives de toutes les espèces de l'arbre.
+Clairement, la diversité phylogénétique PD (section \ref{sec-PDFD}) est la somme des particularités évolutives de toutes les espèces de l'arbre.
 
-\hypertarget{sec:OrigTax}{%
-\subsection{Originalité taxonomique de Ricotta}\label{sec:OrigTax}}
+\hypertarget{sec-OrigTax}{%
+\subsection{Originalité taxonomique de Ricotta}\label{sec-OrigTax}}
 
 
 
@@ -5498,7 +5861,7 @@ La variabilité phylogénétique des espèces \autocite{Helmus2007} (\emph{Phylo
 La distance moyenne entre deux espèces est dans ce cadre proportionnelle à la covariance de leurs traits fonctionnels.
 La richesse phylogénétique des espèces, PSR, est PSV multipliée par le nombre d'espèces: c'est l'équivalent taxonomique de FAD.
 
-La diversité FD de Faith (section \ref{sec:PDFD}), égale à la somme des longueurs des branches de l'arbre, semble avoir fait consensus, d'où un moindre développement des mesures de richesse que dans la littérature fonctionnelle.
+La diversité FD de Faith (section \ref{sec-PDFD}), égale à la somme des longueurs des branches de l'arbre, semble avoir fait consensus, d'où un moindre développement des mesures de richesse que dans la littérature fonctionnelle.
 
 \hypertarget{indices-de-cadotte}{%
 \subsection{Indices de Cadotte}\label{indices-de-cadotte}}
@@ -5771,8 +6134,8 @@ Elle rend compte de la dispersion des espèces: moins les espèces sont similair
 Si les espèces sont infiniment éloignées les unes des autres, \(\mathbf{Z}\) est la matrice identité et la diversité est égale à la richesse: \(V\) est donc un nombre effectif d'espèces, c'est-à-dire le nombre d'espèces totalement dissimilaires nécessaires pour obtenir la diversité observée.
 À l'opposé, si toutes les espèces sont identiques, \(\mathbf{Z}\) ne contient que des 1 et la diversité vaut 1.
 
-\hypertarget{sec:PDFD}{%
-\section{FD et PD}\label{sec:PDFD}}
+\hypertarget{sec-PDFD}{%
+\section{FD et PD}\label{sec-PDFD}}
 
 
 
@@ -5834,8 +6197,8 @@ L'espérance de la perte de diversité peut être calculée de façon plus simpl
 
 Diverses optimisations économiques sont possibles, dont le choix des espèces à protéger à partir de l'élasticité de la diversité, c'est-à-dire le gain de diversité entraîné par la diminution de la probabilité de disparition de chaque espèce: les espèces ayant la plus grande élasticité sont celles sur lesquelles les efforts auront les plus grands résultats.
 
-\hypertarget{sec:Rao}{%
-\section{Indice de Rao}\label{sec:Rao}}
+\hypertarget{sec-Rao}{%
+\section{Indice de Rao}\label{sec-Rao}}
 
 L'indice de Rao est une mesure de divergence pondérée. Son utilisation s'est largement développée depuis le début des années 2000 \autocite{Izsak2000,Shimatani2001a,Botta-Dukat2005,Escalas2013} en raison de ses propriétés particulièrement intéressantes.
 
@@ -5909,7 +6272,7 @@ Le package \emph{entropart} fournit la fonction \texttt{Rao}:
 Le package \emph{ADE4} permet le calcul avec la fonction \texttt{divc} qui utilise un format différent pour les probabilités et surtout la matrice des racines carrées du double des distances de l'objet \texttt{phylog} (chaque élément de \texttt{\textbackslash{}\$Wdist} vaut \(\sqrt{2\delta_{s's''}}\).
 Cette particularité d'\emph{ADE4} vient de l'analyse multivariée \autocite{Champely2002}: l'entropie quadratique de Rao peut être représentée dans l'espace euclidien engendré par une matrice de distances \(\mathbf{D}\) entre espèces (par une Analyse en Coordonnées Principales, PCoA).
 L'inertie des points représentants les espèces, précisément la moyenne des carrés des distances entre les espèces et leur centre de gravité (les probabilités \(\mathbf{p}\) des espèces constituent leur poids), est alors égale à l'entropie de Rao \(H_{\mathbf{\Delta}}\left(\mathbf{p}\right)\), où la matrice de distances \(\mathbf{\Delta}\) est \({\mathbf{D}^{\circ2}}/{2}\): les valeurs de \(\mathbf{\Delta}\) valent la moitié du carré de celles de \(\mathbf{D}\).
-Cette représentation est étendue dans la double analyse en composantes principales de \textcite{Pavoine2004}, section \ref{sec:RaoDisc}.
+Cette représentation est étendue dans la double analyse en composantes principales de \textcite{Pavoine2004}, section \ref{sec-RaoDisc}.
 
 Dans \emph{ADE4}, les arbres phylogénétiques sont donc stockés sous la forme d'objets de type \texttt{phylog} où la matrice des distances (\texttt{\textbackslash{}\$Wdist}) est \(\mathbf{D}\) mais les longueurs des branches de l'arbre (\texttt{\textbackslash{}\$droot}) correspondent aux valeurs de \(\mathbf{\Delta}\).
 
@@ -5958,8 +6321,8 @@ Dans \emph{ADE4}, les arbres phylogénétiques sont donc stockés sous la forme 
 
 \normalsize
 
-\hypertarget{sec:MaxTheorique}{%
-\subsection{Maximum théorique}\label{sec:MaxTheorique}}
+\hypertarget{sec-MaxTheorique}{%
+\subsection{Maximum théorique}\label{sec-MaxTheorique}}
 
 \textcite{Pavoine2005a} ont défini l'originalité d'une espèce comme sa fréquence maximisant l'entropie quadratique, sachant la matrice de distances entre espèces.
 Les espèces les plus originales sont celles ayant le moins d'espèces proches dans la classification.
@@ -6231,8 +6594,8 @@ Le nombre effectif de paires est le nombres de paires équifréquentes dont la d
 
 Enfin, cette définition de la diversité ne respecte pas le principe de \textcite{Solow1993} selon lequel le remplacement d'une partie des effectifs d'une espèce par le même nombre d'individus d'une espèce différente mais fonctionnellement identique ne doit pas faire varier la diversité \autocite{Botta-Dukat2017}.
 
-\hypertarget{sec:HpI1}{%
-\section{\texorpdfstring{\(H_p\) et \(I_1\)}{H\_p et I\_1}}\label{sec:HpI1}}
+\hypertarget{sec-HpI1}{%
+\section{\texorpdfstring{\(H_p\) et \(I_1\)}{H\_p et I\_1}}\label{sec-HpI1}}
 
 Simultanément, \textcite{Pavoine2009a} et \textcite{Allen2009} ont proposé la généralisation de l'indice de Shannon à la diversité phylogénétique.
 La présentation de Allen et al.~est donnée ici, celle de Pavoine et al., plus générale, sera détaillée dans le paragraphe suivant.
@@ -6337,8 +6700,8 @@ On peut les interpréter intuitivement comme une somme pondérée par la longueu
 En remontant dans l'arbre, les classes se confondent et la diversité diminue progressivement.
 Deux classes peu distantes, comme les espèces 3 à 5 de la figure \ref{fig:ArbreA5}, apportent peu de diversité supplémentaire par rapport à une situation où les deux espèces seraient confondues (et leurs effectifs ajoutés), contrairement aux espèces 1 et 2.
 
-\hypertarget{sec:phyloEstimation}{%
-\section{Estimation}\label{sec:phyloEstimation}}
+\hypertarget{sec-phyloEstimation}{%
+\section{Estimation}\label{sec-phyloEstimation}}
 
 La correction du biais d'estimation applicable à l'entropie généralisée l'est aussi à chaque période de l'arbre.
 Les biais sont de moins en moins importants quand on se rapproche de la racine de l'arbre: il est de moins en moins probable de ne pas observer une classe quand les classes sont de plus en plus vastes.
@@ -6399,8 +6762,8 @@ Le calcul de l'indice de Rao, corrigé du biais d'estimation utilise le code sui
 
 La fonction retourne la valeur de \(^{q}_{k}\!H\) dans chaque intervalle (l'arbre est ici une taxonomie espèce-genre-famille, correspondant aux limites des périodes (\texttt{Cuts}) 1, 2 et 3 dont l'entropie va en décroissant) et la valeur de \(^{q}\!\bar{H}(T)\).
 
-\hypertarget{sec:phyloEntopieDiv}{%
-\section{Entropie et diversité}\label{sec:phyloEntopieDiv}}
+\hypertarget{sec-phyloEntopieDiv}{%
+\section{Entropie et diversité}\label{sec-phyloEntopieDiv}}
 
 La diversité phylogénétique est le nombre d'espèces équifréquentes et dont la distance à toutes les autres dans la phylogénie est maximale, dont l'entropie serait égale à l'entropie observée.
 
@@ -6423,7 +6786,7 @@ Le nombre effectif d'espèces de l'entropie de Rao, \({^{2}\!\bar{D}}(T)=\frac{1
   =\left( \sum_b{\frac{l(b)}{T} p(b)^q} \right)^{\frac{1}{1-q}}.
 \end{equation}
 
-La somme est sur l'ensemble des branches de l'arbre, défini de façon identique à celle de \textcite{Allen2009} \ref{sec:HpI1}.
+La somme est sur l'ensemble des branches de l'arbre, défini de façon identique à celle de \textcite{Allen2009} \ref{sec-HpI1}.
 
 Les entropies ont un comportement linéaire: elles s'additionnent tout au long de l'arbre pour donner \(^{q}\!\bar{H}(T)\).
 Les diversités \(^{q}_{k}\!D\) calculées à chaque période ne peuvent pas être sommées sur le modèle de l'équation \eqref{eq:Hbarq}: \(^{q}\!\bar{D}(T)\) n'est \emph{pas} la moyenne pondérée des diversités aux différentes périodes, sauf dans le cas particulier \(q=1\) où, comme pour la décomposition de l'indice de Shannon, il en est la moyenne géométrique pondérée.
@@ -6627,7 +6990,7 @@ Leinster et Cobbold montrent que la diversité HCDT est un cas particulier de \(
 
 Une mesure de diversité non neutre est obtenue en utilisant une matrice \(\mathbf{Z}\) qui contient l'information sur la similarité entre les espèces.
 La dissimilarité entre espèces peut être obtenue à partir des arbres.
-L'exemple suivant utilise les données du calcul d'originalité, section \ref{sec:MaxTheorique}.
+L'exemple suivant utilise les données du calcul d'originalité, section \ref{sec-MaxTheorique}.
 Pour un arbre de classe \texttt{hclust}, la fonction \texttt{cophenetic} fournit une demi-matrice de distances (classe \texttt{dist}).
 
 \scriptsize
@@ -6878,8 +7241,8 @@ Modifier \(u\) modifie la magnitude de l'espace selon une relation non triviale:
 Quand \(u \to +\infty\), \(\mathbf{Z} \to \mathbf{I}_s\): la diversité tend vers la diversité neutre.
 Leinster et Cobbold suggèrent de comparer les profils de diversité en fonction à la fois de \(q\) et de \(u\).
 
-\hypertarget{sec:dqzEstimation}{%
-\section{Estimation}\label{sec:dqzEstimation}}
+\hypertarget{sec-dqzEstimation}{%
+\section{Estimation}\label{sec-dqzEstimation}}
 
 Comme les autres mesures de diversité, \(^q\!D^{\mathbf{Z}}\) est sujette au biais d'estimation.
 Deux estimateurs réduisant le biais existent \autocite{Marcon2014e}.
@@ -7346,8 +7709,8 @@ Il n'existe pas de technique pour corriger ce biais d'estimation.
 La composition de la communauté en espèces composites dépend à la fois de la matrice de similarité et des probabilités des espèces réelles.
 Elle est donc unique pour chaque communauté, ce qui empêche toute décomposition de la diversité selon les méthodes présentées plus loin.
 
-\hypertarget{sec:dqzSynthese}{%
-\section{Synthèse}\label{sec:dqzSynthese}}
+\hypertarget{sec-dqzSynthese}{%
+\section{Synthèse}\label{sec-dqzSynthese}}
 
 \(^{q}\!D(T)\) est l'exponentielle d'ordre \(q\) de la moyenne pondérée de l'entropie HCDT calculée à chaque période de l'arbre phylogénétique.
 
@@ -7407,15 +7770,11 @@ La dépendance entre similarité et fréquence des espèces constitue un problè
 Enfin, il est possible de désagréger les données jusqu'au niveau individuel si la distance entre paires d'individus est connue.
 En revanche, la prise en compte de la variabilité intraspécifique par une similarité intraspécifique inférieure à 1 n'est possible que pour un ordre de diversité fixé: il n'est pas possible d'obtenir un profil de diversité de cette façon.
 
-\SmallMargins
-
 \hypertarget{part-diversituxe9-beta-et-duxe9composition}{%
 \part{Diversité beta et décomposition}\label{part-diversituxe9-beta-et-duxe9composition}}
 
-\LargeMargins
-
-\hypertarget{sec:betaCadre}{%
-\chapter{Cadre}\label{sec:betaCadre}}
+\hypertarget{sec-betaCadre}{%
+\chapter{Cadre}\label{sec-betaCadre}}
 
 \scriptsize
 
@@ -7533,7 +7892,7 @@ Ces deux définitions sont présentées sur les figures \ref{fig:Anderson2011a} 
 Les mesures de remplacement ne sont pas traitées en détail dans ce chapitre mais simplement présentées ici.
 
 La plus simple (figure \ref{fig:Anderson2011a}, T1) est la dissimilarité entre deux communautés notée \(\Delta{y}\).
-De nombreuses mesures de dissimilarité existent, elles sont détaillées dans le chapitre \ref{chap:BetaPaires}.
+De nombreuses mesures de dissimilarité existent, elles sont détaillées dans le chapitre \ref{chap-BetaPaires}.
 Whittaker n'envisageait que la présence ou l'absence des espèces, mais leur abondance peut être prise en compte.
 
 Cette dissimilarité peut être analysée en fonction du gradient de référence.
@@ -7543,7 +7902,7 @@ La dissimilarité de chaque paire de communautés est confrontée à son écart 
 Les deux analyses précédentes peuvent être combinées pour mesurer le remplacement des espèces selon deux gradients emboîtés (T6).
 
 Une variation sur le modèle T2 consiste à le représenter sous la forme d'un modèle de décroissance en fonction de la distance \autocite{Nekola1999}, éventuellement pour plusieurs groupes de communautés (figure \ref{fig:Anderson2011a}, T4 et T5).
-L'indice de Simpson spatialement explicite (Section \ref{sec:SimpsonSpatial}) entre dans ce cadre bien qu'il soit construit différemment.
+L'indice de Simpson spatialement explicite (Section \ref{sec-SimpsonSpatial}) entre dans ce cadre bien qu'il soit construit différemment.
 
 Les mesures de variation (figure \ref{fig:Anderson2011b}, V1) concernent la dissimilarité entre plusieurs communautés ou entre chaque communauté et la méta-communauté.
 L'équivalence de ces deux concepts n'est pas évidente: elle a été montrée pour les mesures de dissimilarité entre paires de communautés par \textcite{Legendre1999}; \textcite{Legendre2001}; \textcite{Legendre2005} et pour l'entropie de Rao par \textcite{Pavoine2004} mais reste une question ouverte pour l'entropie HCDT en général.
@@ -7556,8 +7915,8 @@ Si la diversité est mesurée comme moyenne des dissimilarités, elle peut être
 La diversité \(\beta\) peut être décomposée en niveaux hiérarchiques emboîtés (V5). Des tests statistiques sont nécessaires pour comparer les niveaux: par exemple, montrer que la diversité (inter) entre des communautés supposées différentes est significativement plus grande que celle (intra) des placettes d'échantillonnage de chacune d'entre elles, à la manière d'une analyse de variance (V6).
 D'autres analyses sont bien sûr envisageables, comme la comparaison de la forme de la courbe de dissimilarité moyenne entre paires de communautés en fonction de la distance à des patrons connus, issus de simulation de processus à identifier \autocite{Rejou-Mechain2011}.
 
-\hypertarget{sec:betaTypo}{%
-\section{Typologie des mesures}\label{sec:betaTypo}}
+\hypertarget{sec-betaTypo}{%
+\section{Typologie des mesures}\label{sec-betaTypo}}
 
 Cette approche utilitaire est complétée par le cadre théorique de \textcite{Jurasinski2009} qui distinguent plusieurs types de mesures de diversité:
 
@@ -7571,13 +7930,13 @@ Cette approche utilitaire est complétée par le cadre théorique de \textcite{J
   La diversité proportionnelle (\emph{proportional diversity}), diversité \(\beta\) qui se construit par différence ou rapport des diversités \(\gamma\) et \(\alpha\). \textcite{Marcon2014a} ont montré qu'avec une décomposition appropriée de la diversité, la diversité proportionnelle est aussi la divergence entre la distribution des communautés locales et celle de la méta-communauté: la diversité \(\beta\) mesure alors à quel point les unités spatiales sont différentes de leur assemblage plutôt qu'entre elles.
 \end{itemize}
 
-Dans son article fondateur, \textcite{Whittaker1960} définit la diversité \(\beta\) comme le niveau de changement dans la composition des communautés, la nomme \enquote{diversité secondaire} et lui attribue la lettre \(\beta\) en référence à la diversité \enquote{primaire} mesurable par l'indice \(\alpha\) de Fisher \autocite{Fisher1943}, voir le chapitre \ref{chap:Fisher}.
+Dans son article fondateur, \textcite{Whittaker1960} définit la diversité \(\beta\) comme le niveau de changement dans la composition des communautés, la nomme \enquote{diversité secondaire} et lui attribue la lettre \(\beta\) en référence à la diversité \enquote{primaire} mesurable par l'indice \(\alpha\) de Fisher \autocite{Fisher1943}, voir le chapitre \ref{chap-Fisher}.
 Il illustre cette définition par une mesure de différentiation: l'indice de Jaccard, mais utilise ensuite une mesure proportionnelle: le rapport des indice \(\alpha\) de l'assemblage des communautés à sa moyenne sur les communautés.
 La conciliation des deux approches n'est pas simple.
 \textcite{Gregorius2016} montre notamment que les mesures habituelles de diversité proportionnelle ne rendent pas compte correctement de la différentiation.
 
-\hypertarget{sec:betaDecomposition}{%
-\section{Décomposition de la diversité}\label{sec:betaDecomposition}}
+\hypertarget{sec-betaDecomposition}{%
+\section{Décomposition de la diversité}\label{sec-betaDecomposition}}
 
 La façon de décomposer la diversité, aboutissant donc à une diversité \(\beta\) proportionnelle, ne fait pas consensus.
 Les éléments du débat sont présentés ici.
@@ -7591,7 +7950,7 @@ Toutes ont en commun:
 \begin{itemize}
 \tightlist
 \item
-  Une définition de la mesure de diversité, appliquée à la diversité \(\gamma\), qui est généralement une des mesures vues dans le chapitre \ref{chap:MesuresNeutres};
+  Une définition de la mesure de diversité, appliquée à la diversité \(\gamma\), qui est généralement une des mesures vues dans le chapitre \ref{chap-MesuresNeutres};
 \item
   Une définition de la diversité \(\alpha\), qui peut être par exemple:
 
@@ -7617,8 +7976,8 @@ Toutes ont en commun:
 L'utilisation des nombres de Hill, la mesure locale de la diversité \(\alpha\) et la définition de la diversité \(\beta\) comme rapport des diversités \(\gamma\) et \(\alpha\) permet de définir la \enquote{vraie diversité} \autocite{Jost2006,Jost2007} \(\beta\) qui est un nombre de communautés équivalentes (\emph{compositionnal units}) similaire au nombre d'espèces équivalentes des diversités \(\alpha\) et \(\gamma\).
 \textcite{Tuomisto2011} milite pour que le terme diversité soit réservé à la vraie diversité (homogène à un nombre d'espèces) et que les autres mesures soient appelées différemment: \enquote{entropie} de Shannon ou \enquote{probabilité} de Gini-Simpson notamment.
 
-\hypertarget{sec:DebatDecomposition}{%
-\subsection{Le débat sur la décomposition}\label{sec:DebatDecomposition}}
+\hypertarget{sec-DebatDecomposition}{%
+\subsection{Le débat sur la décomposition}\label{sec-DebatDecomposition}}
 
 L'objectif est de décomposer la diversité totale, notée \(\gamma\) en une composante inter-groupes, notée \(\beta\) et une composante intra-groupes notée \(\alpha\).
 
@@ -7658,8 +8017,8 @@ La diversité \(\beta\) est indépendante de la diversité \(\alpha\) si les poi
 L'\emph{indépendance} signifie que la valeur de \(^{q}\!D_{\beta}\) n'est pas contrainte par celle de \(^{q}\!D_{\alpha}\).
 Cette propriété est souvent considérée comme importante \autocite{Wilson1984,Gregorius2010}, et sera discutée largement ici.
 
-\hypertarget{sec:defalpha}{%
-\subsection{\texorpdfstring{Définitions de la diversité \(\alpha\)}{Définitions de la diversité \textbackslash alpha}}\label{sec:defalpha}}
+\hypertarget{sec-defalpha}{%
+\subsection{\texorpdfstring{Définitions de la diversité \(\alpha\)}{Définitions de la diversité \textbackslash alpha}}\label{sec-defalpha}}
 
 La diversité \(\alpha\) est calculée pour chaque communauté, et notée \(^q_iD_{\alpha}\) (l'entropie correspondante est notée \(^{q}_{i}\!H_{\alpha}\)).
 La diversité \(\alpha\) de la méta-communauté est intuitivement la moyenne de celle des communautés.
@@ -7708,7 +8067,7 @@ Jost conclut donc que la décomposition n'est possible que pour des communautés
 \end{equation}
 
 Cette définition pose problème: alors que le choix de \(q\) a pour but de donner une importance plus ou moins grande aux espèces rares, son effet est le même sur la taille des communautés La diversité dépendra essentiellement des espèces rares dans les communautés de faible poids si \(q\) est petit, définissant une diversité bi-dimensionnelle.
-Cette question est traitée en détail au chapitre \ref{chap:DiversiteJointe}.
+Cette question est traitée en détail au chapitre \ref{chap-DiversiteJointe}.
 
 \textcite{Marcon2014a} préfèrent la définition de Routledge qui est plus intuitive et garantit que la diversité \(\gamma\) est supérieure à la diversité \(\alpha\).
 La dépendance entre \(^{q}\!D_{\beta}\) et \(^{q}\!D_{\alpha}\) est le prix à payer.
@@ -8151,7 +8510,7 @@ La décomposition est identique à celle de l'équation \eqref{eq:DNesReplPJ} ap
 
 \textcite{Legendre2014} considère cette décomposition de la diversité \(\beta\) en emboîtement et substitution comme une décomposition de variance et lui applique des méthodes d'ordination pour la relier aux variables environnementales par exemple.
 
-Les mesures de diversité \(\beta\) fondées sur l'entropie HCDT (chapitre \ref{chap:DedompHCDT}) ne permettent pas de distinguer directement emboîtement et substitution.
+Les mesures de diversité \(\beta\) fondées sur l'entropie HCDT (chapitre \ref{chap-DedompHCDT}) ne permettent pas de distinguer directement emboîtement et substitution.
 La variabilité des contributions \(^{q}_{i}\!H_{\beta}\) des communautés à l'entropie \(\beta\) augmente avec l'emboîtement, mais cette voie n'a pas été explorée.
 
 \hypertarget{donnuxe9es-dabondance-et-similarituxe9-des-espuxe8ces}{%
@@ -8166,7 +8525,7 @@ Une matrice de dissimilarité est définie entre toutes les paires d'espèces.
 \(\min{d_{t,1}}\) est la même notation pour l'espèce \(t\) de la deuxième communauté et l'espèces la plus proche dans la communauté 1.
 Ces valeurs sont nulles pour toutes les espèces communes.
 
-\(\pi_{s(n)}\) désigne la contribution de l'espèce \(s\) à l'indice de Hurlbert, déjà vue dans le cadre de l'originalité taxonomique (Section \ref{sec:OrigTax}).
+\(\pi_{s(n)}\) désigne la contribution de l'espèce \(s\) à l'indice de Hurlbert, déjà vue dans le cadre de l'originalité taxonomique (Section \ref{sec-OrigTax}).
 La contribution des espèces rares augmente avec le paramètre \(n\) (figure \ref{fig:HurlbertCFig}).
 Pour chaque communauté, la moyenne des dissimilarités minimales entre chaque espèce et l'autre communauté est calculée, pondérée par la contribution de l'espèce à l'indice de Hurlbert.
 
@@ -8207,13 +8566,13 @@ redécouvert et nommé \emph{COMDISTNN} par \textcite{Webb2008}.
 \subsection{Similarité moyenne entre individus}\label{similarituxe9-moyenne-entre-individus}}
 
 \textcite{Pavoine2014b} définissent une famille de similarités entre communautés construite à partir de la similarité moyenne entre les paires d'individus de chaque communauté et les paires intercommunautaires.
-Une matrice de similarité \(\mathbf{Z}\) est définie entre les paires d'espèces: \(z_{s,t}\) est la similarité entre l'espèce \(s\) et l'espèce \(t\), comprise entre 0 et 1 de la même façon que pour le calcul de la diversité \(^q\!D^{\mathbf{Z}}\) (chapitre \ref{chap:LeinsterCobbold}).
+Une matrice de similarité \(\mathbf{Z}\) est définie entre les paires d'espèces: \(z_{s,t}\) est la similarité entre l'espèce \(s\) et l'espèce \(t\), comprise entre 0 et 1 de la même façon que pour le calcul de la diversité \(^q\!D^{\mathbf{Z}}\) (chapitre \ref{chap-LeinsterCobbold}).
 La matrice \(\mathbf{Z}\) doit de plus être semi-définie positive, ce qui implique que \(\sqrt{1-\mathbf{Z}}\) est euclidienne: de cette façon, les espèces peuvent être représentées graphiquement par une PCoA.
 Les fréquences des espèces dans les deux communautés sont \(\mathbf{p}\) et \(\mathbf{q}\).
 La similarité moyenne dans chaque communauté est \(\sum_{s,t}{p_s p_t z_{s,t}}\) et \(\sum_{s,t}{q_s q_t z_{s,t}}\).
 La similarité moyenne des paires d'individus de communautés différentes est \(\sum_{s,t}{p_s q_t z_{s,t}}\).
 
-La dissimilarité entre communautés de Rao (Section \ref{sec:RaoDisc}) peut être normalisée (en la divisant par sa valeur maximale pour qu'elle soit comprise entre 0 et 1) puis transformée en similarité (en prenant son complément à 1) pour obtenir
+La dissimilarité entre communautés de Rao (Section \ref{sec-RaoDisc}) peut être normalisée (en la divisant par sa valeur maximale pour qu'elle soit comprise entre 0 et 1) puis transformée en similarité (en prenant son complément à 1) pour obtenir
 
 \begin{equation}
   \label{eq:SorensenAbd}
@@ -8444,8 +8803,8 @@ Code R:
 
 \normalsize
 
-\hypertarget{sec:TestBetaDiff}{%
-\section{Tests de significativité}\label{sec:TestBetaDiff}}
+\hypertarget{sec-TestBetaDiff}{%
+\section{Tests de significativité}\label{sec-TestBetaDiff}}
 
 \hypertarget{test-de-non-nullituxe9}{%
 \subsection{Test de non-nullité}\label{test-de-non-nullituxe9}}
@@ -8581,8 +8940,8 @@ Calcul sous R: La fonction \texttt{BetaEntropy} calcule l'entropie \(\beta\) de 
 
 \normalsize
 
-\hypertarget{sec:BiaisShannonBeta}{%
-\subsection{Biais d'estimation}\label{sec:BiaisShannonBeta}}
+\hypertarget{sec-BiaisShannonBeta}{%
+\subsection{Biais d'estimation}\label{sec-BiaisShannonBeta}}
 
 L'estimateur du taux de couverture de la communauté \(i\) est noté \(\hat{C}_i\), le taux de couverture total \(\hat{C}\).
 L'estimateur corrigé de \(_iH_{\beta}\) est
@@ -8689,7 +9048,7 @@ Cette correction est incluse dans la fonction \texttt{ShannonBeta} de \emph{entr
 \normalsize
 
 La correction de Zhang et Grabchak réduit beaucoup plus fortement l'estimation que celle de Chao et Shen.
-Le meilleur estimateur peut être évalué à partir de la différence entre les entropies \(\gamma\) et \(\alpha\), corrigées par le meilleur estimateur disponible (celui de Chao, Wang et Jost, voir section \ref{sec:BiaisShannon}):
+Le meilleur estimateur peut être évalué à partir de la différence entre les entropies \(\gamma\) et \(\alpha\), corrigées par le meilleur estimateur disponible (celui de Chao, Wang et Jost, voir section \ref{sec-BiaisShannon}):
 
 \scriptsize
 
@@ -8928,7 +9287,7 @@ En génétique, l'égalité s'écrit\autocite{Nei1973} \(H_t=H_s+D_{s,t}\).
 L'entropie \(E_{\beta}\) calculée de cette manière est égale à \(^{2}\!H_{\beta}\) calculée à l'équation \eqref{eq:Hqbeta} pour le cas général, mais la contribution de chaque communauté est différente: la décomposition de la variance est une façon alternative de décomposer l'entropie, valable uniquement pour l'entropie de Simpson.
 
 Cette décomposition est remise en cause par Jost \autocite{Jost2007,Jost2008} qui a généré le débat \autocite{Heller2009,Ryman2009,Jost2009a,Whitlock2011}.
-\(E_{\gamma}\) étant inférieure ou égale à 1, \(E_{\beta}\) n'est pas indépendante de \(E_{\alpha}\): seule la décomposition multiplicative permet l'indépendance, et Jost propose d'utiliser une transformation de \(^{2}\!D_{\beta}\) comme mesure de différenciation (voir section \ref{sec:Chevauchement}). \textcite{Gregorius2014} montre que ce problème n'est pas limité à l'entropie de Simpson mais s'applique à toutes les entropies HCDT d'ordre supérieur à 1.
+\(E_{\gamma}\) étant inférieure ou égale à 1, \(E_{\beta}\) n'est pas indépendante de \(E_{\alpha}\): seule la décomposition multiplicative permet l'indépendance, et Jost propose d'utiliser une transformation de \(^{2}\!D_{\beta}\) comme mesure de différenciation (voir section \ref{sec-Chevauchement}). \textcite{Gregorius2014} montre que ce problème n'est pas limité à l'entropie de Simpson mais s'applique à toutes les entropies HCDT d'ordre supérieur à 1.
 
 Jost postule que la diversité \(\beta\) de Simpson a la même relation à \(E_{\beta}\) que les diversités \(\alpha\) et \(\gamma\),
 
@@ -8972,10 +9331,10 @@ Diversité $\beta$ (nombre équivalent & $^{q}\!D_{\beta}=e^{\frac{^{q}\!H_{\bet
 
 Le nombre équivalent de communautés a une forme légèrement différente d'un nombre de Hill (tableau \ref{tab:Decomposition}).
 
-\hypertarget{sec:RaoDisc}{%
-\section{Décomposition de l'indice de Rao}\label{sec:RaoDisc}}
+\hypertarget{sec-RaoDisc}{%
+\section{Décomposition de l'indice de Rao}\label{sec-RaoDisc}}
 
-Les notations sont celles de la présentation de l'indice de Rao, section \ref{sec:Rao}.
+Les notations sont celles de la présentation de l'indice de Rao, section \ref{sec-Rao}.
 
 La diversité de la méta-communauté, peut être décomposée en une somme (pondérée) de diversités intra et une diversité inter \autocite{Pavoine2004} en définissant une dissimilarité entre les communautés \(i\) et \(j\):
 
@@ -9144,13 +9503,13 @@ Une interprétation géométrique de la décomposition est la suivante \autocite
 Les espèces peuvent être placées dans un espace multidimensionnel construit par une Analyse en Coordonnées Principales \autocite{Gower1966} de la matrice de dissimilarité \(\mathbf{D}\) telle que \(\mathbf{\Delta}={\mathbf{D}^{\circ2}}/{2}\) (les distances dans l'espace multidimensionnel sont \(\sqrt{2\delta_{s's''}}\); autrement dit: la dissimilarité entre deux espèces est la moitié du carré de la distance entre elles dans la représentation géométrique).
 Chaque communauté se trouve au centre de gravité des espèces qu'elle contient, pondérées par leur fréquence.
 La moitié du carré de la distance entre deux communautés dans ce même espace est le coefficient de dissimilarité entre communautés de Rao.
-La distance entre communautés est donc interprétable directement comme une mesure de diversité \(\beta\) \autocite{Ricotta2015}, dans la tradition de l'utilisation de la dissimilarité entre paires de communautés (chapitre \ref{chap:BetaPaires}).
+La distance entre communautés est donc interprétable directement comme une mesure de diversité \(\beta\) \autocite{Ricotta2015}, dans la tradition de l'utilisation de la dissimilarité entre paires de communautés (chapitre \ref{chap-BetaPaires}).
 
 Cette partition suppose que les poids des communautés sont proportionnels à leur nombre d'individus \autocite[Villeger2008]{Rao1982}.
 \textcite{Hardy2007} décomposent (par différence entre \(\gamma\) et \(\alpha\)) l'indice de Rao de communautés de poids égaux.
 \textcite{Hardy2008} montrent que les deux pondérations sont valides mais l'absence de cadre général assurant que la diversité \(\gamma\) de Rao est supérieure à la diversité \(\alpha\) \autocite{DeBello2010} motive \textcite{Guiasu2011} à proposer une alternative à l'indice de Rao, l'indice de Gini-Simpson quadratique pondéré \eqref{eq:Guiasu}, dont la concavité est démontrée (ce qui implique que \(\gamma\ge \alpha\)).
 La pondération peut en fait être quelconque tant que la matrice dont les éléments sont la racine carré des éléments de la matrice de dissimilarité est euclidienne \autocite{Champely2002}.
-Ce résultat a été obtenu pour les arbres ultramétriques dans le cadre plus général de la décomposition de l'entropie phylogénétique (voir chapitre \ref{chap:DedompHCDT}.
+Ce résultat a été obtenu pour les arbres ultramétriques dans le cadre plus général de la décomposition de l'entropie phylogénétique (voir chapitre \ref{chap-DedompHCDT}.
 
 La partition peut être faite avec la fonction \texttt{DivPart} :
 
@@ -9191,8 +9550,8 @@ La partition peut être faite avec la fonction \texttt{DivPart} :
 
 La décomposition de la diversité (et non seulement de l'entropie) de Rao a été établie par \textcite{Ricotta2009}.
 
-\hypertarget{synthuxe8se-3}{%
-\section{Synthèse}\label{synthuxe8se-3}}
+\hypertarget{synthuxe8se-4}{%
+\section{Synthèse}\label{synthuxe8se-4}}
 
 La diversité mesurée par l'entropie généralisée peut être décomposée dans tous les cas de figure, y compris lorsque les poids des communautés ne sont pas égaux.
 Les formules d'entropie et de diversité sont résumées dans le tableau \ref{tab:Decomposition}.
@@ -9298,8 +9657,8 @@ L'estimation de la diversité présente les difficultés classiques dues au biai
 
 La diversité \(\beta\) ne doit donc pas être normalisée systématiquement, mais seulement dans le premier cas.
 
-\hypertarget{sec:Chevauchement}{%
-\subsection{\texorpdfstring{L'indice de chevauchement \(C_{qN}\)}{L'indice de chevauchement C\_\{qN\}}}\label{sec:Chevauchement}}
+\hypertarget{sec-Chevauchement}{%
+\subsection{\texorpdfstring{L'indice de chevauchement \(C_{qN}\)}{L'indice de chevauchement C\_\{qN\}}}\label{sec-Chevauchement}}
 
 Plutôt qu'une simple normalisation, \textcite{Chao2008} définissent un indice de chevauchement, c'est-à-dire la proportion d'espèces partagées en moyenne par une communauté.
 Si \(N\) communautés (le nombre de communautés est noté \(N\) ici et non \(I\) pour conserver le nom de l'indice établi dans la littérature) de mêmes diversités \(\alpha\) et \(\gamma\) que les données, contenaient chacune \(S\) espèces équifréquentes, dont \(A\) seraient communes à toutes les communautés et les autres représentées dans une seule, \(A/S\) serait cet indice de chevauchement.
@@ -9572,7 +9931,7 @@ l'hypothèse d'une distribution multinomiale.
 La diversité \(\beta\) calculée entre plusieurs échantillons successifs d'une même communauté n'est pas nulle: par simple fluctuation des effectifs due au hasard, les distributions des échantillons ne sont pas identiques.
 Des tests statistiques ont été développés pour rejeter cette hypothèse nulle à partir de données d'inventaires.
 
-Ce chapitre ne traite pas de la diversité de différentiation: les tests correspondants ont été présentés en section \ref{sec:TestBetaDiff}.
+Ce chapitre ne traite pas de la diversité de différentiation: les tests correspondants ont été présentés en section \ref{sec-TestBetaDiff}.
 
 \hypertarget{test-de-non-nullituxe9-1}{%
 \section{Test de non-nullité}\label{test-de-non-nullituxe9-1}}
@@ -9657,16 +10016,16 @@ Le test correct porte sur la diversité plutôt que sur l'entropie \autocite{Ric
 La statistique de test est le ratio de la diversité \(\beta\) inter-communautés sur la la diversité \(\beta\) intra-communautés.
 Sa valeur observée est comparée à la distribution de sa valeur simulée en redistribuant les placettes aléatoirement dans les communautés.
 
-\hypertarget{sec:betaAutres}{%
-\chapter{Autres approches}\label{sec:betaAutres}}
+\hypertarget{sec-betaAutres}{%
+\chapter{Autres approches}\label{sec-betaAutres}}
 
 Des définitions différentes de la diversité \(\beta\) ou du partitionnement de la diversité sont présentées ici parce qu'elles sont importantes dans la littérature même si elles n'entrent pas dans le cadre précédent.
 
 \hypertarget{le-partitionnement-de-la-diversituxe9-selon-puxe9lissier-et-couteron}{%
 \section{Le partitionnement de la diversité selon Pélissier et Couteron}\label{le-partitionnement-de-la-diversituxe9-selon-puxe9lissier-et-couteron}}
 
-\hypertarget{sec:PCcadre}{%
-\subsection{Cadre}\label{sec:PCcadre}}
+\hypertarget{sec-PCcadre}{%
+\subsection{Cadre}\label{sec-PCcadre}}
 
 
 
@@ -9713,8 +10072,8 @@ Si le poids \(w_s\) vaut toujours 1, \(\mathit{TSS}/{n}\) est l'indice de Simpso
 
 Si \(w_s={\ln{\left(1/{n_{s\cdot}}\right)}/{\left(1-n_{s\cdot}\right)}}\), on obtient l'indice de Shannon, et \(w_s={1}/{w_{s\cdot}}\) donne le nombre d'espèces moins 1.
 
-\hypertarget{sec:PCdecomposition}{%
-\subsection{Décomposition}\label{sec:PCdecomposition}}
+\hypertarget{sec-PCdecomposition}{%
+\subsection{Décomposition}\label{sec-PCdecomposition}}
 
 L'intérêt de la méthode est de permettre l'utilisation de modèles linéaires et des outils informatiques associés classiques pour décomposer la diversité de différentes manières.
 Nous nous intéresserons ici à la décomposition de la diversité totale \(\gamma\) en diversités \(\alpha\) et \(\beta\).
@@ -9755,15 +10114,11 @@ La distance entre populations \(d\) est de préférence la distance de Kosman en
 La diversité \(\gamma\) est la somme de la moyenne des diversités intra-populations \({KW}_{\rho}\) pondérées par le poids des populations et de la diversité inter-populations \({KA}_{d}\).
 Ce n'est pas la diversité \({KW}_{\rho}\) de l'assemblage des populations, ce qui limite fortement l'intérêt de cette approche.
 
-\SmallMargins
-
 \hypertarget{part-diversituxe9-jointe-diversituxe9-structurelle}{%
 \part{Diversité jointe, diversité structurelle}\label{part-diversituxe9-jointe-diversituxe9-structurelle}}
 
-\LargeMargins
-
-\hypertarget{sec:jointeCadre}{%
-\chapter{Cadre}\label{sec:jointeCadre}}
+\hypertarget{sec-jointeCadre}{%
+\chapter{Cadre}\label{sec-jointeCadre}}
 
 Gregorius \autocite*{Gregorius2010,Gregorius2014} argumente en faveur de la prise en compte de ce qu'il définit comme la \enquote{diversité jointe} dans le cadre classique où les classes sont des communautés pour des raisons fondamentales de définition de la diversité.
 Son approche consiste à traiter de façon symétrique l'appartenance à une classe ou à une espèce: contrairement aux chapitres précédents où l'échantillonnage des individus avait lieu séparément dans chaque communauté, l'échantillonnage a lieu ici globalement dans la méta-communauté et l'appartenance d'un individu à une communauté apporte autant d'information que son appartenance à une espèce.
@@ -9832,8 +10187,8 @@ Elles sont présentées ici après leur propriété mathématique fondamentale: 
 \hypertarget{ruxe9cursivituxe9-de-lentropie}{%
 \section{Récursivité de l'entropie}\label{ruxe9cursivituxe9-de-lentropie}}
 
-\hypertarget{sec:jointeShannon}{%
-\subsection{Entropie de Shannon}\label{sec:jointeShannon}}
+\hypertarget{sec-jointeShannon}{%
+\subsection{Entropie de Shannon}\label{sec-jointeShannon}}
 
 L'entropie de Shannon (et ses multiples) sont les seules fonctions \(H\) telles que
 
@@ -9852,7 +10207,7 @@ et
 Cette propriété est appelée récursivité \autocite{Bacaro2013}.
 Le premier terme de chaque équation est la différence entre l'entropie de la distribution complète (\(p_{s,i}\)), c'est-à-dire la diversité jointe de Gregorius qui sera appelée plutôt entropie jointe ici, et celle de la distribution marginale (l'entropie de la distribution des classes ou celle des espèces).
 Une démonstration rigoureuse est fournie par \textcite{Baez2011} d'après \textcite{Faddeev1956}, mais il s'agit d'un résultat assez répandu dans la littérature, sous des formes diverses\autocite{Aczel1975,Renyi1961,Bourguignon1979}.
-\(H(\{p_{s,i}\})-H(\{p_i\})-H(\{p_s\})\) est l'information mutuelle, vue en section \ref{sec:BiaisShannonBeta}.
+\(H(\{p_{s,i}\})-H(\{p_i\})-H(\{p_s\})\) est l'information mutuelle, vue en section \ref{sec-BiaisShannonBeta}.
 
 Le terme de droite de l'équation \eqref{eq:Recursivite1} est l'entropie \(\alpha\) de l'ensemble des classes si on les pondère par \(p_i\) car \({p_{s,i}}/{p_i}=p_{s|i}\).
 Par ailleurs, \(H(\{p_s\})\) est l'entropie \(\gamma\).
@@ -9872,8 +10227,8 @@ Si les colonnes sont les classes de diamètre par exemple, les informations four
   La diversité jointe est le nombre effectif de catégories (espèces \(\times\) classes de diamètre) de la communauté.
 \end{itemize}
 
-\hypertarget{sec:jointeHCDT}{%
-\subsection{Entropie HCDT}\label{sec:jointeHCDT}}
+\hypertarget{sec-jointeHCDT}{%
+\subsection{Entropie HCDT}\label{sec-jointeHCDT}}
 
 \textcite{Baez2011} généralisent la récursivité à l'entropie HCDT et montrent que
 
@@ -9960,8 +10315,8 @@ communautés nécessaire pour obtenir la diversité jointe réelle.
 La décomposition de la diversité jointe \autocite{Gregorius2009a,Gregorius2010} complète celle de la diversité \(\gamma\) vue dans les parties précédentes.
 On se place dans le cadre d'un échantillonnage global de la méta-communauté, dans lequel le poids de chaque communauté est égal à la probabilité qu'un individu lui appartienne, et non un choix arbitraire.
 
-\hypertarget{sec:Definitions}{%
-\section{Définitions}\label{sec:Definitions}}
+\hypertarget{sec-Definitions}{%
+\section{Définitions}\label{sec-Definitions}}
 
 La diversité \(\beta\) mesure la divergence entre la distribution moyenne des espèces dans les communautés et leur distribution dans la méta-communauté.
 Gregorius la qualifie de \enquote{diversité de répartition} (\emph{apportionment}) \autocite{Gregorius2014}.
@@ -10283,27 +10638,23 @@ Gregorius montre que \(^{q}\!R_{s}\) égale la diversité \(\alpha\) selon Jost 
   = {\left(\sum_s{\sum_i{\frac{p^q_i}{\sum_i{p^q_i}}p^q_{s|i}}}\right)}^{{1}/{\left(1-q\right)}}.
 \end{equation}
 
-\SmallMargins
-
 \hypertarget{part-diversituxe9-spatialement-explicite}{%
 \part{Diversité spatialement explicite}\label{part-diversituxe9-spatialement-explicite}}
 
-\LargeMargins
-
-\hypertarget{sec:spatialCadre}{%
-\chapter{Cadre}\label{sec:spatialCadre}}
+\hypertarget{sec-spatialCadre}{%
+\chapter{Cadre}\label{sec-spatialCadre}}
 
 De façon évidente, la richesse augmente avec la surface ou le nombre d'individus pris en compte.
 Cette constatation peut être interprétée de deux façons différentes: l'augmentation progressive de l'effort d'échantillonnage permet d'atteindre une asymptote quand la diversité est complètement inventoriée, ou, au contraire, l'augmentation de la diversité avec la surface prise en compte est une propriété intrinsèque, et aucune asymptote n'existe.
 
 Dans une communauté de taille définie, avec une distribution des espèces et un nombre d'individus définis même s'ils sont inconnus, l'augmentation de l'échantillonnage permet l'accumulation de la découverte de nouvelles espèces jusqu'à une asymptote.
-L'accumulation de la diversité locale, décrite par une courbe d'accumulation (SAC) est présentée au chapitre \ref{chap:Accumulation}.
+L'accumulation de la diversité locale, décrite par une courbe d'accumulation (SAC) est présentée au chapitre \ref{chap-Accumulation}.
 
 Il est tentant dans ce cadre de chercher un indicateur de la richesse indépendant de la surface ou du nombre d'individus.
 L'approche la plus simple consiste à normaliser le nombre d'espèces observées.
 \textcite{Menhinick1964} a proposé l'indice \({S^{n}}/{\sqrt{n}}\) à peu près constant dans des communautés d'insectes.
 L'indice de \textcite{Margalef1958a} est \({S^{n} -1}/{\ln{n}}\), adapté à une communauté de plancton.
-Les deux supposent implicitement une forme de la courbe d'accumulation des espèces: dans le premier cas, proportionnelle à la racine du nombre d'individus, dans le second à son logarithme (comme dans la relation de \textcite{Gleason1922}, page \ref{sec:Gleason}).
+Les deux supposent implicitement une forme de la courbe d'accumulation des espèces: dans le premier cas, proportionnelle à la racine du nombre d'individus, dans le second à son logarithme (comme dans la relation de \textcite{Gleason1922}, page \ref{sec-Gleason}).
 Aucune de ces normalisations ne fonctionne en général \autocite[p.~77]{Magurran2004}.
 L'indice de Fisher \autocite{Fisher1943}, construit à partir d'un modèle explicite de distribution des probabilités des espèces, a nettement plus de succès.
 Il est présenté au chapitre suivant.
@@ -10313,7 +10664,7 @@ A cette échelle, plusieurs communautés sont prises en compte simultanément.
 Il est possible de rechercher une nouvelle asymptote, atteinte quand toutes les communautés sont incluses (par exemple, la totalité de la forêt amazonienne \autocite{TerSteege2013}) ou de raisonner en termes de relation aire-espèces, sans rechercher une richesse totale hypothétique \autocite{Preston1960}.
 Là encore, \(\alpha\) de Fisher est ambigu puisqu'il peut provenir à la fois d'une infinité d'espèces dans son modèle original ou être compris comme le nombre fondamental de la théorie neutre, égal à deux fois le taux de spéciation fois le nombre total d'espèces (fini) de la méta-communauté \autocite{Hubbell2001}.
 
-Enfin, la diversité \(\beta\) spatialement explicite est introduite au chapitre \ref{chap:betasp}.
+Enfin, la diversité \(\beta\) spatialement explicite est introduite au chapitre \ref{chap-betasp}.
 
 \hypertarget{chap-Fisher}{%
 \chapter{\texorpdfstring{Indice \(\alpha\) de Fisher}{Indice \textbackslash alpha de Fisher}}\label{chap-Fisher}}
@@ -10643,7 +10994,7 @@ L'indice Q est calculé:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 33.0938
+## [1] 33.71977
 \end{verbatim}
 
 \normalsize
@@ -10701,13 +11052,13 @@ prise en compte.
 
 \normalsize
 
-Les propriétés des courbes d'accumulation ont été largement étudiées dans la littérature, notamment pour prédire la richesse spécifique (section \ref{sec:RichesseSAC}).
+Les propriétés des courbes d'accumulation ont été largement étudiées dans la littérature, notamment pour prédire la richesse spécifique (section \ref{sec-RichesseSAC}).
 
 L'influence de la structure spatiale est considérable mais souvent négligée parce que difficile à prendre en compte.
 Quelques méthodes sont pourtant applicables.
 
-\hypertarget{courbes-daccumulation}{%
-\section{Courbes d'accumulation}\label{courbes-daccumulation}}
+\hypertarget{sec-SAC}{%
+\section{Courbes d'accumulation}\label{sec-SAC}}
 
 On suppose que la communauté locale est de taille fixe et contient donc un nombre fixe d'espèces, et que leur découverte progressive aboutira à une asymptote de la SAC.
 
@@ -10791,7 +11142,7 @@ Elle est toutefois toujours présentée comme une courbe lissée passant par les
 \normalsize
 
 Une difficulté supplémentaire consiste à prendre en compte les espèces non échantillonnées en appliquant des techniques statistiques pour réduire le biais qu'elles induisent \autocite{Colwell2012}.
-Dans ce but, la SAC théorique peut être construite \autocite{Chao2013} comme la somme des entropies de Simpson généralisées \autocite{Zhang2010}, présentées en section \ref{sec:SimpsonG}.
+Dans ce but, la SAC théorique peut être construite \autocite{Chao2013} comme la somme des entropies de Simpson généralisées \autocite{Zhang2010}, présentées en section \ref{sec-SimpsonG}.
 
 La courbe obtenue (figure \ref{fig:SACzetaFig}) est la même que par raréfaction, sans les problèmes d'estimation.
 Son intervalle de confiance n'est pas représenté: l'estimation est sans biais et a une variance très petite; d'autre part, la variabilité de l'échantillonnage prise en compte dans la figure \ref{fig:specaccumFig} est ignorée ici. La fonction \texttt{GenSimp.z} est fournie par le package \emph{EntropyEstimation} \autocite{Cao2014}.
@@ -10817,10 +11168,10 @@ Code pour la figure:
 
 \normalsize
 
-\hypertarget{sec:Extrapolation}{%
-\section{Extrapolation}\label{sec:Extrapolation}}
+\hypertarget{sec-Extrapolation}{%
+\section{Extrapolation}\label{sec-Extrapolation}}
 
-L'extrapolation de la SAC est un cas particulier de celle de la diversité, déjà vue en section \ref{sec:RarExtrapol}.
+L'extrapolation de la SAC est un cas particulier de celle de la diversité, déjà vue en section \ref{sec-RarExtrapol}.
 
 \textcite{Beguinot2015} a une approche différente.
 Il considère la SAC comme une fonction continue et infiniment dérivable de la taille de l'échantillon.
@@ -10849,7 +11200,7 @@ La somme est infinie mais ses termes décroissent rapidement.
 Le nombre de termes à prendre en compte est d'autant plus grand que \(\frac{\delta n}{n}\), le niveau d'extrapolation, est grand.
 L'auteur conseille de ne pas pousser l'extrapolation au delà du double de \(n\).
 
-Cette méthode est comparée à l'extrapolation de la diversité d'ordre 0 (section \ref{sec:RarExtrapol}) et à l'estimateur de \textcite{Shen2003} (section \ref{sec:Extrapol}) dans l'illustration suivante.
+Cette méthode est comparée à l'extrapolation de la diversité d'ordre 0 (section \ref{sec-RarExtrapol}) et à l'estimateur de \textcite{Shen2003} (section \ref{sec-Extrapol}) dans l'illustration suivante.
 
 Une communauté théorique log-normale de 300 espèces est créée.
 Des inventaires de 1000 individus sont simulés et les trois méthodes d'extrapolation de la richesse spécifique sont appliquées pour estimer la richesse d'un échantillon de 1800 individus.
@@ -11149,8 +11500,8 @@ Il ne s'agit donc pas d'estimer un nombre d'espèces asymptotique pour une commu
 
 Une revue historique des théories sur la forme de la SAR est fournie par \textcite{McGuinness1984}.
 
-\hypertarget{sec:Arrhenius}{%
-\section{La relation d'Arrhenius}\label{sec:Arrhenius}}
+\hypertarget{sec-Arrhenius}{%
+\section{La relation d'Arrhenius}\label{sec-Arrhenius}}
 
 
 
@@ -11280,8 +11631,8 @@ Ce modèle contient un paramètre \(k\) en plus de la loi de puissance.
 Les auteurs ont établi que les paramètres \(k\) et \(z\) étaient très proches pour les cinq forêts (\(z=0,125\) et \(k=0,0541\) à Pasoh), et que leur estimation sur une forêt permettait de prédire avec une très bonne précision la richesse des autres, à partir d'un échantillon d'un hectare nécessaire pour obtenir le paramètre \(c\).
 La figure \ref{fig:Plotkin2000b} compare les performances de cette méthode (\emph{persistence method}), de la loi de puissance 0,25 (loi log-normale) et du modèle de Fisher.
 
-\hypertarget{sec:Gleason}{%
-\section{Le modèle de Gleason}\label{sec:Gleason}}
+\hypertarget{sec-Gleason}{%
+\section{Le modèle de Gleason}\label{sec-Gleason}}
 
 \textcite{Gleason1922} réfute le travail d'Arrhenius \autocite*{Arrhenius1921} à partir de l'argument selon lequel le nombre d'espèces doit se stabiliser quand la surface augmente, au risque de prévoir une richesse beaucoup trop élevée pour de grandes surfaces.
 Les travaux ultérieurs lui donneront tort \autocite{Williamson2001}.
@@ -11336,8 +11687,8 @@ Le modèle de Coleman est parfois utilisé à l'échelle locale, pour construire
 La courbe est tracée pour les valeurs de \(p-i\) entre 0 et 1.
 La fonction \texttt{specaccum} de \emph{vegan} permet de calculer une SAC selon ce modèle.
 
-\hypertarget{sec:spatialSynthese}{%
-\section{Synthèse}\label{sec:spatialSynthese}}
+\hypertarget{sec-spatialSynthese}{%
+\section{Synthèse}\label{sec-spatialSynthese}}
 
 La relation d'Arrhenius est plus robuste que celle de Gleason, selon les résultats empiriques et des considérations théoriques \autocite{GarciaMartin2006}, y compris de thermodynamique \autocite{Wurtz2008}.
 
@@ -11393,7 +11744,7 @@ Ses hypothèses sont peu réalistes dans la zone A, mais il valide la loi de pui
 La relation d'Arrhenius est donc systématiquement validée à l'échelle régionale (figure \ref{fig:Williamson2001}).
 On remarquera que la distribution de Fisher, validée par Hubbell pour la méta-communauté, n'est jamais observée dans la SAR à cause de l'agrégation spatiale: en augmentant la surface d'échantillonnage, de nouvelles communautés sont ajoutées progressivement, mais l'échantillonnage de toute la méta-communauté n'est jamais réalisé (sauf au point marquant le passage de la zone B à la zone C).
 Les seuls exemples empiriques sont des inventaires d'arbres à l'échelle de l'Amazonie entière \autocite{TerSteege2013}, ou de la totalité des forêts tropicales \autocite{Slik2015} qui correspondent à la distribution de Fisher. Dans ces deux exemples, l'ajustement est obtenu en extrapolant linéairement la SAD, ce qui est légitime \autocite{Izsak2012} si la distribution est effectivement celle de Fisher: la forme de la distribution est donc assumée, pas prouvée.
-Les valeurs de \(\alpha\) à ces échelles sont bien supérieures aux valeurs locales (35 pour BCI, voir chapitre \ref{chap:Fisher}): 754 pour l'Amazonie, de l'ordre de 1000 pour les néotropiques, mais seulement de 250 pour l'Afrique, et de l'ordre de 2000 pour l'ensemble des tropiques.
+Les valeurs de \(\alpha\) à ces échelles sont bien supérieures aux valeurs locales (35 pour BCI, voir chapitre \ref{chap-Fisher}): 754 pour l'Amazonie, de l'ordre de 1000 pour les néotropiques, mais seulement de 250 pour l'Afrique, et de l'ordre de 2000 pour l'ensemble des tropiques.
 
 Enfin, quand l'échelle est encore plus grande, le nombre d'espèces augmente à nouveau plus vite parce que d'autres méta-communautés sont intégrées.
 
@@ -11445,8 +11796,8 @@ communautés.
 La diversité \(\beta\) de différentiation mesure à quel point deux communautés sont différentes entre elles.
 Elle peut être reliée à la distance entre les communautés pour définir une diversité \(\beta\) spatialement explicite.
 
-\hypertarget{sec:SimpsonSpatial}{%
-\section{L'indice de Simpson spatialement explicite}\label{sec:SimpsonSpatial}}
+\hypertarget{sec-SimpsonSpatial}{%
+\section{L'indice de Simpson spatialement explicite}\label{sec-SimpsonSpatial}}
 
 \textcite{Chave2002} écrivent un modèle neutre de dispersion des espèces forestières, appliqué à l'échelle de l'Amazonie occidentale\autocite{Condit2002}.
 Ils définissent dans ce cadre la fonction \(F(r)\) égale à la probabilité que deux individus situés à distance \(r\) l'un de l'autre soient de la même espèce, c'est-a-dire l'indice de concentration de Simpson \eqref{eq:SimpsonD}, appliqué à des paires d'individus distants.
@@ -11455,7 +11806,7 @@ En pratique il est estimé à partir d'individus situés dans des parcelles dist
 
 De la même façon que l'indice de Simpson est généralisable à l'indice de Rao, \(\beta_s(r)\) est généralisable à \(\beta_{phy}(r)\), l'indice de Rao spatialement explicite, égal à la divergence moyenne entre deux individus situés à distance \(r\).
 
-Les deux mesures sont des entropies \(\beta\), au sens où ce sont des diversités de différenciation \autocite{Jurasinski2009}, voir section \ref{sec:DebatDecomposition}, qui mesurent à quel point des unités spatiales distantes de \(r\) sont différentes.
+Les deux mesures sont des entropies \(\beta\), au sens où ce sont des diversités de différenciation \autocite{Jurasinski2009}, voir section \ref{sec-DebatDecomposition}, qui mesurent à quel point des unités spatiales distantes de \(r\) sont différentes.
 Ce ne sont pas des mesures de diversité proportionnelle parce que ce ne sont pas les différences entre les entropies \(\gamma\) (de la méta-communauté composée de toutes les parcelles) et \(\alpha\) (la moyenne des entropies des parcelles).
 L'avantage de ces mesures est d'être facilement interprétables, estimables sans biais (en tant qu'entropies de Simpson ou de Rao), et indépendantes de la diversité \(\alpha\).
 
@@ -11537,14 +11888,11 @@ Si les espèces sont distribuées indépendamment les unes des autres, la covari
 Le test d'égalité entre \(\operatorname{Var}(S)\) et \(\gamma_{s,t}(r)\) à chaque valeur de \(r\) (obtenu par la méthode de Monte-Carlo en redistribuant aléatoirement la présence de chaque espèce sur le même nombre de parcelles que dans les données réelles) permet de rejeter l'indépendance entre les espèces.
 
 \SmallMargins
-
-\hypertarget{part-conclusion}{%
-\part{Conclusion}\label{part-conclusion}}
-
+\# (PART) Conclusion \{-\}
 \LargeMargins
 
-\hypertarget{sec:conclusionSynthese}{%
-\chapter{Synthèse}\label{sec:conclusionSynthese}}
+\hypertarget{sec-conclusionSynthese}{%
+\chapter{Synthèse}\label{sec-conclusionSynthese}}
 
 La biodiversité peut être mesurée de nombreuses façons.
 La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire.
@@ -11691,7 +12039,7 @@ La recherche sur la mesure de la diversité est très active, ce document évolu
 \begin{description}
 
 \selectlanguage{french}
-\item[Résumé]
+\item[]
 La biodiversité peut être mesurée de nombreuses façons.
 
 La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire.
@@ -11702,7 +12050,6 @@ L'entropie est transformée en diversité au sens strict par une fonction croiss
 L'entropie phylogénétique généralise les indices de diversité classique, intègre si nécessaire la distance entre espèces, peut être écomposée et corrigée des biais d'estimation.
 Sa transformation en diversité au sens strict permet d'interpréter les valeurs sous une forme unique : un nombre équivalent d'espèces et un nombre équivalent de communautés.
 La diversité de Leinster et Cobbold généralise à son tour la diversité phylogénétique et permet d'autres définitions de la distance entre espèces.
-
 Le paramétrage des mesures (l'ordre de la diversité) permet de donner plus ou moins d'importance aux espèces rares et de tracer des profils de diversité.
 
 La construction de ce cadre méthodologique est présentée en détail ainsi que plusieurs approches différentes, qui constituent l'état de l'art de la mesure de la biodiversité.
