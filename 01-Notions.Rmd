@@ -1,13 +1,8 @@
----
-output:
-  html_document: default
-  pdf_document: default
----
-\SmallMargins
+  \SmallMargins
 # (PART) Notions {-}
-\LargeMargins
+  \LargeMargins
 
-# Notions de Diversité
+# Notions de Diversité {#chap-Notions}
 
 ```{r, include=FALSE}
 library("tidyverse")
@@ -78,7 +73,7 @@ Cela ne signifie pas que les composantes contribuent indépendamment les unes de
 
 ## Niveaux de l'étude
 
-La diversité est classiquement estimée à plusieurs niveaux emboîtés, nommés $\alpha$, $\beta$ et $\gamma$ par  @Whittaker1960 [page 320] qui a nommé $\alpha$ la diversité locale qu'il mesurait avec l'indice $\alpha$ de Fisher (voir le chapitre \@ref(chap:Fisher)) et a utilisé les lettres suivantes selon ses besoins.
+La diversité est classiquement estimée à plusieurs niveaux emboîtés, nommés $\alpha$, $\beta$ et $\gamma$ par  @Whittaker1960 [page 320] qui a nommé $\alpha$ la diversité locale qu'il mesurait avec l'indice $\alpha$ de Fisher (voir le chapitre \@ref(chap-Fisher)) et a utilisé les lettres suivantes selon ses besoins.
 
 ### Diversité $\alpha$, $\beta$ et $\gamma$
 
@@ -137,11 +132,10 @@ Le choix de la définition modifie considérablement sur la quantification de la
 Des problèmes méthodologiques s'ajoutent aux problèmes conceptuels [@Hey2001]: la séparation ou le regroupement de plusieurs populations ou morphotypes en un nombre plus ou moins grand d'espèces est un choix qui reflète les connaissances du moment et peut évoluer [@Barberousse2014].
 
 L'impact du problème de l'espèce sur la mesure de la diversité reste sans solution à ce stade, si ce n'est d'utiliser les mêmes définitions si des communautés différentes doivent être comparées. 
-L'approche phylogénétique (chapitre \@ref(chap:Phyloentropie)) permet de contourner le problème: si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
+L'approche phylogénétique (chapitre \@ref(chap-Phyloentropie)) permet de contourner le problème: si deux taxons très semblables apportent à peine plus de diversité qu'un seul taxon, le choix de les distinguer ou non n'est pas critique.
 
 
-
-# Outils
+# Outils {#chap-Outils}
 
 ```{block, type='Summary'}
   La diversité peut être décrite localement par une courbe d'accumulation (SAC) qui représente le nombre d'espèces échantillonnées en fonction de l'effort.
@@ -173,7 +167,7 @@ Une courbe de raréfaction (*Rarefaction Curve*) peut être calculée en réduis
 La figure \@ref(fig:SACFig) montre l'accumulation des espèces pour les données de BCI.
 Une SAC peut être tracée en fonction de la surface, du nombre d'individus ou du nombres de placettes d'échantillonnage, selon les besoins.
 
-Code R pour réaliser la figure \@ref(fig:SARFig):
+Code R pour réaliser la figure \@ref(fig:SACFig):
 ```{r SACCode, eval=FALSE, tidy=FALSE}
 library("vegan")
 data(BCI)
@@ -207,7 +201,6 @@ En d'autres termes, c'est la diversité d'une communauté dont l'inventaire disp
 
 Evaluer la diversité asymptotique nécessite d'utiliser des estimateurs de diversité, dont la précision dépend de l'exhaustivité de l'échantillonnage.
 La diversité peut aussi être estimée pour un effort donné: un hectare de forêt ou 5000 arbres par exemple, ou encore un taux de couverture choisi, qui décrit mieux la qualité de l'échantillonnage.
-
 
 ## Taux de couverture {#sec:Couverture}
 
@@ -345,22 +338,22 @@ La complétude du même échantillon d'arbres de forêt tropicale que dans l'exe
 À BCI: 
 
 ```{r CompletenessBCI}
-# Species observed
+# Espèces observées
 (Obs <- Richness(Ns, Correction = "None"))
-# Estimated richness
+# Richesse estimée
 (Est <- Richness(Ns, Correction = "Jackknife"))
-# Completeness
+# Complétude
 as.numeric(Obs/Est)
 ```
 
 À Paracou:
 
 ```{r CompletenessP6}
-# Species observed
+# Espèces observées
 (Obs <- Richness(Paracou6, Correction = "None"))
-# Estimated richness
+# Richesse estimée
 (Est <- Richness(Paracou6, Correction = "Jackknife"))
-# Completeness
+# Complétude
 as.numeric(Obs/Est)
 ```
 
@@ -409,42 +402,6 @@ Les principales distributions, nécessaires à la compréhension de la suite son
 * La distribution géométrique [@Motomura1932; @Whittaker1972];
 * La distribution log-normale [@Preston1948];
 * Le modèle Broken Stick [@MacArthur1957].
-
-(ref:DistributionsFig) Diagramme rang-fréquence des distributions de probabilité classiques. Toutes les distributions sont de 100 espèces. Les probabilités inférieures à $10^{-6}$ ne sont pas affichées. Les paramètres choisis sont $\alpha=11$ pour la distribution log-séries, $k=0,2$ pour la distribution géométrique et $\sigma=2$ pour la distribution log-normale.
-```{r DistributionsFig, echo=FALSE, results='hide', message=FALSE, warning=FALSE, ref.label='DistributionsCode',  fig.cap="(ref:DistributionsFig)"}
-```
-
-Code de la figure \@ref(fig:DistributionsFig):
-```{r DistributionsCode, eval=FALSE, tidy=FALSE}
-library("entropart")
-# Tirage d'une communauté en log-séries
-lseries <- rCommunity(1, size=1E5, Distribution="lseries", alpha=11)
-# Nombre d'espèces de référence
-S <- length(lseries)
-# Part des ressources accaparées dans la distribution géométrique
-prob=0.2
-# Calcul des probabilités de la distribution géométrique
-geom <- prob/(1-(1-prob)^S)*(1-prob)^(0:(S-1))
-# Dispersion de la loi lognormale
-sd <- 2
-# Tirage de S valeurs dans une loi lognormale
-Nslnorm <- rlnorm(S, 0, sd)
-# Normalisation pour obtenir des probabilités
-lnorm <- Nslnorm/sum(Nslnorm)
-# Tirage des probabilités de la distribution broken stick
-bstick <- c(cuts <- sort(stats::runif(S-1)), 1)- c(0, cuts)
-# Graphique
-tibble(Rang=1:S,
-      `Log-Séries`=sort(lseries/sum(lseries), decreasing=TRUE),
-      `Géometrique`=sort(geom, decreasing=TRUE),
-      `Log-Normale`=sort(lnorm, decreasing=TRUE),
-      `Broken Stick`=sort(bstick, decreasing=TRUE)) %>% 
-  pivot_longer(cols=-Rang) %>% 
-  ggplot() +
-  geom_line(aes(x=Rang, y=value, color=name)) +
-  scale_y_log10(limits=c(1E-6, NA)) +
-  labs(y="Probabilité", color="Distribution")
-```
 
 Formellement, la distribution des probabilités des espèces, notées $p_s$, est à établir.
 
@@ -509,12 +466,48 @@ La distribution est observée dans les communautés pionnières [@Bazzaz1975], p
 
 ### Synthèse
 
+(ref:DistributionsFig) Diagramme rang-fréquence des distributions de probabilité classiques. Toutes les distributions sont de 100 espèces. Les probabilités inférieures à $10^{-6}$ ne sont pas affichées. Les paramètres choisis sont $\alpha=11$ pour la distribution log-séries, $k=0,2$ pour la distribution géométrique et $\sigma=2$ pour la distribution log-normale.
+```{r DistributionsFig, echo=FALSE, results='hide', out.width='100%', ref.label='DistributionsCode',  fig.cap="(ref:DistributionsFig)"}
+```
+
 La figure \@ref(fig:DistributionsFig) est inspirée de la figure très connue de @Magurran1988.
 Elle montre bien une gradation en termes de décroissance de probabilité entre des distributions de même richesse: de la plus équitable (broken stick) à la plus inéquitable (géométrique).
 Elle doit être nuancée: la proportion $k$ de la distribution géométrique fixe la pente de la droite qui la représente sur la figure.
 $k=10\%$ sur la figure: une valeur plus faible diminuerait la pente.
 De même, l'écart-type de la distribution log-normale décrit sa dispersion.
 Une valeur supérieure augmenterait sa décroissance.
+
+Le code utilisé pour produire la figure \@ref(fig:DistributionsFig) est le suivant:
+```{r DistributionsCode, eval=FALSE, tidy=FALSE}
+library("entropart")
+# Tirage d'une communauté en log-séries
+lseries <- rCommunity(1, size=1E5, Distribution="lseries", alpha=11)
+# Nombre d'espèces de référence
+S <- length(lseries)
+# Part des ressources accaparées dans la distribution géométrique
+prob=0.2
+# Calcul des probabilités de la distribution géométrique
+geom <- prob/(1-(1-prob)^S)*(1-prob)^(0:(S-1))
+# Dispersion de la loi lognormale
+sd <- 2
+# Tirage de S valeurs dans une loi lognormale
+Nslnorm <- rlnorm(S, 0, sd)
+# Normalisation pour obtenir des probabilités
+lnorm <- Nslnorm/sum(Nslnorm)
+# Tirage des probabilités de la distribution broken stick
+bstick <- c(cuts <- sort(stats::runif(S-1)), 1)- c(0, cuts)
+# Graphique
+tibble(Rang=1:S,
+      `Log-Séries`=sort(lseries/sum(lseries), decreasing=TRUE),
+      `Géometrique`=sort(geom, decreasing=TRUE),
+      `Log-Normale`=sort(lnorm, decreasing=TRUE),
+      `Broken Stick`=sort(bstick, decreasing=TRUE)) %>% 
+  pivot_longer(cols=-Rang) %>% 
+  ggplot() +
+  geom_line(aes(x=Rang, y=value, color=name)) +
+  scale_y_log10(limits=c(1E-6, NA)) +
+  labs(y="Probabilité", color="Distribution")
+```
 
 La simulation de ces quatre distributions peut être réalisée par la fonction `rCommunity()` du package *entropart*, où l'argument `Distribution` peut valoir "bstick", "lnorm", "geom" ou "lseries".
 La simulation des communautés autres que log-séries passe par le tirage des probabilités des espèces (le calcul est déterministe dans le cas de la distribution géométrique) puis le tirage d'un nombre d'individus dans une loi multinomiale respectant ces probabilités et l'effectif total.
@@ -548,16 +541,28 @@ L'ajustement du modèle de Volkov peut être comparé à celui d'une distributio
 # Ajustement du modèle de Volkov
 fit_volkov <- fitvolkov(Ns)
 fit_volkov@fullcoef
+```
+
+Graphiquement, l'ajustement est très proche mais la distribution de Volkov prévoit explicitement des effectifs égaux parce qu'entiers.
+
+```{r BCIfit3, warning=FALSE}
 # Comparaison graphique des deux modèles. Log-normal en rouge.
 plot(as.AbdVector(Ns), Distribution="lnorm")
 # Volkov en vert
 lines(sort(rvolkov(length(Ns), fit_volkov@fullcoef[1], fit_volkov@fullcoef[2], fit_volkov@fullcoef[3]), decreasing=TRUE), col="green")
+```
+
+
+Les vraisemblances sont proches.
+
+```{r BCIfit4, warning=FALSE}
 # Comparaison des vraisemblances
 fit_sads_lnorm@min
 fit_volkov@min
 ```
+
 Les paramètres du modèle de communauté locale de la théorie neutre sont $\theta$, le "nombre fondamental" égal à deux fois le nombre d'espèces apparaissant par pas de temps dans la méta-communauté, $m$, le taux de migration, et $J$, la taille de la communauté locale.
 
-Graphiquement, l'ajustement des deux modèles est très proche.
 La différence entre les logarithmes de vraisemblance des deux modèles est d'environ 7 au profit du modèle de Volkov, au prix d'un seul paramètre supplémentaire.
 Selon le critère d'information d'Akaike [AIC: @Akaike1998], l'ajustement est meilleur mais la différence est petite et la complexité du modèle et des calculs pour l'estimer ne se justifient pas en général: le modèle de Volkov est très peu utilisé en pratique.
+

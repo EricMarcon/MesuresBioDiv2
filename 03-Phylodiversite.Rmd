@@ -1,6 +1,6 @@
-\SmallMargins
+  \SmallMargins
 # (PART) Diversité fonctionnelle et phylogénétique {-}
-\LargeMargins
+  \LargeMargins
 
 # Cadre {#chap-cadrephyfonc}
 
@@ -91,7 +91,7 @@ Une méthode pour dater une phylogénie est fournie par @Chave2007
 Dans tous les cas, la distance est une mesure de la divergence évolutive. 
 Du point de vue de la biologie de la conservation, chaque espèce accumule une quantité d'évolution, interprétée comme une quantité d'information [@Crozier1997] dont le maximum doit être préservé.
 
-L'entropie phylogénétique (voir chapitre \@ref(chap:Phyloentropie)) utilise un arbre phylogénétique pour mesurer la diversité.
+L'entropie phylogénétique (voir chapitre \@ref(chap-Phyloentropie)) utilise un arbre phylogénétique pour mesurer la diversité.
 
 
 
@@ -123,7 +123,7 @@ Un arbre consensus [@Felsenstein2004] est souvent plus proche de la matrice de d
 Un dendrogramme fonctionnel n'a pas d'interprétation aussi claire qu'un arbre phylogénétique qui représente le processus de l'évolution. 
 Il peut être interprété comme la représentation à des échelles de plus en plus grossières en allant vers le haut de l'arbre de regroupements fonctionnels dans des niches de plus en plus vastes.
 
-La transformation d'une matrice (non ultramétrique) en dendrogramme déforme la topologie des espèces [@Pavoine2005a; @Podani2007]: une mesure de diversité qui utilise directement la matrice est préférable, c'est un intérêt de la  diversité de Leinster et Cobbold (voir chapitre \@ref(chap:LeinsterCobbold)).
+La transformation d'une matrice (non ultramétrique) en dendrogramme déforme la topologie des espèces [@Pavoine2005a; @Podani2007]: une mesure de diversité qui utilise directement la matrice est préférable, c'est un intérêt de la  diversité de Leinster et Cobbold (voir chapitre \@ref(chap-LeinsterCobbold)).
 @Maire2015 ont défini une mesure de qualité d'un espace fonctionnel, *mSD*, comme l'écart quadratique moyen entre les distances fonctionnelles entre espèces dans l'espace utilisé (par exemple les distances cophénétiques dans un dendrogramme fonctionnel) et les distances originales (dans la matrice de distance à partir de laquelle l'arbre a été obtenu).
 Dans la matrice originale, les valeurs de traits sont centrées et réduites, et la hauteur du dendrogramme est fixée pour que la distance cophénétique maximale soit égale à la distance originale maximale.
 

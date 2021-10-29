@@ -1,6 +1,6 @@
-\SmallMargins
+  \SmallMargins
 # (PART) Diversité jointe, diversité structurelle {-}
-\LargeMargins
+  \LargeMargins
 
 # Cadre {#sec:jointeCadre}
 

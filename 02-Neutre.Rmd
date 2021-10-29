@@ -1,6 +1,6 @@
-\SmallMargins
+  \SmallMargins
 # (PART) Diversité neutre d’une communauté {-}
-\LargeMargins
+  \LargeMargins
 
 # Mesures neutres de la diversité $\alpha$ ou $\gamma$ {#chap-MesuresNeutres}
 
@@ -24,7 +24,7 @@ La diversité neutre est souvent appelée diversité taxonomique [@Devictor2010;
 Ce type de mesure n'a de sens qu'à l'intérieur d'un taxocène bien défini: sommer un nombre d'espèces d'insectes à un nombre d'espèces de mammifères a peu d'intérêt.
 Ces méthodes ne sont donc pas forcément les plus adaptées à la conservation: à grande échelle, des indicateurs de biodiversité [@Balmford2003] peuvent être plus pertinents. 
 D'autre part, les communautés sont considérées comme limitées, avec un nombre d'espèces fini: la courbe d'accumulation des espèces atteint donc théoriquement une asymptote quand l'effort d'inventaire est suffisant.
-Cette approche est opposée à celle, traitée dans les chapitres \@ref(chap:Fisher) et suivants, qui considère que la diversité augmente indéfiniment avec la surface [@Williamson2001], que ce soit par changement d'échelle (élargir l'inventaire ajoute de nouvelles communautés) ou, plus théoriquement, parce que les communautés réelles sont considérées comme un tirage aléatoire parmi une infinités d'espèces [@Fisher1943].
+Cette approche est opposée à celle, traitée dans les chapitres \@ref(chap-Fisher) et suivants, qui considère que la diversité augmente indéfiniment avec la surface [@Williamson2001], que ce soit par changement d'échelle (élargir l'inventaire ajoute de nouvelles communautés) ou, plus théoriquement, parce que les communautés réelles sont considérées comme un tirage aléatoire parmi une infinités d'espèces [@Fisher1943].
 
 Les mesures présentées ici sont les plus utilisées: richesse, indices de Shannon et de Simpson, et l'indice de Hurlbert. 
 Elles sont sujettes à des biais d'estimation [@Mouillot1999], notamment (mais pas seulement) à cause des espèces non échantillonnées.
@@ -123,7 +123,7 @@ Il s'agit d'un estimateur minimum: l'espérance du nombre d'espèces est supéri
   s^{n}_{0} = S e^{-kn},
 \end{equation}
 où $k$ est un réel strictement positif.
-Cette relation est cohérente avec un échantillonnage poissonien dans lequel la densité des individus est constante: voir le chapitre \@ref(chap:Accumulation).
+Cette relation est cohérente avec un échantillonnage poissonien dans lequel la densité des individus est constante: voir le chapitre \@ref(chap-Accumulation).
 
 Si aucune espèce n'est observée deux fois, l'estimateur est remplacé par
 \begin{equation}
@@ -562,7 +562,7 @@ plot(mod.ll)
 
 #### Maximum de vraisemblance d'une distribution de Fisher
 
-@Norris1998 supposent que la distribution des espèces suit le modèle de Fisher (voir chapitre \@ref(chap:Fisher)) et infèrent le nombre d'espèces par maximum de vraisemblance non paramétrique (ils ne cherchent pas à inférer les paramètres de la loi de probabilité de $p_s$ mais seulement à ajuster au mieux le modèle de Poisson aux valeurs de ${\hat{p}}_s$ observées).
+@Norris1998 supposent que la distribution des espèces suit le modèle de Fisher (voir chapitre \@ref(chap-Fisher)) et infèrent le nombre d'espèces par maximum de vraisemblance non paramétrique (ils ne cherchent pas à inférer les paramètres de la loi de probabilité de $p_s$ mais seulement à ajuster au mieux le modèle de Poisson aux valeurs de ${\hat{p}}_s$ observées).
 
 Le calcul est possible avec la librairie *SPECIES* de R:
 
@@ -810,7 +810,7 @@ knitr::include_graphics('images/Mora2011.png')
 ```
 
 En se limitant aux arbres, l'estimation se monte à 16000 espèces pour l'Amazonie [@TerSteege2013], de l'ordre de 5000 pour l'Afrique et entre 40000 et 53000 pour l'ensemble des tropiques [@Slik2015] (donc pour l'ensemble de la planète, le nombre d'espèces non-tropicales étant négligeable).
-Ces estimations sont obtenues par extrapolation du modèle en log-séries (chapitre \@ref(chap:Fisher)) et sont sujettes au paradoxe de Fisher: les espèces représentées par un très petit nombre d'individu dans le modèle, notamment les singletons, sont les plus nombreuses.
+Ces estimations sont obtenues par extrapolation du modèle en log-séries (chapitre \@ref(chap-Fisher)) et sont sujettes au paradoxe de Fisher: les espèces représentées par un très petit nombre d'individu dans le modèle, notamment les singletons, sont les plus nombreuses.
 Une discussion approfondie est donnée par @Hubbell2015: les espèces récemment apparues au sens du modèle ne sont pas détectables avant plusieurs générations, créant un décalage entre le nombre d'espèces reconnues par la taxonomie et modèle.
 
 @Wilson2012 compilent les relevés du nombre d'espèces de plantes vasculaires en fonction de la surface et retiennent uniquement les plus riches à chaque échelle spatiale (du millimètre carré à l'hectare).
@@ -1078,7 +1078,7 @@ L'indice de Shannon est concave (figure \@ref(fig:ShannonFig)) donc son estimate
 ```{r ShannonFig, echo=FALSE, results='hide', message=FALSE, ref.label='ShannonCode',  fig.cap="(ref:ShannonFig)"}
 ```
 
-Code de la figure \@ref(fig:SARFig):
+Code de la figure \@ref(fig:SACFig):
 ```{r ShannonCode, eval=FALSE, tidy=FALSE}
 ggplot(data.frame(x = c(0.0001, 1)), aes(x)) + 
     stat_function(fun = function(x) -x*log(x)) +
@@ -1395,7 +1395,7 @@ Quelques formes possibles de $H(\mathbf{q},\mathbf{p})$ sont:
 ```
 
 
-L'entropie relative est essentielle pour la définition de la diversité $\beta$ présentée dans le chapitre \@ref(chap:DedompHCDT). 
+L'entropie relative est essentielle pour la définition de la diversité $\beta$ présentée dans le chapitre \@ref(chap-DedompHCDT). 
 En se limitant à la diversité $\alpha$, on peut remarquer que l'indice de Shannon est la divergence de Kullback-Leibler entre la distribution observée et l'équiprobabilité des espèces [@Marcon2012a]. 
 Les valeurs de chaque terme de la divergence sont représentées en figure \@ref(fig:KullbackLeiblerFig).
 
@@ -1478,7 +1478,7 @@ D'autres entropies ont été utlisées, avec plus ou moins de succès.
 Par exemple, @Ricotta2003c proposent d'utiliser la fonction d'information $I(p_s)=-\ln(k_s)$ où $k_s$ est la dissimilarité totale de l'espèce $s$ avec les autres (par exemple, la somme des distances aux autres espèces dans un arbre phylogénétique, voir section \@ref(sec:Dphylo)), normalisée pour que $\sum_s{k_s}=1$.
 Ainsi, les espèces les plus originales apportent peu d'information, ce qui n'est pas très intuitif.
 Les auteurs montrent que leur mesure est la somme de l'entropie de Shannon et de la divergence de Kullback-Leibler entre les probabilités et les dissimilarités des espèces.
-@Ricotta2006b ont défini plus tard une entropie augmentant avec l'originalité de chaque espèce, présentée au chapitre \@ref(chap:LeinsterCobbold).
+@Ricotta2006b ont défini plus tard une entropie augmentant avec l'originalité de chaque espèce, présentée au chapitre \@ref(chap-LeinsterCobbold).
 
 
 
@@ -1502,7 +1502,7 @@ Là encore:
 
 L'entropie HCDT est particulièrement attractive parce que sa relation avec la diversité au sens strict est simple, après introduction du formalisme adapté (les logarithmes déformés). 
 Son biais d'estimation peut être corrigé globalement, et non seulement pour les cas particuliers (nombre d'espèces, Shannon, Simpson). 
-Enfin, sa décomposition sera présentée en détail dans le chapitre \@ref(chap:DedompHCDT).
+Enfin, sa décomposition sera présentée en détail dans le chapitre \@ref(chap-DedompHCDT).
 
 ### Logarithmes déformés
 
@@ -1629,7 +1629,7 @@ On voit immédiatement que l'entropie de Tsallis est le logarithme d'ordre $q$ d
 
 L'entropie est utile pour les calculs: la correction des biais d'estimation notamment.
 Les nombres de Hill, ou *nombres équivalents d'espèces* ou *nombres effectif d'espèces* permettent une appréhension plus intuitive de la notion de biodiversité [@Jost2006]. 
-En raison de leurs propriétés, notamment de décomposition (voir le chapitre \@ref(chap:DedompHCDT)), @Jost2007 les appelle "vraie diversité". 
+En raison de leurs propriétés, notamment de décomposition (voir le chapitre \@ref(chap-DedompHCDT)), @Jost2007 les appelle "vraie diversité". 
 @Hoffmann2008 critiquent cette définition totalitaire et fournissent une revue historique plus lointaine sur les origines de ces mesures.
 @Jost2009 reconnaît qu'un autre terme aurait pu être choisi ("diversité neutre" ou "diversité mathématique" par exemple).
 
@@ -1664,7 +1664,7 @@ Diversity(Ps, q)
 
 Les propriétés mathématiques de la diversité ne sont pas celles de l'entropie. 
 L'entropie doit être une fonction concave des probabilités comme on l'a vu plus haut, mais pas la diversité (un exemple de confusion est fourni par @Gadagkar1989, qui reproche à $^{2}\!D$ de ne pas être concave). 
-L'entropie est une moyenne pondérée par les probabilités de la fonction d'information, c'est donc une fonction linéaire des probabilités, propriété importante pour définir l'entropie $\alpha$ (section \@ref(sec:defalpha)) comme la moyenne des entropies de plusieurs communautés, ou l'entropie phylogénétique (chapitre \@ref(chap:Phyloentropie)) comme la moyenne de l'entropie sur les périodes d'un arbre. 
+L'entropie est une moyenne pondérée par les probabilités de la fonction d'information, c'est donc une fonction linéaire des probabilités, propriété importante pour définir l'entropie $\alpha$ (section \@ref(sec:defalpha)) comme la moyenne des entropies de plusieurs communautés, ou l'entropie phylogénétique (chapitre \@ref(chap-Phyloentropie)) comme la moyenne de l'entropie sur les périodes d'un arbre. 
 La diversité n'est pas une fonction linéaire des probabilités: la diversité moyenne n'est en général pas la moyenne des diversités.
 
 
@@ -2039,7 +2039,7 @@ L'entropie d'ordre $q$ de @Renyi1961 est
 
 C'est le logarithme naturel des nombres de @Hill1973 qui ont été définis à partir d'elle.
 L'entropie de Rényi a connu un succès important en tant que seule mesure d'entropie généralisée jusqu'à la diffusion de l'entropie HCDT.
-Son défaut est qu'elle n'est pas forcément concave [@Beck2009], ce qui empêche sa décomposition (voir chapitre \@ref(chap:DedompHCDT)).
+Son défaut est qu'elle n'est pas forcément concave [@Beck2009], ce qui empêche sa décomposition (voir chapitre \@ref(chap-DedompHCDT)).
 
 
 ### L'entropie généralisée des mesures d'inégalité

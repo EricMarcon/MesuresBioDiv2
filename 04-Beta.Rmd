@@ -1,6 +1,6 @@
-\SmallMargins
+  \SmallMargins
 # (PART) Diversité beta et décomposition {-}
-\LargeMargins
+  \LargeMargins
 
 # Cadre {#sec:betaCadre}
 
@@ -74,7 +74,7 @@ knitr::include_graphics('images/Anderson2011b.png')
 Les mesures de remplacement ne sont pas traitées en détail dans ce chapitre mais simplement présentées ici.
 
 La plus simple (figure \@ref(fig:Anderson2011a), T1) est la dissimilarité entre deux communautés notée $\Delta{y}$.
-De nombreuses mesures de dissimilarité existent, elles sont détaillées dans le chapitre \@ref(chap:BetaPaires).
+De nombreuses mesures de dissimilarité existent, elles sont détaillées dans le chapitre \@ref(chap-BetaPaires).
 Whittaker n'envisageait que la présence ou l'absence des espèces, mais leur abondance peut être prise en compte.
 
 Cette dissimilarité peut être analysée en fonction du gradient de référence. 
@@ -106,7 +106,7 @@ Cette approche utilitaire est complétée par le cadre théorique de @Jurasinski
 * La diversité de différenciation (*differentiation diversity*), qui mesure à quel point les unités spatiales sont différentes, ce qui correspond à la définition littérale de la diversité $\beta$ de Whittaker;
 * La diversité proportionnelle (*proportional diversity*), diversité $\beta$ qui se construit par différence ou rapport des diversités $\gamma$ et $\alpha$. @Marcon2014a ont montré qu'avec une décomposition appropriée de la diversité, la diversité proportionnelle est aussi la divergence entre la distribution des communautés locales et celle de la méta-communauté: la diversité $\beta$ mesure alors à quel point les unités spatiales sont différentes de leur assemblage plutôt qu'entre elles.
 
-Dans son article fondateur, @Whittaker1960 définit la diversité $\beta$ comme le niveau de changement dans la composition des communautés, la nomme "diversité secondaire " et lui attribue la lettre $\beta$ en référence à la diversité "primaire " mesurable par l'indice $\alpha$ de Fisher [@Fisher1943], voir le chapitre \@ref(chap:Fisher).
+Dans son article fondateur, @Whittaker1960 définit la diversité $\beta$ comme le niveau de changement dans la composition des communautés, la nomme "diversité secondaire " et lui attribue la lettre $\beta$ en référence à la diversité "primaire " mesurable par l'indice $\alpha$ de Fisher [@Fisher1943], voir le chapitre \@ref(chap-Fisher).
 Il illustre cette définition par une mesure de différentiation: l'indice de Jaccard, mais utilise ensuite une mesure proportionnelle: le rapport des indice $\alpha$ de l'assemblage des communautés à sa moyenne sur les communautés.
 La conciliation des deux approches n'est pas simple.
 @Gregorius2016 montre notamment que les mesures habituelles de diversité proportionnelle ne rendent pas compte correctement de la différentiation.
@@ -122,7 +122,7 @@ Les éléments du débat sont présentés ici.
 @Tuomisto2010a passe en revue l'ensemble des définitions de la diversité $\beta$ dérivée des diversités $\gamma$ et $\alpha$. 
 Toutes ont en commun:
 
-* Une définition de la mesure de diversité, appliquée à la diversité $\gamma$, qui est généralement une des mesures vues dans le chapitre \@ref(chap:MesuresNeutres);
+* Une définition de la mesure de diversité, appliquée à la diversité $\gamma$, qui est généralement une des mesures vues dans le chapitre \@ref(chap-MesuresNeutres);
 * Une définition de la diversité $\alpha$, qui peut être par exemple:
     * La diversité locale mesurée dans chaque communauté, indépendamment de toute référence hors de la communauté;
     * De façon équivalente, le nombre d'espèces effectives dans les communautés.
@@ -224,7 +224,7 @@ Jost conclut donc que la décomposition n'est possible que pour des communautés
 \end{equation}
 
 Cette définition pose problème: alors que le choix de $q$ a pour but de donner une importance plus ou moins grande aux espèces rares, son effet est le même sur la taille des communautés La diversité dépendra essentiellement des espèces rares dans les communautés de faible poids si $q$ est petit, définissant une diversité bi-dimensionnelle. 
-Cette question est traitée en détail au chapitre \@ref(chap:DiversiteJointe).
+Cette question est traitée en détail au chapitre \@ref(chap-DiversiteJointe).
 
 @Marcon2014a préfèrent la définition de Routledge qui est plus intuitive et garantit que la diversité $\gamma$ est supérieure à la diversité $\alpha$. 
 La dépendance entre $^{q}\!D_{\beta}$ et $^{q}\!D_{\alpha}$ est le prix à payer.
@@ -566,7 +566,7 @@ La décomposition est identique à celle de l'équation \@ref(eq:DNesReplPJ) apr
 
 @Legendre2014 considère cette décomposition de la diversité $\beta$ en emboîtement et substitution comme une décomposition de variance et lui applique des méthodes d'ordination pour la relier aux variables environnementales par exemple.
 
-Les mesures de diversité $\beta$ fondées sur l'entropie HCDT (chapitre \@ref(chap:DedompHCDT)) ne permettent pas de distinguer directement emboîtement et substitution.
+Les mesures de diversité $\beta$ fondées sur l'entropie HCDT (chapitre \@ref(chap-DedompHCDT)) ne permettent pas de distinguer directement emboîtement et substitution.
 La variabilité des contributions $^{q}_{i}\!H_{\beta}$ des communautés à l'entropie $\beta$ augmente avec l'emboîtement, mais cette voie n'a pas été explorée.
 
 
@@ -622,7 +622,7 @@ redécouvert et nommé *COMDISTNN* par @Webb2008.
 ### Similarité moyenne entre individus
 
 @Pavoine2014b définissent une famille de similarités entre communautés construite à partir de la similarité moyenne entre les paires d'individus de chaque communauté et les paires intercommunautaires. 
-Une matrice de similarité $\mathbf{Z}$ est définie entre les paires d'espèces: $z_{s,t}$ est la similarité entre l'espèce $s$ et l'espèce $t$, comprise entre 0 et 1 de la même façon que pour le calcul de la diversité $^q\!D^{\mathbf{Z}}$ (chapitre \@ref(chap:LeinsterCobbold)). 
+Une matrice de similarité $\mathbf{Z}$ est définie entre les paires d'espèces: $z_{s,t}$ est la similarité entre l'espèce $s$ et l'espèce $t$, comprise entre 0 et 1 de la même façon que pour le calcul de la diversité $^q\!D^{\mathbf{Z}}$ (chapitre \@ref(chap-LeinsterCobbold)). 
 La matrice $\mathbf{Z}$ doit de plus être semi-définie positive, ce qui implique que $\sqrt{1-\mathbf{Z}}$ est euclidienne: de cette façon, les espèces peuvent être représentées graphiquement par une PCoA. 
 Les fréquences des espèces dans les deux communautés sont $\mathbf{p}$ et $\mathbf{q}$. 
 La similarité moyenne dans chaque communauté est $\sum_{s,t}{p_s p_t z_{s,t}}$ et $\sum_{s,t}{q_s q_t z_{s,t}}$. 
@@ -1228,13 +1228,13 @@ Une interprétation géométrique de la décomposition est la suivante [@Pavoine
 Les espèces peuvent être placées dans un espace multidimensionnel construit par une Analyse en Coordonnées Principales [@Gower1966] de la matrice de dissimilarité $\mathbf{D}$ telle que $\mathbf{\Delta}={\mathbf{D}^{\circ2}}/{2}$ (les distances dans l'espace multidimensionnel sont $\sqrt{2\delta_{s's''}}$; autrement dit: la dissimilarité entre deux espèces est la moitié du carré de la distance entre elles dans la représentation géométrique).
 Chaque communauté se trouve au centre de gravité des espèces qu'elle contient, pondérées par leur fréquence.
 La moitié du carré de la distance entre deux communautés dans ce même espace est le coefficient de dissimilarité entre communautés de Rao.
-La distance entre communautés est donc interprétable directement comme une mesure de diversité $\beta$ [@Ricotta2015], dans la tradition de l'utilisation de la dissimilarité entre paires de communautés (chapitre \@ref(chap:BetaPaires)).
+La distance entre communautés est donc interprétable directement comme une mesure de diversité $\beta$ [@Ricotta2015], dans la tradition de l'utilisation de la dissimilarité entre paires de communautés (chapitre \@ref(chap-BetaPaires)).
 
 Cette partition suppose que les poids des communautés sont proportionnels à leur nombre d'individus [@Rao1982, Villeger2008]. 
 @Hardy2007 décomposent (par différence entre $\gamma$ et $\alpha$) l'indice de Rao de communautés de poids égaux. 
 @Hardy2008 montrent que les deux pondérations sont valides mais l'absence de cadre général assurant que la diversité $\gamma$ de Rao est supérieure à la diversité $\alpha$ [@DeBello2010] motive @Guiasu2011 à proposer une alternative à l'indice de Rao, l'indice de Gini-Simpson quadratique pondéré \@ref(eq:Guiasu), dont la concavité est démontrée (ce qui implique que $\gamma\ge \alpha$). 
 La pondération peut en fait être quelconque tant que la matrice dont les éléments sont la racine carré des éléments de la matrice de dissimilarité est euclidienne [@Champely2002].
-Ce résultat a été obtenu pour les arbres ultramétriques dans le cadre plus général de la décomposition de l'entropie phylogénétique (voir chapitre \@ref(chap:DedompHCDT).
+Ce résultat a été obtenu pour les arbres ultramétriques dans le cadre plus général de la décomposition de l'entropie phylogénétique (voir chapitre \@ref(chap-DedompHCDT).
 
 La partition peut être faite avec la fonction `DivPart` :
 

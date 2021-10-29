@@ -1,6 +1,6 @@
-\SmallMargins
+  \SmallMargins
 # (PART) Diversité spatialement explicite {-}
-\LargeMargins
+  \LargeMargins
 
 # Cadre {#sec:spatialCadre}
 
@@ -12,7 +12,7 @@ De façon évidente, la richesse augmente avec la surface ou le nombre d'individ
 Cette constatation peut être interprétée de deux façons différentes: l'augmentation progressive de l'effort d'échantillonnage permet d'atteindre une asymptote quand la diversité est complètement inventoriée, ou, au contraire, l'augmentation de la diversité avec la surface prise en compte est une propriété intrinsèque, et aucune asymptote n'existe.
 
 Dans une communauté de taille définie, avec une distribution des espèces et un nombre d'individus définis même s'ils sont inconnus, l'augmentation de l'échantillonnage permet l'accumulation de la découverte de nouvelles espèces jusqu'à une asymptote.
-L'accumulation de la diversité locale, décrite par une courbe d'accumulation (SAC) est présentée au chapitre \@ref(chap:Accumulation).
+L'accumulation de la diversité locale, décrite par une courbe d'accumulation (SAC) est présentée au chapitre \@ref(chap-Accumulation).
 
 Il est tentant dans ce cadre de chercher un indicateur de la richesse indépendant de la surface ou du nombre d'individus.
 L'approche la plus simple consiste à normaliser le nombre d'espèces observées.
@@ -28,7 +28,7 @@ A cette échelle, plusieurs communautés sont prises en compte simultanément.
 Il est possible de rechercher une nouvelle asymptote, atteinte quand toutes les communautés sont incluses (par exemple, la totalité de la forêt amazonienne [@TerSteege2013]) ou de raisonner en termes de relation aire-espèces, sans rechercher une richesse totale hypothétique [@Preston1960].
 Là encore, $\alpha$ de Fisher est ambigu puisqu'il peut provenir à la fois d'une infinité d'espèces dans son modèle original ou être compris comme le nombre fondamental de la théorie neutre, égal à deux fois le taux de spéciation fois le nombre total d'espèces (fini) de la méta-communauté [@Hubbell2001].
 
-Enfin, la diversité $\beta$ spatialement explicite est introduite au chapitre \@ref(chap:betasp).
+Enfin, la diversité $\beta$ spatialement explicite est introduite au chapitre \@ref(chap-betasp).
 
 
 
@@ -806,7 +806,7 @@ Ses hypothèses sont peu réalistes dans la zone A, mais il valide la loi de pui
 La relation d'Arrhenius est donc systématiquement validée à l'échelle régionale (figure \@ref(fig:Williamson2001)). 
 On remarquera que la distribution de Fisher, validée par Hubbell pour la méta-communauté, n'est jamais observée dans la SAR à cause de l'agrégation spatiale: en augmentant la surface d'échantillonnage, de nouvelles communautés sont ajoutées progressivement, mais l'échantillonnage de toute la méta-communauté n'est jamais réalisé (sauf au point marquant le passage de la zone B à la zone C). 
 Les seuls exemples empiriques sont des inventaires d'arbres à l'échelle de l'Amazonie entière [@TerSteege2013], ou de la totalité des forêts tropicales [@Slik2015] qui correspondent à la distribution de Fisher. Dans ces deux exemples, l'ajustement est obtenu en extrapolant linéairement la SAD, ce qui est légitime [@Izsak2012] si la distribution est effectivement celle de Fisher: la forme de la distribution est donc assumée, pas prouvée.
-Les valeurs de $\alpha$ à ces échelles sont bien supérieures aux valeurs locales (35 pour BCI, voir chapitre \@ref(chap:Fisher)): 754 pour l'Amazonie, de l'ordre de 1000 pour les néotropiques, mais seulement de 250 pour l'Afrique, et de l'ordre de 2000 pour l'ensemble des tropiques.
+Les valeurs de $\alpha$ à ces échelles sont bien supérieures aux valeurs locales (35 pour BCI, voir chapitre \@ref(chap-Fisher)): 754 pour l'Amazonie, de l'ordre de 1000 pour les néotropiques, mais seulement de 250 pour l'Afrique, et de l'ordre de 2000 pour l'ensemble des tropiques.
 
 Enfin, quand l'échelle est encore plus grande, le nombre d'espèces augmente à nouveau plus vite parce que d'autres méta-communautés sont intégrées.
 
