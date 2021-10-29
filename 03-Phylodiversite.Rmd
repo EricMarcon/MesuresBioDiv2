@@ -1,6 +1,4 @@
-  \SmallMargins
 # (PART) Diversité fonctionnelle et phylogénétique {-}
-  \LargeMargins
 
 # Cadre {#chap-cadrephyfonc}
 

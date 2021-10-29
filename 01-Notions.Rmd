@@ -1,6 +1,4 @@
-  \SmallMargins
 # (PART) Notions {-}
-  \LargeMargins
 
 # Notions de Diversité {#chap-Notions}
 

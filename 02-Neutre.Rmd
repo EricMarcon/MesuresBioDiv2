@@ -1,6 +1,4 @@
-  \SmallMargins
 # (PART) Diversité neutre d’une communauté {-}
-  \LargeMargins
 
 # Mesures neutres de la diversité $\alpha$ ou $\gamma$ {#chap-MesuresNeutres}
 
