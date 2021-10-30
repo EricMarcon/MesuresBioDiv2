@@ -1,6 +1,4 @@
-  \SmallMargins
 # (PART) Conclusion {-}
-  \LargeMargins
 
 # Synthèse {#sec-conclusionSynthese}
 
