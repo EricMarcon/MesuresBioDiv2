@@ -2443,15 +2443,15 @@ Les calculs n'aboutissent pas si la queue de distribution n'est pas regroupée (
 \begin{verbatim}
 ## Method: Penalized NPMLE method by  Wang and Lindsay 2005. 
 ## 
-##         MLE=                                243 
+##         MLE=                                238 
 ##         Estimated zero-truncated Poisson mixture components:       
-##         p=                                  0.9033625 3.397048 10.59029 
-##         pi=                                 0.2771211 0.3208847 0.4019942
+##         p=                                  5.784922 
+##         pi=                                 1
 \end{verbatim}
 
 \begin{verbatim}
 ## $Nhat
-## [1] 243
+## [1] 238
 \end{verbatim}
 
 \normalsize
@@ -2851,7 +2851,7 @@ Le nombre total d'espèces estimé est 8,7 millions, tous règnes confondus, dan
 
 En se limitant aux arbres, l'estimation se monte à 16000 espèces pour l'Amazonie \autocite{TerSteege2013}, de l'ordre de 5000 pour l'Afrique et entre 40000 et 53000 pour l'ensemble des tropiques \autocite{Slik2015} (donc pour l'ensemble de la planète, le nombre d'espèces non-tropicales étant négligeable).
 Ces estimations sont obtenues par extrapolation du modèle en log-séries (chapitre \ref{chap-Fisher}) et sont sujettes au paradoxe de Fisher: les espèces représentées par un très petit nombre d'individu dans le modèle, notamment les singletons, sont les plus nombreuses.
-Une discussion approfondie est donnée par \textcite{Hubbell2015}: les espèces récemment apparues au sens du modèle ne sont pas détectables avant plusieurs générations, créant un décalage entre le nombre d'espèces reconnues par la taxonomie et modèle.
+Une discussion approfondie est donnée par \textcite{Hubbell2015}: les espèces récemment apparues au sens du modèle ne sont pas détectables avant plusieurs générations, créant un décalage entre le nombre d'espèces reconnues par la taxonomie et le modèle.
 
 \textcite{Wilson2012} compilent les relevés du nombre d'espèces de plantes vasculaires en fonction de la surface et retiennent uniquement les plus riches à chaque échelle spatiale (du millimètre carré à l'hectare).
 Ces relevés sont tous situés en forêt tropicale ou en prairie tempérée gérée (les perturbations régulières et modérées y favorisent la diversité, conformément à la théorie de la perturbation intermédiaire \autocite{Connell1978}).
@@ -11887,9 +11887,8 @@ Wagner montre que l'estimateur de la variance de la richesse spécifique par par
 Si les espèces sont distribuées indépendamment les unes des autres, la covariance est nulle pour toutes les paires d'espèces à toutes les distances.
 Le test d'égalité entre \(\operatorname{Var}(S)\) et \(\gamma_{s,t}(r)\) à chaque valeur de \(r\) (obtenu par la méthode de Monte-Carlo en redistribuant aléatoirement la présence de chaque espèce sur le même nombre de parcelles que dans les données réelles) permet de rejeter l'indépendance entre les espèces.
 
-\SmallMargins
-\# (PART) Conclusion \{-\}
-\LargeMargins
+\hypertarget{part-conclusion}{%
+\part{Conclusion}\label{part-conclusion}}
 
 \hypertarget{sec-conclusionSynthese}{%
 \chapter{Synthèse}\label{sec-conclusionSynthese}}
