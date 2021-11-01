@@ -24,6 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
+<meta name="date" content="2021-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -457,11 +458,11 @@ On se place dans le cadre d’un échantillonnage global de la méta-communauté
 Gregorius la qualifie de “diversité de répartition” (<em>apportionment</em>) <span class="citation">(Gregorius <a href="#ref-Gregorius2014" role="doc-biblioref">2014</a>)</span>.
 L’exemple suivant mesure la diversité <span class="math inline">\(\beta\)</span> dans une méta-communauté très simple (figure <a href="chap-DiversiteJointe.html#fig:Repartition1Fig">18.1</a>):</p>
 
-<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="chap-DiversiteJointe.html#cb312-1"></a>q &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb312-2"><a href="chap-DiversiteJointe.html#cb312-2"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Co1 =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">10</span>), <span class="dt">Co2 =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">20</span>,</span>
-<span id="cb312-3"><a href="chap-DiversiteJointe.html#cb312-3"></a>    <span class="dv">5</span>), <span class="dt">row.names =</span> <span class="kw">c</span>(<span class="st">&quot;S1&quot;</span>, <span class="st">&quot;S2&quot;</span>, <span class="st">&quot;S3&quot;</span>, <span class="st">&quot;S4&quot;</span>))</span>
-<span id="cb312-4"><a href="chap-DiversiteJointe.html#cb312-4"></a><span class="kw">library</span>(<span class="st">&quot;entropart&quot;</span>)</span>
-<span id="cb312-5"><a href="chap-DiversiteJointe.html#cb312-5"></a>MC1 &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(df1)</span></code></pre></div>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="chap-DiversiteJointe.html#cb307-1"></a>q &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb307-2"><a href="chap-DiversiteJointe.html#cb307-2"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Co1 =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">10</span>), <span class="dt">Co2 =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">20</span>,</span>
+<span id="cb307-3"><a href="chap-DiversiteJointe.html#cb307-3"></a>    <span class="dv">5</span>), <span class="dt">row.names =</span> <span class="kw">c</span>(<span class="st">&quot;S1&quot;</span>, <span class="st">&quot;S2&quot;</span>, <span class="st">&quot;S3&quot;</span>, <span class="st">&quot;S4&quot;</span>))</span>
+<span id="cb307-4"><a href="chap-DiversiteJointe.html#cb307-4"></a><span class="kw">library</span>(<span class="st">&quot;entropart&quot;</span>)</span>
+<span id="cb307-5"><a href="chap-DiversiteJointe.html#cb307-5"></a>MC1 &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(df1)</span></code></pre></div>
 
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:Repartition1Fig"></span>
@@ -473,10 +474,10 @@ Figure 18.1: Méta-communauté simple.
 
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 
-<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="chap-DiversiteJointe.html#cb313-1"></a><span class="kw">plot</span>(MC1)</span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="chap-DiversiteJointe.html#cb308-1"></a><span class="kw">plot</span>(MC1)</span></code></pre></div>
 
 
-<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="chap-DiversiteJointe.html#cb314-1"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(q, MC1) -&gt;<span class="st"> </span>dp1)</span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="chap-DiversiteJointe.html#cb309-1"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(q, MC1) -&gt;<span class="st"> </span>dp1)</span></code></pre></div>
 <pre><code>## HCDT diversity partitioning of order 2 of metaCommunity MC1
 ## 
 ## Alpha diversity of communities: 
@@ -494,8 +495,8 @@ Figure 18.1: Méta-communauté simple.
 <p>Répliquer les communautés à l’identique n’a aucun effet sur la diversité: la diversité <span class="math inline">\(\alpha\)</span> est la moyenne des diversités des communautés et la diversité <span class="math inline">\(\gamma\)</span> est celle de leur assemblage dont les proportions ne changent pas.
 L’exemple suivant concerne une méta-communauté contenant les mêmes communautés, mais en double (figure <a href="chap-DiversiteJointe.html#fig:Repartition2Fig">18.2</a>):</p>
 
-<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="chap-DiversiteJointe.html#cb316-1"></a>df2 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1, df1)</span>
-<span id="cb316-2"><a href="chap-DiversiteJointe.html#cb316-2"></a>MC2 &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(df2)</span></code></pre></div>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="chap-DiversiteJointe.html#cb311-1"></a>df2 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1, df1)</span>
+<span id="cb311-2"><a href="chap-DiversiteJointe.html#cb311-2"></a>MC2 &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(df2)</span></code></pre></div>
 
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:Repartition2Fig"></span>
@@ -507,10 +508,10 @@ Figure 18.2: Méta-communauté doublant les communautés de la précédente.
 
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 
-<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="chap-DiversiteJointe.html#cb317-1"></a><span class="kw">plot</span>(MC2)</span></code></pre></div>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="chap-DiversiteJointe.html#cb312-1"></a><span class="kw">plot</span>(MC2)</span></code></pre></div>
 
 
-<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="chap-DiversiteJointe.html#cb318-1"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(q, MC2) -&gt;<span class="st"> </span>dp2)</span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="chap-DiversiteJointe.html#cb313-1"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(q, MC2) -&gt;<span class="st"> </span>dp2)</span></code></pre></div>
 <pre><code>## HCDT diversity partitioning of order 2 of metaCommunity MC2
 ## 
 ## Alpha diversity of communities: 
@@ -527,12 +528,12 @@ Figure 18.2: Méta-communauté doublant les communautés de la précédente.
 
 <p>La diversité jointe <span class="math inline">\(^{q}\!D_{j}={^{q}\!D}(\{p_{s,i}\})\)</span> est en revanche doublée au cours de l’opération: elle mesure le nombre effectif de catégories (combinaison de l’espèce et de la communauté) du tableau de données:</p>
 
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="chap-DiversiteJointe.html#cb320-1"></a><span class="co"># Méta-communauté simple</span></span>
-<span id="cb320-2"><a href="chap-DiversiteJointe.html#cb320-2"></a><span class="kw">Diversity</span>(<span class="kw">as.ProbaVector</span>(df1), q)</span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="chap-DiversiteJointe.html#cb315-1"></a><span class="co"># Méta-communauté simple</span></span>
+<span id="cb315-2"><a href="chap-DiversiteJointe.html#cb315-2"></a><span class="kw">Diversity</span>(<span class="kw">as.ProbaVector</span>(df1), q)</span></code></pre></div>
 <pre><code>##     None 
 ## 5.642487</code></pre>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="chap-DiversiteJointe.html#cb322-1"></a><span class="co"># Méta-communauté double</span></span>
-<span id="cb322-2"><a href="chap-DiversiteJointe.html#cb322-2"></a><span class="kw">Diversity</span>(<span class="kw">as.ProbaVector</span>(df2), q)</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="chap-DiversiteJointe.html#cb317-1"></a><span class="co"># Méta-communauté double</span></span>
+<span id="cb317-2"><a href="chap-DiversiteJointe.html#cb317-2"></a><span class="kw">Diversity</span>(<span class="kw">as.ProbaVector</span>(df2), q)</span></code></pre></div>
 <pre><code>##     None 
 ## 11.28497</code></pre>
 
@@ -557,11 +558,11 @@ La diversité <span class="math inline">\(\alpha\)</span> est le nombre d’esp�
 <p>La méta-communauté suivante illustre cette décomposition: elle contient <span class="math inline">\(R_c=3\)</span> répliques identiques de <span class="math inline">\(D_{\beta}=2\)</span> communautés équiprobables totalement distinctes, comprenant chacune <span class="math inline">\(D_{\alpha}=2\)</span> espèces équiprobables (figure <a href="chap-DiversiteJointe.html#fig:DifferentiationFig">18.3</a>).
 Sa diversité jointe est 12 (le nombre de cellules non nulles dans la matrice):</p>
 
-<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="chap-DiversiteJointe.html#cb324-1"></a>q &lt;-<span class="st"> </span><span class="dv">2</span>  <span class="co"># Peu importe q</span></span>
-<span id="cb324-2"><a href="chap-DiversiteJointe.html#cb324-2"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Co1 =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="dt">Co2 =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">10</span>),</span>
-<span id="cb324-3"><a href="chap-DiversiteJointe.html#cb324-3"></a>    <span class="dt">row.names =</span> <span class="kw">c</span>(<span class="st">&quot;S1&quot;</span>, <span class="st">&quot;S2&quot;</span>, <span class="st">&quot;S3&quot;</span>, <span class="st">&quot;S4&quot;</span>))</span>
-<span id="cb324-4"><a href="chap-DiversiteJointe.html#cb324-4"></a>df3 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1, df1, df1)</span>
-<span id="cb324-5"><a href="chap-DiversiteJointe.html#cb324-5"></a>MC &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(df3)</span></code></pre></div>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="chap-DiversiteJointe.html#cb319-1"></a>q &lt;-<span class="st"> </span><span class="dv">2</span>  <span class="co"># Peu importe q</span></span>
+<span id="cb319-2"><a href="chap-DiversiteJointe.html#cb319-2"></a>df1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Co1 =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="dt">Co2 =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">10</span>),</span>
+<span id="cb319-3"><a href="chap-DiversiteJointe.html#cb319-3"></a>    <span class="dt">row.names =</span> <span class="kw">c</span>(<span class="st">&quot;S1&quot;</span>, <span class="st">&quot;S2&quot;</span>, <span class="st">&quot;S3&quot;</span>, <span class="st">&quot;S4&quot;</span>))</span>
+<span id="cb319-4"><a href="chap-DiversiteJointe.html#cb319-4"></a>df3 &lt;-<span class="st"> </span><span class="kw">cbind</span>(df1, df1, df1)</span>
+<span id="cb319-5"><a href="chap-DiversiteJointe.html#cb319-5"></a>MC &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(df3)</span></code></pre></div>
 
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:DifferentiationFig"></span>
@@ -573,10 +574,10 @@ Figure 18.3: Méta-communauté illustrant la décomposition complète de la dive
 
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="chap-DiversiteJointe.html#cb325-1"></a><span class="kw">plot</span>(MC)</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="chap-DiversiteJointe.html#cb320-1"></a><span class="kw">plot</span>(MC)</span></code></pre></div>
 
 
-<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="chap-DiversiteJointe.html#cb326-1"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(q, MC) -&gt;<span class="st"> </span>dp)</span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="chap-DiversiteJointe.html#cb321-1"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(q, MC) -&gt;<span class="st"> </span>dp)</span></code></pre></div>
 <pre><code>## HCDT diversity partitioning of order 2 of metaCommunity MC
 ## 
 ## Alpha diversity of communities: 
@@ -590,10 +591,10 @@ Figure 18.3: Méta-communauté illustrant la décomposition complète de la dive
 ## Gamma diversity of the metacommunity: 
 ## None 
 ##    4</code></pre>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="chap-DiversiteJointe.html#cb328-1"></a>(<span class="kw">Diversity</span>(<span class="kw">as.ProbaVector</span>(df3), q) -&gt;<span class="st"> </span>Djointe)</span></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="chap-DiversiteJointe.html#cb323-1"></a>(<span class="kw">Diversity</span>(<span class="kw">as.ProbaVector</span>(df3), q) -&gt;<span class="st"> </span>Djointe)</span></code></pre></div>
 <pre><code>## None 
 ##   12</code></pre>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="chap-DiversiteJointe.html#cb330-1"></a>(Dis &lt;-<span class="st"> </span>Djointe<span class="op">/</span>dp<span class="op">$</span>GammaDiversity)</span></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="chap-DiversiteJointe.html#cb325-1"></a>(Dis &lt;-<span class="st"> </span>Djointe<span class="op">/</span>dp<span class="op">$</span>GammaDiversity)</span></code></pre></div>
 <pre><code>## None 
 ##    3</code></pre>
 

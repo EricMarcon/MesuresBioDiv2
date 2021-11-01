@@ -24,6 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
+<meta name="date" content="2021-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -714,18 +715,19 @@ L’écart-type <span class="math inline">\(\sigma\)</span> de cette distributio
 Son espérance est obtenue à partir du nombre d’espèces et de <span class="math inline">\(\sigma\)</span>, pour que la somme des probabilités égale 1.</p>
 <p><span class="citation">May (<a href="#ref-May1975" role="doc-biblioref">1975</a>)</span> explique cette distribution par le théorème de la limite centrale: la variable aléatoire valant 1 si un individu est de l’espèce <span class="math inline">\(s\)</span> et 0 sinon est le produit de nombreuses variables de loi inconnues valant 1 en cas de succès (germination d’une graine, survie à de nombreux évènements…).
 Le logarithme de ce produit est une somme de variables aléatoire dont la loi est forcément normale par application du théorème de la limite centrale.</p>
+<p>La distribution est aussi le résultat d’un algorithme de bâton brisé (<em>broken stick</em>) hiérarchique<span class="citation">(Bulmer <a href="#ref-Bulmer1974" role="doc-biblioref">1974</a>)</span>:</p>
+<ul>
+<li>Si les ressources (représentées par un bâton) sont partagées une première fois aléatoirement, selon une loi quelconque,</li>
+<li>Si chaque bâton obtenu est partagé à nouveau selon le même procédé, et que l’opération est répétée un assez grand nombre de fois,</li>
+<li>Si l’abondance de chaque espèce est proportionnelle aux ressources dont elle dispose,</li>
+<li>Alors la distribution des espèces est log-normale.</li>
+</ul>
+<p>Ce mécanisme décrit assez bien un mécanisme de partage successif des ressources, par exemple entre groupes d’espèces de plus en plus petits, correspondant à des niches écologiques de plus en plus étroites.</p>
 <p>D’autres arguments existent dans la littérature.
 Par exemple, <span class="citation">Engen et Lande (<a href="#ref-Engen1996" role="doc-biblioref">1996</a>)</span> obtiennent une distribution normale à partir d’un modèle de dynamique des populations.</p>
 <p>La distribution log-normale décrit assez bien (mais pas exactement) une communauté locale dans le cadre de la théorie neutre <span class="citation">(Hubbell <a href="#ref-Hubbell2001" role="doc-biblioref">2001</a>)</span> comme le montre la figure <a href="chap-Outils.html#fig:RACFig">2.3</a>.
 Le nombre d’espèces rares est un peu surestimé.
 La distribution exacte est donnée par <span class="citation">Volkov et al. (<a href="#ref-Volkov2003" role="doc-biblioref">2003</a>)</span>.</p>
-<p>La distribution est aussi le résultat d’un algorithme de bâton brisé (<em>broken stick</em>) séquentiel:</p>
-<ul>
-<li>Si la première espèce accapare une partie des ressources (représentées par un bâton) aléatoirement (précisément, l’emplacement de la cassure suit une loi uniforme),</li>
-<li>Si chaque espèce répète le même processus sur le reste des ressources laissé par les précédentes,</li>
-<li>Si l’abondance de chaque espèce est proportionnelle aux ressources dont elle dispose,</li>
-<li>Alors la distribution des espèces est log-normale.</li>
-</ul>
 </div>
 <div id="la-distribution-géométrique" class="section level3">
 <h3><span class="header-section-number">2.4.4</span> La distribution géométrique</h3>
@@ -803,55 +805,48 @@ Les fonctions <code>fitxxx()</code> complètent les fonctions <code>RACxxx()</co
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="chap-Outils.html#cb24-1"></a>fit_entropart_lnorm<span class="op">$</span>sigma</span></code></pre></div>
 <pre><code>## [1] 1.791177</code></pre>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="chap-Outils.html#cb26-1"></a><span class="co"># sads</span></span>
-<span id="cb26-2"><a href="chap-Outils.html#cb26-2"></a><span class="kw">library</span>(<span class="st">&quot;sads&quot;</span>)</span></code></pre></div>
-<pre><code>## Loading required package: bbmle</code></pre>
-<pre><code>## Loading required package: stats4</code></pre>
-<pre><code>## 
-## Attaching package: &#39;bbmle&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
-## 
-##     slice</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="chap-Outils.html#cb31-1"></a><span class="co"># Estimation. Les données sont tronquées: les espèces</span></span>
-<span id="cb31-2"><a href="chap-Outils.html#cb31-2"></a><span class="co"># observées 0 fois ne sont pas comptées.</span></span>
-<span id="cb31-3"><a href="chap-Outils.html#cb31-3"></a>fit_sads_lnorm &lt;-<span class="st"> </span><span class="kw">fitlnorm</span>(Ns, <span class="dt">trunc =</span> <span class="dv">0</span>)</span>
-<span id="cb31-4"><a href="chap-Outils.html#cb31-4"></a>fit_sads_lnorm<span class="op">@</span>fullcoef</span></code></pre></div>
+<span id="cb26-2"><a href="chap-Outils.html#cb26-2"></a><span class="kw">library</span>(<span class="st">&quot;sads&quot;</span>)</span>
+<span id="cb26-3"><a href="chap-Outils.html#cb26-3"></a><span class="co"># Estimation. Les données sont tronquées: les espèces</span></span>
+<span id="cb26-4"><a href="chap-Outils.html#cb26-4"></a><span class="co"># observées 0 fois ne sont pas comptées.</span></span>
+<span id="cb26-5"><a href="chap-Outils.html#cb26-5"></a>fit_sads_lnorm &lt;-<span class="st"> </span><span class="kw">fitlnorm</span>(Ns, <span class="dt">trunc =</span> <span class="dv">0</span>)</span>
+<span id="cb26-6"><a href="chap-Outils.html#cb26-6"></a>fit_sads_lnorm<span class="op">@</span>fullcoef</span></code></pre></div>
 <pre><code>##  meanlog    sdlog 
 ## 3.142695 1.787195</code></pre>
 <p></p>
 <p>L’ajustement du modèle de Volkov peut être comparé à celui d’une distribution log-normale.</p>
 <p></p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="chap-Outils.html#cb33-1"></a><span class="co"># Ajustement du modèle de Volkov</span></span>
-<span id="cb33-2"><a href="chap-Outils.html#cb33-2"></a>fit_volkov &lt;-<span class="st"> </span><span class="kw">fitvolkov</span>(Ns)</span>
-<span id="cb33-3"><a href="chap-Outils.html#cb33-3"></a>fit_volkov<span class="op">@</span>fullcoef</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="chap-Outils.html#cb28-1"></a><span class="co"># Ajustement du modèle de Volkov</span></span>
+<span id="cb28-2"><a href="chap-Outils.html#cb28-2"></a>fit_volkov &lt;-<span class="st"> </span><span class="kw">fitvolkov</span>(Ns)</span>
+<span id="cb28-3"><a href="chap-Outils.html#cb28-3"></a>fit_volkov<span class="op">@</span>fullcoef</span></code></pre></div>
 <pre><code>##        theta            m            J 
 ## 4.767437e+01 9.237586e-02 2.145700e+04</code></pre>
 <p></p>
 <p>Graphiquement, l’ajustement est très proche mais la distribution de Volkov prévoit explicitement des effectifs égaux parce qu’entiers.</p>
 <p></p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="chap-Outils.html#cb35-1"></a><span class="co"># Comparaison graphique des deux modèles. Log-normal en</span></span>
-<span id="cb35-2"><a href="chap-Outils.html#cb35-2"></a><span class="co"># rouge.</span></span>
-<span id="cb35-3"><a href="chap-Outils.html#cb35-3"></a><span class="kw">plot</span>(<span class="kw">as.AbdVector</span>(Ns), <span class="dt">Distribution =</span> <span class="st">&quot;lnorm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="chap-Outils.html#cb30-1"></a><span class="co"># Comparaison graphique des deux modèles. Log-normal en</span></span>
+<span id="cb30-2"><a href="chap-Outils.html#cb30-2"></a><span class="co"># rouge.</span></span>
+<span id="cb30-3"><a href="chap-Outils.html#cb30-3"></a><span class="kw">plot</span>(<span class="kw">as.AbdVector</span>(Ns), <span class="dt">Distribution =</span> <span class="st">&quot;lnorm&quot;</span>)</span></code></pre></div>
 <pre><code>## $mu
 ## [1] 3.142695
 ## 
 ## $sigma
 ## [1] 1.791177</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="chap-Outils.html#cb37-1"></a><span class="co"># Volkov en vert</span></span>
-<span id="cb37-2"><a href="chap-Outils.html#cb37-2"></a><span class="kw">lines</span>(<span class="kw">sort</span>(<span class="kw">rvolkov</span>(<span class="kw">length</span>(Ns), fit_volkov<span class="op">@</span>fullcoef[<span class="dv">1</span>], fit_volkov<span class="op">@</span>fullcoef[<span class="dv">2</span>],</span>
-<span id="cb37-3"><a href="chap-Outils.html#cb37-3"></a>    fit_volkov<span class="op">@</span>fullcoef[<span class="dv">3</span>]), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="chap-Outils.html#cb32-1"></a><span class="co"># Volkov en vert</span></span>
+<span id="cb32-2"><a href="chap-Outils.html#cb32-2"></a><span class="kw">lines</span>(<span class="kw">sort</span>(<span class="kw">rvolkov</span>(<span class="kw">length</span>(Ns), fit_volkov<span class="op">@</span>fullcoef[<span class="dv">1</span>], fit_volkov<span class="op">@</span>fullcoef[<span class="dv">2</span>],</span>
+<span id="cb32-3"><a href="chap-Outils.html#cb32-3"></a>    fit_volkov<span class="op">@</span>fullcoef[<span class="dv">3</span>]), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
 <p><img src="MesuresBD_files/figure-html/BCIfit3-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p></p>
 <p>Les vraisemblances sont proches.</p>
 <p></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="chap-Outils.html#cb38-1"></a><span class="co"># Comparaison des vraisemblances</span></span>
-<span id="cb38-2"><a href="chap-Outils.html#cb38-2"></a>fit_sads_lnorm<span class="op">@</span>min</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="chap-Outils.html#cb33-1"></a><span class="co"># Comparaison des vraisemblances</span></span>
+<span id="cb33-2"><a href="chap-Outils.html#cb33-2"></a>fit_sads_lnorm<span class="op">@</span>min</span></code></pre></div>
 <pre><code>## [1] 1157.013</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="chap-Outils.html#cb40-1"></a>fit_volkov<span class="op">@</span>min</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="chap-Outils.html#cb35-1"></a>fit_volkov<span class="op">@</span>min</span></code></pre></div>
 <pre><code>## [1] 1150.182</code></pre>
 <p></p>
-<p>Les paramètres du modèle de communauté locale de la théorie neutre sont <span class="math inline">\(\theta\)</span>, le “nombre fondamental” égal à deux fois le nombre d’espèces apparaissant par pas de temps dans la méta-communauté, <span class="math inline">\(m\)</span>, le taux de migration, et <span class="math inline">\(J\)</span>, la taille de la communauté locale.</p>
-<p>La différence entre les logarithmes de vraisemblance des deux modèles est d’environ 7 au profit du modèle de Volkov, au prix d’un seul paramètre supplémentaire.
-Selon le critère d’information d’Akaike <span class="citation">(AIC: Akaike <a href="#ref-Akaike1998" role="doc-biblioref">1998</a>)</span>, l’ajustement est meilleur mais la différence est petite et la complexité du modèle et des calculs pour l’estimer ne se justifient pas en général: le modèle de Volkov est très peu utilisé en pratique.</p>
+<p>Les paramètres du modèle de communauté locale de la théorie neutre sont <span class="math inline">\(\theta\)</span>, le “nombre fondamental de la biodiversité” égal à deux fois le nombre d’espèces apparaissant par pas de temps dans la méta-communauté, <span class="math inline">\(m\)</span>, le taux de migration, et <span class="math inline">\(J\)</span>, la taille de la communauté locale (qui n’est pas à proprement parler un paramètre mais une statistique décrivant les données).</p>
+<p>La différence entre les logarithmes de vraisemblance des deux modèles en faveur du modèle de Volkov, alors que le nombre de paramètres est le même.
+L’ajustement est donc meilleur mais la différence est petite et la complexité du modèle et des calculs pour l’estimer ne se justifient pas en général: le modèle de Volkov est très peu utilisé en pratique.</p>
 
 </div>
 </div>
@@ -861,11 +856,11 @@ Selon le critère d’information d’Akaike <span class="citation">(AIC: Akaike
 
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-Akaike1998">
-<p>Akaike, Hirotogu. 1998. « Information Theory and an Extension of the Maximum Likelihood Principle ». In <em>Selected Papers of Hirotugu Akaike</em>, édité par Emanuel Parzen, Kunio Tanabe, et Genshiro Kitagawa, 199‑213. Springer Series in Statistics. New York, NY: Springer New York. <a href="https://doi.org/10.1007/978-1-4612-1694-0_15">https://doi.org/10.1007/978-1-4612-1694-0_15</a>.</p>
-</div>
 <div id="ref-Bazzaz1975">
 <p>Bazzaz, F. A. 1975. « Plant Species Diversity in Old-Field Successional Ecosystems in Southern Illinois ». <em>Ecology</em> 56 (2): 485‑88. <a href="https://doi.org/10.2307/1934981">https://doi.org/10.2307/1934981</a>.</p>
+</div>
+<div id="ref-Bulmer1974">
+<p>Bulmer, M. G. 1974. « On Fitting the Poisson Lognormal Distribution to Species-Abundance Data ». <em>Biometrics</em> 30 (1): 101‑10. <a href="https://doi.org/10.2307/1939021">https://doi.org/10.2307/1939021</a>.</p>
 </div>
 <div id="ref-Chao2012b">
 <p>Chao, Anne, et Lou Jost. 2012. « Coverage-Based Rarefaction and Extrapolation: Standardizing Samples by Completeness Rather than Size ». <em>Ecology</em> 93 (12): 2533‑47. <a href="https://doi.org/10.1890/11-1952.1">https://doi.org/10.1890/11-1952.1</a>.</p>

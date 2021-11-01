@@ -24,6 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
+<meta name="date" content="2021-01-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -491,10 +492,10 @@ On utilisera donc généralement la matrice de distances euclidiennes <span clas
 La fonction <code>dist.binary</code> du package <em>ade4</em> calcule <span class="math inline">\(\sqrt{D_n}\)</span> pour 10 indices de similarité étudiés par Gower et Legendre (voir l’aide de la fonction).
 Le résultat est une demi-matrice de distances de classe <code>dist</code>.</p>
 
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="chap-BetaPaires.html#cb262-1"></a><span class="kw">library</span>(<span class="st">&quot;vegan&quot;</span>)</span>
-<span id="cb262-2"><a href="chap-BetaPaires.html#cb262-2"></a><span class="kw">data</span>(BCI)</span>
-<span id="cb262-3"><a href="chap-BetaPaires.html#cb262-3"></a><span class="kw">library</span>(<span class="st">&quot;ade4&quot;</span>)</span>
-<span id="cb262-4"><a href="chap-BetaPaires.html#cb262-4"></a>DistJaccard &lt;-<span class="st"> </span><span class="kw">dist.binary</span>(BCI, <span class="dt">method =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="chap-BetaPaires.html#cb257-1"></a><span class="kw">library</span>(<span class="st">&quot;vegan&quot;</span>)</span>
+<span id="cb257-2"><a href="chap-BetaPaires.html#cb257-2"></a><span class="kw">data</span>(BCI)</span>
+<span id="cb257-3"><a href="chap-BetaPaires.html#cb257-3"></a><span class="kw">library</span>(<span class="st">&quot;ade4&quot;</span>)</span>
+<span id="cb257-4"><a href="chap-BetaPaires.html#cb257-4"></a>DistJaccard &lt;-<span class="st"> </span><span class="kw">dist.binary</span>(BCI, <span class="dt">method =</span> <span class="dv">1</span>)</span></code></pre></div>
 
 
 
@@ -509,13 +510,13 @@ Figure 11.1: Distribution des indices de Jaccard calculés pour les 50 carrés d
 Le mode est proche de 0,5: la moitié des espèces sont communes entre deux carrés.</p>
 <p>Code R pour la figure:</p>
 
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="chap-BetaPaires.html#cb263-1"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">Jaccard =</span> <span class="kw">as.numeric</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>DistJaccard<span class="op">^</span><span class="dv">2</span>))) <span class="op">+</span></span>
-<span id="cb263-2"><a href="chap-BetaPaires.html#cb263-2"></a><span class="st">    </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Jaccard))</span></code></pre></div>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="chap-BetaPaires.html#cb258-1"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">Jaccard =</span> <span class="kw">as.numeric</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>DistJaccard<span class="op">^</span><span class="dv">2</span>))) <span class="op">+</span></span>
+<span id="cb258-2"><a href="chap-BetaPaires.html#cb258-2"></a><span class="st">    </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Jaccard))</span></code></pre></div>
 
 <p>Pour afficher l’indice de Jaccard entre les carrés 1 et 2, il faut transformer la demi-matrice des distances en matrice de similarité:</p>
 
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="chap-BetaPaires.html#cb264-1"></a>Jaccard &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="kw">as.matrix</span>(DistJaccard))<span class="op">^</span><span class="dv">2</span></span>
-<span id="cb264-2"><a href="chap-BetaPaires.html#cb264-2"></a>Jaccard[<span class="dv">1</span>, <span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="chap-BetaPaires.html#cb259-1"></a>Jaccard &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="kw">as.matrix</span>(DistJaccard))<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb259-2"><a href="chap-BetaPaires.html#cb259-2"></a>Jaccard[<span class="dv">1</span>, <span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] 0.5663717</code></pre>
 
 </div>
@@ -548,43 +549,43 @@ L’estimateur de l’indice de Jaccard est donc</p>
 \end{equation}\]</span></p>
 <p>La matrice de dissimilarité corrigée est assez différente de l’originale. L’indice de Jaccard entre les deux premiers carrés devient:</p>
 
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="chap-BetaPaires.html#cb266-1"></a><span class="co"># Calcul de U et V, N2Col est une matrice ou un dataframe</span></span>
-<span id="cb266-2"><a href="chap-BetaPaires.html#cb266-2"></a><span class="co"># de deux colonnes contenant les effectifs de chaque</span></span>
-<span id="cb266-3"><a href="chap-BetaPaires.html#cb266-3"></a><span class="co"># parcelle</span></span>
-<span id="cb266-4"><a href="chap-BetaPaires.html#cb266-4"></a>ChaoUV &lt;-<span class="st"> </span><span class="cf">function</span>(N2Col) {</span>
-<span id="cb266-5"><a href="chap-BetaPaires.html#cb266-5"></a>    NCommunity &lt;-<span class="st"> </span><span class="kw">colSums</span>(N2Col)</span>
-<span id="cb266-6"><a href="chap-BetaPaires.html#cb266-6"></a>    Common &lt;-<span class="st"> </span>(N2Col[, <span class="dv">1</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;</span><span class="st"> </span>(N2Col[, <span class="dv">2</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
-<span id="cb266-7"><a href="chap-BetaPaires.html#cb266-7"></a>    Single &lt;-<span class="st"> </span>N2Col <span class="op">==</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb266-8"><a href="chap-BetaPaires.html#cb266-8"></a>    NSingleCommon &lt;-<span class="st"> </span><span class="kw">colSums</span>(Common <span class="op">&amp;</span><span class="st"> </span>Single)</span>
-<span id="cb266-9"><a href="chap-BetaPaires.html#cb266-9"></a>    Double &lt;-<span class="st"> </span>N2Col <span class="op">==</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb266-10"><a href="chap-BetaPaires.html#cb266-10"></a>    NDoubleCommon &lt;-<span class="st"> </span><span class="kw">colSums</span>(Common <span class="op">&amp;</span><span class="st"> </span>Double)</span>
-<span id="cb266-11"><a href="chap-BetaPaires.html#cb266-11"></a>    NsCommon &lt;-<span class="st"> </span>N2Col[Common, ]</span>
-<span id="cb266-12"><a href="chap-BetaPaires.html#cb266-12"></a>    PsCommon &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">t</span>(NsCommon)<span class="op">/</span><span class="kw">colSums</span>(N2Col))</span>
-<span id="cb266-13"><a href="chap-BetaPaires.html#cb266-13"></a>    U &lt;-<span class="st"> </span><span class="kw">sum</span>(PsCommon[, <span class="dv">1</span>]) <span class="op">+</span><span class="st"> </span>(NCommunity[<span class="dv">2</span>] <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)<span class="op">/</span>NCommunity[<span class="dv">2</span>] <span class="op">*</span></span>
-<span id="cb266-14"><a href="chap-BetaPaires.html#cb266-14"></a><span class="st">        </span>NSingleCommon[<span class="dv">2</span>]<span class="op">/</span><span class="dv">2</span><span class="op">/</span><span class="kw">max</span>(NDoubleCommon[<span class="dv">2</span>], <span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="kw">sum</span>(PsCommon[,</span>
-<span id="cb266-15"><a href="chap-BetaPaires.html#cb266-15"></a>        <span class="dv">1</span>][(NsCommon <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)[, <span class="dv">2</span>]])</span>
-<span id="cb266-16"><a href="chap-BetaPaires.html#cb266-16"></a>    V &lt;-<span class="st"> </span><span class="kw">sum</span>(PsCommon[, <span class="dv">2</span>]) <span class="op">+</span><span class="st"> </span>(NCommunity[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)<span class="op">/</span>NCommunity[<span class="dv">1</span>] <span class="op">*</span></span>
-<span id="cb266-17"><a href="chap-BetaPaires.html#cb266-17"></a><span class="st">        </span>NSingleCommon[<span class="dv">1</span>]<span class="op">/</span><span class="dv">2</span><span class="op">/</span><span class="kw">max</span>(NDoubleCommon[<span class="dv">1</span>], <span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="kw">sum</span>(PsCommon[,</span>
-<span id="cb266-18"><a href="chap-BetaPaires.html#cb266-18"></a>        <span class="dv">2</span>][(NsCommon <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)[, <span class="dv">1</span>]])</span>
-<span id="cb266-19"><a href="chap-BetaPaires.html#cb266-19"></a>    <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">U =</span> U, <span class="dt">V =</span> V))</span>
-<span id="cb266-20"><a href="chap-BetaPaires.html#cb266-20"></a>}</span>
-<span id="cb266-21"><a href="chap-BetaPaires.html#cb266-21"></a><span class="co"># Indice de Jaccard corrigé</span></span>
-<span id="cb266-22"><a href="chap-BetaPaires.html#cb266-22"></a>bcJaccard &lt;-<span class="st"> </span><span class="cf">function</span>(N2Col) {</span>
-<span id="cb266-23"><a href="chap-BetaPaires.html#cb266-23"></a>    ChaoEst &lt;-<span class="st"> </span><span class="kw">ChaoUV</span>(N2Col)</span>
-<span id="cb266-24"><a href="chap-BetaPaires.html#cb266-24"></a>    <span class="kw">return</span>(<span class="kw">min</span>(ChaoEst<span class="op">$</span>U <span class="op">*</span><span class="st"> </span>ChaoEst<span class="op">$</span>V<span class="op">/</span>(ChaoEst<span class="op">$</span>U <span class="op">+</span><span class="st"> </span>ChaoEst<span class="op">$</span>V <span class="op">-</span></span>
-<span id="cb266-25"><a href="chap-BetaPaires.html#cb266-25"></a><span class="st">        </span>ChaoEst<span class="op">$</span>U <span class="op">*</span><span class="st"> </span>ChaoEst<span class="op">$</span>V), <span class="dv">1</span>))</span>
-<span id="cb266-26"><a href="chap-BetaPaires.html#cb266-26"></a>}</span>
-<span id="cb266-27"><a href="chap-BetaPaires.html#cb266-27"></a><span class="co"># Calcul de l&#39;indice entre les carrés i et j de BCI, i&lt;j.</span></span>
-<span id="cb266-28"><a href="chap-BetaPaires.html#cb266-28"></a>BCIjaccard &lt;-<span class="st"> </span><span class="cf">function</span>(i, j) {</span>
-<span id="cb266-29"><a href="chap-BetaPaires.html#cb266-29"></a>    <span class="cf">if</span> (i <span class="op">&gt;=</span><span class="st"> </span>j)</span>
-<span id="cb266-30"><a href="chap-BetaPaires.html#cb266-30"></a>        <span class="kw">return</span>(<span class="ot">NA</span>) <span class="cf">else</span> <span class="kw">return</span>(<span class="kw">bcJaccard</span>(<span class="kw">t</span>(BCI[<span class="kw">c</span>(i, j), ])))</span>
-<span id="cb266-31"><a href="chap-BetaPaires.html#cb266-31"></a>}</span>
-<span id="cb266-32"><a href="chap-BetaPaires.html#cb266-32"></a><span class="co"># Calcul de la matrice de dissimilarité entre les 50 carrés</span></span>
-<span id="cb266-33"><a href="chap-BetaPaires.html#cb266-33"></a>ChaoJaccard &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>, <span class="cf">function</span>(i) {</span>
-<span id="cb266-34"><a href="chap-BetaPaires.html#cb266-34"></a>    <span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>, <span class="cf">function</span>(j) <span class="kw">BCIjaccard</span>(i, j))</span>
-<span id="cb266-35"><a href="chap-BetaPaires.html#cb266-35"></a>})</span>
-<span id="cb266-36"><a href="chap-BetaPaires.html#cb266-36"></a><span class="co"># Indice de Jaccard, carrés 1 et 2, corrigé</span></span>
-<span id="cb266-37"><a href="chap-BetaPaires.html#cb266-37"></a><span class="kw">BCIjaccard</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="chap-BetaPaires.html#cb261-1"></a><span class="co"># Calcul de U et V, N2Col est une matrice ou un dataframe</span></span>
+<span id="cb261-2"><a href="chap-BetaPaires.html#cb261-2"></a><span class="co"># de deux colonnes contenant les effectifs de chaque</span></span>
+<span id="cb261-3"><a href="chap-BetaPaires.html#cb261-3"></a><span class="co"># parcelle</span></span>
+<span id="cb261-4"><a href="chap-BetaPaires.html#cb261-4"></a>ChaoUV &lt;-<span class="st"> </span><span class="cf">function</span>(N2Col) {</span>
+<span id="cb261-5"><a href="chap-BetaPaires.html#cb261-5"></a>    NCommunity &lt;-<span class="st"> </span><span class="kw">colSums</span>(N2Col)</span>
+<span id="cb261-6"><a href="chap-BetaPaires.html#cb261-6"></a>    Common &lt;-<span class="st"> </span>(N2Col[, <span class="dv">1</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;</span><span class="st"> </span>(N2Col[, <span class="dv">2</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
+<span id="cb261-7"><a href="chap-BetaPaires.html#cb261-7"></a>    Single &lt;-<span class="st"> </span>N2Col <span class="op">==</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb261-8"><a href="chap-BetaPaires.html#cb261-8"></a>    NSingleCommon &lt;-<span class="st"> </span><span class="kw">colSums</span>(Common <span class="op">&amp;</span><span class="st"> </span>Single)</span>
+<span id="cb261-9"><a href="chap-BetaPaires.html#cb261-9"></a>    Double &lt;-<span class="st"> </span>N2Col <span class="op">==</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb261-10"><a href="chap-BetaPaires.html#cb261-10"></a>    NDoubleCommon &lt;-<span class="st"> </span><span class="kw">colSums</span>(Common <span class="op">&amp;</span><span class="st"> </span>Double)</span>
+<span id="cb261-11"><a href="chap-BetaPaires.html#cb261-11"></a>    NsCommon &lt;-<span class="st"> </span>N2Col[Common, ]</span>
+<span id="cb261-12"><a href="chap-BetaPaires.html#cb261-12"></a>    PsCommon &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">t</span>(NsCommon)<span class="op">/</span><span class="kw">colSums</span>(N2Col))</span>
+<span id="cb261-13"><a href="chap-BetaPaires.html#cb261-13"></a>    U &lt;-<span class="st"> </span><span class="kw">sum</span>(PsCommon[, <span class="dv">1</span>]) <span class="op">+</span><span class="st"> </span>(NCommunity[<span class="dv">2</span>] <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)<span class="op">/</span>NCommunity[<span class="dv">2</span>] <span class="op">*</span></span>
+<span id="cb261-14"><a href="chap-BetaPaires.html#cb261-14"></a><span class="st">        </span>NSingleCommon[<span class="dv">2</span>]<span class="op">/</span><span class="dv">2</span><span class="op">/</span><span class="kw">max</span>(NDoubleCommon[<span class="dv">2</span>], <span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="kw">sum</span>(PsCommon[,</span>
+<span id="cb261-15"><a href="chap-BetaPaires.html#cb261-15"></a>        <span class="dv">1</span>][(NsCommon <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)[, <span class="dv">2</span>]])</span>
+<span id="cb261-16"><a href="chap-BetaPaires.html#cb261-16"></a>    V &lt;-<span class="st"> </span><span class="kw">sum</span>(PsCommon[, <span class="dv">2</span>]) <span class="op">+</span><span class="st"> </span>(NCommunity[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)<span class="op">/</span>NCommunity[<span class="dv">1</span>] <span class="op">*</span></span>
+<span id="cb261-17"><a href="chap-BetaPaires.html#cb261-17"></a><span class="st">        </span>NSingleCommon[<span class="dv">1</span>]<span class="op">/</span><span class="dv">2</span><span class="op">/</span><span class="kw">max</span>(NDoubleCommon[<span class="dv">1</span>], <span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="kw">sum</span>(PsCommon[,</span>
+<span id="cb261-18"><a href="chap-BetaPaires.html#cb261-18"></a>        <span class="dv">2</span>][(NsCommon <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)[, <span class="dv">1</span>]])</span>
+<span id="cb261-19"><a href="chap-BetaPaires.html#cb261-19"></a>    <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">U =</span> U, <span class="dt">V =</span> V))</span>
+<span id="cb261-20"><a href="chap-BetaPaires.html#cb261-20"></a>}</span>
+<span id="cb261-21"><a href="chap-BetaPaires.html#cb261-21"></a><span class="co"># Indice de Jaccard corrigé</span></span>
+<span id="cb261-22"><a href="chap-BetaPaires.html#cb261-22"></a>bcJaccard &lt;-<span class="st"> </span><span class="cf">function</span>(N2Col) {</span>
+<span id="cb261-23"><a href="chap-BetaPaires.html#cb261-23"></a>    ChaoEst &lt;-<span class="st"> </span><span class="kw">ChaoUV</span>(N2Col)</span>
+<span id="cb261-24"><a href="chap-BetaPaires.html#cb261-24"></a>    <span class="kw">return</span>(<span class="kw">min</span>(ChaoEst<span class="op">$</span>U <span class="op">*</span><span class="st"> </span>ChaoEst<span class="op">$</span>V<span class="op">/</span>(ChaoEst<span class="op">$</span>U <span class="op">+</span><span class="st"> </span>ChaoEst<span class="op">$</span>V <span class="op">-</span></span>
+<span id="cb261-25"><a href="chap-BetaPaires.html#cb261-25"></a><span class="st">        </span>ChaoEst<span class="op">$</span>U <span class="op">*</span><span class="st"> </span>ChaoEst<span class="op">$</span>V), <span class="dv">1</span>))</span>
+<span id="cb261-26"><a href="chap-BetaPaires.html#cb261-26"></a>}</span>
+<span id="cb261-27"><a href="chap-BetaPaires.html#cb261-27"></a><span class="co"># Calcul de l&#39;indice entre les carrés i et j de BCI, i&lt;j.</span></span>
+<span id="cb261-28"><a href="chap-BetaPaires.html#cb261-28"></a>BCIjaccard &lt;-<span class="st"> </span><span class="cf">function</span>(i, j) {</span>
+<span id="cb261-29"><a href="chap-BetaPaires.html#cb261-29"></a>    <span class="cf">if</span> (i <span class="op">&gt;=</span><span class="st"> </span>j)</span>
+<span id="cb261-30"><a href="chap-BetaPaires.html#cb261-30"></a>        <span class="kw">return</span>(<span class="ot">NA</span>) <span class="cf">else</span> <span class="kw">return</span>(<span class="kw">bcJaccard</span>(<span class="kw">t</span>(BCI[<span class="kw">c</span>(i, j), ])))</span>
+<span id="cb261-31"><a href="chap-BetaPaires.html#cb261-31"></a>}</span>
+<span id="cb261-32"><a href="chap-BetaPaires.html#cb261-32"></a><span class="co"># Calcul de la matrice de dissimilarité entre les 50 carrés</span></span>
+<span id="cb261-33"><a href="chap-BetaPaires.html#cb261-33"></a>ChaoJaccard &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>, <span class="cf">function</span>(i) {</span>
+<span id="cb261-34"><a href="chap-BetaPaires.html#cb261-34"></a>    <span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>, <span class="cf">function</span>(j) <span class="kw">BCIjaccard</span>(i, j))</span>
+<span id="cb261-35"><a href="chap-BetaPaires.html#cb261-35"></a>})</span>
+<span id="cb261-36"><a href="chap-BetaPaires.html#cb261-36"></a><span class="co"># Indice de Jaccard, carrés 1 et 2, corrigé</span></span>
+<span id="cb261-37"><a href="chap-BetaPaires.html#cb261-37"></a><span class="kw">BCIjaccard</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9391222</code></pre>
 
 <p>La distribution des valeurs de l’indice corrigé se trouve en figure <a href="chap-BetaPaires.html#fig:ChaoJaccardFig">11.2</a>.</p>
@@ -600,8 +601,8 @@ Figure 11.2: Distribution des indices de Jaccard corrigés du biais d’etimatio
 <p>La majorité des paires de carrés a une similarité supérieure à 0,8 après correction.</p>
 <p>Code R pour la figure:</p>
 
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="chap-BetaPaires.html#cb268-1"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">ChaoJaccard =</span> <span class="kw">as.numeric</span>(ChaoJaccard))) <span class="op">+</span></span>
-<span id="cb268-2"><a href="chap-BetaPaires.html#cb268-2"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(<span class="dt">x=</span>ChaoJaccard))</span></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="chap-BetaPaires.html#cb263-1"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">ChaoJaccard =</span> <span class="kw">as.numeric</span>(ChaoJaccard))) <span class="op">+</span></span>
+<span id="cb263-2"><a href="chap-BetaPaires.html#cb263-2"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(<span class="dt">x=</span>ChaoJaccard))</span></code></pre></div>
 
 <p><span class="citation">Plotkin et Muller-Landau (<a href="#ref-Plotkin2002" role="doc-biblioref">2002</a>)</span> founissent des estimateurs de la similarité de Sørensen pour les SAD les plus courantes: lognormale, broken-stick, géométrique, log-séries et même gamma, une généralisation de la distibution broken-stick.
 Ils traitent le cas d’un échantillonnage dans lequel les individus sont indépendants les uns des autres, et le cas de l’agrégation spatiale.
@@ -611,8 +612,8 @@ Ils montrent que la similarité augmente beaucoup avec la taille des placettes �
 <h3><span class="header-section-number">11.1.3</span> Représentation graphique</h3>
 <p>La matrice de distances peut être représentée par une analyse en coordonnées principales (PCoA) <span class="citation">(Gower <a href="#ref-Gower1966" role="doc-biblioref">1966</a>)</span>:</p>
 
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="chap-BetaPaires.html#cb269-1"></a>DistChaoJaccard &lt;-<span class="st"> </span><span class="kw">as.dist</span>(<span class="kw">sqrt</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>ChaoJaccard))</span>
-<span id="cb269-2"><a href="chap-BetaPaires.html#cb269-2"></a>PcoChaoJaccard &lt;-<span class="st"> </span><span class="kw">dudi.pco</span>(DistChaoJaccard, <span class="dt">scannf =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="chap-BetaPaires.html#cb264-1"></a>DistChaoJaccard &lt;-<span class="st"> </span><span class="kw">as.dist</span>(<span class="kw">sqrt</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>ChaoJaccard))</span>
+<span id="cb264-2"><a href="chap-BetaPaires.html#cb264-2"></a>PcoChaoJaccard &lt;-<span class="st"> </span><span class="kw">dudi.pco</span>(DistChaoJaccard, <span class="dt">scannf =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 
 
 
@@ -630,7 +631,7 @@ Les distances entre les points sont les valeurs de <span class="math inline">\(\
 La matrice de distances n’est pas euclidienne à cause des approximations de l’estimation mais les conséquences sont faibles sur les premiers axes.</p>
 <p>Code R pour la figure:</p>
 
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="chap-BetaPaires.html#cb270-1"></a><span class="kw">scatter</span>(PcoChaoJaccard, <span class="dt">posieig =</span> <span class="st">&quot;bottomright&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="chap-BetaPaires.html#cb265-1"></a><span class="kw">scatter</span>(PcoChaoJaccard, <span class="dt">posieig =</span> <span class="st">&quot;bottomright&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>
@@ -854,9 +855,9 @@ Figure 11.5: Représentation des deux premiers axes factoriels de l’ACP des 50
 <p>L’ACP non centrée des 50 carrés de BCI est en figure <a href="chap-BetaPaires.html#fig:BCIPCAFig">11.5</a>.</p>
 <p>Code R pour la figure:</p>
 
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="chap-BetaPaires.html#cb271-1"></a>pcaBCI &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(BCI<span class="op">/</span><span class="kw">rowSums</span>(BCI), <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>,</span>
-<span id="cb271-2"><a href="chap-BetaPaires.html#cb271-2"></a>    <span class="dt">center =</span> <span class="ot">FALSE</span>, <span class="dt">scale =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb271-3"><a href="chap-BetaPaires.html#cb271-3"></a><span class="kw">scatter</span>(pcaBCI, <span class="dt">posieig =</span> <span class="st">&quot;bottomleft&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="chap-BetaPaires.html#cb266-1"></a>pcaBCI &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(BCI<span class="op">/</span><span class="kw">rowSums</span>(BCI), <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>,</span>
+<span id="cb266-2"><a href="chap-BetaPaires.html#cb266-2"></a>    <span class="dt">center =</span> <span class="ot">FALSE</span>, <span class="dt">scale =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb266-3"><a href="chap-BetaPaires.html#cb266-3"></a><span class="kw">scatter</span>(pcaBCI, <span class="dt">posieig =</span> <span class="st">&quot;bottomleft&quot;</span>)</span></code></pre></div>
 
 
 
@@ -870,9 +871,9 @@ Figure 11.6: ACP centrée des 50 carrés de BCI pour visualiser la diversité <s
 <p>L’ACP centrée (mais non réduite, figure <a href="chap-BetaPaires.html#fig:BCIPCA2Fig">11.6</a>) permet de mieux représenter la diversité <span class="math inline">\(\beta\)</span> : la distance de chaque carré au centre du repère est sa contribution.</p>
 <p>Code R:</p>
 
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="chap-BetaPaires.html#cb272-1"></a>pcaBCI &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(BCI<span class="op">/</span><span class="kw">rowSums</span>(BCI), <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>,</span>
-<span id="cb272-2"><a href="chap-BetaPaires.html#cb272-2"></a>    <span class="dt">center =</span> <span class="ot">TRUE</span>, <span class="dt">scale =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb272-3"><a href="chap-BetaPaires.html#cb272-3"></a><span class="kw">scatter</span>(pcaBCI, <span class="dt">clab.col =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="chap-BetaPaires.html#cb267-1"></a>pcaBCI &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(BCI<span class="op">/</span><span class="kw">rowSums</span>(BCI), <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>,</span>
+<span id="cb267-2"><a href="chap-BetaPaires.html#cb267-2"></a>    <span class="dt">center =</span> <span class="ot">TRUE</span>, <span class="dt">scale =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb267-3"><a href="chap-BetaPaires.html#cb267-3"></a><span class="kw">scatter</span>(pcaBCI, <span class="dt">clab.col =</span> <span class="dv">0</span>)</span></code></pre></div>
 
 </div>
 <div id="généralisation" class="section level3">
@@ -929,10 +930,10 @@ Figure 11.8: PCoA appliquée à la distance de corde des 50 carrés de BCI pour 
 La limite de la méthode est que l’origine du repère ne représente plus ici la méta-communauté: sa position correspond à la moyenne des probabilités des espèces transformées, <span class="math inline">\(y_{s|i}\)</span>, pas à celle des <span class="math inline">\(p_{s|i}\)</span>.</p>
 <p>Code R:</p>
 
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="chap-BetaPaires.html#cb273-1"></a><span class="kw">library</span>(<span class="st">&quot;adespatial&quot;</span>)</span>
-<span id="cb273-2"><a href="chap-BetaPaires.html#cb273-2"></a>dCorde &lt;-<span class="st"> </span><span class="kw">dist.ldc</span>(BCI, <span class="dt">method =</span> <span class="st">&quot;chord&quot;</span>)</span>
-<span id="cb273-3"><a href="chap-BetaPaires.html#cb273-3"></a>pcoaBCI &lt;-<span class="st"> </span><span class="kw">dudi.pco</span>(dCorde, <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>)</span>
-<span id="cb273-4"><a href="chap-BetaPaires.html#cb273-4"></a><span class="kw">scatter</span>(pcoaBCI)</span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="chap-BetaPaires.html#cb268-1"></a><span class="kw">library</span>(<span class="st">&quot;adespatial&quot;</span>)</span>
+<span id="cb268-2"><a href="chap-BetaPaires.html#cb268-2"></a>dCorde &lt;-<span class="st"> </span><span class="kw">dist.ldc</span>(BCI, <span class="dt">method =</span> <span class="st">&quot;chord&quot;</span>)</span>
+<span id="cb268-3"><a href="chap-BetaPaires.html#cb268-3"></a>pcoaBCI &lt;-<span class="st"> </span><span class="kw">dudi.pco</span>(dCorde, <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>)</span>
+<span id="cb268-4"><a href="chap-BetaPaires.html#cb268-4"></a><span class="kw">scatter</span>(pcoaBCI)</span></code></pre></div>
 
 </div>
 </div>

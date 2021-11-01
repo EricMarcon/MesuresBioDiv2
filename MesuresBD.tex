@@ -383,7 +383,7 @@
 
 \author{Eric Marcon}
 
-\date{30/10/2021}
+\date{01/11/2021}
 
 
 % Include headers (preamble.tex) here
@@ -1240,26 +1240,28 @@ Son espérance est obtenue à partir du nombre d'espèces et de \(\sigma\), pour
 \textcite{May1975} explique cette distribution par le théorème de la limite centrale: la variable aléatoire valant 1 si un individu est de l'espèce \(s\) et 0 sinon est le produit de nombreuses variables de loi inconnues valant 1 en cas de succès (germination d'une graine, survie à de nombreux évènements\ldots).
 Le logarithme de ce produit est une somme de variables aléatoire dont la loi est forcément normale par application du théorème de la limite centrale.
 
+La distribution est aussi le résultat d'un algorithme de bâton brisé (\emph{broken stick}) hiérarchique\autocite{Bulmer1974}:
+
+\begin{itemize}
+\tightlist
+\item
+  Si les ressources (représentées par un bâton) sont partagées une première fois aléatoirement, selon une loi quelconque,
+\item
+  Si chaque bâton obtenu est partagé à nouveau selon le même procédé, et que l'opération est répétée un assez grand nombre de fois,
+\item
+  Si l'abondance de chaque espèce est proportionnelle aux ressources dont elle dispose,
+\item
+  Alors la distribution des espèces est log-normale.
+\end{itemize}
+
+Ce mécanisme décrit assez bien un mécanisme de partage successif des ressources, par exemple entre groupes d'espèces de plus en plus petits, correspondant à des niches écologiques de plus en plus étroites.
+
 D'autres arguments existent dans la littérature.
 Par exemple, \textcite{Engen1996} obtiennent une distribution normale à partir d'un modèle de dynamique des populations.
 
 La distribution log-normale décrit assez bien (mais pas exactement) une communauté locale dans le cadre de la théorie neutre \autocite{Hubbell2001} comme le montre la figure \ref{fig:RACFig}.
 Le nombre d'espèces rares est un peu surestimé.
 La distribution exacte est donnée par \textcite{Volkov2003}.
-
-La distribution est aussi le résultat d'un algorithme de bâton brisé (\emph{broken stick}) séquentiel:
-
-\begin{itemize}
-\tightlist
-\item
-  Si la première espèce accapare une partie des ressources (représentées par un bâton) aléatoirement (précisément, l'emplacement de la cassure suit une loi uniforme),
-\item
-  Si chaque espèce répète le même processus sur le reste des ressources laissé par les précédentes,
-\item
-  Si l'abondance de chaque espèce est proportionnelle aux ressources dont elle dispose,
-\item
-  Alors la distribution des espèces est log-normale.
-\end{itemize}
 
 \hypertarget{la-distribution-guxe9omuxe9trique}{%
 \subsection{La distribution géométrique}\label{la-distribution-guxe9omuxe9trique}}
@@ -1381,30 +1383,6 @@ Le code suivant montre comment ajuster une distribution log-normale aux données
 \begin{Highlighting}[]
 \CommentTok{# sads}
 \KeywordTok{library}\NormalTok{(}\StringTok{"sads"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Loading required package: bbmle
-\end{verbatim}
-
-\begin{verbatim}
-## Loading required package: stats4
-\end{verbatim}
-
-\begin{verbatim}
-## 
-## Attaching package: 'bbmle'
-\end{verbatim}
-
-\begin{verbatim}
-## The following object is masked from 'package:dplyr':
-## 
-##     slice
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \CommentTok{# Estimation. Les données sont tronquées: les espèces}
 \CommentTok{# observées 0 fois ne sont pas comptées.}
 \NormalTok{fit_sads_lnorm <-}\StringTok{ }\KeywordTok{fitlnorm}\NormalTok{(Ns, }\DataTypeTok{trunc =} \DecValTok{0}\NormalTok{)}
@@ -1497,10 +1475,10 @@ Les vraisemblances sont proches.
 
 \normalsize
 
-Les paramètres du modèle de communauté locale de la théorie neutre sont \(\theta\), le \enquote{nombre fondamental} égal à deux fois le nombre d'espèces apparaissant par pas de temps dans la méta-communauté, \(m\), le taux de migration, et \(J\), la taille de la communauté locale.
+Les paramètres du modèle de communauté locale de la théorie neutre sont \(\theta\), le \enquote{nombre fondamental de la biodiversité} égal à deux fois le nombre d'espèces apparaissant par pas de temps dans la méta-communauté, \(m\), le taux de migration, et \(J\), la taille de la communauté locale (qui n'est pas à proprement parler un paramètre mais une statistique décrivant les données).
 
-La différence entre les logarithmes de vraisemblance des deux modèles est d'environ 7 au profit du modèle de Volkov, au prix d'un seul paramètre supplémentaire.
-Selon le critère d'information d'Akaike \autocite[AIC:][]{Akaike1998}, l'ajustement est meilleur mais la différence est petite et la complexité du modèle et des calculs pour l'estimer ne se justifient pas en général: le modèle de Volkov est très peu utilisé en pratique.
+La différence entre les logarithmes de vraisemblance des deux modèles en faveur du modèle de Volkov, alors que le nombre de paramètres est le même.
+L'ajustement est donc meilleur mais la différence est petite et la complexité du modèle et des calculs pour l'estimer ne se justifient pas en général: le modèle de Volkov est très peu utilisé en pratique.
 
 \hypertarget{part-diversituxe9-neutre-dune-communautuxe9}{%
 \part{Diversité neutre d'une communauté}\label{part-diversituxe9-neutre-dune-communautuxe9}}
@@ -2443,15 +2421,15 @@ Les calculs n'aboutissent pas si la queue de distribution n'est pas regroupée (
 \begin{verbatim}
 ## Method: Penalized NPMLE method by  Wang and Lindsay 2005. 
 ## 
-##         MLE=                                238 
+##         MLE=                                243 
 ##         Estimated zero-truncated Poisson mixture components:       
-##         p=                                  5.784922 
-##         pi=                                 1
+##         p=                                  0.9033625 3.397048 10.59029 
+##         pi=                                 0.2771211 0.3208847 0.4019942
 \end{verbatim}
 
 \begin{verbatim}
 ## $Nhat
-## [1] 238
+## [1] 243
 \end{verbatim}
 
 \normalsize
