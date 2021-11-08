@@ -224,11 +224,15 @@ Tous les arbres de plus de 10&nbsp;cm de diamètre à hauteur de poitrine (DBH: 
 La position de chaque arbre, son espèce et sa surface terrière sont fournis dans le package *SpatDiv*.
 
 ```{r packagesDonnees, include=FALSE}
+# Chargement des packages utilisés dans les chapitres 0 et 1
+# Pour accéder aux données et ne pas afficher les messages de chargement plus tard
 library("vegan")
+# Pas de lazy loading pour BCI: chargement explicite.
 data(BCI)
 library("entropart")
 library("dbmss")
 library("SpatDiv")
+library("sads")
 ```
 
 D'autres exemples utilisent la parcelle forestière permanente de Barro Colorado Island, souvent abrégée BCI [@Condit2012]: 50&nbsp;ha de forêt tropicale dont les arbres de plus de 1&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) ont été inventoriés.

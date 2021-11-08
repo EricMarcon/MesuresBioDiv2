@@ -88,8 +88,8 @@ Les effectifs de la communauté sont un mélange de lois de Poisson de paramètr
 La distribution des probabilités qui en résulte est une loi binomiale négative [@Greenwood1920].
 La probabilité qu'une espèce soit représentée par $\nu$ individus, notée ${\pi}_{s,\nu}$, suit donc une loi binomiale négative de paramètres $k$ et ${1}/{p+1}$ représentée sur la figure \@ref(fig:nbinFig).
 
-(fig:nbinFig) Réalisation d'une loi gamma de paramètres $0,2$ et $100$. L'histogramme représente la proportion (qui estime la probabilité) des valeurs inférieures à 50. Les espèces d'abondance nulle ne sont pas observées dans l'échantillon.
-```{r nbinFig, echo=FALSE, results='hide', ref.label='nbinCode', fig.cap="(fig:nbinFig)"}
+(ref:nbinFig) Réalisation d'une loi gamma de paramètres $0,2$ et $100$. L'histogramme représente la proportion (qui estime la probabilité) des valeurs inférieures à 50. Les espèces d'abondance nulle ne sont pas observées dans l'échantillon.
+```{r nbinFig, echo=FALSE, results='hide', ref.label='nbinCode', fig.cap="(ref:nbinFig)"}
 ```
 
 Le code R nécessaire pour réaliser la figure est:
