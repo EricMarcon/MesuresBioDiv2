@@ -542,7 +542,7 @@ knitr::include_graphics('images/Podani2011.png')
 ```
 
 @Podani2011 défendent un point de vue différent sur la façon de comptabiliser les deux composantes de la décomposition de la dissimilarité de Jaccard.
-Le terme de substitution comptabilise les espèces présentes sur un seul site, en nombre égal: $2\min(s_{1,0},s_{0,1})$ plutôt que l'indice de dissimilarité de Simpson..
+Le terme de substitution comptabilise les espèces présentes sur un seul site, en nombre égal: $2\min(s_{1,0},s_{0,1})$ plutôt que l'indice de dissimilarité de Simpson.
 Ainsi, le terme d'emboîtement comptabilise la différence de richesse entre les deux sites: $|s_{1,0}-s_{0,1}|$.
 
 Après normalisation par le nombre total d'espèce, la décomposition est
