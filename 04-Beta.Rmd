@@ -536,11 +536,6 @@ Ces mesures de dissimilarité sont généralisées au-delà de deux communautés
 
 Le premier terme de la somme est le terme lié à la substitution et le second celui lié à l'emboîtement.
 
-(ref:Podani2011) Triangle du simplex Similarité-Substitution-Emboîtement. (a) Similarité, emboîtement et substitution somment à 1 donc les trois composantes peuvent être représentées dans un triangle et combinées deux à deux. La dissimilarité est par exemple représentée par la proximité au côté gauche du triangle, somme de l'emboîtement et de la substitution (ses sommets adjacents) et complément à 1 de la dissimilarité (le sommet opposé). (b) Les formules de calcul dont données pour la similarité de Jaccard. Avec ces notations classiques, $a$ est le nombre d'espèces communes $s_{1,1}$, $b$ et $c$ sont les espèces propres à chaque communauté, $s_{0,1}$ et $s_{1,0}$, et $n$ est le nombre total d'espèces $a+b+c$.
-```{r Podani2011, fig.cap="(ref:Podani2011)", echo=FALSE, out.width='100%'}
-knitr::include_graphics('images/Podani2011.png')
-```
-
 @Podani2011 défendent un point de vue différent sur la façon de comptabiliser les deux composantes de la décomposition de la dissimilarité de Jaccard.
 Le terme de substitution comptabilise les espèces présentes sur un seul site, en nombre égal: $2\min(s_{1,0},s_{0,1})$ plutôt que l'indice de dissimilarité de Simpson.
 Ainsi, le terme d'emboîtement comptabilise la différence de richesse entre les deux sites: $|s_{1,0}-s_{0,1}|$.
@@ -555,6 +550,11 @@ Après normalisation par le nombre total d'espèce, la décomposition est
 \end{equation}
 
 La controverse entre les deux décompositions perdure [@Podani2016].
+
+(ref:Podani2011) Triangle du simplex Similarité-Substitution-Emboîtement. (a) Similarité, emboîtement et substitution somment à 1 donc les trois composantes peuvent être représentées dans un triangle et combinées deux à deux. La dissimilarité est par exemple représentée par la proximité au côté gauche du triangle, somme de l'emboîtement et de la substitution (ses sommets adjacents) et complément à 1 de la dissimilarité (le sommet opposé). (b) Les formules de calcul dont données pour la similarité de Jaccard. Avec ces notations classiques, $a$ est le nombre d'espèces communes $s_{1,1}$, $b$ et $c$ sont les espèces propres à chaque communauté, $s_{0,1}$ et $s_{1,0}$, et $n$ est le nombre total d'espèces $a+b+c$.
+```{r Podani2011, fig.cap="(ref:Podani2011)", echo=FALSE, out.width='100%'}
+knitr::include_graphics('images/Podani2011.png')
+```
 
 Comme la dissimilarité est la somme de l'emboîtement et de la substitution et que la dissimilarité est le complément à 1 de la similarité, la somme de la similarité, de l'emboîtement et de la substitution vaut 1.
 @Podani2011 représentent cette égalité dans un triangle dont les sommets correspondent aux trois termes (Figure \@ref(fig:Podani2011)).
