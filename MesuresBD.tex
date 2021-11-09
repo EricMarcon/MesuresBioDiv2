@@ -383,7 +383,7 @@
 
 \author{Eric Marcon}
 
-\date{01/11/2021}
+\date{09/11/2021}
 
 
 % Include headers (preamble.tex) here
@@ -2392,15 +2392,15 @@ Le calcul est possible avec la librairie \emph{SPECIES} de R:
 ## Method: Unconditional NPMLE method by Norris and Pollock 1996, 1998, 
 ##         using algorithm by Wang and Lindsay 2005: 
 ## 
-##         MLE=                                239 
+##         MLE=                                232 
 ##         Estimated Poisson mixture components:       
-##         p=                                  1.10372 3.595437 10.60832 
-##         pi=                                 0.402579 0.2525368 0.3448842
+##         p=                                  2.040765 10.17293 
+##         pi=                                 0.5886908 0.4113092
 \end{verbatim}
 
 \begin{verbatim}
 ## $Nhat
-## [1] 239
+## [1] 232
 \end{verbatim}
 
 \normalsize
@@ -2421,15 +2421,15 @@ Les calculs n'aboutissent pas si la queue de distribution n'est pas regroupée (
 \begin{verbatim}
 ## Method: Penalized NPMLE method by  Wang and Lindsay 2005. 
 ## 
-##         MLE=                                243 
+##         MLE=                                238 
 ##         Estimated zero-truncated Poisson mixture components:       
-##         p=                                  0.9033625 3.397048 10.59029 
-##         pi=                                 0.2771211 0.3208847 0.4019942
+##         p=                                  2.019631 10.1591 
+##         pi=                                 0.5544581 0.4455419
 \end{verbatim}
 
 \begin{verbatim}
 ## $Nhat
-## [1] 243
+## [1] 238
 \end{verbatim}
 
 \normalsize
@@ -8450,6 +8450,21 @@ Ces mesures de dissimilarité sont généralisées au-delà de deux communautés
 
 Le premier terme de la somme est le terme lié à la substitution et le second celui lié à l'emboîtement.
 
+\textcite{Podani2011} défendent un point de vue différent sur la façon de comptabiliser les deux composantes de la décomposition de la dissimilarité de Jaccard.
+Le terme de substitution comptabilise les espèces présentes sur un seul site, en nombre égal: \(2\min(s_{1,0},s_{0,1})\) plutôt que l'indice de dissimilarité de Simpson.
+Ainsi, le terme d'emboîtement comptabilise la différence de richesse entre les deux sites: \(|s_{1,0}-s_{0,1}|\).
+
+Après normalisation par le nombre total d'espèce, la décomposition est
+
+\begin{equation}
+  \label{eq:DNesReplPJ}
+  D_3
+  = \frac{2\min(s_{1,0},s_{0,1})}{s_{1,1} + s_{1,0} + s_{0,1}}
+  + \frac{|s_{1,0}-s_{0,1}|}{s_{1,1} + s_{1,0} + s_{0,1}}.
+\end{equation}
+
+La controverse entre les deux décompositions perdure \autocite{Podani2016}.
+
 
 
 \scriptsize
@@ -8464,21 +8479,6 @@ Le premier terme de la somme est le terme lié à la substitution et le second c
 \end{SCfigure}
 
 \normalsize
-
-\textcite{Podani2011} défendent un point de vue différent sur la façon de comptabiliser les deux composantes de la décomposition de la dissimilarité de Jaccard.
-Le terme de substitution comptabilise les espèces présentes sur un seul site, en nombre égal: \(2\min(s_{1,0},s_{0,1})\) plutôt que l'indice de dissimilarité de Simpson..
-Ainsi, le terme d'emboîtement comptabilise la différence de richesse entre les deux sites: \(|s_{1,0}-s_{0,1}|\).
-
-Après normalisation par le nombre total d'espèce, la décomposition est
-
-\begin{equation}
-  \label{eq:DNesReplPJ}
-  D_3
-  = \frac{2\min(s_{1,0},s_{0,1})}{s_{1,1} + s_{1,0} + s_{0,1}}
-  + \frac{|s_{1,0}-s_{0,1}|}{s_{1,1} + s_{1,0} + s_{0,1}}.
-\end{equation}
-
-La controverse entre les deux décompositions perdure \autocite{Podani2016}.
 
 Comme la dissimilarité est la somme de l'emboîtement et de la substitution et que la dissimilarité est le complément à 1 de la similarité, la somme de la similarité, de l'emboîtement et de la substitution vaut 1.
 \textcite{Podani2011} représentent cette égalité dans un triangle dont les sommets correspondent aux trois termes (Figure \ref{fig:Podani2011}).

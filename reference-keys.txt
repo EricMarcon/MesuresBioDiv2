@@ -241,8 +241,8 @@ eq:percentdiff
 eq:Simpson1943
 eq:DNesReplBS
 eq:DNesReplBJ
-fig:Podani2011
 eq:DNesReplPJ
+fig:Podani2011
 eq:CWn
 eq:CU
 eq:CW

@@ -24,7 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-01-11" />
+<meta name="date" content="2021-09-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -708,17 +708,8 @@ Son complément <span class="math inline">\(D_{nes}\)</span> prend en compte la 
   + \frac{s_{1,1}}{s_{1,1}+2\min(s_{1,0},s_{0,1})}\frac{|s_{1,0}-s_{0,1}|}{s_{1,1}+s_{1,0}+s_{0,1}}.
 \end{align}\]</span></p>
 <p>Le premier terme de la somme est le terme lié à la substitution et le second celui lié à l’emboîtement.</p>
-
-
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Podani2011"></span>
-<img src="images/Podani2011.png" alt="Triangle du simplex Similarité-Substitution-Emboîtement. (a) Similarité, emboîtement et substitution somment à 1 donc les trois composantes peuvent être représentées dans un triangle et combinées deux à deux. La dissimilarité est par exemple représentée par la proximité au côté gauche du triangle, somme de l’emboîtement et de la substitution (ses sommets adjacents) et complément à 1 de la dissimilarité (le sommet opposé). (b) Les formules de calcul dont données pour la similarité de Jaccard. Avec ces notations classiques, \(a\) est le nombre d’espèces communes \(s_{1,1}\), \(b\) et \(c\) sont les espèces propres à chaque communauté, \(s_{0,1}\) et \(s_{1,0}\), et \(n\) est le nombre total d’espèces \(a+b+c\)." width="100%" />
-<p class="caption">
-Figure 11.4: Triangle du simplex Similarité-Substitution-Emboîtement. (a) Similarité, emboîtement et substitution somment à 1 donc les trois composantes peuvent être représentées dans un triangle et combinées deux à deux. La dissimilarité est par exemple représentée par la proximité au côté gauche du triangle, somme de l’emboîtement et de la substitution (ses sommets adjacents) et complément à 1 de la dissimilarité (le sommet opposé). (b) Les formules de calcul dont données pour la similarité de Jaccard. Avec ces notations classiques, <span class="math inline">\(a\)</span> est le nombre d’espèces communes <span class="math inline">\(s_{1,1}\)</span>, <span class="math inline">\(b\)</span> et <span class="math inline">\(c\)</span> sont les espèces propres à chaque communauté, <span class="math inline">\(s_{0,1}\)</span> et <span class="math inline">\(s_{1,0}\)</span>, et <span class="math inline">\(n\)</span> est le nombre total d’espèces <span class="math inline">\(a+b+c\)</span>.
-</p>
-</div>
-
 <p><span class="citation">Podani et Schmera (<a href="#ref-Podani2011" role="doc-biblioref">2011</a>)</span> défendent un point de vue différent sur la façon de comptabiliser les deux composantes de la décomposition de la dissimilarité de Jaccard.
-Le terme de substitution comptabilise les espèces présentes sur un seul site, en nombre égal: <span class="math inline">\(2\min(s_{1,0},s_{0,1})\)</span> plutôt que l’indice de dissimilarité de Simpson..
+Le terme de substitution comptabilise les espèces présentes sur un seul site, en nombre égal: <span class="math inline">\(2\min(s_{1,0},s_{0,1})\)</span> plutôt que l’indice de dissimilarité de Simpson.
 Ainsi, le terme d’emboîtement comptabilise la différence de richesse entre les deux sites: <span class="math inline">\(|s_{1,0}-s_{0,1}|\)</span>.</p>
 <p>Après normalisation par le nombre total d’espèce, la décomposition est</p>
 <p><span class="math display" id="eq:DNesReplPJ">\[\begin{equation}
@@ -728,6 +719,15 @@ Ainsi, le terme d’emboîtement comptabilise la différence de richesse entre l
   + \frac{|s_{1,0}-s_{0,1}|}{s_{1,1} + s_{1,0} + s_{0,1}}.
 \end{equation}\]</span></p>
 <p>La controverse entre les deux décompositions perdure <span class="citation">(Podani et Schmera <a href="#ref-Podani2016" role="doc-biblioref">2016</a>)</span>.</p>
+
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Podani2011"></span>
+<img src="images/Podani2011.png" alt="Triangle du simplex Similarité-Substitution-Emboîtement. (a) Similarité, emboîtement et substitution somment à 1 donc les trois composantes peuvent être représentées dans un triangle et combinées deux à deux. La dissimilarité est par exemple représentée par la proximité au côté gauche du triangle, somme de l’emboîtement et de la substitution (ses sommets adjacents) et complément à 1 de la dissimilarité (le sommet opposé). (b) Les formules de calcul dont données pour la similarité de Jaccard. Avec ces notations classiques, \(a\) est le nombre d’espèces communes \(s_{1,1}\), \(b\) et \(c\) sont les espèces propres à chaque communauté, \(s_{0,1}\) et \(s_{1,0}\), et \(n\) est le nombre total d’espèces \(a+b+c\)." width="100%" />
+<p class="caption">
+Figure 11.4: Triangle du simplex Similarité-Substitution-Emboîtement. (a) Similarité, emboîtement et substitution somment à 1 donc les trois composantes peuvent être représentées dans un triangle et combinées deux à deux. La dissimilarité est par exemple représentée par la proximité au côté gauche du triangle, somme de l’emboîtement et de la substitution (ses sommets adjacents) et complément à 1 de la dissimilarité (le sommet opposé). (b) Les formules de calcul dont données pour la similarité de Jaccard. Avec ces notations classiques, <span class="math inline">\(a\)</span> est le nombre d’espèces communes <span class="math inline">\(s_{1,1}\)</span>, <span class="math inline">\(b\)</span> et <span class="math inline">\(c\)</span> sont les espèces propres à chaque communauté, <span class="math inline">\(s_{0,1}\)</span> et <span class="math inline">\(s_{1,0}\)</span>, et <span class="math inline">\(n\)</span> est le nombre total d’espèces <span class="math inline">\(a+b+c\)</span>.
+</p>
+</div>
+
 <p>Comme la dissimilarité est la somme de l’emboîtement et de la substitution et que la dissimilarité est le complément à 1 de la similarité, la somme de la similarité, de l’emboîtement et de la substitution vaut 1.
 <span class="citation">Podani et Schmera (<a href="#ref-Podani2011" role="doc-biblioref">2011</a>)</span> représentent cette égalité dans un triangle dont les sommets correspondent aux trois termes (Figure <a href="chap-BetaPaires.html#fig:Podani2011">11.4</a>).</p>
 <p><span class="citation">Podani, Ricotta, et Schmera (<a href="#ref-Podani2013" role="doc-biblioref">2013</a>)</span> étendent cette approche à des mesures de dissimilarité prenant en compte les abondances, particulièrement la dissimilarité de Ružička.
