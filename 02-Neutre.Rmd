@@ -1239,7 +1239,7 @@ Inversement, pour $q>1$:
 
 \begin{equation}
   (\#eq:DqHurlbert)
-  (^{q}\!D)^{1-q} = q + \sum_{k=2}^{q}{\binom{q}{k} (-1)^{k+1} _{k}S}.
+  (^{q}\!D)^{1-q} = q + \sum_{k=2}^{q}{\binom{q}{k} (-1)^{k+1} {_{k}S}}.
 \end{equation}
 
 Pour $q=1$, la relation est [@Mao2007]
