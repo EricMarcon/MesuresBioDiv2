@@ -1228,7 +1228,7 @@ Chaque communauté se trouve au centre de gravité des espèces qu'elle contient
 La moitié du carré de la distance entre deux communautés dans ce même espace est le coefficient de dissimilarité entre communautés de Rao.
 La distance entre communautés est donc interprétable directement comme une mesure de diversité $\beta$ [@Ricotta2015], dans la tradition de l'utilisation de la dissimilarité entre paires de communautés (chapitre \@ref(chap-BetaPaires)).
 
-Cette partition suppose que les poids des communautés sont proportionnels à leur nombre d'individus [@Rao1982, Villeger2008]. 
+Cette partition suppose que les poids des communautés sont proportionnels à leur nombre d'individus [@Rao1982, @Villeger2008]. 
 @Hardy2007 décomposent (par différence entre $\gamma$ et $\alpha$) l'indice de Rao de communautés de poids égaux. 
 @Hardy2008 montrent que les deux pondérations sont valides mais l'absence de cadre général assurant que la diversité $\gamma$ de Rao est supérieure à la diversité $\alpha$ [@DeBello2010] motive @Guiasu2011 à proposer une alternative à l'indice de Rao, l'indice de Gini-Simpson quadratique pondéré \@ref(eq:Guiasu), dont la concavité est démontrée (ce qui implique que $\gamma\ge \alpha$). 
 La pondération peut en fait être quelconque tant que la matrice dont les éléments sont la racine carré des éléments de la matrice de dissimilarité est euclidienne [@Champely2002].
