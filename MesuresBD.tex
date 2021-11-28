@@ -383,7 +383,7 @@
 
 \author{Eric Marcon}
 
-\date{09/11/2021}
+\date{28/11/2021}
 
 
 % Include headers (preamble.tex) here
@@ -2392,15 +2392,15 @@ Le calcul est possible avec la librairie \emph{SPECIES} de R:
 ## Method: Unconditional NPMLE method by Norris and Pollock 1996, 1998, 
 ##         using algorithm by Wang and Lindsay 2005: 
 ## 
-##         MLE=                                232 
+##         MLE=                                239 
 ##         Estimated Poisson mixture components:       
-##         p=                                  2.040765 10.17293 
-##         pi=                                 0.5886908 0.4113092
+##         p=                                  1.10372 3.595437 10.60832 
+##         pi=                                 0.402579 0.2525368 0.3448842
 \end{verbatim}
 
 \begin{verbatim}
 ## $Nhat
-## [1] 232
+## [1] 239
 \end{verbatim}
 
 \normalsize
@@ -2421,15 +2421,15 @@ Les calculs n'aboutissent pas si la queue de distribution n'est pas regroupée (
 \begin{verbatim}
 ## Method: Penalized NPMLE method by  Wang and Lindsay 2005. 
 ## 
-##         MLE=                                238 
+##         MLE=                                243 
 ##         Estimated zero-truncated Poisson mixture components:       
-##         p=                                  2.019631 10.1591 
-##         pi=                                 0.5544581 0.4455419
+##         p=                                  0.9033625 3.397048 10.59029 
+##         pi=                                 0.2771211 0.3208847 0.4019942
 \end{verbatim}
 
 \begin{verbatim}
 ## $Nhat
-## [1] 238
+## [1] 243
 \end{verbatim}
 
 \normalsize
@@ -3458,7 +3458,7 @@ Inversement, pour \(q>1\):
 
 \begin{equation}
   \label{eq:DqHurlbert}
-  (^{q}\!D)^{1-q} = q + \sum_{k=2}^{q}{\binom{q}{k} (-1)^{k+1} _{k}S}.
+  (^{q}\!D)^{1-q} = q + \sum_{k=2}^{q}{\binom{q}{k} (-1)^{k+1} {_{k}S}}.
 \end{equation}
 
 Pour \(q=1\), la relation est \autocite{Mao2007}
@@ -8020,7 +8020,7 @@ La pondération proposée par \textcite{Jost2007} est
 
 \begin{equation}
   \label{eq:JostHalpha}
-  ^{q}\!H_{\alpha} = \sum_i{\frac{w^q_i}{\sum_i{w^q_i}} ^{q}_{i}\!H_{\alpha}};
+  ^{q}\!H_{\alpha} = \sum_i{\frac{w^q_i}{\sum_i{w^q_i}} {^{q}_{i}\!H_{\alpha}}};
 \end{equation}
 
 \begin{equation}
@@ -9483,7 +9483,7 @@ Chaque communauté se trouve au centre de gravité des espèces qu'elle contient
 La moitié du carré de la distance entre deux communautés dans ce même espace est le coefficient de dissimilarité entre communautés de Rao.
 La distance entre communautés est donc interprétable directement comme une mesure de diversité \(\beta\) \autocite{Ricotta2015}, dans la tradition de l'utilisation de la dissimilarité entre paires de communautés (chapitre \ref{chap-BetaPaires}).
 
-Cette partition suppose que les poids des communautés sont proportionnels à leur nombre d'individus \autocite[Villeger2008]{Rao1982}.
+Cette partition suppose que les poids des communautés sont proportionnels à leur nombre d'individus \autocite{Rao1982,Villeger2008}.
 \textcite{Hardy2007} décomposent (par différence entre \(\gamma\) et \(\alpha\)) l'indice de Rao de communautés de poids égaux.
 \textcite{Hardy2008} montrent que les deux pondérations sont valides mais l'absence de cadre général assurant que la diversité \(\gamma\) de Rao est supérieure à la diversité \(\alpha\) \autocite{DeBello2010} motive \textcite{Guiasu2011} à proposer une alternative à l'indice de Rao, l'indice de Gini-Simpson quadratique pondéré \eqref{eq:Guiasu}, dont la concavité est démontrée (ce qui implique que \(\gamma\ge \alpha\)).
 La pondération peut en fait être quelconque tant que la matrice dont les éléments sont la racine carré des éléments de la matrice de dissimilarité est euclidienne \autocite{Champely2002}.
