@@ -556,7 +556,7 @@ Le nombre d'espèces peut être écrit comme la somme des fonctions $F_s$:
   {\mathbb E}\left( S^A \right)  = \sum_s{F_s\left( r \right) }.
 \end{equation}
 
-La fonction $F_s(r)$ est connue pour les processus ponctuels courants [@Cressie1993, Stoyan1994].
+La fonction $F_s(r)$ est connue pour les processus ponctuels courants [@Cressie1993; @Stoyan1994].
 Le processus de Poisson place les individus indépendamment les uns des autres avec la même probabilité partout.
 Son seul paramètre est l'intensité $\lambda_s$, qui donne l'espérance du nombre d'individus de l'espèce $s$ par unité de surface.
 Si toutes les espèces sont distribuées selon un processus de Poisson, la courbe aire-espèce est décrite par
