@@ -24,6 +24,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
+<meta name="date" content="2021-01-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -490,7 +491,7 @@ Dans ce cas, la SAC (dépendant de la surface) est différente de la courbe de r
 Si la densité <span class="math inline">\(\lambda_s\)</span> (nombre d’individus par unité de surface) des espèces peut être connue (estimée en comptant les individus) ou si les probabilités <span class="math inline">\(p_s\)</span> sont issues d’un modèle (log-séries, log-normal…), le nombre d’individus observés de l’espèce <span class="math inline">\(s\)</span> suit une loi de Poisson d’espérance <span class="math inline">\(A\hat{\lambda}_s\)</span> ou, de façon équivalente <span class="citation">(Pielou <a href="#ref-Pielou1969" role="doc-biblioref">1969</a>, 204‑5)</span>, <span class="math inline">\(np_s\)</span> (dans ce deuxième cas, <span class="math inline">\(n\)</span> est l’estimateur de <span class="math inline">\(N\)</span>, la variable aléatoire correspondant à la taille de l’échantillon).</p>
 <p>La SAC théorique en fonction du nombre d’individus ne contient pas cet aléa.
 Le nombre d’individus de l’espèce <span class="math inline">\(s\)</span> suit alors une loi binomiale d’espérance <span class="math inline">\(np_s\)</span> et la distribution d’un échantillon de taille <span class="math inline">\(n\)</span> suit la loi multinomiale correspondante.
-Les deux approches se réconcilient en fixant arbitrairement le nombre d’individus échantillonnés dans la courbe aire-espèce: conditionnellement au nombre total d’individus, la distribution des abondances des espèces issues de lois de Poisson de paramètres <span class="math inline">\(\lambda_s\)</span> suit une loi multinomiale <span class="citation">(<span class="citeproc-not-found" data-reference-id="Steel1953"><strong>???</strong></span>)</span> dont les probabilités sont proportionnelles à <span class="math inline">\(\lambda_s\)</span>.</p>
+Les deux approches se réconcilient en fixant arbitrairement le nombre d’individus échantillonnés dans la courbe aire-espèce: conditionnellement au nombre total d’individus, la distribution des abondances des espèces issues de lois de Poisson de paramètres <span class="math inline">\(\lambda_s\)</span> suit une loi multinomiale <span class="citation">(Steel <a href="#ref-Steel1953" role="doc-biblioref">1953</a>)</span> dont les probabilités sont proportionnelles à <span class="math inline">\(\lambda_s\)</span>.</p>
 <p>La SAC définie en fonction du nombre d’individus est au sens strict une succession de points (à chaque valeur de <span class="math inline">\(n\)</span>), pas une courbe continue.
 Elle est toutefois toujours présentée comme une courbe lissée passant par les points pour être continue et dérivable.</p>
 
@@ -733,7 +734,7 @@ Le nombre d’espèces peut être écrit comme la somme des fonctions <span clas
   \tag{21.3}
   {\mathbb E}\left( S^A \right)  = \sum_s{F_s\left( r \right) }.
 \end{equation}\]</span></p>
-<p>La fonction <span class="math inline">\(F_s(r)\)</span> est connue pour les processus ponctuels courants <span class="citation">(Cressie <a href="#ref-Cressie1993" role="doc-biblioref">1993</a>, Stoyan1994)</span>.
+<p>La fonction <span class="math inline">\(F_s(r)\)</span> est connue pour les processus ponctuels courants <span class="citation">(Cressie <a href="#ref-Cressie1993" role="doc-biblioref">1993</a>; Stoyan et Stoyan <a href="#ref-Stoyan1994" role="doc-biblioref">1994</a>)</span>.
 Le processus de Poisson place les individus indépendamment les uns des autres avec la même probabilité partout.
 Son seul paramètre est l’intensité <span class="math inline">\(\lambda_s\)</span>, qui donne l’espérance du nombre d’individus de l’espèce <span class="math inline">\(s\)</span> par unité de surface.
 Si toutes les espèces sont distribuées selon un processus de Poisson, la courbe aire-espèce est décrite par</p>
@@ -817,6 +818,12 @@ La distribution des espèces non observées peut maintenant être estimée dans 
 </div>
 <div id="ref-Shen2003">
 <p>Shen, Tsung-Jen, Anne Chao, et Chih-Feng Lin. 2003. « Predicting the Number of New Species in a Further Taxonomic Sampling ». <em>Ecology</em> 84 (3): 798‑804. <a href="https://doi.org/10.1890/0012-9658(2003)084%5B0798:PTNONS%5D2.0.CO;2">https://doi.org/10.1890/0012-9658(2003)084[0798:PTNONS]2.0.CO;2</a>.</p>
+</div>
+<div id="ref-Steel1953">
+<p>Steel, G. D. 1953. « Relation between Poisson and Multinomial Distributions ». In <em>Biometrics Unit Technical Reports</em>, 1‑2. Cornell University. Biometrics Unit. <a href="http://hdl.handle.net/1813/32480">http://hdl.handle.net/1813/32480</a>.</p>
+</div>
+<div id="ref-Stoyan1994">
+<p>Stoyan, Dietrich, et Helga Stoyan. 1994. <em>Fractals, Random Shapes and Point Fields: Methods of Geometrical Statistics</em>. Chichester: John Wiley &amp; Sons. <a href="https://doi.org/978-0-471-93757-9">https://doi.org/978-0-471-93757-9</a>.</p>
 </div>
 <div id="ref-Ugland2003">
 <p>Ugland, Karl I., John S. Gray, et Kari E. Ellingsen. 2003. « The Species-Accumulation Curve and Estimation of Species Richness ». <em>Journal of Animal Ecology</em> 72 (5): 888‑97. <a href="https://doi.org/10.1046/j.1365-2656.2003.00748.x">https://doi.org/10.1046/j.1365-2656.2003.00748.x</a>.</p>
