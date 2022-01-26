@@ -24,7 +24,6 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2021-01-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -466,13 +465,13 @@ L’avantage de ces mesures est d’être facilement interprétables, estimables
 Notons <span class="math inline">\(E_{i,j}\)</span> la probabilité que deux individus tirés respectivement dans les parcelles <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span> soient d’espèces différentes:</p>
 <p><span class="math display" id="eq:Nei1973">\[\begin{equation}
   \tag{23.1}
-  E_{i,j} = 1-\sum_{s}{p_{s|i}}{p_{sj}}.
+  E_{i,j} = 1-\sum_{s}{p_{s|i}}{p_{s|j}}.
 \end{equation}\]</span></p>
 <p><span class="math inline">\(E_{ii}\)</span> est l’entropie de Simpson calculée dans la parcelle <span class="math inline">\(i\)</span>.
 L’entropie <span class="math inline">\(\beta\)</span> de Simpson (équation <a href="chap-DedompHCDT.html#eq:SimpsonNei">(12.11)</a>, dans le cadre de la décomposition de la variance) pour des parcelles de poids égal vaut</p>
 <p><span class="math display" id="eq:EbetaNei">\[\begin{equation}
   \tag{23.2}
-  E_{\beta} = \frac{1}{I^2} \sum_{i}\sum_{j\ne i}\left({E_{i,j}-\frac{E_{ii}+E_{jj}}{2}}\right).
+  E_{\beta} = \frac{1}{I^2} \sum_{i}\sum_{j\ne i}\left({E_{i,j}-\frac{E_{i,i}+E_{j,j}}{2}}\right).
 \end{equation}\]</span></p>
 <p>En se limitant à deux parcelles <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span> situées à distance <span class="math inline">\(r\)</span>, le premier terme de la somme <span class="math inline">\(E_{i,j}\)</span> est l’indice de Simpson spatialement explicite, qui doit être corrigé du deuxième terme de la somme, l’entropie <span class="math inline">\(\alpha\)</span> de la paire de parcelle, pour obtenir l’entropie <span class="math inline">\(\beta\)</span> après la normalisation nécessaire (<span class="math inline">\(E_{i,j}=E_{j,i}\)</span> est compté deux fois dans la somme mais divisé par <span class="math inline">\(I^2=4\)</span>).
 L’extension à <span class="math inline">\(\beta_{phy}(r)\)</span> est immédiate, en remplaçant l’entropie de Simpson par celle de Rao.</p>
@@ -488,7 +487,7 @@ L’indicatrice <span class="math inline">\({\mathbf 1}_{s|i}\)</span> vaut 1 si
 La semi-variance empirique à distance <span class="math inline">\(r\)</span> de la variable indicatrice de la présence de l’espèce <span class="math inline">\(s\)</span> est
 <span class="math display" id="eq:Estgammasr">\[\begin{equation}
   \tag{23.3}
-  \hat{\gamma}_{s}(r) = \frac{1}{2 n_r} \sum_{i,j;d(i,j)\approx r}{({\mathbf 1}_{s|i} - {\mathbf 1}_{s,j})^2}.
+  \hat{\gamma}_{s}(r) = \frac{1}{2 n_r} \sum_{i,j;d(i,j)\approx r}{({\mathbf 1}_{s|i} - {\mathbf 1}_{s|j})^2}.
 \end{equation}\]</span></p>
 <p>Chaque terme de la somme vaut 1 si l’espèce est présente sur une seule des deux parcelles: <span class="math inline">\(\hat{\gamma}_{s}(r)\)</span> estime donc la probabilité que l’espèce ne soit présente que sur une seule parcelle.
 Le variogramme de la variable indicatrice est obtenue en traçant la valeur de <span class="math inline">\(\hat{\gamma}_{s}(r)\)</span> en fonction de <span class="math inline">\(r\)</span>.
@@ -514,7 +513,7 @@ comme toutes les parcelles sont de taille identique, <span class="math inline">\
 La covariance entre les indicatrices de présence des espèces <span class="math inline">\(s\)</span> et <span class="math inline">\(t\)</span> est
 <span class="math display" id="eq:Estgammast">\[\begin{equation}
   \tag{23.5}
-  \hat{\gamma}_{s,t}(r) = \frac{1}{2 n_r} \sum_{i,j;d(i,j)\approx r}{({\mathbf 1}_{s,i} - {\mathbf 1}_{s,j})({\mathbf 1}_{t,i} - {\mathbf 1}_{t,j})}.
+  \hat{\gamma}_{s,t}(r) = \frac{1}{2 n_r} \sum_{i,j;d(i,j)\approx r}{({\mathbf 1}_{s|i} - {\mathbf 1}_{s|j})({\mathbf 1}_{t|i} - {\mathbf 1}_{t|j})}.
 \end{equation}\]</span></p>
 <p>Wagner montre que l’estimateur de la variance de la richesse spécifique par parcelle est
 <span class="math display" id="eq:VarS">\[\begin{equation}

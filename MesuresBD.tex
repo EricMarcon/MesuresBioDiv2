@@ -383,7 +383,7 @@
 
 \author{Eric Marcon}
 
-\date{01/12/2021}
+\date{26/01/2022}
 
 
 % Include headers (preamble.tex) here
@@ -8070,7 +8070,7 @@ de la dissimilarité.
 La littérature des indices de similarité est bien antérieure à celle de la biodiversité.
 De nombreuses mesures de dissimilarité entre paires de communautés existent donc, et leurs propriétés ont été bien étudiées.
 Elles seront présentées ici en fonction des types de données qu'elles traitent: présence-absence, abondance ou abondance et similarité des espèces.
-Enfin, des tests statistiques ont été construits pour rejeter l'hypothèse que les communautés sont issues d'une même méta-communautés par un simple tirage multinomial des espèces.
+Enfin, des tests statistiques ont été construits pour rejeter l'hypothèse que les communautés sont issues d'une même méta-communauté par un simple tirage multinomial des espèces.
 
 Une limite importante des mesures de dissimilarité est qu'elles sont très sensibles à la taille des communautés échantillonnées \autocite{Wolda1981}.
 
@@ -11793,7 +11793,7 @@ Notons \(E_{i,j}\) la probabilité que deux individus tirés respectivement dans
 
 \begin{equation}
   \label{eq:Nei1973}
-  E_{i,j} = 1-\sum_{s}{p_{s|i}}{p_{sj}}.
+  E_{i,j} = 1-\sum_{s}{p_{s|i}}{p_{s|j}}.
 \end{equation}
 
 \(E_{ii}\) est l'entropie de Simpson calculée dans la parcelle \(i\).
@@ -11801,7 +11801,7 @@ L'entropie \(\beta\) de Simpson (équation \eqref{eq:SimpsonNei}, dans le cadre 
 
 \begin{equation}
   \label{eq:EbetaNei}
-  E_{\beta} = \frac{1}{I^2} \sum_{i}\sum_{j\ne i}\left({E_{i,j}-\frac{E_{ii}+E_{jj}}{2}}\right).
+  E_{\beta} = \frac{1}{I^2} \sum_{i}\sum_{j\ne i}\left({E_{i,j}-\frac{E_{i,i}+E_{j,j}}{2}}\right).
 \end{equation}
 
 En se limitant à deux parcelles \(i\) et \(j\) situées à distance \(r\), le premier terme de la somme \(E_{i,j}\) est l'indice de Simpson spatialement explicite, qui doit être corrigé du deuxième terme de la somme, l'entropie \(\alpha\) de la paire de parcelle, pour obtenir l'entropie \(\beta\) après la normalisation nécessaire (\(E_{i,j}=E_{j,i}\) est compté deux fois dans la somme mais divisé par \(I^2=4\)).
@@ -11820,7 +11820,7 @@ L'indicatrice \({\mathbf 1}_{s|i}\) vaut 1 si l'espèce \(s\) est présente dans
 La semi-variance empirique à distance \(r\) de la variable indicatrice de la présence de l'espèce \(s\) est
 \begin{equation}
   \label{eq:Estgammasr}
-  \hat{\gamma}_{s}(r) = \frac{1}{2 n_r} \sum_{i,j;d(i,j)\approx r}{({\mathbf 1}_{s|i} - {\mathbf 1}_{s,j})^2}.
+  \hat{\gamma}_{s}(r) = \frac{1}{2 n_r} \sum_{i,j;d(i,j)\approx r}{({\mathbf 1}_{s|i} - {\mathbf 1}_{s|j})^2}.
 \end{equation}
 
 Chaque terme de la somme vaut 1 si l'espèce est présente sur une seule des deux parcelles: \(\hat{\gamma}_{s}(r)\) estime donc la probabilité que l'espèce ne soit présente que sur une seule parcelle.
@@ -11853,7 +11853,7 @@ Le variogramme peut être complété par un covariogramme.
 La covariance entre les indicatrices de présence des espèces \(s\) et \(t\) est
 \begin{equation}
   \label{eq:Estgammast}
-  \hat{\gamma}_{s,t}(r) = \frac{1}{2 n_r} \sum_{i,j;d(i,j)\approx r}{({\mathbf 1}_{s,i} - {\mathbf 1}_{s,j})({\mathbf 1}_{t,i} - {\mathbf 1}_{t,j})}.
+  \hat{\gamma}_{s,t}(r) = \frac{1}{2 n_r} \sum_{i,j;d(i,j)\approx r}{({\mathbf 1}_{s|i} - {\mathbf 1}_{s|j})({\mathbf 1}_{t|i} - {\mathbf 1}_{t|j})}.
 \end{equation}
 
 Wagner montre que l'estimateur de la variance de la richesse spécifique par parcelle est
