@@ -15,3 +15,5 @@ LaTeX: pdfLaTeX
 BuildType: Website
 
 MarkdownWrap: Sentence
+
+SpellingDictionary: fr_FR
