@@ -5,5 +5,6 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-163419632-1');
+  gtag('config', 'UA-163419632-1'); 
+  gtag('config', 'G-C1B3PLBCM6');
 </script>
