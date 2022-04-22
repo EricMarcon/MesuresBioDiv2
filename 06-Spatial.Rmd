@@ -856,7 +856,7 @@ Elle peut être reliée à la distance entre les communautés pour définir une 
 
 ## L'indice de Simpson spatialement explicite {#sec-SimpsonSpatial}
 
-@Chave2002 écrivent un modèle neutre de dispersion des espèces forestières, appliqué à l'échelle de l'Amazonie occidentale[@Condit2002]. 
+@Chave2002 écrivent un modèle neutre de dispersion des espèces forestières, appliqué à l'échelle de l'Amazonie occidentale [@Condit2002]. 
 Ils définissent dans ce cadre la fonction $F(r)$ égale à la probabilité que deux individus situés à distance $r$ l'un de l'autre soient de la même espèce, c'est-a-dire l'indice de concentration de Simpson \@ref(eq:SimpsonD), appliqué à des paires d'individus distants. 
 $\beta_s(r)=1-F(r)$ est appelé "indice de Simpson spatialement explicite" par @Shen2013
 En pratique il est estimé à partir d'individus situés dans des parcelles distantes de $r$, l'ordre de grandeur de $r$ étant nettement plus grand que la taille des parcelles.
