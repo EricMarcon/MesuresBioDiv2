@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>20 Indice \(\alpha\) de Fisher | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="20 Indice \(\alpha\) de Fisher | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   <meta property="og:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png" />
   <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
@@ -50,8 +49,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,7 +61,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-163419632-1');
+  gtag('config', 'UA-163419632-1'); 
+  gtag('config', 'G-C1B3PLBCM6');
 </script>
 
 
@@ -440,8 +441,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap-Fisher" class="section level1">
-<h1><span class="header-section-number">20</span> Indice <span class="math inline">\(\alpha\)</span> de Fisher</h1>
+<div id="chap-Fisher" class="section level1 hasAnchor">
+<h1><span class="header-section-number">20</span> Indice <span class="math inline">\(\alpha\)</span> de Fisher<a href="chap-Fisher.html#chap-Fisher" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
 <div class="Summary">
 <p>
@@ -452,8 +453,8 @@ L’Indice <span class="math inline"><span class="math inline">\(\alpha\)</span>
 <p>Le modèle de Fisher <span class="citation">(Fisher, Corbet, et Williams <a href="#ref-Fisher1943" role="doc-biblioref">1943</a>)</span> aboutissant à la SAD en log-séries, a marqué l’histoire de l’écologie.
 Il lie le nombre d’espèces au logarithme du nombre d’individus de façon linéaire dès que l’effectif est suffisant: la pente de la droite est le bien connu indice <span class="math inline">\(\alpha\)</span>, tombé en désuétude pendant quelques décennies mais remis en vedette par la théorie neutre de <span class="citation">Hubbell (<a href="#ref-Hubbell2001" role="doc-biblioref">2001</a>)</span>.
 Il est utilisé à l’échelle locale (probablement à tort) et à l’échelle régionale, c’est pourquoi il est présenté en premier.</p>
-<div id="construction" class="section level2">
-<h2><span class="header-section-number">20.1</span> Construction</h2>
+<div id="construction" class="section level2 hasAnchor">
+<h2><span class="header-section-number">20.1</span> Construction<a href="chap-Fisher.html#construction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Le nombre d’espèces échantillonnées dépend de l’effort d’échantillonnage.</p>
 <p>Fisher a relié le nombre d’espèces <span class="math inline">\(S^{n}\)</span> au nombre d’individus <span class="math inline">\(n\)</span> échantillonnés à partir du modèle suivant:</p>
 <ul>
@@ -579,8 +580,8 @@ Pour <span class="math inline">\(n\)</span> assez grand et sous l’hypothèse d
 <p>Bordenave <span class="citation">(Bordenave et De Granville <a href="#ref-Bordenave1998" role="doc-biblioref">1998</a>; Bordenave, De Granville, et Steyn <a href="#ref-Bordenave2011" role="doc-biblioref">2011</a>)</span> propose un indice de richesse spécifique (IRS, ou SDI: <em>Species Diversity Index</em>) égal à la pente de la relation de Gleason.
 Dans le cadre de l’approximation précédente, il est égal à <span class="math inline">\(\alpha\)</span>.</p>
 </div>
-<div id="variantes" class="section level2">
-<h2><span class="header-section-number">20.2</span> Variantes</h2>
+<div id="variantes" class="section level2 hasAnchor">
+<h2><span class="header-section-number">20.2</span> Variantes<a href="chap-Fisher.html#variantes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><span class="citation">Schulte, Lantinga, et Hawkins (<a href="#ref-Schulte2005" role="doc-biblioref">2005</a>)</span> ont étendu le modèle de Fisher pour prendre en compte un nombre d’espèces fini <span class="math inline">\(S\)</span> et une distribution non indépendante des individus, prise en compte par un paramètre d’agrégation spatiale <span class="math inline">\(c\)</span> valable pour toutes les espèces:</p>
 <p><span class="math display" id="eq:Schulte">\[\begin{equation} 
   \tag{20.5}
@@ -662,13 +663,13 @@ Figure 20.5: SAC d’un inventaire simulé de 10000 arbres de BCI. Le nombre d�
 
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references">
 <div id="ref-Alonso2004">
 <p>Alonso, David, et Alan J. McKane. 2004. « Sampling Hubbell’s Neutral Theory of Biodiversity ». <em>Ecology Letters</em> 7 (10): 901‑10. <a href="https://doi.org/10.1111/j.1461-0248.2004.00640.x">https://doi.org/10.1111/j.1461-0248.2004.00640.x</a>.</p>
 </div>
 <div id="ref-Bordenave1998">
-<p>Bordenave, Bruno Georges, et Jean-Jacques De Granville. 1998. « Les Mesures de La Biodiversité : Un Outil de Conservation En Forêt Guyanaise ». <em>JATBA, Revue d’Ethnobiologie</em> 40 (1-2): 433‑46. <a href="http://www.persee.fr/doc/jatba\%7B_\%7D0183-5173\%7B_\%7D1998\%7B_\%7Dnum\%7B_\%7D40\%7B_\%7D1\%7B_\%7D3684">http://www.persee.fr/doc/jatba\{_\}0183-5173\{_\}1998\{_\}num\{_\}40\{_\}1\{_\}3684</a>.</p>
+<p>Bordenave, Bruno Georges, et Jean-Jacques De Granville. 1998. « Les Mesures de La Biodiversité : Un Outil de Conservation En Forêt Guyanaise ». <em>JATBA, Revue d’Ethnobiologie</em> 40 (1-2): 433‑46. <a href="http://www.persee.fr/doc/jatba%7B_%7D0183-5173%7B_%7D1998%7B_%7Dnum%7B_%7D40%7B_%7D1%7B_%7D3684">http://www.persee.fr/doc/jatba{_}0183-5173{_}1998{_}num{_}40{_}1{_}3684</a>.</p>
 </div>
 <div id="ref-Bordenave2011">
 <p>Bordenave, Bruno Georges, Jean-Jacques De Granville, et Kate Steyn. 2011. « Quantitative Botanical Diversity Descriptors to Set Conservation Priorities in Bakhuis Mountains Rainforest, Suriname ». <em>Botanical Journal of the Linnean Society</em> 167 (1): 94‑130. <a href="https://doi.org/10.1111/j.1095-8339.2011.01163.x">https://doi.org/10.1111/j.1095-8339.2011.01163.x</a>.</p>
@@ -701,7 +702,7 @@ Figure 20.5: SAC d’un inventaire simulé de 10000 arbres de BCI. Le nombre d�
 <p>Kempton, R. A., et R. W. M. Wedderburn. 1978. « A Comparison of Three Measures of Species Diversity ». <em>Biometrics</em> 34 (1): 25‑37. <a href="https://doi.org/10.2307/2529585">https://doi.org/10.2307/2529585</a>.</p>
 </div>
 <div id="ref-Schulte2005">
-<p>Schulte, Rogier P. O., Egbert A. Lantinga, et Michael J. Hawkins. 2005. « A New Family of Fisher-Curves Estimates Fisher’s Alpha More Accurately ». <em>Journal of Theoretical Biology</em> 232 (3): 305‑13. <a href="https://doi.org/10.1016/j.jtbi.2004.08.014">https://doi.org/10.1016/j.jtbi.2004.08.014</a>.</p>
+<p>Schulte, Rogier P. O., Egbert A. Lantinga, et Michael J. Hawkins. 2005. « A New Family of Fisher-curves Estimates Fisher’s Alpha More Accurately ». <em>Journal of Theoretical Biology</em> 232 (3): 305‑13. <a href="https://doi.org/10.1016/j.jtbi.2004.08.014">https://doi.org/10.1016/j.jtbi.2004.08.014</a>.</p>
 </div>
 </div>
             </section>

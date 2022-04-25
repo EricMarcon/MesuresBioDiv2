@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Cadre | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Cadre | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   <meta property="og:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png" />
   <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
@@ -50,8 +49,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,7 +61,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-163419632-1');
+  gtag('config', 'UA-163419632-1'); 
+  gtag('config', 'G-C1B3PLBCM6');
 </script>
 
 
@@ -440,8 +441,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap-cadrephyfonc" class="section level1">
-<h1><span class="header-section-number">6</span> Cadre</h1>
+<div id="chap-cadrephyfonc" class="section level1 hasAnchor">
+<h1><span class="header-section-number">6</span> Cadre<a href="chap-cadrephyfonc.html#chap-cadrephyfonc" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p></p>
 <div class="Summary">
 <p>
@@ -468,8 +469,8 @@ Le package contient les données d’inventaire de deux hectares du dispositif d
 <span id="cb176-2"><a href="chap-cadrephyfonc.html#cb176-2"></a><span class="co"># Chargement du jeu de données</span></span>
 <span id="cb176-3"><a href="chap-cadrephyfonc.html#cb176-3"></a><span class="kw">data</span>(Paracou618)</span></code></pre></div>
 <p></p>
-<div id="dissimilarité-et-distance" class="section level2">
-<h2><span class="header-section-number">6.1</span> Dissimilarité et distance</h2>
+<div id="dissimilarité-et-distance" class="section level2 hasAnchor">
+<h2><span class="header-section-number">6.1</span> Dissimilarité et distance<a href="chap-cadrephyfonc.html#dissimilarité-et-distance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Une similarité ou dissimilarité est toute application à valeurs numériques qui permet de mesurer le lien entre les individus d’un même ensemble ou entre les variables.
 Pour une similarité le lien est d’autant plus fort que sa valeur est grande.</p>
 <p>Une dissimilarité vérifie (<span class="math inline">\(k\)</span>, <span class="math inline">\(l\)</span> et <span class="math inline">\(m\)</span> sont trois individus):</p>
@@ -501,8 +502,8 @@ Figure 6.1: Arbre phylogénétique ou fonctionnel hypothétique. 5 espèces sont
 <p>La façon exacte de mesurer les longueurs de branche est illustrée par la figure <a href="chap-cadrephyfonc.html#fig:ArbreA1">6.1</a>: la distance entre les espèces 1 et 2 est <span class="math inline">\(T_1+T_2\)</span>, elle est égale à <span class="math inline">\(T_1\)</span> entre les espèces 4 et 5.
 La distance est la hauteur du premier noeud commun.</p>
 </div>
-<div id="sec-Dphylo" class="section level2">
-<h2><span class="header-section-number">6.2</span> Distance phylogénétique</h2>
+<div id="sec-Dphylo" class="section level2 hasAnchor">
+<h2><span class="header-section-number">6.2</span> Distance phylogénétique<a href="chap-cadrephyfonc.html#sec-Dphylo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La façon la plus évidente de définir une distance entre espèces est d’utiliser la taxonomie <span class="citation">(Clarke et Warwick <a href="#ref-Clarke2001" role="doc-biblioref">2001</a>, Warwick2001)</span>, en attribuant une distance arbitraire (par exemple 1) à deux espèces du même genre, une autre (par exemple 2) à deux espèces de la même famille, etc.
 La distance définie est ultramétrique.</p>
 <p>La taxonomie peut être remplacée avantageusement par une phylogénie.
@@ -516,8 +517,8 @@ Une méthode pour dater une phylogénie est fournie par <span class="citation">C
 Du point de vue de la biologie de la conservation, chaque espèce accumule une quantité d’évolution, interprétée comme une quantité d’information <span class="citation">(Crozier <a href="#ref-Crozier1997" role="doc-biblioref">1997</a>)</span> dont le maximum doit être préservé.</p>
 <p>L’entropie phylogénétique (voir chapitre <a href="chap-Phyloentropie.html#chap-Phyloentropie">8</a>) utilise un arbre phylogénétique pour mesurer la diversité.</p>
 </div>
-<div id="sec-DFonctionnelle" class="section level2">
-<h2><span class="header-section-number">6.3</span> Distance fonctionnelle</h2>
+<div id="sec-DFonctionnelle" class="section level2 hasAnchor">
+<h2><span class="header-section-number">6.3</span> Distance fonctionnelle<a href="chap-cadrephyfonc.html#sec-DFonctionnelle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>L’approche fonctionnelle est différente.
 Chaque espèce ou individu est représenté par ses valeurs de traits dans un espace multidimensionnel.
 Le vecteur de traits est considéré comme un proxy de la niche écologique <span class="citation">(Westoby et al. <a href="#ref-Westoby2002" role="doc-biblioref">2002</a>)</span>.
@@ -547,8 +548,8 @@ Dans la matrice originale, les valeurs de traits sont centrées et réduites, et
 Dans la très grande majorité des dendrogrammes utilisés, la transformation de la matrice de distance a entraîné un écart moyen de plus de 10% par rapport aux valeurs originales (une valeur de <em>mSD</em>, l’écart quadratique moyen, supérieure à 1%).
 Cette déformation est suffisante pour largement invalider les résultats obtenus.</p>
 </div>
-<div id="équivalence-des-deux-diversités" class="section level2">
-<h2><span class="header-section-number">6.4</span> Équivalence des deux diversités</h2>
+<div id="équivalence-des-deux-diversités" class="section level2 hasAnchor">
+<h2><span class="header-section-number">6.4</span> Équivalence des deux diversités<a href="chap-cadrephyfonc.html#équivalence-des-deux-diversités" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>L’approche fonctionnelle étant particulièrement complexe et lourde à mettre en oeuvre (notamment pour la mesure des traits sur chaque individu), la tentation a été grande de considérer que la phylogénie contenait plus d’information fonctionnelle que ce qui pouvait être mesuré, et donc de considérer la diversité phylogénétique comme proxy de la diversité fonctionnelle.</p>
 <p>Du point de vue théorique, le modèle le plus simple de l’évolution de la valeur d’un trait hypothétique au cours du temps est le mouvement brownien: à chaque génération, la valeur du trait varie un peu, sans mémoire.
 Dans ce cadre <span class="citation">(Felsenstein <a href="#ref-Felsenstein1985" role="doc-biblioref">1985</a>)</span>, la variance de la valeur actuelle du trait pour une espèce donnée est proportionnelle à la durée de l’évolution et la covariance entre deux espèces à celle de l’âge de leur ancêtre commun.
@@ -558,8 +559,8 @@ La discipline appelée <em>écologie phylogénétique des communautés</em> cher
 <p><span class="citation">Swenson et Enquist (<a href="#ref-Swenson2009" role="doc-biblioref">2009</a>)</span> ont montré que la relation entre les deux diversités était faible.
 L’utilisation de la diversité phylogénétique comme proxy de la diversité fonctionnelle n’est pas satisfaisante <span class="citation">(Pavoine et Bonsall <a href="#ref-Pavoine2011" role="doc-biblioref">2011</a>)</span>. Pour optimiser la conservation, les deux aspects de la diversité, souvent divergents, doivent être pris en compte <span class="citation">(Devictor et al. <a href="#ref-Devictor2010" role="doc-biblioref">2010</a>)</span>.</p>
 </div>
-<div id="typologie-des-mesures" class="section level2">
-<h2><span class="header-section-number">6.5</span> Typologie des mesures</h2>
+<div id="typologie-des-mesures" class="section level2 hasAnchor">
+<h2><span class="header-section-number">6.5</span> Typologie des mesures<a href="chap-cadrephyfonc.html#typologie-des-mesures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>À partir de la littérature <span class="citation">(Ricotta <a href="#ref-Ricotta2007" role="doc-biblioref">2007</a>; Pavoine et Bonsall <a href="#ref-Pavoine2011" role="doc-biblioref">2011</a>)</span>, une typologie des mesures de diversité émerge.
 Elle étend les notions classiques de richesse et équitabilité.</p>
 <p>La richesse est l’accumulation de classes différentes dans les mesures classiques.
@@ -593,7 +594,7 @@ Ces mesures sont influencées par la richesse et la régularité.</p>
 Elles sont détaillées au chapitre suivant.</p>
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references">
 <div id="ref-Baraloto2010">
 <p>Baraloto, Christopher, C. E. Timothy Paine, Sandra Patiño, Damien Bonal, Bruno Hérault, et Jérôme Chave. 2010. « Functional Trait Variation and Sampling Strategies in Species Rich Plant Communities ». <em>Functional Ecology</em> 24 (1): 208‑16. <a href="https://doi.org/10.1111/j.1365-2435.2009.01600.x">https://doi.org/10.1111/j.1365-2435.2009.01600.x</a>.</p>
@@ -710,7 +711,7 @@ Elles sont détaillées au chapitre suivant.</p>
 <p>Vane-Wright, R. I., C. J. Humphries, et P. H. Williams. 1991. « What to Protect?—Systematics and the Agony of Choice ». <em>Biological Conservation</em> 55 (3): 235‑54. <a href="https://doi.org/10.1016/0006-3207(91)90030-D">https://doi.org/10.1016/0006-3207(91)90030-D</a>.</p>
 </div>
 <div id="ref-Vellend2010">
-<p>Vellend, Mark, William K. Cornwell, Karen Magnuson-Ford, et Arne Ø. Mooers. 2010. « Measuring Phylogenetic Biodiversity ». In <em>Biological Diversity: Frontiers in Measurement and Assessment</em>, édité par Anne E Magurran et Brian J McGill, 194‑207. Oxford: Oxford University Press. <a href="http://phylodiversity.net/wcornwell/Vellend\%7B_\%7Detal\%7B_\%7D2011\%7B_\%7Dbookchap.pdf">http://phylodiversity.net/wcornwell/Vellend\{_\}etal\{_\}2011\{_\}bookchap.pdf</a>.</p>
+<p>Vellend, Mark, William K. Cornwell, Karen Magnuson-Ford, et Arne Ø. Mooers. 2010. « Measuring Phylogenetic Biodiversity ». In <em>Biological Diversity: Frontiers in Measurement and Assessment</em>, édité par Anne E Magurran et Brian J McGill, 194‑207. Oxford: Oxford University Press. <a href="http://phylodiversity.net/wcornwell/Vellend%7B_%7Detal%7B_%7D2011%7B_%7Dbookchap.pdf">http://phylodiversity.net/wcornwell/Vellend{_}etal{_}2011{_}bookchap.pdf</a>.</p>
 </div>
 <div id="ref-Villeger2017">
 <p>Villéger, Sébastien, Eva Maire, et Fabien Leprieur. 2017. « On the Risks of Using Dendrograms to Measure Functional Diversity and Multidimensional Spaces to Measure Phylogenetic Diversity: A Comment on Sobral et al . (2016) ». Édité par Montserrat Vila. <em>Ecology Letters</em> 20 (4): 554‑57. <a href="https://doi.org/10.1111/ele.12750">https://doi.org/10.1111/ele.12750</a>.</p>

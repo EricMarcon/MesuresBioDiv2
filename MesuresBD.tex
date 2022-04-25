@@ -383,7 +383,7 @@
 
 \author{Eric Marcon}
 
-\date{26/01/2022}
+\date{25/04/2022}
 
 
 % Include headers (preamble.tex) here
@@ -1411,7 +1411,7 @@ L'ajustement du modèle de Volkov peut être comparé à celui d'une distributio
 
 \begin{verbatim}
 ##        theta            m            J 
-## 4.767437e+01 9.237586e-02 2.145700e+04
+## 4.767129e+01 9.238201e-02 2.145700e+04
 \end{verbatim}
 
 \normalsize
@@ -8953,7 +8953,7 @@ Calcul sous R: \texttt{BetaEntropy} applique cette correction:
 \normalsize
 
 \textcite{Chao2013} utilisent une approche différente pour corriger le biais d'estimation: l'information mutuelle.
-Les données sont organisées comme dans le tableau \ref{tab:Notations}, mais les probabilités qu'un individu appartienne à la communauté \(i\) et à l'espèce \(s\) sont calculées pour que leur somme soit égale à 1 sur l'ensemble du tableau: \(\sum_s{\sum_i{_{s,i}}}=1\) (au lieu de \(\sum_i{p_{s|i}}=1\)).
+Les données sont organisées comme dans le tableau \ref{tab:Notations}, mais les probabilités qu'un individu appartienne à la communauté \(i\) et à l'espèce \(s\) sont calculées pour que leur somme soit égale à 1 sur l'ensemble du tableau: \(\sum_s{\sum_i{p_{s,i}}}=1\) (au lieu de \(\sum_i{p_{s|i}}=1\)).
 
 L'information mutuelle est la divergence de Kullback-Leibler entre la distribution de \(\{p_{s,i}\}\) et celle du produit des distributions marginales \(\{p_s\}\) et \(\{p_i\}\).
 Si les distributions marginales sont indépendantes, la probabilité \(p_{s,i}\) qu'un individu appartienne à l'espèce \(s\) et se trouve dans la communauté \(i\) est donnée par le produit des probabilités marginales \(p_s\) et \(p_i\), et l'information mutuelle est nulle.
@@ -8962,7 +8962,7 @@ L'information mutuelle se calcule comme la différence entre l'entropie de Shann
 \(H(\{p_s\})\) est l'entropie \(\gamma\) de la méta-communauté.
 Si on choisit de pondérer les communautés par leurs effectifs (\(w_i=p_i\)), alors \(H(\{p_{s,i}\})-H(\{p_i\})\) est l'entropie \(\alpha\) de la méta-communauté, c'est-à-dire la moyenne pondérée des entropies \(\alpha\) des communautés.
 Dans ce cas, l'entropie \(\beta\) est égale à l'opposée de l'information mutuelle.
-Comme chaque terme du calcul est une entropie \(\alpha\), il peut être corrigé selon l'équation @ref(eq:Chao2013 pour obtenir un estimateur moins biaisé de \(H_{\beta}\).
+Comme chaque terme du calcul est une entropie \(\alpha\), il peut être corrigé selon l'équation \eqref{eq:Chao2013} pour obtenir un estimateur moins biaisé de \(H_{\beta}\).
 
 Calcul sous R:
 
@@ -11777,7 +11777,7 @@ Elle peut être reliée à la distance entre les communautés pour définir une 
 \hypertarget{sec-SimpsonSpatial}{%
 \section{L'indice de Simpson spatialement explicite}\label{sec-SimpsonSpatial}}
 
-\textcite{Chave2002} écrivent un modèle neutre de dispersion des espèces forestières, appliqué à l'échelle de l'Amazonie occidentale\autocite{Condit2002}.
+\textcite{Chave2002} écrivent un modèle neutre de dispersion des espèces forestières, appliqué à l'échelle de l'Amazonie occidentale \autocite{Condit2002}.
 Ils définissent dans ce cadre la fonction \(F(r)\) égale à la probabilité que deux individus situés à distance \(r\) l'un de l'autre soient de la même espèce, c'est-a-dire l'indice de concentration de Simpson \eqref{eq:SimpsonD}, appliqué à des paires d'individus distants.
 \(\beta_s(r)=1-F(r)\) est appelé \enquote{indice de Simpson spatialement explicite} par \textcite{Shen2013}
 En pratique il est estimé à partir d'individus situés dans des parcelles distantes de \(r\), l'ordre de grandeur de \(r\) étant nettement plus grand que la taille des parcelles.

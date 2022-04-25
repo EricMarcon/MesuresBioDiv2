@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>17 Information mutuelle | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="17 Information mutuelle | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   <meta property="og:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png" />
   <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
@@ -50,8 +49,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,7 +61,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-163419632-1');
+  gtag('config', 'UA-163419632-1'); 
+  gtag('config', 'G-C1B3PLBCM6');
 </script>
 
 
@@ -440,8 +441,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="information-mutuelle" class="section level1">
-<h1><span class="header-section-number">17</span> Information mutuelle</h1>
+<div id="information-mutuelle" class="section level1 hasAnchor">
+<h1><span class="header-section-number">17</span> Information mutuelle<a href="information-mutuelle.html#information-mutuelle" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
 <div class="Summary">
 <p>
@@ -454,10 +455,10 @@ Le nombre effectif d’habitats occupés par une espèce peut être interprété
 
 <p>Plusieurs mesures de diversité ont été construite autour de l’information mutuelle.
 Elles sont présentées ici après leur propriété mathématique fondamentale: la récursivité de l’entropie.</p>
-<div id="récursivité-de-lentropie" class="section level2">
-<h2><span class="header-section-number">17.1</span> Récursivité de l’entropie</h2>
-<div id="sec-jointeShannon" class="section level3">
-<h3><span class="header-section-number">17.1.1</span> Entropie de Shannon</h3>
+<div id="récursivité-de-lentropie" class="section level2 hasAnchor">
+<h2><span class="header-section-number">17.1</span> Récursivité de l’entropie<a href="information-mutuelle.html#récursivité-de-lentropie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sec-jointeShannon" class="section level3 hasAnchor">
+<h3><span class="header-section-number">17.1.1</span> Entropie de Shannon<a href="information-mutuelle.html#sec-jointeShannon" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’entropie de Shannon (et ses multiples) sont les seules fonctions <span class="math inline">\(H\)</span> telles que</p>
 <p><span class="math display" id="eq:Recursivite1">\[\begin{equation}
   \tag{17.1}
@@ -486,8 +487,8 @@ L’écart à l’indépendance implique que les distributions de probabilités 
 <li>La diversité jointe est le nombre effectif de catégories (espèces <span class="math inline">\(\times\)</span> classes de diamètre) de la communauté.</li>
 </ul>
 </div>
-<div id="sec-jointeHCDT" class="section level3">
-<h3><span class="header-section-number">17.1.2</span> Entropie HCDT</h3>
+<div id="sec-jointeHCDT" class="section level3 hasAnchor">
+<h3><span class="header-section-number">17.1.2</span> Entropie HCDT<a href="information-mutuelle.html#sec-jointeHCDT" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="citation">Baez, Fritz, et Leinster (<a href="#ref-Baez2011" role="doc-biblioref">2011</a>)</span> généralisent la récursivité à l’entropie HCDT et montrent que</p>
 <p><span class="math display" id="eq:Baez2011a">\[\begin{equation}
   \tag{17.3}
@@ -503,8 +504,8 @@ et
 <p>Ce résultat avait déjà été obtenu par <span class="citation">Suyari (<a href="#ref-Suyari2004" role="doc-biblioref">2004</a>)</span>, corrigé par <span class="citation">Ilić, Stanković, et Mulalić (<a href="#ref-Ilic2013" role="doc-biblioref">2013</a>)</span>.
 Par le même raisonnement que pour l’entropie de Shannon, on trouve donc que l’entropie entre les classes est l’opposée de l’information mutuelle calculée dans le cadre de l’entropie HCDT, à condition de définir les poids des classes égaux à <span class="math inline">\(p_i\)</span> et l’entropie intraclasse comme la somme des entropies des classes pondérées par leur poids à la puissance <span class="math inline">\(q\)</span>.</p>
 </div>
-<div id="intérêt-de-linformation-mutuelle" class="section level3">
-<h3><span class="header-section-number">17.1.3</span> Intérêt de l’information mutuelle</h3>
+<div id="intérêt-de-linformation-mutuelle" class="section level3 hasAnchor">
+<h3><span class="header-section-number">17.1.3</span> Intérêt de l’information mutuelle<a href="information-mutuelle.html#intérêt-de-linformation-mutuelle" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Si les individus sont classés dans une matrice selon deux critères, et non dans un simple vecteur d’espèces, l’entropie HCDT de la distribution appelée <em>entropie jointe</em> est calculée par <span class="math inline">\(^{q}\!H(\{p_{s,i}\})\)</span>.</p>
 <p>L’entropie jointe peut être décomposée en la somme des entropies marginales et de l’information mutuelle.
 L’entropie intra-lignes (respectivement intra-colonnes) est définie comme la moyenne pondérée par le poids des lignes (resp. des colonnes) à la puissance <span class="math inline">\(q\)</span> de l’entropie de chaque ligne (resp. colonne).
@@ -531,8 +532,8 @@ Pour <span class="math inline">\(q \ne 1\)</span>, l’entropie intra-classes n�
 L’information mutuelle de l’entropie HCDT n’a donc qu’un intérêt limité pour mesurer la diversité.</p>
 </div>
 </div>
-<div id="taille-de-niche" class="section level2">
-<h2><span class="header-section-number">17.2</span> Taille de niche</h2>
+<div id="taille-de-niche" class="section level2 hasAnchor">
+<h2><span class="header-section-number">17.2</span> Taille de niche<a href="information-mutuelle.html#taille-de-niche" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><span class="citation">Allan (<a href="#ref-Allan1975" role="doc-biblioref">1975</a>)</span> présente plusieurs décompositions de l’entropie jointe (de Shannon) fondées sur l’information mutuelle, dans une matrice en trois dimensions: microhabitats <span class="math inline">\(\times\)</span> sites <span class="math inline">\(\times\)</span> espèces.</p>
 <p>Après <span class="citation">Levins (<a href="#ref-Levins1968" role="doc-biblioref">1968</a>)</span>, <span class="citation">Colwell et Futuyma (<a href="#ref-Colwell1971" role="doc-biblioref">1971</a>)</span> et <span class="citation">Pielou (<a href="#ref-Pielou1972" role="doc-biblioref">1972</a>)</span>, Allan s’intéresse notamment à la taille de la niche (<em>niche width</em>) des espèces.
 Si les classes de la matrice espèces-classes (Table <a href="sec-jointeCadre.html#tab:Notations2">16.1</a>) sont des habitats distincts les uns des autres, la diversité des habitats occupés par une espèce est la taille de sa niche, et la diversité <span class="math inline">\(\gamma\)</span> mesurée sur l’ensemble des habitats peut être comprise comme le chevauchement des niches <span class="citation">(Pielou <a href="#ref-Pielou1972" role="doc-biblioref">1972</a>)</span>.
@@ -545,7 +546,7 @@ Ces contributions sont utilisées pour pondérer les habitats: un habitat origin
 Pour revenir au cas simple dans lequel les habitats ont des poids égaux, les colonnes de la matrice sont dupliquées un nombre de fois proportionnel à leur poids, suffisamment grand pour les proportions des nombres de colonnes (forcément entiers) soient identiques ou très proches des poids.</p>
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references">
 <div id="ref-Aczel1975">
 <p>Aczél, J., et Zoltán Daróczy. 1975. <em>On Measures of Information and Their Characterizations</em>. New York: Academic Press.</p>

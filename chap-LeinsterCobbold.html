@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Diversité de Leinster et Cobbold | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Diversité de Leinster et Cobbold | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   <meta property="og:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png" />
   <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
@@ -50,8 +49,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,7 +61,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-163419632-1');
+  gtag('config', 'UA-163419632-1'); 
+  gtag('config', 'G-C1B3PLBCM6');
 </script>
 
 
@@ -440,8 +441,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap-LeinsterCobbold" class="section level1">
-<h1><span class="header-section-number">9</span> Diversité de Leinster et Cobbold</h1>
+<div id="chap-LeinsterCobbold" class="section level1 hasAnchor">
+<h1><span class="header-section-number">9</span> Diversité de Leinster et Cobbold<a href="chap-LeinsterCobbold.html#chap-LeinsterCobbold" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p></p>
 <div class="Summary">
 <p>
@@ -451,8 +452,8 @@ La diversité de Leinster et Cobbold est l’inverse de la banalité moyenne des
 <p></p>
 <p>À partir de la théorie mathématique des catégories <span class="citation">(Leinster <a href="#ref-Leinster2013" role="doc-biblioref">2013</a>)</span>, <span class="citation">Leinster et Cobbold (<a href="#ref-Leinster2012" role="doc-biblioref">2012</a>)</span> ont proposé une mesure de diversité applicable à une communauté dont la position des espèces dans un espace multidimensionnel euclidien est connue.
 C’est donc une mesure applicable à la diversité fonctionnelle.</p>
-<div id="définitions" class="section level2">
-<h2><span class="header-section-number">9.1</span> Définitions</h2>
+<div id="définitions" class="section level2 hasAnchor">
+<h2><span class="header-section-number">9.1</span> Définitions<a href="chap-LeinsterCobbold.html#définitions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><span class="citation">Leinster et Cobbold (<a href="#ref-Leinster2012" role="doc-biblioref">2012</a>)</span> proposent une unification des mesures de diversité à partir de la définition de la banalité des espèces.
 Une matrice carrée de dimension égale au nombre d’espèces, <span class="math inline">\(\mathbf{Z}\)</span>, décrit par ses valeurs <span class="math inline">\(z_{s,t}\)</span> la similarité entre l’espèce <span class="math inline">\(s\)</span> et l’espèce <span class="math inline">\(t\)</span> comprises entre 0 et 1 (<span class="math inline">\(z_{s,s}=1\)</span>).</p>
 <p>La banalité d’une espèce <span class="math inline">\(s\)</span> est définie par <span class="math inline">\(\sum_t{p_t z_{s,t}}\)</span>, c’est-à-dire la moyenne pondérée de sa similarité avec toutes les autres espèces: au minimum <span class="math inline">\(p_s\)</span> si elle est totalement différente des autres (approche de la diversité neutre, <span class="math inline">\(\mathbf{Z}\)</span> est la matrice identité <span class="math inline">\(\mathbf{I}_s\)</span>), au maximum 1 si toutes les espèces sont totalement similaires (<span class="math inline">\(\mathbf{Z}\)</span> ne contient que des 1).
@@ -503,16 +504,16 @@ Elle donne un fort poids aux petites valeurs de <span class="math inline">\(x_s\
   ^1\!D^{\mathbf{Z}} = \frac{1}{\prod_s{{\left(\mathbf{Zp}\right)}^{p_s}_s}}.
 \end{equation}\]</span></p>
 </div>
-<div id="diversité-neutre" class="section level2">
-<h2><span class="header-section-number">9.2</span> Diversité neutre</h2>
+<div id="diversité-neutre" class="section level2 hasAnchor">
+<h2><span class="header-section-number">9.2</span> Diversité neutre<a href="chap-LeinsterCobbold.html#diversité-neutre" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Leinster et Cobbold montrent que la diversité HCDT est un cas particulier de <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span>, pour la matrice identité:</p>
 <p><span class="math display" id="eq:DqI">\[\begin{equation}
   \tag{9.5}
   ^{q}\!D={^q\!D^{\mathbf{I}}}.
 \end{equation}\]</span></p>
 </div>
-<div id="diversité-non-neutre" class="section level2">
-<h2><span class="header-section-number">9.3</span> Diversité non neutre</h2>
+<div id="diversité-non-neutre" class="section level2 hasAnchor">
+<h2><span class="header-section-number">9.3</span> Diversité non neutre<a href="chap-LeinsterCobbold.html#diversité-non-neutre" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Une mesure de diversité non neutre est obtenue en utilisant une matrice <span class="math inline">\(\mathbf{Z}\)</span> qui contient l’information sur la similarité entre les espèces.
 La dissimilarité entre espèces peut être obtenue à partir des arbres.
 L’exemple suivant utilise les données du calcul d’originalité, section <a href="mesures-particulières.html#sec-MaxTheorique">7.6.5</a>.
@@ -570,8 +571,8 @@ Une transformation simple est 1 moins la dissimilarité (préalablement normalis
 <p></p>
 <p>Mais ce n’est pas le cas en général.</p>
 </div>
-<div id="entropie-de-ricotta-et-szeidl" class="section level2">
-<h2><span class="header-section-number">9.4</span> Entropie de Ricotta et Szeidl</h2>
+<div id="entropie-de-ricotta-et-szeidl" class="section level2 hasAnchor">
+<h2><span class="header-section-number">9.4</span> Entropie de Ricotta et Szeidl<a href="chap-LeinsterCobbold.html#entropie-de-ricotta-et-szeidl" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><span class="citation">Ricotta et Szeidl (<a href="#ref-Ricotta2006b" role="doc-biblioref">2006</a>)</span> ont montré une similitude entre les entropies de Shannon et de Rao en généralisant l’entropie de Shannon en deux temps.
 Tout d’abord en remarquant que la probabilité d’occurrence d’une espèce est 1 moins la somme de celle des autres, d’où</p>
 <p><span class="math display" id="eq:Ricotta2006bH1">\[\begin{equation}
@@ -598,8 +599,8 @@ La fréquence et la banalité se confondent seulement pour la diversité neutre.
   \ln_q{^q\!D^{\mathbf{Z}}} = ^q\!H^{\mathbf{Z}}.
 \end{equation}\]</span></p>
 </div>
-<div id="définition-de-la-similarité" class="section level2">
-<h2><span class="header-section-number">9.5</span> Définition de la similarité</h2>
+<div id="définition-de-la-similarité" class="section level2 hasAnchor">
+<h2><span class="header-section-number">9.5</span> Définition de la similarité<a href="chap-LeinsterCobbold.html#définition-de-la-similarité" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La transformation d’une matrice de dissimilarité en une matrice de similarité nécessite une fonction strictement décroissante, dont le résultat est compris entre 0 et 1.
 La plus simple est
 <span class="math display">\[z_{s,t} = 1 - \frac{d_{s,t}}{\max{(d_{s,t})}}.\]</span>
@@ -671,8 +672,8 @@ Modifier <span class="math inline">\(u\)</span> modifie la magnitude de l’espa
 Quand <span class="math inline">\(u \to +\infty\)</span>, <span class="math inline">\(\mathbf{Z} \to \mathbf{I}_s\)</span>: la diversité tend vers la diversité neutre.
 Leinster et Cobbold suggèrent de comparer les profils de diversité en fonction à la fois de <span class="math inline">\(q\)</span> et de <span class="math inline">\(u\)</span>.</p>
 </div>
-<div id="sec-dqzEstimation" class="section level2">
-<h2><span class="header-section-number">9.6</span> Estimation</h2>
+<div id="sec-dqzEstimation" class="section level2 hasAnchor">
+<h2><span class="header-section-number">9.6</span> Estimation<a href="chap-LeinsterCobbold.html#sec-dqzEstimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Comme les autres mesures de diversité, <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est sujette au biais d’estimation.
 Deux estimateurs réduisant le biais existent <span class="citation">(Marcon, Zhang, et Hérault <a href="#ref-Marcon2014e" role="doc-biblioref">2014</a>)</span>.
 Le premier utilise la technique de <span class="citation">Chao et Shen (<a href="#ref-Chao2003" role="doc-biblioref">2003</a>)</span> déjà vue pour la correction du biais de l’entropie de Shannon <a href="chap-MesuresNeutres.html#eq:ChaoShen">(3.37)</a>.
@@ -745,8 +746,8 @@ L’estimateur de <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est, p
 ## 1.488083</code></pre>
 <p></p>
 </div>
-<div id="diversité-phylogénétique" class="section level2">
-<h2><span class="header-section-number">9.7</span> Diversité phylogénétique</h2>
+<div id="diversité-phylogénétique" class="section level2 hasAnchor">
+<h2><span class="header-section-number">9.7</span> Diversité phylogénétique<a href="chap-LeinsterCobbold.html#diversité-phylogénétique" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 <p></p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ArbreA6"></span>
@@ -1166,8 +1167,8 @@ Cependant, le calcul de <span class="math inline">\(^q\!{\hat{D}}^{\mathbf{Z}}\)
 <p>Pour un arbre non ultramétrique, il est possible de définir une matrice <span class="math inline">\(\mathbf{Z}\)</span> similaire à celle de la table <a href="chap-LeinsterCobbold.html#tab:MatricePhylo">9.1</a>, mais ses valeurs non nulles ne sont pas égales à 1.
 Elles sont égales au rapport de <span class="math inline">\(\bar{T}\)</span>, la longueur moyenne des branches pondérée par la fréquence des espèces, sur la longueur de la branche: elles dépendent donc des fréquences des espèces et empêchent par conséquent la comparaison de la diversité entre communautés différentes.</p>
 </div>
-<div id="diversité-individuelle-1" class="section level2">
-<h2><span class="header-section-number">9.8</span> Diversité individuelle</h2>
+<div id="diversité-individuelle-1" class="section level2 hasAnchor">
+<h2><span class="header-section-number">9.8</span> Diversité individuelle<a href="chap-LeinsterCobbold.html#diversité-individuelle-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La diversité <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> et tous ses cas particuliers (phylodiversité et diversité neutre) peuvent être envisagés au niveau individuel plutôt qu’au niveau de l’espèce.</p>
 <p>Le calcul de la diversité n’est pas affecté par le remplacement d’une espèce par deux espèces identiques.
 La ligne et la colonne de la matrice <span class="math inline">\(\mathbf{Z}\)</span>, correspondant à l’espèce <span class="math inline">\(s\)</span> sont remplacées par deux lignes et colonnes identiques correspondant aux espèces <span class="math inline">\(s&#39;\)</span> et <span class="math inline">\(s&#39;&#39;\)</span>, dont la similarité avec les autres espèces est la même que celle de l’espèce <span class="math inline">\(s\)</span> et la similarité entre elles égale à 1, les probabilités vérifiant <span class="math inline">\(p_s=p_{s&#39;}+p_{s&#39;&#39;}\)</span>.
@@ -1235,8 +1236,8 @@ Se limiter à <span class="math inline">\(q=2\)</span> simplifie le problème.</
 <p>En pratique, si les similarités entre individus ou groupes sont connues, le regroupement n’a aucun intérêt.
 Mais en absence de données individuelles, il est possible de choisir arbitrairement une similarité intraspécifique différente de 1 (ou de façon équivalente une distance différente de 0) pour calculer une diversité d’ordre fixé, de préférence 2.</p>
 </div>
-<div id="diversité-des-valeurs-propres" class="section level2">
-<h2><span class="header-section-number">9.9</span> Diversité des valeurs propres</h2>
+<div id="diversité-des-valeurs-propres" class="section level2 hasAnchor">
+<h2><span class="header-section-number">9.9</span> Diversité des valeurs propres<a href="chap-LeinsterCobbold.html#diversité-des-valeurs-propres" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>L’approche de <span class="citation">Pavoine et Izsák (<a href="#ref-Pavoine2014" role="doc-biblioref">2014</a>)</span> permet de prendre en compte la variabilité intraspécifique de façon rigoureuse.
 Pour mesurer la diversité neutre, les espèces sont placées dans un espace multidimensionnel, de dimension <span class="math inline">\(S\)</span>.
 Chaque espèce est représentée par un vecteur de longueur <span class="math inline">\(p_s\)</span> sur son axe.
@@ -1333,8 +1334,8 @@ Il n’existe pas de technique pour corriger ce biais d’estimation.</p>
 <p>La composition de la communauté en espèces composites dépend à la fois de la matrice de similarité et des probabilités des espèces réelles.
 Elle est donc unique pour chaque communauté, ce qui empêche toute décomposition de la diversité selon les méthodes présentées plus loin.</p>
 </div>
-<div id="sec-dqzSynthese" class="section level2">
-<h2><span class="header-section-number">9.10</span> Synthèse</h2>
+<div id="sec-dqzSynthese" class="section level2 hasAnchor">
+<h2><span class="header-section-number">9.10</span> Synthèse<a href="chap-LeinsterCobbold.html#sec-dqzSynthese" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><span class="math inline">\(^{q}\!D(T)\)</span> est l’exponentielle d’ordre <span class="math inline">\(q\)</span> de la moyenne pondérée de l’entropie HCDT calculée à chaque période de l’arbre phylogénétique.</p>
 <p><span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est l’exponentielle d’ordre <span class="math inline">\(q\)</span> de l’entropie de Ricotta et Szeidl, mais aussi l’inverse de la banalité moyenne des espèces de la communauté.</p>
 <p><span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> et <span class="math inline">\(^{q}\!D\)</span> sont des nombres effectifs d’espèces, respectent toutes les propriétés demandées à une mesure de diversité dont le principe de réplication.
@@ -1378,7 +1379,7 @@ En revanche, la prise en compte de la variabilité intraspécifique par une simi
 
 
 
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references">
 <div id="ref-Campos2009">
 <p>Campos, Diógenes, et José Fernando Isaza. 2009. « A Geometrical Index for Measuring Species Diversity ». <em>Ecological Indicators</em> 9 (4): 651‑58. <a href="https://doi.org/10.1016/j.ecolind.2008.07.007">https://doi.org/10.1016/j.ecolind.2008.07.007</a>.</p>

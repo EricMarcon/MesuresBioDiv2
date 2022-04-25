@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Équitabilité | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Équitabilité | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   <meta property="og:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png" />
   <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
@@ -50,8 +49,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,7 +61,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-163419632-1');
+  gtag('config', 'UA-163419632-1'); 
+  gtag('config', 'G-C1B3PLBCM6');
 </script>
 
 
@@ -440,8 +441,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="sec-Equitabilite" class="section level1">
-<h1><span class="header-section-number">5</span> Équitabilité</h1>
+<div id="sec-Equitabilite" class="section level1 hasAnchor">
+<h1><span class="header-section-number">5</span> Équitabilité<a href="sec-Equitabilite.html#sec-Equitabilite" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p></p>
 <div class="Summary">
 <p>
@@ -455,8 +456,8 @@ L’indice de Pielou est la mesure d’équitabilité la plus connue. Il a été
 <p>La régularité d’une distribution est une notion intuitivement assez simple: la faiblesse de l’écart entre la distribution réelle et une distribution parfaitement régulière <span class="citation">(Lloyd et Ghelardi <a href="#ref-Lloyd1964" role="doc-biblioref">1964</a>)</span>, vérifiant <span class="math inline">\(p_s={1}/{S}\)</span>.
 Des difficultés apparaissent quand il s’agit de comparer l’équitabilité de communautés de richesses différentes.
 L’approche axiomatique est présentée, puis les différents indices de la littérature et enfin la généralisation de l’indice de Pielou, en cohérence avec l’entropie HCDT.</p>
-<div id="approche-axiomatique" class="section level2">
-<h2><span class="header-section-number">5.1</span> Approche axiomatique</h2>
+<div id="approche-axiomatique" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.1</span> Approche axiomatique<a href="sec-Equitabilite.html#approche-axiomatique" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Une approche axiomatique a été développée par la littérature, revue par <span class="citation">Jost (<a href="#ref-Jost2010" role="doc-biblioref">2010</a><a href="#ref-Jost2010" role="doc-biblioref">b</a>)</span> ou <span class="citation">Tuomisto (<a href="#ref-Tuomisto2012" role="doc-biblioref">2012</a>)</span> Les propriétés fondamentales sont les critères de <span class="citation">Dalton (<a href="#ref-Dalton1920" role="doc-biblioref">1920</a>)</span>:</p>
 <ul>
 <li>L’équitabilité augmente quand un individu est transféré d’une espèce fréquente à une espèce rare;</li>
@@ -487,10 +488,10 @@ Si les courbes de deux communautés se croisent, l’ordre de leurs équitabilit
 L’argumentation de Jost est la plus convaincante: une communauté d’une richesse donnée dans laquelle tous les individus (à l’exception d’un nombre négligeable) sont concentrés dans une seule espèce atteint le niveau minimum d’équitabilité.
 Si elle est dupliquée, les individus seront répartis dans deux espèces et non une: la nouvelle communauté n’atteindra pas le niveau minimum d’équitabilité, il est donc souhaitable que la mesure d’équitabilité augmente.</p>
 </div>
-<div id="indice-classiques" class="section level2">
-<h2><span class="header-section-number">5.2</span> Indice classiques</h2>
-<div id="indice-de-bulla" class="section level3">
-<h3><span class="header-section-number">5.2.1</span> Indice de Bulla</h3>
+<div id="indice-classiques" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.2</span> Indice classiques<a href="sec-Equitabilite.html#indice-classiques" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="indice-de-bulla" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.2.1</span> Indice de Bulla<a href="sec-Equitabilite.html#indice-de-bulla" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’indice d’équitabilité de <span class="citation">Bulla (<a href="#ref-Bulla1994" role="doc-biblioref">1994</a>)</span> respecte les critères de Smith et Wilson:
 <span class="math display" id="eq:Bulla">\[\begin{equation}
   \tag{5.1}
@@ -505,33 +506,33 @@ Bulla le normalise pour qu’il soit compris entre 0 et 1:
 <p>La valeur minimale de <span class="math inline">\(O\)</span> est <span class="math inline">\({1}/{S}\)</span>.
 Bulla considère que ce n’est pas le cas si les effectifs sont entiers et fournit une valeur exacte dépendant du nombre d’espèces.</p>
 </div>
-<div id="indice-de-gini" class="section level3">
-<h3><span class="header-section-number">5.2.2</span> Indice de Gini</h3>
+<div id="indice-de-gini" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.2.2</span> Indice de Gini<a href="sec-Equitabilite.html#indice-de-gini" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’indice de Gini est le double de la surface comprise entre la courbe de Lorenz et la bissectrice (figure <a href="sec-Equitabilite.html#fig:Tuomisto2012">5.1</a>).</p>
 </div>
-<div id="rapports-de-moyennes" class="section level3">
-<h3><span class="header-section-number">5.2.3</span> Rapports de moyennes</h3>
+<div id="rapports-de-moyennes" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.2.3</span> Rapports de moyennes<a href="sec-Equitabilite.html#rapports-de-moyennes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="citation">Taillie (<a href="#ref-Taillie1979" role="doc-biblioref">1979</a>)</span> propose le rapport de la moyenne géométrique ou de la moyenne harmonique à la moyenne arithmétique des probabilités.</p>
 </div>
-<div id="ratios-de-hill" class="section level3">
-<h3><span class="header-section-number">5.2.4</span> Ratios de Hill</h3>
+<div id="ratios-de-hill" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.2.4</span> Ratios de Hill<a href="sec-Equitabilite.html#ratios-de-hill" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="citation">Hill (<a href="#ref-Hill1973" role="doc-biblioref">1973</a>)</span> utilise les rapports entre nombres effectifs d’espèces d’ordres différents comme mesure d’équitabilité.
 <span class="math inline">\(E_{1,0} = {^{1}\!D}/{^{0}\!D}\)</span> avait déjà été proposé par <span class="citation">Sheldon (<a href="#ref-Sheldon1969" role="doc-biblioref">1969</a>)</span>.
 <span class="citation">Peet (<a href="#ref-Peet1974" role="doc-biblioref">1974</a>)</span> le normalise en retirant au numérateur et au dénominateur leur valeur minimale, c’est-à-dire 1.</p>
 <p>La version normalisée de <span class="math inline">\(E_{2,1}\)</span> est recommandée par <span class="citation">Alatalo (<a href="#ref-Alatalo1981" role="doc-biblioref">1981</a>)</span>.</p>
 </div>
-<div id="synthèse-2" class="section level3">
-<h3><span class="header-section-number">5.2.5</span> Synthèse</h3>
+<div id="synthèse-2" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.2.5</span> Synthèse<a href="sec-Equitabilite.html#synthèse-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="citation">Ricotta et al. (<a href="#ref-Ricotta2001" role="doc-biblioref">2001</a>)</span> testent ces indices sur 65 jeux de données différents pour observer leurs corrélations.
 Tous sont compatibles avec la courbe de Lorenz.
 Ils concluent que les indices se répartissent en deux groupes: la plupart sont sensibles aux abondances relatives des espèces rares.
 <span class="math inline">\(E_{\infty,0}\)</span> et, dans une moindre mesure, <span class="math inline">\(E_{2,0}\)</span> sont plus sensibles aux espèces fréquentes.</p>
 </div>
 </div>
-<div id="indice-alternatifs" class="section level2">
-<h2><span class="header-section-number">5.3</span> Indice alternatifs</h2>
-<div id="variance-de-la-rareté" class="section level3">
-<h3><span class="header-section-number">5.3.1</span> Variance de la rareté</h3>
+<div id="indice-alternatifs" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.3</span> Indice alternatifs<a href="sec-Equitabilite.html#indice-alternatifs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="variance-de-la-rareté" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.3.1</span> Variance de la rareté<a href="sec-Equitabilite.html#variance-de-la-rareté" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="citation">Engen (<a href="#ref-Engen1977" role="doc-biblioref">1977</a>)</span> définit comme mesure d’équitabilité la variance de la rareté (la fonction d’information) de l’entropie de Shannon (<span class="math inline">\(-\ln p\)</span>):
 <span class="math display" id="eq:Engen1977">\[\begin{equation}
   \tag{5.3}
@@ -546,8 +547,8 @@ Toutes peuvent être utilisées:</p>
 \end{equation}\]</span></p>
 <p>Ces mesures ne sont pas invariantes par réplication mais sont continues par rapport aux probabilités.</p>
 </div>
-<div id="non-spécificité" class="section level3">
-<h3><span class="header-section-number">5.3.2</span> Non-spécificité</h3>
+<div id="non-spécificité" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.3.2</span> Non-spécificité<a href="sec-Equitabilite.html#non-spécificité" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="citation">Ricotta (<a href="#ref-Ricotta2004" role="doc-biblioref">2004</a><a href="#ref-Ricotta2004" role="doc-biblioref">b</a>)</span> propose un indice fondé sur les ensembles flous, utilisant les mesures de spécificité <span class="citation">(Yager <a href="#ref-Yager1992" role="doc-biblioref">1992</a>)</span>.
 Les espèces sont classées par probabilité décroissante. La mesure de non-spécificité utilisable comme mesure d’équitabilité est</p>
 <p><span class="math display" id="eq:Ricotta2004">\[\begin{equation}
@@ -557,8 +558,8 @@ Les espèces sont classées par probabilité décroissante. La mesure de non-sp�
 <p>Cet indice n’est pas invariant par réplication mais est continu par rapport aux probabilités.</p>
 </div>
 </div>
-<div id="indice-de-pielou" class="section level2">
-<h2><span class="header-section-number">5.4</span> Indice de Pielou</h2>
+<div id="indice-de-pielou" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.4</span> Indice de Pielou<a href="sec-Equitabilite.html#indice-de-pielou" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Une expression de l’équitabilité est souvent donnée à partir de l’indice de Shannon <span class="citation">(Lloyd et Ghelardi <a href="#ref-Lloyd1964" role="doc-biblioref">1964</a>; Sheldon <a href="#ref-Sheldon1969" role="doc-biblioref">1969</a>; Pielou <a href="#ref-Pielou1966a" role="doc-biblioref">1966</a><a href="#ref-Pielou1966a" role="doc-biblioref">b</a>, <a href="#ref-Pielou1975" role="doc-biblioref">1975</a>)</span>.
 La valeur maximale de l’indice de Shannon est obtenue quand la distribution est parfaitement régulière.
 Alors: <span class="math inline">\(H_{\max}=\ln S\)</span>.
@@ -569,10 +570,10 @@ On a donc défini l’indice, souvent appelé “indice de Pielou”:</p>
 \end{equation}\]</span></p>
 <p><span class="math inline">\(J\)</span> est compris entre 0 (une seule espèce a une probabilité de 1) et 1 (toutes les espèces ont la même probabilité).</p>
 </div>
-<div id="généralisation-de-lindice-de-pielou" class="section level2">
-<h2><span class="header-section-number">5.5</span> Généralisation de l’indice de Pielou</h2>
-<div id="sec-Mendes" class="section level3">
-<h3><span class="header-section-number">5.5.1</span> Mendes et al. </h3>
+<div id="généralisation-de-lindice-de-pielou" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.5</span> Généralisation de l’indice de Pielou<a href="sec-Equitabilite.html#généralisation-de-lindice-de-pielou" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sec-Mendes" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.5.1</span> Mendes et al. <a href="sec-Equitabilite.html#sec-Mendes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="citation">Mendes et al. (<a href="#ref-Mendes2008" role="doc-biblioref">2008</a>)</span> généralisent l’indice de Pielou en remplaçant l’indice de Shannon par l’entropie de Tsallis.
 Ils définissent</p>
 <p><span class="math display" id="eq:JMendes2008">\[\begin{equation}
@@ -583,8 +584,8 @@ Ils définissent</p>
 Ils observent que l’équitabilité est minimale pour une valeur particulière de <span class="math inline">\(q\)</span> qu’ils notent <span class="math inline">\(q^*\)</span> et montrent sur des exemples simulés que <span class="math inline">\(q^*\)</span> diminue avec la richesse de la communauté, mais sans en explorer complètement les propriétés.</p>
 <p><span class="math inline">\(^{2}\!J^{*}\)</span> est l’indice d’équitabilité dérivé de l’indice de diversité de Simpson par <span class="citation">Hurlbert (<a href="#ref-Hurlbert1971" role="doc-biblioref">1971</a>)</span>.</p>
 </div>
-<div id="tuomisto" class="section level3">
-<h3><span class="header-section-number">5.5.2</span> Tuomisto</h3>
+<div id="tuomisto" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.5.2</span> Tuomisto<a href="sec-Equitabilite.html#tuomisto" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Tuomisto argumente en faveur d’une définition stricte de l’équitabilité (<em>evenness</em> en anglais, <em>equitability</em> pouvant être utilisé dans un sens plus large) en tant que ratio de Hill:</p>
 <p><span class="math display" id="eq:TuomistoEq">\[\begin{equation}
   \tag{5.8}
@@ -595,8 +596,8 @@ Ils observent que l’équitabilité est minimale pour une valeur particulière 
 <p>L’équitabilité d’ordre <span class="math inline">\(q\)</span> est le rapport de la diversité d’ordre <span class="math inline">\(q\)</span> sur la richesse.</p>
 <p>L’idée fondamentale de la notion d’équitabilité est que la mesure de la diversité doit pouvoir être partitionnée en deux composantes indépendantes: la richesse et l’équitabilité <span class="citation">(Smith et Wilson <a href="#ref-Smith1996" role="doc-biblioref">1996</a>)</span>.</p>
 </div>
-<div id="jost" class="section level3">
-<h3><span class="header-section-number">5.5.3</span> Jost</h3>
+<div id="jost" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.5.3</span> Jost<a href="sec-Equitabilite.html#jost" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 <p></p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ProfilIneqFig"></span>
@@ -620,8 +621,8 @@ En revanche, la richesse peut être partitionnée de façon indépendante en div
 <span id="cb172-7"><a href="sec-Equitabilite.html#cb172-7"></a><span class="kw">autoplot</span>(Inq, <span class="dt">xlab =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Inéquitabilité&quot;</span>)</span></code></pre></div>
 <p></p>
 </div>
-<div id="synthèse-3" class="section level3">
-<h3><span class="header-section-number">5.5.4</span> Synthèse</h3>
+<div id="synthèse-3" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.5.4</span> Synthèse<a href="sec-Equitabilite.html#synthèse-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’indice de Pielou est le plus utilisé <span class="citation">(Tuomisto <a href="#ref-Tuomisto2012" role="doc-biblioref">2012</a>)</span> mais n’est pas invariant par réplication parce qu’il ne normalise pas une diversité mais une entropie.
 Il est rejeté pour cette raison <span class="citation">(Smith et Wilson <a href="#ref-Smith1996" role="doc-biblioref">1996</a>; Tuomisto <a href="#ref-Tuomisto2012" role="doc-biblioref">2012</a>)</span> par une partie de la littérature.
 <span class="citation">Jost (<a href="#ref-Jost2010" role="doc-biblioref">2010</a><a href="#ref-Jost2010" role="doc-biblioref">b</a>)</span> argumente au contraire en sa faveur: <span class="math inline">\(^{q}\!E\)</span> dépend de la richesse et ne peut donc pas être comparé entre communautés de richesse différente.
@@ -657,8 +658,8 @@ Figure 5.3: Profil d’équitabilité de BCI. L’équitabilité est ici normali
 <p></p>
 </div>
 </div>
-<div id="relations-empiriques-entre-richesse-et-équitabilité" class="section level2">
-<h2><span class="header-section-number">5.6</span> Relations empiriques entre richesse et équitabilité</h2>
+<div id="relations-empiriques-entre-richesse-et-équitabilité" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.6</span> Relations empiriques entre richesse et équitabilité<a href="sec-Equitabilite.html#relations-empiriques-entre-richesse-et-équitabilité" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Au-delà de la question des contraintes mathématiques entre richesse et équtabilité traitées précédemment, il s’agit ici des relations entre les deux aspects de la diversité dans des communautés réelles.</p>
 <p><span class="citation">Wilsey et al. (<a href="#ref-Wilsey2005" role="doc-biblioref">2005</a>)</span> passent en revue l’argument selon lequel richesse et équitabilité seraient toujours positivement corrélés.
 S’il est valide, la richesse peut être considérée comme une mesure suffisante de la diversité.
@@ -749,7 +750,7 @@ Les résultats sont similaires avec des communautés en log-séries: la corréla
 
 
 
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references">
 <div id="ref-Alatalo1981">
 <p>Alatalo, Rauno V. 1981. « Problems in the Measurement of Evenness in Ecology ». <em>Oikos</em> 37 (2): 199‑204. <a href="https://doi.org/10.2307/3544465">https://doi.org/10.2307/3544465</a>.</p>

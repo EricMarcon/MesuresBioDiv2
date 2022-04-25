@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   <meta property="og:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png" />
   <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
@@ -50,8 +49,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,7 +61,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-163419632-1');
+  gtag('config', 'UA-163419632-1'); 
+  gtag('config', 'G-C1B3PLBCM6');
 </script>
 
 
@@ -440,8 +441,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap-MesuresNeutres" class="section level1">
-<h1><span class="header-section-number">3</span> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span></h1>
+<div id="chap-MesuresNeutres" class="section level1 hasAnchor">
+<h1><span class="header-section-number">3</span> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span><a href="chap-MesuresNeutres.html#chap-MesuresNeutres" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p></p>
 <div class="Summary">
 <p>
@@ -460,8 +461,8 @@ Cette approche est opposée à celle, traitée dans les chapitres <a href="chap-
 <p>Les mesures présentées ici sont les plus utilisées: richesse, indices de Shannon et de Simpson, et l’indice de Hurlbert.
 Elles sont sujettes à des biais d’estimation <span class="citation">(Mouillot et Leprêtre <a href="#ref-Mouillot1999" role="doc-biblioref">1999</a>)</span>, notamment (mais pas seulement) à cause des espèces non échantillonnées.</p>
 <p>Au chapitre suivant, l’entropie HCDT permettra d’unifier ces mesures et les nombres de Hill, et de leur donner un sens intuitif.</p>
-<div id="sec-Richesse" class="section level2">
-<h2><span class="header-section-number">3.1</span> Richesse spécifique</h2>
+<div id="sec-Richesse" class="section level2 hasAnchor">
+<h2><span class="header-section-number">3.1</span> Richesse spécifique<a href="chap-MesuresNeutres.html#sec-Richesse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La richesse est tout simplement le nombre d’espèces présentes dans le taxocène considéré.
 C’est la mesure conceptuellement la plus simple mais pratiquement la plus délicate dans des systèmes très riches comme les forêts tropicales: même avec des efforts d’inventaire considérables, il n’est en général pas possible de relever toutes les espèces rares, ce qui implique de recourir à des modèles mathématiques pour en estimer le nombre.</p>
 <p>On ne fait pas de supposition sur la forme de la SAD quand on utilise des méthodes d’estimation non paramétriques.
@@ -469,8 +470,8 @@ Les estimateurs les plus connus sont ceux de <span class="citation">Chao (<a hre
 <p>Une alternative consiste à inférer à partir des données les paramètres d’une SAD choisie, et particulièrement le nombre total d’espèces.
 Cette approche est bien moins répandue parce qu’elle suppose le bon choix du modèle et est beaucoup plus intensive en calcul.
 Il n’existe pas de meilleur estimateur universel <span class="citation">(O’Hara <a href="#ref-OHara2005" role="doc-biblioref">2005</a>)</span> et il peut être efficace d’utiliser plusieurs méthodes d’estimation de façon concurrente sur les mêmes données <span class="citation">(Basset et al. <a href="#ref-Basset2012" role="doc-biblioref">2012</a>)</span>.</p>
-<div id="techniques-destimation-non-paramétrique" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> Techniques d’estimation non paramétrique</h3>
+<div id="techniques-destimation-non-paramétrique" class="section level3 hasAnchor">
+<h3><span class="header-section-number">3.1.1</span> Techniques d’estimation non paramétrique<a href="chap-MesuresNeutres.html#techniques-destimation-non-paramétrique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Dans le cadre d’un échantillonnage de <span class="math inline">\(n\)</span> individus, on observe <span class="math inline">\(s^{n}_{\ne 0}\)</span> espèces différentes parmi les <span class="math inline">\(S\)</span> existantes.
 Chaque individu a une probabilité <span class="math inline">\(p_s\)</span> d’appartenir à l’espèce <span class="math inline">\(s\)</span>.</p>
 <p>On ne sait rien sur la loi des <span class="math inline">\(p_s\)</span>.
@@ -481,8 +482,8 @@ La difficulté est due aux espèces pour lesquelles <span class="math inline">\(
 La probabilité de les observer est donnée par la loi binomiale: si <span class="math inline">\(np_s\)</span> est proche de 0, la probabilité d’observer un individu est faible.</p>
 <p>Les estimateurs non paramétriques cherchent à tirer le maximum d’information de la distribution des abondances <span class="math inline">\(n_s\)</span> pour estimer le nombre d’espèces non observées.
 Une présentation détaillée du problème et des limites à sa résolution est fournie par <span class="citation">Mao et Colwell (<a href="#ref-Mao2005" role="doc-biblioref">2005</a>)</span> qui concluent notamment que les estimateurs ne peuvent fournir qu’une borne inférieure de l’intervalle des possibles valeurs du nombre réel d’espèces.</p>
-<div id="chao1-et-chao2" class="section level4">
-<h4><span class="header-section-number">3.1.1.1</span> Chao1 et Chao2</h4>
+<div id="chao1-et-chao2" class="section level4 hasAnchor">
+<h4><span class="header-section-number">3.1.1.1</span> Chao1 et Chao2<a href="chap-MesuresNeutres.html#chao1-et-chao2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><span class="citation">Chao (<a href="#ref-Chao1984" role="doc-biblioref">1984</a>)</span> estime le nombre d’espèces non observées à partir de celles observées 1 ou 2 fois.</p>
 <p>Dans un échantillon de taille <span class="math inline">\(n\)</span> résultant d’un tirage indépendant des individus, la probabilité que l’espèce <span class="math inline">\(s\)</span> soit observée <span class="math inline">\(\nu\)</span> fois est obtenue en écrivant la probabilité de tirer dans l’ordre <span class="math inline">\(\nu\)</span> fois l’espèce <span class="math inline">\(s\)</span> puis <span class="math inline">\(n-\nu\)</span> fois une autre espèce, multiplié par le nombre de combinaisons possible pour prendre en compte l’ordre des tirages:
 <span class="math display" id="eq:psnu">\[\begin{equation}
@@ -582,8 +583,8 @@ Cette relation est cohérente avec un échantillonnage poissonien dans lequel la
 <p><span class="citation">Chao et al. (<a href="#ref-Chao2017" role="doc-biblioref">2017</a>)</span> étendent l’applicabilité de l’estimateur Chao2 à des données dans lesquelles les espèces sont notées uniquement comme singletons ou doubletons et plus, sans distinction entre doubletons et espèces plus fréquentes.
 Une relation entre le nombre de doubletons et les données disponibles est fournie; sa résolution numérique (le code R nécessaire est disponible avec l’article) permet d’estimer <span class="math inline">\(s^{n}_{2}\)</span> et de l’injecter dans l’estimateur Chao2.</p>
 </div>
-<div id="lestimateur-ace" class="section level4">
-<h4><span class="header-section-number">3.1.1.2</span> L’estimateur ACE</h4>
+<div id="lestimateur-ace" class="section level4 hasAnchor">
+<h4><span class="header-section-number">3.1.1.2</span> L’estimateur ACE<a href="chap-MesuresNeutres.html#lestimateur-ace" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><span class="citation">Chao et Lee (<a href="#ref-Chao1992" role="doc-biblioref">1992</a>)</span> développent l’estimateur ACE (<em>Abundance-based coverage estimator</em>) à travers l’estimation du taux de couverture <span class="math inline">\(C\)</span>.
 L’estimateur ACE utilise toutes les valeurs de <span class="math inline">\(^{\nu }s\)</span> correspondant aux espèces rares: concrètement, la valeur limite de <span class="math inline">\(\nu\)</span> notée <span class="math inline">\(\kappa\)</span> est fixée arbitrairement, généralement à 10.</p>
 <p>L’estimateur prend en compte le coefficient de variation de la distribution des fréquences (<span class="math inline">\({\hat{p}}_s\)</span>): plus les probabilités sont hétérogènes, plus le nombre d’espèces non observées sera grand.
@@ -608,8 +609,8 @@ Finalement:</p>
 L’estimateur ACE donne normalement une valeur plus grande que Chao1.
 Si ce n’est pas le cas, la limite des espèces rares <span class="math inline">\(\kappa\)</span> doit être augmentée.</p>
 </div>
-<div id="lestimateur-jackknife" class="section level4">
-<h4><span class="header-section-number">3.1.1.3</span> L’estimateur jackknife</h4>
+<div id="lestimateur-jackknife" class="section level4 hasAnchor">
+<h4><span class="header-section-number">3.1.1.3</span> L’estimateur jackknife<a href="chap-MesuresNeutres.html#lestimateur-jackknife" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>La méthode jackknife a pour objectif de réduire le biais d’un estimateur en considérant des jeux de données dans lesquels on a supprimé un certain nombre d’observations (ce nombre est l’ordre de la méthode).
 Burnham et Overton <span class="citation">(<a href="#ref-Burnham1978" role="doc-biblioref">1978</a>, <a href="#ref-Burnham1979" role="doc-biblioref">1979</a>)</span> ont utilisé cette technique pour obtenir des estimateurs du nombre d’espèces, appelés jackknife à l’ordre <span class="math inline">\(j\)</span>, prenant en compte les valeurs de <span class="math inline">\(s^{n}_{1}\)</span> à <span class="math inline">\(s^{n}_{j}\)</span>.
 Les estimateurs du premier et du deuxième ordre sont les plus utilisés en pratique:</p>
@@ -745,8 +746,8 @@ Grâce à cette propriété, l’estimateur du jackknife est additif quand plusi
 Ce n’est pas le cas pour l’estimateur de Chao.</p>
 <p>L’estimateur du jackknife est très utilisé parce qu’il est efficace en pratique, notamment parce que son ordre peut être adapté aux données.</p>
 </div>
-<div id="lestimateur-du-bootstrap" class="section level4">
-<h4><span class="header-section-number">3.1.1.4</span> L’estimateur du bootstrap</h4>
+<div id="lestimateur-du-bootstrap" class="section level4 hasAnchor">
+<h4><span class="header-section-number">3.1.1.4</span> L’estimateur du bootstrap<a href="chap-MesuresNeutres.html#lestimateur-du-bootstrap" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>L’estimateur du bootstrap <span class="citation">(Smith et Belle <a href="#ref-Smith1984" role="doc-biblioref">1984</a>)</span> est
 <span class="math display" id="eq:Smith1984">\[\begin{equation} 
   \tag{3.21}
@@ -754,8 +755,8 @@ Ce n’est pas le cas pour l’estimateur de Chao.</p>
 \end{equation}\]</span></p>
 <p>Il est peu utilisé parce que le jackknife est plus performant <span class="citation">(Colwell et Coddington <a href="#ref-Colwell1994" role="doc-biblioref">1994</a>)</span>.</p>
 </div>
-<div id="calcul" class="section level4">
-<h4><span class="header-section-number">3.1.1.5</span> Calcul</h4>
+<div id="calcul" class="section level4 hasAnchor">
+<h4><span class="header-section-number">3.1.1.5</span> Calcul<a href="chap-MesuresNeutres.html#calcul" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Ces estimateurs peuvent être calculés de façon relativement simple à l’aide du logiciel SPADE, dans sa version pour R <span class="citation">(Chao et al. <a href="#ref-Chao2016c" role="doc-biblioref">2016</a>)</span>.
 Le guide de l’utilisateur présente quelques estimateurs supplémentaires et des directives pour choisir.
 Il est conseillé d’utiliser Chao1 pour une estimation minimale, et ACE pour une estimation moins biaisée de la richesse.</p>
@@ -765,8 +766,8 @@ Il est conseillé d’utiliser Chao1 pour une estimation minimale, et ACE pour u
 L’écart-type de l’estimateur est également fourni par la fonction, sauf pour le jackknife d’ordre 2.</p>
 <p><code>estimateR</code> est basé sur les abondances des espèces et retourne un estimateur de la richesse spécifique par site et non global comme <code>specpool</code>.</p>
 </div>
-<div id="exemple" class="section level4">
-<h4><span class="header-section-number">3.1.1.6</span> Exemple</h4>
+<div id="exemple" class="section level4 hasAnchor">
+<h4><span class="header-section-number">3.1.1.6</span> Exemple<a href="chap-MesuresNeutres.html#exemple" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>On utilise les données de Barro Colorado Island (BCI).
 La parcelle a été divisée en carrés de 1 ha.
 Le tableau d’entrée est un <code>dataframe</code> contenant, pour chaque espèce d’arbres (<span class="math inline">\(\mathit{DBH}\ge\)</span> 10 cm), ses effectifs par carré.</p>
@@ -838,8 +839,8 @@ La fonction <code>jackknife</code> de <em>SPECIES</em> donne le bon résultat, a
 <pre><code>## [1] 234.3517</code></pre>
 <p></p>
 </div>
-<div id="sec-ChoixEstimateur" class="section level4">
-<h4><span class="header-section-number">3.1.1.7</span> Choix de l’estimateur</h4>
+<div id="sec-ChoixEstimateur" class="section level4 hasAnchor">
+<h4><span class="header-section-number">3.1.1.7</span> Choix de l’estimateur<a href="chap-MesuresNeutres.html#sec-ChoixEstimateur" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Des tests poussés ont été menés par <span class="citation">Brose, Martinez, et Williams (<a href="#ref-Brose2003" role="doc-biblioref">2003</a>)</span> pour permettre le choix du meilleur estimateur de la richesse en fonction de la complétude de l’échantillonnage <span class="math inline">\(s^{n}_{\ne 0}/{S}\)</span>.
 Les auteurs appellent cette proportion couverture (<em>coverage</em>).
 Le terme <em>completeness</em> a été proposé par <span class="citation">Beck et Schwanghart (<a href="#ref-Beck2010" role="doc-biblioref">2010</a>)</span> pour éviter la confusion avec le taux de couverture défini par Good (vu en section <a href="chap-Outils.html#sec-Couverture">2.3</a>).
@@ -897,8 +898,8 @@ Le ratio des singletons sur les doubletons diminue quand l’échantillonnage ap
 Quand le seuil de 0,6 est dépassé, la valeur de l’estimateur de Chao devient supérieur au jacknife 2 et doit être utilisé.
 Ce seuil est cohérent avec les règles de <span class="citation">Brose, Martinez, et Williams (<a href="#ref-Brose2003" role="doc-biblioref">2003</a>)</span>.</p>
 </div>
-<div id="sec-Extrapol" class="section level4">
-<h4><span class="header-section-number">3.1.1.8</span> Prédiction de la richesse d’un nouvel échantillon</h4>
+<div id="sec-Extrapol" class="section level4 hasAnchor">
+<h4><span class="header-section-number">3.1.1.8</span> Prédiction de la richesse d’un nouvel échantillon<a href="chap-MesuresNeutres.html#sec-Extrapol" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>La prédiction du nombre d’espèces <span class="math inline">\(\hat{S&#39;}\)</span> découvert dans une nouvelle placette d’un habitat dans lequel on a déjà échantillonné est une question importante, par exemple pour évaluer le nombre d’espèces préservées dans le cadre d’une mise en réserve, ou évaluer le nombre d’espèces perdues en réduisant la surface d’une forêt.</p>
 <p><span class="citation">Shen, Chao, et Lin (<a href="#ref-Shen2003" role="doc-biblioref">2003</a>)</span> proposent un estimateur et le confrontent avec succès à des estimateurs antérieurs.
 On note <span class="math inline">\(\hat{S}^{n}_{0}\)</span> l’estimateur du nombre d’espèces non observées dans le premier échantillon, et <span class="math inline">\(\hat{C}\)</span> l’estimateur de son taux de couverture.
@@ -942,10 +943,10 @@ La courbe obtenue est en figure <a href="chap-MesuresNeutres.html#fig:NonObsNFig
 <p>La question de l’extrapolation de la richesse est traitée plus en détail dans les sections <a href="entropie.html#sec-RarExtrapol">4.6.8</a> et <a href="chap-Accumulation.html#sec-Extrapolation">21.2</a>.</p>
 </div>
 </div>
-<div id="inférence-du-nombre-despèces-à-partir-de-la-sad" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> Inférence du nombre d’espèces à partir de la SAD</h3>
-<div id="distribution-de-preston" class="section level4">
-<h4><span class="header-section-number">3.1.2.1</span> Distribution de Preston</h4>
+<div id="inférence-du-nombre-despèces-à-partir-de-la-sad" class="section level3 hasAnchor">
+<h3><span class="header-section-number">3.1.2</span> Inférence du nombre d’espèces à partir de la SAD<a href="chap-MesuresNeutres.html#inférence-du-nombre-despèces-à-partir-de-la-sad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="distribution-de-preston" class="section level4 hasAnchor">
+<h4><span class="header-section-number">3.1.2.1</span> Distribution de Preston<a href="chap-MesuresNeutres.html#distribution-de-preston" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><span class="citation">Preston (<a href="#ref-Preston1948" role="doc-biblioref">1948</a>)</span> fournit dès l’introduction de son modèle log-normal une technique d’estimation du nombre total d’espèces par la célèbre méthode des octaves.
 Elle est disponible dans le package <em>vegan</em>:</p>
 <p></p>
@@ -974,8 +975,8 @@ Figure 3.5: Ajustement du modèle de Preston aux données de BCI.
 <div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="chap-MesuresNeutres.html#cb78-1"></a><span class="kw">plot</span>(mod.ll)</span></code></pre></div>
 <p></p>
 </div>
-<div id="maximum-de-vraisemblance-dune-distribution-de-fisher" class="section level4">
-<h4><span class="header-section-number">3.1.2.2</span> Maximum de vraisemblance d’une distribution de Fisher</h4>
+<div id="maximum-de-vraisemblance-dune-distribution-de-fisher" class="section level4 hasAnchor">
+<h4><span class="header-section-number">3.1.2.2</span> Maximum de vraisemblance d’une distribution de Fisher<a href="chap-MesuresNeutres.html#maximum-de-vraisemblance-dune-distribution-de-fisher" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><span class="citation">Norris et Pollock (<a href="#ref-Norris1998" role="doc-biblioref">1998</a>)</span> supposent que la distribution des espèces suit le modèle de Fisher (voir chapitre <a href="chap-Fisher.html#chap-Fisher">20</a>) et infèrent le nombre d’espèces par maximum de vraisemblance non paramétrique (ils ne cherchent pas à inférer les paramètres de la loi de probabilité de <span class="math inline">\(p_s\)</span> mais seulement à ajuster au mieux le modèle de Poisson aux valeurs de <span class="math inline">\({\hat{p}}_s\)</span> observées).</p>
 <p>Le calcul est possible avec la librairie <em>SPECIES</em> de R:</p>
 <p></p>
@@ -1027,8 +1028,8 @@ Son défaut est qu’il nécessite un très long temps de calcul (plusieurs heur
 <p></p>
 </div>
 </div>
-<div id="sec-RichesseSAC" class="section level3">
-<h3><span class="header-section-number">3.1.3</span> Inférence du nombre d’espèces à partir de courbes d’accumulation</h3>
+<div id="sec-RichesseSAC" class="section level3 hasAnchor">
+<h3><span class="header-section-number">3.1.3</span> Inférence du nombre d’espèces à partir de courbes d’accumulation<a href="chap-MesuresNeutres.html#sec-RichesseSAC" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Cette approche consiste à extrapoler la courbe d’accumulation observée.</p>
 <p>Le modèle le plus connu est celui de Michaelis-Menten <span class="citation">(Michaelis et Menten <a href="#ref-Michaelis1913" role="doc-biblioref">1913</a>)</span> proposé par <span class="citation">Clench (<a href="#ref-Clench1979" role="doc-biblioref">1979</a>)</span>.
 En fonction de l’effort d’échantillonnage <span class="math inline">\(n\)</span>, évalué en temps (il s’agit de la collecte de papillons), le nombre d’espèces découvert augmente jusqu’à une asymptote égale au nombre d’espèces total:</p>
@@ -1217,15 +1218,15 @@ Elle est très peu utilisée.</p>
 <span id="cb107-12"><a href="chap-MesuresNeutres.html#cb107-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Nombre d&#39;arbres&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span></code></pre></div>
 <p></p>
 </div>
-<div id="diversité-générique" class="section level3">
-<h3><span class="header-section-number">3.1.4</span> Diversité générique</h3>
+<div id="diversité-générique" class="section level3 hasAnchor">
+<h3><span class="header-section-number">3.1.4</span> Diversité générique<a href="chap-MesuresNeutres.html#diversité-générique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La détermination des genres est plus facile et fiable que celle des espèces, le biais d’échantillonnage moins sensible (le nombre de singletons diminue rapidement en regroupant les données), et les coûts d’inventaire sont généralement largement réduits <span class="citation">(Balmford, Jayasuriya, et Green <a href="#ref-Balmford1996b" role="doc-biblioref">1996</a>)</span>.
 Le choix d’estimer la diversité de taxons de rang supérieur (genres ou même familles au lieu des espèces) est envisageable <span class="citation">(Williams et Gaston <a href="#ref-Williams1994" role="doc-biblioref">1994</a>)</span>.</p>
 <p>Empiriquement, la corrélation entre la richesse générique et la richesse spécifique (des angiospermes, des oiseaux et des mammifères) est bonne en forêt tropicale <span class="citation">(Balmford, Green, et Murray <a href="#ref-Balmford1996a" role="doc-biblioref">1996</a>)</span>, suffisante pour comparer les communautés, même si la prédiction de la richesse spécifique à partir de la richesse générique est très imprécise.</p>
 <p><span class="citation">Cartozo et al. (<a href="#ref-Cartozo2008" role="doc-biblioref">2008</a>)</span> ont montré que le nombre de taxons de niveau supérieur (genre par rapport aux espèces, ordres par rapport aux sous-ordres) est universellement proportionnel au nombre de taxons du niveau immédiatement inférieur à la puissance 0,61. Cette relation est validée à l’échelle mondiale pour les systèmes végétaux. La loi de puissance reste valide pour des assemblages aléatoires, c’est donc la conséquence de propriétés mathématiques <span class="citation">(Caldarelli et al. <a href="#ref-Caldarelli2002" role="doc-biblioref">2002</a>)</span>, mais la puissance de la relation est plus élevée (les communautés réelles sont plus agrégées du point de vue phylogénétique que sous l’hypothèse nulle d’un assemblage aléatoire) et varie entre les niveaux.</p>
 </div>
-<div id="combien-y-a-t-il-despèces-différentes-sur-terre" class="section level3">
-<h3><span class="header-section-number">3.1.5</span> Combien y a-t-il d’espèces différentes sur Terre?</h3>
+<div id="combien-y-a-t-il-despèces-différentes-sur-terre" class="section level3 hasAnchor">
+<h3><span class="header-section-number">3.1.5</span> Combien y a-t-il d’espèces différentes sur Terre?<a href="chap-MesuresNeutres.html#combien-y-a-t-il-despèces-différentes-sur-terre" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La question de l’estimation du nombre total d’espèces génère une abondante littérature.
 <span class="citation">Mora et al. (<a href="#ref-Mora2011" role="doc-biblioref">2011</a>)</span> en font une revue et proposent une méthode nouvelle.</p>
 <p>Dans chaque règne, le nombre de taxons de niveaux supérieurs (phylums, classes, ordres, familles et même genres) est estimé par des modèles prolongeant jusqu’à leur asymptote les valeurs connues en fonction du temps.
@@ -1254,10 +1255,10 @@ La relation entre le nombre d’espèces et la surface est celle d’Arrhenius.
 Son extrapolation à la surface terrestre donne environ 220000 espèces, comparables à l’estimation de 275000 espèces rapportée par Mora et al.</p>
 </div>
 </div>
-<div id="indice-de-simpson" class="section level2">
-<h2><span class="header-section-number">3.2</span> Indice de Simpson</h2>
-<div id="définition" class="section level3">
-<h3><span class="header-section-number">3.2.1</span> Définition</h3>
+<div id="indice-de-simpson" class="section level2 hasAnchor">
+<h2><span class="header-section-number">3.2</span> Indice de Simpson<a href="chap-MesuresNeutres.html#indice-de-simpson" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="définition" class="section level3 hasAnchor">
+<h3><span class="header-section-number">3.2.1</span> Définition<a href="chap-MesuresNeutres.html#définition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>On note <span class="math inline">\(p_s\)</span> la probabilité qu’un individu tiré au hasard appartienne à l’espèce <span class="math inline">\(s\)</span>.
 L’indice de <span class="citation">Simpson (<a href="#ref-Simpson1949" role="doc-biblioref">1949</a>)</span>, ou Gini-Simpson, est</p>
 <p><span class="math display" id="eq:SimpsonE">\[\begin{equation}
@@ -1294,8 +1295,8 @@ Le nombre d’espèces doit être estimé par les méthodes présentées plus ha
 <p></p>
 <p>Un historique de la définition de l’indice, de <span class="citation">Gini (<a href="#ref-Gini1912" role="doc-biblioref">1912</a>)</span> à Simpson, inspiré par Turing, est fourni par Ellerman <span class="citation">(<a href="#ref-Ellerman2013" role="doc-biblioref">2013</a>)</span>.</p>
 </div>
-<div id="estimation" class="section level3">
-<h3><span class="header-section-number">3.2.2</span> Estimation</h3>
+<div id="estimation" class="section level3 hasAnchor">
+<h3><span class="header-section-number">3.2.2</span> Estimation<a href="chap-MesuresNeutres.html#estimation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Définissons l’indicatrice <span class="math inline">\({{\mathbf 1}}_{sh}\)</span> valant 1 si l’individu <span class="math inline">\(h\)</span> appartient à l’espèce <span class="math inline">\(s\)</span>, 0 sinon.
 <span class="math inline">\({{\mathbf 1}}_{sh}\)</span> suit une loi de Bernoulli d’espérance <span class="math inline">\(p_s\)</span> et de variance <span class="math inline">\(p_s\left(1-p_s\right)\)</span>.
 <span class="math inline">\(E\)</span> est la somme sur toutes les espèces de cette variance.
@@ -1323,10 +1324,10 @@ Il est négligeable: si <span class="math inline">\(p_s\)</span> est petit, <spa
 <p></p>
 </div>
 </div>
-<div id="indice-de-shannon" class="section level2">
-<h2><span class="header-section-number">3.3</span> Indice de Shannon</h2>
-<div id="définition-1" class="section level3">
-<h3><span class="header-section-number">3.3.1</span> Définition</h3>
+<div id="indice-de-shannon" class="section level2 hasAnchor">
+<h2><span class="header-section-number">3.3</span> Indice de Shannon<a href="chap-MesuresNeutres.html#indice-de-shannon" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="définition-1" class="section level3 hasAnchor">
+<h3><span class="header-section-number">3.3.1</span> Définition<a href="chap-MesuresNeutres.html#définition-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’indice de Shannon <span class="citation">(Shannon <a href="#ref-Shannon1948" role="doc-biblioref">1948</a>; Shannon et Weaver <a href="#ref-Shannon1963" role="doc-biblioref">1963</a>)</span>, aussi appelé indice de Shannon-Weaver ou Shannon-Wiener <span class="citation">(Spellerberg et Feder <a href="#ref-Spellerberg2003" role="doc-biblioref">2003</a>)</span>, ou simplement <em>entropie</em> est dérivé de la théorie de l’information:</p>
 <p><span class="math display" id="eq:Shannon">\[\begin{equation}
   \tag{3.30}
@@ -1388,8 +1389,8 @@ L’indice de Shannon donne une mesure de la biodiversité en tant que quantité
 <p></p>
 <p>La sous-estimation est assez sévère sur cet exemple.</p>
 </div>
-<div id="sec-BiaisShannon" class="section level3">
-<h3><span class="header-section-number">3.3.2</span> Estimation</h3>
+<div id="sec-BiaisShannon" class="section level3 hasAnchor">
+<h3><span class="header-section-number">3.3.2</span> Estimation<a href="chap-MesuresNeutres.html#sec-BiaisShannon" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="citation">Basharin (<a href="#ref-Basharin1959" role="doc-biblioref">1959</a>)</span> a montré que l’estimateur de l’indice de Shannon était biaisé parce que des espèces ne sont pas échantillonnées.
 Si <span class="math inline">\(S\)</span> est le nombre d’espèces réel et <span class="math inline">\(n\)</span> le nombre d’individus échantillonnés, le biais est</p>
 <p><span class="math display" id="eq:Basharin1959">\[\begin{equation}
@@ -1594,10 +1595,10 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat:</p>
 <p>Appliqué à des données de biodiversité aquatique, l’estimateur de James-Stein obtient de meilleurs résultats que celui de Chao et Shen <span class="citation">(Liu et al. <a href="#ref-Liu2015" role="doc-biblioref">2016</a>)</span> quand l’échantillonnage est réduit.</p>
 </div>
 </div>
-<div id="sec-Hurlbert" class="section level2">
-<h2><span class="header-section-number">3.4</span> Indice de Hurlbert</h2>
-<div id="définition-2" class="section level3">
-<h3><span class="header-section-number">3.4.1</span> Définition</h3>
+<div id="sec-Hurlbert" class="section level2 hasAnchor">
+<h2><span class="header-section-number">3.4</span> Indice de Hurlbert<a href="chap-MesuresNeutres.html#sec-Hurlbert" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="définition-2" class="section level3 hasAnchor">
+<h3><span class="header-section-number">3.4.1</span> Définition<a href="chap-MesuresNeutres.html#définition-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’indice de <span class="citation">Hurlbert (<a href="#ref-Hurlbert1971" role="doc-biblioref">1971</a>)</span> est l’espérance du nombre d’espèces observées dans un échantillon de taille <span class="math inline">\(k\)</span> choisie:</p>
 <p><span class="math display" id="eq:HurlbertSk">\[\begin{equation}
   \tag{3.47}
@@ -1629,8 +1630,8 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat:</p>
   ^{1}\!H = -1 + \sum_{k=2}^{\infty}{\frac{_{k}S}{k(k-1)}}.
 \end{equation}\]</span></p>
 </div>
-<div id="estimation-1" class="section level3">
-<h3><span class="header-section-number">3.4.2</span> Estimation</h3>
+<div id="estimation-1" class="section level3 hasAnchor">
+<h3><span class="header-section-number">3.4.2</span> Estimation<a href="chap-MesuresNeutres.html#estimation-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Hurlbert fournit un estimateur non biaisé de son indice (<span class="math inline">\(n\)</span> est la taille de l’échantillon, <span class="math inline">\(n_s\)</span> le nombre d’individus de l’espèce <span class="math inline">\(s\)</span>):</p>
 <p><span class="math display" id="eq:EstHurlbert">\[\begin{equation}
   \tag{3.52}
@@ -1657,7 +1658,7 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat:</p>
 </div>
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references">
 <div id="ref-Ashbridge2000">
 <p>Ashbridge, J., et Ian B. J. Goudie. 2000. « Coverage-Adjusted Estimators for Mark-Recapture in Heterogeneous Populations ». <em>Communications in Statistics - Simulation and Computation</em> 29 (4): 1215‑37. <a href="https://doi.org/10.1080/03610910008813661">https://doi.org/10.1080/03610910008813661</a>.</p>
@@ -1849,7 +1850,7 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat:</p>
 <p>Mendes, R. S., L. R. Evangelista, S. M. Thomaz, A. A. Agostinho, et L. C. Gomes. 2008. « A Unified Index to Measure Ecological Diversity and Species Rarity ». <em>Ecography</em> 31 (4): 450‑56. <a href="https://doi.org/10.1111/j.0906-7590.2008.05469.x">https://doi.org/10.1111/j.0906-7590.2008.05469.x</a>.</p>
 </div>
 <div id="ref-Michaelis1913">
-<p>Michaelis, L., et Maud L. Menten. 1913. « Die Kinetik Der Invertinwirkung ». <em>Biochemische Zeitschrift</em> 49: 333‑69. <a href="http://www.ncbi.nlm.nih.gov/pubmed/21888353">http://www.ncbi.nlm.nih.gov/pubmed/21888353</a>.</p>
+<p>Michaelis, L., et Maud L. Menten. 1913. « Die Kinetik Der Invertinwirkung ». <em>Biochemische Zeitschrift</em> 49: 333‑69. <a href="https://www.ncbi.nlm.nih.gov/pubmed/21888353">https://www.ncbi.nlm.nih.gov/pubmed/21888353</a>.</p>
 </div>
 <div id="ref-Miller1955">
 <p>Miller, G. A. 1955. « Note on the Bias of Information Estimates ». In <em>Information Theory in Psychology: Problems and Methods</em>, édité par Henry Quastler, 95‑100. Free Press.</p>
@@ -1933,7 +1934,7 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat:</p>
 <p>Vu, Vincent Q., Bin Yu, et Robert E. Kass. 2007. « Coverage-Adjusted Entropy Estimation ». <em>Statistics in Medicine</em> 26 (21): 4039‑60. <a href="https://doi.org/10.1002/sim.2942">https://doi.org/10.1002/sim.2942</a>.</p>
 </div>
 <div id="ref-Wang2010">
-<p>Wang, Ji-Ping. 2010. « Estimating Species Richness by a Poisson-Compound Gamma Model ». <em>Biometrika</em> 97 (3): 727‑40. <a href="https://doi.org/10.1093/biomet/asq026">https://doi.org/10.1093/biomet/asq026</a>.</p>
+<p>Wang, Ji-Ping. 2010. « Estimating Species Richness by a Poisson-compound Gamma Model ». <em>Biometrika</em> 97 (3): 727‑40. <a href="https://doi.org/10.1093/biomet/asq026">https://doi.org/10.1093/biomet/asq026</a>.</p>
 </div>
 <div id="ref-Wang2011">
 <p>Wang, Ji-Ping. 2011. « SPECIES: An R Package for Species Richness Estimation ». <em>Journal of Statistical Software</em> 40 (9): 1‑15. <a href="https://doi.org/10.18637/jss.v040.i09">https://doi.org/10.18637/jss.v040.i09</a>.</p>

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>23 Diversité \(\beta\) spatialement explicite | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="23 Diversité \(\beta\) spatialement explicite | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   <meta property="og:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png" />
   <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
@@ -50,8 +49,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,7 +61,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-163419632-1');
+  gtag('config', 'UA-163419632-1'); 
+  gtag('config', 'G-C1B3PLBCM6');
 </script>
 
 
@@ -440,8 +441,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap-betasp" class="section level1">
-<h1><span class="header-section-number">23</span> Diversité <span class="math inline">\(\beta\)</span> spatialement explicite</h1>
+<div id="chap-betasp" class="section level1 hasAnchor">
+<h1><span class="header-section-number">23</span> Diversité <span class="math inline">\(\beta\)</span> spatialement explicite<a href="chap-betasp.html#chap-betasp" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
 <div class="Summary">
 <p>
@@ -451,9 +452,9 @@ L’indice de Simpson spatialement explicite ou le variogramme de complémentari
 
 <p>La diversité <span class="math inline">\(\beta\)</span> de différentiation mesure à quel point deux communautés sont différentes entre elles.
 Elle peut être reliée à la distance entre les communautés pour définir une diversité <span class="math inline">\(\beta\)</span> spatialement explicite.</p>
-<div id="sec-SimpsonSpatial" class="section level2">
-<h2><span class="header-section-number">23.1</span> L’indice de Simpson spatialement explicite</h2>
-<p><span class="citation">Chave et Leigh (<a href="#ref-Chave2002" role="doc-biblioref">2002</a>)</span> écrivent un modèle neutre de dispersion des espèces forestières, appliqué à l’échelle de l’Amazonie occidentale<span class="citation">(Condit et al. <a href="#ref-Condit2002" role="doc-biblioref">2002</a>)</span>.
+<div id="sec-SimpsonSpatial" class="section level2 hasAnchor">
+<h2><span class="header-section-number">23.1</span> L’indice de Simpson spatialement explicite<a href="chap-betasp.html#sec-SimpsonSpatial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="citation">Chave et Leigh (<a href="#ref-Chave2002" role="doc-biblioref">2002</a>)</span> écrivent un modèle neutre de dispersion des espèces forestières, appliqué à l’échelle de l’Amazonie occidentale <span class="citation">(Condit et al. <a href="#ref-Condit2002" role="doc-biblioref">2002</a>)</span>.
 Ils définissent dans ce cadre la fonction <span class="math inline">\(F(r)\)</span> égale à la probabilité que deux individus situés à distance <span class="math inline">\(r\)</span> l’un de l’autre soient de la même espèce, c’est-a-dire l’indice de concentration de Simpson <a href="chap-MesuresNeutres.html#eq:SimpsonD">(3.26)</a>, appliqué à des paires d’individus distants.
 <span class="math inline">\(\beta_s(r)=1-F(r)\)</span> est appelé “indice de Simpson spatialement explicite” par <span class="citation">Shen et al. (<a href="#ref-Shen2013" role="doc-biblioref">2013</a>)</span>
 En pratique il est estimé à partir d’individus situés dans des parcelles distantes de <span class="math inline">\(r\)</span>, l’ordre de grandeur de <span class="math inline">\(r\)</span> étant nettement plus grand que la taille des parcelles.</p>
@@ -477,8 +478,8 @@ L’entropie <span class="math inline">\(\beta\)</span> de Simpson (équation <a
 L’extension à <span class="math inline">\(\beta_{phy}(r)\)</span> est immédiate, en remplaçant l’entropie de Simpson par celle de Rao.</p>
 <p>Il est donc préférable de calculer la diversité <span class="math inline">\(\beta\)</span> de Simpson ou de Rao plutôt que <span class="math inline">\(\beta_{s}(r)\)</span> ou <span class="math inline">\(\beta_{phy}(r)\)</span>.</p>
 </div>
-<div id="le-variogramme-de-complémentarité" class="section level2">
-<h2><span class="header-section-number">23.2</span> Le variogramme de complémentarité</h2>
+<div id="le-variogramme-de-complémentarité" class="section level2 hasAnchor">
+<h2><span class="header-section-number">23.2</span> Le variogramme de complémentarité<a href="chap-betasp.html#le-variogramme-de-complémentarité" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><span class="citation">Wagner (<a href="#ref-Wagner2003" role="doc-biblioref">2003</a>)</span> définit le variogramme de complémentarité à partir des techniques de géostatistique.
 Les espèces sont inventoriées dans des parcelles de taille identique, en présence-absence.
 Les distances entre parcelles sont regroupées par classes.
@@ -528,7 +529,7 @@ Le test d’égalité entre <span class="math inline">\(\operatorname{Var}(S)\)<
 
 
 
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references">
 <div id="ref-Bacaro2007a">
 <p>Bacaro, Giovanni, et Carlo Ricotta. 2007. « A Spatially Explicit Measure of Beta Diversity ». <em>Community Ecology</em> 8 (1): 41‑46. <a href="https://doi.org/10.1556/ComEc.8.2007.1.6">https://doi.org/10.1556/ComEc.8.2007.1.6</a>.</p>

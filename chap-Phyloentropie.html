@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Entropie phylogénétique | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Entropie phylogénétique | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   <meta property="og:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png" />
   <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
@@ -50,8 +49,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,7 +61,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-163419632-1');
+  gtag('config', 'UA-163419632-1'); 
+  gtag('config', 'G-C1B3PLBCM6');
 </script>
 
 
@@ -440,8 +441,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap-Phyloentropie" class="section level1">
-<h1><span class="header-section-number">8</span> Entropie phylogénétique</h1>
+<div id="chap-Phyloentropie" class="section level1 hasAnchor">
+<h1><span class="header-section-number">8</span> Entropie phylogénétique<a href="chap-Phyloentropie.html#chap-Phyloentropie" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p></p>
 <div class="Summary">
 <p>
@@ -450,8 +451,8 @@ L’entropie phylogénétique est la moyenne de l’entropie HCDT le long d’un
 </div>
 <p></p>
 <p>L’entropie HCDT peut être étendue pour définir une mesure de diversité prenant en compte l’histoire évolutive des espèces.</p>
-<div id="généralisation-de-lentropie-hcdt" class="section level2">
-<h2><span class="header-section-number">8.1</span> Généralisation de l’entropie HCDT</h2>
+<div id="généralisation-de-lentropie-hcdt" class="section level2 hasAnchor">
+<h2><span class="header-section-number">8.1</span> Généralisation de l’entropie HCDT<a href="chap-Phyloentropie.html#généralisation-de-lentropie-hcdt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><span class="citation">Pavoine et Bonsall (<a href="#ref-Pavoine2009" role="doc-biblioref">2009</a>)</span> découpent l’arbre phylogénétique en périodes.
 À partir de la racine de l’arbre, une nouvelle période est définie à chaque ramification d’une branche quelconque.
 Les débuts et fins de périodes sont notés <span class="math inline">\(t_k\)</span>, la racine de l’arbre est fixée à <span class="math inline">\(t_0=0\)</span>.
@@ -486,8 +487,8 @@ On peut les interpréter intuitivement comme une somme pondérée par la longueu
 En remontant dans l’arbre, les classes se confondent et la diversité diminue progressivement.
 Deux classes peu distantes, comme les espèces 3 à 5 de la figure <a href="chap-Phyloentropie.html#fig:ArbreA5">8.1</a>, apportent peu de diversité supplémentaire par rapport à une situation où les deux espèces seraient confondues (et leurs effectifs ajoutés), contrairement aux espèces 1 et 2.</p>
 </div>
-<div id="sec-phyloEstimation" class="section level2">
-<h2><span class="header-section-number">8.2</span> Estimation</h2>
+<div id="sec-phyloEstimation" class="section level2 hasAnchor">
+<h2><span class="header-section-number">8.2</span> Estimation<a href="chap-Phyloentropie.html#sec-phyloEstimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La correction du biais d’estimation applicable à l’entropie généralisée l’est aussi à chaque période de l’arbre.
 Les biais sont de moins en moins importants quand on se rapproche de la racine de l’arbre: il est de moins en moins probable de ne pas observer une classe quand les classes sont de plus en plus vastes.</p>
 <p>Le package <em>entropart</em> fournit la fonction <code>PhyloEntropy</code> pour calculer <span class="math inline">\(^{q}\!\bar{H}(T)\)</span> à partir d’un vecteur de probabilité ou d’abondances.
@@ -534,8 +535,8 @@ Le calcul de l’indice de Rao, corrigé du biais d’estimation utilise le code
 <p></p>
 <p>La fonction retourne la valeur de <span class="math inline">\(^{q}_{k}\!H\)</span> dans chaque intervalle (l’arbre est ici une taxonomie espèce-genre-famille, correspondant aux limites des périodes (<code>Cuts</code>) 1, 2 et 3 dont l’entropie va en décroissant) et la valeur de <span class="math inline">\(^{q}\!\bar{H}(T)\)</span>.</p>
 </div>
-<div id="sec-phyloEntopieDiv" class="section level2">
-<h2><span class="header-section-number">8.3</span> Entropie et diversité</h2>
+<div id="sec-phyloEntopieDiv" class="section level2 hasAnchor">
+<h2><span class="header-section-number">8.3</span> Entropie et diversité<a href="chap-Phyloentropie.html#sec-phyloEntopieDiv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La diversité phylogénétique est le nombre d’espèces équifréquentes et dont la distance à toutes les autres dans la phylogénie est maximale, dont l’entropie serait égale à l’entropie observée.</p>
 <p>La possibilité de choisir comme distance de référence entre espèces une valeur inférieure à la distance maximale est discutée par <span class="citation">Ricotta et Acosta (<a href="#ref-Ricotta2014a" role="doc-biblioref">2014</a>)</span> pour la diversité fonctionnelle: sa signification biologique est liée à l’espace fonctionnel disponible pour la communauté, qui peut être trop réduit pour permettre la coexistence d’espèces dont la dissimilarité serait maximale.</p>
 <p>L’entropie <span class="math inline">\(^{q}\!\bar{H}(T)\)</span> peut être transformée en diversité <span class="citation">(Marcon et al. <a href="#ref-Marcon2014a" role="doc-biblioref">2014</a>)</span> de la même façon que <span class="math inline">\(^{q}\!D = e^{^{q}\!H}\)</span>:</p>
@@ -593,15 +594,15 @@ Les diversités <span class="math inline">\(^{q}_{k}\!D\)</span> calculées à c
 ## [1] &quot;PhyloDiversity&quot; &quot;PhyloValue&quot;</code></pre>
 <p></p>
 </div>
-<div id="diversité-individuelle" class="section level2">
-<h2><span class="header-section-number">8.4</span> Diversité individuelle</h2>
+<div id="diversité-individuelle" class="section level2 hasAnchor">
+<h2><span class="header-section-number">8.4</span> Diversité individuelle<a href="chap-Phyloentropie.html#diversité-individuelle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La construction de la diversité fonctionnelle ou phylogénétique n’implique pas de regrouper les individus par espèces: chaque catégorie peut se réduire à un individu si des données individuelles moléculaires ou de traits sont disponibles.</p>
 <p>Le regroupement des individus en une espèce revient simplement à considérer leur distance comme nulle.
 Diviser une espèce en deux espèces infiniment proches revient seulement à créer une période supplémentaire dans l’arbre, de longueur infinitésimale; en d’autres termes, la mesure de diversité est continue face au regroupement.
 Cette propriété permet de limiter les conséquences du problème de l’espèce: séparer les individus d’une espèce en deux espèces proches dans l’arbre n’a que peu d’effet sur la diversité.</p>
 </div>
-<div id="arbres-non-ultramétriques" class="section level2">
-<h2><span class="header-section-number">8.5</span> Arbres non ultramétriques</h2>
+<div id="arbres-non-ultramétriques" class="section level2 hasAnchor">
+<h2><span class="header-section-number">8.5</span> Arbres non ultramétriques<a href="chap-Phyloentropie.html#arbres-non-ultramétriques" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p></p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:Chao2010"></span>
 <img src="images/Chao2010.png" alt="Arbre phylogénétique hypothétique non ultramétrique" width="40%" />
@@ -619,7 +620,7 @@ Cette généralisation est très discutable: son sens n’est pas clair sur le p
 <p>Dans l’état actuel des connaissances, aucune méthode n’est applicable de façon satisfaisante aux arbres non ultramétriques.</p>
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references">
 <div id="ref-Allen2009">
 <p>Allen, Benjamin, Mark Kon, et Yaneer Bar-Yam. 2009. « A New Phylogenetic Diversity Measure Generalizing the Shannon Index and Its Application to Phyllostomid Bats ». <em>American Naturalist</em> 174 (2): 236‑43. <a href="https://doi.org/10.1086/600101">https://doi.org/10.1086/600101</a>.</p>

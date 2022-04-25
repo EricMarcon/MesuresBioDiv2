@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Entropie | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Entropie | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   <meta property="og:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png" />
   <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
@@ -50,8 +49,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,7 +61,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-163419632-1');
+  gtag('config', 'UA-163419632-1'); 
+  gtag('config', 'G-C1B3PLBCM6');
 </script>
 
 
@@ -440,8 +441,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="entropie" class="section level1">
-<h1><span class="header-section-number">4</span> Entropie</h1>
+<div id="entropie" class="section level1 hasAnchor">
+<h1><span class="header-section-number">4</span> Entropie<a href="entropie.html#entropie" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p></p>
 <div class="Summary">
 <p>
@@ -458,8 +459,8 @@ L’estimation de la diversité est difficile pour des ordres inférieurs à <sp
 <p>L’entropie peut être entendue comme la surprise moyenne fournie par l’observation d’un échantillon.
 C’est intuitivement une bonne mesure de diversité <span class="citation">(Pielou <a href="#ref-Pielou1975" role="doc-biblioref">1975</a>)</span>.
 Ses propriétés mathématiques permettent d’unifier les mesures de diversité dans un cadre général.</p>
-<div id="définition-de-lentropie" class="section level2">
-<h2><span class="header-section-number">4.1</span> Définition de l’entropie</h2>
+<div id="définition-de-lentropie" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.1</span> Définition de l’entropie<a href="entropie.html#définition-de-lentropie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Les textes fondateurs sont <span class="citation">Davis (<a href="#ref-Davis1941" role="doc-biblioref">1941</a>)</span> et surtout <span class="citation">Theil (<a href="#ref-Theil1967" role="doc-biblioref">1967</a>)</span> en économétrie, et Shannon <span class="citation">(<a href="#ref-Shannon1948" role="doc-biblioref">1948</a>; <a href="#ref-Shannon1963" role="doc-biblioref">1963</a>)</span> pour la mesure de la diversité.
 Une revue est fournie par <span class="citation">Maasoumi (<a href="#ref-Maasoumi1993" role="doc-biblioref">1993</a>)</span>.</p>
 <p>Considérons une expérience dont les résultats possibles sont <span class="math inline">\(\left\{r_1,r_2,\dots ,\ r_S\right\}\)</span>.
@@ -524,8 +525,8 @@ Figure 4.2: Valeur de <span class="math inline">\(p_{s}I(p_s)\)</span> dans le n
 <span id="cb148-6"><a href="entropie.html#cb148-6"></a>    <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;p&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;H(p)&quot;</span>)</span></code></pre></div>
 <p></p>
 </div>
-<div id="entropie-relative" class="section level2">
-<h2><span class="header-section-number">4.2</span> Entropie relative</h2>
+<div id="entropie-relative" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.2</span> Entropie relative<a href="entropie.html#entropie-relative" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Considérons maintenant les probabilités <span class="math inline">\(q_s\)</span> formant l’ensemble <span class="math inline">\(\mathbf{q}\)</span> obtenues par la réalisation de l’expérience.
 Elles sont différentes des probabilités <span class="math inline">\(p_s\)</span>, par exemple parce que l’expérience ne s’est pas déroulée exactement comme prévu.
 On définit le gain d’information <span class="math inline">\(I(q_s,p_s)\)</span> comme la quantité d’information supplémentaire fournie par l’observation d’un résultat de l’expérience, connaissant les probabilités <em>a priori</em>.
@@ -569,8 +570,8 @@ Les valeurs de chaque terme de la divergence sont représentées en figure <a hr
 <span id="cb149-8"><a href="entropie.html#cb149-8"></a>    <span class="dv">4</span>, <span class="dv">1</span>)), <span class="dt">labcex =</span> <span class="dv">1</span>, <span class="dt">add =</span> T)</span></code></pre></div>
 <p></p>
 </div>
-<div id="lappropriation-de-lentropie-par-la-biodiversité" class="section level2">
-<h2><span class="header-section-number">4.3</span> L’appropriation de l’entropie par la biodiversité</h2>
+<div id="lappropriation-de-lentropie-par-la-biodiversité" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.3</span> L’appropriation de l’entropie par la biodiversité<a href="entropie.html#lappropriation-de-lentropie-par-la-biodiversité" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><span class="citation">MacArthur (<a href="#ref-MacArthur1955" role="doc-biblioref">1955</a>)</span> est le premier à avoir introduit la théorie de l’information en écologie <span class="citation">(Ulanowicz <a href="#ref-Ulanowicz2001" role="doc-biblioref">2001</a>)</span>.
 MacArthur s’intéressait aux réseaux trophiques et cherchait à mesurer leur stabilité: l’indice de Shannon qui comptabilise le nombre de relations possibles lui paraissait une bonne façon de l’évaluer.
 Mais l’efficacité implique la spécialisation, ignorée dans <span class="math inline">\(H\)</span> qui est une mesure neutre (toutes les espèces y jouent le même rôle).
@@ -625,8 +626,8 @@ Ainsi, les espèces les plus originales apportent peu d’information, ce qui n�
 Les auteurs montrent que leur mesure est la somme de l’entropie de Shannon et de la divergence de Kullback-Leibler entre les probabilités et les dissimilarités des espèces.
 <span class="citation">Ricotta et Szeidl (<a href="#ref-Ricotta2006b" role="doc-biblioref">2006</a>)</span> ont défini plus tard une entropie augmentant avec l’originalité de chaque espèce, présentée au chapitre <a href="chap-LeinsterCobbold.html#chap-LeinsterCobbold">9</a>.</p>
 </div>
-<div id="entropie-hcdt" class="section level2">
-<h2><span class="header-section-number">4.4</span> Entropie HCDT</h2>
+<div id="entropie-hcdt" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.4</span> Entropie HCDT<a href="entropie.html#entropie-hcdt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><span class="citation">Tsallis (<a href="#ref-Tsallis1988" role="doc-biblioref">1988</a>)</span> propose une classe de mesures appelée entropie généralisée, définie par <span class="citation">Havrda et Charvát (<a href="#ref-Havrda1967" role="doc-biblioref">1967</a>)</span> pour la première fois et redécouverte plusieurs fois, notamment par <span class="citation">Daróczy (<a href="#ref-Daroczy1970" role="doc-biblioref">1970</a>)</span>, d’où son nom <em>entropie HCDT</em> (voir <span class="citation">Mendes et al. (<a href="#ref-Mendes2008" role="doc-biblioref">2008</a>)</span>, page 451, pour un historique complet):</p>
 <p><span class="math display" id="eq:HCDT">\[\begin{equation}
   \tag{4.5}
@@ -643,8 +644,8 @@ Là encore:</p>
 <p>L’entropie HCDT est particulièrement attractive parce que sa relation avec la diversité au sens strict est simple, après introduction du formalisme adapté (les logarithmes déformés).
 Son biais d’estimation peut être corrigé globalement, et non seulement pour les cas particuliers (nombre d’espèces, Shannon, Simpson).
 Enfin, sa décomposition sera présentée en détail dans le chapitre <a href="chap-DedompHCDT.html#chap-DedompHCDT">12</a>.</p>
-<div id="logarithmes-déformés" class="section level3">
-<h3><span class="header-section-number">4.4.1</span> Logarithmes déformés</h3>
+<div id="logarithmes-déformés" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.4.1</span> Logarithmes déformés<a href="entropie.html#logarithmes-déformés" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’écriture de l’entropie HCDT est largement simplifiée en introduisant le formalisme des logarithmes déformés <span class="citation">(Tsallis <a href="#ref-Tsallis1994" role="doc-biblioref">1994</a>)</span>.
 Le logarithme d’ordre <span class="math inline">\(q\)</span> est défini par
 <span class="math display" id="eq:lnq">\[\begin{equation}
@@ -734,8 +735,8 @@ Figure 4.4: Valeur du logarithme d’ordre <span class="math inline">\(q\)</span
 ## 1.715954</code></pre>
 <p></p>
 </div>
-<div id="entropie-et-diversité" class="section level3">
-<h3><span class="header-section-number">4.4.2</span> Entropie et diversité</h3>
+<div id="entropie-et-diversité" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.4.2</span> Entropie et diversité<a href="entropie.html#entropie-et-diversité" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>On voit immédiatement que l’entropie de Tsallis est le logarithme d’ordre <span class="math inline">\(q\)</span> du nombre de Hill correspondant, comme l’entropie de Rényi en est le logarithme naturel:</p>
 <p><span class="math display" id="eq:HlnD">\[\begin{equation}
   \tag{4.17}
@@ -782,8 +783,8 @@ L’entropie doit être une fonction concave des probabilités comme on l’a vu
 L’entropie est une moyenne pondérée par les probabilités de la fonction d’information, c’est donc une fonction linéaire des probabilités, propriété importante pour définir l’entropie <span class="math inline">\(\alpha\)</span> (section <a href="sec-betaCadre.html#sec-defalpha">10.3.4</a>) comme la moyenne des entropies de plusieurs communautés, ou l’entropie phylogénétique (chapitre <a href="chap-Phyloentropie.html#chap-Phyloentropie">8</a>) comme la moyenne de l’entropie sur les périodes d’un arbre.
 La diversité n’est pas une fonction linéaire des probabilités: la diversité moyenne n’est en général pas la moyenne des diversités.</p>
 </div>
-<div id="synthèse-1" class="section level3">
-<h3><span class="header-section-number">4.4.3</span> Synthèse</h3>
+<div id="synthèse-1" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.4.3</span> Synthèse<a href="entropie.html#synthèse-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’inverse de la probabilité d’une espèce, <span class="math inline">\(1/p_s\)</span>, définit sa rareté.
 L’entropie est la moyenne du logarithme de la rareté:</p>
 <p><span class="math display" id="eq:EntropieRarete">\[\begin{equation}
@@ -797,8 +798,8 @@ L’entropie est la moyenne du logarithme de la rareté:</p>
 \end{equation}\]</span></p>
 </div>
 </div>
-<div id="profils-de-diversité" class="section level2">
-<h2><span class="header-section-number">4.5</span> Profils de diversité</h2>
+<div id="profils-de-diversité" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.5</span> Profils de diversité<a href="entropie.html#profils-de-diversité" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><span class="citation">Leinster et Cobbold (<a href="#ref-Leinster2012" role="doc-biblioref">2012</a>)</span>, après <span class="citation">Hill (<a href="#ref-Hill1973" role="doc-biblioref">1973</a>)</span>, <span class="citation">Patil et Taillie (<a href="#ref-Patil1982" role="doc-biblioref">1982</a>)</span>, <span class="citation">Tothmeresz (<a href="#ref-Tothmeresz1995" role="doc-biblioref">1995</a>)</span> et <span class="citation">Kindt, Van Damme, et Simons (<a href="#ref-Kindt2006" role="doc-biblioref">2006</a>)</span>, recommandent de tracer des profils de diversité, c’est-à-dire la valeur de la diversité <span class="math inline">\(^{q}\!D\)</span> en fonction de l’ordre <span class="math inline">\(q\)</span> (figure <a href="entropie.html#fig:ProfilDivFig">4.5</a>) pour comparer plusieurs communautés.
 Une communauté peut être déclarée plus diverse qu’une autre si son profil de diversité est au-dessus de l’autre pour toutes les valeurs de <span class="math inline">\(q\)</span>.
 Si les courbes se croisent, il n’y a pas de relation d’ordre <span class="citation">(Tothmeresz <a href="#ref-Tothmeresz1995" role="doc-biblioref">1995</a>)</span>.</p>
@@ -861,10 +862,10 @@ Figure 4.6: Profil de queue de distribution calculé pour les deux parcelles de 
 En revanche, il ne prend pas en compte les espèces non observées.</p>
 <p><span class="citation">Fattorini et Marcheselli (<a href="#ref-Fattorini1999" role="doc-biblioref">1999</a>)</span> proposent un test pour comparer deux profils de queue de distribution à partir d’échantillonnages multiples (nécessaires pour évaluer la variance de chacune des probabilités) mais qui néglige les espèces non observées.</p>
 </div>
-<div id="estimation-de-lentropie" class="section level2">
-<h2><span class="header-section-number">4.6</span> Estimation de l’entropie</h2>
-<div id="zhang-et-grabchak" class="section level3">
-<h3><span class="header-section-number">4.6.1</span> Zhang et Grabchak</h3>
+<div id="estimation-de-lentropie" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.6</span> Estimation de l’entropie<a href="entropie.html#estimation-de-lentropie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="zhang-et-grabchak" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.6.1</span> Zhang et Grabchak<a href="entropie.html#zhang-et-grabchak" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="citation">Zhang et Grabchak (<a href="#ref-Zhang2014" role="doc-biblioref">2016</a>)</span> montrent que toutes les mesures d’entropie usuelles sont des combinaisons linéaires de <span class="math inline">\({\zeta}_{u,v}\)</span> <a href="chap-MesuresNeutres.html#eq:zeta">(3.38)</a>.
 À partir des estimateurs de <span class="math inline">\({\zeta}_{u,v}\)</span> <span class="citation">(Zhang et Zhou <a href="#ref-Zhang2010" role="doc-biblioref">2010</a>)</span>, l’estimateur suivant est proposé pour <span class="math inline">\(h_q=\sum^S_{s=1}{p^q_s}\)</span>:</p>
 <p><span class="math display" id="eq:Zhang2014hq">\[\begin{equation}
@@ -896,8 +897,8 @@ Il a été également obtenu par d’autres auteurs <span class="citation">(Mao 
 ##      127.2823</code></pre>
 <p></p>
 </div>
-<div id="sec-BiaisHCDT" class="section level3">
-<h3><span class="header-section-number">4.6.2</span> Chao et Jost</h3>
+<div id="sec-BiaisHCDT" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.6.2</span> Chao et Jost<a href="entropie.html#sec-BiaisHCDT" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="citation">Chao et Jost (<a href="#ref-Chao2015" role="doc-biblioref">2015</a>)</span> complètent cet estimateur par une estimation du biais résiduel, selon la même démarche que pour l’entropie de Shannon <span class="citation">(Chao, Wang, et Jost <a href="#ref-Chao2013" role="doc-biblioref">2013</a>)</span>.
 <span class="math inline">\(h_q\)</span> s’écrit sous la forme de la somme infinie des entropies de Simpson généralisées: <span class="math inline">\(h_q = \sum_{k=0}^{\infty}{\binom{q-1}{k}(-1)^k\zeta_{1,k}}\)</span>.
 Alors que l’estimateur de Zhang et Grabchak ne prend en compte que les <span class="math inline">\(n-1\)</span> premiers termes de la somme pour un estimateur sans biais; <span class="citation">Chao et Jost (<a href="#ref-Chao2015" role="doc-biblioref">2015</a>)</span>, eqn 5, le complètent par une estimation, forcément biaisée, des termes suivants pour obtenir:</p>
@@ -939,8 +940,8 @@ On obtient</p>
 L’estimateur de <span class="math inline">\(h_q\)</span> est obtenu en remplaçant les termes <span class="math inline">\(\zeta_{1,k}\)</span> de la somme infinie <span class="math inline">\(\sum_{k=n}^{\infty}{\binom{q-1}{k}(-1)^k \zeta_{1,k}}\)</span> par la valeur de <span class="math inline">\(1 -{\mathbb E}(C^{n+m})\)</span> calculée dans l’équation <a href="entropie.html#eq:Cnm">(4.27)</a>.
 La formule obtenue contient le développement en série entière de <span class="math inline">\([1 - (1-A)^{q-1}]\)</span>, ce qui permet d’éliminer la somme infinie et d’obtenir l’estimateur de l’équation <a href="entropie.html#eq:HqChaoJost">(4.25)</a> après simplifications <span class="citation">(Chao et Jost <a href="#ref-Chao2015" role="doc-biblioref">2015</a>, Appendix S1, Theorem S1.2d)</span>.</p>
 </div>
-<div id="autres-méthodes" class="section level3">
-<h3><span class="header-section-number">4.6.3</span> Autres méthodes</h3>
+<div id="autres-méthodes" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.6.3</span> Autres méthodes<a href="entropie.html#autres-méthodes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Deux autres approches sont possibles <span class="citation">(Marcon et al. <a href="#ref-Marcon2014a" role="doc-biblioref">2014</a>)</span>:</p>
 <ul>
 <li>Celle de <span class="citation">Chao et Shen (<a href="#ref-Chao2003" role="doc-biblioref">2003</a>)</span>, étendue au-delà de l’entropie de Shannon qui prend en compte les espèces non observées;</li>
@@ -981,8 +982,8 @@ Un simple estimateur plug-in, appelé “estimateur révélé”, peut ensuite �
 <p>L’estimateur du taux de couverture généralisé ne fait aucune hypothèse sur les espèces non observées, et n’utilise que le taux de couverture et la technique de Horvitz-Thompson pour estimer leur contribution.
 L’estimateur révélé ne tente aucune correction mais utilise l’estimation la meilleure possible pour la distribution des probabilités.</p>
 </div>
-<div id="biais-des-estimateurs" class="section level3">
-<h3><span class="header-section-number">4.6.4</span> Biais des estimateurs</h3>
+<div id="biais-des-estimateurs" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.6.4</span> Biais des estimateurs<a href="entropie.html#biais-des-estimateurs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Étant donné la distribution des probabilités des espèces dans la communauté, l’échantillon
 inventorié peut être considéré comme un tirage dans une loi multinomiale, qui contient pas toutes les espèces.
 Par simulation à partir d’une distribution connue, il est possible de tirer un grand nombre d’échantillons et de répéter l’estimation de la diversité sur chacun d’eux.
@@ -1001,8 +1002,8 @@ L’estimateur maximal est excessivement conservateur (il est conçu pour borner
 <p>Dans des conditions moins difficiles, correspondant à des communautés moins riches (typiquement des forêts tropicales), l’estimation est précise dès <span class="math inline">\(q=0,5\)</span> <span class="citation">(Marcon <a href="#ref-Marcon2015a" role="doc-biblioref">2015</a>)</span>.
 Ces résultats sont développés plus loin.</p>
 </div>
-<div id="intervalle-de-confiance-des-estimateurs" class="section level3">
-<h3><span class="header-section-number">4.6.5</span> Intervalle de confiance des estimateurs</h3>
+<div id="intervalle-de-confiance-des-estimateurs" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.6.5</span> Intervalle de confiance des estimateurs<a href="entropie.html#intervalle-de-confiance-des-estimateurs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>À partir de données d’inventaire, l’estimation du biais est impossible (sinon, le biais serait simplement ajouté à l’estimateur pour le rendre sans biais).
 La variabilité de l’estimateur peut être évaluée en générant des communautés par bootstrap et en estimant leur diversité comme dans la méthode précédente.
 Les communautés peuvent être simulées par tirage dans une loi multinomiale respectant les probabilités observées <span class="citation">(Marcon et al. <a href="#ref-Marcon2012a" role="doc-biblioref">2012</a>, <a href="#ref-Marcon2014a" role="doc-biblioref">2014</a>)</span>.
@@ -1037,8 +1038,8 @@ Leur somme est égale au déficit de couverture, et leur nombre estimé par Chao
 <p>L’intervalle de confiance de l’estimateur obtenu par cette technique à partir des données permet de connaître sa variabilité, mais pas son biais.
 Il n’est absolument pas garanti (et peu probable si l’échantillonnage est faible et <span class="math inline">\(q\)</span> petit) que la vraie valeur de la diversité se trouve dans l’intervalle de confiance.</p>
 </div>
-<div id="pratique-de-lestimation" class="section level3">
-<h3><span class="header-section-number">4.6.6</span> Pratique de l’estimation</h3>
+<div id="pratique-de-lestimation" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.6.6</span> Pratique de l’estimation<a href="entropie.html#pratique-de-lestimation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La conversion de l’estimateur de l’entropie en estimateur de la diversité pose un nouveau problème puisque <span class="math inline">\(^{q}\!D\)</span> n’est pas une transformation linéaire de <span class="math inline">\(^{q}\!H\)</span>.
 Ce dernier biais peut être négligé <span class="citation">(Grassberger <a href="#ref-Grassberger1988" role="doc-biblioref">1988</a>)</span> parce que <span class="math inline">\(^{q}\!H\)</span>, l’entropie, est la valeur moyenne de l’information de nombreuses espèces indépendantes et fluctue donc peu à cause de l’échantillonnage, contrairement aux estimateurs des probabilités.</p>
 <p>Des simulations menées sur des distributions log-normale ou géométrique de richesse diverses avec des efforts d’échantillonnage variés permettent de tester les estimateurs dans des cas théoriques réalistes <span class="citation">(Marcon <a href="#ref-Marcon2015a" role="doc-biblioref">2015</a>)</span>.
@@ -1075,15 +1076,15 @@ Son biais est alors bien inférieur, au prix d’une variance plus grande.</p>
 ## 71.95748</code></pre>
 <p></p>
 </div>
-<div id="msom-et-msam" class="section level3">
-<h3><span class="header-section-number">4.6.7</span> MSOM et MSAM</h3>
+<div id="msom-et-msam" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.6.7</span> MSOM et MSAM<a href="entropie.html#msom-et-msam" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’utilisation de modèles hiérarchiques bayesiens fondés sur des modèles d’occupation multispécifiques (MSOM) ou des modèles d’abondance multispécifiques (MSAM) progresse dans la littérature récente.
 Ils nécessitent de choisir une loi de probabilité d’observation des espèces compatible avec un échantillonnage non exhaustif, par exemple une loi ZIP (<em>zero-inflated Poisson</em>) <span class="citation">(J. Zhang, Crist, et Hou <a href="#ref-Zhang2014c" role="doc-biblioref">2014</a>)</span>, dans laquelle l’espérance de la présence de chaque espèce peut être modélisée à son tour comme la conséquence de variables environnementales.
 Une approche alternative consiste à modéliser la probabilité d’observation comme la combinaison d’une probabilité de présence et d’une probabilité de détection <span class="citation">(Broms, Hooten, et Fitzpatrick <a href="#ref-Broms2014" role="doc-biblioref">2014</a>)</span>.
 Ces méthodes ont l’avantage de fournir une distribution de probabilité des paramètres des modèles, et donc de la diversité qui est calculée comme une quantité dérivée. Leur faiblesse est qu’ils dépendent de la loi choisie. Une revue complète est fournie par <span class="citation">Iknayan et al. (<a href="#ref-Iknayan2014" role="doc-biblioref">2014</a>)</span></p>
 </div>
-<div id="sec-RarExtrapol" class="section level3">
-<h3><span class="header-section-number">4.6.8</span> Raréfaction et extrapolation</h3>
+<div id="sec-RarExtrapol" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.6.8</span> Raréfaction et extrapolation<a href="entropie.html#sec-RarExtrapol" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="citation">Chao, Gotelli, et al. (<a href="#ref-Chao2014" role="doc-biblioref">2014</a>)</span> étendent l’approche de <span class="citation">Gotelli et Colwell (<a href="#ref-Gotelli2001" role="doc-biblioref">2001</a>)</span> aux nombres de Hill et fournissent les méthodes nécessaires au calcul de courbes de raréfaction et d’extrapolation de l’estimateur de <span class="math inline">\(^{q}\!D\)</span> en fonction de la taille de l’échantillon ou du taux de couverture.</p>
 <p>Les courbes de raréfaction sont obtenues à partir de l’échantillon disponible en simulant la diminution de sa taille.
 Les courbes d’extrapolation simulent l’augmentation de la taille de l’échantillon.
@@ -1092,10 +1093,10 @@ L’article se limite aux valeurs de <span class="math inline">\(q\)</span> éga
 Le package <em>iNEXT</em> <span class="citation">(Hsieh, Ma, et Chao <a href="#ref-Hsieh2014" role="doc-biblioref">2016</a>)</span> implémente ces calculs dans R comme le package <em>entropart</em> qui améliore l’estimation des ordres non entiers de diversité.</p>
 </div>
 </div>
-<div id="autres-approches" class="section level2">
-<h2><span class="header-section-number">4.7</span> Autres approches</h2>
-<div id="lentropie-de-rényi" class="section level3">
-<h3><span class="header-section-number">4.7.1</span> L’entropie de Rényi</h3>
+<div id="autres-approches" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.7</span> Autres approches<a href="entropie.html#autres-approches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="lentropie-de-rényi" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.7.1</span> L’entropie de Rényi<a href="entropie.html#lentropie-de-rényi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’entropie d’ordre <span class="math inline">\(q\)</span> de <span class="citation">Rényi (<a href="#ref-Renyi1961" role="doc-biblioref">1961</a>)</span> est</p>
 <p><span class="math display" id="eq:Renyi">\[\begin{equation}
   \tag{4.34}
@@ -1105,8 +1106,8 @@ Le package <em>iNEXT</em> <span class="citation">(Hsieh, Ma, et Chao <a href="#r
 L’entropie de Rényi a connu un succès important en tant que seule mesure d’entropie généralisée jusqu’à la diffusion de l’entropie HCDT.
 Son défaut est qu’elle n’est pas forcément concave <span class="citation">(Beck <a href="#ref-Beck2009" role="doc-biblioref">2009</a>)</span>, ce qui empêche sa décomposition (voir chapitre <a href="chap-DedompHCDT.html#chap-DedompHCDT">12</a>).</p>
 </div>
-<div id="lentropie-généralisée-des-mesures-dinégalité" class="section level3">
-<h3><span class="header-section-number">4.7.2</span> L’entropie généralisée des mesures d’inégalité</h3>
+<div id="lentropie-généralisée-des-mesures-dinégalité" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.7.2</span> L’entropie généralisée des mesures d’inégalité<a href="entropie.html#lentropie-généralisée-des-mesures-dinégalité" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’entropie généralisée des économistes, d’ordre <span class="math inline">\(q\)</span>, est définie comme</p>
 <p><span class="math display" id="eq:HqEco">\[\begin{equation}
   \tag{4.35}
@@ -1136,8 +1137,8 @@ Elle généralise donc l’indice de <span class="citation">Theil (<a href="#ref
   I_r = \frac{1}{q S^{1-q}}\left( \ln_q{S} - ^{q}\!H \right).
 \end{equation}\]</span></p>
 </div>
-<div id="sec-SimpsonG" class="section level3">
-<h3><span class="header-section-number">4.7.3</span> L’entropie de Simpson généralisée</h3>
+<div id="sec-SimpsonG" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.7.3</span> L’entropie de Simpson généralisée<a href="entropie.html#sec-SimpsonG" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’entropie de Simpson généralisée a été introduite dans une classe d’indices plus générale <a href="chap-MesuresNeutres.html#eq:zeta">(3.38)</a> par <span class="citation">Zhang et Zhou (<a href="#ref-Zhang2010" role="doc-biblioref">2010</a>)</span> et étudiée en détail par <span class="citation">Zhang et Grabchak (<a href="#ref-Zhang2014" role="doc-biblioref">2016</a>)</span>.
 L’entropie d’ordre <span class="math inline">\(r&gt;0\)</span> est
 <span class="math display" id="eq:zetar">\[\begin{equation}
@@ -1264,8 +1265,8 @@ Le nombre effectif d’espèces maximum correspond au nombre de Hill d’ordre 0
 Les espèces plus rares sont prises en compte dans la partie du profil de diversité HCDT d’ordre inférieur à 0,5 mais son incertitude est grande et son biais très important quand l’échantillonnage est aussi réduit <span class="citation">(Marcon <a href="#ref-Marcon2015a" role="doc-biblioref">2015</a>)</span>.</p>
 <p>L’entropie de Simpson généralisée est donc l’outil le plus approprié pour comparer des profils de diversité de communautés riches et sous-échantillonnées.</p>
 </div>
-<div id="lentropie-par-cas" class="section level3">
-<h3><span class="header-section-number">4.7.4</span> L’entropie par cas</h3>
+<div id="lentropie-par-cas" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.7.4</span> L’entropie par cas<a href="entropie.html#lentropie-par-cas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="citation">Rajaram et Castellani (<a href="#ref-Rajaram2016" role="doc-biblioref">2016</a>)</span> décomposent la diversité de Shannon en produit des contributions de chaque catégorie et proposent une mesure cumulative de la diversité d’une communauté prenant en compte une partie des espèces classées selon un critère pertinent, décrivant leur complexité: par exemple, la diversité des mammifères classés par taille croissante, ou la position dans l’évolution.</p>
 <p>La fraction de la communauté dont le cumul des probabilités égale <span class="math inline">\(c\)</span> est prise en compte.
 La diversité cumulée est:
@@ -1290,7 +1291,7 @@ Il ne s’agit pas d’une décomposition de la diversité au sens classique du 
 </div>
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references">
 <div id="ref-Adelman1969">
 <p>Adelman, M. A. 1969. « Comment on the "H" Concentration Measure as a Numbers-Equivalent ». <em>The Review of Economics and Statistics</em> 51 (1): 99‑101. <a href="https://doi.org/10.2307/1926955">https://doi.org/10.2307/1926955</a>.</p>
@@ -1425,7 +1426,7 @@ Il ne s’agit pas d’une décomposition de la diversité au sens classique du 
 <p>Kindt, R., P. Van Damme, et A. J. Simons. 2006. « Tree Diversity in Western Kenya: Using Profiles to Characterise Richness and Evenness ». <em>Biodiversity and Conservation</em> 15 (4): 1253‑70. <a href="https://doi.org/10.1007/s10531-005-0772-x">https://doi.org/10.1007/s10531-005-0772-x</a>.</p>
 </div>
 <div id="ref-Kullback1951">
-<p>Kullback, S., et R. A. Leibler. 1951. « On Information and Sufficiency ». <em>The Annals of Mathematical Statistics</em> 22 (1): 79‑86. <a href="http://www.jstor.org/stable/2236703">http://www.jstor.org/stable/2236703</a>.</p>
+<p>Kullback, S., et R. A. Leibler. 1951. « On Information and Sufficiency ». <em>The Annals of Mathematical Statistics</em> 22 (1): 79‑86. <a href="https://www.jstor.org/stable/2236703">https://www.jstor.org/stable/2236703</a>.</p>
 </div>
 <div id="ref-Lande2000">
 <p>Lande, Russell, Philip J. DeVries, et Thomas R. Walla. 2000. « When Species Accumulation Curves Intersect: Implications for Ranking Diversity Using Small Samples ». <em>Oikos</em> 89 (3): 601‑5. <a href="https://doi.org/10.1034/j.1600-0706.2000.890320.x">https://doi.org/10.1034/j.1600-0706.2000.890320.x</a>.</p>

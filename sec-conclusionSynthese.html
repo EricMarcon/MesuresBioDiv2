@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>24 Synthèse | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="24 Synthèse | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/" />
   <meta property="og:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png" />
   <meta property="og:description" content="Définitions, estimation et décompositon de la biodiversité" />
   <meta name="github-repo" content="EricMarcon/MesuresBioDiv2" />
@@ -50,8 +49,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,7 +61,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-163419632-1');
+  gtag('config', 'UA-163419632-1'); 
+  gtag('config', 'G-C1B3PLBCM6');
 </script>
 
 
@@ -440,15 +441,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="sec-conclusionSynthese" class="section level1">
-<h1><span class="header-section-number">24</span> Synthèse</h1>
+<div id="sec-conclusionSynthese" class="section level1 hasAnchor">
+<h1><span class="header-section-number">24</span> Synthèse<a href="sec-conclusionSynthese.html#sec-conclusionSynthese" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>La biodiversité peut être mesurée de nombreuses façons.
 La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire.
 D’autres mesures de diversité ont été présentées ici, d’autres encore peuvent être trouvées dans la littérature.
 Elles ont en général un moins bon support mathématique, surtout les mesures de diversité <span class="math inline">\(\beta\)</span>, elles ne peuvent pas être décomposées, corrigées ou interprétées.
 La diversité de Hurlbert possède toutes ses propriétés et une correction très efficace du biais d’estimation, mais elle n’est pas généralisée à la diversité phylogénétique.</p>
-<div id="entropie-et-diversité-1" class="section level2">
-<h2><span class="header-section-number">24.1</span> Entropie et diversité</h2>
+<div id="entropie-et-diversité-1" class="section level2 hasAnchor">
+<h2><span class="header-section-number">24.1</span> Entropie et diversité<a href="sec-conclusionSynthese.html#entropie-et-diversité-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ConclusionFig"></span>
@@ -474,25 +475,25 @@ Le paramétrage des mesures (l’ordre de la diversité) permet de donner plus o
 </ul>
 <p>Le package <em>entropart</em><span class="citation">(Marcon et Hérault <a href="#ref-Marcon2014c" role="doc-biblioref">2015</a><a href="#ref-Marcon2014c" role="doc-biblioref">b</a>)</span> permet de calculer avec R la diversité d’une méta-communauté à partir de données d’abondances et d’un arbre (diversité phylogénétique) ou d’une matrice de distances (diversité fonctionnelle).</p>
 </div>
-<div id="ordres-particuliers-de-diversité" class="section level2">
-<h2><span class="header-section-number">24.2</span> Ordres particuliers de diversité</h2>
+<div id="ordres-particuliers-de-diversité" class="section level2 hasAnchor">
+<h2><span class="header-section-number">24.2</span> Ordres particuliers de diversité<a href="sec-conclusionSynthese.html#ordres-particuliers-de-diversité" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La diversité d’ordre 2 présente de nombreuses particularités et avantages qui font qu’elle est très employée</p>
-<div id="estimation-2" class="section level3">
-<h3><span class="header-section-number">24.2.1</span> Estimation</h3>
+<div id="estimation-2" class="section level3 hasAnchor">
+<h3><span class="header-section-number">24.2.1</span> Estimation<a href="sec-conclusionSynthese.html#estimation-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Tous les estimateurs de <span class="math inline">\(^q\!H\)</span> sont biaisés, d’autant plus que <span class="math inline">\(q\)</span> est petit.
 Seul l’estimateur de l’indice de Simpson, <span class="math inline">\(^{2}\!\tilde{H}=[n/(n-1)](1-\sum_s{{\hat{p}}^{2}_{s}})\)</span> est non biaisé.
 Comme l’entropie de Rao est la somme sur les périodes de l’arbre des entropies de Simpson, <span class="math inline">\(^{2}\!\tilde{H}(T)=[n/(n-1)]\,^{2}\!\hat{H}(T)\)</span> est donc sans biais.</p>
 </div>
-<div id="partition" class="section level3">
-<h3><span class="header-section-number">24.2.2</span> Partition</h3>
+<div id="partition" class="section level3 hasAnchor">
+<h3><span class="header-section-number">24.2.2</span> Partition<a href="sec-conclusionSynthese.html#partition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>L’entropie de Simpson peut être décomposée comme une variance.
 La contribution de chaque communauté à la variance inter n’est pas la même que dans la décomposition générale de l’entropie HCDT mais la variance inter est bien égale à l’entropie <span class="math inline">\(\beta\)</span>.
 La décomposition de la diversité de Pélissier et Couteron est identique.
 Dans le cas particulier de l’entropie de Rao, l’entropie phylogénétique, sans normalisation par la hauteur de l’arbre, est égale à la somme pondérée des dissimilarités (divergences de Jensen-Shannon) entre les paires de communautés.
 Cette propriété permet de représenter dans un même espace les espèces et les communautés par une double analyse en composantes principales.</p>
 </div>
-<div id="égalité-des-diversités" class="section level3">
-<h3><span class="header-section-number">24.2.3</span> Égalité des diversités</h3>
+<div id="égalité-des-diversités" class="section level3 hasAnchor">
+<h3><span class="header-section-number">24.2.3</span> Égalité des diversités<a href="sec-conclusionSynthese.html#égalité-des-diversités" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Pour <span class="math inline">\(q=2\)</span> seulement, toutes les mesures de diversité sont identiques:</p>
 <ul>
 <li>Le nombre équivalent d’espèces de Hurlbert est égal à <span class="math inline">\(^{2}\!D\)</span>, le nombre de Hill;</li>
@@ -501,8 +502,8 @@ Cette propriété permet de représenter dans un même espace les espèces et le
 <p>La diversité d’ordre 1 a en revanche des propriétés avantageuses pour la décomposition: toutes les définitions de diversité <span class="math inline">\(\alpha\)</span> sont dans ce cas identiques, et l’information mutuelle se confond avec la diversité <span class="math inline">\(\beta\)</span>.</p>
 </div>
 </div>
-<div id="limites" class="section level2">
-<h2><span class="header-section-number">24.3</span> Limites</h2>
+<div id="limites" class="section level2 hasAnchor">
+<h2><span class="header-section-number">24.3</span> Limites<a href="sec-conclusionSynthese.html#limites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Les principales limites des mesures de diversité sont d’ordre conceptuel et pratique.
 L’axiome de symétrie interdit de donner un rôle particulier à une espèce.
 Il n’est donc pas possible conceptuellement de prendre en compte les espèces focales <span class="citation">(Zacharias et Roff <a href="#ref-Zacharias2001" role="doc-biblioref">2001</a>)</span> dans la quantification de la diversité: espèces emblématiques, espèces clé de voûte <span class="citation">(Paine <a href="#ref-Paine1969" role="doc-biblioref">1969</a>)</span>, espèces parapluie <span class="citation">(Roberge et Angelstam <a href="#ref-Roberge2004" role="doc-biblioref">2004</a>)</span>, espèces ingénieures <span class="citation">(Jones, Lawton, et Shachak <a href="#ref-Jones1994" role="doc-biblioref">1994</a>)</span>….
@@ -523,7 +524,7 @@ Une approche similaire mais plus exhaustive <span class="citation">(Ceballos, Eh
 
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references">
 <div id="ref-Balmford2003">
 <p>Balmford, Andrew, Rhys E. Green, et Martin Jenkins. 2003. « Measuring the Changing State of Nature ». <em>Trends in Ecology &amp; Evolution</em> 18 (7): 326‑30. <a href="https://doi.org/10.1016/S0169-5347(03)00067-3">https://doi.org/10.1016/S0169-5347(03)00067-3</a>.</p>
@@ -562,7 +563,7 @@ Une approche similaire mais plus exhaustive <span class="citation">(Ceballos, Eh
 <p>Marcon, Eric, et Bruno Hérault. 2015a. « Decomposing Phylodiversity ». <em>Methods in Ecology and Evolution</em> 6 (3): 333‑39. <a href="https://doi.org/10.1111/2041-210X.12323">https://doi.org/10.1111/2041-210X.12323</a>.</p>
 </div>
 <div id="ref-Marcon2014c">
-<p>Marcon, Eric, et Bruno Hérault. 2015b. « Entropart, an r Package to Measure and Partition Diversity ». <em>Journal of Statistical Software</em> 67 (8): 1‑26. <a href="https://doi.org/10.18637/jss.v067.i08">https://doi.org/10.18637/jss.v067.i08</a>.</p>
+<p>Marcon, Eric, et Bruno Hérault. 2015b. « Entropart, an R Package to Measure and Partition Diversity ». <em>Journal of Statistical Software</em> 67 (8): 1‑26. <a href="https://doi.org/10.18637/jss.v067.i08">https://doi.org/10.18637/jss.v067.i08</a>.</p>
 </div>
 <div id="ref-Paine1969">
 <p>Paine, R. T. 1969. « A Note on Trophic Complexity and Community Stability ». <em>American naturalist</em> 103 (929): 91‑93. <a href="https://doi.org/10.1086/282586">https://doi.org/10.1086/282586</a>.</p>
