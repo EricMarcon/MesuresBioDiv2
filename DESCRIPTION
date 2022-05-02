@@ -32,6 +32,5 @@ Imports:
   untb,
   vegan
 Remotes:
-  EricMarcon/SPECIES,
   EricMarcon/SpatDiv
 License: CC BY 4.0
