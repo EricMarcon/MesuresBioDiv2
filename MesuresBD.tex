@@ -509,6 +509,17 @@ Enfin, les données fournies par le package \emph{entropart} sous le nom \enquot
 
 \scriptsize
 
+\begin{verbatim}
+## 
+## Attaching package: 'gridExtra'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:dplyr':
+## 
+##     combine
+\end{verbatim}
+
 \begin{figure}
 
 {\centering \includegraphics[width=\widthw]{MesuresBD_files/figure-latex/Paracou6MapFig-1} 
@@ -528,8 +539,13 @@ Le code R pour réaliser la figure est le suivant:
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(}\StringTok{"dbmss"}\NormalTok{)}
 \KeywordTok{library}\NormalTok{(}\StringTok{"SpatDiv"}\NormalTok{)}
-\KeywordTok{autoplot}\NormalTok{(Paracou6, }\DataTypeTok{labelSize =} \KeywordTok{expression}\NormalTok{(}\KeywordTok{paste}\NormalTok{(}\StringTok{"Surface terrière ("}\NormalTok{,}
+\NormalTok{the_map <-}\StringTok{ }\KeywordTok{autoplot}\NormalTok{(Paracou6, }\DataTypeTok{labelSize =} \KeywordTok{expression}\NormalTok{(}\KeywordTok{paste}\NormalTok{(}\StringTok{"Surface terrière ("}\NormalTok{,}
 \NormalTok{    cm}\OperatorTok{^}\DecValTok{2}\NormalTok{, }\StringTok{")"}\NormalTok{)), }\DataTypeTok{labelColor =} \StringTok{"Espèce"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(}\StringTok{"cowplot"}\NormalTok{)}
+\NormalTok{the_legend <-}\StringTok{ }\KeywordTok{get_legend}\NormalTok{(the_map)}
+\KeywordTok{library}\NormalTok{(}\StringTok{"gridExtra"}\NormalTok{)}
+\KeywordTok{grid.arrange}\NormalTok{(the_map }\OperatorTok{+}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position =} \StringTok{"none"}\NormalTok{), the_legend,}
+    \DataTypeTok{nrow =} \DecValTok{2}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 

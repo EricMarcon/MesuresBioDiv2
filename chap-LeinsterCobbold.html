@@ -476,15 +476,15 @@ Figure 9.1: Moyenne généralisée d’ordre <span class="math inline">\(r\)</sp
 Elle donne un fort poids aux petites valeurs de <span class="math inline">\(x_s\)</span> dans la moyenne pour les faibles valeurs de <span class="math inline">\(r\)</span> (qui peuvent être négatives), et un fort poids aux grandes valeurs quand <span class="math inline">\(r\)</span> est grand (figure <a href="chap-LeinsterCobbold.html#fig:MoyenneHardyFig">9.1</a>).</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 <p></p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="chap-LeinsterCobbold.html#cb216-1"></a>X &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">10000</span>)</span>
-<span id="cb216-2"><a href="chap-LeinsterCobbold.html#cb216-2"></a><span class="co"># La moyenne n&#39;est pas définie à r=0, décalage de 10^-8</span></span>
-<span id="cb216-3"><a href="chap-LeinsterCobbold.html#cb216-3"></a>r &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">10</span>, <span class="fl">.1</span>) <span class="op">+</span><span class="st"> </span><span class="fl">1E-8</span></span>
-<span id="cb216-4"><a href="chap-LeinsterCobbold.html#cb216-4"></a><span class="co"># Préparation des données</span></span>
-<span id="cb216-5"><a href="chap-LeinsterCobbold.html#cb216-5"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(r, <span class="dt">Moyenne =</span> <span class="kw">sapply</span>(r, <span class="cf">function</span>(r) (<span class="kw">mean</span>(X<span class="op">^</span>r))<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>r)))</span>
-<span id="cb216-6"><a href="chap-LeinsterCobbold.html#cb216-6"></a><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> r, <span class="dt">y =</span> Moyenne)) <span class="op">+</span></span>
-<span id="cb216-7"><a href="chap-LeinsterCobbold.html#cb216-7"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb216-8"><a href="chap-LeinsterCobbold.html#cb216-8"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="fl">.5</span>, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></span>
-<span id="cb216-9"><a href="chap-LeinsterCobbold.html#cb216-9"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="chap-LeinsterCobbold.html#cb218-1"></a>X &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">10000</span>)</span>
+<span id="cb218-2"><a href="chap-LeinsterCobbold.html#cb218-2"></a><span class="co"># La moyenne n&#39;est pas définie à r=0, décalage de 10^-8</span></span>
+<span id="cb218-3"><a href="chap-LeinsterCobbold.html#cb218-3"></a>r &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">10</span>, <span class="fl">.1</span>) <span class="op">+</span><span class="st"> </span><span class="fl">1E-8</span></span>
+<span id="cb218-4"><a href="chap-LeinsterCobbold.html#cb218-4"></a><span class="co"># Préparation des données</span></span>
+<span id="cb218-5"><a href="chap-LeinsterCobbold.html#cb218-5"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(r, <span class="dt">Moyenne =</span> <span class="kw">sapply</span>(r, <span class="cf">function</span>(r) (<span class="kw">mean</span>(X<span class="op">^</span>r))<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>r)))</span>
+<span id="cb218-6"><a href="chap-LeinsterCobbold.html#cb218-6"></a><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> r, <span class="dt">y =</span> Moyenne)) <span class="op">+</span></span>
+<span id="cb218-7"><a href="chap-LeinsterCobbold.html#cb218-7"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb218-8"><a href="chap-LeinsterCobbold.html#cb218-8"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="fl">.5</span>, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></span>
+<span id="cb218-9"><a href="chap-LeinsterCobbold.html#cb218-9"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p>La banalité peut s’écrire sous forme matricielle en notant <span class="math inline">\(\mathbf{p}\)</span> le vecteur des probabilités <span class="math inline">\(p_s\)</span>, on note alors <span class="math inline">\({\left(\mathbf{Zp}\right)}_s=\sum_t{p_{t}z_{s,t}}\)</span>.</p>
 <p>La banalité moyenne des espèces de la communauté est calculée en prenant <span class="math inline">\(r=q-1\)</span>:</p>
@@ -519,7 +519,7 @@ La dissimilarité entre espèces peut être obtenue à partir des arbres.
 L’exemple suivant utilise les données du calcul d’originalité, section <a href="mesures-particulières.html#sec-MaxTheorique">7.6.5</a>.
 Pour un arbre de classe <code>hclust</code>, la fonction <code>cophenetic</code> fournit une demi-matrice de distances (classe <code>dist</code>).</p>
 <p></p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="chap-LeinsterCobbold.html#cb217-1"></a><span class="kw">print</span>(<span class="kw">cophenetic</span>(hf), <span class="dt">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="chap-LeinsterCobbold.html#cb219-1"></a><span class="kw">print</span>(<span class="kw">cophenetic</span>(hf), <span class="dt">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>##      Ess    Me    S1    Sr    Vm    Bg    Ef
 ## Me 1.224                                    
 ## S1 1.224 1.003                              
@@ -532,8 +532,8 @@ Pour un arbre de classe <code>hclust</code>, la fonction <code>cophenetic</code>
 <p>La matrice doit être normalisée puis transformée en matrice de similarité.
 Une transformation simple est 1 moins la dissimilarité (préalablement normalisée pour être comprise entre 0 et 1):</p>
 <p></p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="chap-LeinsterCobbold.html#cb219-1"></a>Dis &lt;-<span class="st"> </span><span class="kw">cophenetic</span>(hf)</span>
-<span id="cb219-2"><a href="chap-LeinsterCobbold.html#cb219-2"></a><span class="kw">print</span>((Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">as.matrix</span>(Dis<span class="op">/</span><span class="kw">max</span>(Dis))), <span class="dt">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="chap-LeinsterCobbold.html#cb221-1"></a>Dis &lt;-<span class="st"> </span><span class="kw">cophenetic</span>(hf)</span>
+<span id="cb221-2"><a href="chap-LeinsterCobbold.html#cb221-2"></a><span class="kw">print</span>((Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">as.matrix</span>(Dis<span class="op">/</span><span class="kw">max</span>(Dis))), <span class="dt">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>##        Ess     Me     S1     Sr     Vm     Bg     Ef     Dg
 ## Ess 1.0000 0.8742 0.8742 0.7468 0.0000 0.0000 0.0000 0.0000
 ## Me  0.8742 1.0000 0.8969 0.7468 0.0000 0.0000 0.0000 0.0000
@@ -546,9 +546,9 @@ Une transformation simple est 1 moins la dissimilarité (préalablement normalis
 <p></p>
 <p>La diversité peut être calculée par la fonction <code>Dqz</code> de <em>entropart</em>:</p>
 <p></p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="chap-LeinsterCobbold.html#cb221-1"></a><span class="co"># Vecteur contenant 8 espèces...</span></span>
-<span id="cb221-2"><a href="chap-LeinsterCobbold.html#cb221-2"></a>(<span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.effectifs.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">header =</span> T) -&gt;</span>
-<span id="cb221-3"><a href="chap-LeinsterCobbold.html#cb221-3"></a><span class="st">    </span>effectifs)</span></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="chap-LeinsterCobbold.html#cb223-1"></a><span class="co"># Vecteur contenant 8 espèces...</span></span>
+<span id="cb223-2"><a href="chap-LeinsterCobbold.html#cb223-2"></a>(<span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.effectifs.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">header =</span> T) -&gt;</span>
+<span id="cb223-3"><a href="chap-LeinsterCobbold.html#cb223-3"></a><span class="st">    </span>effectifs)</span></code></pre></div>
 <pre><code>##     P1 P2 P3 P4
 ## Ess 97 36 34 61
 ## Me  62 24 49  4
@@ -558,14 +558,14 @@ Une transformation simple est 1 moins la dissimilarité (préalablement normalis
 ## Bg  58 49 47 19
 ## Ef   9 34 91 35
 ## Dg  98 14 95 14</code></pre>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="chap-LeinsterCobbold.html#cb223-1"></a>Ps &lt;-<span class="st"> </span><span class="kw">rowSums</span>(effectifs)<span class="op">/</span><span class="kw">sum</span>(effectifs)</span>
-<span id="cb223-2"><a href="chap-LeinsterCobbold.html#cb223-2"></a><span class="kw">Dqz</span>(Ps, <span class="dt">q =</span> <span class="dv">2</span>, Z)</span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="chap-LeinsterCobbold.html#cb225-1"></a>Ps &lt;-<span class="st"> </span><span class="kw">rowSums</span>(effectifs)<span class="op">/</span><span class="kw">sum</span>(effectifs)</span>
+<span id="cb225-2"><a href="chap-LeinsterCobbold.html#cb225-2"></a><span class="kw">Dqz</span>(Ps, <span class="dt">q =</span> <span class="dv">2</span>, Z)</span></code></pre></div>
 <pre><code>##     None 
 ## 2.520938</code></pre>
 <p></p>
 <p>Dans le cas particulier <span class="math inline">\(q=2\)</span>, <span class="math inline">\(^2\!D^{\mathbf{Z}}\)</span> est égal à <span class="math inline">\(^{2}\!\bar{D}(T)\)</span>:</p>
 <p></p>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="chap-LeinsterCobbold.html#cb225-1"></a><span class="kw">PhyloDiversity</span>(Ps, <span class="dt">q =</span> <span class="dv">2</span>, phyf)<span class="op">$</span>Total</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="chap-LeinsterCobbold.html#cb227-1"></a><span class="kw">PhyloDiversity</span>(Ps, <span class="dt">q =</span> <span class="dv">2</span>, phyf)<span class="op">$</span>Total</span></code></pre></div>
 <pre><code>##     None 
 ## 2.520938</code></pre>
 <p></p>
@@ -629,16 +629,16 @@ Dans les faits, cette approximation vaut pour des valeurs de banalité assez él
 Ce n’est pas un problème pour la comparaison de profils de diversité de communautés différentes calculés à partir de la même matrice de similarité mais l’interprétation de la diversité en termes de nombres effectifs d’espèces dépendant de <span class="math inline">\(q\)</span> n’est pas très intuitive.</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 <p></p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="chap-LeinsterCobbold.html#cb227-1"></a>r &lt;-<span class="st"> </span><span class="fl">0.5</span></span>
-<span id="cb227-2"><a href="chap-LeinsterCobbold.html#cb227-2"></a>seqZp &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.001</span>)</span>
-<span id="cb227-3"><a href="chap-LeinsterCobbold.html#cb227-3"></a>gga &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">r =</span> seqZp, <span class="dt">xr =</span> seqZp<span class="op">^</span>r), <span class="kw">aes</span>(r, xr)) <span class="op">+</span></span>
-<span id="cb227-4"><a href="chap-LeinsterCobbold.html#cb227-4"></a><span class="st">    </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>r, <span class="dt">slope =</span> r, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>,</span>
-<span id="cb227-5"><a href="chap-LeinsterCobbold.html#cb227-5"></a>    <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="kw">expression</span>(x<span class="op">^</span>r)) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
-<span id="cb227-6"><a href="chap-LeinsterCobbold.html#cb227-6"></a>r &lt;-<span class="st"> </span><span class="fl">-0.5</span></span>
-<span id="cb227-7"><a href="chap-LeinsterCobbold.html#cb227-7"></a>ggb &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">r =</span> seqZp, <span class="dt">xr =</span> seqZp<span class="op">^</span>r), <span class="kw">aes</span>(r, xr)) <span class="op">+</span></span>
-<span id="cb227-8"><a href="chap-LeinsterCobbold.html#cb227-8"></a><span class="st">    </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>r, <span class="dt">slope =</span> r, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>,</span>
-<span id="cb227-9"><a href="chap-LeinsterCobbold.html#cb227-9"></a>    <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="kw">expression</span>(x<span class="op">^</span>r)) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
-<span id="cb227-10"><a href="chap-LeinsterCobbold.html#cb227-10"></a><span class="kw">grid.arrange</span>(gga, ggb, <span class="dt">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="chap-LeinsterCobbold.html#cb229-1"></a>r &lt;-<span class="st"> </span><span class="fl">0.5</span></span>
+<span id="cb229-2"><a href="chap-LeinsterCobbold.html#cb229-2"></a>seqZp &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.001</span>)</span>
+<span id="cb229-3"><a href="chap-LeinsterCobbold.html#cb229-3"></a>gga &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">r =</span> seqZp, <span class="dt">xr =</span> seqZp<span class="op">^</span>r), <span class="kw">aes</span>(r, xr)) <span class="op">+</span></span>
+<span id="cb229-4"><a href="chap-LeinsterCobbold.html#cb229-4"></a><span class="st">    </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>r, <span class="dt">slope =</span> r, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb229-5"><a href="chap-LeinsterCobbold.html#cb229-5"></a>    <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="kw">expression</span>(x<span class="op">^</span>r)) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
+<span id="cb229-6"><a href="chap-LeinsterCobbold.html#cb229-6"></a>r &lt;-<span class="st"> </span><span class="fl">-0.5</span></span>
+<span id="cb229-7"><a href="chap-LeinsterCobbold.html#cb229-7"></a>ggb &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">r =</span> seqZp, <span class="dt">xr =</span> seqZp<span class="op">^</span>r), <span class="kw">aes</span>(r, xr)) <span class="op">+</span></span>
+<span id="cb229-8"><a href="chap-LeinsterCobbold.html#cb229-8"></a><span class="st">    </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>r, <span class="dt">slope =</span> r, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb229-9"><a href="chap-LeinsterCobbold.html#cb229-9"></a>    <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="kw">expression</span>(x<span class="op">^</span>r)) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb229-10"><a href="chap-LeinsterCobbold.html#cb229-10"></a><span class="kw">grid.arrange</span>(gga, ggb, <span class="dt">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p>La transformation exponentielle négative,
 <span class="math display">\[z_{s,t} = e^{-u \frac{d_{s,t}}{\max{(d_{s,t})}}},\]</span>
@@ -656,11 +656,11 @@ Figure 9.3: Transformation des distances (en abscisse) en similarités (en ordon
 <p></p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 <p></p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="chap-LeinsterCobbold.html#cb228-1"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">.01</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb228-2"><a href="chap-LeinsterCobbold.html#cb228-2"></a><span class="st">  </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> <span class="cf">function</span>(x) <span class="kw">exp</span>(<span class="op">-</span>x)) <span class="op">+</span></span>
-<span id="cb228-3"><a href="chap-LeinsterCobbold.html#cb228-3"></a><span class="st">  </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> <span class="cf">function</span>(x) <span class="kw">exp</span>(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>x), <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></span>
-<span id="cb228-4"><a href="chap-LeinsterCobbold.html#cb228-4"></a><span class="st">  </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> <span class="cf">function</span>(x) <span class="kw">exp</span>(<span class="op">-</span><span class="dv">10</span><span class="op">*</span>x), <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
-<span id="cb228-5"><a href="chap-LeinsterCobbold.html#cb228-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="kw">expression</span>(<span class="kw">exp</span>(<span class="op">-</span>ux)))</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="chap-LeinsterCobbold.html#cb230-1"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">.01</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb230-2"><a href="chap-LeinsterCobbold.html#cb230-2"></a><span class="st">  </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> <span class="cf">function</span>(x) <span class="kw">exp</span>(<span class="op">-</span>x)) <span class="op">+</span></span>
+<span id="cb230-3"><a href="chap-LeinsterCobbold.html#cb230-3"></a><span class="st">  </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> <span class="cf">function</span>(x) <span class="kw">exp</span>(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>x), <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></span>
+<span id="cb230-4"><a href="chap-LeinsterCobbold.html#cb230-4"></a><span class="st">  </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> <span class="cf">function</span>(x) <span class="kw">exp</span>(<span class="op">-</span><span class="dv">10</span><span class="op">*</span>x), <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
+<span id="cb230-5"><a href="chap-LeinsterCobbold.html#cb230-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="kw">expression</span>(<span class="kw">exp</span>(<span class="op">-</span>ux)))</span></code></pre></div>
 <p></p>
 <p>Augmenter la valeur de <span class="math inline">\(u\)</span> diminue les similarités et donc la banalité des espèces, ce qui règle (arbitrairement) le problème de la faible sensibilité de la diversité au paramètre <span class="math inline">\(q\)</span>.</p>
 <p>Du point de vue théorique, l’ordre des valeurs de la matrice des distances est justifié (par les différences entre traits fonctionnels par exemple) mais leur distribution ne l’est pas: elle n’est que la conséquence de la méthode de calcul.
@@ -735,13 +735,13 @@ L’estimateur de <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est, p
 \end{equation}\]</span></p>
 <p>Le package <em>entropart</em> fournit les fonctions <code>Dqz</code> et <code>HqZ</code> pour calculer ces estimateurs.</p>
 <p></p>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="chap-LeinsterCobbold.html#cb229-1"></a><span class="kw">data</span>(Paracou618)</span>
-<span id="cb229-2"><a href="chap-LeinsterCobbold.html#cb229-2"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
-<span id="cb229-3"><a href="chap-LeinsterCobbold.html#cb229-3"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Paracou618.dist)</span>
-<span id="cb229-4"><a href="chap-LeinsterCobbold.html#cb229-4"></a><span class="co"># Matrice de similarité</span></span>
-<span id="cb229-5"><a href="chap-LeinsterCobbold.html#cb229-5"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>DistanceMatrix<span class="op">/</span><span class="kw">max</span>(DistanceMatrix)</span>
-<span id="cb229-6"><a href="chap-LeinsterCobbold.html#cb229-6"></a><span class="co"># Calcul de la diversité</span></span>
-<span id="cb229-7"><a href="chap-LeinsterCobbold.html#cb229-7"></a><span class="kw">Dqz</span>(Paracou618.MC<span class="op">$</span>Ns, <span class="dt">q =</span> <span class="dv">1</span>, Z)</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="chap-LeinsterCobbold.html#cb231-1"></a><span class="kw">data</span>(Paracou618)</span>
+<span id="cb231-2"><a href="chap-LeinsterCobbold.html#cb231-2"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
+<span id="cb231-3"><a href="chap-LeinsterCobbold.html#cb231-3"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Paracou618.dist)</span>
+<span id="cb231-4"><a href="chap-LeinsterCobbold.html#cb231-4"></a><span class="co"># Matrice de similarité</span></span>
+<span id="cb231-5"><a href="chap-LeinsterCobbold.html#cb231-5"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>DistanceMatrix<span class="op">/</span><span class="kw">max</span>(DistanceMatrix)</span>
+<span id="cb231-6"><a href="chap-LeinsterCobbold.html#cb231-6"></a><span class="co"># Calcul de la diversité</span></span>
+<span id="cb231-7"><a href="chap-LeinsterCobbold.html#cb231-7"></a><span class="kw">Dqz</span>(Paracou618.MC<span class="op">$</span>Ns, <span class="dt">q =</span> <span class="dv">1</span>, Z)</span></code></pre></div>
 <pre><code>##     Best 
 ## 1.488083</code></pre>
 <p></p>
@@ -1199,37 +1199,37 @@ La valeur de <span class="math inline">\(z_{s,s}\)</span> peut être cherchée p
 Se limiter à <span class="math inline">\(q=2\)</span> simplifie le problème.</p>
 <p>L’exemple suivant considère deux espèces, dont une comprenant deux groupes:</p>
 
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="chap-LeinsterCobbold.html#cb231-1"></a><span class="co"># Similarité entre les deux groupes</span></span>
-<span id="cb231-2"><a href="chap-LeinsterCobbold.html#cb231-2"></a>zs12 &lt;-<span class="st"> </span><span class="fl">0.9</span></span>
-<span id="cb231-3"><a href="chap-LeinsterCobbold.html#cb231-3"></a><span class="co"># Probabilités des deux groupes</span></span>
-<span id="cb231-4"><a href="chap-LeinsterCobbold.html#cb231-4"></a>ps1 &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">5</span></span>
-<span id="cb231-5"><a href="chap-LeinsterCobbold.html#cb231-5"></a>ps2 &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">5</span></span>
-<span id="cb231-6"><a href="chap-LeinsterCobbold.html#cb231-6"></a><span class="co"># Matrice de similarité</span></span>
-<span id="cb231-7"><a href="chap-LeinsterCobbold.html#cb231-7"></a>(Z2s &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>, zs12, <span class="fl">0.5</span>, zs12, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>), <span class="dt">nrow =</span> <span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="chap-LeinsterCobbold.html#cb233-1"></a><span class="co"># Similarité entre les deux groupes</span></span>
+<span id="cb233-2"><a href="chap-LeinsterCobbold.html#cb233-2"></a>zs12 &lt;-<span class="st"> </span><span class="fl">0.9</span></span>
+<span id="cb233-3"><a href="chap-LeinsterCobbold.html#cb233-3"></a><span class="co"># Probabilités des deux groupes</span></span>
+<span id="cb233-4"><a href="chap-LeinsterCobbold.html#cb233-4"></a>ps1 &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">5</span></span>
+<span id="cb233-5"><a href="chap-LeinsterCobbold.html#cb233-5"></a>ps2 &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">5</span></span>
+<span id="cb233-6"><a href="chap-LeinsterCobbold.html#cb233-6"></a><span class="co"># Matrice de similarité</span></span>
+<span id="cb233-7"><a href="chap-LeinsterCobbold.html#cb233-7"></a>(Z2s &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>, zs12, <span class="fl">0.5</span>, zs12, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>), <span class="dt">nrow =</span> <span class="dv">3</span>))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]  1.0  0.9  0.5
 ## [2,]  0.9  1.0  0.5
 ## [3,]  0.5  0.5  1.0</code></pre>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="chap-LeinsterCobbold.html#cb233-1"></a><span class="co"># Probabilités</span></span>
-<span id="cb233-2"><a href="chap-LeinsterCobbold.html#cb233-2"></a>(P2s &lt;-<span class="st"> </span><span class="kw">c</span>(ps1, ps2, <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>ps1 <span class="op">-</span><span class="st"> </span>ps2))</span></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="chap-LeinsterCobbold.html#cb235-1"></a><span class="co"># Probabilités</span></span>
+<span id="cb235-2"><a href="chap-LeinsterCobbold.html#cb235-2"></a>(P2s &lt;-<span class="st"> </span><span class="kw">c</span>(ps1, ps2, <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>ps1 <span class="op">-</span><span class="st"> </span>ps2))</span></code></pre></div>
 <pre><code>## [1] 0.2 0.2 0.6</code></pre>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="chap-LeinsterCobbold.html#cb235-1"></a><span class="co"># Diversité</span></span>
-<span id="cb235-2"><a href="chap-LeinsterCobbold.html#cb235-2"></a><span class="kw">Dqz</span>(P2s, <span class="dv">2</span>, Z2s)</span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="chap-LeinsterCobbold.html#cb237-1"></a><span class="co"># Diversité</span></span>
+<span id="cb237-2"><a href="chap-LeinsterCobbold.html#cb237-2"></a><span class="kw">Dqz</span>(P2s, <span class="dv">2</span>, Z2s)</span></code></pre></div>
 <pre><code>##     None 
 ## 1.329787</code></pre>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="chap-LeinsterCobbold.html#cb237-1"></a><span class="co"># Similarité intraspécifique après regroupement</span></span>
-<span id="cb237-2"><a href="chap-LeinsterCobbold.html#cb237-2"></a>(zss &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>ps1 <span class="op">*</span><span class="st"> </span>ps2<span class="op">/</span>(ps1 <span class="op">+</span><span class="st"> </span>ps2)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>(zs12 <span class="op">-</span><span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="chap-LeinsterCobbold.html#cb239-1"></a><span class="co"># Similarité intraspécifique après regroupement</span></span>
+<span id="cb239-2"><a href="chap-LeinsterCobbold.html#cb239-2"></a>(zss &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>ps1 <span class="op">*</span><span class="st"> </span>ps2<span class="op">/</span>(ps1 <span class="op">+</span><span class="st"> </span>ps2)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>(zs12 <span class="op">-</span><span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
 <pre><code>## [1] 0.95</code></pre>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="chap-LeinsterCobbold.html#cb239-1"></a><span class="co"># Matrice de similarité après regroupement</span></span>
-<span id="cb239-2"><a href="chap-LeinsterCobbold.html#cb239-2"></a>(Z1s &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(zss, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>), <span class="dt">nrow =</span> <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="chap-LeinsterCobbold.html#cb241-1"></a><span class="co"># Matrice de similarité après regroupement</span></span>
+<span id="cb241-2"><a href="chap-LeinsterCobbold.html#cb241-2"></a>(Z1s &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(zss, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>), <span class="dt">nrow =</span> <span class="dv">2</span>))</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,] 0.95  0.5
 ## [2,] 0.50  1.0</code></pre>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="chap-LeinsterCobbold.html#cb241-1"></a><span class="co"># Probabilité après regroupement</span></span>
-<span id="cb241-2"><a href="chap-LeinsterCobbold.html#cb241-2"></a>(P1s &lt;-<span class="st"> </span><span class="kw">c</span>(ps1 <span class="op">+</span><span class="st"> </span>ps2, <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>ps1 <span class="op">-</span><span class="st"> </span>ps2))</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="chap-LeinsterCobbold.html#cb243-1"></a><span class="co"># Probabilité après regroupement</span></span>
+<span id="cb243-2"><a href="chap-LeinsterCobbold.html#cb243-2"></a>(P1s &lt;-<span class="st"> </span><span class="kw">c</span>(ps1 <span class="op">+</span><span class="st"> </span>ps2, <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>ps1 <span class="op">-</span><span class="st"> </span>ps2))</span></code></pre></div>
 <pre><code>## [1] 0.4 0.6</code></pre>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="chap-LeinsterCobbold.html#cb243-1"></a><span class="co"># Diversité</span></span>
-<span id="cb243-2"><a href="chap-LeinsterCobbold.html#cb243-2"></a><span class="kw">Dqz</span>(P1s, <span class="dv">2</span>, Z1s)</span></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="chap-LeinsterCobbold.html#cb245-1"></a><span class="co"># Diversité</span></span>
+<span id="cb245-2"><a href="chap-LeinsterCobbold.html#cb245-2"></a><span class="kw">Dqz</span>(P1s, <span class="dv">2</span>, Z1s)</span></code></pre></div>
 <pre><code>##     None 
 ## 1.329787</code></pre>
 
@@ -1267,38 +1267,38 @@ Le carré de la norme du vecteur de l’espèce <span class="math inline">\(s\)<
 <p>Si <span class="math inline">\(\mathbf{Z}=\mathbf{I}_s\)</span>, l’ACP ne modifie pas le nuage de points original et <span class="math inline">\(^q\!D^{\mathbf{Z}}(\Lambda)={^{q}\!D}\)</span>.</p>
 <p>L’exemple suivant calcule la diversité de la méta-communauté <code>Paracou618</code> selon la matrice de distances <code>Paracou618.dist</code>.</p>
 
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="chap-LeinsterCobbold.html#cb245-1"></a><span class="co"># Probabilités</span></span>
-<span id="cb245-2"><a href="chap-LeinsterCobbold.html#cb245-2"></a>Ps &lt;-<span class="st"> </span>Paracou618.MC<span class="op">$</span>Ps[Paracou618.MC<span class="op">$</span>Ps <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>]</span>
-<span id="cb245-3"><a href="chap-LeinsterCobbold.html#cb245-3"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
-<span id="cb245-4"><a href="chap-LeinsterCobbold.html#cb245-4"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Paracou618.dist)</span>
-<span id="cb245-5"><a href="chap-LeinsterCobbold.html#cb245-5"></a><span class="co"># Mise en correspondance de la matrice et du vecteur de</span></span>
-<span id="cb245-6"><a href="chap-LeinsterCobbold.html#cb245-6"></a><span class="co"># probabilités</span></span>
-<span id="cb245-7"><a href="chap-LeinsterCobbold.html#cb245-7"></a>D &lt;-<span class="st"> </span>DistanceMatrix[<span class="kw">names</span>(Ps), <span class="kw">names</span>(Ps)]</span>
-<span id="cb245-8"><a href="chap-LeinsterCobbold.html#cb245-8"></a><span class="co"># Normalisation</span></span>
-<span id="cb245-9"><a href="chap-LeinsterCobbold.html#cb245-9"></a>D &lt;-<span class="st"> </span>D<span class="op">/</span><span class="kw">max</span>(D)</span>
-<span id="cb245-10"><a href="chap-LeinsterCobbold.html#cb245-10"></a><span class="co"># Transformation en matrice de similarité</span></span>
-<span id="cb245-11"><a href="chap-LeinsterCobbold.html#cb245-11"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>D</span>
-<span id="cb245-12"><a href="chap-LeinsterCobbold.html#cb245-12"></a><span class="co"># Matrice diagonale contenant les probabilités</span></span>
-<span id="cb245-13"><a href="chap-LeinsterCobbold.html#cb245-13"></a>Q &lt;-<span class="st"> </span><span class="kw">diag</span>(Ps)</span>
-<span id="cb245-14"><a href="chap-LeinsterCobbold.html#cb245-14"></a><span class="co"># Matrice des espèces (les lignes de Sp sont les</span></span>
-<span id="cb245-15"><a href="chap-LeinsterCobbold.html#cb245-15"></a><span class="co"># coordonnées des vecteurs)</span></span>
-<span id="cb245-16"><a href="chap-LeinsterCobbold.html#cb245-16"></a>Sp &lt;-<span class="st"> </span><span class="kw">sqrt</span>(Q) <span class="op">%*%</span><span class="st"> </span><span class="kw">sqrt</span>(Z) <span class="op">%*%</span><span class="st"> </span><span class="kw">sqrt</span>(Q)</span>
-<span id="cb245-17"><a href="chap-LeinsterCobbold.html#cb245-17"></a><span class="co"># Valeurs propres normalisées</span></span>
-<span id="cb245-18"><a href="chap-LeinsterCobbold.html#cb245-18"></a>Lambda &lt;-<span class="st"> </span><span class="kw">svd</span>(Sp)<span class="op">$</span>d</span>
-<span id="cb245-19"><a href="chap-LeinsterCobbold.html#cb245-19"></a>Mu &lt;-<span class="st"> </span>Lambda<span class="op">/</span><span class="kw">sum</span>(Lambda)</span>
-<span id="cb245-20"><a href="chap-LeinsterCobbold.html#cb245-20"></a><span class="co"># Comparaison des valeurs à q=2</span></span>
-<span id="cb245-21"><a href="chap-LeinsterCobbold.html#cb245-21"></a><span class="kw">Diversity</span>(Mu, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="chap-LeinsterCobbold.html#cb247-1"></a><span class="co"># Probabilités</span></span>
+<span id="cb247-2"><a href="chap-LeinsterCobbold.html#cb247-2"></a>Ps &lt;-<span class="st"> </span>Paracou618.MC<span class="op">$</span>Ps[Paracou618.MC<span class="op">$</span>Ps <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>]</span>
+<span id="cb247-3"><a href="chap-LeinsterCobbold.html#cb247-3"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
+<span id="cb247-4"><a href="chap-LeinsterCobbold.html#cb247-4"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Paracou618.dist)</span>
+<span id="cb247-5"><a href="chap-LeinsterCobbold.html#cb247-5"></a><span class="co"># Mise en correspondance de la matrice et du vecteur de</span></span>
+<span id="cb247-6"><a href="chap-LeinsterCobbold.html#cb247-6"></a><span class="co"># probabilités</span></span>
+<span id="cb247-7"><a href="chap-LeinsterCobbold.html#cb247-7"></a>D &lt;-<span class="st"> </span>DistanceMatrix[<span class="kw">names</span>(Ps), <span class="kw">names</span>(Ps)]</span>
+<span id="cb247-8"><a href="chap-LeinsterCobbold.html#cb247-8"></a><span class="co"># Normalisation</span></span>
+<span id="cb247-9"><a href="chap-LeinsterCobbold.html#cb247-9"></a>D &lt;-<span class="st"> </span>D<span class="op">/</span><span class="kw">max</span>(D)</span>
+<span id="cb247-10"><a href="chap-LeinsterCobbold.html#cb247-10"></a><span class="co"># Transformation en matrice de similarité</span></span>
+<span id="cb247-11"><a href="chap-LeinsterCobbold.html#cb247-11"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>D</span>
+<span id="cb247-12"><a href="chap-LeinsterCobbold.html#cb247-12"></a><span class="co"># Matrice diagonale contenant les probabilités</span></span>
+<span id="cb247-13"><a href="chap-LeinsterCobbold.html#cb247-13"></a>Q &lt;-<span class="st"> </span><span class="kw">diag</span>(Ps)</span>
+<span id="cb247-14"><a href="chap-LeinsterCobbold.html#cb247-14"></a><span class="co"># Matrice des espèces (les lignes de Sp sont les</span></span>
+<span id="cb247-15"><a href="chap-LeinsterCobbold.html#cb247-15"></a><span class="co"># coordonnées des vecteurs)</span></span>
+<span id="cb247-16"><a href="chap-LeinsterCobbold.html#cb247-16"></a>Sp &lt;-<span class="st"> </span><span class="kw">sqrt</span>(Q) <span class="op">%*%</span><span class="st"> </span><span class="kw">sqrt</span>(Z) <span class="op">%*%</span><span class="st"> </span><span class="kw">sqrt</span>(Q)</span>
+<span id="cb247-17"><a href="chap-LeinsterCobbold.html#cb247-17"></a><span class="co"># Valeurs propres normalisées</span></span>
+<span id="cb247-18"><a href="chap-LeinsterCobbold.html#cb247-18"></a>Lambda &lt;-<span class="st"> </span><span class="kw">svd</span>(Sp)<span class="op">$</span>d</span>
+<span id="cb247-19"><a href="chap-LeinsterCobbold.html#cb247-19"></a>Mu &lt;-<span class="st"> </span>Lambda<span class="op">/</span><span class="kw">sum</span>(Lambda)</span>
+<span id="cb247-20"><a href="chap-LeinsterCobbold.html#cb247-20"></a><span class="co"># Comparaison des valeurs à q=2</span></span>
+<span id="cb247-21"><a href="chap-LeinsterCobbold.html#cb247-21"></a><span class="kw">Diversity</span>(Mu, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##     None 
 ## 1.540061</code></pre>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="chap-LeinsterCobbold.html#cb247-1"></a><span class="co"># Diversité de Rao</span></span>
-<span id="cb247-2"><a href="chap-LeinsterCobbold.html#cb247-2"></a><span class="kw">Dqz</span>(Ps, <span class="dv">2</span>, Z)</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="chap-LeinsterCobbold.html#cb249-1"></a><span class="co"># Diversité de Rao</span></span>
+<span id="cb249-2"><a href="chap-LeinsterCobbold.html#cb249-2"></a><span class="kw">Dqz</span>(Ps, <span class="dv">2</span>, Z)</span></code></pre></div>
 <pre><code>##     None 
 ## 1.490786</code></pre>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="chap-LeinsterCobbold.html#cb249-1"></a><span class="co"># La valeur à q=0 est le nombre d&#39;espèces</span></span>
-<span id="cb249-2"><a href="chap-LeinsterCobbold.html#cb249-2"></a><span class="kw">Diversity</span>(Mu, <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="chap-LeinsterCobbold.html#cb251-1"></a><span class="co"># La valeur à q=0 est le nombre d&#39;espèces</span></span>
+<span id="cb251-2"><a href="chap-LeinsterCobbold.html#cb251-2"></a><span class="kw">Diversity</span>(Mu, <span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## None 
 ##  229</code></pre>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="chap-LeinsterCobbold.html#cb251-1"></a><span class="kw">length</span>(Ps)</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="chap-LeinsterCobbold.html#cb253-1"></a><span class="kw">length</span>(Ps)</span></code></pre></div>
 <pre><code>## [1] 229</code></pre>
 
 <p>La valeur de la diversité des valeurs propres est différente de celle de la diversité de Rao à cause des approximations numériques liées au calcul des valeurs propres (qui nécessitent l’inversion d’une matrice carrée de dimension <span class="math inline">\(S\)</span>).
@@ -1315,10 +1315,10 @@ Figure 9.6: Profil de diversité des valeurs propres de la méta-communauté <co
 
 <p>Code R pour la figure:</p>
 
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="chap-LeinsterCobbold.html#cb253-1"></a>DqZLambda &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, Mu)</span>
-<span id="cb253-2"><a href="chap-LeinsterCobbold.html#cb253-2"></a>Xlab &lt;-<span class="st"> &quot;Ordre de diversité&quot;</span></span>
-<span id="cb253-3"><a href="chap-LeinsterCobbold.html#cb253-3"></a>Ylab &lt;-<span class="st"> &quot;Diversité&quot;</span></span>
-<span id="cb253-4"><a href="chap-LeinsterCobbold.html#cb253-4"></a><span class="kw">autoplot</span>(DqZLambda, <span class="dt">xlab =</span> Xlab, <span class="dt">ylab =</span> Ylab) <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_log10</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="chap-LeinsterCobbold.html#cb255-1"></a>DqZLambda &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, Mu)</span>
+<span id="cb255-2"><a href="chap-LeinsterCobbold.html#cb255-2"></a>Xlab &lt;-<span class="st"> &quot;Ordre de diversité&quot;</span></span>
+<span id="cb255-3"><a href="chap-LeinsterCobbold.html#cb255-3"></a>Ylab &lt;-<span class="st"> &quot;Diversité&quot;</span></span>
+<span id="cb255-4"><a href="chap-LeinsterCobbold.html#cb255-4"></a><span class="kw">autoplot</span>(DqZLambda, <span class="dt">xlab =</span> Xlab, <span class="dt">ylab =</span> Ylab) <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_log10</span>()</span></code></pre></div>
 
 <p>La diversité des valeurs propres permet de ramener le problème de la diversité d’espèces partiellement similaires au calcul de la diversité neutre d’une communauté d’espèces composites totalement dissimilaires.</p>
 <p>Les éléments de la diagonale de la matrice de similarité ne sont pas forcément égaux à 1: des valeurs inférieures correspondent à la variabilité intraspécifique, selon le mécanisme de regroupement traité au paragraphe précédent.
@@ -1355,16 +1355,16 @@ Figure 9.7: Diversité phylogénétique (l’arbre est une taxonomie) d’ordre 
 
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 
-<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="chap-LeinsterCobbold.html#cb254-1"></a>q &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="fl">0.1</span>))</span>
-<span id="cb254-2"><a href="chap-LeinsterCobbold.html#cb254-2"></a><span class="co"># Réutilisation de Paracou618.Taxonomy au format phylog</span></span>
-<span id="cb254-3"><a href="chap-LeinsterCobbold.html#cb254-3"></a><span class="co"># (cf. calcul de FAD)</span></span>
-<span id="cb254-4"><a href="chap-LeinsterCobbold.html#cb254-4"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Tree<span class="op">$</span>Wdist<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>)</span>
-<span id="cb254-5"><a href="chap-LeinsterCobbold.html#cb254-5"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>DistanceMatrix<span class="op">/</span><span class="kw">max</span>(DistanceMatrix)</span>
-<span id="cb254-6"><a href="chap-LeinsterCobbold.html#cb254-6"></a>Divqz &lt;-<span class="st"> </span><span class="kw">sapply</span>(q, <span class="cf">function</span>(q) <span class="kw">Dqz</span>(Paracou618.MC<span class="op">$</span>Ps, q, Z))</span>
-<span id="cb254-7"><a href="chap-LeinsterCobbold.html#cb254-7"></a>Divq &lt;-<span class="st"> </span><span class="kw">sapply</span>(q, <span class="cf">function</span>(q) <span class="kw">ChaoPD</span>(Paracou618.MC<span class="op">$</span>Ps, <span class="dt">q =</span> q,</span>
-<span id="cb254-8"><a href="chap-LeinsterCobbold.html#cb254-8"></a>    <span class="dt">PhyloTree =</span> Paracou618.Taxonomy))</span>
-<span id="cb254-9"><a href="chap-LeinsterCobbold.html#cb254-9"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(q, Divq, Divqz), <span class="kw">aes</span>(q)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> Divqz)) <span class="op">+</span></span>
-<span id="cb254-10"><a href="chap-LeinsterCobbold.html#cb254-10"></a><span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> Divq), <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Diversité&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="chap-LeinsterCobbold.html#cb256-1"></a>q &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="fl">0.1</span>))</span>
+<span id="cb256-2"><a href="chap-LeinsterCobbold.html#cb256-2"></a><span class="co"># Réutilisation de Paracou618.Taxonomy au format phylog</span></span>
+<span id="cb256-3"><a href="chap-LeinsterCobbold.html#cb256-3"></a><span class="co"># (cf. calcul de FAD)</span></span>
+<span id="cb256-4"><a href="chap-LeinsterCobbold.html#cb256-4"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Tree<span class="op">$</span>Wdist<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb256-5"><a href="chap-LeinsterCobbold.html#cb256-5"></a>Z &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>DistanceMatrix<span class="op">/</span><span class="kw">max</span>(DistanceMatrix)</span>
+<span id="cb256-6"><a href="chap-LeinsterCobbold.html#cb256-6"></a>Divqz &lt;-<span class="st"> </span><span class="kw">sapply</span>(q, <span class="cf">function</span>(q) <span class="kw">Dqz</span>(Paracou618.MC<span class="op">$</span>Ps, q, Z))</span>
+<span id="cb256-7"><a href="chap-LeinsterCobbold.html#cb256-7"></a>Divq &lt;-<span class="st"> </span><span class="kw">sapply</span>(q, <span class="cf">function</span>(q) <span class="kw">ChaoPD</span>(Paracou618.MC<span class="op">$</span>Ps, <span class="dt">q =</span> q,</span>
+<span id="cb256-8"><a href="chap-LeinsterCobbold.html#cb256-8"></a>    <span class="dt">PhyloTree =</span> Paracou618.Taxonomy))</span>
+<span id="cb256-9"><a href="chap-LeinsterCobbold.html#cb256-9"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(q, Divq, Divqz), <span class="kw">aes</span>(q)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> Divqz)) <span class="op">+</span></span>
+<span id="cb256-10"><a href="chap-LeinsterCobbold.html#cb256-10"></a><span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> Divq), <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Diversité&quot;</span>)</span></code></pre></div>
 
 <p><span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est particulièrement intéressante pour mesurer la diversité fonctionnelle, souvent définie à partir d’une matrice de distances entre les espèces.
 La transformation d’une matrice en un arbre phylogénétique déforme les données <span class="citation">(Pavoine, Ollier, et Dufour <a href="#ref-Pavoine2005a" role="doc-biblioref">2005</a>; Podani et Schmera <a href="#ref-Podani2006" role="doc-biblioref">2006</a>, <a href="#ref-Podani2007" role="doc-biblioref">2007</a>)</span>.
