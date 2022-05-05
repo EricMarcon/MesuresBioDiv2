@@ -241,7 +241,7 @@ Le jeu de données utilisé pour les exemples est une version réduite aux arbre
 Enfin, les données fournies par le package *entropart* sous le nom "Paracou618" sont deux inventaires de l'année 2012 limités à un hectare chacun dans les parcelles 6 et 18 de la forêt de Paracou, soient `r Paracou618.MC$N` arbres dans `r sum(Paracou618.MC$Ns>0)` espèces.
 
 (ref:Paracou6MapFig) Carte de la parcelle 6 de Paracou. Les points représentent les arbres. Leur taille est proportionnelle à leur surface terrière. Seules les espèces les plus fréquentes sont identifiées sur la carte.
-```{r Paracou6MapFig, echo=FALSE, results='hide', fig.width=6, fig.height=6, out.width='100%', ref.label='Paracou6MapCode', fig.cap="(ref:Paracou6MapFig)"}
+```{r Paracou6MapFig, echo=FALSE, results='hide', fig.width=6, fig.height=6, fig.env='figure', out.width='\\widthw', ref.label='Paracou6MapCode', fig.cap="(ref:Paracou6MapFig)"}
 ```
 
 Le code R pour réaliser la figure est le suivant:
