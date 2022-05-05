@@ -1207,7 +1207,7 @@ divc(as.data.frame(tabF), phyf$Wdist)
   * $H_{\Delta}\left({\mathbf{p}}_i\right)$: diversité de chaque communauté, fournie par `divc` :
 
 ```{r disc3}
-divc( effectifs [names(phyf$leaves), ], phyf$Wdist)
+divc(effectifs[names(phyf$leaves), ], phyf$Wdist)
 ```
 
   * La variabilité inter-communautés peut être calculée par `divc` en utilisant la distance fournie par `disc`, en définissant la matrice des poids (égale aux effectifs):
