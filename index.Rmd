@@ -139,9 +139,9 @@ if (rmarkdown::metadata$largemargins)
 ```{r Options, include=FALSE}
 ### Customized options for this document
 # Add necessary packages here
-Packages <- c("ade4", "adespatial", "entropart", "entropy", "EntropyEstimation", 
-              "GoFKernel", "gridExtra","iNEXT", "magrittr", "ragg", "sads", "sp", 
-              "SPECIES", "tidyverse", "untb", "vegan")
+Packages <- c("ade4", "adespatial", "cowplot", "entropart", "entropy", 
+              "EntropyEstimation", "GoFKernel", "gridExtra","iNEXT", "magrittr", 
+              "ragg", "sads", "sp", "SPECIES", "tidyverse", "untb", "vegan")
 # Install them
 InstallPackages(Packages)
 # GitHub packages
@@ -248,7 +248,11 @@ Le code R pour réaliser la figure est le suivant:
 ```{r Paracou6MapCode, eval=FALSE}
 library("dbmss")
 library("SpatDiv")
-autoplot(Paracou6, labelSize =expression(paste("Surface terrière (", cm^2, ")")), labelColor="Espèce")
+the_map <- autoplot(Paracou6, labelSize = expression(paste("Surface terrière (", cm^2, ")")), labelColor = "Espèce")
+library("cowplot")
+the_legend <- get_legend(the_map)
+library("gridExtra")
+grid.arrange(the_map + theme(legend.position = "none"), the_legend, nrow=2)
 ```
 
 
