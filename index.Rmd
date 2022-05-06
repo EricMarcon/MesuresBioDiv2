@@ -146,7 +146,7 @@ knitr::knit_hooks$set(
       # replace centering by a minipage
       x  <- gsub(
         "\\n\\n\\{\\\\centering",
-        "\\n\\n\\\\setbox0=\\\\hbox\\{\\\\begin\\{minipage\\}\\[h\\]\\{\\\\widthw\\}\\\\centering",
+        "\\\\setbox0=\\\\hbox\\{\\\\begin\\{minipage\\}\\[h\\]\\{\\\\widthw\\}\\\\centering",
         x
       )
       # Modify align2 output with align=center. Original code:
