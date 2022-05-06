@@ -23,7 +23,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2022-05-05" />
+<meta name="date" content="2022-06-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -567,30 +567,30 @@ Sa version normalisée, MFAD <span class="citation">(Schmera, Erős, et Podani <
 <p>Le calcul sous R est immédiat avec un arbre au format <code>phylog</code> du package <em>ade4</em>.
 Un arbre au format <code>phylo</code> du package <em>ape</em> nécessite une conversion: la fonction <code>Preprocess.Tree</code> du package <em>entropart</em> la réalise.</p>
 <p></p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="mesures-particulières.html#cb179-1"></a>phyTree &lt;-<span class="st"> </span>Paracou618.Taxonomy</span>
-<span id="cb179-2"><a href="mesures-particulières.html#cb179-2"></a><span class="co"># La conversion as.hclust() double les distances. Il faut</span></span>
-<span id="cb179-3"><a href="mesures-particulières.html#cb179-3"></a><span class="co"># donc les diviser par deux.</span></span>
-<span id="cb179-4"><a href="mesures-particulières.html#cb179-4"></a>phyTree<span class="op">$</span>edge.length &lt;-<span class="st"> </span>phyTree<span class="op">$</span>edge.length<span class="op">/</span><span class="dv">2</span></span>
-<span id="cb179-5"><a href="mesures-particulières.html#cb179-5"></a><span class="kw">library</span>(<span class="st">&quot;ape&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="mesures-particulières.html#cb177-1"></a>phyTree &lt;-<span class="st"> </span>Paracou618.Taxonomy</span>
+<span id="cb177-2"><a href="mesures-particulières.html#cb177-2"></a><span class="co"># La conversion as.hclust() double les distances. Il faut</span></span>
+<span id="cb177-3"><a href="mesures-particulières.html#cb177-3"></a><span class="co"># donc les diviser par deux.</span></span>
+<span id="cb177-4"><a href="mesures-particulières.html#cb177-4"></a>phyTree<span class="op">$</span>edge.length &lt;-<span class="st"> </span>phyTree<span class="op">$</span>edge.length<span class="op">/</span><span class="dv">2</span></span>
+<span id="cb177-5"><a href="mesures-particulières.html#cb177-5"></a><span class="kw">library</span>(<span class="st">&quot;ape&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Attaching package: &#39;ape&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:spatstat.geom&#39;:
 ## 
 ##     edges, rotate</code></pre>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="mesures-particulières.html#cb182-1"></a><span class="co"># Conversion au format hclust</span></span>
-<span id="cb182-2"><a href="mesures-particulières.html#cb182-2"></a>hTree &lt;-<span class="st"> </span><span class="kw">as.hclust.phylo</span>(phyTree)</span>
-<span id="cb182-3"><a href="mesures-particulières.html#cb182-3"></a><span class="co"># Conversion au format phylog</span></span>
-<span id="cb182-4"><a href="mesures-particulières.html#cb182-4"></a><span class="kw">library</span>(<span class="st">&quot;ade4&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="mesures-particulières.html#cb180-1"></a><span class="co"># Conversion au format hclust</span></span>
+<span id="cb180-2"><a href="mesures-particulières.html#cb180-2"></a>hTree &lt;-<span class="st"> </span><span class="kw">as.hclust.phylo</span>(phyTree)</span>
+<span id="cb180-3"><a href="mesures-particulières.html#cb180-3"></a><span class="co"># Conversion au format phylog</span></span>
+<span id="cb180-4"><a href="mesures-particulières.html#cb180-4"></a><span class="kw">library</span>(<span class="st">&quot;ade4&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Attaching package: &#39;ade4&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:spatstat.geom&#39;:
 ## 
 ##     disc</code></pre>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="mesures-particulières.html#cb185-1"></a>Tree &lt;-<span class="st"> </span><span class="kw">hclust2phylog</span>(hTree)</span>
-<span id="cb185-2"><a href="mesures-particulières.html#cb185-2"></a><span class="co"># Tree$Wdist contient les valeurs de sqrt(2*distance)</span></span>
-<span id="cb185-3"><a href="mesures-particulières.html#cb185-3"></a>(FAD &lt;-<span class="st"> </span><span class="kw">sum</span>(Tree<span class="op">$</span>Wdist<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="mesures-particulières.html#cb183-1"></a>Tree &lt;-<span class="st"> </span><span class="kw">hclust2phylog</span>(hTree)</span>
+<span id="cb183-2"><a href="mesures-particulières.html#cb183-2"></a><span class="co"># Tree$Wdist contient les valeurs de sqrt(2*distance)</span></span>
+<span id="cb183-3"><a href="mesures-particulières.html#cb183-3"></a>(FAD &lt;-<span class="st"> </span><span class="kw">sum</span>(Tree<span class="op">$</span>Wdist<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## [1] 264159</code></pre>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="mesures-particulières.html#cb187-1"></a>(MFAD &lt;-<span class="st"> </span>FAD<span class="op">/</span><span class="kw">length</span>(Tree<span class="op">$</span>leaves))</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="mesures-particulières.html#cb185-1"></a>(MFAD &lt;-<span class="st"> </span>FAD<span class="op">/</span><span class="kw">length</span>(Tree<span class="op">$</span>leaves))</span></code></pre></div>
 <pre><code>## [1] 621.5506</code></pre>
 <p></p>
 <p><span class="citation">Kader et Perry (<a href="#ref-Kader2007" role="doc-biblioref">2007</a>)</span> regroupent les valeurs de trait par catégories et calculent l’entropie de Simpson des catégories.</p>
@@ -669,28 +669,28 @@ Il baisse ensuite alors que les espèces rares atteignent à leur tour progressi
 <p>Quand <span class="math inline">\(n \to +\infty\)</span>, le numérateur tend vers FAD, et le dénominateur tend vers le nombre d’espèces: <span class="math inline">\(^n{T}\)</span> tend vers MFAD.</p>
 <p>Code R pour la figure <a href="mesures-particulières.html#fig:HurlbertCFig">7.3</a>:</p>
 <p></p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="mesures-particulières.html#cb189-1"></a>Ps &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.7</span>, <span class="fl">0.19</span>, <span class="fl">0.1</span>, <span class="fl">0.01</span>)</span>
-<span id="cb189-2"><a href="mesures-particulières.html#cb189-2"></a>S &lt;-<span class="st"> </span><span class="kw">length</span>(Ps)</span>
-<span id="cb189-3"><a href="mesures-particulières.html#cb189-3"></a>nRange &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">500</span></span>
-<span id="cb189-4"><a href="mesures-particulières.html#cb189-4"></a><span class="co"># Indice de Hurlbert</span></span>
-<span id="cb189-5"><a href="mesures-particulières.html#cb189-5"></a>ESn &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="kw">sapply</span>(nRange[<span class="op">-</span><span class="dv">1</span>], <span class="cf">function</span>(n) <span class="kw">Hurlbert</span>(Ps, n)))</span>
-<span id="cb189-6"><a href="mesures-particulières.html#cb189-6"></a><span class="co"># Préparation du graphique</span></span>
-<span id="cb189-7"><a href="mesures-particulières.html#cb189-7"></a>Xlab &lt;-<span class="st"> &quot;Taille de l&#39;échantillon&quot;</span></span>
-<span id="cb189-8"><a href="mesures-particulières.html#cb189-8"></a>Ylab &lt;-<span class="st"> &quot;Contribution des espèces&quot;</span></span>
-<span id="cb189-9"><a href="mesures-particulières.html#cb189-9"></a><span class="co"># Contribution de chaque espece à chaque valeur de n</span></span>
-<span id="cb189-10"><a href="mesures-particulières.html#cb189-10"></a>Csn &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>S, <span class="cf">function</span>(s) <span class="kw">sapply</span>(nRange, </span>
-<span id="cb189-11"><a href="mesures-particulières.html#cb189-11"></a>              <span class="cf">function</span>(n) (<span class="dv">1</span><span class="op">-</span>(<span class="dv">1</span><span class="op">-</span>Ps[s])<span class="op">^</span>n))<span class="op">/</span>ESn)</span>
-<span id="cb189-12"><a href="mesures-particulières.html#cb189-12"></a><span class="co"># Dataframe contenant les données</span></span>
-<span id="cb189-13"><a href="mesures-particulières.html#cb189-13"></a>df &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(nRange, Csn))</span>
-<span id="cb189-14"><a href="mesures-particulières.html#cb189-14"></a><span class="kw">colnames</span>(df) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;n&quot;</span>, <span class="st">&quot;s07&quot;</span>, <span class="st">&quot;s019&quot;</span>, <span class="st">&quot;s01&quot;</span>, <span class="st">&quot;s001&quot;</span>)</span>
-<span id="cb189-15"><a href="mesures-particulières.html#cb189-15"></a><span class="co"># Graphique</span></span>
-<span id="cb189-16"><a href="mesures-particulières.html#cb189-16"></a>ESnplot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">gather</span>(df, Sp, Contribution, <span class="op">-</span>n), <span class="kw">aes</span>(<span class="dt">x=</span>n)) <span class="op">+</span></span>
-<span id="cb189-17"><a href="mesures-particulières.html#cb189-17"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> Contribution, <span class="dt">lty=</span>Sp)) <span class="op">+</span></span>
-<span id="cb189-18"><a href="mesures-particulières.html#cb189-18"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">1</span><span class="op">/</span><span class="dv">4</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
-<span id="cb189-19"><a href="mesures-particulières.html#cb189-19"></a><span class="st">  </span><span class="kw">scale_x_log10</span>() <span class="op">+</span></span>
-<span id="cb189-20"><a href="mesures-particulières.html#cb189-20"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> Xlab, <span class="dt">y =</span> Ylab) <span class="op">+</span></span>
-<span id="cb189-21"><a href="mesures-particulières.html#cb189-21"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb189-22"><a href="mesures-particulières.html#cb189-22"></a>ESnplot</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="mesures-particulières.html#cb187-1"></a>Ps &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.7</span>, <span class="fl">0.19</span>, <span class="fl">0.1</span>, <span class="fl">0.01</span>)</span>
+<span id="cb187-2"><a href="mesures-particulières.html#cb187-2"></a>S &lt;-<span class="st"> </span><span class="kw">length</span>(Ps)</span>
+<span id="cb187-3"><a href="mesures-particulières.html#cb187-3"></a>nRange &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">500</span></span>
+<span id="cb187-4"><a href="mesures-particulières.html#cb187-4"></a><span class="co"># Indice de Hurlbert</span></span>
+<span id="cb187-5"><a href="mesures-particulières.html#cb187-5"></a>ESn &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="kw">sapply</span>(nRange[<span class="op">-</span><span class="dv">1</span>], <span class="cf">function</span>(n) <span class="kw">Hurlbert</span>(Ps, n)))</span>
+<span id="cb187-6"><a href="mesures-particulières.html#cb187-6"></a><span class="co"># Préparation du graphique</span></span>
+<span id="cb187-7"><a href="mesures-particulières.html#cb187-7"></a>Xlab &lt;-<span class="st"> &quot;Taille de l&#39;échantillon&quot;</span></span>
+<span id="cb187-8"><a href="mesures-particulières.html#cb187-8"></a>Ylab &lt;-<span class="st"> &quot;Contribution des espèces&quot;</span></span>
+<span id="cb187-9"><a href="mesures-particulières.html#cb187-9"></a><span class="co"># Contribution de chaque espece à chaque valeur de n</span></span>
+<span id="cb187-10"><a href="mesures-particulières.html#cb187-10"></a>Csn &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>S, <span class="cf">function</span>(s) <span class="kw">sapply</span>(nRange, </span>
+<span id="cb187-11"><a href="mesures-particulières.html#cb187-11"></a>              <span class="cf">function</span>(n) (<span class="dv">1</span><span class="op">-</span>(<span class="dv">1</span><span class="op">-</span>Ps[s])<span class="op">^</span>n))<span class="op">/</span>ESn)</span>
+<span id="cb187-12"><a href="mesures-particulières.html#cb187-12"></a><span class="co"># Dataframe contenant les données</span></span>
+<span id="cb187-13"><a href="mesures-particulières.html#cb187-13"></a>df &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(nRange, Csn))</span>
+<span id="cb187-14"><a href="mesures-particulières.html#cb187-14"></a><span class="kw">colnames</span>(df) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;n&quot;</span>, <span class="st">&quot;s07&quot;</span>, <span class="st">&quot;s019&quot;</span>, <span class="st">&quot;s01&quot;</span>, <span class="st">&quot;s001&quot;</span>)</span>
+<span id="cb187-15"><a href="mesures-particulières.html#cb187-15"></a><span class="co"># Graphique</span></span>
+<span id="cb187-16"><a href="mesures-particulières.html#cb187-16"></a>ESnplot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">gather</span>(df, Sp, Contribution, <span class="op">-</span>n), <span class="kw">aes</span>(<span class="dt">x=</span>n)) <span class="op">+</span></span>
+<span id="cb187-17"><a href="mesures-particulières.html#cb187-17"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> Contribution, <span class="dt">lty=</span>Sp)) <span class="op">+</span></span>
+<span id="cb187-18"><a href="mesures-particulières.html#cb187-18"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">1</span><span class="op">/</span><span class="dv">4</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb187-19"><a href="mesures-particulières.html#cb187-19"></a><span class="st">  </span><span class="kw">scale_x_log10</span>() <span class="op">+</span></span>
+<span id="cb187-20"><a href="mesures-particulières.html#cb187-20"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> Xlab, <span class="dt">y =</span> Ylab) <span class="op">+</span></span>
+<span id="cb187-21"><a href="mesures-particulières.html#cb187-21"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb187-22"><a href="mesures-particulières.html#cb187-22"></a>ESnplot</span></code></pre></div>
 <p></p>
 </div>
 <div id="richesse-phylogénétique" class="section level3 hasAnchor">
@@ -827,36 +827,36 @@ Figure 7.5: Rectangles de surface fréquence <span class="math inline">\(\times\
 <p></p>
 <p>Code R:</p>
 <p></p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="mesures-particulières.html#cb190-1"></a><span class="co"># Probabilités</span></span>
-<span id="cb190-2"><a href="mesures-particulières.html#cb190-2"></a>Ps &lt;-<span class="st"> </span>Paracou618.MC<span class="op">$</span>Ps[Paracou618.MC<span class="op">$</span>Ps<span class="op">&gt;</span><span class="dv">0</span>]</span>
-<span id="cb190-3"><a href="mesures-particulières.html#cb190-3"></a>Ps &lt;-<span class="st"> </span><span class="kw">sort</span>(Ps, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb190-4"><a href="mesures-particulières.html#cb190-4"></a><span class="co"># Fréquences cumulées</span></span>
-<span id="cb190-5"><a href="mesures-particulières.html#cb190-5"></a>PsCum &lt;-<span class="st"> </span><span class="kw">cumsum</span>(Ps)</span>
-<span id="cb190-6"><a href="mesures-particulières.html#cb190-6"></a>Xgauche &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, PsCum)</span>
-<span id="cb190-7"><a href="mesures-particulières.html#cb190-7"></a>Xdroite &lt;-<span class="st"> </span><span class="kw">c</span>(PsCum, <span class="dv">1</span>)</span>
-<span id="cb190-8"><a href="mesures-particulières.html#cb190-8"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
-<span id="cb190-9"><a href="mesures-particulières.html#cb190-9"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Paracou618.dist)</span>
-<span id="cb190-10"><a href="mesures-particulières.html#cb190-10"></a><span class="co"># Mise en correspondance de la matrice et du vecteur de probabilités</span></span>
-<span id="cb190-11"><a href="mesures-particulières.html#cb190-11"></a>DistanceMatrix &lt;-<span class="st"> </span>DistanceMatrix[<span class="kw">names</span>(Ps), <span class="kw">names</span>(Ps)]</span>
-<span id="cb190-12"><a href="mesures-particulières.html#cb190-12"></a><span class="co"># Taille des niches</span></span>
-<span id="cb190-13"><a href="mesures-particulières.html#cb190-13"></a>ts &lt;-<span class="st"> </span><span class="kw">rowSums</span>(DistanceMatrix)</span>
-<span id="cb190-14"><a href="mesures-particulières.html#cb190-14"></a>fs &lt;-<span class="st"> </span>ts<span class="op">/</span><span class="kw">sum</span>(ts)</span>
-<span id="cb190-15"><a href="mesures-particulières.html#cb190-15"></a><span class="co"># Fréquences cumulées</span></span>
-<span id="cb190-16"><a href="mesures-particulières.html#cb190-16"></a>fsCum &lt;-<span class="st"> </span><span class="kw">cumsum</span>(fs)</span>
-<span id="cb190-17"><a href="mesures-particulières.html#cb190-17"></a>Ybas &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, fsCum)</span>
-<span id="cb190-18"><a href="mesures-particulières.html#cb190-18"></a>Yhaut &lt;-<span class="st"> </span><span class="kw">c</span>(fsCum, <span class="dv">1</span>)</span>
-<span id="cb190-19"><a href="mesures-particulières.html#cb190-19"></a><span class="co"># Rectangles occupés par chaque espèce</span></span>
-<span id="cb190-20"><a href="mesures-particulières.html#cb190-20"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(Xgauche, Ybas, Xdroite, Yhaut)) <span class="op">+</span></span>
-<span id="cb190-21"><a href="mesures-particulières.html#cb190-21"></a><span class="st">  </span><span class="kw">geom_rect</span>(<span class="kw">aes</span>(<span class="dt">xmin=</span> Xgauche, <span class="dt">xmax=</span> Xdroite, <span class="dt">ymin=</span> Ybas, <span class="dt">ymax=</span> Yhaut), </span>
-<span id="cb190-22"><a href="mesures-particulières.html#cb190-22"></a>             <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="op">+</span></span>
-<span id="cb190-23"><a href="mesures-particulières.html#cb190-23"></a><span class="st">  </span><span class="kw">coord_fixed</span>() <span class="op">+</span></span>
-<span id="cb190-24"><a href="mesures-particulières.html#cb190-24"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Fréquence&quot;</span>, <span class="dt">y=</span><span class="st">&quot;Niche&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="mesures-particulières.html#cb188-1"></a><span class="co"># Probabilités</span></span>
+<span id="cb188-2"><a href="mesures-particulières.html#cb188-2"></a>Ps &lt;-<span class="st"> </span>Paracou618.MC<span class="op">$</span>Ps[Paracou618.MC<span class="op">$</span>Ps<span class="op">&gt;</span><span class="dv">0</span>]</span>
+<span id="cb188-3"><a href="mesures-particulières.html#cb188-3"></a>Ps &lt;-<span class="st"> </span><span class="kw">sort</span>(Ps, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb188-4"><a href="mesures-particulières.html#cb188-4"></a><span class="co"># Fréquences cumulées</span></span>
+<span id="cb188-5"><a href="mesures-particulières.html#cb188-5"></a>PsCum &lt;-<span class="st"> </span><span class="kw">cumsum</span>(Ps)</span>
+<span id="cb188-6"><a href="mesures-particulières.html#cb188-6"></a>Xgauche &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, PsCum)</span>
+<span id="cb188-7"><a href="mesures-particulières.html#cb188-7"></a>Xdroite &lt;-<span class="st"> </span><span class="kw">c</span>(PsCum, <span class="dv">1</span>)</span>
+<span id="cb188-8"><a href="mesures-particulières.html#cb188-8"></a><span class="co"># Matrice de distances fonctionnelles</span></span>
+<span id="cb188-9"><a href="mesures-particulières.html#cb188-9"></a>DistanceMatrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(Paracou618.dist)</span>
+<span id="cb188-10"><a href="mesures-particulières.html#cb188-10"></a><span class="co"># Mise en correspondance de la matrice et du vecteur de probabilités</span></span>
+<span id="cb188-11"><a href="mesures-particulières.html#cb188-11"></a>DistanceMatrix &lt;-<span class="st"> </span>DistanceMatrix[<span class="kw">names</span>(Ps), <span class="kw">names</span>(Ps)]</span>
+<span id="cb188-12"><a href="mesures-particulières.html#cb188-12"></a><span class="co"># Taille des niches</span></span>
+<span id="cb188-13"><a href="mesures-particulières.html#cb188-13"></a>ts &lt;-<span class="st"> </span><span class="kw">rowSums</span>(DistanceMatrix)</span>
+<span id="cb188-14"><a href="mesures-particulières.html#cb188-14"></a>fs &lt;-<span class="st"> </span>ts<span class="op">/</span><span class="kw">sum</span>(ts)</span>
+<span id="cb188-15"><a href="mesures-particulières.html#cb188-15"></a><span class="co"># Fréquences cumulées</span></span>
+<span id="cb188-16"><a href="mesures-particulières.html#cb188-16"></a>fsCum &lt;-<span class="st"> </span><span class="kw">cumsum</span>(fs)</span>
+<span id="cb188-17"><a href="mesures-particulières.html#cb188-17"></a>Ybas &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, fsCum)</span>
+<span id="cb188-18"><a href="mesures-particulières.html#cb188-18"></a>Yhaut &lt;-<span class="st"> </span><span class="kw">c</span>(fsCum, <span class="dv">1</span>)</span>
+<span id="cb188-19"><a href="mesures-particulières.html#cb188-19"></a><span class="co"># Rectangles occupés par chaque espèce</span></span>
+<span id="cb188-20"><a href="mesures-particulières.html#cb188-20"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(Xgauche, Ybas, Xdroite, Yhaut)) <span class="op">+</span></span>
+<span id="cb188-21"><a href="mesures-particulières.html#cb188-21"></a><span class="st">  </span><span class="kw">geom_rect</span>(<span class="kw">aes</span>(<span class="dt">xmin=</span> Xgauche, <span class="dt">xmax=</span> Xdroite, <span class="dt">ymin=</span> Ybas, <span class="dt">ymax=</span> Yhaut), </span>
+<span id="cb188-22"><a href="mesures-particulières.html#cb188-22"></a>             <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="op">+</span></span>
+<span id="cb188-23"><a href="mesures-particulières.html#cb188-23"></a><span class="st">  </span><span class="kw">coord_fixed</span>() <span class="op">+</span></span>
+<span id="cb188-24"><a href="mesures-particulières.html#cb188-24"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Fréquence&quot;</span>, <span class="dt">y=</span><span class="st">&quot;Niche&quot;</span>)</span></code></pre></div>
 <p></p>
 <p>La diversité d’abondance et fonctionnelle est la diversité de la surface des rectangles:</p>
 <p></p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="mesures-particulières.html#cb191-1"></a>Surface &lt;-<span class="st"> </span>Ps <span class="op">*</span><span class="st"> </span>fs</span>
-<span id="cb191-2"><a href="mesures-particulières.html#cb191-2"></a>Rs &lt;-<span class="st"> </span>Surface<span class="op">/</span><span class="kw">sum</span>(Surface)</span>
-<span id="cb191-3"><a href="mesures-particulières.html#cb191-3"></a><span class="kw">Diversity</span>(Rs, <span class="dt">q =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="mesures-particulières.html#cb189-1"></a>Surface &lt;-<span class="st"> </span>Ps <span class="op">*</span><span class="st"> </span>fs</span>
+<span id="cb189-2"><a href="mesures-particulières.html#cb189-2"></a>Rs &lt;-<span class="st"> </span>Surface<span class="op">/</span><span class="kw">sum</span>(Surface)</span>
+<span id="cb189-3"><a href="mesures-particulières.html#cb189-3"></a><span class="kw">Diversity</span>(Rs, <span class="dt">q =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##     None 
 ## 71.72482</code></pre>
 <p></p>
@@ -872,12 +872,12 @@ Figure 7.6: Profil de diversité d’abondance et fonctionnelle de Scheiner de l
 <p></p>
 <p>Code R:</p>
 <p></p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="mesures-particulières.html#cb193-1"></a><span class="kw">autoplot</span>(<span class="kw">CommunityProfile</span>(Diversity, Rs), </span>
-<span id="cb193-2"><a href="mesures-particulières.html#cb193-2"></a>         <span class="dt">xlab=</span><span class="st">&quot;Ordre de diversité&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Diversité&quot;</span>) <span class="op">+</span></span>
-<span id="cb193-3"><a href="mesures-particulières.html#cb193-3"></a><span class="kw">geom_line</span>(<span class="dt">data =</span> <span class="kw">as.data.frame.list</span>(<span class="kw">CommunityProfile</span>(Diversity, Ps)), </span>
-<span id="cb193-4"><a href="mesures-particulières.html#cb193-4"></a>          <span class="dt">mapping =</span> <span class="kw">aes</span>(x, y), <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></span>
-<span id="cb193-5"><a href="mesures-particulières.html#cb193-5"></a><span class="kw">geom_line</span>(<span class="dt">data =</span> <span class="kw">as.data.frame.list</span>(<span class="kw">CommunityProfile</span>(Diversity, fs)),</span>
-<span id="cb193-6"><a href="mesures-particulières.html#cb193-6"></a>          <span class="dt">mapping =</span> <span class="kw">aes</span>(x, y), <span class="dt">lty=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="mesures-particulières.html#cb191-1"></a><span class="kw">autoplot</span>(<span class="kw">CommunityProfile</span>(Diversity, Rs), </span>
+<span id="cb191-2"><a href="mesures-particulières.html#cb191-2"></a>         <span class="dt">xlab=</span><span class="st">&quot;Ordre de diversité&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Diversité&quot;</span>) <span class="op">+</span></span>
+<span id="cb191-3"><a href="mesures-particulières.html#cb191-3"></a><span class="kw">geom_line</span>(<span class="dt">data =</span> <span class="kw">as.data.frame.list</span>(<span class="kw">CommunityProfile</span>(Diversity, Ps)), </span>
+<span id="cb191-4"><a href="mesures-particulières.html#cb191-4"></a>          <span class="dt">mapping =</span> <span class="kw">aes</span>(x, y), <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></span>
+<span id="cb191-5"><a href="mesures-particulières.html#cb191-5"></a><span class="kw">geom_line</span>(<span class="dt">data =</span> <span class="kw">as.data.frame.list</span>(<span class="kw">CommunityProfile</span>(Diversity, fs)),</span>
+<span id="cb191-6"><a href="mesures-particulières.html#cb191-6"></a>          <span class="dt">mapping =</span> <span class="kw">aes</span>(x, y), <span class="dt">lty=</span><span class="dv">3</span>)</span></code></pre></div>
 <p></p>
 <p>La notion de diversité phylogénétique ou fonctionnelle traitée par Scheiner est assez différente de celles vues précédemment parce qu’elle considère toutes les dimensions de façon symétrique: l’ordre de diversité, <span class="math inline">\(q\)</span>, s’applique à toutes les dimensions.
 Si <span class="math inline">\(q\)</span> est grand, les espèces dont le produit des dimensions de la diversité est petit (que l’espèce soit rare, ait une divergence phylogénétique faible ou une niche étroite) sont négligées, alors que <span class="math inline">\(q\)</span> n’affecte que la fréquence dans le cadre de la phylodiversité <span class="math inline">\(^{q}\!\bar{D}\)</span> ou la banalité pour <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span>.</p>
@@ -917,9 +917,9 @@ Si les noeuds de l’arbre phylogénétique sont datés, PD peut être considér
 <p>Dans le cas particulier ou toutes les branches sont de longueur 1, c’est-à-dire que toutes les espèces sont liées à la même racine (on dira que l’arbre est parfaitement régulier), PD et FD sont égales à la richesse spécifique.</p>
 <p>Le package <em>entropart</em> fournit la fonction <code>PDFD</code>:</p>
 <p></p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="mesures-particulières.html#cb194-1"></a><span class="co"># Vecteur des probabilités</span></span>
-<span id="cb194-2"><a href="mesures-particulières.html#cb194-2"></a>Ps &lt;-<span class="st"> </span>Paracou618.MC<span class="op">$</span>Ps</span>
-<span id="cb194-3"><a href="mesures-particulières.html#cb194-3"></a><span class="kw">PDFD</span>(Ps, Paracou618.Taxonomy)</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="mesures-particulières.html#cb192-1"></a><span class="co"># Vecteur des probabilités</span></span>
+<span id="cb192-2"><a href="mesures-particulières.html#cb192-2"></a>Ps &lt;-<span class="st"> </span>Paracou618.MC<span class="op">$</span>Ps</span>
+<span id="cb192-3"><a href="mesures-particulières.html#cb192-3"></a><span class="kw">PDFD</span>(Ps, Paracou618.Taxonomy)</span></code></pre></div>
 <pre><code>## None 
 ##  395</code></pre>
 <p></p>
@@ -978,9 +978,9 @@ Le biais d’estimation est très faible <span class="citation">(Marcon et al. <
 <h3><span class="header-section-number">7.6.4</span> Calcul sous R<a href="mesures-particulières.html#calcul-sous-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Le package <em>entropart</em> fournit la fonction <code>Rao</code>:</p>
 <p></p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="mesures-particulières.html#cb196-1"></a><span class="co"># Vecteur des probabilités</span></span>
-<span id="cb196-2"><a href="mesures-particulières.html#cb196-2"></a>Ps &lt;-<span class="st"> </span>Paracou618.MC<span class="op">$</span>Ps</span>
-<span id="cb196-3"><a href="mesures-particulières.html#cb196-3"></a><span class="kw">Rao</span>(Ps, Paracou618.Taxonomy)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="mesures-particulières.html#cb194-1"></a><span class="co"># Vecteur des probabilités</span></span>
+<span id="cb194-2"><a href="mesures-particulières.html#cb194-2"></a>Ps &lt;-<span class="st"> </span>Paracou618.MC<span class="op">$</span>Ps</span>
+<span id="cb194-3"><a href="mesures-particulières.html#cb194-3"></a><span class="kw">Rao</span>(Ps, Paracou618.Taxonomy)</span></code></pre></div>
 <pre><code>##     None 
 ## 2.878133</code></pre>
 <p></p>
@@ -990,18 +990,18 @@ L’inertie des points représentants les espèces, précisément la moyenne des
 Cette représentation est étendue dans la double analyse en composantes principales de <span class="citation">Pavoine, Dufour, et Chessel (<a href="#ref-Pavoine2004" role="doc-biblioref">2004</a>)</span>, section <a href="chap-DedompHCDT.html#sec-RaoDisc">12.5</a>.</p>
 <p>Dans <em>ADE4</em>, les arbres phylogénétiques sont donc stockés sous la forme d’objets de type <code>phylog</code> où la matrice des distances (<code>\$Wdist</code>) est <span class="math inline">\(\mathbf{D}\)</span> mais les longueurs des branches de l’arbre (<code>\$droot</code>) correspondent aux valeurs de <span class="math inline">\(\mathbf{\Delta}\)</span>.</p>
 <p></p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="mesures-particulières.html#cb198-1"></a><span class="kw">library</span>(<span class="st">&quot;ade4&quot;</span>)</span>
-<span id="cb198-2"><a href="mesures-particulières.html#cb198-2"></a><span class="kw">divc</span>(<span class="kw">as.data.frame</span>(Ps), Paracou618.Taxonomy<span class="op">$</span>Wdist)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="mesures-particulières.html#cb196-1"></a><span class="kw">library</span>(<span class="st">&quot;ade4&quot;</span>)</span>
+<span id="cb196-2"><a href="mesures-particulières.html#cb196-2"></a><span class="kw">divc</span>(<span class="kw">as.data.frame</span>(Ps), Paracou618.Taxonomy<span class="op">$</span>Wdist)</span></code></pre></div>
 <pre><code>##    diversity
 ## Ps 0.9854485</code></pre>
 <p></p>
 <p><code>divc</code> peut traiter plusieurs communautés simultanément; <code>Rao</code> peut être utilisé avec la fonction <code>apply</code>:</p>
 <p></p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="mesures-particulières.html#cb200-1"></a><span class="kw">divc</span>(<span class="kw">as.data.frame</span>(Paracou618.MC<span class="op">$</span>Psi), Paracou618.Taxonomy<span class="op">$</span>Wdist)</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="mesures-particulières.html#cb198-1"></a><span class="kw">divc</span>(<span class="kw">as.data.frame</span>(Paracou618.MC<span class="op">$</span>Psi), Paracou618.Taxonomy<span class="op">$</span>Wdist)</span></code></pre></div>
 <pre><code>##      diversity
 ## P006 0.9727197
 ## P018 0.9794563</code></pre>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="mesures-particulières.html#cb202-1"></a><span class="kw">apply</span>(Paracou618.MC<span class="op">$</span>Psi, <span class="dv">2</span>, Rao, <span class="dt">Tree =</span> Paracou618.Taxonomy)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="mesures-particulières.html#cb200-1"></a><span class="kw">apply</span>(Paracou618.MC<span class="op">$</span>Psi, <span class="dv">2</span>, Rao, <span class="dt">Tree =</span> Paracou618.Taxonomy)</span></code></pre></div>
 <pre><code>##     P006     P018 
 ## 2.820856 2.876405</code></pre>
 <p></p>
@@ -1013,14 +1013,14 @@ Les espèces les plus originales sont celles ayant le moins d’espèces proches
 <p>L’originalité n’est pas intéressante dans une taxonomie: une phylogénie doit être créée pour illustrer cette notion.
 Le fichier <code>rao.traits.csv</code> contient une espèce par ligne, identifiée par le champ <code>Code</code>, et un certain nombre de valeurs de traits en colonnes.</p>
 <p></p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="mesures-particulières.html#cb204-1"></a><span class="co"># Lecture des données: traits pour 34 espèces</span></span>
-<span id="cb204-2"><a href="mesures-particulières.html#cb204-2"></a><span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.traits.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">header =</span> T) -&gt;</span>
-<span id="cb204-3"><a href="mesures-particulières.html#cb204-3"></a><span class="st">    </span>traits</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="mesures-particulières.html#cb202-1"></a><span class="co"># Lecture des données: traits pour 34 espèces</span></span>
+<span id="cb202-2"><a href="mesures-particulières.html#cb202-2"></a><span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.traits.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">header =</span> T) -&gt;</span>
+<span id="cb202-3"><a href="mesures-particulières.html#cb202-3"></a><span class="st">    </span>traits</span></code></pre></div>
 <p></p>
 <p>Le résultat est un <em>data frame</em> nommé <code>traits</code> à 8 lignes (espèces) et 6 colonnes (traits):</p>
 <p></p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="mesures-particulières.html#cb205-1"></a><span class="co"># Aperçu</span></span>
-<span id="cb205-2"><a href="mesures-particulières.html#cb205-2"></a>traits[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="mesures-particulières.html#cb203-1"></a><span class="co"># Aperçu</span></span>
+<span id="cb203-2"><a href="mesures-particulières.html#cb203-2"></a>traits[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
 <pre><code>##          SLA       Am       Gm
 ## Ess 10.10341 97.88627 1.454455
 ## Me  14.27473 63.52255 1.493502
@@ -1029,8 +1029,8 @@ Le fichier <code>rao.traits.csv</code> contient une espèce par ligne, identifi�
 <p></p>
 <p>La matrice de distances est créée par classification automatique hiérarchique.</p>
 <p></p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="mesures-particulières.html#cb207-1"></a><span class="co"># ACP sur les traits foliaires</span></span>
-<span id="cb207-2"><a href="mesures-particulières.html#cb207-2"></a>pcaf &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(traits, <span class="dt">scale =</span> T, <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="mesures-particulières.html#cb205-1"></a><span class="co"># ACP sur les traits foliaires</span></span>
+<span id="cb205-2"><a href="mesures-particulières.html#cb205-2"></a>pcaf &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(traits, <span class="dt">scale =</span> T, <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p></p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:PCAFFig"></span>
@@ -1042,12 +1042,12 @@ Figure 7.8: Analyse en composante principale des traits foliaires
 <p></p>
 <p><code>pcaf</code> (figure <a href="mesures-particulières.html#fig:PCAFFig">7.8</a>) est une liste qui contient les résultats de l’ACP, à utiliser pour la classification:</p>
 <p></p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="mesures-particulières.html#cb208-1"></a><span class="co"># CAH Ward des traits foliaires</span></span>
-<span id="cb208-2"><a href="mesures-particulières.html#cb208-2"></a>hf &lt;-<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">dist</span>(pcaf<span class="op">$</span>tab), <span class="st">&quot;ward.D&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="mesures-particulières.html#cb206-1"></a><span class="co"># CAH Ward des traits foliaires</span></span>
+<span id="cb206-2"><a href="mesures-particulières.html#cb206-2"></a>hf &lt;-<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">dist</span>(pcaf<span class="op">$</span>tab), <span class="st">&quot;ward.D&quot;</span>)</span></code></pre></div>
 <p></p>
 <p>Code R pour la figure <a href="mesures-particulières.html#fig:PCAFFig">7.8</a>:</p>
 <p></p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="mesures-particulières.html#cb209-1"></a><span class="kw">scatter</span>(pcaf)</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="mesures-particulières.html#cb207-1"></a><span class="kw">scatter</span>(pcaf)</span></code></pre></div>
 <p></p>
 <p></p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:HclustFig"></span>
@@ -1059,13 +1059,13 @@ Figure 7.9: Arbre phylogénétique issu de la classification automatique.
 <p></p>
 <p>Le résultat de la classification est un objet <code>hclust</code> (figure <a href="mesures-particulières.html#fig:HclustFig">7.9</a> qui doit être transformé en <code>phylog</code> pour la suite de l’analyse:</p>
 <p></p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="mesures-particulières.html#cb210-1"></a><span class="co"># Transformation de l&#39;arbre du format hclust au format</span></span>
-<span id="cb210-2"><a href="mesures-particulières.html#cb210-2"></a><span class="co"># phylog</span></span>
-<span id="cb210-3"><a href="mesures-particulières.html#cb210-3"></a>phyf &lt;-<span class="st"> </span><span class="kw">hclust2phylog</span>(hf)</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="mesures-particulières.html#cb208-1"></a><span class="co"># Transformation de l&#39;arbre du format hclust au format</span></span>
+<span id="cb208-2"><a href="mesures-particulières.html#cb208-2"></a><span class="co"># phylog</span></span>
+<span id="cb208-3"><a href="mesures-particulières.html#cb208-3"></a>phyf &lt;-<span class="st"> </span><span class="kw">hclust2phylog</span>(hf)</span></code></pre></div>
 <p></p>
 <p>Code R pour la figure <a href="mesures-particulières.html#fig:HclustFig">7.9</a>:</p>
 <p></p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="mesures-particulières.html#cb211-1"></a><span class="kw">plot</span>(hf, <span class="dt">h =</span> <span class="dv">-1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="mesures-particulières.html#cb209-1"></a><span class="kw">plot</span>(hf, <span class="dt">h =</span> <span class="dv">-1</span>)</span></code></pre></div>
 <p></p>
 <p>Le résultat est en figure <a href="mesures-particulières.html#fig:PhylogRaoFig">7.10</a>.</p>
 
@@ -1079,7 +1079,7 @@ Figure 7.10: Présentation de l’arbre phylogénétique avec la contribution de
 <p></p>
 <p>Code R pour la figure <a href="mesures-particulières.html#fig:PhylogRaoFig">7.10</a>:</p>
 <p></p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="mesures-particulières.html#cb212-1"></a><span class="kw">table.phylog</span>(pcaf<span class="op">$</span>tab[<span class="kw">names</span>(phyf<span class="op">$</span>leaves), ], phyf)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="mesures-particulières.html#cb210-1"></a><span class="kw">table.phylog</span>(pcaf<span class="op">$</span>tab[<span class="kw">names</span>(phyf<span class="op">$</span>leaves), ], phyf)</span></code></pre></div>
 <p></p>
 <p>La limite des distances ultramétriques est leur tendance à déformer le jeu de points <span class="citation">(Pavoine, Ollier, et Dufour <a href="#ref-Pavoine2005a" role="doc-biblioref">2005</a>)</span>.
 Dans cet exemple, les deux premiers axes de l’ACP rendent compte de presque toute l’inertie.
@@ -1095,7 +1095,7 @@ Figure 7.11: Originalité des espèces.
 <p></p>
 <p>Code R pour la figure <a href="mesures-particulières.html#fig:originalityFig">7.11</a>:</p>
 <p></p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="mesures-particulières.html#cb213-1"></a><span class="kw">dotchart.phylog</span>(phyf, <span class="kw">originality</span>(phyf, <span class="dv">5</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="mesures-particulières.html#cb211-1"></a><span class="kw">dotchart.phylog</span>(phyf, <span class="kw">originality</span>(phyf, <span class="dv">5</span>))</span></code></pre></div>
 <p></p>
 <p>La fonction a pour paramètres l’objet <code>phylog</code> contenant la classification et le numéro de la méthode de calcul à utiliser, 5 pour l’entropie quadratique.
 Sa représentation graphique est faite par <code>dotchart.phylog</code>:</p>

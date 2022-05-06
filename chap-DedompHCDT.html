@@ -23,7 +23,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2022-05-05" />
+<meta name="date" content="2022-06-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -535,8 +535,8 @@ Enfin, l’idée de la décomposition de la divergence de Kullback-Leibler, mais
 La décomposition ou le regroupement peuvent être effectués sur un nombre quelconque de niveaux.</p>
 <p>Calcul sous R: La fonction <code>BetaEntropy</code> calcule l’entropie <span class="math inline">\(\beta\)</span> de la méta-communauté (l’argument <span class="math inline">\(q=1\)</span> permet de choisir l’entropie de Shannon).</p>
 
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="chap-DedompHCDT.html#cb271-1"></a><span class="co"># Pas de correction du biais d&#39;estimation</span></span>
-<span id="cb271-2"><a href="chap-DedompHCDT.html#cb271-2"></a><span class="kw">summary</span>(<span class="kw">BetaEntropy</span>(Paracou618.MC, <span class="dt">q =</span> <span class="dv">1</span>, <span class="dt">Correction =</span> <span class="st">&quot;None&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="chap-DedompHCDT.html#cb269-1"></a><span class="co"># Pas de correction du biais d&#39;estimation</span></span>
+<span id="cb269-2"><a href="chap-DedompHCDT.html#cb269-2"></a><span class="kw">summary</span>(<span class="kw">BetaEntropy</span>(Paracou618.MC, <span class="dt">q =</span> <span class="dv">1</span>, <span class="dt">Correction =</span> <span class="st">&quot;None&quot;</span>))</span></code></pre></div>
 <pre><code>## Neutral beta entropy of order 1 of metaCommunity 
 ## Paracou618.MC with correction: None 
 ## 
@@ -557,7 +557,7 @@ L’estimateur corrigé de <span class="math inline">\(_iH_{\beta}\)</span> est<
 \end{equation}\]</span></p>
 <p>Calcul sous R: <code>BetaEntropy</code> applique cette correction:</p>
 
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="chap-DedompHCDT.html#cb273-1"></a><span class="kw">summary</span>(<span class="kw">BetaEntropy</span>(Paracou618.MC, <span class="dt">q =</span> <span class="dv">1</span>, <span class="dt">Correction =</span> <span class="st">&quot;ChaoShen&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="chap-DedompHCDT.html#cb271-1"></a><span class="kw">summary</span>(<span class="kw">BetaEntropy</span>(Paracou618.MC, <span class="dt">q =</span> <span class="dv">1</span>, <span class="dt">Correction =</span> <span class="st">&quot;ChaoShen&quot;</span>))</span></code></pre></div>
 <pre><code>## Neutral beta entropy of order 1 of metaCommunity 
 ## Paracou618.MC with correction: ChaoShen 
 ## 
@@ -578,8 +578,8 @@ Dans ce cas, l’entropie <span class="math inline">\(\beta\)</span> est égale 
 Comme chaque terme du calcul est une entropie <span class="math inline">\(\alpha\)</span>, il peut être corrigé selon l’équation <a href="chap-MesuresNeutres.html#eq:Chao2013">(3.41)</a> pour obtenir un estimateur moins biaisé de <span class="math inline">\(H_{\beta}\)</span>.</p>
 <p>Calcul sous R:</p>
 
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="chap-DedompHCDT.html#cb275-1"></a><span class="kw">Shannon</span>(Paracou618.MC<span class="op">$</span>Ns) <span class="op">+</span><span class="st"> </span><span class="kw">Shannon</span>(<span class="kw">colSums</span>(Paracou618.MC<span class="op">$</span>Nsi)) <span class="op">-</span></span>
-<span id="cb275-2"><a href="chap-DedompHCDT.html#cb275-2"></a><span class="st">    </span><span class="kw">Shannon</span>(Paracou618.MC<span class="op">$</span>Nsi)</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="chap-DedompHCDT.html#cb273-1"></a><span class="kw">Shannon</span>(Paracou618.MC<span class="op">$</span>Ns) <span class="op">+</span><span class="st"> </span><span class="kw">Shannon</span>(<span class="kw">colSums</span>(Paracou618.MC<span class="op">$</span>Nsi)) <span class="op">-</span></span>
+<span id="cb273-2"><a href="chap-DedompHCDT.html#cb273-2"></a><span class="st">    </span><span class="kw">Shannon</span>(Paracou618.MC<span class="op">$</span>Nsi)</span></code></pre></div>
 <pre><code>##   UnveilJ 
 ## 0.3439827</code></pre>
 
@@ -594,25 +594,25 @@ Comme chaque terme du calcul est une entropie <span class="math inline">\(\alpha
 \end{align}\]</span></p>
 <p>Cette correction est incluse dans la fonction <code>ShannonBeta</code> de <em>entropart</em> :</p>
 
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="chap-DedompHCDT.html#cb277-1"></a><span class="co"># Divergence de Kullback-Leibler entre chaque communauté de</span></span>
-<span id="cb277-2"><a href="chap-DedompHCDT.html#cb277-2"></a><span class="co"># Paracou618.MC et la métacommunauté</span></span>
-<span id="cb277-3"><a href="chap-DedompHCDT.html#cb277-3"></a>(Beta &lt;-<span class="st"> </span><span class="kw">apply</span>(Paracou618.MC<span class="op">$</span>Nsi, <span class="dv">2</span>, ShannonBeta, <span class="dt">Nexp =</span> Paracou618.MC<span class="op">$</span>Ns,</span>
-<span id="cb277-4"><a href="chap-DedompHCDT.html#cb277-4"></a>    <span class="dt">Correction =</span> <span class="st">&quot;ZhangGrabchak&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="chap-DedompHCDT.html#cb275-1"></a><span class="co"># Divergence de Kullback-Leibler entre chaque communauté de</span></span>
+<span id="cb275-2"><a href="chap-DedompHCDT.html#cb275-2"></a><span class="co"># Paracou618.MC et la métacommunauté</span></span>
+<span id="cb275-3"><a href="chap-DedompHCDT.html#cb275-3"></a>(Beta &lt;-<span class="st"> </span><span class="kw">apply</span>(Paracou618.MC<span class="op">$</span>Nsi, <span class="dv">2</span>, ShannonBeta, <span class="dt">Nexp =</span> Paracou618.MC<span class="op">$</span>Ns,</span>
+<span id="cb275-4"><a href="chap-DedompHCDT.html#cb275-4"></a>    <span class="dt">Correction =</span> <span class="st">&quot;ZhangGrabchak&quot;</span>))</span></code></pre></div>
 <pre><code>##      P006      P018 
 ## 0.1442318 0.2994995</code></pre>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="chap-DedompHCDT.html#cb279-1"></a><span class="co"># Entropie beta</span></span>
-<span id="cb279-2"><a href="chap-DedompHCDT.html#cb279-2"></a><span class="kw">sum</span>(Paracou618.MC<span class="op">$</span>Wi <span class="op">*</span><span class="st"> </span>Beta)</span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="chap-DedompHCDT.html#cb277-1"></a><span class="co"># Entropie beta</span></span>
+<span id="cb277-2"><a href="chap-DedompHCDT.html#cb277-2"></a><span class="kw">sum</span>(Paracou618.MC<span class="op">$</span>Wi <span class="op">*</span><span class="st"> </span>Beta)</span></code></pre></div>
 <pre><code>## [1] 0.2106764</code></pre>
 
 <p>La correction de Zhang et Grabchak réduit beaucoup plus fortement l’estimation que celle de Chao et Shen.
 Le meilleur estimateur peut être évalué à partir de la différence entre les entropies <span class="math inline">\(\gamma\)</span> et <span class="math inline">\(\alpha\)</span>, corrigées par le meilleur estimateur disponible (celui de Chao, Wang et Jost, voir section <a href="chap-MesuresNeutres.html#sec-BiaisShannon">3.3.2</a>):</p>
 
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="chap-DedompHCDT.html#cb281-1"></a><span class="co"># Entropie alpha de chaque communauté de Paracou618.MC</span></span>
-<span id="cb281-2"><a href="chap-DedompHCDT.html#cb281-2"></a>(Alpha &lt;-<span class="st"> </span><span class="kw">apply</span>(Paracou618.MC<span class="op">$</span>Nsi, <span class="dv">2</span>, Shannon, <span class="dt">CheckArguments =</span> <span class="ot">FALSE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="chap-DedompHCDT.html#cb279-1"></a><span class="co"># Entropie alpha de chaque communauté de Paracou618.MC</span></span>
+<span id="cb279-2"><a href="chap-DedompHCDT.html#cb279-2"></a>(Alpha &lt;-<span class="st"> </span><span class="kw">apply</span>(Paracou618.MC<span class="op">$</span>Nsi, <span class="dv">2</span>, Shannon, <span class="dt">CheckArguments =</span> <span class="ot">FALSE</span>))</span></code></pre></div>
 <pre><code>##     P006     P018 
 ## 4.427559 4.772981</code></pre>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="chap-DedompHCDT.html#cb283-1"></a><span class="co"># Entropie beta estimée par différence</span></span>
-<span id="cb283-2"><a href="chap-DedompHCDT.html#cb283-2"></a><span class="kw">bcShannon</span>(Paracou618.MC<span class="op">$</span>Ns) <span class="op">-</span><span class="st"> </span><span class="kw">sum</span>(Paracou618.MC<span class="op">$</span>Wi <span class="op">*</span><span class="st"> </span>Alpha)</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="chap-DedompHCDT.html#cb281-1"></a><span class="co"># Entropie beta estimée par différence</span></span>
+<span id="cb281-2"><a href="chap-DedompHCDT.html#cb281-2"></a><span class="kw">bcShannon</span>(Paracou618.MC<span class="op">$</span>Ns) <span class="op">-</span><span class="st"> </span><span class="kw">sum</span>(Paracou618.MC<span class="op">$</span>Wi <span class="op">*</span><span class="st"> </span>Alpha)</span></code></pre></div>
 <pre><code>##   UnveilJ 
 ## 0.3526572</code></pre>
 
@@ -679,7 +679,7 @@ La divergence non-logarithmique de Jensen-Shannon <span class="citation">(Lamber
 Elle mesure l’écart entre la diversité <span class="math inline">\(\alpha\)</span> et la valeur de <span class="math inline">\(\sum_s{w_i p^q_{s|i} \ln_q{p_s}^q}\)</span>, qui n’est pas la diversité <span class="math inline">\(\gamma\)</span> <span class="citation">(Marcon et al. <a href="#ref-Marcon2014a" role="doc-biblioref">2014</a>)</span>.</p>
 <p>Calcul sous R: La fonction <code>DivPart</code> calcule entropie et diversité en même temps:</p>
 
-<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="chap-DedompHCDT.html#cb285-1"></a><span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="chap-DedompHCDT.html#cb283-1"></a><span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## $MetaCommunity
 ## [1] &quot;Paracou618.MC&quot;
 ## 
@@ -881,9 +881,9 @@ C’est un indice de Rao: les poids des communautés sont équivalents aux table
 La divergence entre communautés est construite à partir des entropies de chacune: l’entropie <span class="math inline">\(\beta\)</span> est définie comme la différence entre les entropies <span class="math inline">\(\gamma\)</span> et <span class="math inline">\(\alpha\)</span>.</p>
 <p>L’exemple suivant utilise les communautés du fichier <code>rao.effectifs.csv</code> :</p>
 
-<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="chap-DedompHCDT.html#cb287-1"></a><span class="co"># Vecteur contenant 8 espèces...</span></span>
-<span id="cb287-2"><a href="chap-DedompHCDT.html#cb287-2"></a>(<span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.effectifs.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">header =</span> T) -&gt;</span>
-<span id="cb287-3"><a href="chap-DedompHCDT.html#cb287-3"></a><span class="st">    </span>effectifs)</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="chap-DedompHCDT.html#cb285-1"></a><span class="co"># Vecteur contenant 8 espèces...</span></span>
+<span id="cb285-2"><a href="chap-DedompHCDT.html#cb285-2"></a>(<span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.effectifs.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">header =</span> T) -&gt;</span>
+<span id="cb285-3"><a href="chap-DedompHCDT.html#cb285-3"></a><span class="st">    </span>effectifs)</span></code></pre></div>
 <pre><code>##     P1 P2 P3 P4
 ## Ess 97 36 34 61
 ## Me  62 24 49  4
@@ -893,16 +893,16 @@ La divergence entre communautés est construite à partir des entropies de chacu
 ## Bg  58 49 47 19
 ## Ef   9 34 91 35
 ## Dg  98 14 95 14</code></pre>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="chap-DedompHCDT.html#cb289-1"></a><span class="co"># Lecture des données : traits pour 34 espèces</span></span>
-<span id="cb289-2"><a href="chap-DedompHCDT.html#cb289-2"></a><span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.traits.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">header =</span> T) -&gt;</span>
-<span id="cb289-3"><a href="chap-DedompHCDT.html#cb289-3"></a><span class="st">    </span>traits</span>
-<span id="cb289-4"><a href="chap-DedompHCDT.html#cb289-4"></a><span class="co"># ACP sur les traits foliaires</span></span>
-<span id="cb289-5"><a href="chap-DedompHCDT.html#cb289-5"></a>pcaf &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(traits, <span class="dt">scale =</span> T, <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>)</span>
-<span id="cb289-6"><a href="chap-DedompHCDT.html#cb289-6"></a><span class="co"># CAH Ward des traits foliaires</span></span>
-<span id="cb289-7"><a href="chap-DedompHCDT.html#cb289-7"></a>hf &lt;-<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">dist</span>(pcaf<span class="op">$</span>tab), <span class="st">&quot;ward.D&quot;</span>)</span>
-<span id="cb289-8"><a href="chap-DedompHCDT.html#cb289-8"></a><span class="co"># Transformation de l&#39;arbre du format hclust au format</span></span>
-<span id="cb289-9"><a href="chap-DedompHCDT.html#cb289-9"></a><span class="co"># phylog</span></span>
-<span id="cb289-10"><a href="chap-DedompHCDT.html#cb289-10"></a>phyf &lt;-<span class="st"> </span><span class="kw">hclust2phylog</span>(hf)</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="chap-DedompHCDT.html#cb287-1"></a><span class="co"># Lecture des données : traits pour 34 espèces</span></span>
+<span id="cb287-2"><a href="chap-DedompHCDT.html#cb287-2"></a><span class="kw">read.csv2</span>(<span class="st">&quot;data/rao.traits.csv&quot;</span>, <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">header =</span> T) -&gt;</span>
+<span id="cb287-3"><a href="chap-DedompHCDT.html#cb287-3"></a><span class="st">    </span>traits</span>
+<span id="cb287-4"><a href="chap-DedompHCDT.html#cb287-4"></a><span class="co"># ACP sur les traits foliaires</span></span>
+<span id="cb287-5"><a href="chap-DedompHCDT.html#cb287-5"></a>pcaf &lt;-<span class="st"> </span><span class="kw">dudi.pca</span>(traits, <span class="dt">scale =</span> T, <span class="dt">scannf =</span> <span class="ot">FALSE</span>, <span class="dt">nf =</span> <span class="dv">2</span>)</span>
+<span id="cb287-6"><a href="chap-DedompHCDT.html#cb287-6"></a><span class="co"># CAH Ward des traits foliaires</span></span>
+<span id="cb287-7"><a href="chap-DedompHCDT.html#cb287-7"></a>hf &lt;-<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">dist</span>(pcaf<span class="op">$</span>tab), <span class="st">&quot;ward.D&quot;</span>)</span>
+<span id="cb287-8"><a href="chap-DedompHCDT.html#cb287-8"></a><span class="co"># Transformation de l&#39;arbre du format hclust au format</span></span>
+<span id="cb287-9"><a href="chap-DedompHCDT.html#cb287-9"></a><span class="co"># phylog</span></span>
+<span id="cb287-10"><a href="chap-DedompHCDT.html#cb287-10"></a>phyf &lt;-<span class="st"> </span><span class="kw">hclust2phylog</span>(hf)</span></code></pre></div>
 
 <p>Il contient 4 communautés.</p>
 <p>Pour obtenir tous les éléments de l’équation <a href="chap-DedompHCDT.html#eq:Raobeta">(12.15)</a>:</p>
@@ -910,10 +910,10 @@ La divergence entre communautés est construite à partir des entropies de chacu
 <li><span class="math inline">\(H_{\Delta }\left(\mathbf{p}\right)\)</span>: diversité totale. Calculer <span class="math inline">\(\mathbf{p}\)</span> en sommant les communautés. Calculer ensuite l’entropie quadratique avec <code>divc</code> :</li>
 </ul>
 
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="chap-DedompHCDT.html#cb290-1"></a>(tabF &lt;-<span class="st"> </span><span class="kw">apply</span>(effectifs[<span class="kw">names</span>(phyf<span class="op">$</span>leaves), ], <span class="dt">MARGIN =</span> <span class="dv">1</span>, sum))</span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="chap-DedompHCDT.html#cb288-1"></a>(tabF &lt;-<span class="st"> </span><span class="kw">apply</span>(effectifs[<span class="kw">names</span>(phyf<span class="op">$</span>leaves), ], <span class="dt">MARGIN =</span> <span class="dv">1</span>, sum))</span></code></pre></div>
 <pre><code>##  Sr Ess  Me  S1  Bg  Ef  Vm  Dg 
 ## 284 228 139  91 173 169 141 221</code></pre>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="chap-DedompHCDT.html#cb292-1"></a><span class="kw">divc</span>(<span class="kw">as.data.frame</span>(tabF), phyf<span class="op">$</span>Wdist)</span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="chap-DedompHCDT.html#cb290-1"></a><span class="kw">divc</span>(<span class="kw">as.data.frame</span>(tabF), phyf<span class="op">$</span>Wdist)</span></code></pre></div>
 <pre><code>##      diversity
 ## tabF  5.870667</code></pre>
 
@@ -921,7 +921,7 @@ La divergence entre communautés est construite à partir des entropies de chacu
 <li><span class="math inline">\(H_{\Delta}\left({\mathbf{p}}_i\right)\)</span>: diversité de chaque communauté, fournie par <code>divc</code> :</li>
 </ul>
 
-<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="chap-DedompHCDT.html#cb294-1"></a><span class="kw">divc</span>(effectifs[<span class="kw">names</span>(phyf<span class="op">$</span>leaves), ], phyf<span class="op">$</span>Wdist)</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="chap-DedompHCDT.html#cb292-1"></a><span class="kw">divc</span>(effectifs[<span class="kw">names</span>(phyf<span class="op">$</span>leaves), ], phyf<span class="op">$</span>Wdist)</span></code></pre></div>
 <pre><code>##    diversity
 ## P1  5.816719
 ## P2  5.897210
@@ -932,14 +932,14 @@ La divergence entre communautés est construite à partir des entropies de chacu
 <li>La variabilité inter-communautés peut être calculée par <code>divc</code> en utilisant la distance fournie par <code>disc</code>, en définissant la matrice des poids (égale aux effectifs):</li>
 </ul>
 
-<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="chap-DedompHCDT.html#cb296-1"></a><span class="kw">divc</span>(<span class="kw">as.data.frame</span>(<span class="kw">colSums</span>(effectifs)), <span class="kw">disc</span>(effectifs[<span class="kw">names</span>(phyf<span class="op">$</span>leaves),</span>
-<span id="cb296-2"><a href="chap-DedompHCDT.html#cb296-2"></a>    ], phyf<span class="op">$</span>Wdist))</span></code></pre></div>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="chap-DedompHCDT.html#cb294-1"></a><span class="kw">divc</span>(<span class="kw">as.data.frame</span>(<span class="kw">colSums</span>(effectifs)), <span class="kw">disc</span>(effectifs[<span class="kw">names</span>(phyf<span class="op">$</span>leaves),</span>
+<span id="cb294-2"><a href="chap-DedompHCDT.html#cb294-2"></a>    ], phyf<span class="op">$</span>Wdist))</span></code></pre></div>
 <pre><code>##                    diversity
 ## colSums(effectifs) 0.2362187</code></pre>
 
 <p>La fonction <code>disc</code> calcule <span class="math inline">\(\sqrt{2D_{H_{\Delta}}\left({\mathbf{p}}_i,{\mathbf{p}}_j\right)}\)</span>:</p>
 
-<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="chap-DedompHCDT.html#cb298-1"></a><span class="kw">disc</span>(effectifs[<span class="kw">names</span>(phyf<span class="op">$</span>leaves), ], phyf<span class="op">$</span>Wdist)</span></code></pre></div>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="chap-DedompHCDT.html#cb296-1"></a><span class="kw">disc</span>(effectifs[<span class="kw">names</span>(phyf<span class="op">$</span>leaves), ], phyf<span class="op">$</span>Wdist)</span></code></pre></div>
 <pre><code>##           P1        P2        P3
 ## P2 0.4698121                    
 ## P3 0.4888729 0.6487916          
@@ -957,9 +957,9 @@ La pondération peut en fait être quelconque tant que la matrice dont les élé
 Ce résultat a été obtenu pour les arbres ultramétriques dans le cadre plus général de la décomposition de l’entropie phylogénétique (voir chapitre <a href="chap-DedompHCDT.html#chap-DedompHCDT">12</a>.</p>
 <p>La partition peut être faite avec la fonction <code>DivPart</code> :</p>
 
-<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="chap-DedompHCDT.html#cb300-1"></a><span class="co"># Création d&#39;une méta-communauté, poids égaux aux effectifs</span></span>
-<span id="cb300-2"><a href="chap-DedompHCDT.html#cb300-2"></a>MC &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(effectifs, <span class="kw">colSums</span>(effectifs))</span>
-<span id="cb300-3"><a href="chap-DedompHCDT.html#cb300-3"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">2</span>, MC, <span class="dt">Tree =</span> phyf, <span class="dt">Normalize =</span> <span class="ot">FALSE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="chap-DedompHCDT.html#cb298-1"></a><span class="co"># Création d&#39;une méta-communauté, poids égaux aux effectifs</span></span>
+<span id="cb298-2"><a href="chap-DedompHCDT.html#cb298-2"></a>MC &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(effectifs, <span class="kw">colSums</span>(effectifs))</span>
+<span id="cb298-3"><a href="chap-DedompHCDT.html#cb298-3"></a><span class="kw">summary</span>(<span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">2</span>, MC, <span class="dt">Tree =</span> phyf, <span class="dt">Normalize =</span> <span class="ot">FALSE</span>))</span></code></pre></div>
 <pre><code>## HCDT diversity partitioning of order 2 of metaCommunity MC
 ## 
 ## Phylogenetic or functional diversity was calculated
@@ -1024,42 +1024,42 @@ Figure 12.1: Estimation de la diversité <span class="math inline">\(\beta\)</sp
 <p>La figure <a href="chap-DedompHCDT.html#fig:BetaSampleFig">12.1</a> présente les valeurs estimées de diversité neutre <span class="math inline">\(\beta\)</span> entre carrés de BCI tirés aléatoirement, en fonction du nombre de carrés.</p>
 <p>Code pour réaliser la figure:</p>
 
-<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="chap-DedompHCDT.html#cb302-1"></a><span class="co"># Metacommunauté de BCI</span></span>
-<span id="cb302-2"><a href="chap-DedompHCDT.html#cb302-2"></a>MC &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(<span class="kw">as.data.frame</span>(<span class="kw">t</span>(BCI)))</span>
-<span id="cb302-3"><a href="chap-DedompHCDT.html#cb302-3"></a></span>
-<span id="cb302-4"><a href="chap-DedompHCDT.html#cb302-4"></a><span class="co"># Création d&#39;une méta-communauté à partir de n carrés de BCI </span></span>
-<span id="cb302-5"><a href="chap-DedompHCDT.html#cb302-5"></a>SamplePlots &lt;-<span class="st"> </span><span class="cf">function</span> (n, q) {</span>
-<span id="cb302-6"><a href="chap-DedompHCDT.html#cb302-6"></a>  Plots &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>, n)</span>
-<span id="cb302-7"><a href="chap-DedompHCDT.html#cb302-7"></a>  Nsi &lt;-<span class="st"> </span>MC<span class="op">$</span>Nsi[, Plots]; MCsample &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(Nsi)</span>
-<span id="cb302-8"><a href="chap-DedompHCDT.html#cb302-8"></a>  dp &lt;-<span class="st"> </span><span class="kw">DivPart</span>(q, MCsample, <span class="dt">Biased =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb302-9"><a href="chap-DedompHCDT.html#cb302-9"></a>  <span class="co"># Retourne la diversité beta</span></span>
-<span id="cb302-10"><a href="chap-DedompHCDT.html#cb302-10"></a>  <span class="kw">return</span>(dp<span class="op">$</span>TotalBetaDiversity)</span>
-<span id="cb302-11"><a href="chap-DedompHCDT.html#cb302-11"></a>}</span>
-<span id="cb302-12"><a href="chap-DedompHCDT.html#cb302-12"></a><span class="co"># Calcul de la diversité moyenne à partir des simulations</span></span>
-<span id="cb302-13"><a href="chap-DedompHCDT.html#cb302-13"></a>BetaPlots &lt;-<span class="st"> </span><span class="cf">function</span> (q, nPlots, nSimulations) {</span>
-<span id="cb302-14"><a href="chap-DedompHCDT.html#cb302-14"></a>  buiw &lt;-<span class="st"> </span>b &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="kw">length</span>(nPlots)); i &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb302-15"><a href="chap-DedompHCDT.html#cb302-15"></a>  <span class="cf">for</span> (Size <span class="cf">in</span> nPlots) {</span>
-<span id="cb302-16"><a href="chap-DedompHCDT.html#cb302-16"></a>    Sims &lt;-<span class="st"> </span><span class="kw">replicate</span>(nSimulations, <span class="kw">SamplePlots</span>(Size, q))  </span>
-<span id="cb302-17"><a href="chap-DedompHCDT.html#cb302-17"></a>    b[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(Sims)</span>
-<span id="cb302-18"><a href="chap-DedompHCDT.html#cb302-18"></a>    buiw[i] &lt;-<span class="st"> </span><span class="kw">sd</span>(Sims)</span>
-<span id="cb302-19"><a href="chap-DedompHCDT.html#cb302-19"></a>    i &lt;-<span class="st"> </span>i<span class="op">+</span><span class="dv">1</span></span>
-<span id="cb302-20"><a href="chap-DedompHCDT.html#cb302-20"></a>  }</span>
-<span id="cb302-21"><a href="chap-DedompHCDT.html#cb302-21"></a>  <span class="co"># Retour d&#39;un dataframe</span></span>
-<span id="cb302-22"><a href="chap-DedompHCDT.html#cb302-22"></a>  <span class="kw">return</span>(<span class="kw">data.frame</span>(<span class="dt">x=</span>nPlots, <span class="dt">y=</span>b, <span class="dt">ymin=</span>b<span class="op">-</span>buiw, <span class="dt">ymax=</span>b<span class="op">+</span>buiw))</span>
-<span id="cb302-23"><a href="chap-DedompHCDT.html#cb302-23"></a>}</span>
-<span id="cb302-24"><a href="chap-DedompHCDT.html#cb302-24"></a></span>
-<span id="cb302-25"><a href="chap-DedompHCDT.html#cb302-25"></a><span class="co"># Echantillonnage de la diversité beta</span></span>
-<span id="cb302-26"><a href="chap-DedompHCDT.html#cb302-26"></a>BetaD &lt;-<span class="st"> </span><span class="kw">BetaPlots</span>(<span class="dt">q =</span> <span class="dv">2</span>, <span class="dt">nPlots=</span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>), </span>
-<span id="cb302-27"><a href="chap-DedompHCDT.html#cb302-27"></a>          <span class="dt">nSimulations =</span> <span class="dv">100</span>)</span>
-<span id="cb302-28"><a href="chap-DedompHCDT.html#cb302-28"></a><span class="co"># Diversité beta totale</span></span>
-<span id="cb302-29"><a href="chap-DedompHCDT.html#cb302-29"></a>dpBCI &lt;-<span class="st"> </span><span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">2</span>, MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb302-30"><a href="chap-DedompHCDT.html#cb302-30"></a><span class="co"># Figure</span></span>
-<span id="cb302-31"><a href="chap-DedompHCDT.html#cb302-31"></a><span class="kw">ggplot</span>(BetaD) <span class="op">+</span></span>
-<span id="cb302-32"><a href="chap-DedompHCDT.html#cb302-32"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb302-33"><a href="chap-DedompHCDT.html#cb302-33"></a><span class="st">  </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">ymin=</span>ymin, <span class="dt">ymax=</span>ymax)) <span class="op">+</span></span>
-<span id="cb302-34"><a href="chap-DedompHCDT.html#cb302-34"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> dpBCI<span class="op">$</span>TotalBetaDiversity, <span class="dt">lty=</span><span class="dv">2</span>) <span class="op">+</span></span>
-<span id="cb302-35"><a href="chap-DedompHCDT.html#cb302-35"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Nombre de carrés&quot;</span>, </span>
-<span id="cb302-36"><a href="chap-DedompHCDT.html#cb302-36"></a>       <span class="dt">y=</span><span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&quot;Diversité &quot;</span>, beta)))</span></code></pre></div>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="chap-DedompHCDT.html#cb300-1"></a><span class="co"># Metacommunauté de BCI</span></span>
+<span id="cb300-2"><a href="chap-DedompHCDT.html#cb300-2"></a>MC &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(<span class="kw">as.data.frame</span>(<span class="kw">t</span>(BCI)))</span>
+<span id="cb300-3"><a href="chap-DedompHCDT.html#cb300-3"></a></span>
+<span id="cb300-4"><a href="chap-DedompHCDT.html#cb300-4"></a><span class="co"># Création d&#39;une méta-communauté à partir de n carrés de BCI </span></span>
+<span id="cb300-5"><a href="chap-DedompHCDT.html#cb300-5"></a>SamplePlots &lt;-<span class="st"> </span><span class="cf">function</span> (n, q) {</span>
+<span id="cb300-6"><a href="chap-DedompHCDT.html#cb300-6"></a>  Plots &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>, n)</span>
+<span id="cb300-7"><a href="chap-DedompHCDT.html#cb300-7"></a>  Nsi &lt;-<span class="st"> </span>MC<span class="op">$</span>Nsi[, Plots]; MCsample &lt;-<span class="st"> </span><span class="kw">MetaCommunity</span>(Nsi)</span>
+<span id="cb300-8"><a href="chap-DedompHCDT.html#cb300-8"></a>  dp &lt;-<span class="st"> </span><span class="kw">DivPart</span>(q, MCsample, <span class="dt">Biased =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb300-9"><a href="chap-DedompHCDT.html#cb300-9"></a>  <span class="co"># Retourne la diversité beta</span></span>
+<span id="cb300-10"><a href="chap-DedompHCDT.html#cb300-10"></a>  <span class="kw">return</span>(dp<span class="op">$</span>TotalBetaDiversity)</span>
+<span id="cb300-11"><a href="chap-DedompHCDT.html#cb300-11"></a>}</span>
+<span id="cb300-12"><a href="chap-DedompHCDT.html#cb300-12"></a><span class="co"># Calcul de la diversité moyenne à partir des simulations</span></span>
+<span id="cb300-13"><a href="chap-DedompHCDT.html#cb300-13"></a>BetaPlots &lt;-<span class="st"> </span><span class="cf">function</span> (q, nPlots, nSimulations) {</span>
+<span id="cb300-14"><a href="chap-DedompHCDT.html#cb300-14"></a>  buiw &lt;-<span class="st"> </span>b &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="kw">length</span>(nPlots)); i &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb300-15"><a href="chap-DedompHCDT.html#cb300-15"></a>  <span class="cf">for</span> (Size <span class="cf">in</span> nPlots) {</span>
+<span id="cb300-16"><a href="chap-DedompHCDT.html#cb300-16"></a>    Sims &lt;-<span class="st"> </span><span class="kw">replicate</span>(nSimulations, <span class="kw">SamplePlots</span>(Size, q))  </span>
+<span id="cb300-17"><a href="chap-DedompHCDT.html#cb300-17"></a>    b[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(Sims)</span>
+<span id="cb300-18"><a href="chap-DedompHCDT.html#cb300-18"></a>    buiw[i] &lt;-<span class="st"> </span><span class="kw">sd</span>(Sims)</span>
+<span id="cb300-19"><a href="chap-DedompHCDT.html#cb300-19"></a>    i &lt;-<span class="st"> </span>i<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb300-20"><a href="chap-DedompHCDT.html#cb300-20"></a>  }</span>
+<span id="cb300-21"><a href="chap-DedompHCDT.html#cb300-21"></a>  <span class="co"># Retour d&#39;un dataframe</span></span>
+<span id="cb300-22"><a href="chap-DedompHCDT.html#cb300-22"></a>  <span class="kw">return</span>(<span class="kw">data.frame</span>(<span class="dt">x=</span>nPlots, <span class="dt">y=</span>b, <span class="dt">ymin=</span>b<span class="op">-</span>buiw, <span class="dt">ymax=</span>b<span class="op">+</span>buiw))</span>
+<span id="cb300-23"><a href="chap-DedompHCDT.html#cb300-23"></a>}</span>
+<span id="cb300-24"><a href="chap-DedompHCDT.html#cb300-24"></a></span>
+<span id="cb300-25"><a href="chap-DedompHCDT.html#cb300-25"></a><span class="co"># Echantillonnage de la diversité beta</span></span>
+<span id="cb300-26"><a href="chap-DedompHCDT.html#cb300-26"></a>BetaD &lt;-<span class="st"> </span><span class="kw">BetaPlots</span>(<span class="dt">q =</span> <span class="dv">2</span>, <span class="dt">nPlots=</span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>), </span>
+<span id="cb300-27"><a href="chap-DedompHCDT.html#cb300-27"></a>          <span class="dt">nSimulations =</span> <span class="dv">100</span>)</span>
+<span id="cb300-28"><a href="chap-DedompHCDT.html#cb300-28"></a><span class="co"># Diversité beta totale</span></span>
+<span id="cb300-29"><a href="chap-DedompHCDT.html#cb300-29"></a>dpBCI &lt;-<span class="st"> </span><span class="kw">DivPart</span>(<span class="dt">q =</span> <span class="dv">2</span>, MC, <span class="dt">Biased =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb300-30"><a href="chap-DedompHCDT.html#cb300-30"></a><span class="co"># Figure</span></span>
+<span id="cb300-31"><a href="chap-DedompHCDT.html#cb300-31"></a><span class="kw">ggplot</span>(BetaD) <span class="op">+</span></span>
+<span id="cb300-32"><a href="chap-DedompHCDT.html#cb300-32"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb300-33"><a href="chap-DedompHCDT.html#cb300-33"></a><span class="st">  </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">ymin=</span>ymin, <span class="dt">ymax=</span>ymax)) <span class="op">+</span></span>
+<span id="cb300-34"><a href="chap-DedompHCDT.html#cb300-34"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> dpBCI<span class="op">$</span>TotalBetaDiversity, <span class="dt">lty=</span><span class="dv">2</span>) <span class="op">+</span></span>
+<span id="cb300-35"><a href="chap-DedompHCDT.html#cb300-35"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Nombre de carrés&quot;</span>, </span>
+<span id="cb300-36"><a href="chap-DedompHCDT.html#cb300-36"></a>       <span class="dt">y=</span><span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&quot;Diversité &quot;</span>, beta)))</span></code></pre></div>
 
 <p>L’estimation de la diversité présente les difficultés classiques dues au biais d’estimation: la diversité <span class="math inline">\(\gamma\)</span> est sous-estimée si l’échantillonnage est trop faible, la diversité <span class="math inline">\(\beta\)</span> augmente avec le nombre de communautés comme la diversité <span class="math inline">\(\gamma\)</span> augmente avec la taille de l’échantillon; il s’agit d’un problème d’estimation, pas de normalisation.</p>
 <p>La diversité <span class="math inline">\(\beta\)</span> ne doit donc pas être normalisée systématiquement, mais seulement dans le premier cas.</p>

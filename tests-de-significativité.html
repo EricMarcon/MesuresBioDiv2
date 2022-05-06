@@ -23,7 +23,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2022-05-05" />
+<meta name="date" content="2022-06-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -483,8 +483,8 @@ Figure 14.1: Estimation de la diversité de la méta-communauté <code>Paracou61
 <p>Calcul sous R: la fonction <code>DivEst</code> produit un graphique avec l’intervalle de confiance (figure <a href="tests-de-significativité.html#fig:DivestFig">14.1</a>).</p>
 <p>Code R:</p>
 
-<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="tests-de-significativité.html#cb308-1"></a>de &lt;-<span class="st"> </span><span class="kw">DivEst</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Simulations =</span> <span class="dv">1000</span>)</span>
-<span id="cb308-2"><a href="tests-de-significativité.html#cb308-2"></a><span class="kw">plot</span>(de)</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="tests-de-significativité.html#cb306-1"></a>de &lt;-<span class="st"> </span><span class="kw">DivEst</span>(<span class="dt">q =</span> <span class="dv">1</span>, Paracou618.MC, <span class="dt">Simulations =</span> <span class="dv">1000</span>)</span>
+<span id="cb306-2"><a href="tests-de-significativité.html#cb306-2"></a><span class="kw">plot</span>(de)</span></code></pre></div>
 
 <p>Par défaut, <code>DivEst</code> ne corrige pas les biais d’estimation.
 Les résultats sont présentés sous forme de diversité et non d’entropie, la valeur attendue en cas d’égalité des communautés est 1.</p>

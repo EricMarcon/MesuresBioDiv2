@@ -23,7 +23,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2022-05-05" />
+<meta name="date" content="2022-06-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -477,16 +477,16 @@ Une courbe de raréfaction (<em>Rarefaction Curve</em>) peut être calculée en 
 Une SAC peut être tracée en fonction de la surface, du nombre d’individus ou du nombres de placettes d’échantillonnage, selon les besoins.</p>
 <p>Code R pour réaliser la figure <a href="chap-Outils.html#fig:SACFig">2.1</a>:</p>
 <p></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="chap-Outils.html#cb4-1"></a><span class="kw">library</span>(<span class="st">&quot;vegan&quot;</span>)</span>
-<span id="cb4-2"><a href="chap-Outils.html#cb4-2"></a><span class="kw">data</span>(BCI)</span>
-<span id="cb4-3"><a href="chap-Outils.html#cb4-3"></a>Cumul &lt;-<span class="st"> </span><span class="kw">apply</span>(BCI, <span class="dv">2</span>, cumsum)</span>
-<span id="cb4-4"><a href="chap-Outils.html#cb4-4"></a>Richesse &lt;-<span class="st"> </span><span class="kw">apply</span>(Cumul, <span class="dv">1</span>, <span class="cf">function</span>(x) <span class="kw">sum</span>(x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>))</span>
-<span id="cb4-5"><a href="chap-Outils.html#cb4-5"></a>SARplot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">A =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">50</span>, </span>
-<span id="cb4-6"><a href="chap-Outils.html#cb4-6"></a>                             <span class="dt">S =</span> <span class="kw">c</span>(<span class="dv">0</span>, Richesse))) <span class="op">+</span></span>
-<span id="cb4-7"><a href="chap-Outils.html#cb4-7"></a><span class="st">  </span><span class="kw">aes</span>(A, S) <span class="op">+</span></span>
-<span id="cb4-8"><a href="chap-Outils.html#cb4-8"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb4-9"><a href="chap-Outils.html#cb4-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Surface (ha)&quot;</span>)</span>
-<span id="cb4-10"><a href="chap-Outils.html#cb4-10"></a>SARplot</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="chap-Outils.html#cb2-1"></a><span class="kw">library</span>(<span class="st">&quot;vegan&quot;</span>)</span>
+<span id="cb2-2"><a href="chap-Outils.html#cb2-2"></a><span class="kw">data</span>(BCI)</span>
+<span id="cb2-3"><a href="chap-Outils.html#cb2-3"></a>Cumul &lt;-<span class="st"> </span><span class="kw">apply</span>(BCI, <span class="dv">2</span>, cumsum)</span>
+<span id="cb2-4"><a href="chap-Outils.html#cb2-4"></a>Richesse &lt;-<span class="st"> </span><span class="kw">apply</span>(Cumul, <span class="dv">1</span>, <span class="cf">function</span>(x) <span class="kw">sum</span>(x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>))</span>
+<span id="cb2-5"><a href="chap-Outils.html#cb2-5"></a>SARplot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">A =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">50</span>, </span>
+<span id="cb2-6"><a href="chap-Outils.html#cb2-6"></a>                             <span class="dt">S =</span> <span class="kw">c</span>(<span class="dv">0</span>, Richesse))) <span class="op">+</span></span>
+<span id="cb2-7"><a href="chap-Outils.html#cb2-7"></a><span class="st">  </span><span class="kw">aes</span>(A, S) <span class="op">+</span></span>
+<span id="cb2-8"><a href="chap-Outils.html#cb2-8"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb2-9"><a href="chap-Outils.html#cb2-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Surface (ha)&quot;</span>)</span>
+<span id="cb2-10"><a href="chap-Outils.html#cb2-10"></a>SARplot</span></code></pre></div>
 <p></p>
 <p>Les courbes d’accumulation peuvent aussi concerner la diversité (voir le chapitre <a href="chap-Accumulation.html#chap-Accumulation">21</a>), mesurée au-delà du nombre d’espèces.</p>
 <p>Plus généralement, une courbe aire-espèces (SAR: <em>Species Area Relationship</em>) représente le nombre d’espèces observées en fonction de la surface échantillonnée (figure <a href="diversité-régionale.html#fig:Williamson2001">22.1</a>).
@@ -585,17 +585,17 @@ Alors:</p>
 \end{equation}\]</span></p>
 <p>Dans le package <em>entropart</em>, la fonction <code>Coverage</code> calcule les trois estimateurs (celui de Zhang et Huang par défaut):</p>
 <p></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="chap-Outils.html#cb5-1"></a><span class="kw">library</span>(<span class="st">&quot;entropart&quot;</span>)</span>
-<span id="cb5-2"><a href="chap-Outils.html#cb5-2"></a>Ns &lt;-<span class="st"> </span><span class="kw">colSums</span>(BCI)</span>
-<span id="cb5-3"><a href="chap-Outils.html#cb5-3"></a><span class="kw">Coverage</span>(Ns)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="chap-Outils.html#cb3-1"></a><span class="kw">library</span>(<span class="st">&quot;entropart&quot;</span>)</span>
+<span id="cb3-2"><a href="chap-Outils.html#cb3-2"></a>Ns &lt;-<span class="st"> </span><span class="kw">colSums</span>(BCI)</span>
+<span id="cb3-3"><a href="chap-Outils.html#cb3-3"></a><span class="kw">Coverage</span>(Ns)</span></code></pre></div>
 <pre><code>## ZhangHuang 
 ##  0.9991146</code></pre>
 <p></p>
 <p>Le taux de couverture de BCI est proche de 1 parce que l’inventaire couvre 50 ha.
 Il est moindre sur les 6.25 ha de la parcelle 6 de Paracou:</p>
 <p></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="chap-Outils.html#cb7-1"></a><span class="kw">library</span>(<span class="st">&quot;SpatDiv&quot;</span>)</span>
-<span id="cb7-2"><a href="chap-Outils.html#cb7-2"></a><span class="kw">Coverage</span>(<span class="kw">as.AbdVector</span>(Paracou6))</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="chap-Outils.html#cb5-1"></a><span class="kw">library</span>(<span class="st">&quot;SpatDiv&quot;</span>)</span>
+<span id="cb5-2"><a href="chap-Outils.html#cb5-2"></a><span class="kw">Coverage</span>(<span class="kw">as.AbdVector</span>(Paracou6))</span></code></pre></div>
 <pre><code>## ZhangHuang 
 ##  0.9723258</code></pre>
 <p></p>
@@ -615,30 +615,30 @@ Elle compte simplement les espèces et ne doit pas être confondue avec la couve
 <p>La complétude du même échantillon d’arbres de forêt tropicale que dans l’exemple précédent peut être estimée en divisant le nombre d’espèces observées par le nombre d’espèces estimées (voir section <a href="chap-MesuresNeutres.html#sec-Richesse">3.1</a>).
 À BCI:</p>
 <p></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="chap-Outils.html#cb9-1"></a><span class="co"># Espèces observées</span></span>
-<span id="cb9-2"><a href="chap-Outils.html#cb9-2"></a>(Obs &lt;-<span class="st"> </span><span class="kw">Richness</span>(Ns, <span class="dt">Correction =</span> <span class="st">&quot;None&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="chap-Outils.html#cb7-1"></a><span class="co"># Espèces observées</span></span>
+<span id="cb7-2"><a href="chap-Outils.html#cb7-2"></a>(Obs &lt;-<span class="st"> </span><span class="kw">Richness</span>(Ns, <span class="dt">Correction =</span> <span class="st">&quot;None&quot;</span>))</span></code></pre></div>
 <pre><code>## None 
 ##  225</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="chap-Outils.html#cb11-1"></a><span class="co"># Richesse estimée</span></span>
-<span id="cb11-2"><a href="chap-Outils.html#cb11-2"></a>(Est &lt;-<span class="st"> </span><span class="kw">Richness</span>(Ns, <span class="dt">Correction =</span> <span class="st">&quot;Jackknife&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="chap-Outils.html#cb9-1"></a><span class="co"># Richesse estimée</span></span>
+<span id="cb9-2"><a href="chap-Outils.html#cb9-2"></a>(Est &lt;-<span class="st"> </span><span class="kw">Richness</span>(Ns, <span class="dt">Correction =</span> <span class="st">&quot;Jackknife&quot;</span>))</span></code></pre></div>
 <pre><code>## Jackknife 1 
 ##         244</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="chap-Outils.html#cb13-1"></a><span class="co"># Complétude</span></span>
-<span id="cb13-2"><a href="chap-Outils.html#cb13-2"></a><span class="kw">as.numeric</span>(Obs<span class="op">/</span>Est)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="chap-Outils.html#cb11-1"></a><span class="co"># Complétude</span></span>
+<span id="cb11-2"><a href="chap-Outils.html#cb11-2"></a><span class="kw">as.numeric</span>(Obs<span class="op">/</span>Est)</span></code></pre></div>
 <pre><code>## [1] 0.9221311</code></pre>
 <p></p>
 <p>À Paracou:</p>
 <p></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="chap-Outils.html#cb15-1"></a><span class="co"># Espèces observées</span></span>
-<span id="cb15-2"><a href="chap-Outils.html#cb15-2"></a>(Obs &lt;-<span class="st"> </span><span class="kw">Richness</span>(Paracou6, <span class="dt">Correction =</span> <span class="st">&quot;None&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="chap-Outils.html#cb13-1"></a><span class="co"># Espèces observées</span></span>
+<span id="cb13-2"><a href="chap-Outils.html#cb13-2"></a>(Obs &lt;-<span class="st"> </span><span class="kw">Richness</span>(Paracou6, <span class="dt">Correction =</span> <span class="st">&quot;None&quot;</span>))</span></code></pre></div>
 <pre><code>## None 
 ##  334</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="chap-Outils.html#cb17-1"></a><span class="co"># Richesse estimée</span></span>
-<span id="cb17-2"><a href="chap-Outils.html#cb17-2"></a>(Est &lt;-<span class="st"> </span><span class="kw">Richness</span>(Paracou6, <span class="dt">Correction =</span> <span class="st">&quot;Jackknife&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="chap-Outils.html#cb15-1"></a><span class="co"># Richesse estimée</span></span>
+<span id="cb15-2"><a href="chap-Outils.html#cb15-2"></a>(Est &lt;-<span class="st"> </span><span class="kw">Richness</span>(Paracou6, <span class="dt">Correction =</span> <span class="st">&quot;Jackknife&quot;</span>))</span></code></pre></div>
 <pre><code>## Jackknife 2 
 ##         471</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="chap-Outils.html#cb19-1"></a><span class="co"># Complétude</span></span>
-<span id="cb19-2"><a href="chap-Outils.html#cb19-2"></a><span class="kw">as.numeric</span>(Obs<span class="op">/</span>Est)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="chap-Outils.html#cb17-1"></a><span class="co"># Complétude</span></span>
+<span id="cb17-2"><a href="chap-Outils.html#cb17-2"></a><span class="kw">as.numeric</span>(Obs<span class="op">/</span>Est)</span></code></pre></div>
 <pre><code>## [1] 0.7091295</code></pre>
 <p></p>
 </div>
@@ -670,20 +670,20 @@ Figure 2.3: Diagramme rang-abondance (diagramme de Whittaker) des arbres du disp
 <p></p>
 <p>Code de la figure <a href="chap-Outils.html#fig:SADFig">2.2</a>:</p>
 <p></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="chap-Outils.html#cb21-1"></a>Ns &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">colSums</span>(BCI), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb21-2"><a href="chap-Outils.html#cb21-2"></a>N &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns)</span>
-<span id="cb21-3"><a href="chap-Outils.html#cb21-3"></a>SADhist &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(Ns), <span class="kw">aes</span>(Ns)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb21-4"><a href="chap-Outils.html#cb21-4"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">bins=</span><span class="kw">nclass.Sturges</span>(<span class="kw">log</span>(Ns)), </span>
-<span id="cb21-5"><a href="chap-Outils.html#cb21-5"></a>       <span class="dt">color=</span><span class="st">&quot;black&quot;</span>, <span class="dt">fill=</span><span class="st">&quot;white&quot;</span>, <span class="dt">boundary =</span> <span class="dv">0</span>) <span class="op">+</span></span>
-<span id="cb21-6"><a href="chap-Outils.html#cb21-6"></a><span class="st">  </span><span class="kw">scale_x_log10</span>() <span class="op">+</span></span>
-<span id="cb21-7"><a href="chap-Outils.html#cb21-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Effectifs (échelle logarithmique)&quot;</span>, </span>
-<span id="cb21-8"><a href="chap-Outils.html#cb21-8"></a>       <span class="dt">y=</span><span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span>
-<span id="cb21-9"><a href="chap-Outils.html#cb21-9"></a>SADhist</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="chap-Outils.html#cb19-1"></a>Ns &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">colSums</span>(BCI), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb19-2"><a href="chap-Outils.html#cb19-2"></a>N &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns)</span>
+<span id="cb19-3"><a href="chap-Outils.html#cb19-3"></a>SADhist &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(Ns), <span class="kw">aes</span>(Ns)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb19-4"><a href="chap-Outils.html#cb19-4"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">bins=</span><span class="kw">nclass.Sturges</span>(<span class="kw">log</span>(Ns)), </span>
+<span id="cb19-5"><a href="chap-Outils.html#cb19-5"></a>       <span class="dt">color=</span><span class="st">&quot;black&quot;</span>, <span class="dt">fill=</span><span class="st">&quot;white&quot;</span>, <span class="dt">boundary =</span> <span class="dv">0</span>) <span class="op">+</span></span>
+<span id="cb19-6"><a href="chap-Outils.html#cb19-6"></a><span class="st">  </span><span class="kw">scale_x_log10</span>() <span class="op">+</span></span>
+<span id="cb19-7"><a href="chap-Outils.html#cb19-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Effectifs (échelle logarithmique)&quot;</span>, </span>
+<span id="cb19-8"><a href="chap-Outils.html#cb19-8"></a>       <span class="dt">y=</span><span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span>
+<span id="cb19-9"><a href="chap-Outils.html#cb19-9"></a>SADhist</span></code></pre></div>
 <p></p>
 <p>Code de la figure <a href="chap-Outils.html#fig:RACFig">2.3</a>:</p>
 <p></p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="chap-Outils.html#cb22-1"></a><span class="kw">library</span>(<span class="st">&quot;entropart&quot;</span>)</span>
-<span id="cb22-2"><a href="chap-Outils.html#cb22-2"></a><span class="kw">autoplot</span>(<span class="kw">as.AbdVector</span>(Ns), <span class="dt">Distribution =</span> <span class="st">&quot;lnorm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="chap-Outils.html#cb20-1"></a><span class="kw">library</span>(<span class="st">&quot;entropart&quot;</span>)</span>
+<span id="cb20-2"><a href="chap-Outils.html#cb20-2"></a><span class="kw">autoplot</span>(<span class="kw">as.AbdVector</span>(Ns), <span class="dt">Distribution =</span> <span class="st">&quot;lnorm&quot;</span>)</span></code></pre></div>
 <p></p>
 <p>Les SAD sont traitées en détail par <span class="citation">Magurran (<a href="#ref-Magurran1988" role="doc-biblioref">1988</a>)</span> ou <span class="citation">McGill et al. (<a href="#ref-McGill2007" role="doc-biblioref">2007</a>)</span>.
 Les principales distributions, nécessaires à la compréhension de la suite sont présentées ici:</p>
@@ -758,34 +758,34 @@ De même, l’écart-type de la distribution log-normale décrit sa dispersion.
 Une valeur supérieure augmenterait sa décroissance.</p>
 <p>Le code utilisé pour produire la figure <a href="chap-Outils.html#fig:DistributionsFig">2.4</a> est le suivant:</p>
 <p></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="chap-Outils.html#cb23-1"></a><span class="kw">library</span>(<span class="st">&quot;entropart&quot;</span>)</span>
-<span id="cb23-2"><a href="chap-Outils.html#cb23-2"></a><span class="co"># Tirage d&#39;une communauté en log-séries</span></span>
-<span id="cb23-3"><a href="chap-Outils.html#cb23-3"></a>lseries &lt;-<span class="st"> </span><span class="kw">rCommunity</span>(<span class="dv">1</span>, <span class="dt">size=</span><span class="fl">1E5</span>, <span class="dt">Distribution=</span><span class="st">&quot;lseries&quot;</span>, <span class="dt">alpha=</span><span class="dv">11</span>)</span>
-<span id="cb23-4"><a href="chap-Outils.html#cb23-4"></a><span class="co"># Nombre d&#39;espèces de référence</span></span>
-<span id="cb23-5"><a href="chap-Outils.html#cb23-5"></a>S &lt;-<span class="st"> </span><span class="kw">length</span>(lseries)</span>
-<span id="cb23-6"><a href="chap-Outils.html#cb23-6"></a><span class="co"># Part des ressources accaparées dans la distribution géométrique</span></span>
-<span id="cb23-7"><a href="chap-Outils.html#cb23-7"></a>prob=<span class="fl">0.2</span></span>
-<span id="cb23-8"><a href="chap-Outils.html#cb23-8"></a><span class="co"># Calcul des probabilités de la distribution géométrique</span></span>
-<span id="cb23-9"><a href="chap-Outils.html#cb23-9"></a>geom &lt;-<span class="st"> </span>prob<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>(<span class="dv">1</span><span class="op">-</span>prob)<span class="op">^</span>S)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>prob)<span class="op">^</span>(<span class="dv">0</span><span class="op">:</span>(S<span class="dv">-1</span>))</span>
-<span id="cb23-10"><a href="chap-Outils.html#cb23-10"></a><span class="co"># Dispersion de la loi lognormale</span></span>
-<span id="cb23-11"><a href="chap-Outils.html#cb23-11"></a>sd &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb23-12"><a href="chap-Outils.html#cb23-12"></a><span class="co"># Tirage de S valeurs dans une loi lognormale</span></span>
-<span id="cb23-13"><a href="chap-Outils.html#cb23-13"></a>Nslnorm &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(S, <span class="dv">0</span>, sd)</span>
-<span id="cb23-14"><a href="chap-Outils.html#cb23-14"></a><span class="co"># Normalisation pour obtenir des probabilités</span></span>
-<span id="cb23-15"><a href="chap-Outils.html#cb23-15"></a>lnorm &lt;-<span class="st"> </span>Nslnorm<span class="op">/</span><span class="kw">sum</span>(Nslnorm)</span>
-<span id="cb23-16"><a href="chap-Outils.html#cb23-16"></a><span class="co"># Tirage des probabilités de la distribution broken stick</span></span>
-<span id="cb23-17"><a href="chap-Outils.html#cb23-17"></a>bstick &lt;-<span class="st"> </span><span class="kw">c</span>(cuts &lt;-<span class="st"> </span><span class="kw">sort</span>(stats<span class="op">::</span><span class="kw">runif</span>(S<span class="dv">-1</span>)), <span class="dv">1</span>)<span class="op">-</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, cuts)</span>
-<span id="cb23-18"><a href="chap-Outils.html#cb23-18"></a><span class="co"># Graphique</span></span>
-<span id="cb23-19"><a href="chap-Outils.html#cb23-19"></a><span class="kw">tibble</span>(<span class="dt">Rang=</span><span class="dv">1</span><span class="op">:</span>S,</span>
-<span id="cb23-20"><a href="chap-Outils.html#cb23-20"></a>      <span class="st">`</span><span class="dt">Log-Séries</span><span class="st">`</span>=<span class="kw">sort</span>(lseries<span class="op">/</span><span class="kw">sum</span>(lseries), <span class="dt">decreasing=</span><span class="ot">TRUE</span>),</span>
-<span id="cb23-21"><a href="chap-Outils.html#cb23-21"></a>      <span class="st">`</span><span class="dt">Géometrique</span><span class="st">`</span>=<span class="kw">sort</span>(geom, <span class="dt">decreasing=</span><span class="ot">TRUE</span>),</span>
-<span id="cb23-22"><a href="chap-Outils.html#cb23-22"></a>      <span class="st">`</span><span class="dt">Log-Normale</span><span class="st">`</span>=<span class="kw">sort</span>(lnorm, <span class="dt">decreasing=</span><span class="ot">TRUE</span>),</span>
-<span id="cb23-23"><a href="chap-Outils.html#cb23-23"></a>      <span class="st">`</span><span class="dt">Broken Stick</span><span class="st">`</span>=<span class="kw">sort</span>(bstick, <span class="dt">decreasing=</span><span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb23-24"><a href="chap-Outils.html#cb23-24"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols=</span><span class="op">-</span>Rang) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb23-25"><a href="chap-Outils.html#cb23-25"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb23-26"><a href="chap-Outils.html#cb23-26"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Rang, <span class="dt">y=</span>value, <span class="dt">color=</span>name)) <span class="op">+</span></span>
-<span id="cb23-27"><a href="chap-Outils.html#cb23-27"></a><span class="st">  </span><span class="kw">scale_y_log10</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="fl">1E-6</span>, <span class="ot">NA</span>)) <span class="op">+</span></span>
-<span id="cb23-28"><a href="chap-Outils.html#cb23-28"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;Probabilité&quot;</span>, <span class="dt">color=</span><span class="st">&quot;Distribution&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="chap-Outils.html#cb21-1"></a><span class="kw">library</span>(<span class="st">&quot;entropart&quot;</span>)</span>
+<span id="cb21-2"><a href="chap-Outils.html#cb21-2"></a><span class="co"># Tirage d&#39;une communauté en log-séries</span></span>
+<span id="cb21-3"><a href="chap-Outils.html#cb21-3"></a>lseries &lt;-<span class="st"> </span><span class="kw">rCommunity</span>(<span class="dv">1</span>, <span class="dt">size=</span><span class="fl">1E5</span>, <span class="dt">Distribution=</span><span class="st">&quot;lseries&quot;</span>, <span class="dt">alpha=</span><span class="dv">11</span>)</span>
+<span id="cb21-4"><a href="chap-Outils.html#cb21-4"></a><span class="co"># Nombre d&#39;espèces de référence</span></span>
+<span id="cb21-5"><a href="chap-Outils.html#cb21-5"></a>S &lt;-<span class="st"> </span><span class="kw">length</span>(lseries)</span>
+<span id="cb21-6"><a href="chap-Outils.html#cb21-6"></a><span class="co"># Part des ressources accaparées dans la distribution géométrique</span></span>
+<span id="cb21-7"><a href="chap-Outils.html#cb21-7"></a>prob=<span class="fl">0.2</span></span>
+<span id="cb21-8"><a href="chap-Outils.html#cb21-8"></a><span class="co"># Calcul des probabilités de la distribution géométrique</span></span>
+<span id="cb21-9"><a href="chap-Outils.html#cb21-9"></a>geom &lt;-<span class="st"> </span>prob<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>(<span class="dv">1</span><span class="op">-</span>prob)<span class="op">^</span>S)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>prob)<span class="op">^</span>(<span class="dv">0</span><span class="op">:</span>(S<span class="dv">-1</span>))</span>
+<span id="cb21-10"><a href="chap-Outils.html#cb21-10"></a><span class="co"># Dispersion de la loi lognormale</span></span>
+<span id="cb21-11"><a href="chap-Outils.html#cb21-11"></a>sd &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb21-12"><a href="chap-Outils.html#cb21-12"></a><span class="co"># Tirage de S valeurs dans une loi lognormale</span></span>
+<span id="cb21-13"><a href="chap-Outils.html#cb21-13"></a>Nslnorm &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(S, <span class="dv">0</span>, sd)</span>
+<span id="cb21-14"><a href="chap-Outils.html#cb21-14"></a><span class="co"># Normalisation pour obtenir des probabilités</span></span>
+<span id="cb21-15"><a href="chap-Outils.html#cb21-15"></a>lnorm &lt;-<span class="st"> </span>Nslnorm<span class="op">/</span><span class="kw">sum</span>(Nslnorm)</span>
+<span id="cb21-16"><a href="chap-Outils.html#cb21-16"></a><span class="co"># Tirage des probabilités de la distribution broken stick</span></span>
+<span id="cb21-17"><a href="chap-Outils.html#cb21-17"></a>bstick &lt;-<span class="st"> </span><span class="kw">c</span>(cuts &lt;-<span class="st"> </span><span class="kw">sort</span>(stats<span class="op">::</span><span class="kw">runif</span>(S<span class="dv">-1</span>)), <span class="dv">1</span>)<span class="op">-</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, cuts)</span>
+<span id="cb21-18"><a href="chap-Outils.html#cb21-18"></a><span class="co"># Graphique</span></span>
+<span id="cb21-19"><a href="chap-Outils.html#cb21-19"></a><span class="kw">tibble</span>(<span class="dt">Rang=</span><span class="dv">1</span><span class="op">:</span>S,</span>
+<span id="cb21-20"><a href="chap-Outils.html#cb21-20"></a>      <span class="st">`</span><span class="dt">Log-Séries</span><span class="st">`</span>=<span class="kw">sort</span>(lseries<span class="op">/</span><span class="kw">sum</span>(lseries), <span class="dt">decreasing=</span><span class="ot">TRUE</span>),</span>
+<span id="cb21-21"><a href="chap-Outils.html#cb21-21"></a>      <span class="st">`</span><span class="dt">Géometrique</span><span class="st">`</span>=<span class="kw">sort</span>(geom, <span class="dt">decreasing=</span><span class="ot">TRUE</span>),</span>
+<span id="cb21-22"><a href="chap-Outils.html#cb21-22"></a>      <span class="st">`</span><span class="dt">Log-Normale</span><span class="st">`</span>=<span class="kw">sort</span>(lnorm, <span class="dt">decreasing=</span><span class="ot">TRUE</span>),</span>
+<span id="cb21-23"><a href="chap-Outils.html#cb21-23"></a>      <span class="st">`</span><span class="dt">Broken Stick</span><span class="st">`</span>=<span class="kw">sort</span>(bstick, <span class="dt">decreasing=</span><span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-24"><a href="chap-Outils.html#cb21-24"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols=</span><span class="op">-</span>Rang) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-25"><a href="chap-Outils.html#cb21-25"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb21-26"><a href="chap-Outils.html#cb21-26"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Rang, <span class="dt">y=</span>value, <span class="dt">color=</span>name)) <span class="op">+</span></span>
+<span id="cb21-27"><a href="chap-Outils.html#cb21-27"></a><span class="st">  </span><span class="kw">scale_y_log10</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="fl">1E-6</span>, <span class="ot">NA</span>)) <span class="op">+</span></span>
+<span id="cb21-28"><a href="chap-Outils.html#cb21-28"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;Probabilité&quot;</span>, <span class="dt">color=</span><span class="st">&quot;Distribution&quot;</span>)</span></code></pre></div>
 <p></p>
 <p>La simulation de ces quatre distributions peut être réalisée par la fonction <code>rCommunity()</code> du package <em>entropart</em>, où l’argument <code>Distribution</code> peut valoir “bstick”, “lnorm”, “geom” ou “lseries”.
 La simulation des communautés autres que log-séries passe par le tirage des probabilités des espèces (le calcul est déterministe dans le cas de la distribution géométrique) puis le tirage d’un nombre d’individus dans une loi multinomiale respectant ces probabilités et l’effectif total.</p>
@@ -796,52 +796,52 @@ La distribution de Volkov notamment peut être simulée.
 Les fonctions <code>fitxxx()</code> complètent les fonctions <code>RACxxx()</code> d’<em>entropart</em>.</p>
 <p>Le code suivant montre comment ajuster une distribution log-normale aux données de BCI avec <em>entropart</em> ou <em>sads</em>.</p>
 <p></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="chap-Outils.html#cb24-1"></a><span class="co"># entropart</span></span>
-<span id="cb24-2"><a href="chap-Outils.html#cb24-2"></a><span class="kw">library</span>(<span class="st">&quot;entropart&quot;</span>)</span>
-<span id="cb24-3"><a href="chap-Outils.html#cb24-3"></a>fit_entropart_lnorm &lt;-<span class="st"> </span><span class="kw">RAClnorm</span>(Ns)</span>
-<span id="cb24-4"><a href="chap-Outils.html#cb24-4"></a><span class="co"># Affichage des paramètres estimés</span></span>
-<span id="cb24-5"><a href="chap-Outils.html#cb24-5"></a>fit_entropart_lnorm<span class="op">$</span>mu</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="chap-Outils.html#cb22-1"></a><span class="co"># entropart</span></span>
+<span id="cb22-2"><a href="chap-Outils.html#cb22-2"></a><span class="kw">library</span>(<span class="st">&quot;entropart&quot;</span>)</span>
+<span id="cb22-3"><a href="chap-Outils.html#cb22-3"></a>fit_entropart_lnorm &lt;-<span class="st"> </span><span class="kw">RAClnorm</span>(Ns)</span>
+<span id="cb22-4"><a href="chap-Outils.html#cb22-4"></a><span class="co"># Affichage des paramètres estimés</span></span>
+<span id="cb22-5"><a href="chap-Outils.html#cb22-5"></a>fit_entropart_lnorm<span class="op">$</span>mu</span></code></pre></div>
 <pre><code>## [1] 3.142695</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="chap-Outils.html#cb26-1"></a>fit_entropart_lnorm<span class="op">$</span>sigma</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="chap-Outils.html#cb24-1"></a>fit_entropart_lnorm<span class="op">$</span>sigma</span></code></pre></div>
 <pre><code>## [1] 1.791177</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="chap-Outils.html#cb28-1"></a><span class="co"># sads</span></span>
-<span id="cb28-2"><a href="chap-Outils.html#cb28-2"></a><span class="kw">library</span>(<span class="st">&quot;sads&quot;</span>)</span>
-<span id="cb28-3"><a href="chap-Outils.html#cb28-3"></a><span class="co"># Estimation. Les données sont tronquées: les espèces</span></span>
-<span id="cb28-4"><a href="chap-Outils.html#cb28-4"></a><span class="co"># observées 0 fois ne sont pas comptées.</span></span>
-<span id="cb28-5"><a href="chap-Outils.html#cb28-5"></a>fit_sads_lnorm &lt;-<span class="st"> </span><span class="kw">fitlnorm</span>(Ns, <span class="dt">trunc =</span> <span class="dv">0</span>)</span>
-<span id="cb28-6"><a href="chap-Outils.html#cb28-6"></a>fit_sads_lnorm<span class="op">@</span>fullcoef</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="chap-Outils.html#cb26-1"></a><span class="co"># sads</span></span>
+<span id="cb26-2"><a href="chap-Outils.html#cb26-2"></a><span class="kw">library</span>(<span class="st">&quot;sads&quot;</span>)</span>
+<span id="cb26-3"><a href="chap-Outils.html#cb26-3"></a><span class="co"># Estimation. Les données sont tronquées: les espèces</span></span>
+<span id="cb26-4"><a href="chap-Outils.html#cb26-4"></a><span class="co"># observées 0 fois ne sont pas comptées.</span></span>
+<span id="cb26-5"><a href="chap-Outils.html#cb26-5"></a>fit_sads_lnorm &lt;-<span class="st"> </span><span class="kw">fitlnorm</span>(Ns, <span class="dt">trunc =</span> <span class="dv">0</span>)</span>
+<span id="cb26-6"><a href="chap-Outils.html#cb26-6"></a>fit_sads_lnorm<span class="op">@</span>fullcoef</span></code></pre></div>
 <pre><code>##  meanlog    sdlog 
 ## 3.142695 1.787195</code></pre>
 <p></p>
 <p>L’ajustement du modèle de Volkov peut être comparé à celui d’une distribution log-normale.</p>
 <p></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="chap-Outils.html#cb30-1"></a><span class="co"># Ajustement du modèle de Volkov</span></span>
-<span id="cb30-2"><a href="chap-Outils.html#cb30-2"></a>fit_volkov &lt;-<span class="st"> </span><span class="kw">fitvolkov</span>(Ns)</span>
-<span id="cb30-3"><a href="chap-Outils.html#cb30-3"></a>fit_volkov<span class="op">@</span>fullcoef</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="chap-Outils.html#cb28-1"></a><span class="co"># Ajustement du modèle de Volkov</span></span>
+<span id="cb28-2"><a href="chap-Outils.html#cb28-2"></a>fit_volkov &lt;-<span class="st"> </span><span class="kw">fitvolkov</span>(Ns)</span>
+<span id="cb28-3"><a href="chap-Outils.html#cb28-3"></a>fit_volkov<span class="op">@</span>fullcoef</span></code></pre></div>
 <pre><code>##        theta            m            J 
 ## 4.767129e+01 9.238201e-02 2.145700e+04</code></pre>
 <p></p>
 <p>Graphiquement, l’ajustement est très proche mais la distribution de Volkov prévoit explicitement des effectifs égaux parce qu’entiers.</p>
 <p></p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="chap-Outils.html#cb32-1"></a><span class="co"># Comparaison graphique des deux modèles. Log-normal en</span></span>
-<span id="cb32-2"><a href="chap-Outils.html#cb32-2"></a><span class="co"># rouge.</span></span>
-<span id="cb32-3"><a href="chap-Outils.html#cb32-3"></a><span class="kw">plot</span>(<span class="kw">as.AbdVector</span>(Ns), <span class="dt">Distribution =</span> <span class="st">&quot;lnorm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="chap-Outils.html#cb30-1"></a><span class="co"># Comparaison graphique des deux modèles. Log-normal en</span></span>
+<span id="cb30-2"><a href="chap-Outils.html#cb30-2"></a><span class="co"># rouge.</span></span>
+<span id="cb30-3"><a href="chap-Outils.html#cb30-3"></a><span class="kw">plot</span>(<span class="kw">as.AbdVector</span>(Ns), <span class="dt">Distribution =</span> <span class="st">&quot;lnorm&quot;</span>)</span></code></pre></div>
 <pre><code>## $mu
 ## [1] 3.142695
 ## 
 ## $sigma
 ## [1] 1.791177</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="chap-Outils.html#cb34-1"></a><span class="co"># Volkov en vert</span></span>
-<span id="cb34-2"><a href="chap-Outils.html#cb34-2"></a><span class="kw">lines</span>(<span class="kw">sort</span>(<span class="kw">rvolkov</span>(<span class="kw">length</span>(Ns), fit_volkov<span class="op">@</span>fullcoef[<span class="dv">1</span>], fit_volkov<span class="op">@</span>fullcoef[<span class="dv">2</span>],</span>
-<span id="cb34-3"><a href="chap-Outils.html#cb34-3"></a>    fit_volkov<span class="op">@</span>fullcoef[<span class="dv">3</span>]), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="chap-Outils.html#cb32-1"></a><span class="co"># Volkov en vert</span></span>
+<span id="cb32-2"><a href="chap-Outils.html#cb32-2"></a><span class="kw">lines</span>(<span class="kw">sort</span>(<span class="kw">rvolkov</span>(<span class="kw">length</span>(Ns), fit_volkov<span class="op">@</span>fullcoef[<span class="dv">1</span>], fit_volkov<span class="op">@</span>fullcoef[<span class="dv">2</span>],</span>
+<span id="cb32-3"><a href="chap-Outils.html#cb32-3"></a>    fit_volkov<span class="op">@</span>fullcoef[<span class="dv">3</span>]), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
 <p><img src="MesuresBD_files/figure-html/BCIfit3-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p></p>
 <p>Les vraisemblances sont proches.</p>
 <p></p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="chap-Outils.html#cb35-1"></a><span class="co"># Comparaison des vraisemblances</span></span>
-<span id="cb35-2"><a href="chap-Outils.html#cb35-2"></a>fit_sads_lnorm<span class="op">@</span>min</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="chap-Outils.html#cb33-1"></a><span class="co"># Comparaison des vraisemblances</span></span>
+<span id="cb33-2"><a href="chap-Outils.html#cb33-2"></a>fit_sads_lnorm<span class="op">@</span>min</span></code></pre></div>
 <pre><code>## [1] 1157.013</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="chap-Outils.html#cb37-1"></a>fit_volkov<span class="op">@</span>min</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="chap-Outils.html#cb35-1"></a>fit_volkov<span class="op">@</span>min</span></code></pre></div>
 <pre><code>## [1] 1150.182</code></pre>
 <p></p>
 <p>Les paramètres du modèle de communauté locale de la théorie neutre sont <span class="math inline">\(\theta\)</span>, le “nombre fondamental de la biodiversité” égal à deux fois le nombre d’espèces apparaissant par pas de temps dans la méta-communauté, <span class="math inline">\(m\)</span>, le taux de migration, et <span class="math inline">\(J\)</span>, la taille de la communauté locale (qui n’est pas à proprement parler un paramètre mais une statistique décrivant les données).</p>

@@ -23,7 +23,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2022-05-05" />
+<meta name="date" content="2022-06-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -497,13 +497,13 @@ Figure 4.1: Fonctions d’information utilisées dans le nombre d’espèces (tr
 <p>Ces trois fonctions d’information sont représentées en figure <a href="entropie.html#fig:IFig">4.1</a>.</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 <p></p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="entropie.html#cb149-1"></a>I0 &lt;-<span class="st"> </span><span class="cf">function</span>(p) (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>p)<span class="op">/</span>p</span>
-<span id="cb149-2"><a href="entropie.html#cb149-2"></a>I1 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="op">-</span><span class="kw">log</span>(p)</span>
-<span id="cb149-3"><a href="entropie.html#cb149-3"></a>I2 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>p</span>
-<span id="cb149-4"><a href="entropie.html#cb149-4"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> I0) <span class="op">+</span></span>
-<span id="cb149-5"><a href="entropie.html#cb149-5"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> I1, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> I2,</span>
-<span id="cb149-6"><a href="entropie.html#cb149-6"></a>    <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;p&quot;</span>,</span>
-<span id="cb149-7"><a href="entropie.html#cb149-7"></a>    <span class="dt">y =</span> <span class="st">&quot;I(p)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="entropie.html#cb147-1"></a>I0 &lt;-<span class="st"> </span><span class="cf">function</span>(p) (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>p)<span class="op">/</span>p</span>
+<span id="cb147-2"><a href="entropie.html#cb147-2"></a>I1 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="op">-</span><span class="kw">log</span>(p)</span>
+<span id="cb147-3"><a href="entropie.html#cb147-3"></a>I2 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>p</span>
+<span id="cb147-4"><a href="entropie.html#cb147-4"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> I0) <span class="op">+</span></span>
+<span id="cb147-5"><a href="entropie.html#cb147-5"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> I1, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> I2,</span>
+<span id="cb147-6"><a href="entropie.html#cb147-6"></a>    <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;p&quot;</span>,</span>
+<span id="cb147-7"><a href="entropie.html#cb147-7"></a>    <span class="dt">y =</span> <span class="st">&quot;I(p)&quot;</span>)</span></code></pre></div>
 <p></p>
 
 <p></p>
@@ -517,12 +517,12 @@ Figure 4.2: Valeur de <span class="math inline">\(p_{s}I(p_s)\)</span> dans le n
 <p>La contribution de chaque espèce à la valeur totale de l’entropie est représentée figure <a href="entropie.html#fig:EntropieFig">4.2</a>.</p>
 <p>Code R:</p>
 <p></p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="entropie.html#cb150-1"></a>H0 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>p</span>
-<span id="cb150-2"><a href="entropie.html#cb150-2"></a>H1 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="op">-</span>p <span class="op">*</span><span class="st"> </span><span class="kw">log</span>(p)</span>
-<span id="cb150-3"><a href="entropie.html#cb150-3"></a>H2 &lt;-<span class="st"> </span><span class="cf">function</span>(p) p <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>p)</span>
-<span id="cb150-4"><a href="entropie.html#cb150-4"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="fl">0.001</span>, <span class="dv">1</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> H0) <span class="op">+</span></span>
-<span id="cb150-5"><a href="entropie.html#cb150-5"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> H1, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> H2,</span>
-<span id="cb150-6"><a href="entropie.html#cb150-6"></a>    <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;p&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;H(p)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="entropie.html#cb148-1"></a>H0 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="dv">1</span> <span class="op">-</span><span class="st"> </span>p</span>
+<span id="cb148-2"><a href="entropie.html#cb148-2"></a>H1 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="op">-</span>p <span class="op">*</span><span class="st"> </span><span class="kw">log</span>(p)</span>
+<span id="cb148-3"><a href="entropie.html#cb148-3"></a>H2 &lt;-<span class="st"> </span><span class="cf">function</span>(p) p <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>p)</span>
+<span id="cb148-4"><a href="entropie.html#cb148-4"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="fl">0.001</span>, <span class="dv">1</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> H0) <span class="op">+</span></span>
+<span id="cb148-5"><a href="entropie.html#cb148-5"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> H1, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> H2,</span>
+<span id="cb148-6"><a href="entropie.html#cb148-6"></a>    <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;p&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;H(p)&quot;</span>)</span></code></pre></div>
 <p></p>
 </div>
 <div id="entropie-relative" class="section level2 hasAnchor">
@@ -560,14 +560,14 @@ En se limitant à la diversité <span class="math inline">\(\alpha\)</span>, on 
 Les valeurs de chaque terme de la divergence sont représentées en figure <a href="entropie.html#fig:KullbackLeiblerFig">4.3</a>.</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 <p></p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="entropie.html#cb151-1"></a>p &lt;-<span class="st"> </span>q &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>, <span class="dv">1</span>, <span class="fl">0.01</span>)</span>
-<span id="cb151-2"><a href="entropie.html#cb151-2"></a>KB &lt;-<span class="st"> </span><span class="cf">function</span>(p, q) p <span class="op">*</span><span class="st"> </span><span class="kw">log</span>(p<span class="op">/</span>q)</span>
-<span id="cb151-3"><a href="entropie.html#cb151-3"></a>xyz &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">outer</span>(p, q, <span class="dt">FUN =</span> <span class="st">&quot;KB&quot;</span>))</span>
-<span id="cb151-4"><a href="entropie.html#cb151-4"></a><span class="kw">library</span>(<span class="st">&quot;sp&quot;</span>)</span>
-<span id="cb151-5"><a href="entropie.html#cb151-5"></a><span class="kw">image</span>(xyz, <span class="dt">col =</span> <span class="kw">bpy.colors</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">cutoff.tails =</span> <span class="fl">0.3</span>, <span class="dt">alpha =</span> <span class="fl">0.6</span>),</span>
-<span id="cb151-6"><a href="entropie.html#cb151-6"></a>    <span class="dt">xlab =</span> <span class="st">&quot;q&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;p&quot;</span>, <span class="dt">asp =</span> <span class="dv">1</span>)</span>
-<span id="cb151-7"><a href="entropie.html#cb151-7"></a><span class="kw">contour</span>(xyz, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="fl">0.3</span>, <span class="dv">0</span>, <span class="fl">0.1</span>), <span class="kw">c</span>(<span class="fl">0.2</span>, <span class="fl">0.5</span>), <span class="kw">seq</span>(<span class="dv">1</span>,</span>
-<span id="cb151-8"><a href="entropie.html#cb151-8"></a>    <span class="dv">4</span>, <span class="dv">1</span>)), <span class="dt">labcex =</span> <span class="dv">1</span>, <span class="dt">add =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="entropie.html#cb149-1"></a>p &lt;-<span class="st"> </span>q &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>, <span class="dv">1</span>, <span class="fl">0.01</span>)</span>
+<span id="cb149-2"><a href="entropie.html#cb149-2"></a>KB &lt;-<span class="st"> </span><span class="cf">function</span>(p, q) p <span class="op">*</span><span class="st"> </span><span class="kw">log</span>(p<span class="op">/</span>q)</span>
+<span id="cb149-3"><a href="entropie.html#cb149-3"></a>xyz &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">outer</span>(p, q, <span class="dt">FUN =</span> <span class="st">&quot;KB&quot;</span>))</span>
+<span id="cb149-4"><a href="entropie.html#cb149-4"></a><span class="kw">library</span>(<span class="st">&quot;sp&quot;</span>)</span>
+<span id="cb149-5"><a href="entropie.html#cb149-5"></a><span class="kw">image</span>(xyz, <span class="dt">col =</span> <span class="kw">bpy.colors</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">cutoff.tails =</span> <span class="fl">0.3</span>, <span class="dt">alpha =</span> <span class="fl">0.6</span>),</span>
+<span id="cb149-6"><a href="entropie.html#cb149-6"></a>    <span class="dt">xlab =</span> <span class="st">&quot;q&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;p&quot;</span>, <span class="dt">asp =</span> <span class="dv">1</span>)</span>
+<span id="cb149-7"><a href="entropie.html#cb149-7"></a><span class="kw">contour</span>(xyz, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="fl">0.3</span>, <span class="dv">0</span>, <span class="fl">0.1</span>), <span class="kw">c</span>(<span class="fl">0.2</span>, <span class="fl">0.5</span>), <span class="kw">seq</span>(<span class="dv">1</span>,</span>
+<span id="cb149-8"><a href="entropie.html#cb149-8"></a>    <span class="dv">4</span>, <span class="dv">1</span>)), <span class="dt">labcex =</span> <span class="dv">1</span>, <span class="dt">add =</span> T)</span></code></pre></div>
 <p></p>
 </div>
 <div id="lappropriation-de-lentropie-par-la-biodiversité" class="section level2 hasAnchor">
@@ -656,16 +656,16 @@ dont la forme est identique à la transformation de <span class="citation">Box e
 <p>Le logarithme déformé converge vers le logarithme naturel quand <span class="math inline">\(q\to 1\)</span> (figure <a href="entropie.html#fig:lnqFig">4.4</a>).</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 <p></p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="entropie.html#cb152-1"></a>ln0 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="kw">lnq</span>(p, <span class="dv">0</span>)</span>
-<span id="cb152-2"><a href="entropie.html#cb152-2"></a>ln2 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="kw">lnq</span>(p, <span class="dv">2</span>)</span>
-<span id="cb152-3"><a href="entropie.html#cb152-3"></a>lnm1 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="kw">lnq</span>(p, <span class="dv">-1</span>)</span>
-<span id="cb152-4"><a href="entropie.html#cb152-4"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb152-5"><a href="entropie.html#cb152-5"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> log) <span class="op">+</span></span>
-<span id="cb152-6"><a href="entropie.html#cb152-6"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> ln0, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
-<span id="cb152-7"><a href="entropie.html#cb152-7"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> ln2, <span class="dt">lty =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span></span>
-<span id="cb152-8"><a href="entropie.html#cb152-8"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> lnm1, <span class="dt">lty =</span> <span class="dv">4</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>) <span class="op">+</span></span>
-<span id="cb152-9"><a href="entropie.html#cb152-9"></a><span class="st">    </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">0</span>)) <span class="op">+</span></span>
-<span id="cb152-10"><a href="entropie.html#cb152-10"></a><span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;p&quot;</span>, <span class="dt">y =</span> <span class="kw">expression</span>(ln[q](p)))</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="entropie.html#cb150-1"></a>ln0 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="kw">lnq</span>(p, <span class="dv">0</span>)</span>
+<span id="cb150-2"><a href="entropie.html#cb150-2"></a>ln2 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="kw">lnq</span>(p, <span class="dv">2</span>)</span>
+<span id="cb150-3"><a href="entropie.html#cb150-3"></a>lnm1 &lt;-<span class="st"> </span><span class="cf">function</span>(p) <span class="kw">lnq</span>(p, <span class="dv">-1</span>)</span>
+<span id="cb150-4"><a href="entropie.html#cb150-4"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)), <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb150-5"><a href="entropie.html#cb150-5"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> log) <span class="op">+</span></span>
+<span id="cb150-6"><a href="entropie.html#cb150-6"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> ln0, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb150-7"><a href="entropie.html#cb150-7"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> ln2, <span class="dt">lty =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span></span>
+<span id="cb150-8"><a href="entropie.html#cb150-8"></a><span class="st">    </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> lnm1, <span class="dt">lty =</span> <span class="dv">4</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>) <span class="op">+</span></span>
+<span id="cb150-9"><a href="entropie.html#cb150-9"></a><span class="st">    </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">0</span>)) <span class="op">+</span></span>
+<span id="cb150-10"><a href="entropie.html#cb150-10"></a><span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;p&quot;</span>, <span class="dt">y =</span> <span class="kw">expression</span>(ln[q](p)))</span></code></pre></div>
 <p></p>
 <p>Sa fonction inverse est l’exponentielle d’ordre <span class="math inline">\(q\)</span>:</p>
 <p><span class="math display" id="eq:expq">\[\begin{equation}
@@ -728,9 +728,9 @@ Figure 4.4: Valeur du logarithme d’ordre <span class="math inline">\(q\)</span
 <p>Ces trois formes sont équivalentes mais les deux dernières s’interprètent comme une généralisation de l’entropie de Shannon <span class="citation">(Marcon et al. <a href="#ref-Marcon2014a" role="doc-biblioref">2014</a>)</span>.</p>
 <p>Le calcul de <span class="math inline">\(^{q}\!H\)</span> peut se faire avec la fonction <code>Tsallis</code> de la librairie <em>entropart</em>:</p>
 <p></p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="entropie.html#cb153-1"></a>Ps &lt;-<span class="st"> </span><span class="kw">as.ProbaVector</span>(<span class="kw">colSums</span>(BCI))</span>
-<span id="cb153-2"><a href="entropie.html#cb153-2"></a>q &lt;-<span class="st"> </span><span class="fl">1.5</span></span>
-<span id="cb153-3"><a href="entropie.html#cb153-3"></a><span class="kw">Tsallis</span>(Ps, q)</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="entropie.html#cb151-1"></a>Ps &lt;-<span class="st"> </span><span class="kw">as.ProbaVector</span>(<span class="kw">colSums</span>(BCI))</span>
+<span id="cb151-2"><a href="entropie.html#cb151-2"></a>q &lt;-<span class="st"> </span><span class="fl">1.5</span></span>
+<span id="cb151-3"><a href="entropie.html#cb151-3"></a><span class="kw">Tsallis</span>(Ps, q)</span></code></pre></div>
 <pre><code>##     None 
 ## 1.715954</code></pre>
 <p></p>
@@ -772,9 +772,9 @@ Toutes les autres espèces sont ignorées.</li>
 </ul>
 <p>Le calcul de <span class="math inline">\(^{q}\!D\)</span> peut se faire avec la fonction <code>Diversity</code> de la librairie <em>entropart</em>:</p>
 <p></p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="entropie.html#cb155-1"></a>Ps &lt;-<span class="st"> </span><span class="kw">as.ProbaVector</span>(<span class="kw">colSums</span>(BCI))</span>
-<span id="cb155-2"><a href="entropie.html#cb155-2"></a>q &lt;-<span class="st"> </span><span class="fl">1.5</span></span>
-<span id="cb155-3"><a href="entropie.html#cb155-3"></a><span class="kw">Diversity</span>(Ps, q)</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="entropie.html#cb153-1"></a>Ps &lt;-<span class="st"> </span><span class="kw">as.ProbaVector</span>(<span class="kw">colSums</span>(BCI))</span>
+<span id="cb153-2"><a href="entropie.html#cb153-2"></a>q &lt;-<span class="st"> </span><span class="fl">1.5</span></span>
+<span id="cb153-3"><a href="entropie.html#cb153-3"></a><span class="kw">Diversity</span>(Ps, q)</span></code></pre></div>
 <pre><code>##     None 
 ## 49.57724</code></pre>
 <p></p>
@@ -815,11 +815,11 @@ Figure 4.5: Profil de diversité calculé pour deux parcelles de Paracou (Parcel
 <p></p>
 <p>Code R pour réaliser la figure <a href="entropie.html#fig:ProfilDivFig">4.5</a>:</p>
 <p></p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="entropie.html#cb157-1"></a>q.seq &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">.1</span>)</span>
-<span id="cb157-2"><a href="entropie.html#cb157-2"></a>  P6D&lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, Paracou618.MC<span class="op">$</span>Nsi[, <span class="dv">1</span>], q.seq)</span>
-<span id="cb157-3"><a href="entropie.html#cb157-3"></a>  P18D&lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, Paracou618.MC<span class="op">$</span>Nsi[, <span class="dv">2</span>], q.seq)</span>
-<span id="cb157-4"><a href="entropie.html#cb157-4"></a>  <span class="kw">autoplot</span>(P6D, <span class="dt">xlab =</span> <span class="st">&quot;q&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Diversité&quot;</span>) <span class="op">+</span></span>
-<span id="cb157-5"><a href="entropie.html#cb157-5"></a><span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">as.data.frame.list</span>(P18D), <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="entropie.html#cb155-1"></a>q.seq &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">.1</span>)</span>
+<span id="cb155-2"><a href="entropie.html#cb155-2"></a>  P6D&lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, Paracou618.MC<span class="op">$</span>Nsi[, <span class="dv">1</span>], q.seq)</span>
+<span id="cb155-3"><a href="entropie.html#cb155-3"></a>  P18D&lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, Paracou618.MC<span class="op">$</span>Nsi[, <span class="dv">2</span>], q.seq)</span>
+<span id="cb155-4"><a href="entropie.html#cb155-4"></a>  <span class="kw">autoplot</span>(P6D, <span class="dt">xlab =</span> <span class="st">&quot;q&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Diversité&quot;</span>) <span class="op">+</span></span>
+<span id="cb155-5"><a href="entropie.html#cb155-5"></a><span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">as.data.frame.list</span>(P18D), <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p><span class="citation">Pallmann et al. (<a href="#ref-Pallmann2012" role="doc-biblioref">2012</a>)</span> ont développé un test statistique pour comparer la diversité de deux communautés pour plusieurs valeurs de <span class="math inline">\(q\)</span> simultanément.</p>
 <p><span class="citation">Liu et al. (<a href="#ref-Liu2006" role="doc-biblioref">2006</a>)</span> nomment <em>séparables</em> des communautés dont les profils ne se croisent pas.
@@ -837,20 +837,20 @@ Figure 4.6: Profil de queue de distribution calculé pour les deux parcelles de 
 <p></p>
 <p>Code R:</p>
 <p></p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="entropie.html#cb158-1"></a><span class="co"># Elimination des espèces absentes des deux parcelles</span></span>
-<span id="cb158-2"><a href="entropie.html#cb158-2"></a>Psi &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(Paracou618.MC<span class="op">$</span>Psi[Paracou618.MC<span class="op">$</span>Ps <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>,</span>
-<span id="cb158-3"><a href="entropie.html#cb158-3"></a>    ])</span>
-<span id="cb158-4"><a href="entropie.html#cb158-4"></a>Psi[, <span class="dv">1</span>] <span class="op">%&lt;&gt;%</span></span>
-<span id="cb158-5"><a href="entropie.html#cb158-5"></a><span class="st">    </span>sort <span class="op">%&gt;%</span></span>
-<span id="cb158-6"><a href="entropie.html#cb158-6"></a><span class="st">    </span>cumsum <span class="op">%&gt;%</span></span>
-<span id="cb158-7"><a href="entropie.html#cb158-7"></a><span class="st">    </span>rev</span>
-<span id="cb158-8"><a href="entropie.html#cb158-8"></a>Psi[, <span class="dv">2</span>] <span class="op">%&lt;&gt;%</span></span>
-<span id="cb158-9"><a href="entropie.html#cb158-9"></a><span class="st">    </span>sort <span class="op">%&gt;%</span></span>
-<span id="cb158-10"><a href="entropie.html#cb158-10"></a><span class="st">    </span>cumsum <span class="op">%&gt;%</span></span>
-<span id="cb158-11"><a href="entropie.html#cb158-11"></a><span class="st">    </span>rev</span>
-<span id="cb158-12"><a href="entropie.html#cb158-12"></a>Psi<span class="op">$</span>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(Psi)</span>
-<span id="cb158-13"><a href="entropie.html#cb158-13"></a><span class="kw">ggplot</span>(Psi, <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_path</span>(<span class="kw">aes</span>(<span class="dt">y =</span> P006)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_path</span>(<span class="kw">aes</span>(<span class="dt">y =</span> P018),</span>
-<span id="cb158-14"><a href="entropie.html#cb158-14"></a>    <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Espèces&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Fréquence&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_log10</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="entropie.html#cb156-1"></a><span class="co"># Elimination des espèces absentes des deux parcelles</span></span>
+<span id="cb156-2"><a href="entropie.html#cb156-2"></a>Psi &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(Paracou618.MC<span class="op">$</span>Psi[Paracou618.MC<span class="op">$</span>Ps <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>,</span>
+<span id="cb156-3"><a href="entropie.html#cb156-3"></a>    ])</span>
+<span id="cb156-4"><a href="entropie.html#cb156-4"></a>Psi[, <span class="dv">1</span>] <span class="op">%&lt;&gt;%</span></span>
+<span id="cb156-5"><a href="entropie.html#cb156-5"></a><span class="st">    </span>sort <span class="op">%&gt;%</span></span>
+<span id="cb156-6"><a href="entropie.html#cb156-6"></a><span class="st">    </span>cumsum <span class="op">%&gt;%</span></span>
+<span id="cb156-7"><a href="entropie.html#cb156-7"></a><span class="st">    </span>rev</span>
+<span id="cb156-8"><a href="entropie.html#cb156-8"></a>Psi[, <span class="dv">2</span>] <span class="op">%&lt;&gt;%</span></span>
+<span id="cb156-9"><a href="entropie.html#cb156-9"></a><span class="st">    </span>sort <span class="op">%&gt;%</span></span>
+<span id="cb156-10"><a href="entropie.html#cb156-10"></a><span class="st">    </span>cumsum <span class="op">%&gt;%</span></span>
+<span id="cb156-11"><a href="entropie.html#cb156-11"></a><span class="st">    </span>rev</span>
+<span id="cb156-12"><a href="entropie.html#cb156-12"></a>Psi<span class="op">$</span>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(Psi)</span>
+<span id="cb156-13"><a href="entropie.html#cb156-13"></a><span class="kw">ggplot</span>(Psi, <span class="kw">aes</span>(x)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_path</span>(<span class="kw">aes</span>(<span class="dt">y =</span> P006)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_path</span>(<span class="kw">aes</span>(<span class="dt">y =</span> P018),</span>
+<span id="cb156-14"><a href="entropie.html#cb156-14"></a>    <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Espèces&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Fréquence&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_log10</span>()</span></code></pre></div>
 <p></p>
 <p>Les coordonnées des points du profil sont définies par
 <span class="math display" id="eq:ProfilQueue">\[\begin{equation}
@@ -889,10 +889,10 @@ L’estimateur corrigé de <span class="math inline">\(^{1}\!H\)</span> est</p>
 Il a été également obtenu par d’autres auteurs <span class="citation">(Mao <a href="#ref-Mao2007" role="doc-biblioref">2007</a>; Vinck et al. <a href="#ref-Vinck2012" role="doc-biblioref">2012</a>; Chao, Wang, et Jost <a href="#ref-Chao2013" role="doc-biblioref">2013</a>, Annexe S1)</span> avec d’autres approches.</p>
 <p>Dans <em>entropart</em>, utiliser <code>Tsallis</code> et <code>Diversity</code>:</p>
 <p></p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="entropie.html#cb159-1"></a><span class="kw">Tsallis</span>(Paracou618.MC<span class="op">$</span>Ns, <span class="dt">q =</span> <span class="dv">1</span>, <span class="dt">Correction =</span> <span class="st">&quot;ZhangGrabchak&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="entropie.html#cb157-1"></a><span class="kw">Tsallis</span>(Paracou618.MC<span class="op">$</span>Ns, <span class="dt">q =</span> <span class="dv">1</span>, <span class="dt">Correction =</span> <span class="st">&quot;ZhangGrabchak&quot;</span>)</span></code></pre></div>
 <pre><code>## ZhangGrabchak 
 ##      4.846407</code></pre>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="entropie.html#cb161-1"></a><span class="kw">Diversity</span>(Paracou618.MC<span class="op">$</span>Ns, <span class="dt">q =</span> <span class="dv">1</span>, <span class="dt">Correction =</span> <span class="st">&quot;ZhangGrabchak&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="entropie.html#cb159-1"></a><span class="kw">Diversity</span>(Paracou618.MC<span class="op">$</span>Ns, <span class="dt">q =</span> <span class="dv">1</span>, <span class="dt">Correction =</span> <span class="st">&quot;ZhangGrabchak&quot;</span>)</span></code></pre></div>
 <pre><code>## ZhangGrabchak 
 ##      127.2823</code></pre>
 <p></p>
@@ -1068,10 +1068,10 @@ Son biais est alors bien inférieur, au prix d’une variance plus grande.</p>
 <p>Dans tous les cas, l’estimation de la diversité aux ordres inférieurs à 0,5 est imprécise, sauf à disposer d’inventaires de taille considérable (de l’ordre de la dizaine d’hectares au moins).</p>
 <p>Les fonctions <code>Tsallis</code> et <code>Diversity</code>de <em>entropart</em> acceptent comme argument un vecteur d’abondances (et non de probabilités) et proposent par défaut la correction de Chao et Jost:</p>
 <p></p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="entropie.html#cb163-1"></a><span class="kw">Tsallis</span>(<span class="kw">colSums</span>(BCI), <span class="dt">q =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="entropie.html#cb161-1"></a><span class="kw">Tsallis</span>(<span class="kw">colSums</span>(BCI), <span class="dt">q =</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>##  UnveilJ 
 ## 4.276075</code></pre>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="entropie.html#cb165-1"></a><span class="kw">Diversity</span>(<span class="kw">colSums</span>(BCI), <span class="dt">q =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="entropie.html#cb163-1"></a><span class="kw">Diversity</span>(<span class="kw">colSums</span>(BCI), <span class="dt">q =</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>##  UnveilJ 
 ## 71.95748</code></pre>
 <p></p>
@@ -1160,15 +1160,15 @@ Au-delà, elle ne respecte plus l’axiome d’équitabilité: sa valeur maximal
 <p>L’existence d’un estimateur sans biais et d’un intervalle de confiance calculable analytiquement permet de comparer des profils de diversité de façon robuste quand l’échantillonnage est limité et la richesse élevée.</p>
 <p>La figure <a href="entropie.html#fig:comProfilzetaFig">4.8</a>a montre les profils de diversité (en nombre effectifs d’espèces) des deux parcelles 6 et 18 de Paracou: 1 ha inventorié, respectivement 681 et 483 arbres, pour une richesse estimée à 254 et 309 espèces par les estimateurs jackknife d’ordres 2 et 3:</p>
 <p></p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="entropie.html#cb167-1"></a>NsP6 &lt;-<span class="st"> </span><span class="kw">as.AbdVector</span>(Paracou618.MC<span class="op">$</span>Nsi[, <span class="dv">1</span>])</span>
-<span id="cb167-2"><a href="entropie.html#cb167-2"></a>(S6 &lt;-<span class="st"> </span><span class="kw">Richness</span>(NsP6, <span class="dt">Correction =</span> <span class="st">&quot;Jackknife&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="entropie.html#cb165-1"></a>NsP6 &lt;-<span class="st"> </span><span class="kw">as.AbdVector</span>(Paracou618.MC<span class="op">$</span>Nsi[, <span class="dv">1</span>])</span>
+<span id="cb165-2"><a href="entropie.html#cb165-2"></a>(S6 &lt;-<span class="st"> </span><span class="kw">Richness</span>(NsP6, <span class="dt">Correction =</span> <span class="st">&quot;Jackknife&quot;</span>))</span></code></pre></div>
 <pre><code>## Jackknife 2 
 ##         254</code></pre>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="entropie.html#cb169-1"></a>NsP18 &lt;-<span class="st"> </span><span class="kw">as.AbdVector</span>(Paracou618.MC<span class="op">$</span>Nsi[, <span class="dv">2</span>])</span>
-<span id="cb169-2"><a href="entropie.html#cb169-2"></a>(S18 &lt;-<span class="st"> </span><span class="kw">Richness</span>(NsP18, <span class="dt">Correction =</span> <span class="st">&quot;Jackknife&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="entropie.html#cb167-1"></a>NsP18 &lt;-<span class="st"> </span><span class="kw">as.AbdVector</span>(Paracou618.MC<span class="op">$</span>Nsi[, <span class="dv">2</span>])</span>
+<span id="cb167-2"><a href="entropie.html#cb167-2"></a>(S18 &lt;-<span class="st"> </span><span class="kw">Richness</span>(NsP18, <span class="dt">Correction =</span> <span class="st">&quot;Jackknife&quot;</span>))</span></code></pre></div>
 <pre><code>## Jackknife 3 
 ##         309</code></pre>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="entropie.html#cb171-1"></a>S &lt;-<span class="st"> </span><span class="kw">min</span>(S6, S18)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="entropie.html#cb169-1"></a>S &lt;-<span class="st"> </span><span class="kw">min</span>(S6, S18)</span></code></pre></div>
 <p></p>
 <p>En comparaison, la figure <a href="entropie.html#fig:comProfilzetaFig">4.8</a>b montre les profils de diversité HCDT des mêmes parcelles.
 Ils se chevauchent pour les petits ordres de diversité, ce qui ne permet pas de conclure.</p>
@@ -1184,55 +1184,55 @@ Figure 4.8: Comparaison des profils de diversité des parcelles 6 et 18 de Parac
 <p>La diversité est donc estimée jusqu’à l’ordre 253.</p>
 <p>Code R pour réaliser la figure <a href="entropie.html#fig:comProfilzetaFig">4.8</a>:</p>
 <p></p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="entropie.html#cb172-1"></a><span class="co"># Profil P6</span></span>
-<span id="cb172-2"><a href="entropie.html#cb172-2"></a><span class="kw">library</span>(<span class="st">&quot;EntropyEstimation&quot;</span>)</span>
-<span id="cb172-3"><a href="entropie.html#cb172-3"></a>zeta6 &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(GenSimpson, NsP6, <span class="dv">1</span><span class="op">:</span>(S <span class="op">-</span><span class="st"> </span><span class="dv">1</span>))</span>
-<span id="cb172-4"><a href="entropie.html#cb172-4"></a>sigma6 &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>(S <span class="op">-</span><span class="st"> </span><span class="dv">1</span>), <span class="cf">function</span>(r) <span class="kw">GenSimp.sd</span>(NsP6, r))</span>
-<span id="cb172-5"><a href="entropie.html#cb172-5"></a>ic6 &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="fl">0.05</span><span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>sigma6<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">sum</span>(NsP6))</span>
-<span id="cb172-6"><a href="entropie.html#cb172-6"></a>zeta6<span class="op">$</span>low &lt;-<span class="st"> </span>zeta6<span class="op">$</span>y <span class="op">-</span><span class="st"> </span>ic6</span>
-<span id="cb172-7"><a href="entropie.html#cb172-7"></a>zeta6<span class="op">$</span>high &lt;-<span class="st"> </span>zeta6<span class="op">$</span>y <span class="op">+</span><span class="st"> </span>ic6</span>
-<span id="cb172-8"><a href="entropie.html#cb172-8"></a><span class="co"># Profil P18</span></span>
-<span id="cb172-9"><a href="entropie.html#cb172-9"></a>zeta18 &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(GenSimpson, NsP18, <span class="dv">1</span><span class="op">:</span>(S <span class="op">-</span><span class="st"> </span><span class="dv">1</span>))</span>
-<span id="cb172-10"><a href="entropie.html#cb172-10"></a>sigma18 &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>(S <span class="op">-</span><span class="st"> </span><span class="dv">1</span>), <span class="cf">function</span>(r) <span class="kw">GenSimp.sd</span>(NsP18, r))</span>
-<span id="cb172-11"><a href="entropie.html#cb172-11"></a>ic18 &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="fl">0.05</span><span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>sigma18<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">sum</span>(NsP18))</span>
-<span id="cb172-12"><a href="entropie.html#cb172-12"></a>zeta18<span class="op">$</span>low &lt;-<span class="st"> </span>zeta18<span class="op">$</span>y <span class="op">-</span><span class="st"> </span>ic18</span>
-<span id="cb172-13"><a href="entropie.html#cb172-13"></a>zeta18<span class="op">$</span>high &lt;-<span class="st"> </span>zeta18<span class="op">$</span>y <span class="op">+</span><span class="st"> </span>ic18</span>
-<span id="cb172-14"><a href="entropie.html#cb172-14"></a><span class="co"># Transformation en diversité</span></span>
-<span id="cb172-15"><a href="entropie.html#cb172-15"></a>zeta6D &lt;-<span class="st"> </span>zeta6</span>
-<span id="cb172-16"><a href="entropie.html#cb172-16"></a>zeta6D<span class="op">$</span>y &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(zeta6<span class="op">$</span>y)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>zeta6<span class="op">$</span>x))</span>
-<span id="cb172-17"><a href="entropie.html#cb172-17"></a>zeta6D<span class="op">$</span>low &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(zeta6<span class="op">$</span>low)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>zeta6<span class="op">$</span>x))</span>
-<span id="cb172-18"><a href="entropie.html#cb172-18"></a>zeta6D<span class="op">$</span>high &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(zeta6<span class="op">$</span>high)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>zeta6<span class="op">$</span>x))</span>
-<span id="cb172-19"><a href="entropie.html#cb172-19"></a>zeta18D &lt;-<span class="st"> </span>zeta18</span>
-<span id="cb172-20"><a href="entropie.html#cb172-20"></a>zeta18D<span class="op">$</span>y &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(zeta18<span class="op">$</span>y)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>zeta18<span class="op">$</span>x))</span>
-<span id="cb172-21"><a href="entropie.html#cb172-21"></a>zeta18D<span class="op">$</span>low &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(zeta18<span class="op">$</span>low)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>zeta18<span class="op">$</span>x))</span>
-<span id="cb172-22"><a href="entropie.html#cb172-22"></a>zeta18D<span class="op">$</span>high &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(zeta18<span class="op">$</span>high)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>zeta18<span class="op">$</span>x))</span>
-<span id="cb172-23"><a href="entropie.html#cb172-23"></a><span class="co"># Figure</span></span>
-<span id="cb172-24"><a href="entropie.html#cb172-24"></a>gga &lt;-<span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb172-25"><a href="entropie.html#cb172-25"></a><span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(x, <span class="dt">ymin =</span> low, <span class="dt">ymax =</span> high), </span>
-<span id="cb172-26"><a href="entropie.html#cb172-26"></a>              <span class="kw">as.data.frame.list</span>(zeta18D), <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
-<span id="cb172-27"><a href="entropie.html#cb172-27"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">as.data.frame.list</span>(zeta18D), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
-<span id="cb172-28"><a href="entropie.html#cb172-28"></a><span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(x, <span class="dt">ymin =</span> low, <span class="dt">ymax =</span> high), </span>
-<span id="cb172-29"><a href="entropie.html#cb172-29"></a>              <span class="kw">as.data.frame.list</span>(zeta6D), <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
-<span id="cb172-30"><a href="entropie.html#cb172-30"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">as.data.frame.list</span>(zeta6D), <span class="dt">col =</span> <span class="st">&quot;darkgreen&quot;</span>) <span class="op">+</span></span>
-<span id="cb172-31"><a href="entropie.html#cb172-31"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, </span>
-<span id="cb172-32"><a href="entropie.html#cb172-32"></a>       <span class="dt">y =</span> <span class="st">&quot;Diversité de Simpson généralisée&quot;</span>) <span class="op">+</span></span>
-<span id="cb172-33"><a href="entropie.html#cb172-33"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
-<span id="cb172-34"><a href="entropie.html#cb172-34"></a><span class="co"># Calcul des profils HCDT</span></span>
-<span id="cb172-35"><a href="entropie.html#cb172-35"></a>D6 &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, NsP6, <span class="dt">NumberOfSimulations =</span> <span class="dv">10</span>,</span>
-<span id="cb172-36"><a href="entropie.html#cb172-36"></a><span class="dt">q.seq=</span>q.seq, <span class="dt">Correction =</span> <span class="st">&quot;UnveilJ&quot;</span>)</span>
-<span id="cb172-37"><a href="entropie.html#cb172-37"></a>D18 &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, NsP18, <span class="dt">NumberOfSimulations =</span> <span class="dv">10</span>,</span>
-<span id="cb172-38"><a href="entropie.html#cb172-38"></a><span class="dt">q.seq=</span>q.seq, <span class="dt">Correction =</span> <span class="st">&quot;UnveilJ&quot;</span>)</span>
-<span id="cb172-39"><a href="entropie.html#cb172-39"></a><span class="co"># Figure</span></span>
-<span id="cb172-40"><a href="entropie.html#cb172-40"></a>ggb &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> D6<span class="op">$</span>x, D6<span class="op">$</span>y, D18<span class="op">$</span>y)) <span class="op">+</span></span>
-<span id="cb172-41"><a href="entropie.html#cb172-41"></a><span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(x, <span class="dt">ymin =</span> low, <span class="dt">ymax =</span> high), <span class="kw">as.data.frame.list</span>(D6), </span>
-<span id="cb172-42"><a href="entropie.html#cb172-42"></a>              <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
-<span id="cb172-43"><a href="entropie.html#cb172-43"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, D6.y), <span class="dt">col =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb172-44"><a href="entropie.html#cb172-44"></a><span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(x, <span class="dt">ymin =</span> low, <span class="dt">ymax =</span> high), <span class="kw">as.data.frame.list</span>(D18), </span>
-<span id="cb172-45"><a href="entropie.html#cb172-45"></a>              <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
-<span id="cb172-46"><a href="entropie.html#cb172-46"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, D18.y), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb172-47"><a href="entropie.html#cb172-47"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Nombre de Hill&quot;</span>) <span class="op">+</span></span>
-<span id="cb172-48"><a href="entropie.html#cb172-48"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
-<span id="cb172-49"><a href="entropie.html#cb172-49"></a><span class="kw">grid.arrange</span>(gga, ggb, <span class="dt">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="entropie.html#cb170-1"></a><span class="co"># Profil P6</span></span>
+<span id="cb170-2"><a href="entropie.html#cb170-2"></a><span class="kw">library</span>(<span class="st">&quot;EntropyEstimation&quot;</span>)</span>
+<span id="cb170-3"><a href="entropie.html#cb170-3"></a>zeta6 &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(GenSimpson, NsP6, <span class="dv">1</span><span class="op">:</span>(S <span class="op">-</span><span class="st"> </span><span class="dv">1</span>))</span>
+<span id="cb170-4"><a href="entropie.html#cb170-4"></a>sigma6 &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>(S <span class="op">-</span><span class="st"> </span><span class="dv">1</span>), <span class="cf">function</span>(r) <span class="kw">GenSimp.sd</span>(NsP6, r))</span>
+<span id="cb170-5"><a href="entropie.html#cb170-5"></a>ic6 &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="fl">0.05</span><span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>sigma6<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">sum</span>(NsP6))</span>
+<span id="cb170-6"><a href="entropie.html#cb170-6"></a>zeta6<span class="op">$</span>low &lt;-<span class="st"> </span>zeta6<span class="op">$</span>y <span class="op">-</span><span class="st"> </span>ic6</span>
+<span id="cb170-7"><a href="entropie.html#cb170-7"></a>zeta6<span class="op">$</span>high &lt;-<span class="st"> </span>zeta6<span class="op">$</span>y <span class="op">+</span><span class="st"> </span>ic6</span>
+<span id="cb170-8"><a href="entropie.html#cb170-8"></a><span class="co"># Profil P18</span></span>
+<span id="cb170-9"><a href="entropie.html#cb170-9"></a>zeta18 &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(GenSimpson, NsP18, <span class="dv">1</span><span class="op">:</span>(S <span class="op">-</span><span class="st"> </span><span class="dv">1</span>))</span>
+<span id="cb170-10"><a href="entropie.html#cb170-10"></a>sigma18 &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>(S <span class="op">-</span><span class="st"> </span><span class="dv">1</span>), <span class="cf">function</span>(r) <span class="kw">GenSimp.sd</span>(NsP18, r))</span>
+<span id="cb170-11"><a href="entropie.html#cb170-11"></a>ic18 &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="fl">0.05</span><span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>sigma18<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">sum</span>(NsP18))</span>
+<span id="cb170-12"><a href="entropie.html#cb170-12"></a>zeta18<span class="op">$</span>low &lt;-<span class="st"> </span>zeta18<span class="op">$</span>y <span class="op">-</span><span class="st"> </span>ic18</span>
+<span id="cb170-13"><a href="entropie.html#cb170-13"></a>zeta18<span class="op">$</span>high &lt;-<span class="st"> </span>zeta18<span class="op">$</span>y <span class="op">+</span><span class="st"> </span>ic18</span>
+<span id="cb170-14"><a href="entropie.html#cb170-14"></a><span class="co"># Transformation en diversité</span></span>
+<span id="cb170-15"><a href="entropie.html#cb170-15"></a>zeta6D &lt;-<span class="st"> </span>zeta6</span>
+<span id="cb170-16"><a href="entropie.html#cb170-16"></a>zeta6D<span class="op">$</span>y &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(zeta6<span class="op">$</span>y)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>zeta6<span class="op">$</span>x))</span>
+<span id="cb170-17"><a href="entropie.html#cb170-17"></a>zeta6D<span class="op">$</span>low &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(zeta6<span class="op">$</span>low)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>zeta6<span class="op">$</span>x))</span>
+<span id="cb170-18"><a href="entropie.html#cb170-18"></a>zeta6D<span class="op">$</span>high &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(zeta6<span class="op">$</span>high)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>zeta6<span class="op">$</span>x))</span>
+<span id="cb170-19"><a href="entropie.html#cb170-19"></a>zeta18D &lt;-<span class="st"> </span>zeta18</span>
+<span id="cb170-20"><a href="entropie.html#cb170-20"></a>zeta18D<span class="op">$</span>y &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(zeta18<span class="op">$</span>y)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>zeta18<span class="op">$</span>x))</span>
+<span id="cb170-21"><a href="entropie.html#cb170-21"></a>zeta18D<span class="op">$</span>low &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(zeta18<span class="op">$</span>low)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>zeta18<span class="op">$</span>x))</span>
+<span id="cb170-22"><a href="entropie.html#cb170-22"></a>zeta18D<span class="op">$</span>high &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(zeta18<span class="op">$</span>high)<span class="op">^</span>(<span class="dv">1</span><span class="op">/</span>zeta18<span class="op">$</span>x))</span>
+<span id="cb170-23"><a href="entropie.html#cb170-23"></a><span class="co"># Figure</span></span>
+<span id="cb170-24"><a href="entropie.html#cb170-24"></a>gga &lt;-<span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb170-25"><a href="entropie.html#cb170-25"></a><span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(x, <span class="dt">ymin =</span> low, <span class="dt">ymax =</span> high), </span>
+<span id="cb170-26"><a href="entropie.html#cb170-26"></a>              <span class="kw">as.data.frame.list</span>(zeta18D), <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
+<span id="cb170-27"><a href="entropie.html#cb170-27"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">as.data.frame.list</span>(zeta18D), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb170-28"><a href="entropie.html#cb170-28"></a><span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(x, <span class="dt">ymin =</span> low, <span class="dt">ymax =</span> high), </span>
+<span id="cb170-29"><a href="entropie.html#cb170-29"></a>              <span class="kw">as.data.frame.list</span>(zeta6D), <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
+<span id="cb170-30"><a href="entropie.html#cb170-30"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">as.data.frame.list</span>(zeta6D), <span class="dt">col =</span> <span class="st">&quot;darkgreen&quot;</span>) <span class="op">+</span></span>
+<span id="cb170-31"><a href="entropie.html#cb170-31"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, </span>
+<span id="cb170-32"><a href="entropie.html#cb170-32"></a>       <span class="dt">y =</span> <span class="st">&quot;Diversité de Simpson généralisée&quot;</span>) <span class="op">+</span></span>
+<span id="cb170-33"><a href="entropie.html#cb170-33"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;a&quot;</span>)</span>
+<span id="cb170-34"><a href="entropie.html#cb170-34"></a><span class="co"># Calcul des profils HCDT</span></span>
+<span id="cb170-35"><a href="entropie.html#cb170-35"></a>D6 &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, NsP6, <span class="dt">NumberOfSimulations =</span> <span class="dv">10</span>,</span>
+<span id="cb170-36"><a href="entropie.html#cb170-36"></a><span class="dt">q.seq=</span>q.seq, <span class="dt">Correction =</span> <span class="st">&quot;UnveilJ&quot;</span>)</span>
+<span id="cb170-37"><a href="entropie.html#cb170-37"></a>D18 &lt;-<span class="st"> </span><span class="kw">CommunityProfile</span>(Diversity, NsP18, <span class="dt">NumberOfSimulations =</span> <span class="dv">10</span>,</span>
+<span id="cb170-38"><a href="entropie.html#cb170-38"></a><span class="dt">q.seq=</span>q.seq, <span class="dt">Correction =</span> <span class="st">&quot;UnveilJ&quot;</span>)</span>
+<span id="cb170-39"><a href="entropie.html#cb170-39"></a><span class="co"># Figure</span></span>
+<span id="cb170-40"><a href="entropie.html#cb170-40"></a>ggb &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> D6<span class="op">$</span>x, D6<span class="op">$</span>y, D18<span class="op">$</span>y)) <span class="op">+</span></span>
+<span id="cb170-41"><a href="entropie.html#cb170-41"></a><span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(x, <span class="dt">ymin =</span> low, <span class="dt">ymax =</span> high), <span class="kw">as.data.frame.list</span>(D6), </span>
+<span id="cb170-42"><a href="entropie.html#cb170-42"></a>              <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
+<span id="cb170-43"><a href="entropie.html#cb170-43"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, D6.y), <span class="dt">col =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb170-44"><a href="entropie.html#cb170-44"></a><span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(x, <span class="dt">ymin =</span> low, <span class="dt">ymax =</span> high), <span class="kw">as.data.frame.list</span>(D18), </span>
+<span id="cb170-45"><a href="entropie.html#cb170-45"></a>              <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
+<span id="cb170-46"><a href="entropie.html#cb170-46"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, D18.y), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb170-47"><a href="entropie.html#cb170-47"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Nombre de Hill&quot;</span>) <span class="op">+</span></span>
+<span id="cb170-48"><a href="entropie.html#cb170-48"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb170-49"><a href="entropie.html#cb170-49"></a><span class="kw">grid.arrange</span>(gga, ggb, <span class="dt">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p>La distribution statistique de la différence d’entropie est connue, et peut donc être tracée (figure <a href="entropie.html#fig:zetaDiffFig">4.9</a>).
 Son intervalle de confiance ne contient jamais la valeur 0, ce qui permet de conclure que la parcelle 18 est plus diverse.</p>
@@ -1247,17 +1247,17 @@ Figure 4.9: Différence entre les entropies de Simpson généralisées des parce
 <p></p>
 <p>Code R pour réaliser la figure:</p>
 <p></p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="entropie.html#cb173-1"></a><span class="co"># Calcul de P18-P6 avec IC</span></span>
-<span id="cb173-2"><a href="entropie.html#cb173-2"></a>  Difference &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> zeta18<span class="op">$</span>x, <span class="dt">y =</span> zeta18<span class="op">$</span>y<span class="op">-</span>zeta6<span class="op">$</span>y)</span>
-<span id="cb173-3"><a href="entropie.html#cb173-3"></a>  <span class="kw">class</span>(Difference) &lt;-<span class="st"> </span><span class="kw">class</span>(zeta18)</span>
-<span id="cb173-4"><a href="entropie.html#cb173-4"></a>  icDifference &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="op">/</span><span class="dv">2</span>)<span class="op">*</span><span class="kw">sqrt</span>(sigma6<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="kw">sum</span>(NsP6) </span>
-<span id="cb173-5"><a href="entropie.html#cb173-5"></a>                                       <span class="op">+</span><span class="st"> </span>sigma18<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="kw">sum</span>(NsP18))</span>
-<span id="cb173-6"><a href="entropie.html#cb173-6"></a>  Difference<span class="op">$</span>low &lt;-<span class="st"> </span>Difference<span class="op">$</span>y <span class="op">-</span><span class="st"> </span>icDifference</span>
-<span id="cb173-7"><a href="entropie.html#cb173-7"></a>  Difference<span class="op">$</span>high &lt;-<span class="st"> </span>Difference<span class="op">$</span>y <span class="op">+</span><span class="st"> </span>icDifference</span>
-<span id="cb173-8"><a href="entropie.html#cb173-8"></a>  <span class="co"># Plot</span></span>
-<span id="cb173-9"><a href="entropie.html#cb173-9"></a>  <span class="kw">autoplot</span>(Difference, <span class="dt">xlab =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, </span>
-<span id="cb173-10"><a href="entropie.html#cb173-10"></a>           <span class="dt">ylab =</span> <span class="st">&quot;Différence d&#39;entropie&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb173-11"><a href="entropie.html#cb173-11"></a><span class="st">    </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="entropie.html#cb171-1"></a><span class="co"># Calcul de P18-P6 avec IC</span></span>
+<span id="cb171-2"><a href="entropie.html#cb171-2"></a>  Difference &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> zeta18<span class="op">$</span>x, <span class="dt">y =</span> zeta18<span class="op">$</span>y<span class="op">-</span>zeta6<span class="op">$</span>y)</span>
+<span id="cb171-3"><a href="entropie.html#cb171-3"></a>  <span class="kw">class</span>(Difference) &lt;-<span class="st"> </span><span class="kw">class</span>(zeta18)</span>
+<span id="cb171-4"><a href="entropie.html#cb171-4"></a>  icDifference &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span><span class="fl">-0.05</span><span class="op">/</span><span class="dv">2</span>)<span class="op">*</span><span class="kw">sqrt</span>(sigma6<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="kw">sum</span>(NsP6) </span>
+<span id="cb171-5"><a href="entropie.html#cb171-5"></a>                                       <span class="op">+</span><span class="st"> </span>sigma18<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="kw">sum</span>(NsP18))</span>
+<span id="cb171-6"><a href="entropie.html#cb171-6"></a>  Difference<span class="op">$</span>low &lt;-<span class="st"> </span>Difference<span class="op">$</span>y <span class="op">-</span><span class="st"> </span>icDifference</span>
+<span id="cb171-7"><a href="entropie.html#cb171-7"></a>  Difference<span class="op">$</span>high &lt;-<span class="st"> </span>Difference<span class="op">$</span>y <span class="op">+</span><span class="st"> </span>icDifference</span>
+<span id="cb171-8"><a href="entropie.html#cb171-8"></a>  <span class="co"># Plot</span></span>
+<span id="cb171-9"><a href="entropie.html#cb171-9"></a>  <span class="kw">autoplot</span>(Difference, <span class="dt">xlab =</span> <span class="st">&quot;Ordre de diversité&quot;</span>, </span>
+<span id="cb171-10"><a href="entropie.html#cb171-10"></a>           <span class="dt">ylab =</span> <span class="st">&quot;Différence d&#39;entropie&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb171-11"><a href="entropie.html#cb171-11"></a><span class="st">    </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p></p>
 <p>La prise en compte des espèces rares est limitée par la valeur maximale de l’ordre <span class="math inline">\(r\)</span> (limité à <span class="math inline">\(S-1\)</span>).
 Les espèces plus rares ne peuvent pas être prises en compte: le profil de diversité s’arrête là.
