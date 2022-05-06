@@ -131,6 +131,37 @@ knitr::knit_hooks$set(chunk = function(x, options) {
   ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
 })
 
+# Chunk hook to allow full-width figures
+defOut <- knitr::knit_hooks$get("plot")
+knitr::knit_hooks$set(
+  plot = function(x, options) {
+    # Apply the original hook
+    x <- defOut(x, options)
+    # Only full-width figures
+    if (options$out.width == "\\widthw") {
+      # Modify output of the original hook, see code on:
+      # https://github.com/yihui/knitr/blob/master/R/hooks-latex.R
+      # Modify align1 output with align=center. Original code:
+      # switch(a, left = '\n\n', center = '\n\n{\\centering ', right = '\n\n\\hfill{}', '\n')
+      # replace centering by a minipage
+      x  <- gsub(
+        "\\n\\n\\{\\\\centering",
+        "\\n\\n\\\\setbox0=\\\\hbox\\{\\\\begin\\{minipage\\}\\[h\\]\\{\\\\widthw\\}\\\\centering",
+        x
+      )
+      # Modify align2 output with align=center. Original code:
+      # switch(a, left = '\\hfill{}\n\n', '\n\n}\n\n', right = '\n\n', '')
+      # replace } by the necessary code to place the minipage
+      x  <- gsub(
+        "\\n\\n\\}\\n\\n",
+        "\\\\end\\{minipage\\}\\}\\\\needspace\\{\\\\ht0+\\\\dp0+2\\\\baselineskip\\}\\\\definesHSpace\\\\hspace\\{-\\\\rf\\}\\\\box0",
+        x
+      )
+    }
+    return(x)
+  }
+)
+
 # Figures with side captions
 if (rmarkdown::metadata$largemargins)
   knitr::opts_chunk$set(fig.env='SCfigure')
@@ -241,18 +272,14 @@ Le jeu de données utilisé pour les exemples est une version réduite aux arbre
 Enfin, les données fournies par le package *entropart* sous le nom "Paracou618" sont deux inventaires de l'année 2012 limités à un hectare chacun dans les parcelles 6 et 18 de la forêt de Paracou, soient `r Paracou618.MC$N` arbres dans `r sum(Paracou618.MC$Ns>0)` espèces.
 
 (ref:Paracou6MapFig) Carte de la parcelle 6 de Paracou. Les points représentent les arbres. Leur taille est proportionnelle à leur surface terrière. Seules les espèces les plus fréquentes sont identifiées sur la carte.
-```{r Paracou6MapFig, echo=FALSE, results='hide', fig.width=6, fig.height=6, fig.env='figure', out.width='\\widthw', ref.label='Paracou6MapCode', fig.cap="(ref:Paracou6MapFig)"}
+```{r Paracou6MapFig, echo=FALSE, fig.cap="(ref:Paracou6MapFig)", fig.env='figure', out.width='\\widthw', ref.label='Paracou6MapCode', results='hide'}
 ```
 
 Le code R pour réaliser la figure est le suivant:
 ```{r Paracou6MapCode, eval=FALSE}
 library("dbmss")
 library("SpatDiv")
-the_map <- autoplot(Paracou6, labelSize = expression(paste("Surface terrière (", cm^2, ")")), labelColor = "Espèce")
-library("cowplot")
-the_legend <- get_legend(the_map)
-library("gridExtra")
-grid.arrange(the_map + theme(legend.position = "none"), the_legend, nrow=2)
+autoplot(Paracou6, labelSize = expression(paste("Surface terrière (", cm^2, ")")), labelColor = "Espèce")
 ```
 
 
