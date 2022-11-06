@@ -414,7 +414,7 @@ ei <- apply(Samples, 2, Richness, Level = n*(1 + extra),
 library("SPECIES")
 ExtrapolateS <- function(Ns) {
   # Nombre d'espèces non observées
-  sink(tempfile()) # Suppression des messages de jacknife()
+  sink(tempfile()) # Suppression des messages de jackknife()
   S0 <- jackknife(AbdFreqCount(Ns))$Nhat -sum(Ns > 0)
   sink() # restauration de l'affichage normal
   # Taux de couverture

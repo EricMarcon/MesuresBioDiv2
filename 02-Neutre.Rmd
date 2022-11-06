@@ -480,9 +480,9 @@ Quand l'échantillonnage est suffisant, les estimateurs de Chao ont l'avantage d
 Dans ce cas, les estimations du jackknife d'ordre 1 sont cohérentes avec celles de Chao.
 En revanche, quand l'échantillonnage est insuffisant, l'estimateur jackknife d'ordre supérieur à 1 permet de réduire le biais d'estimation, au prix d'une variance accrue [@Marcon2015a].
 
-Enfin, Beguinot [-@Beguinot2015a; -@Beguinot2016] suggère d'utiliser en règle générale le jacknife 2 (mais ne traite pas les cas dans lesquels l'échantillonnage est trop faible pour justifier un ordre supérieur) tant que  le nombre de singletons est supérieur à $2-\sqrt(2) \approx 0,6$ fois le nombre de doubletons.
+Enfin, Beguinot [-@Beguinot2015a; -@Beguinot2016] suggère d'utiliser en règle générale le jackknife 2 (mais ne traite pas les cas dans lesquels l'échantillonnage est trop faible pour justifier un ordre supérieur) tant que  le nombre de singletons est supérieur à $2-\sqrt(2) \approx 0,6$ fois le nombre de doubletons.
 Le ratio des singletons sur les doubletons diminue quand l'échantillonnage approche de l'exhaustivité.
-Quand le seuil de 0,6 est dépassé, la valeur de l'estimateur de Chao devient supérieur au jacknife 2 et doit être utilisé.
+Quand le seuil de 0,6 est dépassé, la valeur de l'estimateur de Chao devient supérieur au jackknife 2 et doit être utilisé.
 Ce seuil est cohérent avec les règles de @Brose2003.
 
 
@@ -1991,7 +1991,7 @@ Dès $q=0,5$, l'estimation est très précise dans tous les cas, même en rédui
 Les conclusions de ce travail d'évaluation tiennent en deux points.
 Dans des conditions réalistes d'inventaire d'arbres en forêt tropicale, les estimateurs de diversité les plus performants sont celui de Chao, Wang et Jost et l'estimateur révélé.
 Le premier a une variance plus faible pour les valeurs de $q$ proches de 0 mais est limité par son estimation du nombre d'espèces par l'estimateur Chao1.
-Le second est préférable quand le nombre d'espèces estimé par l'estimateur jackknife d'ordre optimal est clairement supérieur (c'est-à-dire, en pratique, quand l'ordre du jacknife optimal est supérieur à 1).
+Le second est préférable quand le nombre d'espèces estimé par l'estimateur jackknife d'ordre optimal est clairement supérieur (c'est-à-dire, en pratique, quand l'ordre du jackknife optimal est supérieur à 1).
 Son biais est alors bien inférieur, au prix d'une variance plus grande.
 
 Dans tous les cas, l'estimation de la diversité aux ordres inférieurs à 0,5 est imprécise, sauf à disposer d'inventaires de taille considérable (de l'ordre de la dizaine d'hectares au moins).
