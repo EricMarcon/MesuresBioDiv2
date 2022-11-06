@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Entropie | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Entropie | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2022-06-05" />
+<meta name="date" content="2022-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C1B3PLBCM6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -1063,7 +1063,7 @@ L’estimateur révélé sous-estime beaucoup moins la diversité d’ordre faib
 <p>Les conclusions de ce travail d’évaluation tiennent en deux points.
 Dans des conditions réalistes d’inventaire d’arbres en forêt tropicale, les estimateurs de diversité les plus performants sont celui de Chao, Wang et Jost et l’estimateur révélé.
 Le premier a une variance plus faible pour les valeurs de <span class="math inline">\(q\)</span> proches de 0 mais est limité par son estimation du nombre d’espèces par l’estimateur Chao1.
-Le second est préférable quand le nombre d’espèces estimé par l’estimateur jackknife d’ordre optimal est clairement supérieur (c’est-à-dire, en pratique, quand l’ordre du jacknife optimal est supérieur à 1).
+Le second est préférable quand le nombre d’espèces estimé par l’estimateur jackknife d’ordre optimal est clairement supérieur (c’est-à-dire, en pratique, quand l’ordre du jackknife optimal est supérieur à 1).
 Son biais est alors bien inférieur, au prix d’une variance plus grande.</p>
 <p>Dans tous les cas, l’estimation de la diversité aux ordres inférieurs à 0,5 est imprécise, sauf à disposer d’inventaires de taille considérable (de l’ordre de la dizaine d’hectares au moins).</p>
 <p>Les fonctions <code>Tsallis</code> et <code>Diversity</code>de <em>entropart</em> acceptent comme argument un vecteur d’abondances (et non de probabilités) et proposent par défaut la correction de Chao et Jost:</p>
@@ -1426,7 +1426,7 @@ Il ne s’agit pas d’une décomposition de la diversité au sens classique du 
 <p>Kindt, R., P. Van Damme, et A. J. Simons. 2006. « Tree Diversity in Western Kenya: Using Profiles to Characterise Richness and Evenness ». <em>Biodiversity and Conservation</em> 15 (4): 1253‑70. <a href="https://doi.org/10.1007/s10531-005-0772-x">https://doi.org/10.1007/s10531-005-0772-x</a>.</p>
 </div>
 <div id="ref-Kullback1951">
-<p>Kullback, S., et R. A. Leibler. 1951. « On Information and Sufficiency ». <em>The Annals of Mathematical Statistics</em> 22 (1): 79‑86. <a href="https://www.jstor.org/stable/2236703">https://www.jstor.org/stable/2236703</a>.</p>
+<p>Kullback, S., et R. A. Leibler. 1951. « On Information and Sufficiency ». <em>The Annals of Mathematical Statistics</em> 22 (1): 79‑86. <a href="http://www.jstor.org/stable/2236703">http://www.jstor.org/stable/2236703</a>.</p>
 </div>
 <div id="ref-Lande2000">
 <p>Lande, Russell, Philip J. DeVries, et Thomas R. Walla. 2000. « When Species Accumulation Curves Intersect: Implications for Ranking Diversity Using Small Samples ». <em>Oikos</em> 89 (3): 601‑5. <a href="https://doi.org/10.1034/j.1600-0706.2000.890320.x">https://doi.org/10.1034/j.1600-0706.2000.890320.x</a>.</p>
@@ -1600,7 +1600,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

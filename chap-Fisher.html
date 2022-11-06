@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>20 Indice \(\alpha\) de Fisher | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="20 Indice \(\alpha\) de Fisher | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2022-06-05" />
+<meta name="date" content="2022-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C1B3PLBCM6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -562,6 +562,7 @@ Le résultat est très différent parce que l’approximation de l’égalité d
 <span id="cb329-6"><a href="chap-Fisher.html#cb329-6"></a><span class="kw">fisher.alpha</span>(Ns)</span></code></pre></div>
 <pre><code>## [1] 35.05475</code></pre>
 <div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="chap-Fisher.html#cb331-1"></a><span class="kw">library</span>(<span class="st">&quot;untb&quot;</span>)</span></code></pre></div>
+<pre><code>## No methods found in package &#39;Brobdingnag&#39; for request: &#39;sum&#39; when loading &#39;untb&#39;</code></pre>
 <pre><code>## Registered S3 method overwritten by &#39;untb&#39;:
 ##   method       from 
 ##   plot.preston vegan</code></pre>
@@ -570,9 +571,9 @@ Le résultat est très différent parce que l’approximation de l’égalité d
 <pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
 ## 
 ##     count, select</code></pre>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="chap-Fisher.html#cb335-1"></a><span class="kw">fishers.alpha</span>(<span class="kw">sum</span>(Ns), <span class="kw">length</span>(Ns))</span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="chap-Fisher.html#cb336-1"></a><span class="kw">fishers.alpha</span>(<span class="kw">sum</span>(Ns), <span class="kw">length</span>(Ns))</span></code></pre></div>
 <pre><code>## [1] 35.05477</code></pre>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="chap-Fisher.html#cb337-1"></a><span class="kw">optimal.theta</span>(Ns)</span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="chap-Fisher.html#cb338-1"></a><span class="kw">optimal.theta</span>(Ns)</span></code></pre></div>
 <pre><code>## [1] 80.95173</code></pre>
 
 <p>Le modèle de Fisher <a href="chap-Fisher.html#eq:AlphaFisher">(20.4)</a> peut être écrit sous la forme <span class="math inline">\(\hat{S}^{n} = \alpha{\ln\left(\alpha+n\right)}-\alpha\ln\left(\alpha\right)\)</span>.
@@ -621,23 +622,23 @@ L’approximation du nombre d’espèces infini paraît être la plus pénalisan
 <p>La simulation suivante tire 10000 arbres dans le jeu de données BCI indépendamment et selon les fréquences des espèces.
 L’indice Q est calculé:</p>
 
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="chap-Fisher.html#cb339-1"></a>Ns &lt;-<span class="st"> </span><span class="kw">colSums</span>(BCI)</span>
-<span id="cb339-2"><a href="chap-Fisher.html#cb339-2"></a>Inventaire &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(<span class="dv">10000</span>, <span class="dv">1</span>, Ns<span class="op">/</span><span class="kw">sum</span>(Ns))</span>
-<span id="cb339-3"><a href="chap-Fisher.html#cb339-3"></a><span class="co"># Cumul de l&#39;inventaire</span></span>
-<span id="cb339-4"><a href="chap-Fisher.html#cb339-4"></a>Cumul &lt;-<span class="st"> </span><span class="kw">apply</span>(Inventaire, <span class="dv">1</span>, cumsum)</span>
-<span id="cb339-5"><a href="chap-Fisher.html#cb339-5"></a><span class="co"># Nombre d&#39;espèces cumulées</span></span>
-<span id="cb339-6"><a href="chap-Fisher.html#cb339-6"></a>nEspeces &lt;-<span class="st"> </span><span class="kw">apply</span>(Cumul, <span class="dv">1</span>, <span class="cf">function</span>(x) <span class="kw">length</span>(x[x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>]))</span>
-<span id="cb339-7"><a href="chap-Fisher.html#cb339-7"></a><span class="co"># Nombre total d&#39;espèces</span></span>
-<span id="cb339-8"><a href="chap-Fisher.html#cb339-8"></a>S &lt;-<span class="st"> </span><span class="kw">max</span>(nEspeces)</span>
-<span id="cb339-9"><a href="chap-Fisher.html#cb339-9"></a><span class="co"># Premier et troisièmes quartiles</span></span>
-<span id="cb339-10"><a href="chap-Fisher.html#cb339-10"></a>Q13 &lt;-<span class="st"> </span><span class="kw">which</span>(nEspeces <span class="op">&gt;=</span><span class="st"> </span><span class="kw">max</span>(nEspeces)<span class="op">/</span><span class="dv">4</span> <span class="op">&amp;</span><span class="st"> </span>nEspeces <span class="op">&lt;=</span><span class="st"> </span><span class="kw">max</span>(nEspeces) <span class="op">*</span></span>
-<span id="cb339-11"><a href="chap-Fisher.html#cb339-11"></a><span class="st">    </span><span class="dv">3</span><span class="op">/</span><span class="dv">4</span>)</span>
-<span id="cb339-12"><a href="chap-Fisher.html#cb339-12"></a>nq1 &lt;-<span class="st"> </span><span class="kw">min</span>(Q13)</span>
-<span id="cb339-13"><a href="chap-Fisher.html#cb339-13"></a>nq3 &lt;-<span class="st"> </span><span class="kw">max</span>(Q13)</span>
-<span id="cb339-14"><a href="chap-Fisher.html#cb339-14"></a>Sq1 &lt;-<span class="st"> </span>nEspeces[nq1]</span>
-<span id="cb339-15"><a href="chap-Fisher.html#cb339-15"></a>Sq3 &lt;-<span class="st"> </span>nEspeces[nq3]</span>
-<span id="cb339-16"><a href="chap-Fisher.html#cb339-16"></a><span class="co"># Indice Q</span></span>
-<span id="cb339-17"><a href="chap-Fisher.html#cb339-17"></a>(Q &lt;-<span class="st"> </span>(Sq3 <span class="op">-</span><span class="st"> </span>Sq1)<span class="op">/</span><span class="kw">log</span>(nq3<span class="op">/</span>nq1))</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="chap-Fisher.html#cb340-1"></a>Ns &lt;-<span class="st"> </span><span class="kw">colSums</span>(BCI)</span>
+<span id="cb340-2"><a href="chap-Fisher.html#cb340-2"></a>Inventaire &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(<span class="dv">10000</span>, <span class="dv">1</span>, Ns<span class="op">/</span><span class="kw">sum</span>(Ns))</span>
+<span id="cb340-3"><a href="chap-Fisher.html#cb340-3"></a><span class="co"># Cumul de l&#39;inventaire</span></span>
+<span id="cb340-4"><a href="chap-Fisher.html#cb340-4"></a>Cumul &lt;-<span class="st"> </span><span class="kw">apply</span>(Inventaire, <span class="dv">1</span>, cumsum)</span>
+<span id="cb340-5"><a href="chap-Fisher.html#cb340-5"></a><span class="co"># Nombre d&#39;espèces cumulées</span></span>
+<span id="cb340-6"><a href="chap-Fisher.html#cb340-6"></a>nEspeces &lt;-<span class="st"> </span><span class="kw">apply</span>(Cumul, <span class="dv">1</span>, <span class="cf">function</span>(x) <span class="kw">length</span>(x[x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>]))</span>
+<span id="cb340-7"><a href="chap-Fisher.html#cb340-7"></a><span class="co"># Nombre total d&#39;espèces</span></span>
+<span id="cb340-8"><a href="chap-Fisher.html#cb340-8"></a>S &lt;-<span class="st"> </span><span class="kw">max</span>(nEspeces)</span>
+<span id="cb340-9"><a href="chap-Fisher.html#cb340-9"></a><span class="co"># Premier et troisièmes quartiles</span></span>
+<span id="cb340-10"><a href="chap-Fisher.html#cb340-10"></a>Q13 &lt;-<span class="st"> </span><span class="kw">which</span>(nEspeces <span class="op">&gt;=</span><span class="st"> </span><span class="kw">max</span>(nEspeces)<span class="op">/</span><span class="dv">4</span> <span class="op">&amp;</span><span class="st"> </span>nEspeces <span class="op">&lt;=</span><span class="st"> </span><span class="kw">max</span>(nEspeces) <span class="op">*</span></span>
+<span id="cb340-11"><a href="chap-Fisher.html#cb340-11"></a><span class="st">    </span><span class="dv">3</span><span class="op">/</span><span class="dv">4</span>)</span>
+<span id="cb340-12"><a href="chap-Fisher.html#cb340-12"></a>nq1 &lt;-<span class="st"> </span><span class="kw">min</span>(Q13)</span>
+<span id="cb340-13"><a href="chap-Fisher.html#cb340-13"></a>nq3 &lt;-<span class="st"> </span><span class="kw">max</span>(Q13)</span>
+<span id="cb340-14"><a href="chap-Fisher.html#cb340-14"></a>Sq1 &lt;-<span class="st"> </span>nEspeces[nq1]</span>
+<span id="cb340-15"><a href="chap-Fisher.html#cb340-15"></a>Sq3 &lt;-<span class="st"> </span>nEspeces[nq3]</span>
+<span id="cb340-16"><a href="chap-Fisher.html#cb340-16"></a><span class="co"># Indice Q</span></span>
+<span id="cb340-17"><a href="chap-Fisher.html#cb340-17"></a>(Q &lt;-<span class="st"> </span>(Sq3 <span class="op">-</span><span class="st"> </span>Sq1)<span class="op">/</span><span class="kw">log</span>(nq3<span class="op">/</span>nq1))</span></code></pre></div>
 <pre><code>## [1] 33.71977</code></pre>
 
 <p>La SAC correspondante est tracée en figure <a href="chap-Fisher.html#fig:KemptonQFig">20.5</a>.</p>
@@ -652,14 +653,14 @@ Figure 20.5: SAC d’un inventaire simulé de 10000 arbres de BCI. Le nombre d�
 
 <p>Code R pour réaliser la figure:</p>
 
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="chap-Fisher.html#cb341-1"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">log</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(Inventaire)), <span class="dt">y =</span> nEspeces)) <span class="op">+</span></span>
-<span id="cb341-2"><a href="chap-Fisher.html#cb341-2"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)) <span class="op">+</span></span>
-<span id="cb341-3"><a href="chap-Fisher.html#cb341-3"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">log</span>(nq1), <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
-<span id="cb341-4"><a href="chap-Fisher.html#cb341-4"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">log</span>(nq3), <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
-<span id="cb341-5"><a href="chap-Fisher.html#cb341-5"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> Sq1, <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
-<span id="cb341-6"><a href="chap-Fisher.html#cb341-6"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> Sq3, <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
-<span id="cb341-7"><a href="chap-Fisher.html#cb341-7"></a><span class="st">  </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> Sq1<span class="op">-</span>Q<span class="op">*</span><span class="kw">log</span>(nq1), <span class="dt">slope =</span> Q) <span class="op">+</span></span>
-<span id="cb341-8"><a href="chap-Fisher.html#cb341-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;log(n)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="chap-Fisher.html#cb342-1"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">log</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(Inventaire)), <span class="dt">y =</span> nEspeces)) <span class="op">+</span></span>
+<span id="cb342-2"><a href="chap-Fisher.html#cb342-2"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)) <span class="op">+</span></span>
+<span id="cb342-3"><a href="chap-Fisher.html#cb342-3"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">log</span>(nq1), <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
+<span id="cb342-4"><a href="chap-Fisher.html#cb342-4"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">log</span>(nq3), <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
+<span id="cb342-5"><a href="chap-Fisher.html#cb342-5"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> Sq1, <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
+<span id="cb342-6"><a href="chap-Fisher.html#cb342-6"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> Sq3, <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
+<span id="cb342-7"><a href="chap-Fisher.html#cb342-7"></a><span class="st">  </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> Sq1<span class="op">-</span>Q<span class="op">*</span><span class="kw">log</span>(nq1), <span class="dt">slope =</span> Q) <span class="op">+</span></span>
+<span id="cb342-8"><a href="chap-Fisher.html#cb342-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;log(n)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>
@@ -771,7 +772,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

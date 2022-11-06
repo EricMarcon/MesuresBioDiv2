@@ -383,7 +383,7 @@
 
 \author{Eric Marcon}
 
-\date{06/05/2022}
+\date{06/11/2022}
 
 
 % Include headers (preamble.tex) here
@@ -2194,9 +2194,9 @@ Quand l'échantillonnage est suffisant, les estimateurs de Chao ont l'avantage d
 Dans ce cas, les estimations du jackknife d'ordre 1 sont cohérentes avec celles de Chao.
 En revanche, quand l'échantillonnage est insuffisant, l'estimateur jackknife d'ordre supérieur à 1 permet de réduire le biais d'estimation, au prix d'une variance accrue \autocite{Marcon2015a}.
 
-Enfin, Beguinot \autocite*{Beguinot2015a,Beguinot2016} suggère d'utiliser en règle générale le jacknife 2 (mais ne traite pas les cas dans lesquels l'échantillonnage est trop faible pour justifier un ordre supérieur) tant que le nombre de singletons est supérieur à \(2-\sqrt(2) \approx 0,6\) fois le nombre de doubletons.
+Enfin, Beguinot \autocite*{Beguinot2015a,Beguinot2016} suggère d'utiliser en règle générale le jackknife 2 (mais ne traite pas les cas dans lesquels l'échantillonnage est trop faible pour justifier un ordre supérieur) tant que le nombre de singletons est supérieur à \(2-\sqrt(2) \approx 0,6\) fois le nombre de doubletons.
 Le ratio des singletons sur les doubletons diminue quand l'échantillonnage approche de l'exhaustivité.
-Quand le seuil de 0,6 est dépassé, la valeur de l'estimateur de Chao devient supérieur au jacknife 2 et doit être utilisé.
+Quand le seuil de 0,6 est dépassé, la valeur de l'estimateur de Chao devient supérieur au jackknife 2 et doit être utilisé.
 Ce seuil est cohérent avec les règles de \textcite{Brose2003}.
 
 \hypertarget{sec-Extrapol}{%
@@ -2617,7 +2617,7 @@ Le nombre d'espèces est estimé par l'inverse de l'ordonnée à l'origine du mo
 \scriptsize
 
 \begin{verbatim}
-## `geom_smooth()` using formula 'y ~ x'
+## `geom_smooth()` using formula = 'y ~ x'
 \end{verbatim}
 
 \begin{SCfigure}
@@ -4450,7 +4450,7 @@ Dès \(q=0,5\), l'estimation est très précise dans tous les cas, même en réd
 Les conclusions de ce travail d'évaluation tiennent en deux points.
 Dans des conditions réalistes d'inventaire d'arbres en forêt tropicale, les estimateurs de diversité les plus performants sont celui de Chao, Wang et Jost et l'estimateur révélé.
 Le premier a une variance plus faible pour les valeurs de \(q\) proches de 0 mais est limité par son estimation du nombre d'espèces par l'estimateur Chao1.
-Le second est préférable quand le nombre d'espèces estimé par l'estimateur jackknife d'ordre optimal est clairement supérieur (c'est-à-dire, en pratique, quand l'ordre du jacknife optimal est supérieur à 1).
+Le second est préférable quand le nombre d'espèces estimé par l'estimateur jackknife d'ordre optimal est clairement supérieur (c'est-à-dire, en pratique, quand l'ordre du jackknife optimal est supérieur à 1).
 Son biais est alors bien inférieur, au prix d'une variance plus grande.
 
 Dans tous les cas, l'estimation de la diversité aux ordres inférieurs à 0,5 est imprécise, sauf à disposer d'inventaires de taille considérable (de l'ordre de la dizaine d'hectares au moins).
@@ -10834,6 +10834,10 @@ Le résultat est très différent parce que l'approximation de l'égalité de \(
 \end{Shaded}
 
 \begin{verbatim}
+## No methods found in package 'Brobdingnag' for request: 'sum' when loading 'untb'
+\end{verbatim}
+
+\begin{verbatim}
 ## Registered S3 method overwritten by 'untb':
 ##   method       from 
 ##   plot.preston vegan
@@ -11188,13 +11192,13 @@ Les résultats obtenus sont comparés à des inventaires directs de 1800 individ
 
 }
 
-\caption{Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen et al.~(pointillés alternés vert), Béguinot (tirets rouges) ou avec le package iNEXT (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire.}\label{fig:Beguinot2015Fig}
+\caption{Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen et al.~(pointillés alternés vert), Béguinot (tirets rouges) ou Chao, Gotelli et al.~(pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire.}\label{fig:Beguinot2015Fig}
 \end{SCfigure}
 
 \normalsize
 
 La figure \ref{fig:Beguinot2015Fig} montre que les extrapolations sont bonnes et très similaires avec les trois méthodes.
-La distribution des 500 simulations d'extrapolation est proche de celle des 500 inventaires, avec une plus grande variabilité due à la quantiité plus faible de données disponibles.
+La distribution des 500 simulations d'extrapolation est proche de celle des 500 inventaires, avec une plus grande variabilité due à la quantité plus faible de données disponibles.
 
 Le code R nécessaire pour réaliser la figure est:
 
@@ -11229,17 +11233,14 @@ Le code R nécessaire pour réaliser la figure est:
 \NormalTok{\}}
 \CommentTok{# Extrapolation des inventaires}
 \NormalTok{eB <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(Samples, }\DecValTok{2}\NormalTok{, ExtrapolateB) }\OperatorTok{+}\StringTok{ }\NormalTok{S0}
-\CommentTok{# Extrapolation par iNext}
-\KeywordTok{library}\NormalTok{(}\StringTok{"iNEXT"}\NormalTok{)}
-\NormalTok{ei <-}\StringTok{ }\KeywordTok{iNEXT}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(Samples), }\DataTypeTok{q =} \DecValTok{0}\NormalTok{, }\DataTypeTok{endpoint =}\NormalTok{ n}\OperatorTok{*}\NormalTok{(}\DecValTok{1}\OperatorTok{+}\NormalTok{extra), }
-            \DataTypeTok{knots =} \DecValTok{4}\NormalTok{, }\DataTypeTok{se =} \OtherTok{FALSE}\NormalTok{)}\OperatorTok{$}\NormalTok{iNextEst}
-\CommentTok{# Extraction des résultats de l'objet obtenu}
-\NormalTok{ei <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(ei, }\ControlFlowTok{function}\NormalTok{(x) x[[}\DecValTok{4}\NormalTok{]][}\DecValTok{4}\NormalTok{])}
+\CommentTok{# Extrapolation selon Chao, Gotelli et al. (2014)}
+\NormalTok{ei <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(Samples, }\DecValTok{2}\NormalTok{, Richness, }\DataTypeTok{Level =}\NormalTok{ n}\OperatorTok{*}\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{extra), }
+            \DataTypeTok{RCorrection =} \StringTok{"Chao1"}\NormalTok{)}
 \CommentTok{# Fonction d'extrapolation selon Shen et al.}
 \KeywordTok{library}\NormalTok{(}\StringTok{"SPECIES"}\NormalTok{)}
 \NormalTok{ExtrapolateS <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(Ns) \{}
   \CommentTok{# Nombre d'espèces non observées}
-  \KeywordTok{sink}\NormalTok{(}\KeywordTok{tempfile}\NormalTok{()) }\CommentTok{# Suppression des messages de jacknife()}
+  \KeywordTok{sink}\NormalTok{(}\KeywordTok{tempfile}\NormalTok{()) }\CommentTok{# Suppression des messages de jackknife()}
 \NormalTok{  S0 <-}\StringTok{ }\KeywordTok{jackknife}\NormalTok{(}\KeywordTok{AbdFreqCount}\NormalTok{(Ns))}\OperatorTok{$}\NormalTok{Nhat }\OperatorTok{-}\KeywordTok{sum}\NormalTok{(Ns }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{)}
   \KeywordTok{sink}\NormalTok{() }\CommentTok{# restauration de l'affichage normal}
   \CommentTok{# Taux de couverture}
@@ -11347,7 +11348,7 @@ La méthode est testée ici sur la même communauté log-normale.
 
 }
 
-\caption{Extrapolation de 500 inventaires de 5000 individus (valeurs moyenne en tireté rouge et enveloppe de confiance à 95\% en gris) superposée à la SAC réelle d'une communauté log-normale de 300 espèces. L'extrapolation (en pointllés bleu) d'un inventaire limité à 1000 individus est sévèrement sous-estimée.}\label{fig:Beguinot2015aFig}
+\caption{Extrapolation de 500 inventaires de 5000 individus (valeurs moyenne en tireté rouge et enveloppe de confiance à 95\% en gris) superposée à la SAC réelle d'une communauté log-normale de 300 espèces. L'extrapolation (en pointillés bleu) d'un inventaire limité à 1000 individus est sévèrement sous-estimée.}\label{fig:Beguinot2015aFig}
 \end{SCfigure}
 
 \normalsize

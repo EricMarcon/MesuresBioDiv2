@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>21 Accumulation de la diversité locale | Mesures de la Biodiversité</title>
   <meta name="description" content="Définitions, estimation et décompositon de la biodiversité" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="21 Accumulation de la diversité locale | Mesures de la Biodiversité" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Eric Marcon" />
 
 
-<meta name="date" content="2022-06-05" />
+<meta name="date" content="2022-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163419632-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C1B3PLBCM6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -481,9 +481,9 @@ Figure 21.2: Courbe d’accumulation des espèces d’arbres de Barro Colorado I
 <p>La fonction <code>specaccum</code> de la librairie <em>vegan</em> <span class="citation">(Oksanen et al. <a href="#ref-Oksanen2012" role="doc-biblioref">2012</a>)</span> permet de tracer les SAC (figure <a href="chap-Accumulation.html#fig:specaccumFig">21.2</a>) selon différentes méthodes, avec un intervalle de confiance obtenu par permutation de l’ordre d’ajout des données ou à partir des formules de raréfaction.</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="chap-Accumulation.html#cb342-1"></a><span class="kw">data</span>(BCI)</span>
-<span id="cb342-2"><a href="chap-Accumulation.html#cb342-2"></a>SAC &lt;-<span class="st"> </span><span class="kw">specaccum</span>(BCI, <span class="st">&quot;random&quot;</span>)</span>
-<span id="cb342-3"><a href="chap-Accumulation.html#cb342-3"></a><span class="kw">plot</span>(SAC, <span class="dt">ci.type =</span> <span class="st">&quot;poly&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">ci.lty =</span> <span class="dv">0</span>, <span class="dt">ci.col =</span> <span class="st">&quot;lightgray&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="chap-Accumulation.html#cb343-1"></a><span class="kw">data</span>(BCI)</span>
+<span id="cb343-2"><a href="chap-Accumulation.html#cb343-2"></a>SAC &lt;-<span class="st"> </span><span class="kw">specaccum</span>(BCI, <span class="st">&quot;random&quot;</span>)</span>
+<span id="cb343-3"><a href="chap-Accumulation.html#cb343-3"></a><span class="kw">plot</span>(SAC, <span class="dt">ci.type =</span> <span class="st">&quot;poly&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">ci.lty =</span> <span class="dv">0</span>, <span class="dt">ci.col =</span> <span class="st">&quot;lightgray&quot;</span>)</span></code></pre></div>
 
 <p>Pour une surface donnée, le nombre d’individus est une variable aléatoire.
 Dans ce cas, la SAC (dépendant de la surface) est différente de la courbe de raréfaction (fonction du nombre d’individus) de Gotelli et Colwell, que <span class="citation">Coleman (<a href="#ref-Coleman1981" role="doc-biblioref">1981</a>)</span> nomme “courbe du collecteur”.</p>
@@ -509,16 +509,16 @@ Dans ce but, la SAC théorique peut être construite <span class="citation">(Cha
 Son intervalle de confiance n’est pas représenté: l’estimation est sans biais et a une variance très petite; d’autre part, la variabilité de l’échantillonnage prise en compte dans la figure <a href="chap-Accumulation.html#fig:specaccumFig">21.2</a> est ignorée ici. La fonction <code>GenSimp.z</code> est fournie par le package <em>EntropyEstimation</em> <span class="citation">(Cao et Grabchak <a href="#ref-Cao2014" role="doc-biblioref">2014</a>)</span>.</p>
 <p>Code pour la figure:</p>
 
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="chap-Accumulation.html#cb343-1"></a><span class="kw">library</span>(<span class="st">&quot;EntropyEstimation&quot;</span>)</span>
-<span id="cb343-2"><a href="chap-Accumulation.html#cb343-2"></a><span class="kw">data</span>(BCI)</span>
-<span id="cb343-3"><a href="chap-Accumulation.html#cb343-3"></a>Ns &lt;-<span class="st"> </span><span class="kw">colSums</span>(BCI)</span>
-<span id="cb343-4"><a href="chap-Accumulation.html#cb343-4"></a>gsValues &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>(<span class="kw">sum</span>(Ns)<span class="op">-</span><span class="dv">1</span>), <span class="cf">function</span>(r) <span class="kw">GenSimp.z</span>(Ns, r))</span>
-<span id="cb343-5"><a href="chap-Accumulation.html#cb343-5"></a>SAC &lt;-<span class="st"> </span><span class="kw">cumsum</span>(gsValues)</span>
-<span id="cb343-6"><a href="chap-Accumulation.html#cb343-6"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span>(<span class="kw">sum</span>(Ns)<span class="op">-</span><span class="dv">1</span>), </span>
-<span id="cb343-7"><a href="chap-Accumulation.html#cb343-7"></a>                  <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, SAC)), </span>
-<span id="cb343-8"><a href="chap-Accumulation.html#cb343-8"></a>       <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)) <span class="op">+</span></span>
-<span id="cb343-9"><a href="chap-Accumulation.html#cb343-9"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb343-10"><a href="chap-Accumulation.html#cb343-10"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Nombre d&#39;individus&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="chap-Accumulation.html#cb344-1"></a><span class="kw">library</span>(<span class="st">&quot;EntropyEstimation&quot;</span>)</span>
+<span id="cb344-2"><a href="chap-Accumulation.html#cb344-2"></a><span class="kw">data</span>(BCI)</span>
+<span id="cb344-3"><a href="chap-Accumulation.html#cb344-3"></a>Ns &lt;-<span class="st"> </span><span class="kw">colSums</span>(BCI)</span>
+<span id="cb344-4"><a href="chap-Accumulation.html#cb344-4"></a>gsValues &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>(<span class="kw">sum</span>(Ns)<span class="op">-</span><span class="dv">1</span>), <span class="cf">function</span>(r) <span class="kw">GenSimp.z</span>(Ns, r))</span>
+<span id="cb344-5"><a href="chap-Accumulation.html#cb344-5"></a>SAC &lt;-<span class="st"> </span><span class="kw">cumsum</span>(gsValues)</span>
+<span id="cb344-6"><a href="chap-Accumulation.html#cb344-6"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span>(<span class="kw">sum</span>(Ns)<span class="op">-</span><span class="dv">1</span>), </span>
+<span id="cb344-7"><a href="chap-Accumulation.html#cb344-7"></a>                  <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, SAC)), </span>
+<span id="cb344-8"><a href="chap-Accumulation.html#cb344-8"></a>       <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)) <span class="op">+</span></span>
+<span id="cb344-9"><a href="chap-Accumulation.html#cb344-9"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb344-10"><a href="chap-Accumulation.html#cb344-10"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Nombre d&#39;individus&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span></code></pre></div>
 
 </div>
 <div id="sec-Extrapolation" class="section level2 hasAnchor">
@@ -554,80 +554,77 @@ Les résultats obtenus sont comparés à des inventaires directs de 1800 individ
 
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:Beguinot2015Fig"></span>
-<img src="MesuresBD_files/figure-html/Beguinot2015Fig-1.png" alt="Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen et al. (pointillés alternés vert), Béguinot (tirets rouges) ou avec le package iNEXT (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire." width="80%" />
+<img src="MesuresBD_files/figure-html/Beguinot2015Fig-1.png" alt="Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen et al. (pointillés alternés vert), Béguinot (tirets rouges) ou Chao, Gotelli et al. (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire." width="80%" />
 <p class="caption">
-Figure 21.4: Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen et al. (pointillés alternés vert), Béguinot (tirets rouges) ou avec le package iNEXT (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire.
+Figure 21.4: Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen et al. (pointillés alternés vert), Béguinot (tirets rouges) ou Chao, Gotelli et al. (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire.
 </p>
 </div>
 
 <p>La figure <a href="chap-Accumulation.html#fig:Beguinot2015Fig">21.4</a> montre que les extrapolations sont bonnes et très similaires avec les trois méthodes.
-La distribution des 500 simulations d’extrapolation est proche de celle des 500 inventaires, avec une plus grande variabilité due à la quantiité plus faible de données disponibles.</p>
+La distribution des 500 simulations d’extrapolation est proche de celle des 500 inventaires, avec une plus grande variabilité due à la quantité plus faible de données disponibles.</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="chap-Accumulation.html#cb344-1"></a><span class="co"># Ecart-type de la communauté log-normale</span></span>
-<span id="cb344-2"><a href="chap-Accumulation.html#cb344-2"></a>sdlog &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb344-3"><a href="chap-Accumulation.html#cb344-3"></a><span class="co"># Nombre d&#39;espèces</span></span>
-<span id="cb344-4"><a href="chap-Accumulation.html#cb344-4"></a>S &lt;-<span class="st"> </span><span class="dv">300</span></span>
-<span id="cb344-5"><a href="chap-Accumulation.html#cb344-5"></a><span class="co"># Tirage des probabilités log-normales (l&#39;espérance est sans importance)</span></span>
-<span id="cb344-6"><a href="chap-Accumulation.html#cb344-6"></a>Ps &lt;-<span class="st"> </span><span class="kw">as.ProbaVector</span>(<span class="kw">rlnorm</span>(S, <span class="dv">0</span>, sdlog))</span>
-<span id="cb344-7"><a href="chap-Accumulation.html#cb344-7"></a><span class="co"># Taille de l&#39;inventaire</span></span>
-<span id="cb344-8"><a href="chap-Accumulation.html#cb344-8"></a>n &lt;-<span class="st"> </span><span class="dv">1000</span></span>
-<span id="cb344-9"><a href="chap-Accumulation.html#cb344-9"></a><span class="co"># Niveau d&#39;extrapolation</span></span>
-<span id="cb344-10"><a href="chap-Accumulation.html#cb344-10"></a>extra &lt;-<span class="st"> </span><span class="fl">0.8</span></span>
-<span id="cb344-11"><a href="chap-Accumulation.html#cb344-11"></a><span class="co"># Nombre de simulations</span></span>
-<span id="cb344-12"><a href="chap-Accumulation.html#cb344-12"></a>nSim &lt;-<span class="st"> </span><span class="dv">500</span></span>
-<span id="cb344-13"><a href="chap-Accumulation.html#cb344-13"></a><span class="co"># Création de nSim inventaires de n individus</span></span>
-<span id="cb344-14"><a href="chap-Accumulation.html#cb344-14"></a>Samples &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(nSim, n, Ps)</span>
-<span id="cb344-15"><a href="chap-Accumulation.html#cb344-15"></a><span class="co"># Richesse observée</span></span>
-<span id="cb344-16"><a href="chap-Accumulation.html#cb344-16"></a>S0 &lt;-<span class="st"> </span><span class="kw">colSums</span>(Samples <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
-<span id="cb344-17"><a href="chap-Accumulation.html#cb344-17"></a><span class="co"># Fonction d&#39;extrapolation selon Béguinot</span></span>
-<span id="cb344-18"><a href="chap-Accumulation.html#cb344-18"></a>ExtrapolateB &lt;-<span class="st"> </span><span class="cf">function</span>(Ns) {</span>
-<span id="cb344-19"><a href="chap-Accumulation.html#cb344-19"></a>  <span class="co"># Création d&#39;un tableau contenant le nombre d&#39;espèces par abondance</span></span>
-<span id="cb344-20"><a href="chap-Accumulation.html#cb344-20"></a>  f &lt;-<span class="st"> </span><span class="kw">AbdFreqCount</span>(Ns)</span>
-<span id="cb344-21"><a href="chap-Accumulation.html#cb344-21"></a>  <span class="co"># Calcul des termes de la somme</span></span>
-<span id="cb344-22"><a href="chap-Accumulation.html#cb344-22"></a>  s &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(f), <span class="cf">function</span>(i) </span>
-<span id="cb344-23"><a href="chap-Accumulation.html#cb344-23"></a>              (<span class="op">-</span><span class="dv">1</span>)<span class="op">^</span>(f[i, <span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span>) <span class="op">*</span><span class="st"> </span>f[i,<span class="dv">2</span>] <span class="op">*</span><span class="st"> </span>extra<span class="op">^</span>f[i, <span class="dv">1</span>])</span>
-<span id="cb344-24"><a href="chap-Accumulation.html#cb344-24"></a>  <span class="kw">return</span>(<span class="kw">sum</span>(s))</span>
-<span id="cb344-25"><a href="chap-Accumulation.html#cb344-25"></a>}</span>
-<span id="cb344-26"><a href="chap-Accumulation.html#cb344-26"></a><span class="co"># Extrapolation des inventaires</span></span>
-<span id="cb344-27"><a href="chap-Accumulation.html#cb344-27"></a>eB &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, ExtrapolateB) <span class="op">+</span><span class="st"> </span>S0</span>
-<span id="cb344-28"><a href="chap-Accumulation.html#cb344-28"></a><span class="co"># Extrapolation par iNext</span></span>
-<span id="cb344-29"><a href="chap-Accumulation.html#cb344-29"></a><span class="kw">library</span>(<span class="st">&quot;iNEXT&quot;</span>)</span>
-<span id="cb344-30"><a href="chap-Accumulation.html#cb344-30"></a>ei &lt;-<span class="st"> </span><span class="kw">iNEXT</span>(<span class="kw">as.data.frame</span>(Samples), <span class="dt">q =</span> <span class="dv">0</span>, <span class="dt">endpoint =</span> n<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>extra), </span>
-<span id="cb344-31"><a href="chap-Accumulation.html#cb344-31"></a>            <span class="dt">knots =</span> <span class="dv">4</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)<span class="op">$</span>iNextEst</span>
-<span id="cb344-32"><a href="chap-Accumulation.html#cb344-32"></a><span class="co"># Extraction des résultats de l&#39;objet obtenu</span></span>
-<span id="cb344-33"><a href="chap-Accumulation.html#cb344-33"></a>ei &lt;-<span class="st"> </span><span class="kw">sapply</span>(ei, <span class="cf">function</span>(x) x[[<span class="dv">4</span>]][<span class="dv">4</span>])</span>
-<span id="cb344-34"><a href="chap-Accumulation.html#cb344-34"></a><span class="co"># Fonction d&#39;extrapolation selon Shen et al.</span></span>
-<span id="cb344-35"><a href="chap-Accumulation.html#cb344-35"></a><span class="kw">library</span>(<span class="st">&quot;SPECIES&quot;</span>)</span>
-<span id="cb344-36"><a href="chap-Accumulation.html#cb344-36"></a>ExtrapolateS &lt;-<span class="st"> </span><span class="cf">function</span>(Ns) {</span>
-<span id="cb344-37"><a href="chap-Accumulation.html#cb344-37"></a>  <span class="co"># Nombre d&#39;espèces non observées</span></span>
-<span id="cb344-38"><a href="chap-Accumulation.html#cb344-38"></a>  <span class="kw">sink</span>(<span class="kw">tempfile</span>()) <span class="co"># Suppression des messages de jacknife()</span></span>
-<span id="cb344-39"><a href="chap-Accumulation.html#cb344-39"></a>  S0 &lt;-<span class="st"> </span><span class="kw">jackknife</span>(<span class="kw">AbdFreqCount</span>(Ns))<span class="op">$</span>Nhat <span class="op">-</span><span class="kw">sum</span>(Ns <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
-<span id="cb344-40"><a href="chap-Accumulation.html#cb344-40"></a>  <span class="kw">sink</span>() <span class="co"># restauration de l&#39;affichage normal</span></span>
-<span id="cb344-41"><a href="chap-Accumulation.html#cb344-41"></a>  <span class="co"># Taux de couverture</span></span>
-<span id="cb344-42"><a href="chap-Accumulation.html#cb344-42"></a>  C &lt;-<span class="st"> </span><span class="kw">Coverage</span>(Ns)</span>
-<span id="cb344-43"><a href="chap-Accumulation.html#cb344-43"></a>  <span class="co"># Espèces nouvelles</span></span>
-<span id="cb344-44"><a href="chap-Accumulation.html#cb344-44"></a>  <span class="kw">return</span>(S0<span class="op">*</span>(<span class="dv">1</span> <span class="op">-</span>(<span class="dv">1</span> <span class="op">-</span>(<span class="dv">1</span> <span class="op">-</span>C)<span class="op">/</span>S0)<span class="op">^</span>(n<span class="op">*</span>extra)))</span>
-<span id="cb344-45"><a href="chap-Accumulation.html#cb344-45"></a>}</span>
-<span id="cb344-46"><a href="chap-Accumulation.html#cb344-46"></a><span class="co"># Extrapolation des inventaires</span></span>
-<span id="cb344-47"><a href="chap-Accumulation.html#cb344-47"></a>eS &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, ExtrapolateS) <span class="op">+</span><span class="st"> </span>S0</span>
-<span id="cb344-48"><a href="chap-Accumulation.html#cb344-48"></a><span class="co"># Tirage de nSim communautés de taille n(1+extra)</span></span>
-<span id="cb344-49"><a href="chap-Accumulation.html#cb344-49"></a>Communities &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(nSim, n<span class="op">*</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>extra), Ps)</span>
-<span id="cb344-50"><a href="chap-Accumulation.html#cb344-50"></a>richCommunities &lt;-<span class="st"> </span><span class="kw">colSums</span>(Communities <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
-<span id="cb344-51"><a href="chap-Accumulation.html#cb344-51"></a><span class="co"># Distribution des résultats</span></span>
-<span id="cb344-52"><a href="chap-Accumulation.html#cb344-52"></a>deCommunities &lt;-<span class="st"> </span><span class="kw">density</span>(richCommunities)</span>
-<span id="cb344-53"><a href="chap-Accumulation.html#cb344-53"></a>deB &lt;-<span class="st"> </span><span class="kw">density</span>(eB)</span>
-<span id="cb344-54"><a href="chap-Accumulation.html#cb344-54"></a>dei &lt;-<span class="st"> </span><span class="kw">density</span>(ei)</span>
-<span id="cb344-55"><a href="chap-Accumulation.html#cb344-55"></a>deS &lt;-<span class="st"> </span><span class="kw">density</span>(eS)</span>
-<span id="cb344-56"><a href="chap-Accumulation.html#cb344-56"></a><span class="co"># Figure</span></span>
-<span id="cb344-57"><a href="chap-Accumulation.html#cb344-57"></a>Xlab &lt;-<span class="st"> &quot;Nombre d&#39;espèces&quot;</span></span>
-<span id="cb344-58"><a href="chap-Accumulation.html#cb344-58"></a>Ylab &lt;-<span class="st"> &quot;Densité de probabilité&quot;</span></span>
-<span id="cb344-59"><a href="chap-Accumulation.html#cb344-59"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(richCommunities, eB, ei, eS)) <span class="op">+</span></span>
-<span id="cb344-60"><a href="chap-Accumulation.html#cb344-60"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(richCommunities)) <span class="op">+</span></span>
-<span id="cb344-61"><a href="chap-Accumulation.html#cb344-61"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(eB), <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
-<span id="cb344-62"><a href="chap-Accumulation.html#cb344-62"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(ei), <span class="dt">lty =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span></span>
-<span id="cb344-63"><a href="chap-Accumulation.html#cb344-63"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(eS), <span class="dt">lty =</span> <span class="dv">4</span>, <span class="dt">col =</span> <span class="st">&quot;darkgreen&quot;</span>) <span class="op">+</span></span>
-<span id="cb344-64"><a href="chap-Accumulation.html#cb344-64"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> Xlab, <span class="dt">y =</span> Ylab)</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="chap-Accumulation.html#cb345-1"></a><span class="co"># Ecart-type de la communauté log-normale</span></span>
+<span id="cb345-2"><a href="chap-Accumulation.html#cb345-2"></a>sdlog &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb345-3"><a href="chap-Accumulation.html#cb345-3"></a><span class="co"># Nombre d&#39;espèces</span></span>
+<span id="cb345-4"><a href="chap-Accumulation.html#cb345-4"></a>S &lt;-<span class="st"> </span><span class="dv">300</span></span>
+<span id="cb345-5"><a href="chap-Accumulation.html#cb345-5"></a><span class="co"># Tirage des probabilités log-normales (l&#39;espérance est sans importance)</span></span>
+<span id="cb345-6"><a href="chap-Accumulation.html#cb345-6"></a>Ps &lt;-<span class="st"> </span><span class="kw">as.ProbaVector</span>(<span class="kw">rlnorm</span>(S, <span class="dv">0</span>, sdlog))</span>
+<span id="cb345-7"><a href="chap-Accumulation.html#cb345-7"></a><span class="co"># Taille de l&#39;inventaire</span></span>
+<span id="cb345-8"><a href="chap-Accumulation.html#cb345-8"></a>n &lt;-<span class="st"> </span><span class="dv">1000</span></span>
+<span id="cb345-9"><a href="chap-Accumulation.html#cb345-9"></a><span class="co"># Niveau d&#39;extrapolation</span></span>
+<span id="cb345-10"><a href="chap-Accumulation.html#cb345-10"></a>extra &lt;-<span class="st"> </span><span class="fl">0.8</span></span>
+<span id="cb345-11"><a href="chap-Accumulation.html#cb345-11"></a><span class="co"># Nombre de simulations</span></span>
+<span id="cb345-12"><a href="chap-Accumulation.html#cb345-12"></a>nSim &lt;-<span class="st"> </span><span class="dv">500</span></span>
+<span id="cb345-13"><a href="chap-Accumulation.html#cb345-13"></a><span class="co"># Création de nSim inventaires de n individus</span></span>
+<span id="cb345-14"><a href="chap-Accumulation.html#cb345-14"></a>Samples &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(nSim, n, Ps)</span>
+<span id="cb345-15"><a href="chap-Accumulation.html#cb345-15"></a><span class="co"># Richesse observée</span></span>
+<span id="cb345-16"><a href="chap-Accumulation.html#cb345-16"></a>S0 &lt;-<span class="st"> </span><span class="kw">colSums</span>(Samples <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
+<span id="cb345-17"><a href="chap-Accumulation.html#cb345-17"></a><span class="co"># Fonction d&#39;extrapolation selon Béguinot</span></span>
+<span id="cb345-18"><a href="chap-Accumulation.html#cb345-18"></a>ExtrapolateB &lt;-<span class="st"> </span><span class="cf">function</span>(Ns) {</span>
+<span id="cb345-19"><a href="chap-Accumulation.html#cb345-19"></a>  <span class="co"># Création d&#39;un tableau contenant le nombre d&#39;espèces par abondance</span></span>
+<span id="cb345-20"><a href="chap-Accumulation.html#cb345-20"></a>  f &lt;-<span class="st"> </span><span class="kw">AbdFreqCount</span>(Ns)</span>
+<span id="cb345-21"><a href="chap-Accumulation.html#cb345-21"></a>  <span class="co"># Calcul des termes de la somme</span></span>
+<span id="cb345-22"><a href="chap-Accumulation.html#cb345-22"></a>  s &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(f), <span class="cf">function</span>(i) </span>
+<span id="cb345-23"><a href="chap-Accumulation.html#cb345-23"></a>              (<span class="op">-</span><span class="dv">1</span>)<span class="op">^</span>(f[i, <span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span>) <span class="op">*</span><span class="st"> </span>f[i,<span class="dv">2</span>] <span class="op">*</span><span class="st"> </span>extra<span class="op">^</span>f[i, <span class="dv">1</span>])</span>
+<span id="cb345-24"><a href="chap-Accumulation.html#cb345-24"></a>  <span class="kw">return</span>(<span class="kw">sum</span>(s))</span>
+<span id="cb345-25"><a href="chap-Accumulation.html#cb345-25"></a>}</span>
+<span id="cb345-26"><a href="chap-Accumulation.html#cb345-26"></a><span class="co"># Extrapolation des inventaires</span></span>
+<span id="cb345-27"><a href="chap-Accumulation.html#cb345-27"></a>eB &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, ExtrapolateB) <span class="op">+</span><span class="st"> </span>S0</span>
+<span id="cb345-28"><a href="chap-Accumulation.html#cb345-28"></a><span class="co"># Extrapolation selon Chao, Gotelli et al. (2014)</span></span>
+<span id="cb345-29"><a href="chap-Accumulation.html#cb345-29"></a>ei &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, Richness, <span class="dt">Level =</span> n<span class="op">*</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>extra), </span>
+<span id="cb345-30"><a href="chap-Accumulation.html#cb345-30"></a>            <span class="dt">RCorrection =</span> <span class="st">&quot;Chao1&quot;</span>)</span>
+<span id="cb345-31"><a href="chap-Accumulation.html#cb345-31"></a><span class="co"># Fonction d&#39;extrapolation selon Shen et al.</span></span>
+<span id="cb345-32"><a href="chap-Accumulation.html#cb345-32"></a><span class="kw">library</span>(<span class="st">&quot;SPECIES&quot;</span>)</span>
+<span id="cb345-33"><a href="chap-Accumulation.html#cb345-33"></a>ExtrapolateS &lt;-<span class="st"> </span><span class="cf">function</span>(Ns) {</span>
+<span id="cb345-34"><a href="chap-Accumulation.html#cb345-34"></a>  <span class="co"># Nombre d&#39;espèces non observées</span></span>
+<span id="cb345-35"><a href="chap-Accumulation.html#cb345-35"></a>  <span class="kw">sink</span>(<span class="kw">tempfile</span>()) <span class="co"># Suppression des messages de jackknife()</span></span>
+<span id="cb345-36"><a href="chap-Accumulation.html#cb345-36"></a>  S0 &lt;-<span class="st"> </span><span class="kw">jackknife</span>(<span class="kw">AbdFreqCount</span>(Ns))<span class="op">$</span>Nhat <span class="op">-</span><span class="kw">sum</span>(Ns <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
+<span id="cb345-37"><a href="chap-Accumulation.html#cb345-37"></a>  <span class="kw">sink</span>() <span class="co"># restauration de l&#39;affichage normal</span></span>
+<span id="cb345-38"><a href="chap-Accumulation.html#cb345-38"></a>  <span class="co"># Taux de couverture</span></span>
+<span id="cb345-39"><a href="chap-Accumulation.html#cb345-39"></a>  C &lt;-<span class="st"> </span><span class="kw">Coverage</span>(Ns)</span>
+<span id="cb345-40"><a href="chap-Accumulation.html#cb345-40"></a>  <span class="co"># Espèces nouvelles</span></span>
+<span id="cb345-41"><a href="chap-Accumulation.html#cb345-41"></a>  <span class="kw">return</span>(S0<span class="op">*</span>(<span class="dv">1</span> <span class="op">-</span>(<span class="dv">1</span> <span class="op">-</span>(<span class="dv">1</span> <span class="op">-</span>C)<span class="op">/</span>S0)<span class="op">^</span>(n<span class="op">*</span>extra)))</span>
+<span id="cb345-42"><a href="chap-Accumulation.html#cb345-42"></a>}</span>
+<span id="cb345-43"><a href="chap-Accumulation.html#cb345-43"></a><span class="co"># Extrapolation des inventaires</span></span>
+<span id="cb345-44"><a href="chap-Accumulation.html#cb345-44"></a>eS &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, ExtrapolateS) <span class="op">+</span><span class="st"> </span>S0</span>
+<span id="cb345-45"><a href="chap-Accumulation.html#cb345-45"></a><span class="co"># Tirage de nSim communautés de taille n(1+extra)</span></span>
+<span id="cb345-46"><a href="chap-Accumulation.html#cb345-46"></a>Communities &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(nSim, n<span class="op">*</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>extra), Ps)</span>
+<span id="cb345-47"><a href="chap-Accumulation.html#cb345-47"></a>richCommunities &lt;-<span class="st"> </span><span class="kw">colSums</span>(Communities <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
+<span id="cb345-48"><a href="chap-Accumulation.html#cb345-48"></a><span class="co"># Distribution des résultats</span></span>
+<span id="cb345-49"><a href="chap-Accumulation.html#cb345-49"></a>deCommunities &lt;-<span class="st"> </span><span class="kw">density</span>(richCommunities)</span>
+<span id="cb345-50"><a href="chap-Accumulation.html#cb345-50"></a>deB &lt;-<span class="st"> </span><span class="kw">density</span>(eB)</span>
+<span id="cb345-51"><a href="chap-Accumulation.html#cb345-51"></a>dei &lt;-<span class="st"> </span><span class="kw">density</span>(ei)</span>
+<span id="cb345-52"><a href="chap-Accumulation.html#cb345-52"></a>deS &lt;-<span class="st"> </span><span class="kw">density</span>(eS)</span>
+<span id="cb345-53"><a href="chap-Accumulation.html#cb345-53"></a><span class="co"># Figure</span></span>
+<span id="cb345-54"><a href="chap-Accumulation.html#cb345-54"></a>Xlab &lt;-<span class="st"> &quot;Nombre d&#39;espèces&quot;</span></span>
+<span id="cb345-55"><a href="chap-Accumulation.html#cb345-55"></a>Ylab &lt;-<span class="st"> &quot;Densité de probabilité&quot;</span></span>
+<span id="cb345-56"><a href="chap-Accumulation.html#cb345-56"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(richCommunities, eB, ei, eS)) <span class="op">+</span></span>
+<span id="cb345-57"><a href="chap-Accumulation.html#cb345-57"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(richCommunities)) <span class="op">+</span></span>
+<span id="cb345-58"><a href="chap-Accumulation.html#cb345-58"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(eB), <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb345-59"><a href="chap-Accumulation.html#cb345-59"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(ei), <span class="dt">lty =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span></span>
+<span id="cb345-60"><a href="chap-Accumulation.html#cb345-60"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(eS), <span class="dt">lty =</span> <span class="dv">4</span>, <span class="dt">col =</span> <span class="st">&quot;darkgreen&quot;</span>) <span class="op">+</span></span>
+<span id="cb345-61"><a href="chap-Accumulation.html#cb345-61"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> Xlab, <span class="dt">y =</span> Ylab)</span></code></pre></div>
 
 <p><span class="citation">Béguinot (<a href="#ref-Beguinot2015a" role="doc-biblioref">2015</a><a href="#ref-Beguinot2015a" role="doc-biblioref">a</a>)</span> propose également une forme analytique de la SAC extrapolée en combinant l’équation <a href="chap-Accumulation.html#eq:Beguinot2014">(21.1)</a> à l’estimateur jackknife d’ordre 2.
 Alors, dans le domaine de validité de l’estimateur jackknife 2, c’est-à-dire quand le nombre de singletons est supérieur à 0,6 fois le nombre de doubletons, la richesse pour <span class="math inline">\(n\)</span> individus est
@@ -643,54 +640,54 @@ où <span class="math inline">\(n_0\)</span> est la taille de l’inventaire de 
 <p>La méthode est testée ici sur la même communauté log-normale.
 500 inventaires de 5000 individus sont réalisés et chacun est extrapolé jusqu’à 25000 individus.</p>
 
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="chap-Accumulation.html#cb345-1"></a><span class="co"># Extrapolation jusqu&#39;à</span></span>
-<span id="cb345-2"><a href="chap-Accumulation.html#cb345-2"></a>Nmax &lt;-<span class="st"> </span><span class="dv">25000</span></span>
-<span id="cb345-3"><a href="chap-Accumulation.html#cb345-3"></a><span class="co"># SAC réelle, obtenue par la somme des entropies de Simpson</span></span>
-<span id="cb345-4"><a href="chap-Accumulation.html#cb345-4"></a><span class="co"># généralisées Calcul de p(1-p)^r pour toutes les espèces</span></span>
-<span id="cb345-5"><a href="chap-Accumulation.html#cb345-5"></a><span class="co"># (en lignes) et tous les r (en colonnes)</span></span>
-<span id="cb345-6"><a href="chap-Accumulation.html#cb345-6"></a>GSsr &lt;-<span class="st"> </span>Ps <span class="op">*</span><span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>Nmax, <span class="cf">function</span>(r) (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>Ps)<span class="op">^</span>r)</span>
-<span id="cb345-7"><a href="chap-Accumulation.html#cb345-7"></a><span class="co"># Simpson généralisé pour tous les r</span></span>
-<span id="cb345-8"><a href="chap-Accumulation.html#cb345-8"></a>GSr &lt;-<span class="st"> </span><span class="kw">colSums</span>(GSsr)</span>
-<span id="cb345-9"><a href="chap-Accumulation.html#cb345-9"></a><span class="co"># SAC: somme cumulée des entropies de Simpson généralisées</span></span>
-<span id="cb345-10"><a href="chap-Accumulation.html#cb345-10"></a>SAC &lt;-<span class="st"> </span><span class="kw">cumsum</span>(GSr)</span>
-<span id="cb345-11"><a href="chap-Accumulation.html#cb345-11"></a><span class="co"># Fonction d&#39;extrapolation de la SAC</span></span>
-<span id="cb345-12"><a href="chap-Accumulation.html#cb345-12"></a>ExtraSAC &lt;-<span class="st"> </span><span class="cf">function</span>(Ns, N) {</span>
-<span id="cb345-13"><a href="chap-Accumulation.html#cb345-13"></a>    <span class="co"># Ns est le vecteur des abondances de l&#39;échantillon, N</span></span>
-<span id="cb345-14"><a href="chap-Accumulation.html#cb345-14"></a>    <span class="co"># est le vecteur des tailles à extrapoler</span></span>
-<span id="cb345-15"><a href="chap-Accumulation.html#cb345-15"></a>    n0 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns)</span>
-<span id="cb345-16"><a href="chap-Accumulation.html#cb345-16"></a>    Sn0 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
-<span id="cb345-17"><a href="chap-Accumulation.html#cb345-17"></a>    f1 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</span>
-<span id="cb345-18"><a href="chap-Accumulation.html#cb345-18"></a>    f2 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns <span class="op">==</span><span class="st"> </span><span class="dv">2</span>)</span>
-<span id="cb345-19"><a href="chap-Accumulation.html#cb345-19"></a>    <span class="co"># Extrapolation à chaque taille</span></span>
-<span id="cb345-20"><a href="chap-Accumulation.html#cb345-20"></a>    <span class="kw">vapply</span>(N, <span class="cf">function</span>(n) Sn0 <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>f1 <span class="op">-</span><span class="st"> </span>f2 <span class="op">-</span><span class="st"> </span>(<span class="dv">3</span> <span class="op">*</span><span class="st"> </span>f1 <span class="op">-</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>f2) <span class="op">*</span></span>
-<span id="cb345-21"><a href="chap-Accumulation.html#cb345-21"></a><span class="st">        </span>n0<span class="op">/</span>n <span class="op">-</span><span class="st"> </span>(f2 <span class="op">-</span><span class="st"> </span>f1) <span class="op">*</span><span class="st"> </span>(n0<span class="op">/</span>n)<span class="op">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
-<span id="cb345-22"><a href="chap-Accumulation.html#cb345-22"></a>}</span>
-<span id="cb345-23"><a href="chap-Accumulation.html#cb345-23"></a><span class="co"># Taille de l&#39;échantillon</span></span>
-<span id="cb345-24"><a href="chap-Accumulation.html#cb345-24"></a>n &lt;-<span class="st"> </span><span class="dv">5000</span></span>
-<span id="cb345-25"><a href="chap-Accumulation.html#cb345-25"></a><span class="co"># Tirage de nSim inventaires dans la communauté log-normale</span></span>
-<span id="cb345-26"><a href="chap-Accumulation.html#cb345-26"></a>Samples &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(nSim, n, Ps)</span>
-<span id="cb345-27"><a href="chap-Accumulation.html#cb345-27"></a><span class="co"># Extrapolation des inventaires</span></span>
-<span id="cb345-28"><a href="chap-Accumulation.html#cb345-28"></a>ExtraSACs &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, ExtraSAC, n<span class="op">:</span>Nmax)</span>
-<span id="cb345-29"><a href="chap-Accumulation.html#cb345-29"></a><span class="co"># Moyenne et intervalle de confiance à 95%</span></span>
-<span id="cb345-30"><a href="chap-Accumulation.html#cb345-30"></a>Moyenne &lt;-<span class="st"> </span><span class="kw">apply</span>(ExtraSACs, <span class="dv">1</span>, mean)</span>
-<span id="cb345-31"><a href="chap-Accumulation.html#cb345-31"></a>Max &lt;-<span class="st"> </span><span class="kw">apply</span>(ExtraSACs, <span class="dv">1</span>, quantile, <span class="dt">probs =</span> <span class="fl">0.975</span>)</span>
-<span id="cb345-32"><a href="chap-Accumulation.html#cb345-32"></a>Min &lt;-<span class="st"> </span><span class="kw">apply</span>(ExtraSACs, <span class="dv">1</span>, quantile, <span class="dt">probs =</span> <span class="fl">0.025</span>)</span>
-<span id="cb345-33"><a href="chap-Accumulation.html#cb345-33"></a><span class="co"># Taille d&#39;échantillon réduite</span></span>
-<span id="cb345-34"><a href="chap-Accumulation.html#cb345-34"></a>nReduit &lt;-<span class="st"> </span><span class="dv">1000</span></span>
-<span id="cb345-35"><a href="chap-Accumulation.html#cb345-35"></a><span class="co"># Tirage de nSim inventaires dans la communauté log-normale</span></span>
-<span id="cb345-36"><a href="chap-Accumulation.html#cb345-36"></a>Samples &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(nSim, nReduit, Ps)</span>
-<span id="cb345-37"><a href="chap-Accumulation.html#cb345-37"></a><span class="co"># Extrapolation des inventaires</span></span>
-<span id="cb345-38"><a href="chap-Accumulation.html#cb345-38"></a>ExtraSACs &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, ExtraSAC, nReduit<span class="op">:</span>Nmax)</span>
-<span id="cb345-39"><a href="chap-Accumulation.html#cb345-39"></a><span class="co"># Moyenne</span></span>
-<span id="cb345-40"><a href="chap-Accumulation.html#cb345-40"></a>MoyenneReduit &lt;-<span class="st"> </span><span class="kw">apply</span>(ExtraSACs, <span class="dv">1</span>, mean)</span></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="chap-Accumulation.html#cb346-1"></a><span class="co"># Extrapolation jusqu&#39;à</span></span>
+<span id="cb346-2"><a href="chap-Accumulation.html#cb346-2"></a>Nmax &lt;-<span class="st"> </span><span class="dv">25000</span></span>
+<span id="cb346-3"><a href="chap-Accumulation.html#cb346-3"></a><span class="co"># SAC réelle, obtenue par la somme des entropies de Simpson</span></span>
+<span id="cb346-4"><a href="chap-Accumulation.html#cb346-4"></a><span class="co"># généralisées Calcul de p(1-p)^r pour toutes les espèces</span></span>
+<span id="cb346-5"><a href="chap-Accumulation.html#cb346-5"></a><span class="co"># (en lignes) et tous les r (en colonnes)</span></span>
+<span id="cb346-6"><a href="chap-Accumulation.html#cb346-6"></a>GSsr &lt;-<span class="st"> </span>Ps <span class="op">*</span><span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span>Nmax, <span class="cf">function</span>(r) (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>Ps)<span class="op">^</span>r)</span>
+<span id="cb346-7"><a href="chap-Accumulation.html#cb346-7"></a><span class="co"># Simpson généralisé pour tous les r</span></span>
+<span id="cb346-8"><a href="chap-Accumulation.html#cb346-8"></a>GSr &lt;-<span class="st"> </span><span class="kw">colSums</span>(GSsr)</span>
+<span id="cb346-9"><a href="chap-Accumulation.html#cb346-9"></a><span class="co"># SAC: somme cumulée des entropies de Simpson généralisées</span></span>
+<span id="cb346-10"><a href="chap-Accumulation.html#cb346-10"></a>SAC &lt;-<span class="st"> </span><span class="kw">cumsum</span>(GSr)</span>
+<span id="cb346-11"><a href="chap-Accumulation.html#cb346-11"></a><span class="co"># Fonction d&#39;extrapolation de la SAC</span></span>
+<span id="cb346-12"><a href="chap-Accumulation.html#cb346-12"></a>ExtraSAC &lt;-<span class="st"> </span><span class="cf">function</span>(Ns, N) {</span>
+<span id="cb346-13"><a href="chap-Accumulation.html#cb346-13"></a>    <span class="co"># Ns est le vecteur des abondances de l&#39;échantillon, N</span></span>
+<span id="cb346-14"><a href="chap-Accumulation.html#cb346-14"></a>    <span class="co"># est le vecteur des tailles à extrapoler</span></span>
+<span id="cb346-15"><a href="chap-Accumulation.html#cb346-15"></a>    n0 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns)</span>
+<span id="cb346-16"><a href="chap-Accumulation.html#cb346-16"></a>    Sn0 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
+<span id="cb346-17"><a href="chap-Accumulation.html#cb346-17"></a>    f1 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</span>
+<span id="cb346-18"><a href="chap-Accumulation.html#cb346-18"></a>    f2 &lt;-<span class="st"> </span><span class="kw">sum</span>(Ns <span class="op">==</span><span class="st"> </span><span class="dv">2</span>)</span>
+<span id="cb346-19"><a href="chap-Accumulation.html#cb346-19"></a>    <span class="co"># Extrapolation à chaque taille</span></span>
+<span id="cb346-20"><a href="chap-Accumulation.html#cb346-20"></a>    <span class="kw">vapply</span>(N, <span class="cf">function</span>(n) Sn0 <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>f1 <span class="op">-</span><span class="st"> </span>f2 <span class="op">-</span><span class="st"> </span>(<span class="dv">3</span> <span class="op">*</span><span class="st"> </span>f1 <span class="op">-</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>f2) <span class="op">*</span></span>
+<span id="cb346-21"><a href="chap-Accumulation.html#cb346-21"></a><span class="st">        </span>n0<span class="op">/</span>n <span class="op">-</span><span class="st"> </span>(f2 <span class="op">-</span><span class="st"> </span>f1) <span class="op">*</span><span class="st"> </span>(n0<span class="op">/</span>n)<span class="op">^</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
+<span id="cb346-22"><a href="chap-Accumulation.html#cb346-22"></a>}</span>
+<span id="cb346-23"><a href="chap-Accumulation.html#cb346-23"></a><span class="co"># Taille de l&#39;échantillon</span></span>
+<span id="cb346-24"><a href="chap-Accumulation.html#cb346-24"></a>n &lt;-<span class="st"> </span><span class="dv">5000</span></span>
+<span id="cb346-25"><a href="chap-Accumulation.html#cb346-25"></a><span class="co"># Tirage de nSim inventaires dans la communauté log-normale</span></span>
+<span id="cb346-26"><a href="chap-Accumulation.html#cb346-26"></a>Samples &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(nSim, n, Ps)</span>
+<span id="cb346-27"><a href="chap-Accumulation.html#cb346-27"></a><span class="co"># Extrapolation des inventaires</span></span>
+<span id="cb346-28"><a href="chap-Accumulation.html#cb346-28"></a>ExtraSACs &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, ExtraSAC, n<span class="op">:</span>Nmax)</span>
+<span id="cb346-29"><a href="chap-Accumulation.html#cb346-29"></a><span class="co"># Moyenne et intervalle de confiance à 95%</span></span>
+<span id="cb346-30"><a href="chap-Accumulation.html#cb346-30"></a>Moyenne &lt;-<span class="st"> </span><span class="kw">apply</span>(ExtraSACs, <span class="dv">1</span>, mean)</span>
+<span id="cb346-31"><a href="chap-Accumulation.html#cb346-31"></a>Max &lt;-<span class="st"> </span><span class="kw">apply</span>(ExtraSACs, <span class="dv">1</span>, quantile, <span class="dt">probs =</span> <span class="fl">0.975</span>)</span>
+<span id="cb346-32"><a href="chap-Accumulation.html#cb346-32"></a>Min &lt;-<span class="st"> </span><span class="kw">apply</span>(ExtraSACs, <span class="dv">1</span>, quantile, <span class="dt">probs =</span> <span class="fl">0.025</span>)</span>
+<span id="cb346-33"><a href="chap-Accumulation.html#cb346-33"></a><span class="co"># Taille d&#39;échantillon réduite</span></span>
+<span id="cb346-34"><a href="chap-Accumulation.html#cb346-34"></a>nReduit &lt;-<span class="st"> </span><span class="dv">1000</span></span>
+<span id="cb346-35"><a href="chap-Accumulation.html#cb346-35"></a><span class="co"># Tirage de nSim inventaires dans la communauté log-normale</span></span>
+<span id="cb346-36"><a href="chap-Accumulation.html#cb346-36"></a>Samples &lt;-<span class="st"> </span><span class="kw">rmultinom</span>(nSim, nReduit, Ps)</span>
+<span id="cb346-37"><a href="chap-Accumulation.html#cb346-37"></a><span class="co"># Extrapolation des inventaires</span></span>
+<span id="cb346-38"><a href="chap-Accumulation.html#cb346-38"></a>ExtraSACs &lt;-<span class="st"> </span><span class="kw">apply</span>(Samples, <span class="dv">2</span>, ExtraSAC, nReduit<span class="op">:</span>Nmax)</span>
+<span id="cb346-39"><a href="chap-Accumulation.html#cb346-39"></a><span class="co"># Moyenne</span></span>
+<span id="cb346-40"><a href="chap-Accumulation.html#cb346-40"></a>MoyenneReduit &lt;-<span class="st"> </span><span class="kw">apply</span>(ExtraSACs, <span class="dv">1</span>, mean)</span></code></pre></div>
 
 <p>À titre de comparaison, l’extrapolation d’un seul inventaire de 1000 individus est également tentée.</p>
 
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:Beguinot2015aFig"></span>
-<img src="MesuresBD_files/figure-html/Beguinot2015aFig-1.png" alt="Extrapolation de 500 inventaires de 5000 individus (valeurs moyenne en tireté rouge et enveloppe de confiance à 95% en gris) superposée à la SAC réelle d’une communauté log-normale de 300 espèces. L’extrapolation (en pointllés bleu) d’un inventaire limité à 1000 individus est sévèrement sous-estimée." width="80%" />
+<img src="MesuresBD_files/figure-html/Beguinot2015aFig-1.png" alt="Extrapolation de 500 inventaires de 5000 individus (valeurs moyenne en tireté rouge et enveloppe de confiance à 95% en gris) superposée à la SAC réelle d’une communauté log-normale de 300 espèces. L’extrapolation (en pointillés bleu) d’un inventaire limité à 1000 individus est sévèrement sous-estimée." width="80%" />
 <p class="caption">
-Figure 21.5: Extrapolation de 500 inventaires de 5000 individus (valeurs moyenne en tireté rouge et enveloppe de confiance à 95% en gris) superposée à la SAC réelle d’une communauté log-normale de 300 espèces. L’extrapolation (en pointllés bleu) d’un inventaire limité à 1000 individus est sévèrement sous-estimée.
+Figure 21.5: Extrapolation de 500 inventaires de 5000 individus (valeurs moyenne en tireté rouge et enveloppe de confiance à 95% en gris) superposée à la SAC réelle d’une communauté log-normale de 300 espèces. L’extrapolation (en pointillés bleu) d’un inventaire limité à 1000 individus est sévèrement sous-estimée.
 </p>
 </div>
 
@@ -699,15 +696,15 @@ Avec un inventaire de 5000 individus dans cet exemple, l’estimation de la rich
 En limitant l’inventaire à 1000 individus, l’information disponible est trop limitée.</p>
 <p>Le code R nécessaire pour réaliser la figure est:</p>
 
-<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="chap-Accumulation.html#cb346-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb346-2"><a href="chap-Accumulation.html#cb346-2"></a><span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(x, <span class="dt">ymin =</span> Min, <span class="dt">ymax =</span> Max), </span>
-<span id="cb346-3"><a href="chap-Accumulation.html#cb346-3"></a>              <span class="kw">data.frame</span>(<span class="dt">x =</span> n<span class="op">:</span>Nmax, Min, Max), <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
-<span id="cb346-4"><a href="chap-Accumulation.html#cb346-4"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span>Nmax, <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, SAC))) <span class="op">+</span></span>
-<span id="cb346-5"><a href="chap-Accumulation.html#cb346-5"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">data.frame</span>(<span class="dt">x =</span> n<span class="op">:</span>Nmax, <span class="dt">y =</span> Moyenne), </span>
-<span id="cb346-6"><a href="chap-Accumulation.html#cb346-6"></a>            <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></span>
-<span id="cb346-7"><a href="chap-Accumulation.html#cb346-7"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">data.frame</span>(<span class="dt">x =</span> nReduit<span class="op">:</span>Nmax, <span class="dt">y =</span> MoyenneReduit), </span>
-<span id="cb346-8"><a href="chap-Accumulation.html#cb346-8"></a>            <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
-<span id="cb346-9"><a href="chap-Accumulation.html#cb346-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Nombre d&#39;individus&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="chap-Accumulation.html#cb347-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb347-2"><a href="chap-Accumulation.html#cb347-2"></a><span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(x, <span class="dt">ymin =</span> Min, <span class="dt">ymax =</span> Max), </span>
+<span id="cb347-3"><a href="chap-Accumulation.html#cb347-3"></a>              <span class="kw">data.frame</span>(<span class="dt">x =</span> n<span class="op">:</span>Nmax, Min, Max), <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
+<span id="cb347-4"><a href="chap-Accumulation.html#cb347-4"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span>Nmax, <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, SAC))) <span class="op">+</span></span>
+<span id="cb347-5"><a href="chap-Accumulation.html#cb347-5"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">data.frame</span>(<span class="dt">x =</span> n<span class="op">:</span>Nmax, <span class="dt">y =</span> Moyenne), </span>
+<span id="cb347-6"><a href="chap-Accumulation.html#cb347-6"></a>            <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></span>
+<span id="cb347-7"><a href="chap-Accumulation.html#cb347-7"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(x, y), <span class="kw">data.frame</span>(<span class="dt">x =</span> nReduit<span class="op">:</span>Nmax, <span class="dt">y =</span> MoyenneReduit), </span>
+<span id="cb347-8"><a href="chap-Accumulation.html#cb347-8"></a>            <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">lty =</span> <span class="dv">3</span>) <span class="op">+</span></span>
+<span id="cb347-9"><a href="chap-Accumulation.html#cb347-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Nombre d&#39;individus&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Nombre d&#39;espèces&quot;</span>)</span></code></pre></div>
 
 </div>
 <div id="influence-de-la-structure-spatiale" class="section level2 hasAnchor">
@@ -901,7 +898,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
