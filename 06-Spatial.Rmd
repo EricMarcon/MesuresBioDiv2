@@ -370,13 +370,13 @@ Des inventaires de 1000 individus sont simulés et les trois méthodes d'extrapo
 Les résultats obtenus sont comparés à des inventaires directs de 1800 individus.
 
 
-(ref:Beguinot2015Fig) Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen et al. (pointillés alternés vert), Béguinot (tirets rouges) ou avec le package iNEXT (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire.
+(ref:Beguinot2015Fig) Distribution de la richesse obtenue par extrapolation à 1800 individus de 500 inventaires de 1000 individus selon les méthodes de Shen et al. (pointillés alternés vert), Béguinot (tirets rouges) ou Chao, Gotelli et al. (pointillés bleu). La distribution de la richesse de 500 inventaires de même taille est représentée par la courbe noire.
 ```{r Beguinot2015Fig, echo=FALSE, results='hide', ref.label='Beguinot2015Code', fig.cap="(ref:Beguinot2015Fig)"}
 ```
 
 
 La figure \@ref(fig:Beguinot2015Fig) montre que les extrapolations sont bonnes et très similaires avec les trois méthodes.
-La distribution des 500 simulations d'extrapolation est proche de celle des 500 inventaires, avec une plus grande variabilité due à la quantiité plus faible de données disponibles.
+La distribution des 500 simulations d'extrapolation est proche de celle des 500 inventaires, avec une plus grande variabilité due à la quantité plus faible de données disponibles.
 
 Le code R nécessaire pour réaliser la figure est:
 ```{r Beguinot2015Code, eval=FALSE, tidy=FALSE}
@@ -407,12 +407,9 @@ ExtrapolateB <- function(Ns) {
 }
 # Extrapolation des inventaires
 eB <- apply(Samples, 2, ExtrapolateB) + S0
-# Extrapolation par iNext
-library("iNEXT")
-ei <- iNEXT(as.data.frame(Samples), q = 0, endpoint = n*(1+extra), 
-            knots = 4, se = FALSE)$iNextEst
-# Extraction des résultats de l'objet obtenu
-ei <- sapply(ei, function(x) x[[4]][4])
+# Extrapolation selon Chao, Gotelli et al. (2014)
+ei <- apply(Samples, 2, Richness, Level = n*(1 + extra), 
+            RCorrection = "Chao1")
 # Fonction d'extrapolation selon Shen et al.
 library("SPECIES")
 ExtrapolateS <- function(Ns) {
