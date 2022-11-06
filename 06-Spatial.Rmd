@@ -501,7 +501,7 @@ MoyenneReduit <- apply(ExtraSACs, 1, mean)
 
 À titre de comparaison, l'extrapolation d'un seul inventaire de 1000 individus est également tentée.
 
-(ref:Beguinot2015aFig) Extrapolation de 500 inventaires de 5000 individus (valeurs moyenne en tireté rouge et enveloppe de confiance à 95\% en gris) superposée à la SAC réelle d'une communauté log-normale de 300 espèces. L'extrapolation (en pointllés bleu) d'un inventaire limité à 1000 individus est sévèrement sous-estimée.
+(ref:Beguinot2015aFig) Extrapolation de 500 inventaires de 5000 individus (valeurs moyenne en tireté rouge et enveloppe de confiance à 95\% en gris) superposée à la SAC réelle d'une communauté log-normale de 300 espèces. L'extrapolation (en pointillés bleu) d'un inventaire limité à 1000 individus est sévèrement sous-estimée.
 ```{r Beguinot2015aFig, echo=FALSE, results='hide', ref.label='Beguinot2015aCode', fig.cap="(ref:Beguinot2015aFig)"}
 ```
 
