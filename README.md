@@ -1,7 +1,7 @@
 # Mesures de la Biodiversité
 
 ![stability-wip](https://img.shields.io/badge/lifecycle-maturing-blue.svg)
-[![Travis-CI Build Status](https://travis-ci.org/EricMarcon/MesuresBioDiv2.svg?branch=master)](https://travis-ci.org/EricMarcon/MesuresBioDiv2)
+![BuildStatus](https://github.com/EricMarcon/MesuresBioDiv2/workflows/bookdown/badge.svg)
 
 Ouvrage de synthèse sur la mesure de la biodiversité.
 
