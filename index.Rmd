@@ -86,7 +86,7 @@ backcover:
     Le paramétrage des mesures (l’ordre de la diversité) permet de donner plus ou moins d’importance aux espèces rares et de tracer des profils de diversité.
     
     La construction de ce cadre méthodologique est présentée en détail ainsi que plusieurs approches différentes, qui constituent l'état de l'art de la mesure de la biodiversité.
-  abtractlabel: Résumé
+  abstractlabel: Résumé
 backcoverfontsize: normalsize
 # Figure cropping may be set to false if ghostscript is not installed
 fig_crop: true
@@ -208,7 +208,6 @@ set.seed(973)
 ```
 
 
-
 # Motivation {-}
 
 Le terme *biodiversity* est attribué [@Meine2006] à Walter Rosen, un membre du *National Research Council* américain, qui a commencé à contracter les termes *biological diversity* pendant la préparation d'un colloque dont les actes seront publiés sous le titre "Biodiversity" [@Wilson1988].
@@ -254,8 +253,8 @@ Les données sont souvent celles de la parcelle 6 de la forêt de Paracou (figur
 Tous les arbres de plus de 10&nbsp;cm de diamètre à hauteur de poitrine (DBH: *Diameter at Breast Height*) y ont été inventoriés en 2016.
 La position de chaque arbre, son espèce et sa surface terrière sont fournis dans le package *SpatDiv*.
 
-```{r packagesDonnees, include=FALSE}
-# Chargement des packages utilisés dans les chapitres 0 et 1
+```{r packagesDonnees, include=FALSE, cache=FALSE}
+# Chargement des packages utilisés dans les chapitres 0 et 1.
 # Pour accéder aux données et ne pas afficher les messages de chargement plus tard
 library("vegan")
 # Pas de lazy loading pour BCI: chargement explicite.
@@ -272,7 +271,14 @@ Le jeu de données utilisé pour les exemples est une version réduite aux arbre
 Enfin, les données fournies par le package *entropart* sous le nom "Paracou618" sont deux inventaires de l'année 2012 limités à un hectare chacun dans les parcelles 6 et 18 de la forêt de Paracou, soient `r Paracou618.MC$N` arbres dans `r sum(Paracou618.MC$Ns>0)` espèces.
 
 (ref:Paracou6MapFig) Carte de la parcelle 6 de Paracou. Les points représentent les arbres. Leur taille est proportionnelle à leur surface terrière. Seules les espèces les plus fréquentes sont identifiées sur la carte.
-```{r Paracou6MapFig, echo=FALSE, fig.cap="(ref:Paracou6MapFig)", fig.env='figure', out.width='\\widthw', ref.label='Paracou6MapCode', results='hide'}
+```{r}
+#| label: Paracou6MapFig
+#| echo: false
+#| fig.cap: '(ref:Paracou6MapFig)'
+#| fig.env: 'figure'
+#| out.width:  !expr ifelse(knitr::is_latex_output(), '\\widthw', '100%')
+#| ref.label: 'Paracou6MapCode'
+#| results: hide
 ```
 
 Le code R pour réaliser la figure est le suivant:
