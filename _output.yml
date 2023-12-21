@@ -13,6 +13,14 @@ bookdown::gitbook:
     download: "pdf"
   includes:
     in_header: gtag.js
+bookdown::bs4_book:
+  repo:
+    base: https://github.com/EricMarcon/MesuresBioDiv2
+    branch: master
+  includes:
+    in_header: gtag.js
+  pandoc_args:
+    - --lua-filter=fr-nbsp.lua
 bookdown::pdf_book:
   template: latex/template.tex
   pandoc_args: --top-level-division=chapter
