@@ -23,7 +23,7 @@ jobs:
         run: |
           options(pkgType = "binary")
           options(install.packages.check.source = "no")
-          install.packages(c("downlit", "tinytex"))
+          install.packages(c("memoiR", "tinytex"))
           tinytex::install_tinytex(bundle = "TinyTeX")
            tinytex::tlmgr_install("hyphen-french")
         shell: Rscript {0}
