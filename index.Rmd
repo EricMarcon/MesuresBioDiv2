@@ -172,7 +172,8 @@ if (rmarkdown::metadata$largemargins)
 # Add necessary packages here
 Packages <- c("ade4", "adespatial", "cowplot", "entropart", "entropy", 
               "EntropyEstimation", "GoFKernel", "gridExtra", "magrittr", 
-              "ragg", "sads", "sp", "SPECIES", "tidyverse", "untb", "vegan")
+              "ragg", "remotes", "sads", "sp", "SPECIES", "tidyverse", 
+              "untb", "vegan")
 # Install them
 InstallPackages(Packages)
 # GitHub packages
