@@ -383,7 +383,7 @@
 
 \author{Eric Marcon}
 
-\date{21/12/2023}
+\date{22/12/2023}
 
 
 % Include headers (preamble.tex) here
@@ -783,24 +783,17 @@ L'approche phylogénétique (chapitre \ref{chap-Phyloentropie}) permet de contou
 \hypertarget{chap-Outils}{%
 \chapter{Outils}\label{chap-Outils}}
 
-\scriptsize
-
 \begin{Summary}
-La diversité peut être décrite localement par une courbe d'accumulation
-(SAC) qui représente le nombre d'espèces échantillonnées en fonction de
-l'effort. À une échelle plus large, cette courbe s'appelle relation
-aire-espèces (SAR).
+La diversité peut être décrite localement par une courbe d'accumulation (SAC) qui représente le nombre d'espèces échantillonnées en fonction de l'effort.
+À une échelle plus large, cette courbe s'appelle relation aire-espèces (SAR).
 
-La distribution des abondances des espèces (SAD) est représentée par une
-histogramme des fréquences ou un diagramme rang-abondance.
+La distribution des abondances des espèces (SAD) est représentée par une histogramme des fréquences ou un diagramme rang-abondance.
 
-Le taux de couverture est la somme des probabilités des espèces
-observées étant donné l'effort d'échantillonnage. Il peut être estimé
-précisément à partir des données d'inventaire. Le taux de complétude est
-la proportion (en nombre) des espèces observées.
+Le taux de couverture est la somme des probabilités des espèces observées étant donné l'effort d'échantillonnage.
+Il peut être estimé précisément à partir des données d'inventaire.
+Le taux de complétude est la proportion (en nombre) des espèces observées.
+
 \end{Summary}
-
-\normalsize
 
 Quelques outils sont nécessaires avant d'entrer dans le coeur du sujet.
 Les relations décrivant le nombre d'espèces en fonction de la taille de l'échantillon (relations aire-espèces) et la distribution de l'abondance des espèces sont importants pour les écologues.
@@ -1235,7 +1228,7 @@ Son espérance est obtenue à partir du nombre d'espèces et de \(\sigma\), pour
 \textcite{May1975} explique cette distribution par le théorème de la limite centrale: la variable aléatoire valant 1 si un individu est de l'espèce \(s\) et 0 sinon est le produit de nombreuses variables de loi inconnues valant 1 en cas de succès (germination d'une graine, survie à de nombreux évènements\ldots).
 Le logarithme de ce produit est une somme de variables aléatoire dont la loi est forcément normale par application du théorème de la limite centrale.
 
-La distribution est aussi le résultat d'un algorithme de bâton brisé (\emph{broken stick}) hiérarchique\autocite{Bulmer1974}:
+La distribution est aussi le résultat d'un algorithme de bâton brisé (\emph{broken stick}) hiérarchique \autocite{Bulmer1974}:
 
 \begin{itemize}
 \tightlist
@@ -1481,17 +1474,12 @@ L'ajustement est donc meilleur mais la différence est petite et la complexité 
 \hypertarget{chap-MesuresNeutres}{%
 \chapter{\texorpdfstring{Mesures neutres de la diversité \(\alpha\) ou \(\gamma\)}{Mesures neutres de la diversité \textbackslash alpha ou \textbackslash gamma}}\label{chap-MesuresNeutres}}
 
-\scriptsize
-
 \begin{Summary}
-Les indices classiques de diversité sont ceux de Shannon et de Simpson,
-et la richesse spécifique. Ils peuvent être estimés à partir des données
-d'inventaire. L'estimation de la richesse est particulièrement difficile
-et fait l'objet d'une abondante littérature: les estimateurs
-non-paramétriques (Chao et Jackknife) sont les plus utilisés.
-\end{Summary}
+Les indices classiques de diversité sont ceux de Shannon et de Simpson, et la richesse spécifique.
+Ils peuvent être estimés à partir des données d'inventaire.
+L'estimation de la richesse est particulièrement difficile et fait l'objet d'une abondante littérature: les estimateurs non-paramétriques (Chao et Jackknife) sont les plus utilisés.
 
-\normalsize
+\end{Summary}
 
 Les mesures classiques \autocite{Peet1974} considèrent que chaque classe d'objets est différente de toutes les autres, sans que certaines soient plus ou moins semblables.
 Dans ce chapitre, les classes seront des espèces.
@@ -2418,7 +2406,7 @@ Les calculs n'aboutissent pas si la queue de distribution n'est pas regroupée (
 ## 
 ##         MLE=                                243 
 ##         Estimated zero-truncated Poisson mixture components:       
-##         p=                                  0.9033625 3.397048 10.59029 
+##         p=                                  0.9033624 3.397047 10.59029 
 ##         pi=                                 0.2771211 0.3208847 0.4019942
 \end{verbatim}
 
@@ -3521,30 +3509,18 @@ Le calcul de la diversité de Hurlbert est possible dans \emph{entropart}:
 \hypertarget{entropie}{%
 \chapter{Entropie}\label{entropie}}
 
-\scriptsize
-
 \begin{Summary}
-L'entropie est la surprise moyenne apportée par l'observation des
-individus d'une communauté, d'autant plus grande qu'un individu
-appartient à une espèce plus rare. L'entropie HCDT permet d'unifier les
-indices classiques de diversité: son paramètre, appelé ordre, fixe
-l'importance donnée aux espèces rares. L'entropie d'ordre 0 est la
-richesse; celle d'ordre 1, l'indice de Shannon; celle d'ordre 2, celui
-de Simpson. L'entropie est la moyenne du logarithme déformé de la rareté
-des espèces, définie comme l'inverse de leur probabilité.
+L'entropie est la surprise moyenne apportée par l'observation des individus d'une communauté, d'autant plus grande qu'un individu appartient à une espèce plus rare.
+L'entropie HCDT permet d'unifier les indices classiques de diversité: son paramètre, appelé ordre, fixe l'importance donnée aux espèces rares. L'entropie d'ordre 0 est la richesse; celle d'ordre 1, l'indice de Shannon; celle d'ordre 2, celui de Simpson.
+L'entropie est la moyenne du logarithme déformé de la rareté des espèces, définie comme l'inverse de leur probabilité.
 
-L'entropie va de pair avec la diversité au sens strict (Nombres de
-Hill): le nombre d'espèces équiprobables dont l'entropie est la même que
-celle de la communauté réelle. La diversité est l'exponentielle déformée
-de l'entropie. Les profils de diversité représentent la diversité en
-fonction de son ordre et permettent la comparaison de communautés.
+L'entropie va de pair avec la diversité au sens strict (Nombres de Hill): le nombre d'espèces équiprobables dont l'entropie est la même que celle de la communauté réelle.
+La diversité est l'exponentielle déformée de l'entropie.
+Les profils de diversité représentent la diversité en fonction de son ordre et permettent la comparaison de communautés.
 
-L'estimation de la diversité est difficile pour des ordres inférieurs à
-\(0,5\) dans des taxocènes très divers comme les arbres des forêts
-tropicales.
+L'estimation de la diversité est difficile pour des ordres inférieurs à \(0,5\) dans des taxocènes très divers comme les arbres des forêts tropicales.
+
 \end{Summary}
-
-\normalsize
 
 L'entropie peut être entendue comme la surprise moyenne fournie par l'observation d'un échantillon.
 C'est intuitivement une bonne mesure de diversité \autocite{Pielou1975}.
@@ -4785,18 +4761,12 @@ Il ne s'agit pas d'une décomposition de la diversité au sens classique du term
 \hypertarget{sec-Equitabilite}{%
 \chapter{Équitabilité}\label{sec-Equitabilite}}
 
-\scriptsize
-
 \begin{Summary}
-L'équitabilité mesure l'écart entre la distribution observée et une
-distribution uniforme.
+L'équitabilité mesure l'écart entre la distribution observée et une distribution uniforme.
 
-L'indice de Pielou est la mesure d'équitabilité la plus connue. Il a été
-généralisé pour permettre de pondérer plus ou moins les espèces rares,
-de la même façon que l'entropie HCDT.
+L'indice de Pielou est la mesure d'équitabilité la plus connue. Il a été généralisé pour permettre de pondérer plus ou moins les espèces rares, de la même façon que l'entropie HCDT.
+
 \end{Summary}
-
-\normalsize
 
 La régularité d'une distribution est une notion intuitivement assez simple: la faiblesse de l'écart entre la distribution réelle et une distribution parfaitement régulière \autocite{Lloyd1964}, vérifiant \(p_s={1}/{S}\).
 Des difficultés apparaissent quand il s'agit de comparer l'équitabilité de communautés de richesses différentes.
@@ -5218,18 +5188,11 @@ Les résultats sont similaires avec des communautés en log-séries: la corréla
 \hypertarget{chap-cadrephyfonc}{%
 \chapter{Cadre}\label{chap-cadrephyfonc}}
 
-\scriptsize
-
 \begin{Summary}
-La diversité fonctionnelle ou phylogénétique prend en compte la
-proximité des espèces entre elles. Généralement, la distance entre
-espèces est évaluée dans l'espace des traits, approximation de l'espace
-des niches, pour la diversité fonctionnelle et dans un dendrogramme
-représentant la phylogénie ou la taxonomie pour la diversité
-phylogénétique.
-\end{Summary}
+La diversité fonctionnelle ou phylogénétique prend en compte la proximité des espèces entre elles.
+Généralement, la distance entre espèces est évaluée dans l'espace des traits, approximation de l'espace des niches, pour la diversité fonctionnelle et dans un dendrogramme représentant la phylogénie ou la taxonomie pour la diversité phylogénétique.
 
-\normalsize
+\end{Summary}
 
 Les mesures neutres de la diversité considèrent que toutes les classes auxquelles les objets appartiennent sont différentes, sans que certaines soient plus différentes que d'autres.
 Par exemple, toutes les espèces sont équidistantes les unes des autres, qu'elles appartiennent au même genre ou à des familles différentes.
@@ -5450,18 +5413,11 @@ Elles sont détaillées au chapitre suivant.
 \hypertarget{mesures-particuliuxe8res}{%
 \chapter{Mesures particulières}\label{mesures-particuliuxe8res}}
 
-\scriptsize
-
 \begin{Summary}
-De nombreuses mesures de diversité fonctionnelle ou phylogénétique ont
-été développées pour combiner le mieux possible la richesse et la
-régularité de la distribution des espèces dans l'espace des niches ou la
-phylogénie. Certaines (PD, FD, l'entropie quadratique de Rao, \(H_p\) et
-\(I_1\)) seront unifiées au chapitre suivant dans le cadre de l'entropie
-phylogénétique.
-\end{Summary}
+De nombreuses mesures de diversité fonctionnelle ou phylogénétique ont été développées pour combiner le mieux possible la richesse et la régularité de la distribution des espèces dans l'espace des niches ou la phylogénie.
+Certaines (PD, FD, l'entropie quadratique de Rao, \(H_p\) et \(I_1\)) seront unifiées au chapitre suivant dans le cadre de l'entropie phylogénétique.
 
-\normalsize
+\end{Summary}
 
 Un certain nombre de mesures de diversité phylogénétiques a émergé dans la littérature.
 Elles sont passées en revue ici, en commençant par la diversité fonctionnelle envisagée dans l'espace multidimensionnel des traits.
@@ -6612,20 +6568,13 @@ Dans un arbre parfaitement régulier, toutes les branches sont de longueur 1 et 
 \hypertarget{chap-Phyloentropie}{%
 \chapter{Entropie phylogénétique}\label{chap-Phyloentropie}}
 
-\scriptsize
-
 \begin{Summary}
-L'entropie phylogénétique est la moyenne de l'entropie HCDT le long d'un
-arbre phylogénétique. Son estimation est simplement celle de l'entropie
-HCDT à chaque période de l'arbre. Elle va de pair avec la diversité
-phylogénétique qui est son nombre effectif d'espèces, c'est-à-dire le
-nombre d'espèces équiprobables, dans un arbre où toutes les espèces
-descendraient d'un ancêtre unique, dont l'entropie serait la même que
-celle de la communauté réelle. Dans un tel arbre, la diversité
-phylogénétique se réduit à la diversité neutre.
-\end{Summary}
+L'entropie phylogénétique est la moyenne de l'entropie HCDT le long d'un arbre phylogénétique.
+Son estimation est simplement celle de l'entropie HCDT à chaque période de l'arbre.
+Elle va de pair avec la diversité phylogénétique qui est son nombre effectif d'espèces, c'est-à-dire le nombre d'espèces équiprobables, dans un arbre où toutes les espèces descendraient d'un ancêtre unique, dont l'entropie serait la même que celle de la communauté réelle.
+Dans un tel arbre, la diversité phylogénétique se réduit à la diversité neutre.
 
-\normalsize
+\end{Summary}
 
 L'entropie HCDT peut être étendue pour définir une mesure de diversité prenant en compte l'histoire évolutive des espèces.
 
@@ -6859,19 +6808,12 @@ Dans l'état actuel des connaissances, aucune méthode n'est applicable de faço
 \hypertarget{chap-LeinsterCobbold}{%
 \chapter{Diversité de Leinster et Cobbold}\label{chap-LeinsterCobbold}}
 
-\scriptsize
-
 \begin{Summary}
-La diversité de Leinster et Cobbold est l'inverse de la banalité moyenne
-des espèces, qui est elle-même la similarité moyenne d'une espèce aux
-autres. Elle va de pair avec l'entropie de Ricotta et Szeidl, dont la
-fonction d'information est le logarithme déformé de l'inverse la
-banalité. La diversité peut être calculée directement à partir de la
-distance entre espèces, sans recourir à un dendrogramme intermédiaire
-qui déformerait la topologie des espèces.
-\end{Summary}
+La diversité de Leinster et Cobbold est l'inverse de la banalité moyenne des espèces, qui est elle-même la similarité moyenne d'une espèce aux autres.
+Elle va de pair avec l'entropie de Ricotta et Szeidl, dont la fonction d'information est le logarithme déformé de l'inverse la banalité.
+La diversité peut être calculée directement à partir de la distance entre espèces, sans recourir à un dendrogramme intermédiaire qui déformerait la topologie des espèces.
 
-\normalsize
+\end{Summary}
 
 À partir de la théorie mathématique des catégories \autocite{Leinster2013}, \textcite{Leinster2012} ont proposé une mesure de diversité applicable à une communauté dont la position des espèces dans un espace multidimensionnel euclidien est connue.
 C'est donc une mesure applicable à la diversité fonctionnelle.
@@ -7755,17 +7697,11 @@ En revanche, la prise en compte de la variabilité intraspécifique par une simi
 \hypertarget{sec-betaCadre}{%
 \chapter{Cadre}\label{sec-betaCadre}}
 
-\scriptsize
-
 \begin{Summary}
-La diversité \(\beta\) désigne la différentiation entre communautés,
-c'est-à-dire une mesure de divergence de composition spécifique entre
-elle, ou bien la divergence entre elles et leur assemblage, appelée
-diversité proportionnelle. La conciliation de ces deux définitions fait
-toujours l'objet de recherches.
-\end{Summary}
+La diversité \(\beta\) désigne la différentiation entre communautés, c'est-à-dire une mesure de divergence de composition spécifique entre elle, ou bien la divergence entre elles et leur assemblage, appelée diversité proportionnelle.
+La conciliation de ces deux définitions fait toujours l'objet de recherches.
 
-\normalsize
+\end{Summary}
 
 La notion de diversité \(\beta\) a été introduite par \textcite{Whittaker1960}, page 320, comme le niveau de changement dans la composition des communautés, ou le degré de différenciation des communautés, en relation avec les changements de milieu.
 La traduction de cette notion intuitive en une définition sans ambiguïté est encore une question de recherche et de débats.
@@ -8054,19 +7990,12 @@ La dépendance entre \(^{q}\!D_{\beta}\) et \(^{q}\!D_{\alpha}\) est le prix à 
 \hypertarget{chap-BetaPaires}{%
 \chapter{Diversité de différentiation}\label{chap-BetaPaires}}
 
-\scriptsize
-
 \begin{Summary}
-La diversité \(\beta\) de différentiation mesure la dissimilarité entre
-communautés, généralement considérées par paires. Les dissimilarités les
-plus connues sont celles de Jaccard ou de Sørensen. Ces mesures peuvent
-prendre en compte la seule présence ou absence des espèces, leur
-abondance ou même la similarité entre les espèces, peuvent être traitées
-par l'analyse multivariée et être testées contre l'hypothèse de nullité
-de la dissimilarité.
-\end{Summary}
+La diversité \(\beta\) de différentiation mesure la dissimilarité entre communautés, généralement considérées par paires.
+Les dissimilarités les plus connues sont celles de Jaccard ou de Sørensen.
+Ces mesures peuvent prendre en compte la seule présence ou absence des espèces, leur abondance ou même la similarité entre les espèces, peuvent être traitées par l'analyse multivariée et être testées contre l'hypothèse de nullité de la dissimilarité.
 
-\normalsize
+\end{Summary}
 
 La littérature des indices de similarité est bien antérieure à celle de la biodiversité.
 De nombreuses mesures de dissimilarité entre paires de communautés existent donc, et leurs propriétés ont été bien étudiées.
@@ -8831,24 +8760,13 @@ La méthode de permutation originale est inappropriée et donc corrigée \autoci
 \hypertarget{chap-DedompHCDT}{%
 \chapter{Décomposition de l'entropie HCDT}\label{chap-DedompHCDT}}
 
-\scriptsize
-
 \begin{Summary}
-L'entropie HCDT \(\gamma\) peut être décomposée en somme de l'entropie
-\(\alpha\) et la moyenne de la divergence entre la distribution de
-chaque communauté et celle de la méta-communauté. L'entropie \(\beta\)
-est donc interprétable comme le gain d'information apporté par la
-connaissance de la distribution détaillée des communautés en plus de
-celle, aggrégée, de la méta-communauté. L'entropie \(\beta\) va de pair
-avec le nombre effectif de communautés, c'est-à-dire le nombre de
-communautés de même poids, sans aucune espèce commune, qui fourniraient
-la même valeur d'entropie \(\beta\) que les communautés réelles. La
-diversité \(\gamma\) se décompose donc en produit du nombre effectif
-d'espèces de la diversité \(\alpha\) et du nombre effectif de
-communautés.
-\end{Summary}
+L'entropie HCDT \(\gamma\) peut être décomposée en somme de l'entropie \(\alpha\) et la moyenne de la divergence entre la distribution de chaque communauté et celle de la méta-communauté.
+L'entropie \(\beta\) est donc interprétable comme le gain d'information apporté par la connaissance de la distribution détaillée des communautés en plus de celle, aggrégée, de la méta-communauté.
+L'entropie \(\beta\) va de pair avec le nombre effectif de communautés, c'est-à-dire le nombre de communautés de même poids, sans aucune espèce commune, qui fourniraient la même valeur d'entropie \(\beta\) que les communautés réelles.
+La diversité \(\gamma\) se décompose donc en produit du nombre effectif d'espèces de la diversité \(\alpha\) et du nombre effectif de communautés.
 
-\normalsize
+\end{Summary}
 
 Ce chapitre traite de la diversité proportionnelle, qui mesure à quel point les communautés diffèrent de leur assemblage.
 Dans la littérature, la diversité \(\beta\) est généralement une mesure \emph{dérivée} \autocite{Ellison2010a}, c'est-à-dire calculée à partir des diversités \(\alpha\) et \(\gamma\), d'où un abondant débat sur l'indépendance souhaitée mais pas toujours observée entre les valeurs de diversité \(\alpha\) et \(\beta\) \autocite{Baselga2010a,Jost2010a,Veech2010a}.
@@ -9665,18 +9583,11 @@ Sa valeur peut être négative pour \(q<1\), on se limitera donc à \(q \ge 1\).
 \hypertarget{duxe9composition-de-la-diversituxe9-phyloguxe9nuxe9tique-et-fonctionnelle}{%
 \chapter{Décomposition de la diversité phylogénétique et fonctionnelle}\label{duxe9composition-de-la-diversituxe9-phyloguxe9nuxe9tique-et-fonctionnelle}}
 
-\scriptsize
-
 \begin{Summary}
-L'entropie phylogénétique et l'entropie de Ricotta et Szeidl se
-décomposent comme l'entropie HCDT. La diversité \(\beta\) phylogénétique
-et la diversité \(\beta\) de Leinster et Cobbold sont des nombres
-effectifs de communautés, c'est-à-dire des communautés de même poids et
-dont les espèces seraient totalement dissimilaires qui fourniraient la
-même entropie \(\beta\) que les communautés réelles.
-\end{Summary}
+L'entropie phylogénétique et l'entropie de Ricotta et Szeidl se décomposent comme l'entropie HCDT.
+La diversité \(\beta\) phylogénétique et la diversité \(\beta\) de Leinster et Cobbold sont des nombres effectifs de communautés, c'est-à-dire des communautés de même poids et dont les espèces seraient totalement dissimilaires qui fourniraient la même entropie \(\beta\) que les communautés réelles.
 
-\normalsize
+\end{Summary}
 
 L'entropie phylogénétique est une combinaison linéaire de l'entropie HCDT donc sa décomposition est identique \autocite{Marcon2014b}.
 
@@ -9896,16 +9807,10 @@ Le partitionnement de la diversité fonctionnelle de la méta-communauté \textt
 \hypertarget{tests-de-significativituxe9}{%
 \chapter{Tests de significativité}\label{tests-de-significativituxe9}}
 
-\scriptsize
-
 \begin{Summary}
-Les tests de significativité permettent d'affirmer que des communautés
-sont réellement différentiées. En complément, les intervalles de
-confiance des mesures de diversité peuvent être calculés sous
-l'hypothèse d'une distribution multinomiale.
-\end{Summary}
+Les tests de significativité permettent d'affirmer que des communautés sont réellement différentiées. En complément, les intervalles de confiance des mesures de diversité peuvent être calculés sous l'hypothèse d'une distribution multinomiale.
 
-\normalsize
+\end{Summary}
 
 La diversité \(\beta\) calculée entre plusieurs échantillons successifs d'une même communauté n'est pas nulle: par simple fluctuation des effectifs due au hasard, les distributions des échantillons ne sont pas identiques.
 Des tests statistiques ont été développés pour rejeter cette hypothèse nulle à partir de données d'inventaires.
@@ -10142,23 +10047,12 @@ Total & $n_{+i}$: nombre d'individus de la classe.\ ${n_{+i}}/{n}=w_i$: poids de
 \hypertarget{information-mutuelle}{%
 \chapter{Information mutuelle}\label{information-mutuelle}}
 
-\scriptsize
-
 \begin{Summary}
-La récursivité est une propriété importante de l'entropie de Shannon qui
-permet d'envisager la diversité de façon multidimensionnelle, par
-exemple la diversité des espèces et des classes de diamètre des arbres
-d'une forêt (appelée diversité structurelle). La récursivité apporte des
-résultats nettement moins intéressants quand l'entropie HCDT est
-considérée.
+La récursivité est une propriété importante de l'entropie de Shannon qui permet d'envisager la diversité de façon multidimensionnelle, par exemple la diversité des espèces et des classes de diamètre des arbres d'une forêt (appelée diversité structurelle). La récursivité apporte des résultats nettement moins intéressants quand l'entropie HCDT est considérée.
 
-Le nombre effectif d'habitats occupés par une espèce peut être
-interprété comme la taille de sa niche écologique: la mesure de la
-diversité des communautés peut apporter une information aussi
-intéressante que la diversité des espèces.
+Le nombre effectif d'habitats occupés par une espèce peut être interprété comme la taille de sa niche écologique: la mesure de la diversité des communautés peut apporter une information aussi intéressante que la diversité des espèces.
+
 \end{Summary}
-
-\normalsize
 
 Plusieurs mesures de diversité ont été construite autour de l'information mutuelle.
 Elles sont présentées ici après leur propriété mathématique fondamentale: la récursivité de l'entropie.
@@ -10280,16 +10174,10 @@ Pour revenir au cas simple dans lequel les habitats ont des poids égaux, les co
 \hypertarget{chap-DiversiteJointe}{%
 \chapter{Décomposition de la diversité jointe}\label{chap-DiversiteJointe}}
 
-\scriptsize
-
 \begin{Summary}
-La diversité jointe peut être décomposée en diversité \(\gamma\)
-(elle-même décomposable en diversités \(\alpha\) et \(\beta\)) et
-réplication, égale au nombre effectif de répétitions de l'assemblage des
-communautés nécessaire pour obtenir la diversité jointe réelle.
-\end{Summary}
+La diversité jointe peut être décomposée en diversité \(\gamma\) (elle-même décomposable en diversités \(\alpha\) et \(\beta\)) et réplication, égale au nombre effectif de répétitions de l'assemblage des communautés nécessaire pour obtenir la diversité jointe réelle.
 
-\normalsize
+\end{Summary}
 
 La décomposition de la diversité jointe \autocite{Gregorius2009a,Gregorius2010} complète celle de la diversité \(\gamma\) vue dans les parties précédentes.
 On se place dans le cadre d'un échantillonnage global de la méta-communauté, dans lequel le poids de chaque communauté est égal à la probabilité qu'un individu lui appartienne, et non un choix arbitraire.
@@ -10648,17 +10536,12 @@ Enfin, la diversité \(\beta\) spatialement explicite est introduite au chapitre
 \hypertarget{chap-Fisher}{%
 \chapter{\texorpdfstring{Indice \(\alpha\) de Fisher}{Indice \textbackslash alpha de Fisher}}\label{chap-Fisher}}
 
-\scriptsize
-
 \begin{Summary}
-L'Indice \(\alpha\) de Fisher est la pente de la relation linéaire entre
-le nombre d'espèces observées et le logarithme du nombre d'individus
-inventoriés. Cette relation correspond à une distribution d'abondance
-des espèces en log-séries, valide à l'échelle de la méta-communauté. Son
-utilisation à l'échelle locale est discutable.
-\end{Summary}
+L'Indice \(\alpha\) de Fisher est la pente de la relation linéaire entre le nombre d'espèces observées et le logarithme du nombre d'individus inventoriés.
+Cette relation correspond à une distribution d'abondance des espèces en log-séries, valide à l'échelle de la méta-communauté.
+Son utilisation à l'échelle locale est discutable.
 
-\normalsize
+\end{Summary}
 
 Le modèle de Fisher \autocite{Fisher1943} aboutissant à la SAD en log-séries, a marqué l'histoire de l'écologie.
 Il lie le nombre d'espèces au logarithme du nombre d'individus de façon linéaire dès que l'effectif est suffisant: la pente de la droite est le bien connu indice \(\alpha\), tombé en désuétude pendant quelques décennies mais remis en vedette par la théorie neutre de \textcite{Hubbell2001}.
@@ -11021,19 +10904,12 @@ Code R pour réaliser la figure:
 \hypertarget{chap-Accumulation}{%
 \chapter{Accumulation de la diversité locale}\label{chap-Accumulation}}
 
-\scriptsize
-
 \begin{Summary}
-La courbe d'accumulation (SAC) décrit comment la richesse, ou la
-diversité, augmente en fonction de l'effort d'échantillonnage. Sous
-l'hypothèse d'un tirage multinomial des individus observés, les formules
-de raréfaction (estimation du nombre d'espèces pour une surface
-inférieure à celle inventoriée) sont bien contenues. La structure
-spatiale rend les observations dépendantes entre elles et doit être
-prise en compte.
-\end{Summary}
+La courbe d'accumulation (SAC) décrit comment la richesse, ou la diversité, augmente en fonction de l'effort d'échantillonnage.
+Sous l'hypothèse d'un tirage multinomial des individus observés, les formules de raréfaction (estimation du nombre d'espèces pour une surface inférieure à celle inventoriée) sont bien contenues.
+La structure spatiale rend les observations dépendantes entre elles et doit être prise en compte.
 
-\normalsize
+\end{Summary}
 
 Les propriétés des courbes d'accumulation ont été largement étudiées dans la littérature, notamment pour prédire la richesse spécifique (section \ref{sec-RichesseSAC}).
 
@@ -11451,21 +11327,11 @@ La distribution des espèces non observées peut maintenant être estimée dans 
 \hypertarget{diversituxe9-ruxe9gionale}{%
 \chapter{Diversité régionale}\label{diversituxe9-ruxe9gionale}}
 
-\scriptsize
-
 \begin{Summary}
-La relation d'Arrhenius prévoit que logarithme du nombre d'espèces soit
-proportionnel au logarithme de la surface (de façon équivalente, que le
-nombre d'espèces soit proportionnel à la surface à une puissance \(z\)
-constante). Elle est plus robuste à l'échelle régionale que le modèle de
-Gleason qui prédit que le nombre d'espèces, plutôt que son logarithme,
-soit en relation linéaire avec le logarithme de la surface (très proche
-du modèle de Fisher dans lequel le nombre d'espèces est proportionnel au
-logarithme du nombre d'individus échantillonnés à partir d'une certaine
-surface).
-\end{Summary}
+La relation d'Arrhenius prévoit que logarithme du nombre d'espèces soit proportionnel au logarithme de la surface (de façon équivalente, que le nombre d'espèces soit proportionnel à la surface à une puissance \(z\) constante).
+Elle est plus robuste à l'échelle régionale que le modèle de Gleason qui prédit que le nombre d'espèces, plutôt que son logarithme, soit en relation linéaire avec le logarithme de la surface (très proche du modèle de Fisher dans lequel le nombre d'espèces est proportionnel au logarithme du nombre d'individus échantillonnés à partir d'une certaine surface).
 
-\normalsize
+\end{Summary}
 
 En forêt tempérée, toutes les espèces d'un habitat sont rencontrées sur une surface inférieure à l'hectare.
 L'\emph{aire minimale} est la surface nécessaire à échantillonner pour caractériser une \emph{association végétale}, dans l'approche de la phytosociologie fondée par \textcite{Braun-Blanquet1928} et plus largement \autocite{Greig-Smith1983}, même si son intérêt est discuté \autocite{McGuinness1984}: elle ne contient pas toutes les espèces mais un sous-ensemble caractéristique.
@@ -11763,15 +11629,10 @@ Cette méthode permet l'extrapolation à de très grandes surfaces de mesures de
 \hypertarget{chap-betasp}{%
 \chapter{\texorpdfstring{Diversité \(\beta\) spatialement explicite}{Diversité \textbackslash beta spatialement explicite}}\label{chap-betasp}}
 
-\scriptsize
-
 \begin{Summary}
-L'indice de Simpson spatialement explicite ou le variogramme de
-complémentarité relient la diversité \(\beta\) à la distance entre
-communautés.
-\end{Summary}
+L'indice de Simpson spatialement explicite ou le variogramme de complémentarité relient la diversité \(\beta\) à la distance entre communautés.
 
-\normalsize
+\end{Summary}
 
 La diversité \(\beta\) de différentiation mesure à quel point deux communautés sont différentes entre elles.
 Elle peut être reliée à la distance entre les communautés pour définir une diversité \(\beta\) spatialement explicite.

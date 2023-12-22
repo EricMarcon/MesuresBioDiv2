@@ -53,6 +53,7 @@
       margin-left: 2em;
     }
   </style>
+<link rel="stylesheet" href="bs4_style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -120,18 +121,11 @@
 <h1>
 <span class="header-section-number">3</span> Mesures neutres de la diversité <span class="math inline">\(\alpha\)</span> ou <span class="math inline">\(\gamma\)</span><a class="anchor" aria-label="anchor" href="#chap-MesuresNeutres"><i class="fas fa-link"></i></a>
 </h1>
-<p></p>
 <div class="Summary">
-<p>
-Les indices classiques de diversité sont ceux de Shannon et de
-Simpson, et la richesse spécifique. Ils peuvent être estimés à partir
-des données d’inventaire. L’estimation de la richesse est
-particulièrement difficile et fait l’objet d’une abondante littérature :
-les estimateurs non-paramétriques (Chao et Jackknife) sont les plus
-utilisés.
-</p>
+<p>Les indices classiques de diversité sont ceux de Shannon et de Simpson, et la richesse spécifique.
+Ils peuvent être estimés à partir des données d’inventaire.
+L’estimation de la richesse est particulièrement difficile et fait l’objet d’une abondante littérature : les estimateurs non-paramétriques (Chao et Jackknife) sont les plus utilisés.</p>
 </div>
-<p></p>
 <p>Les mesures classiques <span class="citation">(<a href="references.html#ref-Peet1974" role="doc-biblioref">Peet 1974</a>)</span> considèrent que chaque classe d’objets est différente de toutes les autres, sans que certaines soient plus ou moins semblables.
 Dans ce chapitre, les classes seront des espèces.
 Les mesures sont qualifiées de neutres (<em>species-neutral</em>) au sens où elles ne prennent en compte aucune caractéristique propre des espèces.
@@ -729,12 +723,12 @@ Figure 3.5: Ajustement du modèle de Preston aux données de BCI.
 <pre><code>## Method: Unconditional NPMLE method by Norris and Pollock 1996, 1998, 
 ##         using algorithm by Wang and Lindsay 2005: 
 ## 
-##         MLE=                                239 
+##         MLE=                                225 
 ##         Estimated Poisson mixture components:       
-##         p=                                  1.10372 3.595437 10.60832 
-##         pi=                                 0.402579 0.2525368 0.3448842</code></pre>
+##         p=                                  5.815792 
+##         pi=                                 1</code></pre>
 <pre><code>## $Nhat
-## [1] 239</code></pre>
+## [1] 225</code></pre>
 <p></p>
 <p>Le problème de cette méthode d’estimation est qu’elle diverge fréquemment.
 Les calculs n’aboutissent pas si la queue de distribution n’est pas regroupée (il existe 108 valeurs différentes de <span class="math inline">\(n_s\)</span> dans l’exemple de BCI : aucune des fonctions de <em>SPECIES</em> ne fonctionne en l’état).</p>
@@ -1504,7 +1498,7 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat :</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 21/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
