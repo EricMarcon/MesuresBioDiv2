@@ -433,7 +433,7 @@ Son espérance est obtenue à partir du nombre d'espèces et de $\sigma$, pour q
 @May1975 explique cette distribution par le théorème de la limite centrale: la variable aléatoire valant 1 si un individu est de l'espèce $s$ et 0 sinon est le produit de nombreuses variables de loi inconnues valant 1 en cas de succès (germination d'une graine, survie à de nombreux évènements...).
 Le logarithme de ce produit est une somme de variables aléatoire dont la loi est forcément normale par application du théorème de la limite centrale.
 
-La distribution est aussi le résultat d'un algorithme de bâton brisé (*broken stick*) hiérarchique[@Bulmer1974]:
+La distribution est aussi le résultat d'un algorithme de bâton brisé (*broken stick*) hiérarchique [@Bulmer1974]:
 
 - Si les ressources (représentées par un bâton) sont partagées une première fois aléatoirement, selon une loi quelconque,
 - Si chaque bâton obtenu est partagé à nouveau selon le même procédé, et que l'opération est répétée un assez grand nombre de fois,
