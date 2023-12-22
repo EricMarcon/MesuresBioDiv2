@@ -8,11 +8,11 @@ library("gridExtra")
 ```
 
 
-```{block, type='Summary'}
+::: {.Summary data-latex=""}
 Les indices classiques de diversité sont ceux de Shannon et de Simpson, et la richesse spécifique.
 Ils peuvent être estimés à partir des données d'inventaire.
 L'estimation de la richesse est particulièrement difficile et fait l'objet d'une abondante littérature: les estimateurs non-paramétriques (Chao et Jackknife) sont les plus utilisés.
-```
+:::
 
 Les mesures classiques [@Peet1974] considèrent que chaque classe d'objets est différente de toutes les autres, sans que certaines soient plus ou moins semblables. 
 Dans ce chapitre, les classes seront des espèces. 
@@ -1276,7 +1276,7 @@ HurlbertD(colSums(BCI), k=2)
 
 # Entropie
 
-```{block, type='Summary'}
+::: {.Summary data-latex=""}
   L'entropie est la surprise moyenne apportée par l'observation des individus d'une communauté, d'autant plus grande qu'un individu appartient à une espèce plus rare.
   L'entropie HCDT permet d'unifier les indices classiques de diversité: son paramètre, appelé ordre, fixe l'importance donnée aux espèces rares. L'entropie d'ordre 0 est la richesse; celle d'ordre 1, l'indice de Shannon; celle d'ordre 2, celui de Simpson.
   L'entropie est la moyenne du logarithme déformé de la rareté des espèces, définie comme l'inverse de leur probabilité.
@@ -1286,7 +1286,7 @@ HurlbertD(colSums(BCI), k=2)
   Les profils de diversité représentent la diversité en fonction de son ordre et permettent la comparaison de communautés.
   
   L'estimation de la diversité est difficile pour des ordres inférieurs à $0,5$ dans des taxocènes très divers comme les arbres des forêts tropicales.
-```
+:::
 
 
 L'entropie peut être entendue comme la surprise moyenne fournie par l'observation d'un échantillon. 
@@ -2250,11 +2250,11 @@ Il ne s'agit pas d'une décomposition de la diversité au sens classique du term
 
 # Équitabilité {#sec-Equitabilite}
 
-```{block, type='Summary'}
+::: {.Summary data-latex=""}
   L'équitabilité mesure l'écart entre la distribution observée et une distribution uniforme.
   
   L'indice de Pielou est la mesure d'équitabilité la plus connue. Il a été généralisé pour permettre de pondérer plus ou moins les espèces rares, de la même façon que l'entropie HCDT.
-```
+:::
 
 
 

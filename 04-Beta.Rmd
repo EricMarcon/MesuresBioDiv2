@@ -8,10 +8,10 @@ library("ade4")
 ```
 
 
-```{block, type='Summary'}
+::: {.Summary data-latex=""}
   La diversité $\beta$ désigne la différentiation entre communautés, c'est-à-dire une mesure de divergence de composition spécifique entre elle, ou bien la divergence entre elles et leur assemblage, appelée diversité proportionnelle.
   La conciliation de ces deux définitions fait toujours l'objet de recherches.
-```
+:::
 
 La notion de diversité $\beta$ a été introduite par  @Whittaker1960, page 320, comme le niveau de changement dans la composition des communautés, ou le degré de différenciation des communautés, en relation avec les changements de milieu.
 La traduction de cette notion intuitive en une définition sans ambiguïté est encore une question de recherche et de débats.
@@ -231,11 +231,11 @@ La dépendance entre $^{q}\!D_{\beta}$ et $^{q}\!D_{\alpha}$ est le prix à paye
 
 # Diversité de différentiation {#chap-BetaPaires}
 
-```{block, type='Summary'}
+::: {.Summary data-latex=""}
   La diversité $\beta$ de différentiation mesure la dissimilarité entre communautés, généralement considérées par paires.
   Les dissimilarités les plus connues sont celles de Jaccard ou de Sørensen.
   Ces mesures peuvent prendre en compte la seule présence ou absence des espèces, leur abondance ou même la similarité entre les espèces, peuvent être traitées par l'analyse multivariée et être testées contre l'hypothèse de nullité de la dissimilarité.
-```
+:::
 
 
 La littérature des indices de similarité est bien antérieure à celle de la biodiversité.
@@ -847,12 +847,12 @@ La méthode de permutation originale est inappropriée et donc corrigée [@Bacar
 # Décomposition de l'entropie HCDT {#chap-DedompHCDT}
 
 
-```{block, type='Summary'}
+::: {.Summary data-latex=""}
   L'entropie HCDT $\gamma$ peut être décomposée en somme de l'entropie $\alpha$ et la moyenne de la divergence entre la distribution de chaque communauté et celle de la méta-communauté.
   L'entropie $\beta$ est donc interprétable comme le gain d'information apporté par la connaissance de la distribution détaillée des communautés en plus de celle, aggrégée, de la méta-communauté.
   L'entropie $\beta$ va de pair avec le nombre effectif de communautés, c'est-à-dire le nombre de communautés de même poids, sans aucune espèce commune, qui fourniraient la même valeur d'entropie $\beta$ que les communautés réelles.
   La diversité $\gamma$ se décompose donc en produit du nombre effectif d'espèces de la diversité $\alpha$ et du nombre effectif de communautés.
-```
+:::
 
 
 Ce chapitre traite de la diversité proportionnelle, qui mesure à quel point les communautés diffèrent de leur assemblage.
@@ -1362,10 +1362,10 @@ Sa valeur peut être négative pour $q<1$, on se limitera donc à $q \ge 1$.
 
 # Décomposition de la diversité phylogénétique et fonctionnelle
 
-```{block, type='Summary'}
+::: {.Summary data-latex=""}
   L'entropie phylogénétique et l'entropie de Ricotta et Szeidl se décomposent comme l'entropie HCDT.
   La diversité $\beta$ phylogénétique et la diversité $\beta$ de Leinster et Cobbold sont des nombres effectifs de communautés, c'est-à-dire des communautés de même poids et dont les espèces seraient totalement dissimilaires qui fourniraient la même entropie $\beta$ que les communautés réelles.
-```
+:::
 
 L'entropie phylogénétique est une combinaison linéaire de l'entropie HCDT donc sa décomposition est identique [@Marcon2014b]. 
 
@@ -1517,9 +1517,9 @@ Le partitionnement de la diversité fonctionnelle de la méta-communauté `Parac
 
 # Tests de significativité
 
-```{block, type='Summary'}
+::: {.Summary data-latex=""}
   Les tests de significativité permettent d'affirmer que des communautés sont réellement différentiées. En complément, les intervalles de confiance des mesures de diversité peuvent être calculés sous l'hypothèse d'une distribution multinomiale.
-```
+:::
 
 
 La diversité $\beta$ calculée entre plusieurs échantillons successifs d'une même communauté n'est pas nulle: par simple fluctuation des effectifs due au hasard, les distributions des échantillons ne sont pas identiques.

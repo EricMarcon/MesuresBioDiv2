@@ -135,7 +135,7 @@ L'approche phylogénétique (chapitre \@ref(chap-Phyloentropie)) permet de conto
 
 # Outils {#chap-Outils}
 
-```{block, type='Summary'}
+::: {.Summary data-latex=""}
   La diversité peut être décrite localement par une courbe d'accumulation (SAC) qui représente le nombre d'espèces échantillonnées en fonction de l'effort.
   À une échelle plus large, cette courbe s'appelle relation aire-espèces (SAR).
   
@@ -144,7 +144,7 @@ L'approche phylogénétique (chapitre \@ref(chap-Phyloentropie)) permet de conto
   Le taux de couverture est la somme des probabilités des espèces observées étant donné l'effort d'échantillonnage. 
   Il peut être estimé précisément à partir des données d'inventaire. 
   Le taux de complétude est la proportion (en nombre) des espèces observées.
-```
+:::
 
 
 Quelques outils sont nécessaires avant d'entrer dans le coeur du sujet. 
