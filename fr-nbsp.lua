@@ -6,6 +6,9 @@
 --- Copyright: © 2022 Christopher Fuhrman
 --- License: MIT – see LICENSE for details
 
+--- Updated by Eric Marcon
+--- line 61: added or inlines[i].t == 'Math'
+
 PANDOC_VERSION:must_be_at_least '2.9.2'
 
 local THIN_SPACE_PATTERN_ASCII = '[;!%?]'
@@ -56,7 +59,7 @@ local function space_high_punctuation_and_quotes(inlines)
         --
 
         if inlines[i + 1] and inlines[i + 1].t == 'Str' and not string.find(inlines[i + 1].text, THIN_NBSP) -- didn't already insert THIN_NBSP
-            and (inlines[i].t == 'Quoted' or inlines[i].t == 'Cite' or inlines[i].t == 'Link' or inlines[i].t == 'Emph' or inlines[i].t == 'Strong' or inlines[i].t == 'Strikeout' or inlines[i].t == 'Code' or inlines[i].t == 'RawInline')
+            and (inlines[i].t == 'Quoted' or inlines[i].t == 'Cite' or inlines[i].t == 'Link' or inlines[i].t == 'Emph' or inlines[i].t == 'Strong' or inlines[i].t == 'Strikeout' or inlines[i].t == 'Code' or inlines[i].t == 'RawInline' or inlines[i].t == 'Math')
             and string.match(inlines[i + 1].text:sub( -1), ALL_SPACE_PATTERN_ASCII) then
             if (string.len(inlines[i + 1].text) == 1) then
                 -- print(i, 'fixing (3):', inlines[i+1])
