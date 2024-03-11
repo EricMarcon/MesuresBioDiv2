@@ -7,7 +7,7 @@
 <title>11 Diversité de différentiation | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="La diversité \(\beta\) de différentiation mesure la dissimilarité entre communautés, généralement considérées par paires. Les dissimilarités les plus connues sont celles de Jaccard ou de Sørensen....">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="11 Diversité de différentiation | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-BetaPaires.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -130,7 +131,7 @@ Ces mesures peuvent prendre en compte la seule présence ou absence des espèces
 De nombreuses mesures de dissimilarité entre paires de communautés existent donc, et leurs propriétés ont été bien étudiées.
 Elles seront présentées ici en fonction des types de données qu’elles traitent : présence-absence, abondance ou abondance et similarité des espèces.
 Enfin, des tests statistiques ont été construits pour rejeter l’hypothèse que les communautés sont issues d’une même méta-communauté par un simple tirage multinomial des espèces.</p>
-<p>Une limite importante des mesures de dissimilarité est qu’elles sont très sensibles à la taille des communautés échantillonnées <span class="citation">(<a href="references.html#ref-Wolda1981" role="doc-biblioref">Wolda 1981</a>)</span>.</p>
+<p>Une limite importante des mesures de dissimilarité est qu’elles sont très sensibles à la taille des communautés échantillonnées <span class="citation">(<a href="references.html#ref-Wolda1981">Wolda 1981</a>)</span>.</p>
 <div id="données-de-présence-absence" class="section level2" number="11.1">
 <h2>
 <span class="header-section-number">11.1</span> Données de présence-absence<a class="anchor" aria-label="anchor" href="#donn%C3%A9es-de-pr%C3%A9sence-absence"><i class="fas fa-link"></i></a>
@@ -139,7 +140,7 @@ Enfin, des tests statistiques ont été construits pour rejeter l’hypothèse q
 <h3>
 <span class="header-section-number">11.1.1</span> Indices de similarité<a class="anchor" aria-label="anchor" href="#indices-de-similarit%C3%A9"><i class="fas fa-link"></i></a>
 </h3>
-<p>Les indices les plus simples et probablement les plus connus pour calculer la diversité <span class="math inline">\(\beta\)</span> sont l’indice de <span class="citation">Jaccard (<a href="references.html#ref-Jaccard1901" role="doc-biblioref">1901</a>)</span> et de Sørensen <span class="citation">(<a href="references.html#ref-Czekanowski1913" role="doc-biblioref">Czekanowski 1913</a>; <a href="references.html#ref-Dice1945" role="doc-biblioref">Dice 1945</a>; <a href="references.html#ref-Sorensen1948" role="doc-biblioref">Sørensen 1948</a>)</span>.
+<p>Les indices les plus simples et probablement les plus connus pour calculer la diversité <span class="math inline">\(\beta\)</span> sont l’indice de <span class="citation">Jaccard (<a href="references.html#ref-Jaccard1901">1901</a>)</span> et de Sørensen <span class="citation">(<a href="references.html#ref-Czekanowski1913">Czekanowski 1913</a>; <a href="references.html#ref-Dice1945">Dice 1945</a>; <a href="references.html#ref-Sorensen1948">Sørensen 1948</a>)</span>.
 Ils sont définis pour deux communautés et comptent la proportion d’espèces qu’elles partagent.
 Plus elle est faible, moins la composition spécifique des communautés est semblable, plus la diversité <span class="math inline">\(\beta\)</span> est considérée comme grande.</p>
 <p>Précisément, notons <span class="math inline">\(s_{1,1}\)</span> les espèces observées dans les deux communautés, <span class="math inline">\(s_{1,0}\)</span> celles observées dans la première communauté mais pas la deuxième (et de même <span class="math inline">\(s_{0,1}\)</span>).
@@ -153,9 +154,9 @@ L’indice de Jaccard est le rapport entre le nombre d’espèces communes et le
   \tag{11.2}
   S_7 = \frac{2s_{1,1}}{2s_{1,1}+s_{1,0}+s_{0,1}}.
 \end{equation}\]</span></p>
-<p>Les notations <span class="math inline">\(S_n\)</span> correspondent à celles de l’article de référence de <span class="citation">Gower et Legendre (<a href="references.html#ref-Gower1986" role="doc-biblioref">1986</a>)</span> qui fait la revue de ces indices de similarité (13 autres sont traités) et en étudie les propriétés.
+<p>Les notations <span class="math inline">\(S_n\)</span> correspondent à celles de l’article de référence de <span class="citation">Gower et Legendre (<a href="references.html#ref-Gower1986">1986</a>)</span> qui fait la revue de ces indices de similarité (13 autres sont traités) et en étudie les propriétés.
 Certains indices prennent en compte les espèces absentes des deux communautés mais qui auraient pu être observées <span class="math inline">\(s_{0,0}\)</span>.</p>
-<p>Deux autres indices sont mentionnés ici, celui de <span class="citation">Sokal et Sneath (<a href="references.html#ref-Sokal1963" role="doc-biblioref">1963</a>)</span> et celui d’Ochiai <span class="citation">(<a href="references.html#ref-Ochiai1957" role="doc-biblioref">1957</a>)</span> :</p>
+<p>Deux autres indices sont mentionnés ici, celui de <span class="citation">Sokal et Sneath (<a href="references.html#ref-Sokal1963">1963</a>)</span> et celui d’Ochiai <span class="citation">(<a href="references.html#ref-Ochiai1957">1957</a>)</span> :</p>
 <p><span class="math display" id="eq:S5">\[\begin{equation}
   \tag{11.3}
   S_5 = \frac{s_{1,1}}{s_{1,1}+2 \left(s_{1,0}+s_{0,1}\right)};
@@ -208,7 +209,7 @@ Le mode est proche de 0,5 : la moitié des espèces sont communes entre deux ca
 <span class="header-section-number">11.1.2</span> Biais d’estimation<a class="anchor" aria-label="anchor" href="#biais-destimation"><i class="fas fa-link"></i></a>
 </h3>
 <p>Tous les indices de similarité vus plus haut sont sensibles au biais d’estimation.
-<span class="citation">Chao et al. (<a href="references.html#ref-Chao2004a" role="doc-biblioref">2004</a>)</span> fournissent un estimateur de la probabilité qu’un individu de la première communauté appartienne à une espèce commune aux deux communautés :</p>
+<span class="citation">Chao et al. (<a href="references.html#ref-Chao2004a">2004</a>)</span> fournissent un estimateur de la probabilité qu’un individu de la première communauté appartienne à une espèce commune aux deux communautés :</p>
 <p><span class="math display" id="eq:Chao2004a">\[\begin{equation}
   \tag{11.5}
   \hat{U} = \sum_{s}^{s_{1,1}}{\frac{n_{s,1}}{n}} + \frac{n_{+2}-1}{n_{+2}} \frac{s_1^{(2)}}{2 s_2^{(2)}} \sum_{s}^{s_{1,1}}{\frac{n_s}{n}{\mathbf 1}\left( n_{s,2}=1 \right)}.
@@ -291,7 +292,7 @@ Figure 11.2: Distribution des indices de Jaccard corrigés du biais d’etimatio
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>ChaoJaccard <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">ChaoJaccard</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_density</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="va">ChaoJaccard</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p></p>
-<p><span class="citation">Plotkin et Muller-Landau (<a href="references.html#ref-Plotkin2002" role="doc-biblioref">2002</a>)</span> founissent des estimateurs de la similarité de Sørensen pour les SAD les plus courantes : lognormale, broken-stick, géométrique, log-séries et même gamma, une généralisation de la distibution broken-stick.
+<p><span class="citation">Plotkin et Muller-Landau (<a href="references.html#ref-Plotkin2002">2002</a>)</span> founissent des estimateurs de la similarité de Sørensen pour les SAD les plus courantes : lognormale, broken-stick, géométrique, log-séries et même gamma, une généralisation de la distibution broken-stick.
 Ils traitent le cas d’un échantillonnage dans lequel les individus sont indépendants les uns des autres, et le cas de l’agrégation spatiale.
 Ils montrent que la similarité augmente beaucoup avec la taille des placettes échantillonnées et est nettement plus faible en cas d’agrégation spatiale.</p>
 </div>
@@ -299,7 +300,7 @@ Ils montrent que la similarité augmente beaucoup avec la taille des placettes �
 <h3>
 <span class="header-section-number">11.1.3</span> Représentation graphique<a class="anchor" aria-label="anchor" href="#repr%C3%A9sentation-graphique"><i class="fas fa-link"></i></a>
 </h3>
-<p>La matrice de distances peut être représentée par une analyse en coordonnées principales (PCoA) <span class="citation">(<a href="references.html#ref-Gower1966" role="doc-biblioref">Gower 1966</a>)</span> :</p>
+<p>La matrice de distances peut être représentée par une analyse en coordonnées principales (PCoA) <span class="citation">(<a href="references.html#ref-Gower1966">Gower 1966</a>)</span> :</p>
 <p></p>
 <div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">DistChaoJaccard</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/dist.html">as.dist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">ChaoJaccard</span><span class="op">)</span><span class="op">)</span></span>
@@ -330,9 +331,9 @@ La matrice de distances n’est pas euclidienne à cause des approximations de l
 <h2>
 <span class="header-section-number">11.2</span> Données d’abondance<a class="anchor" aria-label="anchor" href="#donn%C3%A9es-dabondance"><i class="fas fa-link"></i></a>
 </h2>
-<p>La distance la plus évidente entre communautés quand les effectifs des espèces sont connus est simplement la distance euclidienne, éventuellement normalisée par le nombre d’espèces <span class="citation">(Dissimilarité <span class="math inline">\(D_1\)</span> de <a href="references.html#ref-Gower1986" role="doc-biblioref">Gower et Legendre 1986</a>)</span>.
+<p>La distance la plus évidente entre communautés quand les effectifs des espèces sont connus est simplement la distance euclidienne, éventuellement normalisée par le nombre d’espèces <span class="citation">(Dissimilarité <span class="math inline">\(D_1\)</span> de <a href="references.html#ref-Gower1986">Gower et Legendre 1986</a>)</span>.
 Son problème principal est qu’elle est très sensible aux ordres de grandeurs relatifs des variables.</p>
-<p>La dissimilarité de Steinhaus <span class="citation">(<a href="references.html#ref-Motyka1947" role="doc-biblioref">Motyka 1947</a>)</span> est plus connue sous le nom de Bray-Curtis <span class="citation">(<a href="references.html#ref-Odum1950" role="doc-biblioref">Odum 1950</a>; <a href="references.html#ref-Bray1957" role="doc-biblioref">Bray et Curtis 1957</a>)</span>, voir l’analyse historique de <span class="citation">Legendre et Legendre (<a href="references.html#ref-Legendre2012" role="doc-biblioref">2012</a>)</span>, note de bas de page, eq. 7.58, et pourrait être attribuée à <span class="citation">Renkonen (<a href="references.html#ref-Renkonen1938" role="doc-biblioref">1938</a>)</span>.
+<p>La dissimilarité de Steinhaus <span class="citation">(<a href="references.html#ref-Motyka1947">Motyka 1947</a>)</span> est plus connue sous le nom de Bray-Curtis <span class="citation">(<a href="references.html#ref-Odum1950">Odum 1950</a>; <a href="references.html#ref-Bray1957">Bray et Curtis 1957</a>)</span>, voir l’analyse historique de <span class="citation">Legendre et Legendre (<a href="references.html#ref-Legendre2012">2012</a>)</span>, note de bas de page, eq. 7.58, et pourrait être attribuée à <span class="citation">Renkonen (<a href="references.html#ref-Renkonen1938">1938</a>)</span>.
 Elle est très utilisée, par défaut dans plusieurs analyses du package <em>vegan</em> par exemple :</p>
 <p><span class="math display" id="eq:BrayCurtis">\[\begin{equation}
   \tag{11.8}
@@ -340,14 +341,14 @@ Elle est très utilisée, par défaut dans plusieurs analyses du package <em>veg
 \end{equation}\]</span></p>
 <p><span class="math inline">\(n_{s,1}\)</span> et <span class="math inline">\(n_{s,2}\)</span> sont le nombre d’individus de l’espèce <span class="math inline">\(s\)</span> dans la première et la deuxième communauté.
 La racine carrée de la dissimilarité de Bray-Curtis est euclidienne.</p>
-<p><span class="citation">Gower (<a href="references.html#ref-Gower1971" role="doc-biblioref">1971</a>)</span> propose une extension de la dissimilarité de Bray-Curtis :
+<p><span class="citation">Gower (<a href="references.html#ref-Gower1971">1971</a>)</span> propose une extension de la dissimilarité de Bray-Curtis :
 <span class="math display" id="eq:Gower1971">\[\begin{equation}
   \tag{11.9}
   D_{G} = \frac{\sum_s{w_s\left| n_{s,1}-n_{s,2} \right|}}{R_s\sum_s{w_s}}.
 \end{equation}\]</span></p>
 <p><span class="math inline">\(R_s\)</span> est l’étendue ou l’écart-type de l’abondance de l’espèce <span class="math inline">\(s\)</span>, qui permet de ne pas surpondérer l’effet des espèces très abondantes.
 <span class="math inline">\(w_s\)</span> est le poids attribué à l’espèce <span class="math inline">\(s\)</span>, qui peut être utilisé pour éliminer les doubles absences (<span class="math inline">\(w_s=0\)</span> si l’espèce est absente des deux communautés, 1 sinon).</p>
-<p><span class="citation">Anderson, Ellingsen, et McArdle (<a href="references.html#ref-Anderson2006" role="doc-biblioref">2006</a>)</span> proposent une mesure de dissimilarité (de Gower modifiée) donnant le même poids à une différence d’un ordre de grandeur entre les abondances qu’à la différence entre présence et absence, qui permet donc de se passer de la normalisation par <span class="math inline">\(R_s\)</span>.
+<p><span class="citation">Anderson, Ellingsen, et McArdle (<a href="references.html#ref-Anderson2006">2006</a>)</span> proposent une mesure de dissimilarité (de Gower modifiée) donnant le même poids à une différence d’un ordre de grandeur entre les abondances qu’à la différence entre présence et absence, qui permet donc de se passer de la normalisation par <span class="math inline">\(R_s\)</span>.
 Les effectifs sont transformés de la façon suivante : <span class="math inline">\(x_s=\log n_s +1\)</span> si <span class="math inline">\(n_s \ne 0\)</span>, <span class="math inline">\(x_s=1\)</span> sinon (le logarithme est décimal).
 La dissimilarité est
 <span class="math display" id="eq:MG">\[\begin{equation}
@@ -356,8 +357,8 @@ La dissimilarité est
 \end{equation}\]</span></p>
 <p>Elle n’est pas euclidienne.</p>
 <p>Les dissimilarités de Jaccard et de Sørensen se généralisent aux données d’abondance.
-Le nombre d’espèces communes aux deux sites <span class="math inline">\(s_{1,1}\)</span> est remplacé par le nombre d’individus de même espèce présents sur les deux sites : <span class="math inline">\(n_{1,1}=\sum_s{\min(n_{s,1}, n_{s,2})}\)</span>; le nombre d’espèces seulement présentes sur le premier site <span class="math inline">\(s_{1,0}\)</span> est remplacé par le nombre d’individus, sommé sur toutes les espèces, présents uniquement sur le site : <span class="math inline">\(n_{1,0}=\sum_s{\max(0, n_{s,1}-n_{s,2})}\)</span>; de même, <span class="math inline">\(s_{0,1}\)</span> est remplacé par <span class="math inline">\(n_{0,1}=\sum_s{\max(0, n_{s,2}-n_{s,1)}}\)</span>.</p>
-<p>La dissimilarité de <span class="citation">Ružička (<a href="references.html#ref-Ruzicka1958" role="doc-biblioref">1958</a>)</span> généralise celle de Jaccard :</p>
+Le nombre d’espèces communes aux deux sites <span class="math inline">\(s_{1,1}\)</span> est remplacé par le nombre d’individus de même espèce présents sur les deux sites : <span class="math inline">\(n_{1,1}=\sum_s{\min(n_{s,1}, n_{s,2})}\)</span><span style="white-space:nowrap"> ;</span> le nombre d’espèces seulement présentes sur le premier site <span class="math inline">\(s_{1,0}\)</span> est remplacé par le nombre d’individus, sommé sur toutes les espèces, présents uniquement sur le site : <span class="math inline">\(n_{1,0}=\sum_s{\max(0, n_{s,1}-n_{s,2})}\)</span><span style="white-space:nowrap"> ;</span> de même, <span class="math inline">\(s_{0,1}\)</span> est remplacé par <span class="math inline">\(n_{0,1}=\sum_s{\max(0, n_{s,2}-n_{s,1)}}\)</span>.</p>
+<p>La dissimilarité de <span class="citation">Ružička (<a href="references.html#ref-Ruzicka1958">1958</a>)</span> généralise celle de Jaccard :</p>
 <p><span class="math display" id="eq:Ruzicka">\[\begin{equation}
   \tag{11.11}
   D_3 = 1-\frac{n_{1,1}}{n_{1,1}+n_{1,0}+n_{0,1}}.
@@ -376,11 +377,11 @@ Le nombre d’espèces communes aux deux sites <span class="math inline">\(s_{1,
 <p>L’indice de Sørensen et les indices similaires prennent en compte deux types de dissimilarité : l’emboîtement des composition spécifiques (<em>nestedness</em>) et la substitution d’espèces (<em>turnover</em>).
 On parle d’emboîtement quand une communauté diffère d’une autre parce que sa composition est un sous-ensemble des espèces de l’autre.
 La substitution correspond au remplacement de certaines espèces d’une communauté par de nouvelles espèces.
-<span class="citation">Baselga (<a href="references.html#ref-Baselga2010" role="doc-biblioref">2010b</a>)</span> montre que la diversité <span class="math inline">\(\beta\)</span> de longicornes en Europe du nord est similaire à celle observée en Europe du sud, mais pour des raisons totalement différentes.
+<span class="citation">Baselga (<a href="references.html#ref-Baselga2010">2010b</a>)</span> montre que la diversité <span class="math inline">\(\beta\)</span> de longicornes en Europe du nord est similaire à celle observée en Europe du sud, mais pour des raisons totalement différentes.
 En Europe du nord, les communautés perdent des espèces avec la latitude : leur dissimilarité est due principalement à l’emboîtement.
 En Europe du sud, les communautés sont composées d’espèces différentes : la diversité <span class="math inline">\(\beta\)</span> est due à la substitution des espèces.
 Baselga décompose l’indice de dissimilarité de Sørensen, <span class="math inline">\(1-S_7\)</span>, en un terme mesurant la substitution et un mesurant l’emboîtement.</p>
-<p>Le premier composant est l’indice de dissimilarité de <span class="citation">G. G. Simpson (<a href="references.html#ref-Simpson1943" role="doc-biblioref">1943</a>)</span> :
+<p>Le premier composant est l’indice de dissimilarité de <span class="citation">G. G. Simpson (<a href="references.html#ref-Simpson1943">1943</a>)</span> :
 <span class="math display" id="eq:Simpson1943">\[\begin{equation}
   \tag{11.13}
   D_{sim} = \frac{\min(s_{1,0},s_{0,1})}{s_{1,1}+\min(s_{1,0},s_{0,1})}.
@@ -394,7 +395,7 @@ Son complément <span class="math inline">\(D_{nes}\)</span> prend en compte la 
   - D_{sim}.
 \end{equation}\]</span></p>
 <p>Ces mesures de dissimilarité sont généralisées au-delà de deux communautés : les formules sont disponibles dans l’article de Baselga.</p>
-<p><span class="citation">Baselga (<a href="references.html#ref-Baselga2012" role="doc-biblioref">2012</a>)</span> étend cette décomposition à la dissimilarité de Jaccard :</p>
+<p><span class="citation">Baselga (<a href="references.html#ref-Baselga2012">2012</a>)</span> étend cette décomposition à la dissimilarité de Jaccard :</p>
 <p><span class="math display" id="eq:DNesReplBJ">\[\begin{align}
   \tag{11.15}
   D_3
@@ -403,7 +404,7 @@ Son complément <span class="math inline">\(D_{nes}\)</span> prend en compte la 
   + \frac{s_{1,1}}{s_{1,1}+2\min(s_{1,0},s_{0,1})}\frac{|s_{1,0}-s_{0,1}|}{s_{1,1}+s_{1,0}+s_{0,1}}.
 \end{align}\]</span></p>
 <p>Le premier terme de la somme est le terme lié à la substitution et le second celui lié à l’emboîtement.</p>
-<p><span class="citation">Podani et Schmera (<a href="references.html#ref-Podani2011" role="doc-biblioref">2011</a>)</span> défendent un point de vue différent sur la façon de comptabiliser les deux composantes de la décomposition de la dissimilarité de Jaccard.
+<p><span class="citation">Podani et Schmera (<a href="references.html#ref-Podani2011">2011</a>)</span> défendent un point de vue différent sur la façon de comptabiliser les deux composantes de la décomposition de la dissimilarité de Jaccard.
 Le terme de substitution comptabilise les espèces présentes sur un seul site, en nombre égal : <span class="math inline">\(2\min(s_{1,0},s_{0,1})\)</span> plutôt que l’indice de dissimilarité de Simpson.
 Ainsi, le terme d’emboîtement comptabilise la différence de richesse entre les deux sites : <span class="math inline">\(|s_{1,0}-s_{0,1}|\)</span>.</p>
 <p>Après normalisation par le nombre total d’espèce, la décomposition est</p>
@@ -413,7 +414,7 @@ Ainsi, le terme d’emboîtement comptabilise la différence de richesse entre l
   = \frac{2\min(s_{1,0},s_{0,1})}{s_{1,1} + s_{1,0} + s_{0,1}}
   + \frac{|s_{1,0}-s_{0,1}|}{s_{1,1} + s_{1,0} + s_{0,1}}.
 \end{equation}\]</span></p>
-<p>La controverse entre les deux décompositions perdure <span class="citation">(<a href="references.html#ref-Podani2016" role="doc-biblioref">Podani et Schmera 2016</a>)</span>.</p>
+<p>La controverse entre les deux décompositions perdure <span class="citation">(<a href="references.html#ref-Podani2016">Podani et Schmera 2016</a>)</span>.</p>
 
 <p></p>
 <div class="figure" style="text-align: center">
@@ -424,10 +425,10 @@ Figure 11.4: Triangle du simplex Similarité-Substitution-Emboîtement. (a) Simi
 </div>
 <p></p>
 <p>Comme la dissimilarité est la somme de l’emboîtement et de la substitution et que la dissimilarité est le complément à 1 de la similarité, la somme de la similarité, de l’emboîtement et de la substitution vaut 1.
-<span class="citation">Podani et Schmera (<a href="references.html#ref-Podani2011" role="doc-biblioref">2011</a>)</span> représentent cette égalité dans un triangle dont les sommets correspondent aux trois termes (Figure <a href="chap-BetaPaires.html#fig:Podani2011">11.4</a>).</p>
-<p><span class="citation">Podani, Ricotta, et Schmera (<a href="references.html#ref-Podani2013" role="doc-biblioref">2013</a>)</span> étendent cette approche à des mesures de dissimilarité prenant en compte les abondances, particulièrement la dissimilarité de Ružička.
+<span class="citation">Podani et Schmera (<a href="references.html#ref-Podani2011">2011</a>)</span> représentent cette égalité dans un triangle dont les sommets correspondent aux trois termes (Figure <a href="chap-BetaPaires.html#fig:Podani2011">11.4</a>).</p>
+<p><span class="citation">Podani, Ricotta, et Schmera (<a href="references.html#ref-Podani2013">2013</a>)</span> étendent cette approche à des mesures de dissimilarité prenant en compte les abondances, particulièrement la dissimilarité de Ružička.
 La décomposition est identique à celle de l’équation <a href="chap-BetaPaires.html#eq:DNesReplPJ">(11.16)</a> après remplacement de chaque terme.</p>
-<p><span class="citation">Legendre (<a href="references.html#ref-Legendre2014" role="doc-biblioref">2014</a>)</span> considère cette décomposition de la diversité <span class="math inline">\(\beta\)</span> en emboîtement et substitution comme une décomposition de variance et lui applique des méthodes d’ordination pour la relier aux variables environnementales par exemple.</p>
+<p><span class="citation">Legendre (<a href="references.html#ref-Legendre2014">2014</a>)</span> considère cette décomposition de la diversité <span class="math inline">\(\beta\)</span> en emboîtement et substitution comme une décomposition de variance et lui applique des méthodes d’ordination pour la relier aux variables environnementales par exemple.</p>
 <p>Les mesures de diversité <span class="math inline">\(\beta\)</span> fondées sur l’entropie HCDT (chapitre <a href="chap-DedompHCDT.html#chap-DedompHCDT">12</a>) ne permettent pas de distinguer directement emboîtement et substitution.
 La variabilité des contributions <span class="math inline">\(^{q}_{i}\!H_{\beta}\)</span> des communautés à l’entropie <span class="math inline">\(\beta\)</span> augmente avec l’emboîtement, mais cette voie n’a pas été explorée.</p>
 </div>
@@ -439,7 +440,7 @@ La variabilité des contributions <span class="math inline">\(^{q}_{i}\!H_{\beta
 <h3>
 <span class="header-section-number">11.4.1</span> Dissimilarité minimale moyenne<a class="anchor" aria-label="anchor" href="#dissimilarit%C3%A9-minimale-moyenne"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Ricotta et Bacaro (<a href="references.html#ref-Ricotta2010" role="doc-biblioref">2010</a>)</span> définissent une mesure de dissimilarité paramétrique entre deux communautés.
+<p><span class="citation">Ricotta et Bacaro (<a href="references.html#ref-Ricotta2010">2010</a>)</span> définissent une mesure de dissimilarité paramétrique entre deux communautés.
 Une matrice de dissimilarité est définie entre toutes les paires d’espèces.
 <span class="math inline">\(\min{d_{s,2}}\)</span> désigne la dissimilarité entre l’espèce <span class="math inline">\(s\)</span> présente dans la première communauté et l’espèce la plus proche d’elle dans la deuxième communauté.
 <span class="math inline">\(\min{d_{t,1}}\)</span> est la même notation pour l’espèce <span class="math inline">\(t\)</span> de la deuxième communauté et l’espèces la plus proche dans la communauté 1.
@@ -452,34 +453,34 @@ Pour chaque communauté, la moyenne des dissimilarités minimales entre chaque e
   \tag{11.17}
   d_{\mathit{CW}(n)} = \frac{1}{2}\left(\sum_s{\pi_{s(n)} \min{d_{s,2}}} + \sum_t{\pi_{t(n)} \min{d_{t,1}}} \right).
 \end{equation}\]</span></p>
-<p>Sa version non pondérée (U pour <em>unweighted</em>) par les abondances est <span class="citation">(<a href="references.html#ref-Ricotta2008" role="doc-biblioref">Ricotta et Burrascano 2008</a>)</span>
+<p>Sa version non pondérée (U pour <em>unweighted</em>) par les abondances est <span class="citation">(<a href="references.html#ref-Ricotta2008">Ricotta et Burrascano 2008</a>)</span>
 <span class="math display" id="eq:CU">\[\begin{equation}
   \tag{11.18}
   d_{\mathit{CU}} = \frac{\sum_s{\min{d_{s,2}}} + \sum_t{\min{d_{t,1}}}}{2s_{1,1}+s_{1,0}+s_{0,1}}.
 \end{equation}\]</span></p>
 <p>Ces mesures sont des évolutions de mesures plus anciennes, avec des pondérations différentes.
-Dans l’indice de <span class="citation">Clarke et Warwick (<a href="references.html#ref-Clarke1998" role="doc-biblioref">1998</a>)</span>, la moyenne est calculée dans chaque communauté, sans pondération :
+Dans l’indice de <span class="citation">Clarke et Warwick (<a href="references.html#ref-Clarke1998">1998</a>)</span>, la moyenne est calculée dans chaque communauté, sans pondération :
 <span class="math display" id="eq:CW">\[\begin{equation}
   \tag{11.19}
   d_{\mathit{CW}} = \frac{1}{2}\left( \frac{\sum_s{\min{d_{s,2}}}}{s_{1,1}+s_{1,0}} + \frac{\sum_t{\min{d_{t,1}}}}{s_{1,1}+s_{0,1}} \right),
 \end{equation}\]</span></p>
-<p>mais avec pondération par l’abondance des espèces chez <span class="citation">Ricotta et Burrascano (<a href="references.html#ref-Ricotta2008" role="doc-biblioref">2008</a>)</span> :
+<p>mais avec pondération par l’abondance des espèces chez <span class="citation">Ricotta et Burrascano (<a href="references.html#ref-Ricotta2008">2008</a>)</span> :
 <span class="math display" id="eq:Ricotta2008">\[\begin{equation}
   \tag{11.20}
   d_{\mathit{RB}} = \frac{1}{2}\left( \sum_s{p_{s|1}\min{d_{s,2}}} + \sum_t{p_{t|2}\min{d_{t,1}}} \right),
 \end{equation}\]</span></p>
-<p>alors qu’elle l’est globalement dans l’indice de <span class="citation">Izsak et Price (<a href="references.html#ref-Izsak2001" role="doc-biblioref">2001</a>)</span> :
+<p>alors qu’elle l’est globalement dans l’indice de <span class="citation">Izsak et Price (<a href="references.html#ref-Izsak2001">2001</a>)</span> :
 <span class="math display" id="eq:Izsak2001">\[\begin{equation}
   \tag{11.21}
   d_{\mathit{IP}} = \frac{\sum_s{\min{d_{s,2}}} + \sum_t{\min{d_{t,1}}}}{s_{1,1}+s_{1,0}+s_{1,1}+s_{0,1}},
 \end{equation}\]</span></p>
-<p>redécouvert et nommé <em>COMDISTNN</em> par <span class="citation">Webb, Ackerly, et Kembel (<a href="references.html#ref-Webb2008" role="doc-biblioref">2008</a>)</span>.</p>
+<p>redécouvert et nommé <em>COMDISTNN</em> par <span class="citation">Webb, Ackerly, et Kembel (<a href="references.html#ref-Webb2008">2008</a>)</span>.</p>
 </div>
 <div id="similarité-moyenne-entre-individus" class="section level3" number="11.4.2">
 <h3>
 <span class="header-section-number">11.4.2</span> Similarité moyenne entre individus<a class="anchor" aria-label="anchor" href="#similarit%C3%A9-moyenne-entre-individus"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Pavoine et Ricotta (<a href="references.html#ref-Pavoine2014b" role="doc-biblioref">2014</a>)</span> définissent une famille de similarités entre communautés construite à partir de la similarité moyenne entre les paires d’individus de chaque communauté et les paires intercommunautaires.
+<p><span class="citation">Pavoine et Ricotta (<a href="references.html#ref-Pavoine2014b">2014</a>)</span> définissent une famille de similarités entre communautés construite à partir de la similarité moyenne entre les paires d’individus de chaque communauté et les paires intercommunautaires.
 Une matrice de similarité <span class="math inline">\(\mathbf{Z}\)</span> est définie entre les paires d’espèces : <span class="math inline">\(z_{s,t}\)</span> est la similarité entre l’espèce <span class="math inline">\(s\)</span> et l’espèce <span class="math inline">\(t\)</span>, comprise entre 0 et 1 de la même façon que pour le calcul de la diversité <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> (chapitre <a href="chap-LeinsterCobbold.html#chap-LeinsterCobbold">9</a>).
 La matrice <span class="math inline">\(\mathbf{Z}\)</span> doit de plus être semi-définie positive, ce qui implique que <span class="math inline">\(\sqrt{1-\mathbf{Z}}\)</span> est euclidienne : de cette façon, les espèces peuvent être représentées graphiquement par une PCoA.
 Les fréquences des espèces dans les deux communautés sont <span class="math inline">\(\mathbf{p}\)</span> et <span class="math inline">\(\mathbf{q}\)</span>.
@@ -509,19 +510,19 @@ Dans ce dernier cas, et si <span class="math inline">\(\mathbf{Z}\)</span> est l
   S_{\mathit{Ochiai}} = \frac{\sum_{s,t}{p_s q_t z_{s,t}}}{\sqrt{\sum_{s,t}{p_s p_t z_{s,t}}} \sqrt{\sum_{s,t}{q_s q_t z_{s,t}}}}.
 \end{equation}\]</span></p>
 <p>Ces quatre similarités permettent une représentation des communautés par PCoA de la même façon que l’indice de Jaccard traité plus haut.</p>
-<p><span class="citation">Ricotta, Bacaro, et Pavoine (<a href="references.html#ref-Ricotta2014b" role="doc-biblioref">2014</a>)</span> ont aussi proposé de mesurer la dissimilarité par la somme des différences (en valeur absolue) de banalité des espèces des deux communautés, normalisée par la banalité totale :
+<p><span class="citation">Ricotta, Bacaro, et Pavoine (<a href="references.html#ref-Ricotta2014b">2014</a>)</span> ont aussi proposé de mesurer la dissimilarité par la somme des différences (en valeur absolue) de banalité des espèces des deux communautés, normalisée par la banalité totale :
 <span class="math display" id="eq:Ricotta2014b">\[\begin{equation}
   \tag{11.26}
   D_{\mathit{RBP}}
   = \frac{\sum_{s}{|\sum_{t}{(p_s-q_t)z_{s,t}}}|}{\sum_{s}{\sum_{t}{(p_s+q_t)z_{s,t}}}}.
 \end{equation}\]</span></p>
-<p>D’autres similarités ont été proposées mais ont des propriétés qui empêchent de les utiliser <span class="citation">(<a href="references.html#ref-Ricotta2014b" role="doc-biblioref">Ricotta, Bacaro, et Pavoine 2014</a>)</span> : leur valeur n’est pas toujours nulle pour deux communautés identiques.
-Ce sont l’indice proposé par <span class="citation">Rao (<a href="references.html#ref-Rao1982" role="doc-biblioref">1982</a>)</span>,
+<p>D’autres similarités ont été proposées mais ont des propriétés qui empêchent de les utiliser <span class="citation">(<a href="references.html#ref-Ricotta2014b">Ricotta, Bacaro, et Pavoine 2014</a>)</span> : leur valeur n’est pas toujours nulle pour deux communautés identiques.
+Ce sont l’indice proposé par <span class="citation">Rao (<a href="references.html#ref-Rao1982">1982</a>)</span>,
 <span class="math display" id="eq:Rao1982Q12">\[\begin{equation}
   \tag{11.27}
   Q_{\mathit{12}} = \sum_{s,t}{p_s q_t z_{s,t}},
 \end{equation}\]</span></p>
-<p>comme les indices de <span class="citation">Swenson, Anglada-Cordero, et Barone (<a href="references.html#ref-Swenson2011" role="doc-biblioref">2011</a>)</span> :
+<p>comme les indices de <span class="citation">Swenson, Anglada-Cordero, et Barone (<a href="references.html#ref-Swenson2011">2011</a>)</span> :
 <span class="math display" id="eq:Swenson2011a">\[\begin{equation}
   \tag{11.28}
   d_{\mathit{pw}} = \frac{1}{2}\left( \frac{\sum_s{\bar{d_{s,2}}}}{s_{1,1}+s_{1,0}} + \frac{\sum_t{\bar{d_{t,1}}}}{s_{1,1}+s_{0,1}} \right),
@@ -543,7 +544,7 @@ Ce sont l’indice proposé par <span class="citation">Rao (<a href="references.
 <h3>
 <span class="header-section-number">11.5.1</span> Diversité de Simpson<a class="anchor" aria-label="anchor" href="#diversit%C3%A9-de-simpson"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">ter Braak (<a href="references.html#ref-terBraak1983" role="doc-biblioref">1983</a>)</span> a le premier rapproché l’entropie de Simpson et l’Analyse en Composantes Principales <span class="citation">(<a href="references.html#ref-Pearson1901" role="doc-biblioref">Pearson 1901</a>)</span>.
+<p><span class="citation">ter Braak (<a href="references.html#ref-terBraak1983">1983</a>)</span> a le premier rapproché l’entropie de Simpson et l’Analyse en Composantes Principales <span class="citation">(<a href="references.html#ref-Pearson1901">Pearson 1901</a>)</span>.
 En représentant les communautés dans l’espace des espèces, la norme du vecteur de la communauté <span class="math inline">\(i\)</span> est <span class="math inline">\({\sum_s{p_{s|i}^2}}\)</span>, c’est-à-dire 1 moins l’entropie de Simpson.
 La représentation graphique de l’ACP (non centrée, non réduite) montre les communautés les moins diverses (les plus éloignées de l’origine du repère).
 Ter Braak <em>définit</em> la diversité <span class="math inline">\(\beta\)</span> comme la distance entre deux communautés (et la moyenne des distances entre paires de communautés si leur nombre est supérieur à 2).
@@ -587,7 +588,7 @@ Figure 11.6: ACP centrée des 50 carrés de BCI pour visualiser la diversité <s
 <h3>
 <span class="header-section-number">11.5.2</span> Généralisation<a class="anchor" aria-label="anchor" href="#g%C3%A9n%C3%A9ralisation"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Legendre et Anderson (<a href="references.html#ref-Legendre1999" role="doc-biblioref">1999</a>)</span> ont montré plus largement que si les communautés sont représentées dans l’espace vectoriel des espèces, la moyenne des carrés des distances euclidiennes entre communautés égale la somme des carrés des écarts à la moyenne des distributions des espèces :</p>
+<p><span class="citation">Legendre et Anderson (<a href="references.html#ref-Legendre1999">1999</a>)</span> ont montré plus largement que si les communautés sont représentées dans l’espace vectoriel des espèces, la moyenne des carrés des distances euclidiennes entre communautés égale la somme des carrés des écarts à la moyenne des distributions des espèces :</p>
 <p><span class="math display" id="eq:Legendre1999">\[\begin{equation}
   \tag{11.30}
   \frac{1}{I} \sum_{i=1}^{I-1}{\sum_{j=i+1}^{I}{d_{i,j}^2}}
@@ -597,9 +598,9 @@ Figure 11.6: ACP centrée des 50 carrés de BCI pour visualiser la diversité <s
 Les communautés ont ici le même poids, <span class="math inline">\(y_s\)</span> est la moyenne des valeurs de l’espèce <span class="math inline">\(s\)</span> dans chaque communauté.
 La somme des carrés des écarts est une mesure de diversité <span class="math inline">\(\beta\)</span>.
 Si <span class="math inline">\(y_{s|i}\)</span> est la probabilité <span class="math inline">\(p_{s|i}\)</span>, il s’agit de l’entropie <span class="math inline">\(\beta\)</span> de Simpson.</p>
-<p>Ce résultat peut être étendu à toute matrice de distances euclidiennes entre communautés <span class="citation">(<a href="references.html#ref-Legendre2005" role="doc-biblioref">Legendre, Borcard, et Peres-Neto 2005</a>)</span> : l’argument est qu’il existe une matrice de <span class="math inline">\(y_{s|i}\)</span>, transformation des <span class="math inline">\(p_{s|i}\)</span>, telle que la distance entre les communautés est cette matrice de distances.
+<p>Ce résultat peut être étendu à toute matrice de distances euclidiennes entre communautés <span class="citation">(<a href="references.html#ref-Legendre2005">Legendre, Borcard, et Peres-Neto 2005</a>)</span> : l’argument est qu’il existe une matrice de <span class="math inline">\(y_{s|i}\)</span>, transformation des <span class="math inline">\(p_{s|i}\)</span>, telle que la distance entre les communautés est cette matrice de distances.
 La moyenne des dissimilarités <span class="math inline">\(D_n\)</span> ou des compléments à 1 des similarités de Pavoine et Ricotta (qui sont les carrés des distances euclidiennes de la PCoA) est donc une mesure de diversité <span class="math inline">\(\beta\)</span>.</p>
-<p>Pour un certain nombre de distances, la transformation de <span class="math inline">\(p_{s|i}\)</span> en <span class="math inline">\(y_{s|i}\)</span> est bien connue <span class="citation">(<a href="references.html#ref-Legendre2001" role="doc-biblioref">Legendre et Gallagher 2001</a>)</span>.</p>
+<p>Pour un certain nombre de distances, la transformation de <span class="math inline">\(p_{s|i}\)</span> en <span class="math inline">\(y_{s|i}\)</span> est bien connue <span class="citation">(<a href="references.html#ref-Legendre2001">Legendre et Gallagher 2001</a>)</span>.</p>
 
 <p></p>
 <div class="figure" style="text-align: center">
@@ -621,11 +622,11 @@ La distance entre communautés est donc la longueur de la corde qui relie les ex
   \tag{11.32}
   y_{s|i} = \sqrt{p_{s|i}}.
 \end{equation}\]</span></p>
-<p>La distance euclidienne entre les profils de communautés (<span class="math inline">\(y_{s|i} = p_{s|i}\)</span>) utilisée par <span class="citation">ter Braak (<a href="references.html#ref-terBraak1983" role="doc-biblioref">1983</a>)</span> n’est pas optimale parce qu’elle souffre des défauts de l’entropie de Simpson <span class="citation">(<a href="references.html#ref-Jost2007" role="doc-biblioref">Jost 2007</a>)</span> qu’elle représente.
-<span class="citation">Legendre et De Cáceres (<a href="references.html#ref-Legendre2013" role="doc-biblioref">2013</a>)</span>, annexe S3, ont établi une liste de bonnes propriétés que doivent respecter les mesures de distance entre communautés pour analyser la diversité de différentiation.
+<p>La distance euclidienne entre les profils de communautés (<span class="math inline">\(y_{s|i} = p_{s|i}\)</span>) utilisée par <span class="citation">ter Braak (<a href="references.html#ref-terBraak1983">1983</a>)</span> n’est pas optimale parce qu’elle souffre des défauts de l’entropie de Simpson <span class="citation">(<a href="references.html#ref-Jost2007">Jost 2007</a>)</span> qu’elle représente.
+<span class="citation">Legendre et De Cáceres (<a href="references.html#ref-Legendre2013">2013</a>)</span>, annexe S3, ont établi une liste de bonnes propriétés que doivent respecter les mesures de distance entre communautés pour analyser la diversité de différentiation.
 La fonction <code>dist.ldc</code> du package <em>adespatial</em> permet de calculer toutes les distances présentées dans l’article.
 Les distance de corde et de Hellinger (qui est la distance entre les racines carrées des profils de communautés) les respectent toutes.</p>
-<p>La diversité <span class="math inline">\(\beta\)</span> exprimée de cette façon peut faire l’objet d’analyses par les méthodes d’ordination classiques (RDA : Analyse de Redondance <span class="citation">(<a href="references.html#ref-Rao1964" role="doc-biblioref">Rao 1964</a>)</span><span style="white-space:nowrap"> ;</span> CCA : Analyse Canonique de Correspondance <span class="citation">(<a href="references.html#ref-Braak1986" role="doc-biblioref">ter Braak 1986</a>)</span>) pour la relier à des variables environnementales par exemple<span class="citation">(<a href="references.html#ref-Legendre2013" role="doc-biblioref">Legendre et De Cáceres 2013</a>)</span>.</p>
+<p>La diversité <span class="math inline">\(\beta\)</span> exprimée de cette façon peut faire l’objet d’analyses par les méthodes d’ordination classiques (RDA : Analyse de Redondance <span class="citation">(<a href="references.html#ref-Rao1964">Rao 1964</a>)</span><span style="white-space:nowrap"> ;</span> CCA : Analyse Canonique de Correspondance <span class="citation">(<a href="references.html#ref-Braak1986">ter Braak 1986</a>)</span>) pour la relier à des variables environnementales par exemple<span class="citation">(<a href="references.html#ref-Legendre2013">Legendre et De Cáceres 2013</a>)</span>.</p>
 
 <p></p>
 <div class="figure" style="text-align: center">
@@ -655,15 +656,15 @@ La limite de la méthode est que l’origine du repère ne représente plus ici 
 <h3>
 <span class="header-section-number">11.6.1</span> Test de non-nullité<a class="anchor" aria-label="anchor" href="#test-de-non-nullit%C3%A9"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Chase et al. (<a href="references.html#ref-Chase2011" role="doc-biblioref">2011</a>)</span> testent la valeur de diversité <span class="math inline">\(\beta\)</span> observée contre sa valeur attendue sous l’hypothèse nulle d’une distribution aléatoire des individus dans les communautés.</p>
+<p><span class="citation">Chase et al. (<a href="references.html#ref-Chase2011">2011</a>)</span> testent la valeur de diversité <span class="math inline">\(\beta\)</span> observée contre sa valeur attendue sous l’hypothèse nulle d’une distribution aléatoire des individus dans les communautés.</p>
 <p>Leur motivation principale est d’éliminer la dépendance de la diversité <span class="math inline">\(\beta\)</span> à la diversité <span class="math inline">\(\alpha\)</span> due à la mesure de diversité qu’ils utilisent : l’indice de Jaccard, appliqué aux données de présence-absence.
 Des communautés théoriques sont tirées selon le modèle nul (selon une distribution multinomiale correspondant aux probabilités des espèces dans la méta-communauté et la taille de chaque communauté dans le cas le plus courant).
 La distribution de la diversité <span class="math inline">\(\beta\)</span> sous l’hypothèse nulle est obtenue en répétant les simulations.
 La différence entre la diversité <span class="math inline">\(\beta\)</span> réelle et la moyenne simulée est normalisée par la moyenne simulée pour obtenir une valeur comprise entre -1 et +1 (l’indice de Jaccard est compris entre 0 et 1), comparée à sa distribution sous l’hypothèse nulle pour évaluer sa significativité.</p>
-<p><span class="citation">Tucker et al. (<a href="references.html#ref-Tucker2015" role="doc-biblioref">2016</a>)</span> étendent cette méthode aux données d’abondance en utilisant la dissimilarité de Bray-Curtis et testent, à partir de communautés simulées, sa capacité à distinguer les mécanismes d’assemblage des communautés : niche contre modèle neutre, et modèles déterministes contre stochastiques (c’est-à-dire dont les paramètres varient aléatoirement).
+<p><span class="citation">Tucker et al. (<a href="references.html#ref-Tucker2015">2016</a>)</span> étendent cette méthode aux données d’abondance en utilisant la dissimilarité de Bray-Curtis et testent, à partir de communautés simulées, sa capacité à distinguer les mécanismes d’assemblage des communautés : niche contre modèle neutre, et modèles déterministes contre stochastiques (c’est-à-dire dont les paramètres varient aléatoirement).
 Ces deux oppositions peuvent être traitées indépendamment, pour éviter la confusion entre niche et déterminisme et entre neutralité et stochasticité.
 Ils concluent qu’une valeur de diversité <span class="math inline">\(\beta\)</span> significativement différente de celle du modèle nul permet de détecter le mécanisme de niche (alors que le modèle neutre donne une valeur identique à celle de l’hypothèse nulle, 0 étant donné la normalisation).
-<span class="citation">Chase et Myers (<a href="references.html#ref-Chase2011a" role="doc-biblioref">2011</a>)</span> interprétait les valeurs significatives comme preuve de déterminisme (par opposition à la stochasticité).
+<span class="citation">Chase et Myers (<a href="references.html#ref-Chase2011a">2011</a>)</span> interprétait les valeurs significatives comme preuve de déterminisme (par opposition à la stochasticité).
 Tucker et al. montrent que ce n’est pas le cas : le niveau de stochasticité influe peu sur les résultats quand la diversité est mesurée à partir de données d’abondance.
 En revanche, la méthode n’est pas fiable quand elle est utilisée avec des données de présence-absence : la stochasticité ne permet alors plus de distinguer les mécanismes.</p>
 </div>
@@ -671,7 +672,7 @@ En revanche, la méthode n’est pas fiable quand elle est utilisée avec des do
 <h3>
 <span class="header-section-number">11.6.2</span> Analyse de la variabilité<a class="anchor" aria-label="anchor" href="#analyse-de-la-variabilit%C3%A9"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Anderson, Ellingsen, et McArdle (<a href="references.html#ref-Anderson2006" role="doc-biblioref">2006</a>)</span> fournissent un test d’égalité de la diversité <span class="math inline">\(\beta\)</span> entre groupes de communautés.
+<p><span class="citation">Anderson, Ellingsen, et McArdle (<a href="references.html#ref-Anderson2006">2006</a>)</span> fournissent un test d’égalité de la diversité <span class="math inline">\(\beta\)</span> entre groupes de communautés.
 Les communautés sont placées dans un espace euclidien, dans lequel les distances entre elles sont une mesure de dissimilarité présentée dans ce chapitre.
 Si les dissimilarités ne sont pas euclidiennes, une PCoA permet de les placer dans un espace euclidien dont certains axes sont imaginaires, sans que cette difficulté invalide la méthode.</p>
 <p>Dans chaque groupe, la distance entre chaque communauté et le centre de gravité du groupe est calculée.
@@ -683,11 +684,11 @@ Elle est comparée à sa distribution obtenue par permutation.</p>
 <p>Une alternative consiste à utiliser la distance aux médianes spatiales des groupes.
 La médiane spatiale est le point qui minimise la somme des distances entre les points et lui (alors que le centre de gravité minimise la somme des carrés de ces distances).</p>
 <p>La fonction <code>betadisper</code> du package <em>vegan</em> implémente ce test.</p>
-<p><span class="citation">Ricotta et Burrascano (<a href="references.html#ref-Ricotta2009a" role="doc-biblioref">2009</a>)</span> utilisent comme point central de chaque groupe celui représentant l’assemblage de ses communautés.
+<p><span class="citation">Ricotta et Burrascano (<a href="references.html#ref-Ricotta2009a">2009</a>)</span> utilisent comme point central de chaque groupe celui représentant l’assemblage de ses communautés.
 Ils définissent ainsi la diversité <span class="math inline">\(\beta\)</span> comme la dissimilarité moyenne entre chaque communauté et la méta-communauté.</p>
-<p><span class="citation">Bacaro, Gioria, et Ricotta (<a href="references.html#ref-Bacaro2012" role="doc-biblioref">2012</a>)</span> préfèrent tester la distribution des dissimilarités entre paires des communautés plutôt que la dissimilarité entre chaque communauté et un point de référence.
+<p><span class="citation">Bacaro, Gioria, et Ricotta (<a href="references.html#ref-Bacaro2012">2012</a>)</span> préfèrent tester la distribution des dissimilarités entre paires des communautés plutôt que la dissimilarité entre chaque communauté et un point de référence.
 Une statistique F est calculée à partir de ces dissimilarités et comparée à sa distribution obtenue par permutation.
-La méthode de permutation originale est inappropriée et donc corrigée <span class="citation">(<a href="references.html#ref-Bacaro2013a" role="doc-biblioref">Bacaro, Gioria, et Ricotta 2013</a>)</span> : les dissimilarités doivent être redistribuées aléatoirement entre les groupes.</p>
+La méthode de permutation originale est inappropriée et donc corrigée <span class="citation">(<a href="references.html#ref-Bacaro2013a">Bacaro, Gioria, et Ricotta 2013</a>)</span> : les dissimilarités doivent être redistribuées aléatoirement entre les groupes.</p>
 </div>
 </div>
 </div>
@@ -742,7 +743,7 @@ La méthode de permutation originale est inappropriée et donc corrigée <span c
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

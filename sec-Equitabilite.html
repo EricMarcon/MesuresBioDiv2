@@ -7,7 +7,7 @@
 <title>5 Équitabilité | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="L’équitabilité mesure l’écart entre la distribution observée et une distribution uniforme. L’indice de Pielou est la mesure d’équitabilité la plus connue. Il a été généralisé pour permettre de...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="5 Équitabilité | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/sec-Equitabilite.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -125,14 +126,14 @@
 <p>L’équitabilité mesure l’écart entre la distribution observée et une distribution uniforme.</p>
 <p>L’indice de Pielou est la mesure d’équitabilité la plus connue. Il a été généralisé pour permettre de pondérer plus ou moins les espèces rares, de la même façon que l’entropie HCDT.</p>
 </div>
-<p>La régularité d’une distribution est une notion intuitivement assez simple : la faiblesse de l’écart entre la distribution réelle et une distribution parfaitement régulière <span class="citation">(<a href="references.html#ref-Lloyd1964" role="doc-biblioref">Lloyd et Ghelardi 1964</a>)</span>, vérifiant <span class="math inline">\(p_s={1}/{S}\)</span>.
+<p>La régularité d’une distribution est une notion intuitivement assez simple : la faiblesse de l’écart entre la distribution réelle et une distribution parfaitement régulière <span class="citation">(<a href="references.html#ref-Lloyd1964">Lloyd et Ghelardi 1964</a>)</span>, vérifiant <span class="math inline">\(p_s={1}/{S}\)</span>.
 Des difficultés apparaissent quand il s’agit de comparer l’équitabilité de communautés de richesses différentes.
 L’approche axiomatique est présentée, puis les différents indices de la littérature et enfin la généralisation de l’indice de Pielou, en cohérence avec l’entropie HCDT.</p>
 <div id="approche-axiomatique" class="section level2" number="5.1">
 <h2>
 <span class="header-section-number">5.1</span> Approche axiomatique<a class="anchor" aria-label="anchor" href="#approche-axiomatique"><i class="fas fa-link"></i></a>
 </h2>
-<p>Une approche axiomatique a été développée par la littérature, revue par <span class="citation">Jost (<a href="references.html#ref-Jost2010" role="doc-biblioref">2010b</a>)</span> ou <span class="citation">Tuomisto (<a href="references.html#ref-Tuomisto2012" role="doc-biblioref">2012</a>)</span> Les propriétés fondamentales sont les critères de <span class="citation">Dalton (<a href="references.html#ref-Dalton1920" role="doc-biblioref">1920</a>)</span> :</p>
+<p>Une approche axiomatique a été développée par la littérature, revue par <span class="citation">Jost (<a href="references.html#ref-Jost2010">2010b</a>)</span> ou <span class="citation">Tuomisto (<a href="references.html#ref-Tuomisto2012">2012</a>)</span> Les propriétés fondamentales sont les critères de <span class="citation">Dalton (<a href="references.html#ref-Dalton1920">1920</a>)</span> :</p>
 <ul>
 <li>L’équitabilité augmente quand un individu est transféré d’une espèce fréquente à une espèce <span style="white-space:nowrap">rare ;</span>
 </li>
@@ -148,14 +149,14 @@ Figure 5.1: Tuomisto2012
 </p>
 </div>
 <p></p>
-<p>Un critère supplémentaire établi par <span class="citation">B. Smith et Wilson (<a href="references.html#ref-Smith1996" role="doc-biblioref">1996</a>)</span>, complété par <span class="citation">Gosselin (<a href="references.html#ref-Gosselin2001" role="doc-biblioref">2001</a>)</span> est la compatibilité avec la courbe de <span class="citation">Lorenz (<a href="references.html#ref-Lorenz1905" role="doc-biblioref">1905</a>)</span>, construite en classant les espèces de la moins fréquente à la plus fréquente, et en traçant le cumul des fréquences en fonction du rang <span class="citation">(figure <a href="sec-Equitabilite.html#fig:Tuomisto2012">5.1</a>, <a href="references.html#ref-Tuomisto2012" role="doc-biblioref">Tuomisto 2012</a>)</span> : une communauté parfaitement équitable est représentée par la bissectrice.
-La surface entre la courbe réelle et la bissectrice est très utilisée en économie pour mesurer l’inégalité sous le nom d’“indice de Gini” <span class="citation">(<a href="references.html#ref-Gini1912" role="doc-biblioref">Gini 1912</a>; <a href="references.html#ref-Ceriani2012" role="doc-biblioref">Ceriani et Verme 2012</a>)</span> :</p>
+<p>Un critère supplémentaire établi par <span class="citation">B. Smith et Wilson (<a href="references.html#ref-Smith1996">1996</a>)</span>, complété par <span class="citation">Gosselin (<a href="references.html#ref-Gosselin2001">2001</a>)</span> est la compatibilité avec la courbe de <span class="citation">Lorenz (<a href="references.html#ref-Lorenz1905">1905</a>)</span>, construite en classant les espèces de la moins fréquente à la plus fréquente, et en traçant le cumul des fréquences en fonction du rang <span class="citation">(figure <a href="sec-Equitabilite.html#fig:Tuomisto2012">5.1</a>, <a href="references.html#ref-Tuomisto2012">Tuomisto 2012</a>)</span> : une communauté parfaitement équitable est représentée par la bissectrice.
+La surface entre la courbe réelle et la bissectrice est très utilisée en économie pour mesurer l’inégalité sous le nom d’“indice de Gini” <span class="citation">(<a href="references.html#ref-Gini1912">Gini 1912</a>; <a href="references.html#ref-Ceriani2012">Ceriani et Verme 2012</a>)</span> :</p>
 <ul>
 <li>Compatibilité avec la courbe de Lorenz : l’équitabilité augmente pour une communauté si sa courbe de Lorenz est plus proche de la bissectrice.
 Si les courbes de deux communautés se croisent, l’ordre de leurs équitabilités est imprévisible.</li>
 </ul>
-<p>Ce critère est remis en cause par <span class="citation">Ricotta (<a href="references.html#ref-Ricotta2004" role="doc-biblioref">2004b</a>)</span> : il est incompatible <span class="citation">(<a href="references.html#ref-Routledge1983" role="doc-biblioref">Routledge 1983</a>)</span> avec le critère de continuité retenu pour les mesures de diversité : l’introduction d’une espèce supplémentaire avec une probabilité infinitésimale peut modifier considérablement l’équitabilité.</p>
-<p>L’invariance par réplication est une propriété nécessaire (mais pas suffisante) à la compatibilité avec la courbe de Lorenz <span class="citation">(<a href="references.html#ref-Ricotta2004" role="doc-biblioref">Ricotta 2004b</a>)</span> :</p>
+<p>Ce critère est remis en cause par <span class="citation">Ricotta (<a href="references.html#ref-Ricotta2004">2004b</a>)</span> : il est incompatible <span class="citation">(<a href="references.html#ref-Routledge1983">Routledge 1983</a>)</span> avec le critère de continuité retenu pour les mesures de diversité : l’introduction d’une espèce supplémentaire avec une probabilité infinitésimale peut modifier considérablement l’équitabilité.</p>
+<p>L’invariance par réplication est une propriété nécessaire (mais pas suffisante) à la compatibilité avec la courbe de Lorenz <span class="citation">(<a href="references.html#ref-Ricotta2004">Ricotta 2004b</a>)</span> :</p>
 <ul>
 <li>Invariance par réplication : l’équitabilité ne change pas si chaque espèce est remplacée par plusieurs nouvelles espèces ayant la même abondance.</li>
 </ul>
@@ -171,7 +172,7 @@ Si elle est dupliquée, les individus seront répartis dans deux espèces et non
 <h3>
 <span class="header-section-number">5.2.1</span> Indice de Bulla<a class="anchor" aria-label="anchor" href="#indice-de-bulla"><i class="fas fa-link"></i></a>
 </h3>
-<p>L’indice d’équitabilité de <span class="citation">Bulla (<a href="references.html#ref-Bulla1994" role="doc-biblioref">1994</a>)</span> respecte les critères de Smith et Wilson :
+<p>L’indice d’équitabilité de <span class="citation">Bulla (<a href="references.html#ref-Bulla1994">1994</a>)</span> respecte les critères de Smith et Wilson :
 <span class="math display" id="eq:Bulla">\[\begin{equation}
   \tag{5.1}
   O = \sum_s{\min(p_s,\frac{1}{S})}.
@@ -195,22 +196,22 @@ Bulla considère que ce n’est pas le cas si les effectifs sont entiers et four
 <h3>
 <span class="header-section-number">5.2.3</span> Rapports de moyennes<a class="anchor" aria-label="anchor" href="#rapports-de-moyennes"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Taillie (<a href="references.html#ref-Taillie1979" role="doc-biblioref">1979</a>)</span> propose le rapport de la moyenne géométrique ou de la moyenne harmonique à la moyenne arithmétique des probabilités.</p>
+<p><span class="citation">Taillie (<a href="references.html#ref-Taillie1979">1979</a>)</span> propose le rapport de la moyenne géométrique ou de la moyenne harmonique à la moyenne arithmétique des probabilités.</p>
 </div>
 <div id="ratios-de-hill" class="section level3" number="5.2.4">
 <h3>
 <span class="header-section-number">5.2.4</span> Ratios de Hill<a class="anchor" aria-label="anchor" href="#ratios-de-hill"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Hill (<a href="references.html#ref-Hill1973" role="doc-biblioref">1973</a>)</span> utilise les rapports entre nombres effectifs d’espèces d’ordres différents comme mesure d’équitabilité.
-<span class="math inline">\(E_{1,0} = {^{1}\!D}/{^{0}\!D}\)</span> avait déjà été proposé par <span class="citation">Sheldon (<a href="references.html#ref-Sheldon1969" role="doc-biblioref">1969</a>)</span>.
-<span class="citation">Peet (<a href="references.html#ref-Peet1974" role="doc-biblioref">1974</a>)</span> le normalise en retirant au numérateur et au dénominateur leur valeur minimale, c’est-à-dire 1.</p>
-<p>La version normalisée de <span class="math inline">\(E_{2,1}\)</span> est recommandée par <span class="citation">Alatalo (<a href="references.html#ref-Alatalo1981" role="doc-biblioref">1981</a>)</span>.</p>
+<p><span class="citation">Hill (<a href="references.html#ref-Hill1973">1973</a>)</span> utilise les rapports entre nombres effectifs d’espèces d’ordres différents comme mesure d’équitabilité.
+<span class="math inline">\(E_{1,0} = {^{1}\!D}/{^{0}\!D}\)</span> avait déjà été proposé par <span class="citation">Sheldon (<a href="references.html#ref-Sheldon1969">1969</a>)</span>.
+<span class="citation">Peet (<a href="references.html#ref-Peet1974">1974</a>)</span> le normalise en retirant au numérateur et au dénominateur leur valeur minimale, c’est-à-dire 1.</p>
+<p>La version normalisée de <span class="math inline">\(E_{2,1}\)</span> est recommandée par <span class="citation">Alatalo (<a href="references.html#ref-Alatalo1981">1981</a>)</span>.</p>
 </div>
 <div id="synthèse-2" class="section level3" number="5.2.5">
 <h3>
 <span class="header-section-number">5.2.5</span> Synthèse<a class="anchor" aria-label="anchor" href="#synth%C3%A8se-2"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Ricotta et al. (<a href="references.html#ref-Ricotta2001" role="doc-biblioref">2001</a>)</span> testent ces indices sur 65 jeux de données différents pour observer leurs corrélations.
+<p><span class="citation">Ricotta et al. (<a href="references.html#ref-Ricotta2001">2001</a>)</span> testent ces indices sur 65 jeux de données différents pour observer leurs corrélations.
 Tous sont compatibles avec la courbe de Lorenz.
 Ils concluent que les indices se répartissent en deux groupes : la plupart sont sensibles aux abondances relatives des espèces rares.
 <span class="math inline">\(E_{\infty,0}\)</span> et, dans une moindre mesure, <span class="math inline">\(E_{2,0}\)</span> sont plus sensibles aux espèces fréquentes.</p>
@@ -224,13 +225,13 @@ Ils concluent que les indices se répartissent en deux groupes : la plupart son
 <h3>
 <span class="header-section-number">5.3.1</span> Variance de la rareté<a class="anchor" aria-label="anchor" href="#variance-de-la-raret%C3%A9"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Engen (<a href="references.html#ref-Engen1977" role="doc-biblioref">1977</a>)</span> définit comme mesure d’équitabilité la variance de la rareté (la fonction d’information) de l’entropie de Shannon (<span class="math inline">\(-\ln p\)</span>) :
+<p><span class="citation">Engen (<a href="references.html#ref-Engen1977">1977</a>)</span> définit comme mesure d’équitabilité la variance de la rareté (la fonction d’information) de l’entropie de Shannon (<span class="math inline">\(-\ln p\)</span>) :
 <span class="math display" id="eq:Engen1977">\[\begin{equation}
   \tag{5.3}
   E_\mathit{VS} = \sum_{s}{p_s(\ln p_s)^2}-(\sum_s{p_s \ln p_s})^2.
 \end{equation}\]</span></p>
 <p>Sa valeur est nulle si les espèces sont équiprobables.</p>
-<p><span class="citation">Ricotta (<a href="references.html#ref-Ricotta2003b" role="doc-biblioref">2003</a>)</span> généralise cette mesure aux autres fonctions d’information.
+<p><span class="citation">Ricotta (<a href="references.html#ref-Ricotta2003b">2003</a>)</span> généralise cette mesure aux autres fonctions d’information.
 Toutes peuvent être utilisées :</p>
 <p><span class="math display" id="eq:Ricotta2003b">\[\begin{equation}
   \tag{5.4}
@@ -242,7 +243,7 @@ Toutes peuvent être utilisées :</p>
 <h3>
 <span class="header-section-number">5.3.2</span> Non-spécificité<a class="anchor" aria-label="anchor" href="#non-sp%C3%A9cificit%C3%A9"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Ricotta (<a href="references.html#ref-Ricotta2004" role="doc-biblioref">2004b</a>)</span> propose un indice fondé sur les ensembles flous, utilisant les mesures de spécificité <span class="citation">(<a href="references.html#ref-Yager1992" role="doc-biblioref">Yager 1992</a>)</span>.
+<p><span class="citation">Ricotta (<a href="references.html#ref-Ricotta2004">2004b</a>)</span> propose un indice fondé sur les ensembles flous, utilisant les mesures de spécificité <span class="citation">(<a href="references.html#ref-Yager1992">Yager 1992</a>)</span>.
 Les espèces sont classées par probabilité décroissante. La mesure de non-spécificité utilisable comme mesure d’équitabilité est</p>
 <p><span class="math display" id="eq:Ricotta2004">\[\begin{equation}
   \tag{5.5}
@@ -255,7 +256,7 @@ Les espèces sont classées par probabilité décroissante. La mesure de non-sp�
 <h2>
 <span class="header-section-number">5.4</span> Indice de Pielou<a class="anchor" aria-label="anchor" href="#indice-de-pielou"><i class="fas fa-link"></i></a>
 </h2>
-<p>Une expression de l’équitabilité est souvent donnée à partir de l’indice de Shannon <span class="citation">(<a href="references.html#ref-Lloyd1964" role="doc-biblioref">Lloyd et Ghelardi 1964</a>; <a href="references.html#ref-Sheldon1969" role="doc-biblioref">Sheldon 1969</a>; <a href="references.html#ref-Pielou1966a" role="doc-biblioref">Pielou 1966b</a>, <a href="references.html#ref-Pielou1975" role="doc-biblioref">1975</a>)</span>.
+<p>Une expression de l’équitabilité est souvent donnée à partir de l’indice de Shannon <span class="citation">(<a href="references.html#ref-Lloyd1964">Lloyd et Ghelardi 1964</a>; <a href="references.html#ref-Sheldon1969">Sheldon 1969</a>; <a href="references.html#ref-Pielou1966a">Pielou 1966b</a>, <a href="references.html#ref-Pielou1975">1975</a>)</span>.
 La valeur maximale de l’indice de Shannon est obtenue quand la distribution est parfaitement régulière.
 Alors : <span class="math inline">\(H_{\max}=\ln S\)</span>.
 On a donc défini l’indice, souvent appelé “indice de Pielou” :</p>
@@ -273,7 +274,7 @@ On a donc défini l’indice, souvent appelé “indice de Pielou” :</p>
 <h3>
 <span class="header-section-number">5.5.1</span> Mendes et al. <a class="anchor" aria-label="anchor" href="#sec-Mendes"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Mendes et al. (<a href="references.html#ref-Mendes2008" role="doc-biblioref">2008</a>)</span> généralisent l’indice de Pielou en remplaçant l’indice de Shannon par l’entropie de Tsallis.
+<p><span class="citation">Mendes et al. (<a href="references.html#ref-Mendes2008">2008</a>)</span> généralisent l’indice de Pielou en remplaçant l’indice de Shannon par l’entropie de Tsallis.
 Ils définissent</p>
 <p><span class="math display" id="eq:JMendes2008">\[\begin{equation}
   \tag{5.7}
@@ -281,7 +282,7 @@ Ils définissent</p>
 \end{equation}\]</span></p>
 <p>et tracent des profils d’équitabilité, c’est-à-dire la valeur de <span class="math inline">\(^{q}\!J^{*}\)</span> en fonction de <span class="math inline">\(q\)</span>.
 Ils observent que l’équitabilité est minimale pour une valeur particulière de <span class="math inline">\(q\)</span> qu’ils notent <span class="math inline">\(q^*\)</span> et montrent sur des exemples simulés que <span class="math inline">\(q^*\)</span> diminue avec la richesse de la communauté, mais sans en explorer complètement les propriétés.</p>
-<p><span class="math inline">\(^{2}\!J^{*}\)</span> est l’indice d’équitabilité dérivé de l’indice de diversité de Simpson par <span class="citation">Hurlbert (<a href="references.html#ref-Hurlbert1971" role="doc-biblioref">1971</a>)</span>.</p>
+<p><span class="math inline">\(^{2}\!J^{*}\)</span> est l’indice d’équitabilité dérivé de l’indice de diversité de Simpson par <span class="citation">Hurlbert (<a href="references.html#ref-Hurlbert1971">1971</a>)</span>.</p>
 </div>
 <div id="tuomisto" class="section level3" number="5.5.2">
 <h3>
@@ -295,7 +296,7 @@ Ils observent que l’équitabilité est minimale pour une valeur particulière 
   = \frac{^{q}\!D}{S}.
 \end{equation}\]</span></p>
 <p>L’équitabilité d’ordre <span class="math inline">\(q\)</span> est le rapport de la diversité d’ordre <span class="math inline">\(q\)</span> sur la richesse.</p>
-<p>L’idée fondamentale de la notion d’équitabilité est que la mesure de la diversité doit pouvoir être partitionnée en deux composantes indépendantes : la richesse et l’équitabilité <span class="citation">(<a href="references.html#ref-Smith1996" role="doc-biblioref">B. Smith et Wilson 1996</a>)</span>.</p>
+<p>L’idée fondamentale de la notion d’équitabilité est que la mesure de la diversité doit pouvoir être partitionnée en deux composantes indépendantes : la richesse et l’équitabilité <span class="citation">(<a href="references.html#ref-Smith1996">B. Smith et Wilson 1996</a>)</span>.</p>
 </div>
 <div id="jost" class="section level3" number="5.5.3">
 <h3>
@@ -310,7 +311,7 @@ Figure 5.2: Profil d’inéquitabilité de BCI : L’inéquitabilité augmente 
 </p>
 </div>
 <p></p>
-<p><span class="citation">Jost (<a href="references.html#ref-Jost2010" role="doc-biblioref">2010b</a>)</span> montre que l’indépendance est impossible dans le cadre de la décomposition multiplicative : si <span class="math inline">\(^{q}\!E={^{q}\!D/{S}}\)</span>, sa valeur minimale est contrainte par le nombre d’espèces, une communauté pauvre ne peut pas être aussi inéquitable qu’une communauté riche (propriété déjà montrée par <span class="citation">Sheldon (<a href="references.html#ref-Sheldon1969" role="doc-biblioref">1969</a>)</span> ou <span class="citation">Alatalo (<a href="references.html#ref-Alatalo1981" role="doc-biblioref">1981</a>)</span>).
+<p><span class="citation">Jost (<a href="references.html#ref-Jost2010">2010b</a>)</span> montre que l’indépendance est impossible dans le cadre de la décomposition multiplicative : si <span class="math inline">\(^{q}\!E={^{q}\!D/{S}}\)</span>, sa valeur minimale est contrainte par le nombre d’espèces, une communauté pauvre ne peut pas être aussi inéquitable qu’une communauté riche (propriété déjà montrée par <span class="citation">Sheldon (<a href="references.html#ref-Sheldon1969">1969</a>)</span> ou <span class="citation">Alatalo (<a href="references.html#ref-Alatalo1981">1981</a>)</span>).
 En revanche, la richesse peut être partitionnée de façon indépendante en diversité et inéquitabilité : <span class="math inline">\(S={^{q}\!D}/{^{q}\!E}\)</span>.</p>
 <p>L’inéquitabilité <span class="math inline">\(1/{^{q}\!E}\)</span> (figure <a href="sec-Equitabilite.html#fig:ProfilIneqFig">5.2</a>) est un nombre effectif d’espèces : c’est la richesse d’une communauté du même niveau d’équitabilité que la communauté réelle dans laquelle tous les individus (sauf un nombre négligeable) appartiendraient à une seule espèce.</p>
 <p>Code R pour la figure <a href="sec-Equitabilite.html#fig:ProfilIneqFig">5.2</a> :</p>
@@ -329,9 +330,9 @@ En revanche, la richesse peut être partitionnée de façon indépendante en div
 <h3>
 <span class="header-section-number">5.5.4</span> Synthèse<a class="anchor" aria-label="anchor" href="#synth%C3%A8se-3"><i class="fas fa-link"></i></a>
 </h3>
-<p>L’indice de Pielou est le plus utilisé <span class="citation">(<a href="references.html#ref-Tuomisto2012" role="doc-biblioref">Tuomisto 2012</a>)</span> mais n’est pas invariant par réplication parce qu’il ne normalise pas une diversité mais une entropie.
-Il est rejeté pour cette raison <span class="citation">(<a href="references.html#ref-Smith1996" role="doc-biblioref">B. Smith et Wilson 1996</a>; <a href="references.html#ref-Tuomisto2012" role="doc-biblioref">Tuomisto 2012</a>)</span> par une partie de la littérature.
-<span class="citation">Jost (<a href="references.html#ref-Jost2010" role="doc-biblioref">2010b</a>)</span> argumente au contraire en sa faveur : <span class="math inline">\(^{q}\!E\)</span> dépend de la richesse et ne peut donc pas être comparé entre communautés de richesse différente.
+<p>L’indice de Pielou est le plus utilisé <span class="citation">(<a href="references.html#ref-Tuomisto2012">Tuomisto 2012</a>)</span> mais n’est pas invariant par réplication parce qu’il ne normalise pas une diversité mais une entropie.
+Il est rejeté pour cette raison <span class="citation">(<a href="references.html#ref-Smith1996">B. Smith et Wilson 1996</a>; <a href="references.html#ref-Tuomisto2012">Tuomisto 2012</a>)</span> par une partie de la littérature.
+<span class="citation">Jost (<a href="references.html#ref-Jost2010">2010b</a>)</span> argumente au contraire en sa faveur : <span class="math inline">\(^{q}\!E\)</span> dépend de la richesse et ne peut donc pas être comparé entre communautés de richesse différente.
 Le logarithme de <span class="math inline">\(^{q}\!E\)</span> normalisé est une meilleure généralisation de l’indice de Pielou que celle de Mendes et al. :</p>
 <p><span class="math display" id="eq:PielouJq">\[\begin{equation}
   \tag{5.9}
@@ -342,7 +343,7 @@ Le logarithme de <span class="math inline">\(^{q}\!E\)</span> normalisé est une
 <p><span class="math inline">\(^{q}\!J\)</span> varie entre 0 et 1 et est une transformation monotone de <span class="math inline">\(^{q}\!E\)</span> contrairement au <span class="math inline">\(^{q}\!J^{*}\)</span> de Mendes et al. 
 Il est égal au rapport de l’entropie de Rényi sur le logarithme du nombre d’espèces.</p>
 <p>L’estimation de l’équitabilité repose lourdement sur l’estimation du nombre d’espèces, quelle que soit la valeur du paramètre <span class="math inline">\(q\)</span>.
-La solution la plus évidente consiste à corriger le mieux possible le biais d’estimation du nombre d’espèces et celui de l’entropie d’ordre <span class="math inline">\(q\)</span>:</p>
+La solution la plus évidente consiste à corriger le mieux possible le biais d’estimation du nombre d’espèces et celui de l’entropie d’ordre <span class="math inline">\(q\)</span> :</p>
 <p><span class="math display" id="eq:EstJq">\[\begin{equation}
   \tag{5.10}
   ^q\!{\tilde{J}}= \frac{\ln\left(e_q^{^q{\tilde{H}}} \right)}{\ln\tilde{S}}.
@@ -370,16 +371,16 @@ Figure 5.3: Profil d’équitabilité de BCI. L’équitabilité est ici normali
 <span class="header-section-number">5.6</span> Relations empiriques entre richesse et équitabilité<a class="anchor" aria-label="anchor" href="#relations-empiriques-entre-richesse-et-%C3%A9quitabilit%C3%A9"><i class="fas fa-link"></i></a>
 </h2>
 <p>Au-delà de la question des contraintes mathématiques entre richesse et équtabilité traitées précédemment, il s’agit ici des relations entre les deux aspects de la diversité dans des communautés réelles.</p>
-<p><span class="citation">Wilsey et al. (<a href="references.html#ref-Wilsey2005" role="doc-biblioref">2005</a>)</span> passent en revue l’argument selon lequel richesse et équitabilité seraient toujours positivement corrélés.
+<p><span class="citation">Wilsey et al. (<a href="references.html#ref-Wilsey2005">2005</a>)</span> passent en revue l’argument selon lequel richesse et équitabilité seraient toujours positivement corrélés.
 S’il est valide, la richesse peut être considérée comme une mesure suffisante de la diversité.
 À partir d’inventaires de prairies, ils montrent la très faible relation entre les deux valeurs.
-Le suivi temporel de communautés de papillons <span class="citation">(<a href="references.html#ref-MacDonald2016" role="doc-biblioref">MacDonald, Nielsen, et Acorn 2017</a>)</span> met en évidence une relation négative.
+Le suivi temporel de communautés de papillons <span class="citation">(<a href="references.html#ref-MacDonald2016">MacDonald, Nielsen, et Acorn 2017</a>)</span> met en évidence une relation négative.
 Les auteurs de l’étude critiquent un peu naïvement l’utilisation des nombres de Hill pour mesurer la diversité parce qu’ils confondent les effets de la richesse et de l’équitabilité : c’est justement leur but.</p>
-<p>D’un point de vue plus théorique, <span class="citation">DeBenedictis (<a href="references.html#ref-DeBenedictis1973" role="doc-biblioref">1973</a>)</span> étudie les contraintes numériques sur l’intervalle des valeurs possibles de l’entropie de Shannon et de l’équitabilité en fonction de la richesse.
+<p>D’un point de vue plus théorique, <span class="citation">DeBenedictis (<a href="references.html#ref-DeBenedictis1973">1973</a>)</span> étudie les contraintes numériques sur l’intervalle des valeurs possibles de l’entropie de Shannon et de l’équitabilité en fonction de la richesse.
 Il ne prouve pas de corrélation entre ces valeurs pour des communautés réelles mais simplement un lien positif quand les échantillons sont de petite taille et l’effectif minimum de chaque espèce égal à 1 : ces contraintes se relâchent si les donnnées sont des probabilités, pouvant tendre vers 0 pour les espèces rares, ou des abondances dans de grands échantillons.
-Cette approche est similaire à celle de <span class="citation">Jost (<a href="references.html#ref-Jost2010" role="doc-biblioref">2010b</a>)</span>, plus aboutie.</p>
-<p><span class="citation">May (<a href="references.html#ref-May1975" role="doc-biblioref">1975</a>)</span> montre que dans le cadre d’une distribution log-normale, la richesse, l’entropie de Simpson et l’équitabilité de Pielou sont positivement corrélées.
-Ce résultat a été étendu par <span class="citation">G. Stirling et Wilsey (<a href="references.html#ref-Stirling2001" role="doc-biblioref">2001</a>)</span> aux distributions en log-séries et testé dans des communautés réelles avec des conclusions contrastées, notamment des corrélations négatives ntre richesse et équitabilité dans des communautés très riches.</p>
+Cette approche est similaire à celle de <span class="citation">Jost (<a href="references.html#ref-Jost2010">2010b</a>)</span>, plus aboutie.</p>
+<p><span class="citation">May (<a href="references.html#ref-May1975">1975</a>)</span> montre que dans le cadre d’une distribution log-normale, la richesse, l’entropie de Simpson et l’équitabilité de Pielou sont positivement corrélées.
+Ce résultat a été étendu par <span class="citation">G. Stirling et Wilsey (<a href="references.html#ref-Stirling2001">2001</a>)</span> aux distributions en log-séries et testé dans des communautés réelles avec des conclusions contrastées, notamment des corrélations négatives ntre richesse et équitabilité dans des communautés très riches.</p>
 <p>Des simulations permettent de comprendre les corrélations dans des cas simples.</p>
 <p>La figure <a href="sec-Equitabilite.html#fig:SJLogNormaleFig">5.4</a> montre que l’entropie et l’équitabilité sont corrélées positivement à la richesse dans des communautés log-normales de même variance.</p>
 
@@ -511,7 +512,7 @@ Les résultats sont similaires avec des communautés en log-séries : la corré
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

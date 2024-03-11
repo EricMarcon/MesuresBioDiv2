@@ -7,7 +7,7 @@
 <title>14 Tests de significativité | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="Les tests de significativité permettent d’affirmer que des communautés sont réellement différentiées. En complément, les intervalles de confiance des mesures de diversité peuvent être calculés...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="14 Tests de significativité | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/tests-de-significativité.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -133,9 +134,9 @@ Des tests statistiques ont été développés pour rejeter cette hypothèse null
 </h2>
 <p>L’objectif est de tester si deux communautés ne sont pas simplement deux échantillons d’une même communauté, dont les différences ne sont que des fluctuations dues au hasard.
 Sous l’hypothèse nulle, les observations <span class="math inline">\(\hat{q}_{s|i}\)</span> sont des réalisations des mêmes probabilités <span class="math inline">\(p_s\)</span>.
-Il est possible <span class="citation">(<a href="references.html#ref-Crist2003" role="doc-biblioref">Crist et al. 2003</a>)</span> mais controversé <span class="citation">(<a href="references.html#ref-Jones1986" role="doc-biblioref">D. Jones et Matloff 1986</a>)</span> de tester la significativité de la différence entre communautés.
+Il est possible <span class="citation">(<a href="references.html#ref-Crist2003">Crist et al. 2003</a>)</span> mais controversé <span class="citation">(<a href="references.html#ref-Jones1986">D. Jones et Matloff 1986</a>)</span> de tester la significativité de la différence entre communautés.
 Une meilleure approche consiste à calculer l’intervalle de confiance de la diversité <span class="math inline">\(\beta\)</span> due à l’incertitude sur les estimateurs de probabilités.</p>
-<p>Le test est réalisé de la façon suivante <span class="citation">(<a href="references.html#ref-Marcon2014a" role="doc-biblioref">Marcon et al. 2014</a>)</span> :</p>
+<p>Le test est réalisé de la façon suivante <span class="citation">(<a href="references.html#ref-Marcon2014a">Marcon et al. 2014</a>)</span> :</p>
 <ul>
 <li>Les effectifs de chaque communauté <span class="math inline">\(i\)</span> sont tirés dans une loi multinomiale <span class="math inline">\({\mathcal M}(n_{+i},{n_{s,i}}/{n_{+i}})\)</span> et <span class="math inline">\({\tilde{H}}_{\beta}\)</span> est <span style="white-space:nowrap">estimé ;</span>
 </li>
@@ -143,12 +144,12 @@ Une meilleure approche consiste à calculer l’intervalle de confiance de la di
 </ul>
 <p>L’hypothèse nulle est rejetée si la valeur observée de <span class="math inline">\({\tilde{H}}_{\beta}\)</span> n’est pas dans cet intervalle, en général au-delà de la borne supérieure.
 Il peut arriver que les deux communautés soient plus semblables que sous l’hypothèse nulle, c’est-à-dire que les fréquences varient moins que dans le tirage d’une loi multinomiale, si deux communautés ont été créées artificiellement avec le même nombre d’individus de chaque espèce par exemple.</p>
-<p>Lorsque les données sont issues de communautés réelles, le sens même de ce type de test est remis en question <span class="citation">(<a href="references.html#ref-Jones1986" role="doc-biblioref">D. Jones et Matloff 1986</a>)</span> : les communautés réelles ne pouvant pas être exactement identiques, il suffit d’augmenter la taille de l’échantillonnage pour prouver leur différence.</p>
+<p>Lorsque les données sont issues de communautés réelles, le sens même de ce type de test est remis en question <span class="citation">(<a href="references.html#ref-Jones1986">D. Jones et Matloff 1986</a>)</span> : les communautés réelles ne pouvant pas être exactement identiques, il suffit d’augmenter la taille de l’échantillonnage pour prouver leur différence.</p>
 <div id="intervalle-de-confiance" class="section level3" number="14.1.1">
 <h3>
 <span class="header-section-number">14.1.1</span> Intervalle de confiance<a class="anchor" aria-label="anchor" href="#intervalle-de-confiance"><i class="fas fa-link"></i></a>
 </h3>
-<p>L’intervalle de confiance de l’estimateur de <span class="math inline">\(H_{\beta}\)</span> <span class="citation">(<a href="references.html#ref-Marcon2014a" role="doc-biblioref">Marcon et al. 2014</a>)</span> peut être calculé en simulant les communautés par des tirages dans des lois multinomiales suivant leurs fréquences : <span class="math inline">\({\mathcal M}\left(n_{+i},{n_si}/{n_+i}\right)\)</span>.</p>
+<p>L’intervalle de confiance de l’estimateur de <span class="math inline">\(H_{\beta}\)</span> <span class="citation">(<a href="references.html#ref-Marcon2014a">Marcon et al. 2014</a>)</span> peut être calculé en simulant les communautés par des tirages dans des lois multinomiales suivant leurs fréquences : <span class="math inline">\({\mathcal M}\left(n_{+i},{n_si}/{n_+i}\right)\)</span>.</p>
 <p>Si l’intervalle de confiance ne contient pas 0, l’égalité des distributions est rejetée.</p>
 
 <p></p>
@@ -176,7 +177,7 @@ Les résultats sont présentés sous forme de diversité et non d’entropie, la
 <p>Les simulations nécessaires aux tests créent un biais d’estimation : les espèces les plus rares dans les communautés sont souvent éliminées par les tirages.
 La correction du biais des tirages recentre leur distribution autour des valeurs originales des communautés non débiaisées.
 Il n’existe pas de correction analytique pour corriger successivement le biais dû aux simulations (dû à la perte des espèces rares des communautés réelles) puis celui dû à l’échantillonnage des communautés elles-mêmes (dû à la non-observation des espèces rares de la communauté).
-<span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2012a" role="doc-biblioref">2012</a>)</span>, comme <span class="citation">Chao et Jost (<a href="references.html#ref-Chao2015" role="doc-biblioref">2015</a>)</span>, effectuent la deuxième correction par un recentrage de la distribution de <span class="math inline">\(H_{\beta}\)</span> simulée autour de sa valeur observée débiaisée, ce qui permet d’obtenir l’intervalle de confiance de l’estimateur de <span class="math inline">\(H_{\beta}\)</span>.</p>
+<span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2012a">2012</a>)</span>, comme <span class="citation">Chao et Jost (<a href="references.html#ref-Chao2015">2015</a>)</span>, effectuent la deuxième correction par un recentrage de la distribution de <span class="math inline">\(H_{\beta}\)</span> simulée autour de sa valeur observée débiaisée, ce qui permet d’obtenir l’intervalle de confiance de l’estimateur de <span class="math inline">\(H_{\beta}\)</span>.</p>
 </div>
 </div>
 <div id="analyse-de-la-variabilité-1" class="section level2" number="14.2">
@@ -186,8 +187,8 @@ Il n’existe pas de correction analytique pour corriger successivement le biais
 <p>On se place maintenant dans un cadre un peu différent : les communautés sont elles-mêmes obtenues par regroupement de placettes d’échantillonnage.
 Pour tester la significativité de la diversité <span class="math inline">\(\beta\)</span> entre communautés, l’approche pourrait être celle de l’analyse de variance : l’entropie totale de la méta-communauté est la somme des entropies des sites, de l’entropie <span class="math inline">\(\beta\)</span> entre sites des communautés et de l’entropie <span class="math inline">\(\beta\)</span> entre communautés.
 L’entropie <span class="math inline">\(\beta\)</span> inter-communautés pourrait être comparée à l’entropie <span class="math inline">\(\beta\)</span> intra-communautés en calculant une statistique F.
-Cette approche souffre de la dépendance de l’entropie <span class="math inline">\(\beta\)</span> à l’entropie <span class="math inline">\(\alpha\)</span>: si une communauté est plus diverse que l’autre, son entropie <span class="math inline">\(\beta\)</span> sera forcément plus faible.</p>
-<p>Le test correct porte sur la diversité plutôt que sur l’entropie <span class="citation">(<a href="references.html#ref-Richard-Hansen2015" role="doc-biblioref">Richard-Hansen et al. 2015</a>)</span>.
+Cette approche souffre de la dépendance de l’entropie <span class="math inline">\(\beta\)</span> à l’entropie <span class="math inline">\(\alpha\)</span> : si une communauté est plus diverse que l’autre, son entropie <span class="math inline">\(\beta\)</span> sera forcément plus faible.</p>
+<p>Le test correct porte sur la diversité plutôt que sur l’entropie <span class="citation">(<a href="references.html#ref-Richard-Hansen2015">Richard-Hansen et al. 2015</a>)</span>.
 La statistique de test est le ratio de la diversité <span class="math inline">\(\beta\)</span> inter-communautés sur la la diversité <span class="math inline">\(\beta\)</span> intra-communautés.
 Sa valeur observée est comparée à la distribution de sa valeur simulée en redistribuant les placettes aléatoirement dans les communautés.</p>
 </div>
@@ -223,7 +224,7 @@ Sa valeur observée est comparée à la distribution de sa valeur simulée en re
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

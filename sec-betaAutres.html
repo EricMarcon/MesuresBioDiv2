@@ -7,7 +7,7 @@
 <title>15 Autres approches | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="Des définitions différentes de la diversité \(\beta\) ou du partitionnement de la diversité sont présentées ici parce qu’elles sont importantes dans la littérature même si elles n’entrent pas dans...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="15 Autres approches | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/sec-betaAutres.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -134,7 +135,7 @@
 <p></p>
 <div class="inline-table"><table class="table table-striped" style="font-size: 8px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:Couteron">Table 15.1: </span>Tableau d’occurrence des espèces.
+<span id="tab:Couteron">Table 15.1: </span><span id="tab:Couteron">Table 15.2: </span>Tableau d’occurrence des espèces.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -200,7 +201,7 @@ Total
 </tbody>
 </table></div>
 <p></p>
-<p>Un cadre général de partitionnement de la diversité, applicable aux trois indices classiques, est proposé par <span class="citation">Pélissier et Couteron (<a href="references.html#ref-Pelissier2007" role="doc-biblioref">2007</a>)</span>, en conclusion d’une série d’articles <span class="citation">(<a href="references.html#ref-Pelissier2003" role="doc-biblioref">Pélissier et al. 2003</a>; <a href="references.html#ref-Couteron2004" role="doc-biblioref">Couteron et Pélissier 2004</a>)</span>.</p>
+<p>Un cadre général de partitionnement de la diversité, applicable aux trois indices classiques, est proposé par <span class="citation">Pélissier et Couteron (<a href="references.html#ref-Pelissier2007">2007</a>)</span>, en conclusion d’une série d’articles <span class="citation">(<a href="references.html#ref-Pelissier2003">Pélissier et al. 2003</a>; <a href="references.html#ref-Couteron2004">Couteron et Pélissier 2004</a>)</span>.</p>
 <p>Les données sont désagrégées jusqu’au niveau de l’individu.
 Suivant les notations précédentes, les placettes sont considérées comme le regroupement d’arbres, indicés par <span class="math inline">\(h\)</span>.</p>
 <p>Le tableau <a href="sec-betaAutres.html#tab:Couteron">15.1</a> est appelé tableau d’occurrence des espèces.
@@ -209,7 +210,7 @@ Chaque arbre (colonne) a une seule valeur 1 dans la cellule correspondant à son
 <p>Un arbre moyen s’il pouvait exister appartiendrait partiellement à chaque espèce, proportionnellement à son effectif.
 Chaque arbre <span class="math inline">\(h\)</span> apporte une quantité d’information égale à la somme sur toutes les espèces des écarts quadratiques entre la valeur <span class="math inline">\(n_{sh}\)</span>, indicatrice de son appartenance à l’espèce <span class="math inline">\(s\)</span>, et la valeur <span class="math inline">\(n_{s\cdot }\)</span> correspondant à l’arbre moyen : <span class="math inline">\(\sum_s{{\left(n_{sh}-n_{s\cdot }\right)}^2}\)</span>.
 La somme peut être pondérée pour donner une importance plus ou moins grande des espèces selon leur fréquence : <span class="math inline">\(\sum_s{{w_s\left(n_{sh}-n_{s\cdot }\right)}^2}\)</span>.
-La mesure totale, sommée sur tous les arbres, est notée <span class="math inline">\(\mathit{TSS}\)</span>:</p>
+La mesure totale, sommée sur tous les arbres, est notée <span class="math inline">\(\mathit{TSS}\)</span> :</p>
 <p><span class="math display" id="eq:TSS">\[\begin{equation}
   \tag{15.1}
   \mathit{TSS} = \sum_s{w_s\sum_h{{\left(n_{sh}-n_{s\cdot}\right)}^2}}.
@@ -241,16 +242,16 @@ Le modèle est alors celui de la décomposition de l’indice de Simpson présen
 <h2>
 <span class="header-section-number">15.2</span> Diversité de Kosman<a class="anchor" aria-label="anchor" href="#diversit%C3%A9-de-kosman"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Kosman (<a href="references.html#ref-Kosman2013" role="doc-biblioref">2013</a>)</span> nomme <em>diversité génétique</em> la diversité des individus d’une population (non regroupés par espèces) pour lesquels une mesure de dissimilarité a été choisie.
-Les mesures de dissimilarité acceptables <span class="citation">(<a href="references.html#ref-Kosman2005" role="doc-biblioref">Kosman et Leonard 2005</a>)</span> sont par exemple les mêmes que celles utilisées pour la diversité <span class="math inline">\(\beta\)</span> des communautés appliquées aux présences/absences de bandes de profils AFLP.</p>
+<p><span class="citation">Kosman (<a href="references.html#ref-Kosman2013">2013</a>)</span> nomme <em>diversité génétique</em> la diversité des individus d’une population (non regroupés par espèces) pour lesquels une mesure de dissimilarité a été choisie.
+Les mesures de dissimilarité acceptables <span class="citation">(<a href="references.html#ref-Kosman2005">Kosman et Leonard 2005</a>)</span> sont par exemple les mêmes que celles utilisées pour la diversité <span class="math inline">\(\beta\)</span> des communautés appliquées aux présences/absences de bandes de profils AFLP.</p>
 <p>La mesure de dissimilarité moyenne entre les individus, notée <span class="math inline">\(ADW_{\rho}\)</span> pour <em>Average Dissimilarity Within</em>, où <span class="math inline">\(\rho\)</span> représente la dissimilarité choisie, est simplement l’entropie quadratique de Rao.
-Si la dissimilarité n’est pas euclidienne, la concavité de <span class="math inline">\(ADW_{\rho}\)</span> n’est pas garantie, ce qui motive Kosman à proposer une autre mesure <span class="citation">(<a href="references.html#ref-Kosman1996" role="doc-biblioref">Kosman 1996</a>; <a href="references.html#ref-Kosman2007" role="doc-biblioref">Kosman et Leonard 2007</a>)</span>, <span class="math inline">\({KW}_{\rho}\)</span>, qui est la dissimilarité moyenne des <span class="math inline">\(n\)</span> paires d’individus les plus dissimilaires (au lieu de toutes les <span class="math inline">\({n(n-1)}/{2}\)</span> paires).
-Les <span class="math inline">\(n\)</span> paires d’individus sont construites de façon que chaque individu apparaisse une fois en tant que premier et une fois en tant que second membre de la paire, selon un algorithme non trivial <span class="citation">(<a href="references.html#ref-Bellman1970" role="doc-biblioref">Bellman, Cooke, et Lockett 1970</a>)</span>.
+Si la dissimilarité n’est pas euclidienne, la concavité de <span class="math inline">\(ADW_{\rho}\)</span> n’est pas garantie, ce qui motive Kosman à proposer une autre mesure <span class="citation">(<a href="references.html#ref-Kosman1996">Kosman 1996</a>; <a href="references.html#ref-Kosman2007">Kosman et Leonard 2007</a>)</span>, <span class="math inline">\({KW}_{\rho}\)</span>, qui est la dissimilarité moyenne des <span class="math inline">\(n\)</span> paires d’individus les plus dissimilaires (au lieu de toutes les <span class="math inline">\({n(n-1)}/{2}\)</span> paires).
+Les <span class="math inline">\(n\)</span> paires d’individus sont construites de façon que chaque individu apparaisse une fois en tant que premier et une fois en tant que second membre de la paire, selon un algorithme non trivial <span class="citation">(<a href="references.html#ref-Bellman1970">Bellman, Cooke, et Lockett 1970</a>)</span>.
 Tous les individus contribuent donc à la mesure de la diversité.</p>
 <p>Pour un assemblage de <span class="math inline">\(I\)</span> populations, la diversité de Kosman <span class="math inline">\({KW}_{\rho}\)</span> de l’assemblage des populations est toujours plus grande que la moyenne des diversités intra-populations <span class="math inline">\({KW}_{\rho}\)</span> pondérées par le poids des populations (c’est-à-dire la diversité <span class="math inline">\(\alpha\)</span> selon la définition de Routledge) parce que <span class="math inline">\({KW}_{\rho}\)</span> est concave.
 La différence est la diversité entre populations, interprétable comme une diversité <span class="math inline">\(\beta\)</span> selon la définition additive de la décomposition.</p>
 <p>Pour obtenir une diversité <span class="math inline">\(\beta\)</span> indépendante des diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span>, Kosman définit <span class="math inline">\({KA}_{d}\)</span> comme la moyenne des distances entre les <span class="math inline">\(I\)</span> paires de populations assignées selon le même algorithme que précédemment.
-La distance entre populations <span class="math inline">\(d\)</span> est de préférence la distance de Kosman entre populations, <span class="math inline">\({KB}_{\rho}\)</span>: la moyenne des <span class="math inline">\(n\)</span> paires d’individus appartenant chacun à une population les plus dissimilaires (si la taille des populations n’est pas identique, un échantillon de la plus grande population de la taille de la plus petite est tiré aléatoirement, la valeur moyenne de la distance obtenue sur plusieurs tirages est calculée).
+La distance entre populations <span class="math inline">\(d\)</span> est de préférence la distance de Kosman entre populations, <span class="math inline">\({KB}_{\rho}\)</span> : la moyenne des <span class="math inline">\(n\)</span> paires d’individus appartenant chacun à une population les plus dissimilaires (si la taille des populations n’est pas identique, un échantillon de la plus grande population de la taille de la plus petite est tiré aléatoirement, la valeur moyenne de la distance obtenue sur plusieurs tirages est calculée).
 La diversité <span class="math inline">\(\gamma\)</span> est la somme de la moyenne des diversités intra-populations <span class="math inline">\({KW}_{\rho}\)</span> pondérées par le poids des populations et de la diversité inter-populations <span class="math inline">\({KA}_{d}\)</span>.
 Ce n’est pas la diversité <span class="math inline">\({KW}_{\rho}\)</span> de l’assemblage des populations, ce qui limite fortement l’intérêt de cette approche.</p>
 
@@ -290,7 +291,7 @@ Ce n’est pas la diversité <span class="math inline">\({KW}_{\rho}\)</span> de
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

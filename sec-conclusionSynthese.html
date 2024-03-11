@@ -7,7 +7,7 @@
 <title>24 Synthèse | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="La biodiversité peut être mesurée de nombreuses façons. La dualité entropie-diversité fournit un cadre clair et rigoureux pour le faire. D’autres mesures de diversité ont été présentées ici,...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="24 Synthèse | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/sec-conclusionSynthese.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -142,7 +143,7 @@ Figure 24.1: Généralisation des mesures classiques de diversité. La figure pr
 <p>L’entropie est la surprise moyenne fournie par les individus d’une communauté.
 Le choix de la fonction d’information qui mesure cette surprise à partir des probabilités d’occurrence des espèces (ou d’autres catégories) permet de définir les mesures de diversités neutres, fonctionnelles ou phylogénétique présentées ici.</p>
 <p>L’entropie est transformée en diversité au sens strict par une fonction croissante (l’exponentielle déformée), ce qui simplifie son interprétation en tant que nombre équivalent d’espèces, dans une distribution idéale dans laquelle toutes les espèces seraient équifréquentes.</p>
-<p><span class="citation">Chao, Chiu, et Jost (<a href="references.html#ref-Chao2014a" role="doc-biblioref">2014</a>)</span> proposent un cadre fondé exclusivement sur les nombres de Hill sans référence à l’entropie.
+<p><span class="citation">Chao, Chiu, et Jost (<a href="references.html#ref-Chao2014a">2014</a>)</span> proposent un cadre fondé exclusivement sur les nombres de Hill sans référence à l’entropie.
 Les principales différences avec celui présenté ici concernent la définition de la diversité <span class="math inline">\(\alpha\)</span> et donc celle de la diversité <span class="math inline">\(\beta\)</span>.</p>
 <p>L’entropie phylogénétique généralise les indices de diversité classique (figure <a href="sec-conclusionSynthese.html#fig:ConclusionFig">24.1</a>), intègre si nécessaire la distance entre espèces, peut être décomposée et corrigée des biais d’estimation.
 Sa transformation en diversité au sens strict permet d’interpréter les valeurs sous une forme unique : un nombre équivalent d’espèces et un nombre équivalent de communautés.
@@ -150,11 +151,11 @@ La diversité de Leinster et Cobbold généralise à son tour la diversité phyl
 Le paramétrage des mesures (l’ordre de la diversité) permet de donner plus ou moins d’importance aux espèces rares et de tracer des profils de diversité.</p>
 <p>Les communautés et assemblages idéals définissant les nombres équivalents d’espèces et de communautés sont :</p>
 <ul>
-<li>des communautés d’espèces équiprobables <span class="citation">(<a href="references.html#ref-Hill1973" role="doc-biblioref">Hill 1973</a>)</span>, dont l’ancêtre commun est la racine de l’arbre phylogénétique (diversité phylogénétique)<span class="citation">(<a href="references.html#ref-Marcon2014b" role="doc-biblioref">Marcon et Hérault 2015a</a>)</span> ou dont la distance fonctionnelle est maximale (diversité fonctionnelle) <span class="citation">(<a href="references.html#ref-Leinster2012" role="doc-biblioref">Leinster et Cobbold 2012</a>)</span><span style="white-space:nowrap"> ;</span>
+<li>des communautés d’espèces équiprobables <span class="citation">(<a href="references.html#ref-Hill1973">Hill 1973</a>)</span>, dont l’ancêtre commun est la racine de l’arbre phylogénétique (diversité phylogénétique)<span class="citation">(<a href="references.html#ref-Marcon2014b">Marcon et Hérault 2015a</a>)</span> ou dont la distance fonctionnelle est maximale (diversité fonctionnelle) <span class="citation">(<a href="references.html#ref-Leinster2012">Leinster et Cobbold 2012</a>)</span><span style="white-space:nowrap"> ;</span>
 </li>
-<li>une méta-communauté contenant des communautés de poids égal et totalement distinctes <span class="citation">(<a href="references.html#ref-Jost2007" role="doc-biblioref">Jost 2007</a>)</span>, c’est-à-dire n’ayant aucune espèce en commun. De plus, la distance fonctionnelle ou phylogénétique est maximale entre deux espèces quelconques appartenant à des communautés différentes <span class="citation">(<a href="references.html#ref-Pavoine2015a" role="doc-biblioref">Pavoine, Marcon, et Ricotta 2016</a>)</span>.</li>
+<li>une méta-communauté contenant des communautés de poids égal et totalement distinctes <span class="citation">(<a href="references.html#ref-Jost2007">Jost 2007</a>)</span>, c’est-à-dire n’ayant aucune espèce en commun. De plus, la distance fonctionnelle ou phylogénétique est maximale entre deux espèces quelconques appartenant à des communautés différentes <span class="citation">(<a href="references.html#ref-Pavoine2015a">Pavoine, Marcon, et Ricotta 2016</a>)</span>.</li>
 </ul>
-<p>Le package <em>entropart</em><span class="citation">(<a href="references.html#ref-Marcon2014c" role="doc-biblioref">Marcon et Hérault 2015b</a>)</span> permet de calculer avec R la diversité d’une méta-communauté à partir de données d’abondances et d’un arbre (diversité phylogénétique) ou d’une matrice de distances (diversité fonctionnelle).</p>
+<p>Le package <em>entropart</em><span class="citation">(<a href="references.html#ref-Marcon2014c">Marcon et Hérault 2015b</a>)</span> permet de calculer avec R la diversité d’une méta-communauté à partir de données d’abondances et d’un arbre (diversité phylogénétique) ou d’une matrice de distances (diversité fonctionnelle).</p>
 </div>
 <div id="ordres-particuliers-de-diversité" class="section level2" number="24.2">
 <h2>
@@ -198,20 +199,20 @@ Cette propriété permet de représenter dans un même espace les espèces et le
 </h2>
 <p>Les principales limites des mesures de diversité sont d’ordre conceptuel et pratique.
 L’axiome de symétrie interdit de donner un rôle particulier à une espèce.
-Il n’est donc pas possible conceptuellement de prendre en compte les espèces focales <span class="citation">(<a href="references.html#ref-Zacharias2001" role="doc-biblioref">Zacharias et Roff 2001</a>)</span> dans la quantification de la diversité : espèces emblématiques, espèces clé de voûte <span class="citation">(<a href="references.html#ref-Paine1969" role="doc-biblioref">Paine 1969</a>)</span>, espèces parapluie <span class="citation">(<a href="references.html#ref-Roberge2004" role="doc-biblioref">Roberge et Angelstam 2004</a>)</span>, espèces ingénieures <span class="citation">(<a href="references.html#ref-Jones1994" role="doc-biblioref">C. G. Jones, Lawton, et Shachak 1994</a>)</span>….
+Il n’est donc pas possible conceptuellement de prendre en compte les espèces focales <span class="citation">(<a href="references.html#ref-Zacharias2001">Zacharias et Roff 2001</a>)</span> dans la quantification de la diversité : espèces emblématiques, espèces clé de voûte <span class="citation">(<a href="references.html#ref-Paine1969">Paine 1969</a>)</span>, espèces parapluie <span class="citation">(<a href="references.html#ref-Roberge2004">Roberge et Angelstam 2004</a>)</span>, espèces ingénieures <span class="citation">(<a href="references.html#ref-Jones1994">C. G. Jones, Lawton, et Shachak 1994</a>)</span>….
 Leur présence peut être décisive pour la conservation, mais il s’agit clairement d’une question distincte de celle de la diversité.</p>
 <p>Sur le plan pratique, la mesure de la diversité se réduit souvent à un groupe biologique (dans ce document, les arbres).
 Estimer la biodiversité totale est un objectif hors d’atteinte.
-L’étendue spatiale à laquelle des données d’abondance sont accessibles est souvent trop réduite <span class="citation">(<a href="references.html#ref-Chiarucci2011" role="doc-biblioref">Chiarucci, Bacaro, et Scheiner 2011</a>)</span>.
-Si la diversité à prendre en compte est au-delà des données disponibles, il est nécessaire d’utiliser des <em>indicateurs</em> <span class="citation">(<a href="references.html#ref-Balmford2003" role="doc-biblioref">Balmford, Green, et Jenkins 2003</a>)</span> qui peuvent être la diversité d’un ou quelques groupes représentatifs, voire la présence d’espèces indicatrices <span class="citation">(<a href="references.html#ref-Clements1916" role="doc-biblioref">Clements 1916</a>)</span>.
+L’étendue spatiale à laquelle des données d’abondance sont accessibles est souvent trop réduite <span class="citation">(<a href="references.html#ref-Chiarucci2011">Chiarucci, Bacaro, et Scheiner 2011</a>)</span>.
+Si la diversité à prendre en compte est au-delà des données disponibles, il est nécessaire d’utiliser des <em>indicateurs</em> <span class="citation">(<a href="references.html#ref-Balmford2003">Balmford, Green, et Jenkins 2003</a>)</span> qui peuvent être la diversité d’un ou quelques groupes représentatifs, voire la présence d’espèces indicatrices <span class="citation">(<a href="references.html#ref-Clements1916">Clements 1916</a>)</span>.
 Des indicateurs indirects sont la diversité des habitats ou même l’étendue de certains habitats reconnus comme les plus favorables à un haut niveau de diversité.
-Une réflexion en cours <span class="citation">(<a href="references.html#ref-Pereira2013" role="doc-biblioref">Pereira et al. 2013</a>)</span> consiste à établir une liste de variables pertinentes (<em>Essential biodiversity variables</em>) qui puissent constituer des indicateurs standardisés à l’échelle globale pour permettre la comparaison des données.
-Les indicateurs dévient souvent de la notion stricte de diversité et peuvent mesurer tout autre chose, comme l’indice BII <span class="citation">(<em>Biodiversity Intactness Index</em>, <a href="references.html#ref-Scholes2005" role="doc-biblioref">Scholes et Biggs 2005</a>)</span> qui est la moyenne pondérée par la surface des habitats et le nombre d’espèces concernées de la variation des effectifs des populations induite par l’anthropisation.
+Une réflexion en cours <span class="citation">(<a href="references.html#ref-Pereira2013">Pereira et al. 2013</a>)</span> consiste à établir une liste de variables pertinentes (<em>Essential biodiversity variables</em>) qui puissent constituer des indicateurs standardisés à l’échelle globale pour permettre la comparaison des données.
+Les indicateurs dévient souvent de la notion stricte de diversité et peuvent mesurer tout autre chose, comme l’indice BII <span class="citation">(<em>Biodiversity Intactness Index</em>, <a href="references.html#ref-Scholes2005">Scholes et Biggs 2005</a>)</span> qui est la moyenne pondérée par la surface des habitats et le nombre d’espèces concernées de la variation des effectifs des populations induite par l’anthropisation.
 Les effectifs ne sont pas pris en compte dans la mesure de la diversité (sauf dans le calcul des biais d’estimation), seules les proportions importent : l’indice BII mesure donc la dégradation des habitats plus que la variation de la biodiversité.
-L’argument, développé par <span class="citation">Balmford, Green, et Jenkins (<a href="references.html#ref-Balmford2003" role="doc-biblioref">2003</a>)</span>, est que la diminution des effectifs des espèces suivies est corrélé à la disparition des espèces plus <span style="white-space:nowrap">vulnérables ;</span> l’effectif d’une population est aussi un indicateur de sa diversité génétique.
-La moyenne géométrique des abondances relatives <span class="citation">(<a href="references.html#ref-Buckland2011" role="doc-biblioref">Buckland et al. 2011</a>)</span> compare les abondances des espèces au cours du temps à leur valeur initiale.
-L’indice LPI (<em>Living Planet Index</em>) <span class="citation">(<a href="references.html#ref-Loh2005" role="doc-biblioref">Loh et al. 2005</a>)</span> s’appuie sur ce même principe : il mesure l’évolution dans le temps des effectifs d’un grand nombre de populations de vertébrés.
-Une approche similaire mais plus exhaustive <span class="citation">(<a href="references.html#ref-Ceballos2017" role="doc-biblioref">Ceballos, Ehrlich, et Dirzo 2017</a>)</span> montre une très forte probabilité d’extinction massive à venir.</p>
+L’argument, développé par <span class="citation">Balmford, Green, et Jenkins (<a href="references.html#ref-Balmford2003">2003</a>)</span>, est que la diminution des effectifs des espèces suivies est corrélé à la disparition des espèces plus <span style="white-space:nowrap">vulnérables ;</span> l’effectif d’une population est aussi un indicateur de sa diversité génétique.
+La moyenne géométrique des abondances relatives <span class="citation">(<a href="references.html#ref-Buckland2011">Buckland et al. 2011</a>)</span> compare les abondances des espèces au cours du temps à leur valeur initiale.
+L’indice LPI (<em>Living Planet Index</em>) <span class="citation">(<a href="references.html#ref-Loh2005">Loh et al. 2005</a>)</span> s’appuie sur ce même principe : il mesure l’évolution dans le temps des effectifs d’un grand nombre de populations de vertébrés.
+Une approche similaire mais plus exhaustive <span class="citation">(<a href="references.html#ref-Ceballos2017">Ceballos, Ehrlich, et Dirzo 2017</a>)</span> montre une très forte probabilité d’extinction massive à venir.</p>
 <p>La recherche sur la mesure de la diversité est très active, ce document évolue donc régulièrement pour prendre en compte les avancées récentes.</p>
 
 </div>
@@ -249,7 +250,7 @@ Une approche similaire mais plus exhaustive <span class="citation">(<a href="ref
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -7,7 +7,7 @@
 <title>2 Outils | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="La diversité peut être décrite localement par une courbe d’accumulation (SAC) qui représente le nombre d’espèces échantillonnées en fonction de l’effort. À une échelle plus large, cette courbe...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="2 Outils | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-Outils.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -166,7 +167,7 @@ Une SAC peut être tracée en fonction de la surface, du nombre d’individus ou
 <p></p>
 <p>Les courbes d’accumulation peuvent aussi concerner la diversité (voir le chapitre <a href="chap-Accumulation.html#chap-Accumulation">21</a>), mesurée au-delà du nombre d’espèces.</p>
 <p>Plus généralement, une courbe aire-espèces (SAR : <em>Species Area Relationship</em>) représente le nombre d’espèces observées en fonction de la surface échantillonnée (figure <a href="diversit%C3%A9-r%C3%A9gionale.html#fig:Williamson2001">22.1</a>).
-Il existe plusieurs façons de prendre en compte cette relation <span class="citation">(<a href="references.html#ref-Scheiner2003" role="doc-biblioref">Scheiner 2003</a>)</span>, classables en deux grandes familles <span class="citation">(<a href="references.html#ref-Dengler2009" role="doc-biblioref">Dengler 2009</a>)</span> :</p>
+Il existe plusieurs façons de prendre en compte cette relation <span class="citation">(<a href="references.html#ref-Scheiner2003">Scheiner 2003</a>)</span>, classables en deux grandes familles <span class="citation">(<a href="references.html#ref-Dengler2009">Dengler 2009</a>)</span> :</p>
 <ul>
 <li>Dans une SAR au sens strict, chaque point représente une communauté.
 La question traitée est la relation entre le nombre d’espèces et la taille de chaque communauté, en lien avec des processus <span style="white-space:nowrap">écologiques ;</span>
@@ -194,17 +195,17 @@ La diversité peut aussi être estimée pour un effort donné : un hectare de f
 <h3>
 <span class="header-section-number">2.3.1</span> Formule des fréquences de Good-Turing<a class="anchor" aria-label="anchor" href="#formule-des-fr%C3%A9quences-de-good-turing"><i class="fas fa-link"></i></a>
 </h3>
-<p>La relation fondamentale entre les fréquences des espèces dans un échantillon est due à Turing et a été publiée par <span class="citation">Good (<a href="references.html#ref-Good1953" role="doc-biblioref">1953</a>)</span>.
+<p>La relation fondamentale entre les fréquences des espèces dans un échantillon est due à Turing et a été publiée par <span class="citation">Good (<a href="references.html#ref-Good1953">1953</a>)</span>.
 En absence de toute information sur la loi de distribution des espèces, en supposant seulement que les individus sont tirés indépendamment les uns des autres selon une loi multinomiale respectant ces probabilités, la formule de Good-Turing relie la probabilité moyenne <span class="math inline">\(\alpha_\nu\)</span> d’une espèce représentée <span class="math inline">\(\nu\)</span> fois (c’est-à-dire par <span class="math inline">\(\nu\)</span> individus) au rapport entre les nombres d’espèces représentées <span class="math inline">\(\nu+1\)</span> fois et <span class="math inline">\(\nu\)</span> fois :</p>
 <p><span class="math display" id="eq:alphanu">\[\begin{equation}
   \tag{2.1}
   \alpha_\nu \approx \frac{(\nu+1)}{n} \frac{s^{n}_{\nu+1}}{s^{n}_{\nu}}.
 \end{equation}\]</span></p>
-<p>Les singletons (<span class="math inline">\(s^{n}_{1}\)</span>: le nombre d’espèces observées une seule fois) et les doubletons (<span class="math inline">\(s^{n}_{2}\)</span>: le nombre d’espèces observées deux fois) ont une importance centrale.
-Pour <span class="math inline">\(\nu=1\)</span>, on a : <span class="math inline">\(\alpha_1 = 2 s^{n}_{2}/(ns^{n}_{1})\)</span>: la fréquence d’une espèce typiquement représentée par un singleton est proportionnelle au rapport entre le nombre des doubletons et des singletons.
+<p>Les singletons (<span class="math inline">\(s^{n}_{1}\)</span> : le nombre d’espèces observées une seule fois) et les doubletons (<span class="math inline">\(s^{n}_{2}\)</span> : le nombre d’espèces observées deux fois) ont une importance centrale.
+Pour <span class="math inline">\(\nu=1\)</span>, on a : <span class="math inline">\(\alpha_1 = 2 s^{n}_{2}/(ns^{n}_{1})\)</span> : la fréquence d’une espèce typiquement représentée par un singleton est proportionnelle au rapport entre le nombre des doubletons et des singletons.
 Pour <span class="math inline">\(\nu=0\)</span>, l’ignorance du nombre d’espèces non échantillonnées <span class="math inline">\(s^{n}_{0}\)</span> pose problème mais le produit <span class="math inline">\(\alpha_0 \times s^{n}_{0} = \pi_0\)</span>, la probabilité totale des espèces non représentées, peut être estimée par <span class="math inline">\(s^{n}_{1}/n\)</span>.
 Ces relations sont le fondement des estimateurs de richesse de Chao présentées ci-dessous.</p>
-<p>La relation a été précisée <span class="citation">(<a href="references.html#ref-Chiu2014a" role="doc-biblioref">Chiu et al. 2014</a>, eq. 6 et 7a)</span> en limitant les approximations dans les calculs.
+<p>La relation a été précisée <span class="citation">(<a href="references.html#ref-Chiu2014a">Chiu et al. 2014</a>, eq. 6 et 7a)</span> en limitant les approximations dans les calculs.
 La seule nécessaire est que les probabilités des espèces représentées le même nombre de fois <span class="math inline">\(\nu\)</span> varient peu et puissent être considérées toutes égales à <span class="math inline">\(\alpha_\nu\)</span>.
 Alors, <span class="math inline">\(\alpha_\nu\)</span> est estimé par
 <span class="math display" id="eq:GoodTuring2014">\[\begin{equation}
@@ -217,7 +218,7 @@ Alors, <span class="math inline">\(\alpha_\nu\)</span> est estimé par
 <h3>
 <span class="header-section-number">2.3.2</span> Taux de couverture et déficit de couverture<a class="anchor" aria-label="anchor" href="#taux-de-couverture-et-d%C3%A9ficit-de-couverture"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Good (<a href="references.html#ref-Good1953" role="doc-biblioref">1953</a>)</span> définit le taux de couverture (<em>sample coverage</em>) de l’échantillonnage comme la proportion des espèces découvertes,
+<p><span class="citation">Good (<a href="references.html#ref-Good1953">1953</a>)</span> définit le taux de couverture (<em>sample coverage</em>) de l’échantillonnage comme la proportion des espèces découvertes,
 <span class="math display" id="eq:C">\[\begin{equation}
   \tag{2.3}
   C=\sum^S_{s=1}{{\mathbf 1}\left(n_s&gt;0\right)p_s},
@@ -226,34 +227,34 @@ Alors, <span class="math inline">\(\alpha_\nu\)</span> est estimé par
 Son complément à 1 est appelé déficit de couverture (<em>coverage deficit</em>).</p>
 <p>Le taux de couverture augmente avec l’effort d’échantillonnage.
 Plus il est élevé, meilleures seront les estimations de la diversité.
-Pour comparer deux communautés par des courbes de raréfaction, <span class="citation">Chao et Jost (<a href="references.html#ref-Chao2012b" role="doc-biblioref">2012</a>)</span> montrent que le taux de couverture plutôt que la taille de l’échantillon doit être identique.
-Les estimateurs de la diversité développés plus loin reposent largement sur cette notion pour la correction du biais d’échantillonnage <span class="citation">(<a href="references.html#ref-Dauby2012" role="doc-biblioref">Dauby et Hardy 2012</a>)</span> (la sous-estimation systématique de la diversité due aux espèces non observées, un des éléments du biais d’estimation).</p>
+Pour comparer deux communautés par des courbes de raréfaction, <span class="citation">Chao et Jost (<a href="references.html#ref-Chao2012b">2012</a>)</span> montrent que le taux de couverture plutôt que la taille de l’échantillon doit être identique.
+Les estimateurs de la diversité développés plus loin reposent largement sur cette notion pour la correction du biais d’échantillonnage <span class="citation">(<a href="references.html#ref-Dauby2012">Dauby et Hardy 2012</a>)</span> (la sous-estimation systématique de la diversité due aux espèces non observées, un des éléments du biais d’estimation).</p>
 <p>L’estimateur du taux de couverture, que Good attribue à Turing, est selon la relation des fréquences vues plus haut :</p>
 <p><span class="math display" id="eq:CGood">\[\begin{equation}
   \tag{2.4}
   \hat{C} = 1-\frac{s^{n}_{1}}{n}.
 \end{equation}\]</span></p>
-<p>Cet estimateur est biaisé <span class="citation">(<a href="references.html#ref-Zhang2007" role="doc-biblioref">Z. Zhang et Huang 2007</a>)</span>. En réalité,
+<p>Cet estimateur est biaisé <span class="citation">(<a href="references.html#ref-Zhang2007">Z. Zhang et Huang 2007</a>)</span>. En réalité,
 <span class="math display" id="eq:CsansBiais">\[\begin{equation}
   \tag{2.5}
   C = 1-\frac{{\mathbb E}(S^{n}_{1}) - \pi_1}{n}.
 \end{equation}\]</span></p>
 <p>L’estimateur de Good néglige le terme <span class="math inline">\(\pi_1\)</span>, la somme des probabilités des espèces observées une fois.
 Ce terme peut être estimé avec un biais plus petit.
-<span class="citation">Chao, Lee, et Chen (<a href="references.html#ref-Chao1988" role="doc-biblioref">1988</a>)</span> puis <span class="citation">Z. Zhang et Huang (<a href="references.html#ref-Zhang2007" role="doc-biblioref">2007</a>)</span> proposent l’estimateur suivant, qui utilise toute l’information disponible et a le plus petit biais possible :</p>
+<span class="citation">Chao, Lee, et Chen (<a href="references.html#ref-Chao1988">1988</a>)</span> puis <span class="citation">Z. Zhang et Huang (<a href="references.html#ref-Zhang2007">2007</a>)</span> proposent l’estimateur suivant, qui utilise toute l’information disponible et a le plus petit biais possible :</p>
 <p><span class="math display" id="eq:CZhang">\[\begin{equation}
   \tag{2.6}
   \hat{C}=1-\sum^{n}_{\nu=1}{\left(-1\right)}^{\nu+1}{\binom{n}{\nu}}^{-1}s^{n}_{\nu}.
 \end{equation}\]</span></p>
 <p>Les termes de la somme décroissent très vite avec <span class="math inline">\(\nu\)</span>.
 En se limitant à <span class="math inline">\(\nu=1\)</span>, l’estimateur se réduit à celui de Good.</p>
-<p><span class="citation">Esty (<a href="references.html#ref-Esty1983" role="doc-biblioref">1983</a>)</span>, complété par <span class="citation">C.-H. Zhang et Zhang (<a href="references.html#ref-Zhang2009" role="doc-biblioref">2009</a>)</span>, a montré que l’estimateur était asymptotiquement normal et a calculé l’intervalle de confiance de <span class="math inline">\(\hat{C}\)</span>:</p>
+<p><span class="citation">Esty (<a href="references.html#ref-Esty1983">1983</a>)</span>, complété par <span class="citation">C.-H. Zhang et Zhang (<a href="references.html#ref-Zhang2009">2009</a>)</span>, a montré que l’estimateur était asymptotiquement normal et a calculé l’intervalle de confiance de <span class="math inline">\(\hat{C}\)</span> :</p>
 <p><span class="math display" id="eq:hatC">\[\begin{equation}
   \tag{2.7}
   C=\hat{C}\pm t^{n}_{1-\alpha/2} \frac{\sqrt{s^{n}_{1}\left(1-\frac{s^{n}_{1}}{n}\right)+2s^{n}_{2}}}{n}.
 \end{equation}\]</span></p>
 <p>Où <span class="math inline">\(t^{n}_{1-\alpha/2}\)</span> est le quantile d’une loi de Student à <span class="math inline">\(n\)</span> degrés de libertés au seuil de risque <span class="math inline">\(\alpha\)</span>, classiquement 1,96 pour <span class="math inline">\(n\)</span> grand et <span class="math inline">\(\alpha=5\%\)</span>.</p>
-<p>Un autre estimateur est utilisé dans le logiciel SPADE <span class="citation">(<a href="references.html#ref-Chao2010a" role="doc-biblioref">Chao et Shen 2010</a>)</span> et son portage sous R, le package <em>spadeR</em> <span class="citation">(<a href="references.html#ref-Chao2016c" role="doc-biblioref">Chao et al. 2016</a>)</span>.
+<p>Un autre estimateur est utilisé dans le logiciel SPADE <span class="citation">(<a href="references.html#ref-Chao2010a">Chao et Shen 2010</a>)</span> et son portage sous R, le package <em>spadeR</em> <span class="citation">(<a href="references.html#ref-Chao2016c">Chao et al. 2016</a>)</span>.
 Il est la base des estimateurs d’entropie de Chao et Jost (section <a href="entropie.html#sec-BiaisHCDT">4.6.2</a>).
 L’estimation de l’équation <a href="chap-Outils.html#eq:CsansBiais">(2.5)</a> donne la relation
 <span class="math display" id="eq:hatC2">\[\begin{equation}
@@ -286,14 +287,14 @@ Il est moindre sur les 6.25 ha de la parcelle 6 de Paracou :</p>
 <pre><code>## ZhangHuang 
 ##  0.9723258</code></pre>
 <p></p>
-<p><span class="citation">Chao et Jost (<a href="references.html#ref-Chao2012b" role="doc-biblioref">2012</a>)</span> montrent que la pente de la courbe d’accumulation donnant l’espérance du nombre d’espèces en fonction du nombre d’individus (courbe de raréfaction de la figure <a href="chap-Accumulation.html#fig:Gotelli2001">21.1</a>) est égale au déficit de couverture,</p>
+<p><span class="citation">Chao et Jost (<a href="references.html#ref-Chao2012b">2012</a>)</span> montrent que la pente de la courbe d’accumulation donnant l’espérance du nombre d’espèces en fonction du nombre d’individus (courbe de raréfaction de la figure <a href="chap-Accumulation.html#fig:Gotelli2001">21.1</a>) est égale au déficit de couverture,</p>
 <p><span class="math display" id="eq:DefC">\[\begin{equation}
   \tag{2.10}
   1-{\mathbb E}\left(C^{n}\right)={\mathbb E}\left(S^{n+1}\right)-{\mathbb E}\left(S^{n}\right),
 \end{equation}\]</span></p>
 <p>où <span class="math inline">\(C^{n}\)</span> est le taux de couverture d’un échantillon de taille <span class="math inline">\(n\)</span> et <span class="math inline">\(S^{n}\)</span> le nombre d’espèces découvertes dans cet échantillon.</p>
 <p>Les estimateurs présentés ici supposent une population de taille infinie (de façon équivalente, les individus sont tirés avec remise).
-Le cas des populations de taille finie est traité par <span class="citation">Chao et Lin (<a href="references.html#ref-Chao2012" role="doc-biblioref">2012</a>)</span> et <span class="citation">Hwang, Lin, et Shen (<a href="references.html#ref-Hwang2014" role="doc-biblioref">2014</a>)</span>.</p>
+Le cas des populations de taille finie est traité par <span class="citation">Chao et Lin (<a href="references.html#ref-Chao2012">2012</a>)</span> et <span class="citation">Hwang, Lin, et Shen (<a href="references.html#ref-Hwang2014">2014</a>)</span>.</p>
 </div>
 <div id="complétude" class="section level3" number="2.3.3">
 <h3>
@@ -353,9 +354,9 @@ Figure 2.2: Histogramme des fréquences (diagramme de Preston) des arbres du dis
 </p>
 </div>
 <p></p>
-<p>Elle peut être représentée sous la forme d’un histogramme des fréquences (diagramme de <span class="citation">Preston (<a href="references.html#ref-Preston1948" role="doc-biblioref">1948</a>)</span>, figure <a href="chap-Outils.html#fig:SADFig">2.2</a>) ou bien d’un diagramme rang-abondance (RAC : <em>Rank Abundance Curve</em> ou diagramme de <span class="citation">Whittaker (<a href="references.html#ref-Whittaker1965" role="doc-biblioref">1965</a>)</span>, figure <a href="chap-Outils.html#fig:RACFig">2.3</a>).
+<p>Elle peut être représentée sous la forme d’un histogramme des fréquences (diagramme de <span class="citation">Preston (<a href="references.html#ref-Preston1948">1948</a>)</span>, figure <a href="chap-Outils.html#fig:SADFig">2.2</a>) ou bien d’un diagramme rang-abondance (RAC : <em>Rank Abundance Curve</em> ou diagramme de <span class="citation">Whittaker (<a href="references.html#ref-Whittaker1965">1965</a>)</span>, figure <a href="chap-Outils.html#fig:RACFig">2.3</a>).
 Le RAC est souvent utilisé pour reconnaître des distributions connues.
-<span class="citation">Izsák et Pavoine (<a href="references.html#ref-Izsak2012" role="doc-biblioref">2012</a>)</span> ont étudié les propriétés des RAC pour les principales SAD.</p>
+<span class="citation">Izsák et Pavoine (<a href="references.html#ref-Izsak2012">2012</a>)</span> ont étudié les propriétés des RAC pour les principales SAD.</p>
 
 <p></p>
 <div class="figure" style="text-align: center">
@@ -384,16 +385,16 @@ Figure 2.3: Diagramme rang-abondance (diagramme de Whittaker) des arbres du disp
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/EricMarcon/entropart">"entropart"</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/SpeciesDistribution.html">as.AbdVector</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span>, Distribution <span class="op">=</span> <span class="st">"lnorm"</span><span class="op">)</span></span></code></pre></div>
 <p></p>
-<p>Les SAD sont traitées en détail par <span class="citation">Magurran (<a href="references.html#ref-Magurran1988" role="doc-biblioref">1988</a>)</span> ou <span class="citation">McGill et al. (<a href="references.html#ref-McGill2007" role="doc-biblioref">2007</a>)</span>.
+<p>Les SAD sont traitées en détail par <span class="citation">Magurran (<a href="references.html#ref-Magurran1988">1988</a>)</span> ou <span class="citation">McGill et al. (<a href="references.html#ref-McGill2007">2007</a>)</span>.
 Les principales distributions, nécessaires à la compréhension de la suite sont présentées ici :</p>
 <ul>
-<li>La distribution en log-séries de <span class="citation">Fisher, Corbet, et Williams (<a href="references.html#ref-Fisher1943" role="doc-biblioref">1943</a>)</span><span style="white-space:nowrap"> ;</span>
+<li>La distribution en log-séries de <span class="citation">Fisher, Corbet, et Williams (<a href="references.html#ref-Fisher1943">1943</a>)</span><span style="white-space:nowrap"> ;</span>
 </li>
-<li>La distribution géométrique <span class="citation">(<a href="references.html#ref-Motomura1932" role="doc-biblioref">Motomura 1932</a>; <a href="references.html#ref-Whittaker1972" role="doc-biblioref">Whittaker 1972</a>)</span><span style="white-space:nowrap"> ;</span>
+<li>La distribution géométrique <span class="citation">(<a href="references.html#ref-Motomura1932">Motomura 1932</a>; <a href="references.html#ref-Whittaker1972">Whittaker 1972</a>)</span><span style="white-space:nowrap"> ;</span>
 </li>
-<li>La distribution log-normale <span class="citation">(<a href="references.html#ref-Preston1948" role="doc-biblioref">Preston 1948</a>)</span><span style="white-space:nowrap"> ;</span>
+<li>La distribution log-normale <span class="citation">(<a href="references.html#ref-Preston1948">Preston 1948</a>)</span><span style="white-space:nowrap"> ;</span>
 </li>
-<li>Le modèle Broken Stick <span class="citation">(<a href="references.html#ref-MacArthur1957" role="doc-biblioref">MacArthur 1957</a>)</span>.</li>
+<li>Le modèle Broken Stick <span class="citation">(<a href="references.html#ref-MacArthur1957">MacArthur 1957</a>)</span>.</li>
 </ul>
 <p>Formellement, la distribution des probabilités des espèces, notées <span class="math inline">\(p_s\)</span>, est à établir.</p>
 <div id="la-distribution-en-log-séries" class="section level3" number="2.4.1">
@@ -404,13 +405,13 @@ Les principales distributions, nécessaires à la compréhension de la suite son
 <p>Le nombre d’espèces est lié au nombre d’individus par la relation <span class="math inline">\({\mathbb E}(S^n)=\alpha\ln(1+n/\alpha)\)</span> où <span class="math inline">\(S^n\)</span> indique le nombre d’espèces observées dans un échantillon de <span class="math inline">\(n\)</span> individus.
 <span class="math inline">\(\alpha\)</span> est le paramètre qui fixe la pente de la partie linéaire de la relation, valide dès que <span class="math inline">\(n&gt;&gt;\alpha\)</span>, où le nombre d’espèces <span class="math inline">\(S^n\)</span> augmente proportionnellement au logarithme du nombre d’individus <span class="math inline">\(\ln(n)\)</span>.</p>
 <p>La distribution a été obtenue à partir d’inventaires de communautés de papillons en Malaisie et en Angleterre.
-Le modèle est tombé en désuétude faute de confirmation empirique à l’échelle de la communauté, avant d’être remis en valeur par la théorie neutre <span class="citation">(<a href="references.html#ref-Hubbell2001" role="doc-biblioref">Stephen P. Hubbell 2001</a>)</span> dans lequel la distribution de la <em>méta-communauté</em> est en log-séries.</p>
+Le modèle est tombé en désuétude faute de confirmation empirique à l’échelle de la communauté, avant d’être remis en valeur par la théorie neutre <span class="citation">(<a href="references.html#ref-Hubbell2001">Stephen P. Hubbell 2001</a>)</span> dans lequel la distribution de la <em>méta-communauté</em> est en log-séries.</p>
 </div>
 <div id="la-distribution-broken-stick" class="section level3" number="2.4.2">
 <h3>
 <span class="header-section-number">2.4.2</span> La distribution Broken Stick<a class="anchor" aria-label="anchor" href="#la-distribution-broken-stick"><i class="fas fa-link"></i></a>
 </h3>
-<p>Si les espèces se partagent les ressources ou l’espace des niches, représentées par un bâton, par un processus de cassure aléatoire et simultanée (précisément, les <span class="math inline">\(S-1\)</span> cassures du bâton sont distribuées uniformément sur sa longueur) et que leur abondance est proportionnelle à la quantité de ressources ou d’espace de niche obtenus, alors leur distribution suit le modèle Broken Stick de <span class="citation">MacArthur (<a href="references.html#ref-MacArthur1957" role="doc-biblioref">1957</a>)</span>.</p>
+<p>Si les espèces se partagent les ressources ou l’espace des niches, représentées par un bâton, par un processus de cassure aléatoire et simultanée (précisément, les <span class="math inline">\(S-1\)</span> cassures du bâton sont distribuées uniformément sur sa longueur) et que leur abondance est proportionnelle à la quantité de ressources ou d’espace de niche obtenus, alors leur distribution suit le modèle Broken Stick de <span class="citation">MacArthur (<a href="references.html#ref-MacArthur1957">1957</a>)</span>.</p>
 <p>Parmi les distributions classiques, c’est la plus équitable : la distribution uniforme des probabilités (<span class="math inline">\(p_s=1/S\)</span> pour tout <span class="math inline">\(s\)</span>) n’est jamais approchée.</p>
 <p>Elle est peu observée empiriquement.</p>
 </div>
@@ -421,9 +422,9 @@ Le modèle est tombé en désuétude faute de confirmation empirique à l’éch
 <p>Dans une distribution log-normale, le logarithme des probabilités des espèces (notées <span class="math inline">\(p_s\)</span> pour l’espèce <span class="math inline">\(s\)</span>) suit une loi normale.
 L’écart-type <span class="math inline">\(\sigma\)</span> de cette distribution règle l’équitabilité de la distribution.
 Son espérance est obtenue à partir du nombre d’espèces et de <span class="math inline">\(\sigma\)</span>, pour que la somme des probabilités égale 1.</p>
-<p><span class="citation">May (<a href="references.html#ref-May1975" role="doc-biblioref">1975</a>)</span> explique cette distribution par le théorème de la limite centrale : la variable aléatoire valant 1 si un individu est de l’espèce <span class="math inline">\(s\)</span> et 0 sinon est le produit de nombreuses variables de loi inconnues valant 1 en cas de succès (germination d’une graine, survie à de nombreux évènements…).
+<p><span class="citation">May (<a href="references.html#ref-May1975">1975</a>)</span> explique cette distribution par le théorème de la limite centrale : la variable aléatoire valant 1 si un individu est de l’espèce <span class="math inline">\(s\)</span> et 0 sinon est le produit de nombreuses variables de loi inconnues valant 1 en cas de succès (germination d’une graine, survie à de nombreux évènements…).
 Le logarithme de ce produit est une somme de variables aléatoire dont la loi est forcément normale par application du théorème de la limite centrale.</p>
-<p>La distribution est aussi le résultat d’un algorithme de bâton brisé (<em>broken stick</em>) hiérarchique <span class="citation">(<a href="references.html#ref-Bulmer1974" role="doc-biblioref">Bulmer 1974</a>)</span> :</p>
+<p>La distribution est aussi le résultat d’un algorithme de bâton brisé (<em>broken stick</em>) hiérarchique <span class="citation">(<a href="references.html#ref-Bulmer1974">Bulmer 1974</a>)</span> :</p>
 <ul>
 <li>Si les ressources (représentées par un bâton) sont partagées une première fois aléatoirement, selon une loi quelconque,</li>
 <li>Si chaque bâton obtenu est partagé à nouveau selon le même procédé, et que l’opération est répétée un assez grand nombre de fois,</li>
@@ -432,10 +433,10 @@ Le logarithme de ce produit est une somme de variables aléatoire dont la loi es
 </ul>
 <p>Ce mécanisme décrit assez bien un mécanisme de partage successif des ressources, par exemple entre groupes d’espèces de plus en plus petits, correspondant à des niches écologiques de plus en plus étroites.</p>
 <p>D’autres arguments existent dans la littérature.
-Par exemple, <span class="citation">Engen et Lande (<a href="references.html#ref-Engen1996" role="doc-biblioref">1996</a>)</span> obtiennent une distribution normale à partir d’un modèle de dynamique des populations.</p>
-<p>La distribution log-normale décrit assez bien (mais pas exactement) une communauté locale dans le cadre de la théorie neutre <span class="citation">(<a href="references.html#ref-Hubbell2001" role="doc-biblioref">Stephen P. Hubbell 2001</a>)</span> comme le montre la figure <a href="chap-Outils.html#fig:RACFig">2.3</a>.
+Par exemple, <span class="citation">Engen et Lande (<a href="references.html#ref-Engen1996">1996</a>)</span> obtiennent une distribution normale à partir d’un modèle de dynamique des populations.</p>
+<p>La distribution log-normale décrit assez bien (mais pas exactement) une communauté locale dans le cadre de la théorie neutre <span class="citation">(<a href="references.html#ref-Hubbell2001">Stephen P. Hubbell 2001</a>)</span> comme le montre la figure <a href="chap-Outils.html#fig:RACFig">2.3</a>.
 Le nombre d’espèces rares est un peu surestimé.
-La distribution exacte est donnée par <span class="citation">Volkov et al. (<a href="references.html#ref-Volkov2003" role="doc-biblioref">2003</a>)</span>.</p>
+La distribution exacte est donnée par <span class="citation">Volkov et al. (<a href="references.html#ref-Volkov2003">2003</a>)</span>.</p>
 </div>
 <div id="la-distribution-géométrique" class="section level3" number="2.4.4">
 <h3>
@@ -443,11 +444,11 @@ La distribution exacte est donnée par <span class="citation">Volkov et al. (<a 
 </h3>
 <p>Si les espèces se partagent les ressources selon un algorithme <em>broken stick</em> séquentiel (comme dans la distribution log-normale) mais de proportion fixe <span class="math inline">\(0&lt;k&lt;1\)</span>, alors la distribution obtenue est géométrique.
 Les abondances successives sont proportionnelles à <span class="math inline">\(k, k(1-k), k(1-k)^2, \dots, k(1-k)^s, \dots, k(1-k)^S\)</span>.</p>
-<p>Ce modèle a été établi par <span class="citation">Motomura (<a href="references.html#ref-Motomura1932" role="doc-biblioref">1932</a>)</span> cité par <span class="citation">May (<a href="references.html#ref-May1975" role="doc-biblioref">1975</a>)</span>.
-Ses propriétés ont été étudiées par <span class="citation">Whittaker (<a href="references.html#ref-Whittaker1972" role="doc-biblioref">1972</a>)</span>.</p>
-<p>C’est la distribution qui traduit l’absence de relation entre la taille de l’échantillon et l’abondance des espèces <span class="citation">(<a href="references.html#ref-Pueyo2007" role="doc-biblioref">Pueyo, He, et Zillio 2007</a>)</span> : la distribution du logarithme de ses probabilités est uniforme.
+<p>Ce modèle a été établi par <span class="citation">Motomura (<a href="references.html#ref-Motomura1932">1932</a>)</span> cité par <span class="citation">May (<a href="references.html#ref-May1975">1975</a>)</span>.
+Ses propriétés ont été étudiées par <span class="citation">Whittaker (<a href="references.html#ref-Whittaker1972">1972</a>)</span>.</p>
+<p>C’est la distribution qui traduit l’absence de relation entre la taille de l’échantillon et l’abondance des espèces <span class="citation">(<a href="references.html#ref-Pueyo2007">Pueyo, He, et Zillio 2007</a>)</span> : la distribution du logarithme de ses probabilités est uniforme.
 En d’autre termes, l’ordre de grandeur de l’abondance d’une espèce est uniformément distribué.</p>
-<p>La distribution est observée dans les communautés pionnières <span class="citation">(<a href="references.html#ref-Bazzaz1975" role="doc-biblioref">Bazzaz 1975</a>)</span>, peu diverses, ou les communautés microbiennes <span class="citation">(<a href="references.html#ref-Haegeman2013" role="doc-biblioref">Haegeman et al. 2013</a>)</span>.</p>
+<p>La distribution est observée dans les communautés pionnières <span class="citation">(<a href="references.html#ref-Bazzaz1975">Bazzaz 1975</a>)</span>, peu diverses, ou les communautés microbiennes <span class="citation">(<a href="references.html#ref-Haegeman2013">Haegeman et al. 2013</a>)</span>.</p>
 </div>
 <div id="synthèse" class="section level3" number="2.4.5">
 <h3>
@@ -462,7 +463,7 @@ Figure 2.4: Diagramme rang-fréquence des distributions de probabilité classiqu
 </p>
 </div>
 <p></p>
-<p>La figure <a href="chap-Outils.html#fig:DistributionsFig">2.4</a> est inspirée de la figure très connue de <span class="citation">Magurran (<a href="references.html#ref-Magurran1988" role="doc-biblioref">1988</a>)</span>.
+<p>La figure <a href="chap-Outils.html#fig:DistributionsFig">2.4</a> est inspirée de la figure très connue de <span class="citation">Magurran (<a href="references.html#ref-Magurran1988">1988</a>)</span>.
 Elle montre bien une gradation en termes de décroissance de probabilité entre des distributions de même richesse : de la plus équitable (broken stick) à la plus inéquitable (géométrique).
 Elle doit être nuancée : la proportion <span class="math inline">\(k\)</span> de la distribution géométrique fixe la pente de la droite qui la représente sur la figure.
 <span class="math inline">\(k=10\%\)</span> sur la figure : une valeur plus faible diminuerait la pente.
@@ -521,7 +522,7 @@ Les fonctions <code>fitxxx()</code> complètent les fonctions <code>RACxxx()</co
 <pre><code>## [1] 1.791177</code></pre>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># sads</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://piLaboratory.github.io/sads">"sads"</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/piLaboratory/sads">"sads"</a></span><span class="op">)</span></span>
 <span><span class="co"># Estimation. Les données sont tronquées: les espèces</span></span>
 <span><span class="co"># observées 0 fois ne sont pas comptées.</span></span>
 <span><span class="va">fit_sads_lnorm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/sads/man/fitsad.html">fitlnorm</a></span><span class="op">(</span><span class="va">Ns</span>, trunc <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
@@ -617,7 +618,7 @@ L’ajustement est donc meilleur mais la différence est petite et la complexit�
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

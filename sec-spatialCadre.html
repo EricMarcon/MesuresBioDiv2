@@ -7,7 +7,7 @@
 <title>19 Cadre | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="De façon évidente, la richesse augmente avec la surface ou le nombre d’individus pris en compte. Cette constatation peut être interprétée de deux façons différentes : l’augmentation progressive de...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="19 Cadre | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/sec-spatialCadre.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -127,16 +128,16 @@ Cette constatation peut être interprétée de deux façons différentes : l’
 L’accumulation de la diversité locale, décrite par une courbe d’accumulation (SAC) est présentée au chapitre <a href="chap-Accumulation.html#chap-Accumulation">21</a>.</p>
 <p>Il est tentant dans ce cadre de chercher un indicateur de la richesse indépendant de la surface ou du nombre d’individus.
 L’approche la plus simple consiste à normaliser le nombre d’espèces observées.
-<span class="citation">Menhinick (<a href="references.html#ref-Menhinick1964" role="doc-biblioref">1964</a>)</span> a proposé l’indice <span class="math inline">\({S^{n}}/{\sqrt{n}}\)</span> à peu près constant dans des communautés d’insectes.
-L’indice de <span class="citation">Margalef (<a href="references.html#ref-Margalef1958a" role="doc-biblioref">1958</a>)</span> est <span class="math inline">\({S^{n} -1}/{\ln{n}}\)</span>, adapté à une communauté de plancton.
-Les deux supposent implicitement une forme de la courbe d’accumulation des espèces : dans le premier cas, proportionnelle à la racine du nombre d’individus, dans le second à son logarithme (comme dans la relation de <span class="citation">Gleason (<a href="references.html#ref-Gleason1922" role="doc-biblioref">1922</a>)</span>, page <a href="diversit%C3%A9-r%C3%A9gionale.html#sec-Gleason">22.2</a>).
-Aucune de ces normalisations ne fonctionne en général <span class="citation">(<a href="references.html#ref-Magurran2004" role="doc-biblioref">Magurran 2004, 77</a>)</span>.
-L’indice de Fisher <span class="citation">(<a href="references.html#ref-Fisher1943" role="doc-biblioref">Fisher, Corbet, et Williams 1943</a>)</span>, construit à partir d’un modèle explicite de distribution des probabilités des espèces, a nettement plus de succès.
+<span class="citation">Menhinick (<a href="references.html#ref-Menhinick1964">1964</a>)</span> a proposé l’indice <span class="math inline">\({S^{n}}/{\sqrt{n}}\)</span> à peu près constant dans des communautés d’insectes.
+L’indice de <span class="citation">Margalef (<a href="references.html#ref-Margalef1958a">1958</a>)</span> est <span class="math inline">\({S^{n} -1}/{\ln{n}}\)</span>, adapté à une communauté de plancton.
+Les deux supposent implicitement une forme de la courbe d’accumulation des espèces : dans le premier cas, proportionnelle à la racine du nombre d’individus, dans le second à son logarithme (comme dans la relation de <span class="citation">Gleason (<a href="references.html#ref-Gleason1922">1922</a>)</span>, page <a href="diversit%C3%A9-r%C3%A9gionale.html#sec-Gleason">22.2</a>).
+Aucune de ces normalisations ne fonctionne en général <span class="citation">(<a href="references.html#ref-Magurran2004">Magurran 2004, 77</a>)</span>.
+L’indice de Fisher <span class="citation">(<a href="references.html#ref-Fisher1943">Fisher, Corbet, et Williams 1943</a>)</span>, construit à partir d’un modèle explicite de distribution des probabilités des espèces, a nettement plus de succès.
 Il est présenté au chapitre suivant.
-Son problème est qu’il est souvent utilisé pour décrire la diversité locale, comme s’il permettait de normaliser l’effort d’échantillonnage, alors que sa validité est plutôt à l’échelle régionale <span class="citation">(<a href="references.html#ref-Hubbell2001" role="doc-biblioref">Stephen P. Hubbell 2001</a>)</span>.</p>
+Son problème est qu’il est souvent utilisé pour décrire la diversité locale, comme s’il permettait de normaliser l’effort d’échantillonnage, alors que sa validité est plutôt à l’échelle régionale <span class="citation">(<a href="references.html#ref-Hubbell2001">Stephen P. Hubbell 2001</a>)</span>.</p>
 <p>A cette échelle, plusieurs communautés sont prises en compte simultanément.
-Il est possible de rechercher une nouvelle asymptote, atteinte quand toutes les communautés sont incluses (par exemple, la totalité de la forêt amazonienne <span class="citation">(<a href="references.html#ref-TerSteege2013" role="doc-biblioref">ter Steege et al. 2013</a>)</span>) ou de raisonner en termes de relation aire-espèces, sans rechercher une richesse totale hypothétique <span class="citation">(<a href="references.html#ref-Preston1960" role="doc-biblioref">Preston 1960</a>)</span>.
-Là encore, <span class="math inline">\(\alpha\)</span> de Fisher est ambigu puisqu’il peut provenir à la fois d’une infinité d’espèces dans son modèle original ou être compris comme le nombre fondamental de la théorie neutre, égal à deux fois le taux de spéciation fois le nombre total d’espèces (fini) de la méta-communauté <span class="citation">(<a href="references.html#ref-Hubbell2001" role="doc-biblioref">Stephen P. Hubbell 2001</a>)</span>.</p>
+Il est possible de rechercher une nouvelle asymptote, atteinte quand toutes les communautés sont incluses (par exemple, la totalité de la forêt amazonienne <span class="citation">(<a href="references.html#ref-TerSteege2013">ter Steege et al. 2013</a>)</span>) ou de raisonner en termes de relation aire-espèces, sans rechercher une richesse totale hypothétique <span class="citation">(<a href="references.html#ref-Preston1960">Preston 1960</a>)</span>.
+Là encore, <span class="math inline">\(\alpha\)</span> de Fisher est ambigu puisqu’il peut provenir à la fois d’une infinité d’espèces dans son modèle original ou être compris comme le nombre fondamental de la théorie neutre, égal à deux fois le taux de spéciation fois le nombre total d’espèces (fini) de la méta-communauté <span class="citation">(<a href="references.html#ref-Hubbell2001">Stephen P. Hubbell 2001</a>)</span>.</p>
 <p>Enfin, la diversité <span class="math inline">\(\beta\)</span> spatialement explicite est introduite au chapitre <a href="chap-betasp.html#chap-betasp">23</a>.</p>
 </div>
   <div class="chapter-nav">
@@ -161,7 +162,7 @@ Là encore, <span class="math inline">\(\alpha\)</span> de Fisher est ambigu pui
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

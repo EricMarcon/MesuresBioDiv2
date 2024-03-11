@@ -7,7 +7,7 @@
 <title>13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="L’entropie phylogénétique et l’entropie de Ricotta et Szeidl se décomposent comme l’entropie HCDT. La diversité \(\beta\) phylogénétique et la diversité \(\beta\) de Leinster et Cobbold sont des...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -125,19 +126,19 @@
 <p>L’entropie phylogénétique et l’entropie de Ricotta et Szeidl se décomposent comme l’entropie HCDT.
 La diversité <span class="math inline">\(\beta\)</span> phylogénétique et la diversité <span class="math inline">\(\beta\)</span> de Leinster et Cobbold sont des nombres effectifs de communautés, c’est-à-dire des communautés de même poids et dont les espèces seraient totalement dissimilaires qui fourniraient la même entropie <span class="math inline">\(\beta\)</span> que les communautés réelles.</p>
 </div>
-<p>L’entropie phylogénétique est une combinaison linéaire de l’entropie HCDT donc sa décomposition est identique <span class="citation">(<a href="references.html#ref-Marcon2014b" role="doc-biblioref">Marcon et Hérault 2015a</a>)</span>.</p>
+<p>L’entropie phylogénétique est une combinaison linéaire de l’entropie HCDT donc sa décomposition est identique <span class="citation">(<a href="references.html#ref-Marcon2014b">Marcon et Hérault 2015a</a>)</span>.</p>
 <div id="décomposition-de-la-diversité-phylogénétique" class="section level2" number="13.1">
 <h2>
 <span class="header-section-number">13.1</span> Décomposition de la diversité phylogénétique<a class="anchor" aria-label="anchor" href="#d%C3%A9composition-de-la-diversit%C3%A9-phylog%C3%A9n%C3%A9tique"><i class="fas fa-link"></i></a>
 </h2>
-<p>En combinant l’équation <a href="chap-Phyloentropie.html#eq:Hbarq">(8.1)</a> et le tableau <a href="chap-DedompHCDT.html#tab:Decomposition">12.2</a>, on obtient</p>
+<p>En combinant l’équation <a href="chap-Phyloentropie.html#eq:Hbarq">(8.1)</a> et le tableau <a href="chap-DedompHCDT.html#tab:Decomposition">12.3</a>, on obtient</p>
 <p><span class="math display" id="eq:Hqbar">\[\begin{equation}
   \tag{13.1}
   ^{q}\!\bar{H}_{\gamma}\left(T\right)
   = ^{q}\!\bar{H}_{\alpha}\left(T\right)
   + ^{q}\!\bar{H}_{\beta}\left(T\right).
 \end{equation}\]</span></p>
-<p>L’entropie <span class="math inline">\(\gamma\)</span> est celle de la méta-communauté, l’entropie <span class="math inline">\(\alpha\)</span> est la somme pondérée de celles des communautés, la pondération est libre mais doit respecter <span class="math inline">\(p_s=\sum_i{w_ip_{s|i}}\)</span>:</p>
+<p>L’entropie <span class="math inline">\(\gamma\)</span> est celle de la méta-communauté, l’entropie <span class="math inline">\(\alpha\)</span> est la somme pondérée de celles des communautés, la pondération est libre mais doit respecter <span class="math inline">\(p_s=\sum_i{w_ip_{s|i}}\)</span> :</p>
 <p><span class="math display" id="eq:Hqbaralpha">\[\begin{equation}
   \tag{13.2}
   ^{q}\!\bar{H}_{\alpha}\left(T\right)
@@ -152,7 +153,7 @@ La diversité <span class="math inline">\(\beta\)</span> phylogénétique et la 
   &amp;= \sum_i{w_i}\sum_k{\frac{T_k}{T}\sum_u{p^{q}_{k,u,i}\ln_q\frac{p_{k,u,i}}{p_{k,u}}}}
 \end{align}\]</span></p>
 <p>où <span class="math inline">\(p_{k,u}\)</span> est la probabilité d’observer une des espèces de la branche <span class="math inline">\(u\)</span> de l’arbre à la période <span class="math inline">\(k\)</span> (figure <a href="mesures-particuli%C3%A8res.html#fig:Arbre">7.7</a>) dans la méta-communauté, et <span class="math inline">\(p_{k,u,i}\)</span> la même probabilité dans la communauté <span class="math inline">\(i\)</span>.</p>
-<p>La décomposition de l’entropie phylogénétique au sens de <span class="citation">Allen, Kon, et Bar-Yam (<a href="references.html#ref-Allen2009" role="doc-biblioref">2009</a>)</span>, c’est-à-dire dans la cas particulier <span class="math inline">\(q=1\)</span>, a été établie par <span class="citation">Mouchet et Mouillot (<a href="references.html#ref-Mouchet2011" role="doc-biblioref">2011</a>)</span>.</p>
+<p>La décomposition de l’entropie phylogénétique au sens de <span class="citation">Allen, Kon, et Bar-Yam (<a href="references.html#ref-Allen2009">2009</a>)</span>, c’est-à-dire dans la cas particulier <span class="math inline">\(q=1\)</span>, a été établie par <span class="citation">Mouchet et Mouillot (<a href="references.html#ref-Mouchet2011">2011</a>)</span>.</p>
 <p>La fonction <code>DivPart</code> de <em>entropart</em> permet de décomposer l’entropie.
 Les résultats contiennent la valeur de la diversité :</p>
 <p></p>
@@ -191,7 +192,7 @@ Figure 13.1: Représentation graphique de la diversité des deux parcelles du je
 <p>La figure <a href="d%C3%A9composition-de-la-diversit%C3%A9-phylog%C3%A9n%C3%A9tique-et-fonctionnelle.html#fig:DivPartFig">13.1</a> donne une représentation graphique de la décomposition de la diversité.
 La différence de taille entre les rectangles hachurés et les rectangles transparents est due à la prise en compte de la phylogénie.
 La diversité <span class="math inline">\(\gamma\)</span> (rectangles de hauteur 1) est égale au produit des diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span> (côtés du rectangle plus haut).
-Si les communautés étaient de même poids et complètement différentes, c’est à dire contenant des espèces totalement dissimilaires entre communautés <span class="citation">(<a href="references.html#ref-Pavoine2015a" role="doc-biblioref">Pavoine, Marcon, et Ricotta 2016</a>)</span>, la hauteur du rectangle serait égale à leur nombre (2 ici).</p>
+Si les communautés étaient de même poids et complètement différentes, c’est à dire contenant des espèces totalement dissimilaires entre communautés <span class="citation">(<a href="references.html#ref-Pavoine2015a">Pavoine, Marcon, et Ricotta 2016</a>)</span>, la hauteur du rectangle serait égale à leur nombre (2 ici).</p>
 <p>Code pour réaliser la figure :</p>
 <p></p>
 <div class="sourceCode" id="cb304"><pre class="downlit sourceCode r">
@@ -215,7 +216,7 @@ Si les communautés étaient de même poids et complètement différentes, c’e
 <h2>
 <span class="header-section-number">13.2</span> Partitionnement de la diversité de Leinster et Cobbold<a class="anchor" aria-label="anchor" href="#partitionnement-de-la-diversit%C3%A9-de-leinster-et-cobbold"><i class="fas fa-link"></i></a>
 </h2>
-<p>Selon les mêmes principes que pour la décomposition de l’entropie HCDT, <span class="citation">Marcon, Zhang, et Hérault (<a href="references.html#ref-Marcon2014e" role="doc-biblioref">2014</a>)</span> ont décomposé l’entropie de <span class="citation">Ricotta et Szeidl (<a href="references.html#ref-Ricotta2006b" role="doc-biblioref">2006</a>)</span>.
+<p>Selon les mêmes principes que pour la décomposition de l’entropie HCDT, <span class="citation">Marcon, Zhang, et Hérault (<a href="references.html#ref-Marcon2014e">2014</a>)</span> ont décomposé l’entropie de <span class="citation">Ricotta et Szeidl (<a href="references.html#ref-Ricotta2006b">2006</a>)</span>.
 L’entropie <span class="math inline">\(\alpha\)</span> de la communauté <span class="math inline">\(i\)</span> est</p>
 <p><span class="math display" id="eq:Hqzialpha">\[\begin{equation}
   \tag{13.4}
@@ -243,7 +244,7 @@ Formellement :</p>
   =e^{\frac{^qH^{\mathbf{Z}}}{1+\left(1-q\right)\,{^qH^{\mathbf{Z}}_\alpha}}}_q.
 \end{equation}\]</span></p>
 <p>La décomposition de la diversité peut être faite directement, sans passer par l’entropie.</p>
-<p>L’inverse de <span class="math inline">\(^q\!D^{\mathbf{Z}}_\gamma\)</span> est la moyenne généralisée d’ordre <span class="math inline">\(q-1\)</span> de <span class="math inline">\({\left(\mathbf{Zp}\right)}_s\)</span>:</p>
+<p>L’inverse de <span class="math inline">\(^q\!D^{\mathbf{Z}}_\gamma\)</span> est la moyenne généralisée d’ordre <span class="math inline">\(q-1\)</span> de <span class="math inline">\({\left(\mathbf{Zp}\right)}_s\)</span> :</p>
 <p><span class="math display" id="eq:Dqzgamma">\[\begin{equation}
   \tag{13.8}
   \frac{1}{^q\!D^{\mathbf{Z}}_\gamma}
@@ -313,7 +314,7 @@ Formellement :</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -7,7 +7,7 @@
 <title>12 Décomposition de l’entropie HCDT | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="L’entropie HCDT \(\gamma\) peut être décomposée en somme de l’entropie \(\alpha\) et la moyenne de la divergence entre la distribution de chaque communauté et celle de la méta-communauté....">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="12 Décomposition de l’entropie HCDT | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-DedompHCDT.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -128,8 +129,8 @@ L’entropie <span class="math inline">\(\beta\)</span> va de pair avec le nombr
 La diversité <span class="math inline">\(\gamma\)</span> se décompose donc en produit du nombre effectif d’espèces de la diversité <span class="math inline">\(\alpha\)</span> et du nombre effectif de communautés.</p>
 </div>
 <p>Ce chapitre traite de la diversité proportionnelle, qui mesure à quel point les communautés diffèrent de leur assemblage.
-Dans la littérature, la diversité <span class="math inline">\(\beta\)</span> est généralement une mesure <em>dérivée</em> <span class="citation">(<a href="references.html#ref-Ellison2010a" role="doc-biblioref">Ellison 2010</a>)</span>, c’est-à-dire calculée à partir des diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span>, d’où un abondant débat sur l’indépendance souhaitée mais pas toujours observée entre les valeurs de diversité <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span> <span class="citation">(<a href="references.html#ref-Baselga2010a" role="doc-biblioref">Baselga 2010a</a>; <a href="references.html#ref-Jost2010a" role="doc-biblioref">Jost 2010a</a>; <a href="references.html#ref-Veech2010a" role="doc-biblioref">Veech et Crist 2010</a>)</span>.
-Un forum a été consacré à la question dans la revue <em>Ecology</em>, conclu par <span class="citation">Chao, Chiu, et Hsieh (<a href="references.html#ref-Chao2012a" role="doc-biblioref">2012</a>)</span>, et une revue a été faite par Tuomisto <span class="citation">(<a href="references.html#ref-Tuomisto2010a" role="doc-biblioref">2010a</a>, <a href="references.html#ref-Tuomisto2010b" role="doc-biblioref">2010b</a>)</span>.</p>
+Dans la littérature, la diversité <span class="math inline">\(\beta\)</span> est généralement une mesure <em>dérivée</em> <span class="citation">(<a href="references.html#ref-Ellison2010a">Ellison 2010</a>)</span>, c’est-à-dire calculée à partir des diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span>, d’où un abondant débat sur l’indépendance souhaitée mais pas toujours observée entre les valeurs de diversité <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span> <span class="citation">(<a href="references.html#ref-Baselga2010a">Baselga 2010a</a>; <a href="references.html#ref-Jost2010a">Jost 2010a</a>; <a href="references.html#ref-Veech2010a">Veech et Crist 2010</a>)</span>.
+Un forum a été consacré à la question dans la revue <em>Ecology</em>, conclu par <span class="citation">Chao, Chiu, et Hsieh (<a href="references.html#ref-Chao2012a">2012</a>)</span>, et une revue a été faite par Tuomisto <span class="citation">(<a href="references.html#ref-Tuomisto2010a">2010a</a>, <a href="references.html#ref-Tuomisto2010b">2010b</a>)</span>.</p>
 <p>La décomposition de l’entropie HCDT constitue un cadre cohérent dans lequel la diversité <span class="math inline">\(\beta\)</span> est non seulement une mesure dérivée, mais également une mesure de la divergence entre les distributions des communautés et celle de la méta-communauté.</p>
 <div id="décomposition-de-lindice-de-shannon" class="section level2" number="12.1">
 <h2>
@@ -139,7 +140,7 @@ Un forum a été consacré à la question dans la revue <em>Ecology</em>, conclu
 <p></p>
 <div class="inline-table"><table class="table table-striped" style="font-size: 9px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:DecShannon">Table 12.1: </span>Définition explicite de la diversité de Shannon en tant que divergence entre une distribution observée et une distribution attendue. Les indices <span class="math inline">\(H_\alpha\)</span> et <span class="math inline">\(H_\gamma\)</span> sont les compléments au logarithme du nombre d’espèces de cette divergence.
+<span id="tab:DecShannon">Table 12.1: </span><span id="tab:DecShannon">Table 12.2: </span>Définition explicite de la diversité de Shannon en tant que divergence entre une distribution observée et une distribution attendue. Les indices <span class="math inline">\(H_\alpha\)</span> et <span class="math inline">\(H_\gamma\)</span> sont les compléments au logarithme du nombre d’espèces de cette divergence.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -167,7 +168,7 @@ Fréquence des espèces dans la communauté
 Fréquences égales, hors formule
 </td>
 <td style="text-align:left;">
-<span class="math inline">\(_{i}H_\alpha = \sum_s{p_{s|i}\ln{p_{s|i}}}\)</span>. <span class="math inline">\(H_\alpha = \sum_i{w_i\,_{i}H_\alpha}\)</span>
+<span class="math inline">\(_{i}H_\alpha = \sum_s{p_{s&amp;amp;#124;i}\ln{p_{s&amp;amp;#124;i}}}\)</span>. <span class="math inline">\(H_\alpha = \sum_i{w_i\,_{i}H_\alpha}\)</span>
 </td>
 </tr>
 <tr>
@@ -181,7 +182,7 @@ Fréquence des espèces dans la communauté
 Fréquence totale des espèces
 </td>
 <td style="text-align:left;">
-<span class="math inline">\(_{i}H_\beta = \sum_s{p_{s|i}\ln{p_{s|i}/p_{s}}}\)</span>. <span class="math inline">\(H_\beta = \sum_i{w_i\,_{i}{H}_\beta}\)</span>
+<span class="math inline">\(_{i}H_\beta = \sum_s{p_{s&amp;amp;#124;i}\ln{p_{s&amp;amp;#124;i}/p_{s}}}\)</span>. <span class="math inline">\(H_\beta = \sum_i{w_i\,_{i}{H}_\beta}\)</span>
 </td>
 </tr>
 <tr>
@@ -205,11 +206,11 @@ Fréquences égales, hors formule
 <h3>
 <span class="header-section-number">12.1.1</span> Définition<a class="anchor" aria-label="anchor" href="#d%C3%A9finition-3"><i class="fas fa-link"></i></a>
 </h3>
-<p>La décomposition explicite (tableau <a href="chap-DedompHCDT.html#tab:DecShannon">12.1</a>) est due à <span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2012a" role="doc-biblioref">2012</a>)</span> mais avait été établie plus ou moins clairement plusieurs fois dans la littérature, notamment par <span class="citation">Rao et Nayak (<a href="references.html#ref-Rao1985" role="doc-biblioref">1985</a>)</span> : la diversité <span class="math inline">\(\beta\)</span> est la divergence de Kullback-Leibler entre la distribution des espèces dans chaque parcelle et la distribution moyenne, appelée divergence de Jensen-Shannon <span class="citation">(<a href="references.html#ref-Lin1991" role="doc-biblioref">Lin 1991</a>)</span>.
+<p>La décomposition explicite (tableau <a href="chap-DedompHCDT.html#tab:DecShannon">12.1</a>) est due à <span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2012a">2012</a>)</span> mais avait été établie plus ou moins clairement plusieurs fois dans la littérature, notamment par <span class="citation">Rao et Nayak (<a href="references.html#ref-Rao1985">1985</a>)</span> : la diversité <span class="math inline">\(\beta\)</span> est la divergence de Kullback-Leibler entre la distribution des espèces dans chaque parcelle et la distribution moyenne, appelée divergence de Jensen-Shannon <span class="citation">(<a href="references.html#ref-Lin1991">Lin 1991</a>)</span>.
 Les diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span> sont les compléments à <span class="math inline">\(\ln{S}\)</span> des indices de dissimilarité de Theil <a href="entropie.html#eq:Theil">(4.1)</a>, divergences de Kullback-Leibler entre les distributions des espèces et leur équiprobabilité.</p>
-<p><span class="citation">Lewontin (<a href="references.html#ref-Lewontin1972" role="doc-biblioref">1972</a>)</span>, dans son célèbre article sur la diversité génétique humaine, définit la diversité de Shannon inter-groupe comme la différence entre la diversité totale et la diversité moyenne intra-groupe, mais ne cherche pas à explorer ses propriétés.</p>
-<p>La forme de <span class="math inline">\(H_{\beta}\)</span> a été établie par <span class="citation">Ricotta et Avena (<a href="references.html#ref-Ricotta2003a" role="doc-biblioref">2003a</a>)</span>, sans la relier à celle de <span class="math inline">\(H_{\alpha}\)</span> et <span class="math inline">\(H_{\gamma}\)</span>.
-Enfin, l’idée de la décomposition de la divergence de Kullback-Leibler, mais avec une approche différente, sans rapprochement avec l’indice de Shannon, a été publiée par <span class="citation">Ludovisi et Taticchi (<a href="references.html#ref-Ludovisi2006" role="doc-biblioref">2006</a>)</span>.</p>
+<p><span class="citation">Lewontin (<a href="references.html#ref-Lewontin1972">1972</a>)</span>, dans son célèbre article sur la diversité génétique humaine, définit la diversité de Shannon inter-groupe comme la différence entre la diversité totale et la diversité moyenne intra-groupe, mais ne cherche pas à explorer ses propriétés.</p>
+<p>La forme de <span class="math inline">\(H_{\beta}\)</span> a été établie par <span class="citation">Ricotta et Avena (<a href="references.html#ref-Ricotta2003a">2003a</a>)</span>, sans la relier à celle de <span class="math inline">\(H_{\alpha}\)</span> et <span class="math inline">\(H_{\gamma}\)</span>.
+Enfin, l’idée de la décomposition de la divergence de Kullback-Leibler, mais avec une approche différente, sans rapprochement avec l’indice de Shannon, a été publiée par <span class="citation">Ludovisi et Taticchi (<a href="references.html#ref-Ludovisi2006">2006</a>)</span>.</p>
 <p>Les méta-communautés peuvent à leur tour être regroupées à un niveau supérieur, la diversité <span class="math inline">\(\gamma\)</span> du niveau inférieur devenant diversité <span class="math inline">\(\alpha\)</span> pour le niveau supérieur.
 La décomposition ou le regroupement peuvent être effectués sur un nombre quelconque de niveaux.</p>
 <p>Calcul sous R : La fonction <code>BetaEntropy</code> calcule l’entropie <span class="math inline">\(\beta\)</span> de la méta-communauté (l’argument <span class="math inline">\(q=1\)</span> permet de choisir l’entropie de Shannon).</p>
@@ -250,7 +251,7 @@ L’estimateur corrigé de <span class="math inline">\(_iH_{\beta}\)</span> est<
 ## Average entropy of the communities: 
 ## [1] 0.3618884</code></pre>
 <p></p>
-<p><span class="citation">Chao, Wang, et Jost (<a href="references.html#ref-Chao2013" role="doc-biblioref">2013</a>)</span> utilisent une approche différente pour corriger le biais d’estimation : l’information mutuelle.
+<p><span class="citation">Chao, Wang, et Jost (<a href="references.html#ref-Chao2013">2013</a>)</span> utilisent une approche différente pour corriger le biais d’estimation : l’information mutuelle.
 Les données sont organisées comme dans le tableau <a href="sec-betaCadre.html#tab:Notations">10.1</a>, mais les probabilités qu’un individu appartienne à la communauté <span class="math inline">\(i\)</span> et à l’espèce <span class="math inline">\(s\)</span> sont calculées pour que leur somme soit égale à 1 sur l’ensemble du tableau : <span class="math inline">\(\sum_s{\sum_i{p_{s,i}}}=1\)</span> (au lieu de <span class="math inline">\(\sum_i{p_{s|i}}=1\)</span>).</p>
 <p>L’information mutuelle est la divergence de Kullback-Leibler entre la distribution de <span class="math inline">\(\{p_{s,i}\}\)</span> et celle du produit des distributions marginales <span class="math inline">\(\{p_s\}\)</span> et <span class="math inline">\(\{p_i\}\)</span>.
 Si les distributions marginales sont indépendantes, la probabilité <span class="math inline">\(p_{s,i}\)</span> qu’un individu appartienne à l’espèce <span class="math inline">\(s\)</span> et se trouve dans la communauté <span class="math inline">\(i\)</span> est donnée par le produit des probabilités marginales <span class="math inline">\(p_s\)</span> et <span class="math inline">\(p_i\)</span>, et l’information mutuelle est nulle.</p>
@@ -268,7 +269,7 @@ Comme chaque terme du calcul est une entropie <span class="math inline">\(\alpha
 ## 0.3439827</code></pre>
 <p></p>
 <p>Cet estimateur est le moins biaisé à ce jour, mais n’est applicable qu’à l’entropie de Shannon, sous la condition que la pondération des communautés soit donnée par les effectifs.</p>
-<p><span class="citation">Z. Zhang et Grabchak (<a href="references.html#ref-Zhang2014a" role="doc-biblioref">2014</a>)</span> proposent un estimateur de la divergence de Kullback-Leibler avec un biais réduit selon la même méthode que pour l’estimation de l’entropie HCDT ou de l’entropie de Shannon :</p>
+<p><span class="citation">Z. Zhang et Grabchak (<a href="references.html#ref-Zhang2014a">2014</a>)</span> proposent un estimateur de la divergence de Kullback-Leibler avec un biais réduit selon la même méthode que pour l’estimation de l’entropie HCDT ou de l’entropie de Shannon :</p>
 <p><span class="math display" id="eq:Zhang2014a">\[\begin{align}
   \tag{12.2}
   _{i}\tilde{H}_{\beta}
@@ -311,27 +312,28 @@ Le meilleur estimateur peut être évalué à partir de la différence entre les
 <h2>
 <span class="header-section-number">12.2</span> Décomposition de l’entropie généralisée<a class="anchor" aria-label="anchor" href="#d%C3%A9composition-de-lentropie-g%C3%A9n%C3%A9ralis%C3%A9e"><i class="fas fa-link"></i></a>
 </h2>
-<p>La décomposition additive de l’entropie selon <span class="citation">Lande (<a href="references.html#ref-Lande1996" role="doc-biblioref">1996</a>)</span> doit être la suivante :</p>
+<p>La décomposition additive de l’entropie selon <span class="citation">Lande (<a href="references.html#ref-Lande1996">1996</a>)</span> doit être la suivante :</p>
 <p><span class="math display" id="eq:DecompHq">\[\begin{equation}
   \tag{12.3}
   ^{q}\!H_{\gamma} = {^{q}\!H_{\alpha}} + {^{q}\!H_{\beta}}.
 \end{equation}\]</span></p>
-<p><span class="citation">Bourguignon (<a href="references.html#ref-Bourguignon1979" role="doc-biblioref">1979</a>)</span> comme <span class="citation">Lande (<a href="references.html#ref-Lande1996" role="doc-biblioref">1996</a>)</span> définissent une mesure d’inégalité décomposable comme respectant les propriétés suivantes :</p>
+<p><span class="citation">Bourguignon (<a href="references.html#ref-Bourguignon1979">1979</a>)</span> comme <span class="citation">Lande (<a href="references.html#ref-Lande1996">1996</a>)</span> définissent une mesure d’inégalité décomposable comme respectant les propriétés suivantes :</p>
 <ul>
-<li>La population totale étant partitionnée, chaque partition recevant un poids <span class="math inline">\(w_i\)</span>, la composante intra-groupe de la mesure <span class="math inline">\(H_{\alpha}\)</span> est égale à la somme pondérée des mesures dans chaque-groupe <span class="math inline">\(H_{\alpha}=\sum_i{w_i {_{i}\!H_{\alpha}}}\)</span>;</li>
+<li>La population totale étant partitionnée, chaque partition recevant un poids <span class="math inline">\(w_i\)</span>, la composante intra-groupe de la mesure <span class="math inline">\(H_{\alpha}\)</span> est égale à la somme pondérée des mesures dans chaque-groupe <span class="math inline">\(H_{\alpha}=\sum_i{w_i {_{i}\!H_{\alpha}}}\)</span><span style="white-space:nowrap"> ;</span>
+</li>
 <li>La composante intergroupe <span class="math inline">\(H_{\beta}\)</span> est la mesure d’inégalité entre les <span style="white-space:nowrap">groupes ;</span>
 </li>
 <li>La mesure totale <span class="math inline">\(H_{\gamma}\)</span> est la somme des mesures intra et intergroupes.</li>
 </ul>
-<p>En passant par les nombres de Hill, <span class="citation">Jost (<a href="references.html#ref-Jost2007" role="doc-biblioref">2007</a>)</span> montre que l’indice de Shannon est le seul pouvant être décomposé de cette façon.</p>
+<p>En passant par les nombres de Hill, <span class="citation">Jost (<a href="references.html#ref-Jost2007">2007</a>)</span> montre que l’indice de Shannon est le seul pouvant être décomposé de cette façon.</p>
 <p>La démonstration de Jost repose sur le postulat que la transformation de l’entropie en nombre de Hill, définie pour la diversité <span class="math inline">\(\alpha\)</span>, doit avoir la même forme pour la diversité <span class="math inline">\(\beta\)</span>.
-La remise en cause de ce postulat <span class="citation">(<a href="references.html#ref-Marcon2014a" role="doc-biblioref">Marcon et al. 2014</a>)</span> permet de décomposer la diversité d’ordre quelconque quel que soit le poids des communautés.</p>
+La remise en cause de ce postulat <span class="citation">(<a href="references.html#ref-Marcon2014a">Marcon et al. 2014</a>)</span> permet de décomposer la diversité d’ordre quelconque quel que soit le poids des communautés.</p>
 <p>La décomposition de l’entropie est faite en écrivant le logarithme d’ordre <span class="math inline">\(q\)</span> de la décomposition de la diversité, équation <a href="sec-betaCadre.html#eq:DecompDq">(10.1)</a> :</p>
 <p><span class="math display" id="eq:DecompJost">\[\begin{equation}
   \tag{12.4}
   ^{q}\!H_{\gamma} = {^{q}\!H_{\alpha}}+\ln_q{^{q}\!D_{\beta}}-\left(q-1\right){^{q}\!H_{\alpha}}\ln_q{^{q}\!D_{\beta}}.
 \end{equation}\]</span></p>
-<p>Ceci est la décomposition de <span class="citation">Jost (<a href="references.html#ref-Jost2007" role="doc-biblioref">2007</a>)</span>.
+<p>Ceci est la décomposition de <span class="citation">Jost (<a href="references.html#ref-Jost2007">2007</a>)</span>.
 Jost désigne sous le nom de “composante <span class="math inline">\(\beta\)</span> de l’entropie” le logarithme d’ordre <span class="math inline">\(q\)</span> de la diversité, qu’il note <span class="math inline">\(H_B\)</span>.
 La décomposition n’est pas additive, mais <span class="math inline">\(H_B\)</span> est indépendant de l’entropie <span class="math inline">\(\alpha\)</span>.</p>
 <p>Les deux derniers termes peuvent être regroupés et réarrangés pour obtenir <span class="math inline">\(^{q}\!H_{\beta}\)</span> conformément à la décomposition additive de l’équation <a href="chap-DedompHCDT.html#eq:DecompHq">(12.3)</a> :</p>
@@ -344,9 +346,9 @@ La décomposition n’est pas additive, mais <span class="math inline">\(H_B\)</
   \tag{12.6}
   ^{q}_{i}\!H_{\beta}=\sum_s{p^q_{s|i}\ln_q\frac{p_{s|i}}{p_s}}.
 \end{equation}\]</span></p>
-<p><span class="math inline">\(^{q}_{i}\!H_{\beta}\)</span> est une divergence de Kullback-Leibler généralisée <span class="citation">(<a href="references.html#ref-Borland1998" role="doc-biblioref">Borland, Plastino, et Tsallis 1998</a>; <a href="references.html#ref-Tsallis1998" role="doc-biblioref">Tsallis, Mendes, et Plastino 1998</a>)</span>.
-<span class="math inline">\(^{q}\!H_{\beta}\)</span> en est la moyenne sur l’ensemble des communautés, c’est donc une généralisation de la divergence de Jensen-Shannon <span class="citation">(<a href="references.html#ref-Marcon2014a" role="doc-biblioref">Marcon et al. 2014</a>)</span>.
-<span class="math inline">\(^{q}\!H_{\gamma}\)</span> peut s’écrire sous la forme <span class="math inline">\(^{q}\!H_{\gamma} = -\sum_s{p^q_s}\ln_q{p_s}\)</span>: la formalisation de la décomposition est une généralisation de la décomposition de l’entropie de Shannon, résumée dans le tableau <a href="chap-DedompHCDT.html#tab:Decomposition">12.2</a>.</p>
+<p><span class="math inline">\(^{q}_{i}\!H_{\beta}\)</span> est une divergence de Kullback-Leibler généralisée <span class="citation">(<a href="references.html#ref-Borland1998">Borland, Plastino, et Tsallis 1998</a>; <a href="references.html#ref-Tsallis1998">Tsallis, Mendes, et Plastino 1998</a>)</span>.
+<span class="math inline">\(^{q}\!H_{\beta}\)</span> en est la moyenne sur l’ensemble des communautés, c’est donc une généralisation de la divergence de Jensen-Shannon <span class="citation">(<a href="references.html#ref-Marcon2014a">Marcon et al. 2014</a>)</span>.
+<span class="math inline">\(^{q}\!H_{\gamma}\)</span> peut s’écrire sous la forme <span class="math inline">\(^{q}\!H_{\gamma} = -\sum_s{p^q_s}\ln_q{p_s}\)</span> : la formalisation de la décomposition est une généralisation de la décomposition de l’entropie de Shannon, résumée dans le tableau <a href="chap-DedompHCDT.html#tab:Decomposition">12.3</a>.</p>
 <p>Il est intéressant d’écrire <span class="math inline">\(^{q}_{i}\!H_{\beta}\)</span> et <span class="math inline">\(^{q}\!H_{\gamma}\)</span> sous la forme d’entropies, pour faire apparaître leur fonction d’information.
 Pour <span class="math inline">\(q\)</span> différent de 1, l’entropie <span class="math inline">\(\gamma\)</span> est</p>
 <p><span class="math display" id="eq:Hqgamma">\[\begin{equation}
@@ -363,11 +365,11 @@ Pour <span class="math inline">\(q\)</span> différent de 1, l’entropie <span 
   = \sum_s{p_{s|i}\frac{p^{q-1}_{s|i}-p^{q-1}_s}{q-1}}
   = \sum_s{p_{s|i}\left(\ln_q\frac{1}{p_s}-\ln_q\frac{1}{p_{s|i}}\right)}.
 \end{equation}\]</span></p>
-<p>La forme de l’entropie <span class="math inline">\(\beta\)</span> évoque la divergence de puissance <span class="citation">(<a href="references.html#ref-Cressie1984" role="doc-biblioref">N. Cressie et Read 1984</a>)</span> qui est une statistique qui mesure la divergence entre deux distributions dont les propriétés asymptotiques sont connues.
+<p>La forme de l’entropie <span class="math inline">\(\beta\)</span> évoque la divergence de puissance <span class="citation">(<a href="references.html#ref-Cressie1984">N. Cressie et Read 1984</a>)</span> qui est une statistique qui mesure la divergence entre deux distributions dont les propriétés asymptotiques sont connues.
 La divergence de puissance peut être écrite sous la forme <span class="math inline">\(I_q= \frac{-2}{q} \sum_s{p_{s|i} \ln_q\frac{p_{s}}{p_{s|i}}}\)</span>.
 Elle est égale à (deux fois) la divergence de Kullback-Leibler pour <span class="math inline">\(q=1\)</span>, mais diffère de l’entropie <span class="math inline">\(\beta\)</span> pour les autres valeurs de <span class="math inline">\(q\)</span>.
-La divergence non-logarithmique de Jensen-Shannon <span class="citation">(<a href="references.html#ref-Lamberti2003" role="doc-biblioref">Lamberti et Majtey 2003</a>)</span> est identique à une normalisation près : <span class="math inline">\(K_q= -\sum_s{p_{s|i} \ln_q\frac{p_{s}}{p_{s|i}}}\)</span>.
-Elle mesure l’écart entre la diversité <span class="math inline">\(\alpha\)</span> et la valeur de <span class="math inline">\(\sum_s{w_i p^q_{s|i} \ln_q{p_s}^q}\)</span>, qui n’est pas la diversité <span class="math inline">\(\gamma\)</span> <span class="citation">(<a href="references.html#ref-Marcon2014a" role="doc-biblioref">Marcon et al. 2014</a>)</span>.</p>
+La divergence non-logarithmique de Jensen-Shannon <span class="citation">(<a href="references.html#ref-Lamberti2003">Lamberti et Majtey 2003</a>)</span> est identique à une normalisation près : <span class="math inline">\(K_q= -\sum_s{p_{s|i} \ln_q\frac{p_{s}}{p_{s|i}}}\)</span>.
+Elle mesure l’écart entre la diversité <span class="math inline">\(\alpha\)</span> et la valeur de <span class="math inline">\(\sum_s{w_i p^q_{s|i} \ln_q{p_s}^q}\)</span>, qui n’est pas la diversité <span class="math inline">\(\gamma\)</span> <span class="citation">(<a href="references.html#ref-Marcon2014a">Marcon et al. 2014</a>)</span>.</p>
 <p>Calcul sous R : La fonction <code>DivPart</code> calcule entropie et diversité en même temps :</p>
 <p></p>
 <div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
@@ -438,15 +440,15 @@ L’entropie <span class="math inline">\(\gamma\)</span> est le nombre d’espè
   \tag{12.9}
   ^{0}\!D_{\beta}=\frac{S}{\bar{S}}.
 \end{equation}\]</span></p>
-<p><span class="math inline">\(^{0}\!D_{\beta}\)</span> peut être supérieur au nombre de communautés <span class="citation">(<a href="references.html#ref-Chao2012a" role="doc-biblioref">Chao, Chiu, et Hsieh 2012</a>)</span> si les poids sont très inégaux, ce qui complique son interprétation.
+<p><span class="math inline">\(^{0}\!D_{\beta}\)</span> peut être supérieur au nombre de communautés <span class="citation">(<a href="references.html#ref-Chao2012a">Chao, Chiu, et Hsieh 2012</a>)</span> si les poids sont très inégaux, ce qui complique son interprétation.
 La pondération de Jost donne pour le nombre d’espèces le même poids à toutes les communautés et garantit <span class="math inline">\(^{0}\!D_{\beta}\le I\)</span>, ce qui constitue pour Chao et al. un argument en faveur de son utilisation.
-Un contre-argumentaire est fourni par <span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2014a" role="doc-biblioref">2014</a>)</span>.
+Un contre-argumentaire est fourni par <span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2014a">2014</a>)</span>.
 Quel que soit la distribution des poids des communautés, il est toujours possible de ramener les données à un ensemble de communautés de poids identiques, dont certaines sont répétées.
 La communauté dont le poids <span class="math inline">\(w_{min}\)</span> est le plus faible est représentée une seule fois, les autres <span class="math inline">\({w_i}/{w_{min}}\)</span> fois.
 L’indépendance entre les diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span> est donc bien vérifiée.
 Le diversité <span class="math inline">\(\beta\)</span> maximale théorique est <span class="math inline">\({1}/{w_{min}}\)</span> (et non <span class="math inline">\(I\)</span>).
 Elle n’est pas atteinte parce que plusieurs communautés sont identiques.</p>
-<p>La définition de la diversité <span class="math inline">\(\beta\)</span> par <span class="citation">Whittaker (<a href="references.html#ref-Whittaker1960" role="doc-biblioref">1960</a>)</span> s’appliquait aux données de présence-absence.
+<p>La définition de la diversité <span class="math inline">\(\beta\)</span> par <span class="citation">Whittaker (<a href="references.html#ref-Whittaker1960">1960</a>)</span> s’appliquait aux données de présence-absence.
 La diversité <span class="math inline">\(\beta\)</span> était le rapport entre le nombre d’espèces total de l’assemblage des communautés (diversité <span class="math inline">\(\gamma\)</span>) et le nombre moyen d’espèces dans chaque communauté (diversité <span class="math inline">\(\alpha\)</span>).
 C’est précisément la définition de <span class="math inline">\(^{0}\!D_{\beta}\)</span> <a href="chap-DedompHCDT.html#eq:D0beta">(12.9)</a>.</p>
 </div>
@@ -469,12 +471,12 @@ La décomposition entre variance intra et inter-communautés est</p>
   E_{\gamma}=\sum_i{w_i E_{\alpha,i}}+\sum_i{w_i\sum_s{{\left(p_{s|i}-p_s\right)}^2}}=E_{\alpha}+E_{\beta}.
 \end{equation}\]</span></p>
 <p>L’entropie <span class="math inline">\(\gamma\)</span> de Simpson peut être décomposée en sa diversité <span class="math inline">\(\alpha\)</span>, somme pondérée des entropies <span class="math inline">\(\alpha\)</span> des communautés, et son entropie <span class="math inline">\(\beta\)</span>, égale à la somme pondérée des distances <span class="math inline">\(l^2\)</span> entre la distribution des fréquences dans chaque communauté et celle de l’ensemble de la communauté.</p>
-<p>En génétique, l’égalité s’écrit<span class="citation">(<a href="references.html#ref-Nei1973" role="doc-biblioref">Nei 1973</a>)</span> <span class="math inline">\(H_t=H_s+D_{s,t}\)</span>.
+<p>En génétique, l’égalité s’écrit<span class="citation">(<a href="references.html#ref-Nei1973">Nei 1973</a>)</span> <span class="math inline">\(H_t=H_s+D_{s,t}\)</span>.
 <span class="math inline">\(H_t\)</span> est l’hétérozygotie totale, décomposée en <span class="math inline">\(H_s\)</span>, l’hétérozygotie moyenne des populations et <span class="math inline">\(D_{s,t}\)</span> la différenciation absolue entre populations.
 <span class="math inline">\(G_{s,t}={D_{s,t}}/{H_t}\)</span> est la différenciation relative.</p>
 <p>L’entropie <span class="math inline">\(E_{\beta}\)</span> calculée de cette manière est égale à <span class="math inline">\(^{2}\!H_{\beta}\)</span> calculée à l’équation <a href="chap-DedompHCDT.html#eq:Hqbeta">(12.8)</a> pour le cas général, mais la contribution de chaque communauté est différente : la décomposition de la variance est une façon alternative de décomposer l’entropie, valable uniquement pour l’entropie de Simpson.</p>
-<p>Cette décomposition est remise en cause par Jost <span class="citation">(<a href="references.html#ref-Jost2007" role="doc-biblioref">Jost 2007</a>, <a href="references.html#ref-Jost2008" role="doc-biblioref">2008</a>)</span> qui a généré le débat <span class="citation">(<a href="references.html#ref-Heller2009" role="doc-biblioref">Heller et Siegismund 2009</a>; <a href="references.html#ref-Ryman2009" role="doc-biblioref">Ryman et Leimar 2009</a>; <a href="references.html#ref-Jost2009a" role="doc-biblioref">Jost 2009a</a>; <a href="references.html#ref-Whitlock2011" role="doc-biblioref">Whitlock 2011</a>)</span>.
-<span class="math inline">\(E_{\gamma}\)</span> étant inférieure ou égale à 1, <span class="math inline">\(E_{\beta}\)</span> n’est pas indépendante de <span class="math inline">\(E_{\alpha}\)</span>: seule la décomposition multiplicative permet l’indépendance, et Jost propose d’utiliser une transformation de <span class="math inline">\(^{2}\!D_{\beta}\)</span> comme mesure de différenciation (voir section <a href="chap-DedompHCDT.html#sec-Chevauchement">12.7.2</a>). <span class="citation">Gregorius (<a href="references.html#ref-Gregorius2014" role="doc-biblioref">2014</a>)</span> montre que ce problème n’est pas limité à l’entropie de Simpson mais s’applique à toutes les entropies HCDT d’ordre supérieur à 1.</p>
+<p>Cette décomposition est remise en cause par Jost <span class="citation">(<a href="references.html#ref-Jost2007">Jost 2007</a>, <a href="references.html#ref-Jost2008">2008</a>)</span> qui a généré le débat <span class="citation">(<a href="references.html#ref-Heller2009">Heller et Siegismund 2009</a>; <a href="references.html#ref-Ryman2009">Ryman et Leimar 2009</a>; <a href="references.html#ref-Jost2009a">Jost 2009a</a>; <a href="references.html#ref-Whitlock2011">Whitlock 2011</a>)</span>.
+<span class="math inline">\(E_{\gamma}\)</span> étant inférieure ou égale à 1, <span class="math inline">\(E_{\beta}\)</span> n’est pas indépendante de <span class="math inline">\(E_{\alpha}\)</span> : seule la décomposition multiplicative permet l’indépendance, et Jost propose d’utiliser une transformation de <span class="math inline">\(^{2}\!D_{\beta}\)</span> comme mesure de différenciation (voir section <a href="chap-DedompHCDT.html#sec-Chevauchement">12.7.2</a>). <span class="citation">Gregorius (<a href="references.html#ref-Gregorius2014">2014</a>)</span> montre que ce problème n’est pas limité à l’entropie de Simpson mais s’applique à toutes les entropies HCDT d’ordre supérieur à 1.</p>
 <p>Jost postule que la diversité <span class="math inline">\(\beta\)</span> de Simpson a la même relation à <span class="math inline">\(E_{\beta}\)</span> que les diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span>,</p>
 <p><span class="math display" id="eq:Dqgamma">\[\begin{equation}
   \tag{12.12}
@@ -485,13 +487,13 @@ La décomposition entre variance intra et inter-communautés est</p>
   \tag{12.13}
   E_{\gamma}=E_{\alpha}+E_{\beta}-{E_{\alpha}}{E_{\beta}}.
 \end{equation}\]</span></p>
-<p>Il n’y a en réalité aucune raison pour que le nombre équivalent de la diversité <span class="math inline">\(\beta\)</span> ait la même forme que celle de la diversité <span class="math inline">\(\alpha\)</span>: les deux diversités sont par nature très différentes, et Hill ne traitait pas la diversité <span class="math inline">\(\beta\)</span>.
+<p>Il n’y a en réalité aucune raison pour que le nombre équivalent de la diversité <span class="math inline">\(\beta\)</span> ait la même forme que celle de la diversité <span class="math inline">\(\alpha\)</span> : les deux diversités sont par nature très différentes, et Hill ne traitait pas la diversité <span class="math inline">\(\beta\)</span>.
 La diversité de Shannon est exceptionnelle parce que, pour des raisons différentes, son nombre de Hill est l’exponentielle de l’entropie, et l’exponentielle de la décomposition additive <a href="chap-DedompHCDT.html#eq:DecompHq">(12.3)</a> est la décomposition multiplicative <a href="sec-betaCadre.html#eq:DecompDq">(10.1)</a>.</p>
 
 <p></p>
 <div class="inline-table"><table class="table table-striped" style="font-size: 6px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:Decomposition">Table 12.2: </span>Entropie, diversité et décomposition. L’entropie <span class="math inline">\(\alpha\)</span> de chaque communauté se calcule comme l’entropie <span class="math inline">\(\gamma\)</span>
+<span id="tab:Decomposition">Table 12.3: </span><span id="tab:Decomposition">Table 12.4: </span>Entropie, diversité et décomposition. L’entropie <span class="math inline">\(\alpha\)</span> de chaque communauté se calcule comme l’entropie <span class="math inline">\(\gamma\)</span>
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -521,10 +523,10 @@ Entropie <span class="math inline">\(\gamma\)</span>
 Entropie <span class="math inline">\(\beta\)</span>
 </td>
 <td style="text-align:left;">
-<span class="math inline">\(^{q}\!H_{\beta}=\sum_i{w_i\sum_s{p_{s|i}\left(\ln_q\frac{1}{p_s}-\ln_q\frac{1}{p_{s|i}}\right)}}\)</span>
+<span class="math inline">\(^{q}\!H_{\beta}=\sum_i{w_i\sum_s{p_{s&amp;amp;#124;i}\left(\ln_q\frac{1}{p_s}-\ln_q\frac{1}{p_{s&amp;amp;#124;i}}\right)}}\)</span>
 </td>
 <td style="text-align:left;">
-<span class="math inline">\(^{1}\!H_{\beta}=\sum_i{w_i\sum_s{p_{s|i}\ln\frac{p_{s|i}}{p_s}}}\)</span>
+<span class="math inline">\(^{1}\!H_{\beta}=\sum_i{w_i\sum_s{p_{s&amp;amp;#124;i}\ln\frac{p_{s&amp;amp;#124;i}}{p_s}}}\)</span>
 </td>
 </tr>
 <tr>
@@ -552,14 +554,14 @@ Diversité <span class="math inline">\(\beta\)</span> (nombre équivalent
 </tbody>
 </table></div>
 <p></p>
-<p>Le nombre équivalent de communautés a une forme légèrement différente d’un nombre de Hill (tableau <a href="chap-DedompHCDT.html#tab:Decomposition">12.2</a>).</p>
+<p>Le nombre équivalent de communautés a une forme légèrement différente d’un nombre de Hill (tableau <a href="chap-DedompHCDT.html#tab:Decomposition">12.3</a>).</p>
 </div>
 <div id="sec-RaoDisc" class="section level2" number="12.5">
 <h2>
 <span class="header-section-number">12.5</span> Décomposition de l’indice de Rao<a class="anchor" aria-label="anchor" href="#sec-RaoDisc"><i class="fas fa-link"></i></a>
 </h2>
 <p>Les notations sont celles de la présentation de l’indice de Rao, section <a href="mesures-particuli%C3%A8res.html#sec-Rao">7.6</a>.</p>
-<p>La diversité de la méta-communauté, peut être décomposée en une somme (pondérée) de diversités intra et une diversité inter <span class="citation">(<a href="references.html#ref-Pavoine2004" role="doc-biblioref">Pavoine, Dufour, et Chessel 2004</a>)</span> en définissant une dissimilarité entre les communautés <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span>:</p>
+<p>La diversité de la méta-communauté, peut être décomposée en une somme (pondérée) de diversités intra et une diversité inter <span class="citation">(<a href="references.html#ref-Pavoine2004">Pavoine, Dufour, et Chessel 2004</a>)</span> en définissant une dissimilarité entre les communautés <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span> :</p>
 <p><span class="math display" id="eq:DHdelta">\[\begin{equation}
   \tag{12.14}
   D_{H_{\Delta }}\left(\mathbf{p}_i,\mathbf{p}_j\right)
@@ -606,7 +608,7 @@ La divergence entre communautés est construite à partir des entropies de chacu
 <p>Pour obtenir tous les éléments de l’équation <a href="chap-DedompHCDT.html#eq:Raobeta">(12.15)</a> :</p>
 <ul>
 <li>
-<span class="math inline">\(H_{\Delta }\left(\mathbf{p}\right)\)</span>: diversité totale. Calculer <span class="math inline">\(\mathbf{p}\)</span> en sommant les communautés. Calculer ensuite l’entropie quadratique avec <code>divc</code> :</li>
+<span class="math inline">\(H_{\Delta }\left(\mathbf{p}\right)\)</span> : diversité totale. Calculer <span class="math inline">\(\mathbf{p}\)</span> en sommant les communautés. Calculer ensuite l’entropie quadratique avec <code>divc</code> :</li>
 </ul>
 <p></p>
 <div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
@@ -620,7 +622,7 @@ La divergence entre communautés est construite à partir des entropies de chacu
 <p></p>
 <ul>
 <li>
-<span class="math inline">\(H_{\Delta}\left({\mathbf{p}}_i\right)\)</span>: diversité de chaque communauté, fournie par <code>divc</code> :</li>
+<span class="math inline">\(H_{\Delta}\left({\mathbf{p}}_i\right)\)</span> : diversité de chaque communauté, fournie par <code>divc</code> :</li>
 </ul>
 <p></p>
 <div class="sourceCode" id="cb293"><pre class="downlit sourceCode r">
@@ -641,7 +643,7 @@ La divergence entre communautés est construite à partir des entropies de chacu
 <pre><code>##                    diversity
 ## colSums(effectifs) 0.2362187</code></pre>
 <p></p>
-<p>La fonction <code>disc</code> calcule <span class="math inline">\(\sqrt{2D_{H_{\Delta}}\left({\mathbf{p}}_i,{\mathbf{p}}_j\right)}\)</span>:</p>
+<p>La fonction <code>disc</code> calcule <span class="math inline">\(\sqrt{2D_{H_{\Delta}}\left({\mathbf{p}}_i,{\mathbf{p}}_j\right)}\)</span> :</p>
 <p></p>
 <div class="sourceCode" id="cb297"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ade4/man/disc.html">disc</a></span><span class="op">(</span><span class="va">effectifs</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">phyf</span><span class="op">$</span><span class="va">leaves</span><span class="op">)</span>, <span class="op">]</span>, <span class="va">phyf</span><span class="op">$</span><span class="va">Wdist</span><span class="op">)</span></span></code></pre></div>
@@ -650,15 +652,15 @@ La divergence entre communautés est construite à partir des entropies de chacu
 ## P3 0.4888729 0.6487916          
 ## P4 1.0018983 0.8776582 1.3157902</code></pre>
 <p></p>
-<p>Une interprétation géométrique de la décomposition est la suivante <span class="citation">(<a href="references.html#ref-Pavoine2004" role="doc-biblioref">Pavoine, Dufour, et Chessel 2004</a>)</span>.
-Les espèces peuvent être placées dans un espace multidimensionnel construit par une Analyse en Coordonnées Principales <span class="citation">(<a href="references.html#ref-Gower1966" role="doc-biblioref">Gower 1966</a>)</span> de la matrice de dissimilarité <span class="math inline">\(\mathbf{D}\)</span> telle que <span class="math inline">\(\mathbf{\Delta}={\mathbf{D}^{\circ2}}/{2}\)</span> (les distances dans l’espace multidimensionnel sont <span class="math inline">\(\sqrt{2\delta_{s's''}}\)</span>; autrement dit : la dissimilarité entre deux espèces est la moitié du carré de la distance entre elles dans la représentation géométrique).
+<p>Une interprétation géométrique de la décomposition est la suivante <span class="citation">(<a href="references.html#ref-Pavoine2004">Pavoine, Dufour, et Chessel 2004</a>)</span>.
+Les espèces peuvent être placées dans un espace multidimensionnel construit par une Analyse en Coordonnées Principales <span class="citation">(<a href="references.html#ref-Gower1966">Gower 1966</a>)</span> de la matrice de dissimilarité <span class="math inline">\(\mathbf{D}\)</span> telle que <span class="math inline">\(\mathbf{\Delta}={\mathbf{D}^{\circ2}}/{2}\)</span> (les distances dans l’espace multidimensionnel sont <span class="math inline">\(\sqrt{2\delta_{s's''}}\)</span><span style="white-space:nowrap"> ;</span> autrement dit : la dissimilarité entre deux espèces est la moitié du carré de la distance entre elles dans la représentation géométrique).
 Chaque communauté se trouve au centre de gravité des espèces qu’elle contient, pondérées par leur fréquence.
 La moitié du carré de la distance entre deux communautés dans ce même espace est le coefficient de dissimilarité entre communautés de Rao.
-La distance entre communautés est donc interprétable directement comme une mesure de diversité <span class="math inline">\(\beta\)</span> <span class="citation">(<a href="references.html#ref-Ricotta2015" role="doc-biblioref">Ricotta et al. 2015</a>)</span>, dans la tradition de l’utilisation de la dissimilarité entre paires de communautés (chapitre <a href="chap-BetaPaires.html#chap-BetaPaires">11</a>).</p>
-<p>Cette partition suppose que les poids des communautés sont proportionnels à leur nombre d’individus <span class="citation">(<a href="references.html#ref-Rao1982" role="doc-biblioref">Rao 1982</a>; <a href="references.html#ref-Villeger2008" role="doc-biblioref">Villéger et Mouillot 2008</a>)</span>.
-<span class="citation">O. J. Hardy et Senterre (<a href="references.html#ref-Hardy2007" role="doc-biblioref">2007</a>)</span> décomposent (par différence entre <span class="math inline">\(\gamma\)</span> et <span class="math inline">\(\alpha\)</span>) l’indice de Rao de communautés de poids égaux.
-<span class="citation">O. J. Hardy et Jost (<a href="references.html#ref-Hardy2008" role="doc-biblioref">2008</a>)</span> montrent que les deux pondérations sont valides mais l’absence de cadre général assurant que la diversité <span class="math inline">\(\gamma\)</span> de Rao est supérieure à la diversité <span class="math inline">\(\alpha\)</span> <span class="citation">(<a href="references.html#ref-DeBello2010" role="doc-biblioref">de Bello et al. 2010</a>)</span> motive <span class="citation">Guiasu et Guiasu (<a href="references.html#ref-Guiasu2011" role="doc-biblioref">2011</a>)</span> à proposer une alternative à l’indice de Rao, l’indice de Gini-Simpson quadratique pondéré <a href="mesures-particuli%C3%A8res.html#eq:Guiasu">(7.24)</a>, dont la concavité est démontrée (ce qui implique que <span class="math inline">\(\gamma\ge \alpha\)</span>).
-La pondération peut en fait être quelconque tant que la matrice dont les éléments sont la racine carré des éléments de la matrice de dissimilarité est euclidienne <span class="citation">(<a href="references.html#ref-Champely2002" role="doc-biblioref">Champely et Chessel 2002</a>)</span>.
+La distance entre communautés est donc interprétable directement comme une mesure de diversité <span class="math inline">\(\beta\)</span> <span class="citation">(<a href="references.html#ref-Ricotta2015">Ricotta et al. 2015</a>)</span>, dans la tradition de l’utilisation de la dissimilarité entre paires de communautés (chapitre <a href="chap-BetaPaires.html#chap-BetaPaires">11</a>).</p>
+<p>Cette partition suppose que les poids des communautés sont proportionnels à leur nombre d’individus <span class="citation">(<a href="references.html#ref-Rao1982">Rao 1982</a>; <a href="references.html#ref-Villeger2008">Villéger et Mouillot 2008</a>)</span>.
+<span class="citation">O. J. Hardy et Senterre (<a href="references.html#ref-Hardy2007">2007</a>)</span> décomposent (par différence entre <span class="math inline">\(\gamma\)</span> et <span class="math inline">\(\alpha\)</span>) l’indice de Rao de communautés de poids égaux.
+<span class="citation">O. J. Hardy et Jost (<a href="references.html#ref-Hardy2008">2008</a>)</span> montrent que les deux pondérations sont valides mais l’absence de cadre général assurant que la diversité <span class="math inline">\(\gamma\)</span> de Rao est supérieure à la diversité <span class="math inline">\(\alpha\)</span> <span class="citation">(<a href="references.html#ref-DeBello2010">de Bello et al. 2010</a>)</span> motive <span class="citation">Guiasu et Guiasu (<a href="references.html#ref-Guiasu2011">2011</a>)</span> à proposer une alternative à l’indice de Rao, l’indice de Gini-Simpson quadratique pondéré <a href="mesures-particuli%C3%A8res.html#eq:Guiasu">(7.24)</a>, dont la concavité est démontrée (ce qui implique que <span class="math inline">\(\gamma\ge \alpha\)</span>).
+La pondération peut en fait être quelconque tant que la matrice dont les éléments sont la racine carré des éléments de la matrice de dissimilarité est euclidienne <span class="citation">(<a href="references.html#ref-Champely2002">Champely et Chessel 2002</a>)</span>.
 Ce résultat a été obtenu pour les arbres ultramétriques dans le cadre plus général de la décomposition de l’entropie phylogénétique (voir chapitre <a href="chap-DedompHCDT.html#chap-DedompHCDT">12</a>.</p>
 <p>La partition peut être faite avec la fonction <code>DivPart</code> :</p>
 <p></p>
@@ -687,23 +689,23 @@ Ce résultat a été obtenu pour les arbres ultramétriques dans le cadre plus g
 ##        9 
 ## 24.53015</code></pre>
 <p></p>
-<p>La décomposition de la diversité (et non seulement de l’entropie) de Rao a été établie par <span class="citation">Ricotta et Szeidl (<a href="references.html#ref-Ricotta2009" role="doc-biblioref">2009</a>)</span>.</p>
+<p>La décomposition de la diversité (et non seulement de l’entropie) de Rao a été établie par <span class="citation">Ricotta et Szeidl (<a href="references.html#ref-Ricotta2009">2009</a>)</span>.</p>
 </div>
 <div id="synthèse-4" class="section level2" number="12.6">
 <h2>
 <span class="header-section-number">12.6</span> Synthèse<a class="anchor" aria-label="anchor" href="#synth%C3%A8se-4"><i class="fas fa-link"></i></a>
 </h2>
 <p>La diversité mesurée par l’entropie généralisée peut être décomposée dans tous les cas de figure, y compris lorsque les poids des communautés ne sont pas égaux.
-Les formules d’entropie et de diversité sont résumées dans le tableau <a href="chap-DedompHCDT.html#tab:Decomposition">12.2</a>.
-L’entropie <span class="math inline">\(\beta\)</span> est une mesure de divergence entre la distribution de chaque communauté et celle de la méta-communauté, comme l’avaient suggéré <span class="citation">Ricotta et Burrascano (<a href="references.html#ref-Ricotta2009a" role="doc-biblioref">2009</a>)</span>.</p>
+Les formules d’entropie et de diversité sont résumées dans le tableau <a href="chap-DedompHCDT.html#tab:Decomposition">12.3</a>.
+L’entropie <span class="math inline">\(\beta\)</span> est une mesure de divergence entre la distribution de chaque communauté et celle de la méta-communauté, comme l’avaient suggéré <span class="citation">Ricotta et Burrascano (<a href="references.html#ref-Ricotta2009a">2009</a>)</span>.</p>
 <p>L’entropie de Shannon est un cas particulier dans lequel toutes les controverses disparaissent : l’entropie <span class="math inline">\(\beta\)</span> est indépendante de l’entropie <span class="math inline">\(\alpha\)</span>, et la pondération de Jost se confond avec celle de Routledge.</p>
 <p>L’entropie de Simpson peut être décomposée de deux façons : comme une variance quand les poids des communautés sont donnés par leurs effectifs, ou selon le cas général.
 Les deux décompositions produisent les mêmes valeurs d’entropie <span class="math inline">\(\beta\)</span>, mais la contribution de chaque communauté n’est pas la même.</p>
-<p>L’entropie peut être décomposée hiérarchiquement sur plusieurs niveaux <span class="citation">(<a href="references.html#ref-Crist2003" role="doc-biblioref">Crist et al. 2003</a>; <a href="references.html#ref-Marcon2012a" role="doc-biblioref">Marcon et al. 2012</a>)</span>.</p>
+<p>L’entropie peut être décomposée hiérarchiquement sur plusieurs niveaux <span class="citation">(<a href="references.html#ref-Crist2003">Crist et al. 2003</a>; <a href="references.html#ref-Marcon2012a">Marcon et al. 2012</a>)</span>.</p>
 <p>Les probabilités d’occurrence des espèces ne sont pas connues mais estimées à partir des données.
-Les diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span> sont sous-estimées et la diversité <span class="math inline">\(\beta\)</span> surestimée <span class="citation">(<a href="references.html#ref-Marcon2012a" role="doc-biblioref">Marcon et al. 2012</a>; <a href="references.html#ref-Beck2013" role="doc-biblioref">J. Beck, Holloway, et Schwanghart 2013</a>)</span>, d’autant plus que l’ordre de diversité est faible (le biais est négligeable au-delà de l’indice de Simpson).
+Les diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span> sont sous-estimées et la diversité <span class="math inline">\(\beta\)</span> surestimée <span class="citation">(<a href="references.html#ref-Marcon2012a">Marcon et al. 2012</a>; <a href="references.html#ref-Beck2013">J. Beck, Holloway, et Schwanghart 2013</a>)</span>, d’autant plus que l’ordre de diversité est faible (le biais est négligeable au-delà de l’indice de Simpson).
 Des méthodes de correction existent, mais pas pour l’entropie <span class="math inline">\(\beta\)</span> à l’exception de Shannon.
-La méthode générale consiste donc à corriger les entropies <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span>, calculer l’entropie <span class="math inline">\(\beta\)</span> par différence et transformer les résultats en nombres équivalents <span class="citation">(<a href="references.html#ref-Marcon2014a" role="doc-biblioref">Marcon et al. 2014</a>; <a href="references.html#ref-Marcon2014e" role="doc-biblioref">Marcon, Zhang, et Hérault 2014</a>)</span>.</p>
+La méthode générale consiste donc à corriger les entropies <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span>, calculer l’entropie <span class="math inline">\(\beta\)</span> par différence et transformer les résultats en nombres équivalents <span class="citation">(<a href="references.html#ref-Marcon2014a">Marcon et al. 2014</a>; <a href="references.html#ref-Marcon2014e">Marcon, Zhang, et Hérault 2014</a>)</span>.</p>
 </div>
 <div id="normalisation" class="section level2" number="12.7">
 <h2>
@@ -717,7 +719,7 @@ La méthode générale consiste donc à corriger les entropies <span class="math
 <p>Selon une première approche, cette mesure n’a de sens que comparée à nombre de communautés.
 La diversité entre un hectare de forêt tropicale et un hectare de forêt tempérée (de même poids, sans espèce commune) est égale à 2 quel que soit <span class="math inline">\(q\)</span>.
 La diversité entre un nombre suffisant d’échantillons de forêt tropicale relativement homogène (avec de nombreuses espèces communes) peut facilement dépasser 2 : c’est le cas des 50 carrés de BCI pour <span class="math inline">\(q=0\)</span>.
-Pour ne pas conclure de façon erronée que les carrés de BCI sont plus différents entre eux que BCI et la forêt de Fontainebleau, <span class="citation">Jost (<a href="references.html#ref-Jost2007" role="doc-biblioref">2007</a>)</span> suggère de diviser la diversité <span class="math inline">\(\beta\)</span> par le nombre de communautés pour la normaliser.
+Pour ne pas conclure de façon erronée que les carrés de BCI sont plus différents entre eux que BCI et la forêt de Fontainebleau, <span class="citation">Jost (<a href="references.html#ref-Jost2007">2007</a>)</span> suggère de diviser la diversité <span class="math inline">\(\beta\)</span> par le nombre de communautés pour la normaliser.
 Ce raisonnement a un sens quand la diversité maximale envisageable est effectivement égale au nombre de communautés, par exemple si les communautés sont choisies dans des habitats différents : la diversité <span class="math inline">\(\beta\)</span> mesure cette différence.</p>
 <p>Un autre cas est envisageable : les communautés peuvent être des échantillons d’une méta-communauté clairement définie.
 La diversité <span class="math inline">\(\beta\)</span> mesure alors la variabilité de l’échantillonnage à l’intérieur de la méta-communauté à une échelle donnée.
@@ -781,7 +783,7 @@ Figure 12.1: Estimation de la diversité <span class="math inline">\(\beta\)</sp
 <h3>
 <span class="header-section-number">12.7.2</span> L’indice de chevauchement <span class="math inline">\(C_{qN}\)</span><a class="anchor" aria-label="anchor" href="#sec-Chevauchement"><i class="fas fa-link"></i></a>
 </h3>
-<p>Plutôt qu’une simple normalisation, <span class="citation">Chao et al. (<a href="references.html#ref-Chao2008" role="doc-biblioref">2008</a>)</span> définissent un indice de chevauchement, c’est-à-dire la proportion d’espèces partagées en moyenne par une communauté.
+<p>Plutôt qu’une simple normalisation, <span class="citation">Chao et al. (<a href="references.html#ref-Chao2008">2008</a>)</span> définissent un indice de chevauchement, c’est-à-dire la proportion d’espèces partagées en moyenne par une communauté.
 Si <span class="math inline">\(N\)</span> communautés (le nombre de communautés est noté <span class="math inline">\(N\)</span> ici et non <span class="math inline">\(I\)</span> pour conserver le nom de l’indice établi dans la littérature) de mêmes diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span> que les données, contenaient chacune <span class="math inline">\(S\)</span> espèces équifréquentes, dont <span class="math inline">\(A\)</span> seraient communes à toutes les communautés et les autres représentées dans une seule, <span class="math inline">\(A/S\)</span> serait cet indice de chevauchement.</p>
 <p>Pour <span class="math inline">\(q\ne 1\)</span>,</p>
 <p><span class="math display" id="eq:Chao2008q">\[\begin{equation}
@@ -796,7 +798,7 @@ Si <span class="math inline">\(N\)</span> communautés (le nombre de communauté
   =1-\frac{H_{\beta}}{\ln{N}}.
 \end{equation}\]</span></p>
 <p><span class="math inline">\(C_{qN}\)</span> a été défini à l’origine pour <span class="math inline">\(q\ge 2\)</span>.
-<span class="citation">Chao, Chiu, et Hsieh (<a href="references.html#ref-Chao2012a" role="doc-biblioref">2012</a>)</span> l’étendent sans précaution à <span class="math inline">\(q\)</span> quelconque.
+<span class="citation">Chao, Chiu, et Hsieh (<a href="references.html#ref-Chao2012a">2012</a>)</span> l’étendent sans précaution à <span class="math inline">\(q\)</span> quelconque.
 Sa valeur peut être négative pour <span class="math inline">\(q&lt;1\)</span>, on se limitera donc à <span class="math inline">\(q \ge 1\)</span>.</p>
 </div>
 </div>
@@ -842,7 +844,7 @@ Sa valeur peut être négative pour <span class="math inline">\(q&lt;1\)</span>,
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

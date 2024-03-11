@@ -7,7 +7,7 @@
 <title>23 Diversité \(\beta\) spatialement explicite | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="L’indice de Simpson spatialement explicite ou le variogramme de complémentarité relient la diversité \(\beta\) à la distance entre communautés. La diversité \(\beta\) de différentiation mesure à...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="23 Diversité \(\beta\) spatialement explicite | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-betasp.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -130,15 +131,15 @@ Elle peut être reliée à la distance entre les communautés pour définir une 
 <h2>
 <span class="header-section-number">23.1</span> L’indice de Simpson spatialement explicite<a class="anchor" aria-label="anchor" href="#sec-SimpsonSpatial"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Chave et Leigh (<a href="references.html#ref-Chave2002" role="doc-biblioref">2002</a>)</span> écrivent un modèle neutre de dispersion des espèces forestières, appliqué à l’échelle de l’Amazonie occidentale <span class="citation">(<a href="references.html#ref-Condit2002" role="doc-biblioref">Condit et al. 2002</a>)</span>.
+<p><span class="citation">Chave et Leigh (<a href="references.html#ref-Chave2002">2002</a>)</span> écrivent un modèle neutre de dispersion des espèces forestières, appliqué à l’échelle de l’Amazonie occidentale <span class="citation">(<a href="references.html#ref-Condit2002">Condit et al. 2002</a>)</span>.
 Ils définissent dans ce cadre la fonction <span class="math inline">\(F(r)\)</span> égale à la probabilité que deux individus situés à distance <span class="math inline">\(r\)</span> l’un de l’autre soient de la même espèce, c’est-a-dire l’indice de concentration de Simpson <a href="chap-MesuresNeutres.html#eq:SimpsonD">(3.26)</a>, appliqué à des paires d’individus distants.
-<span class="math inline">\(\beta_s(r)=1-F(r)\)</span> est appelé “indice de Simpson spatialement explicite” par <span class="citation">G. Shen et al. (<a href="references.html#ref-Shen2013" role="doc-biblioref">2013</a>)</span>
+<span class="math inline">\(\beta_s(r)=1-F(r)\)</span> est appelé “indice de Simpson spatialement explicite” par <span class="citation">G. Shen et al. (<a href="references.html#ref-Shen2013">2013</a>)</span>
 En pratique il est estimé à partir d’individus situés dans des parcelles distantes de <span class="math inline">\(r\)</span>, l’ordre de grandeur de <span class="math inline">\(r\)</span> étant nettement plus grand que la taille des parcelles.</p>
 <p>De la même façon que l’indice de Simpson est généralisable à l’indice de Rao, <span class="math inline">\(\beta_s(r)\)</span> est généralisable à <span class="math inline">\(\beta_{phy}(r)\)</span>, l’indice de Rao spatialement explicite, égal à la divergence moyenne entre deux individus situés à distance <span class="math inline">\(r\)</span>.</p>
-<p>Les deux mesures sont des entropies <span class="math inline">\(\beta\)</span>, au sens où ce sont des diversités de différenciation <span class="citation">(<a href="references.html#ref-Jurasinski2009" role="doc-biblioref">Jurasinski, Retzer, et Beierkuhnlein 2009</a>)</span>, voir section <a href="sec-betaCadre.html#sec-DebatDecomposition">10.3.2</a>, qui mesurent à quel point des unités spatiales distantes de <span class="math inline">\(r\)</span> sont différentes.
+<p>Les deux mesures sont des entropies <span class="math inline">\(\beta\)</span>, au sens où ce sont des diversités de différenciation <span class="citation">(<a href="references.html#ref-Jurasinski2009">Jurasinski, Retzer, et Beierkuhnlein 2009</a>)</span>, voir section <a href="sec-betaCadre.html#sec-DebatDecomposition">10.3.2</a>, qui mesurent à quel point des unités spatiales distantes de <span class="math inline">\(r\)</span> sont différentes.
 Ce ne sont pas des mesures de diversité proportionnelle parce que ce ne sont pas les différences entre les entropies <span class="math inline">\(\gamma\)</span> (de la méta-communauté composée de toutes les parcelles) et <span class="math inline">\(\alpha\)</span> (la moyenne des entropies des parcelles).
 L’avantage de ces mesures est d’être facilement interprétables, estimables sans biais (en tant qu’entropies de Simpson ou de Rao), et indépendantes de la diversité <span class="math inline">\(\alpha\)</span>.</p>
-<p>Une décomposition due à <span class="citation">Nei (<a href="references.html#ref-Nei1973" role="doc-biblioref">1973</a>)</span> reprise par <span class="citation">Chave, Chust, et Thébaud (<a href="references.html#ref-Chave2007" role="doc-biblioref">2007</a>)</span> montre que <span class="math inline">\(\beta_s(r)\)</span> est en réalité un mélange d’entropie <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span>.
+<p>Une décomposition due à <span class="citation">Nei (<a href="references.html#ref-Nei1973">1973</a>)</span> reprise par <span class="citation">Chave, Chust, et Thébaud (<a href="references.html#ref-Chave2007">2007</a>)</span> montre que <span class="math inline">\(\beta_s(r)\)</span> est en réalité un mélange d’entropie <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span>.
 Notons <span class="math inline">\(E_{i,j}\)</span> la probabilité que deux individus tirés respectivement dans les parcelles <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span> soient d’espèces différentes :</p>
 <p><span class="math display" id="eq:Nei1973">\[\begin{equation}
   \tag{23.1}
@@ -158,7 +159,7 @@ L’extension à <span class="math inline">\(\beta_{phy}(r)\)</span> est immédi
 <h2>
 <span class="header-section-number">23.2</span> Le variogramme de complémentarité<a class="anchor" aria-label="anchor" href="#le-variogramme-de-compl%C3%A9mentarit%C3%A9"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Wagner (<a href="references.html#ref-Wagner2003" role="doc-biblioref">2003</a>)</span> définit le variogramme de complémentarité à partir des techniques de géostatistique.
+<p><span class="citation">Wagner (<a href="references.html#ref-Wagner2003">2003</a>)</span> définit le variogramme de complémentarité à partir des techniques de géostatistique.
 Les espèces sont inventoriées dans des parcelles de taille identique, en présence-absence.
 Les distances entre parcelles sont regroupées par classes.
 L’indicatrice <span class="math inline">\({\mathbf 1}_{s|i}\)</span> vaut 1 si l’espèce <span class="math inline">\(s\)</span> est présente dans la parcelle <span class="math inline">\(i\)</span>, 0 sinon.
@@ -181,9 +182,9 @@ La semi-variance de ce vecteur de composition spécifique est
 <p><span class="math inline">\(\|\mathbf{s_i}-\mathbf{s_j}\|\)</span> est la distance euclidienne entre les deux vecteurs.
 Puisque <span class="math inline">\(\hat{\gamma}(r)\)</span> est la somme des semi-variances spécifiques, c’est un estimateur de l’espérance du nombre d’espèces présentes sur une seule parcelle de chaque paire.
 Le variogramme de la composition spécifique est appelé “variogramme de complémentarité” pour cette raison.</p>
-<p><span class="citation">Bacaro et Ricotta (<a href="references.html#ref-Bacaro2007a" role="doc-biblioref">2007</a>)</span> l’utilisent en tant que mesure de diversité <span class="math inline">\(\beta\)</span>.</p>
+<p><span class="citation">Bacaro et Ricotta (<a href="references.html#ref-Bacaro2007a">2007</a>)</span> l’utilisent en tant que mesure de diversité <span class="math inline">\(\beta\)</span>.</p>
 <p><span class="math inline">\({\mathbb E}({\mathbf 1}_{s})\)</span> est la probabilité qu’une parcelle quelconque contienne l’espèce <span class="math inline">\(s\)</span>.
-Ce n’est pas la probabilité <span class="math inline">\(p_s\)</span> qu’un individu appartienne à l’espèce <span class="math inline">\(s\)</span>:
+Ce n’est pas la probabilité <span class="math inline">\(p_s\)</span> qu’un individu appartienne à l’espèce <span class="math inline">\(s\)</span> :
 comme toutes les parcelles sont de taille identique, <span class="math inline">\(p_s\)</span> est égal à <span class="math inline">\({{\mathbb E}({\mathbf 1}_{s})}/{\sum_s{{\mathbb E}({\mathbf 1}_{s})}}\)</span>.</p>
 <p>En absence de structuration spatiale, ou à partir de la valeur de <span class="math inline">\(r\)</span> appelée <em>portée</em>, au-delà de laquelle la variance se stabilise à son <em>palier</em>, <span class="math inline">\(\hat{\gamma}(r)\)</span> est égal à <span class="math inline">\(\sum_s{{\mathbb E}({\mathbf 1}_{s})[1-{\mathbb E}({\mathbf 1}_{s})]}\)</span>.
 <span class="math inline">\(\hat{\gamma}(r)\)</span> n’est pas une forme de l’indice de Simpson parce que la somme des <span class="math inline">\({\mathbb E}({\mathbf 1}_{s})\)</span> ne vaut pas 1.</p>
@@ -233,7 +234,7 @@ Le test d’égalité entre <span class="math inline">\(\operatorname{Var}(S)\)<
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

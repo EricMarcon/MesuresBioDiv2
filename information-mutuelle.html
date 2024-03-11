@@ -7,7 +7,7 @@
 <title>17 Information mutuelle | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="La récursivité est une propriété importante de l’entropie de Shannon qui permet d’envisager la diversité de façon multidimensionnelle, par exemple la diversité des espèces et des classes de...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="17 Information mutuelle | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/information-mutuelle.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -147,9 +148,9 @@ et
   H\left(\{p_{s,i}\}\right)-H\left(\{p_s\}\right)
   = \sum_s{p_s H\left(\{\frac{p_{s,i}}{p_s}\}\right)}.
 \end{equation}\]</span></p>
-<p>Cette propriété est appelée récursivité <span class="citation">(<a href="references.html#ref-Bacaro2013" role="doc-biblioref">Bacaro et al. 2014</a>)</span>.
+<p>Cette propriété est appelée récursivité <span class="citation">(<a href="references.html#ref-Bacaro2013">Bacaro et al. 2014</a>)</span>.
 Le premier terme de chaque équation est la différence entre l’entropie de la distribution complète (<span class="math inline">\(p_{s,i}\)</span>), c’est-à-dire la diversité jointe de Gregorius qui sera appelée plutôt entropie jointe ici, et celle de la distribution marginale (l’entropie de la distribution des classes ou celle des espèces).
-Une démonstration rigoureuse est fournie par <span class="citation">Baez, Fritz, et Leinster (<a href="references.html#ref-Baez2011" role="doc-biblioref">2011</a>)</span> d’après <span class="citation">Faddeev (<a href="references.html#ref-Faddeev1956" role="doc-biblioref">1956</a>)</span>, mais il s’agit d’un résultat assez répandu dans la littérature, sous des formes diverses<span class="citation">(<a href="references.html#ref-Aczel1975" role="doc-biblioref">Aczél et Daróczy 1975</a>; <a href="references.html#ref-Renyi1961" role="doc-biblioref">Rényi 1961</a>; <a href="references.html#ref-Bourguignon1979" role="doc-biblioref">Bourguignon 1979</a>)</span>.
+Une démonstration rigoureuse est fournie par <span class="citation">Baez, Fritz, et Leinster (<a href="references.html#ref-Baez2011">2011</a>)</span> d’après <span class="citation">Faddeev (<a href="references.html#ref-Faddeev1956">1956</a>)</span>, mais il s’agit d’un résultat assez répandu dans la littérature, sous des formes diverses<span class="citation">(<a href="references.html#ref-Aczel1975">Aczél et Daróczy 1975</a>; <a href="references.html#ref-Renyi1961">Rényi 1961</a>; <a href="references.html#ref-Bourguignon1979">Bourguignon 1979</a>)</span>.
 <span class="math inline">\(H(\{p_{s,i}\})-H(\{p_i\})-H(\{p_s\})\)</span> est l’information mutuelle, vue en section <a href="chap-DedompHCDT.html#sec-BiaisShannonBeta">12.1.2</a>.</p>
 <p>Le terme de droite de l’équation <a href="information-mutuelle.html#eq:Recursivite1">(17.1)</a> est l’entropie <span class="math inline">\(\alpha\)</span> de l’ensemble des classes si on les pondère par <span class="math inline">\(p_i\)</span> car <span class="math inline">\({p_{s,i}}/{p_i}=p_{s|i}\)</span>.
 Par ailleurs, <span class="math inline">\(H(\{p_s\})\)</span> est l’entropie <span class="math inline">\(\gamma\)</span>.
@@ -169,7 +170,7 @@ L’écart à l’indépendance implique que les distributions de probabilités 
 <h3>
 <span class="header-section-number">17.1.2</span> Entropie HCDT<a class="anchor" aria-label="anchor" href="#sec-jointeHCDT"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Baez, Fritz, et Leinster (<a href="references.html#ref-Baez2011" role="doc-biblioref">2011</a>)</span> généralisent la récursivité à l’entropie HCDT et montrent que</p>
+<p><span class="citation">Baez, Fritz, et Leinster (<a href="references.html#ref-Baez2011">2011</a>)</span> généralisent la récursivité à l’entropie HCDT et montrent que</p>
 <p><span class="math display" id="eq:Baez2011a">\[\begin{equation}
   \tag{17.3}
   ^{q}\!H\left(\{p_{s,i}\}\right) - {^{q}\!H}\left(\{p_i\}\right)
@@ -181,7 +182,7 @@ et
   ^{q}\!H\left(\{p_{s,i}\}\right) - {^{q}\!H}\left(\{p_s\}\right)
   = \sum_s{{p_s^q} {^{q}\!H}\left(\{\frac{p_{s,i}}{p_s}\}\right)}.
 \end{equation}\]</span></p>
-<p>Ce résultat avait déjà été obtenu par <span class="citation">Suyari (<a href="references.html#ref-Suyari2004" role="doc-biblioref">2004</a>)</span>, corrigé par <span class="citation">Ilić, Stanković, et Mulalić (<a href="references.html#ref-Ilic2013" role="doc-biblioref">2013</a>)</span>.
+<p>Ce résultat avait déjà été obtenu par <span class="citation">Suyari (<a href="references.html#ref-Suyari2004">2004</a>)</span>, corrigé par <span class="citation">Ilić, Stanković, et Mulalić (<a href="references.html#ref-Ilic2013">2013</a>)</span>.
 Par le même raisonnement que pour l’entropie de Shannon, on trouve donc que l’entropie entre les classes est l’opposée de l’information mutuelle calculée dans le cadre de l’entropie HCDT, à condition de définir les poids des classes égaux à <span class="math inline">\(p_i\)</span> et l’entropie intraclasse comme la somme des entropies des classes pondérées par leur poids à la puissance <span class="math inline">\(q\)</span>.</p>
 </div>
 <div id="intérêt-de-linformation-mutuelle" class="section level3" number="17.1.3">
@@ -218,12 +219,12 @@ L’information mutuelle de l’entropie HCDT n’a donc qu’un intérêt limit
 <h2>
 <span class="header-section-number">17.2</span> Taille de niche<a class="anchor" aria-label="anchor" href="#taille-de-niche"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Allan (<a href="references.html#ref-Allan1975" role="doc-biblioref">1975</a>)</span> présente plusieurs décompositions de l’entropie jointe (de Shannon) fondées sur l’information mutuelle, dans une matrice en trois dimensions : microhabitats <span class="math inline">\(\times\)</span> sites <span class="math inline">\(\times\)</span> espèces.</p>
-<p>Après <span class="citation">Levins (<a href="references.html#ref-Levins1968" role="doc-biblioref">1968</a>)</span>, <span class="citation">Colwell et Futuyma (<a href="references.html#ref-Colwell1971" role="doc-biblioref">1971</a>)</span> et <span class="citation">Pielou (<a href="references.html#ref-Pielou1972" role="doc-biblioref">1972</a>)</span>, Allan s’intéresse notamment à la taille de la niche (<em>niche width</em>) des espèces.
-Si les classes de la matrice espèces-classes (Table <a href="sec-jointeCadre.html#tab:Notations2">16.1</a>) sont des habitats distincts les uns des autres, la diversité des habitats occupés par une espèce est la taille de sa niche, et la diversité <span class="math inline">\(\gamma\)</span> mesurée sur l’ensemble des habitats peut être comprise comme le chevauchement des niches <span class="citation">(<a href="references.html#ref-Pielou1972" role="doc-biblioref">Pielou 1972</a>)</span>.
-La taille de la niche peut être mesurée par l’entropie de Shannon, mais aussi le nombre de Hill d’ordre 2, qui est donc le nombre effectif d’habitats de Simpson <span class="citation">(<a href="references.html#ref-Levins1968" role="doc-biblioref">Levins 1968</a>)</span>.</p>
+<p><span class="citation">Allan (<a href="references.html#ref-Allan1975">1975</a>)</span> présente plusieurs décompositions de l’entropie jointe (de Shannon) fondées sur l’information mutuelle, dans une matrice en trois dimensions : microhabitats <span class="math inline">\(\times\)</span> sites <span class="math inline">\(\times\)</span> espèces.</p>
+<p>Après <span class="citation">Levins (<a href="references.html#ref-Levins1968">1968</a>)</span>, <span class="citation">Colwell et Futuyma (<a href="references.html#ref-Colwell1971">1971</a>)</span> et <span class="citation">Pielou (<a href="references.html#ref-Pielou1972">1972</a>)</span>, Allan s’intéresse notamment à la taille de la niche (<em>niche width</em>) des espèces.
+Si les classes de la matrice espèces-classes (Table <a href="sec-jointeCadre.html#tab:Notations2">16.1</a>) sont des habitats distincts les uns des autres, la diversité des habitats occupés par une espèce est la taille de sa niche, et la diversité <span class="math inline">\(\gamma\)</span> mesurée sur l’ensemble des habitats peut être comprise comme le chevauchement des niches <span class="citation">(<a href="references.html#ref-Pielou1972">Pielou 1972</a>)</span>.
+La taille de la niche peut être mesurée par l’entropie de Shannon, mais aussi le nombre de Hill d’ordre 2, qui est donc le nombre effectif d’habitats de Simpson <span class="citation">(<a href="references.html#ref-Levins1968">Levins 1968</a>)</span>.</p>
 <p>Cette approche est très similaire à celle des économistes qui utilisent l’indice de Theil comme mesure de concentration spatiale, en intégrant une signification écologique si les localisations possibles correspondent à des habitats différents : une espèce présente dans tous les habitats avec la même probabilité est aussi généraliste que possible.</p>
-<p><span class="citation">Colwell et Futuyma (<a href="references.html#ref-Colwell1971" role="doc-biblioref">1971</a>)</span> traitent le problème posé par le fait que les habitats pris en compte dans l’échantillonnage ne sont pas totalement distincts.
+<p><span class="citation">Colwell et Futuyma (<a href="references.html#ref-Colwell1971">1971</a>)</span> traitent le problème posé par le fait que les habitats pris en compte dans l’échantillonnage ne sont pas totalement distincts.
 Si les habitats étaient tous identiques, la distribution des espèces serait proportionnelle à la taille de chaque habitat et l’information mutuelle serait nulle.
 Elle ne l’est pas, et sa valeur peut être décomposée en somme des contributions de chaque habitat.
 Ces contributions sont utilisées pour pondérer les habitats : un habitat original (contribuant plus à l’information mutuelle) a un poids plus grand.
@@ -262,7 +263,7 @@ Pour revenir au cas simple dans lequel les habitats ont des poids égaux, les co
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

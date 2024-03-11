@@ -7,7 +7,7 @@
 <title>10 Cadre | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="La diversité \(\beta\) désigne la différentiation entre communautés, c’est-à-dire une mesure de divergence de composition spécifique entre elle, ou bien la divergence entre elles et leur...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="10 Cadre | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/sec-betaCadre.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -125,9 +126,9 @@
 <p>La diversité <span class="math inline">\(\beta\)</span> désigne la différentiation entre communautés, c’est-à-dire une mesure de divergence de composition spécifique entre elle, ou bien la divergence entre elles et leur assemblage, appelée diversité proportionnelle.
 La conciliation de ces deux définitions fait toujours l’objet de recherches.</p>
 </div>
-<p>La notion de diversité <span class="math inline">\(\beta\)</span> a été introduite par <span class="citation">Whittaker (<a href="references.html#ref-Whittaker1960" role="doc-biblioref">1960</a>)</span>, page 320, comme le niveau de changement dans la composition des communautés, ou le degré de différenciation des communautés, en relation avec les changements de milieu.
+<p>La notion de diversité <span class="math inline">\(\beta\)</span> a été introduite par <span class="citation">Whittaker (<a href="references.html#ref-Whittaker1960">1960</a>)</span>, page 320, comme le niveau de changement dans la composition des communautés, ou le degré de différenciation des communautés, en relation avec les changements de milieu.
 La traduction de cette notion intuitive en une définition sans ambiguïté est encore une question de recherche et de débats.</p>
-<p><span class="citation">Anderson et al. (<a href="references.html#ref-Anderson2011" role="doc-biblioref">2011</a>)</span> fournissent une revue des analyses utiles de la diversité <span class="math inline">\(\beta\)</span> en forme de guide à destination des écologues reprise ici en introduction.
+<p><span class="citation">Anderson et al. (<a href="references.html#ref-Anderson2011">2011</a>)</span> fournissent une revue des analyses utiles de la diversité <span class="math inline">\(\beta\)</span> en forme de guide à destination des écologues reprise ici en introduction.
 La distinction entre diversité de différenciation et diversité proportionnelle est présentée ensuite.</p>
 <p>Pour simplifier l’exposé, les individus seront échantillonnés dans des communautés, appartenant à une méta-communauté.
 Le tableau <a href="sec-betaCadre.html#tab:Notations">10.1</a> résume les notations.</p>
@@ -157,7 +158,7 @@ Les parcelles de Paracou sont dans l’objet <code>Paracou618.MC</code>.</p>
 <p></p>
 <div class="inline-table"><table class="table table-striped" style="font-size: 9px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:Notations">Table 10.1: </span>Notations des effectifs, tableau espèces-communautés.
+<span id="tab:Notations">Table 10.1: </span><span id="tab:Notations">Table 10.2: </span>Notations des effectifs, tableau espèces-communautés.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -175,10 +176,10 @@ Communauté <span class="math inline">\(i\)</span>
 Espèce <span class="math inline">\(s\)</span>
 </td>
 <td style="text-align:left;">
-<span class="math inline">\(n_{s,i}\)</span>: nombre d’individus de l’espèce <span class="math inline">\(s\)</span> dans la communauté <span class="math inline">\(i\)</span>. <span class="math inline">\(\hat{p}_{s|i}=n_{s,i}/n_{+i}\)</span> est l’estimateur de la probabilité <span class="math inline">\(p_{s|i}\)</span> qu’un individu de la communauté <span class="math inline">\(i\)</span> soit de l’espèce <span class="math inline">\(s\)</span>.
+<span class="math inline">\(n_{s,i}\)</span> : nombre d’individus de l’espèce <span class="math inline">\(s\)</span> dans la communauté <span class="math inline">\(i\)</span>. <span class="math inline">\(\hat{p}_{s&amp;amp;#124;i}=n_{s,i}/n_{+i}\)</span> est l’estimateur de la probabilité <span class="math inline">\(p_{s&amp;amp;#124;i}\)</span> qu’un individu de la communauté <span class="math inline">\(i\)</span> soit de l’espèce <span class="math inline">\(s\)</span>.
 </td>
 <td style="text-align:left;">
-<span class="math inline">\(n_{s+}=\sum_i{n_{s,i}}\)</span>. <span class="math inline">\(p_s=\sum_i{w_{i}p_{s|i}}\)</span>
+<span class="math inline">\(n_{s+}=\sum_i{n_{s,i}}\)</span>. <span class="math inline">\(p_s=\sum_i{w_{i}p_{s&amp;amp;#124;i}}\)</span>
 </td>
 </tr>
 <tr>
@@ -195,10 +196,10 @@ Espèce <span class="math inline">\(s\)</span>
 Total
 </td>
 <td style="text-align:left;">
-<span class="math inline">\(n_{s+}=\sum_i{n_{s,i}}\)</span>. <span class="math inline">\(p_s=\sum_i{w_{i}p_{s|i}}\)</span>
+<span class="math inline">\(n_{s+}=\sum_i{n_{s,i}}\)</span>. <span class="math inline">\(p_s=\sum_i{w_{i}p_{s&amp;amp;#124;i}}\)</span>
 </td>
 <td style="text-align:left;">
-<span class="math inline">\(n\)</span>: nombre total d’individus échantillonnés
+<span class="math inline">\(n\)</span> : nombre total d’individus échantillonnés
 </td>
 </tr>
 </tbody>
@@ -208,9 +209,9 @@ Total
 <h2>
 <span class="header-section-number">10.1</span> Définition de la diversité <span class="math inline">\(\beta\)</span> par objectifs<a class="anchor" aria-label="anchor" href="#d%C3%A9finition-de-la-diversit%C3%A9-beta-par-objectifs"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Anderson et al. (<a href="references.html#ref-Anderson2011" role="doc-biblioref">2011</a>)</span> proposent une revue des définitions de la diversité <span class="math inline">\(\beta\)</span> selon les analyses écologiques auxquelles elles peuvent contribuer plutôt que selon leurs propriétés mathématiques.</p>
-<p>Deux types de diversité <span class="math inline">\(\beta\)</span> peuvent être définies <span class="citation">(<a href="references.html#ref-Vellend2001" role="doc-biblioref">Vellend 2001</a>)</span> en accord avec les notions originales de Whittaker : le <em>remplacement</em> (<em>turnover</em>) des espèces le long d’un gradient environnemental, spatial ou temporel et la <em>variation</em> de la composition spécifique entre communautés, qui diffèrent de la méta-communauté et entre elles.
-Ces deux définitions sont présentées sur les figures <a href="sec-betaCadre.html#fig:Anderson2011a">10.1</a> et <a href="sec-betaCadre.html#fig:Anderson2011b">10.2</a> <span class="citation">(<a href="references.html#ref-Anderson2011" role="doc-biblioref">Anderson et al. 2011</a>)</span>.</p>
+<p><span class="citation">Anderson et al. (<a href="references.html#ref-Anderson2011">2011</a>)</span> proposent une revue des définitions de la diversité <span class="math inline">\(\beta\)</span> selon les analyses écologiques auxquelles elles peuvent contribuer plutôt que selon leurs propriétés mathématiques.</p>
+<p>Deux types de diversité <span class="math inline">\(\beta\)</span> peuvent être définies <span class="citation">(<a href="references.html#ref-Vellend2001">Vellend 2001</a>)</span> en accord avec les notions originales de Whittaker : le <em>remplacement</em> (<em>turnover</em>) des espèces le long d’un gradient environnemental, spatial ou temporel et la <em>variation</em> de la composition spécifique entre communautés, qui diffèrent de la méta-communauté et entre elles.
+Ces deux définitions sont présentées sur les figures <a href="sec-betaCadre.html#fig:Anderson2011a">10.1</a> et <a href="sec-betaCadre.html#fig:Anderson2011b">10.2</a> <span class="citation">(<a href="references.html#ref-Anderson2011">Anderson et al. 2011</a>)</span>.</p>
 
 <p></p>
 <div class="figure" style="text-align: center">
@@ -238,31 +239,32 @@ La dissimilarité entre des paires de communautés présentant la même différe
 Plus classiquement, la diversité <span class="math inline">\(\beta\)</span> peut être régressée contre la valeur du gradient (T3).
 La dissimilarité de chaque paire de communautés est confrontée à son écart sur le gradient.
 Les deux analyses précédentes peuvent être combinées pour mesurer le remplacement des espèces selon deux gradients emboîtés (T6).</p>
-<p>Une variation sur le modèle T2 consiste à le représenter sous la forme d’un modèle de décroissance en fonction de la distance <span class="citation">(<a href="references.html#ref-Nekola1999" role="doc-biblioref">Nekola et White 1999</a>)</span>, éventuellement pour plusieurs groupes de communautés (figure <a href="sec-betaCadre.html#fig:Anderson2011a">10.1</a>, T4 et T5).
+<p>Une variation sur le modèle T2 consiste à le représenter sous la forme d’un modèle de décroissance en fonction de la distance <span class="citation">(<a href="references.html#ref-Nekola1999">Nekola et White 1999</a>)</span>, éventuellement pour plusieurs groupes de communautés (figure <a href="sec-betaCadre.html#fig:Anderson2011a">10.1</a>, T4 et T5).
 L’indice de Simpson spatialement explicite (Section <a href="chap-betasp.html#sec-SimpsonSpatial">23.1</a>) entre dans ce cadre bien qu’il soit construit différemment.</p>
 <p>Les mesures de variation (figure <a href="sec-betaCadre.html#fig:Anderson2011b">10.2</a>, V1) concernent la dissimilarité entre plusieurs communautés ou entre chaque communauté et la méta-communauté.
-L’équivalence de ces deux concepts n’est pas évidente : elle a été montrée pour les mesures de dissimilarité entre paires de communautés par <span class="citation">Legendre et Anderson (<a href="references.html#ref-Legendre1999" role="doc-biblioref">1999</a>)</span><span style="white-space:nowrap"> ;</span> <span class="citation">Legendre et Gallagher (<a href="references.html#ref-Legendre2001" role="doc-biblioref">2001</a>)</span><span style="white-space:nowrap"> ;</span> <span class="citation">Legendre, Borcard, et Peres-Neto (<a href="references.html#ref-Legendre2005" role="doc-biblioref">2005</a>)</span> et pour l’entropie de Rao par <span class="citation">Pavoine, Dufour, et Chessel (<a href="references.html#ref-Pavoine2004" role="doc-biblioref">2004</a>)</span> mais reste une question ouverte pour l’entropie HCDT en général.</p>
+L’équivalence de ces deux concepts n’est pas évidente : elle a été montrée pour les mesures de dissimilarité entre paires de communautés par <span class="citation">Legendre et Anderson (<a href="references.html#ref-Legendre1999">1999</a>)</span><span style="white-space:nowrap"> ;</span> <span class="citation">Legendre et Gallagher (<a href="references.html#ref-Legendre2001">2001</a>)</span><span style="white-space:nowrap"> ;</span> <span class="citation">Legendre, Borcard, et Peres-Neto (<a href="references.html#ref-Legendre2005">2005</a>)</span> et pour l’entropie de Rao par <span class="citation">Pavoine, Dufour, et Chessel (<a href="references.html#ref-Pavoine2004">2004</a>)</span> mais reste une question ouverte pour l’entropie HCDT en général.</p>
 <p>La diversité <span class="math inline">\(\beta\)</span> peut être mesurée pour un assemblage de communautés au choix comme la moyenne des dissimilarités entre les paires de communautés ou à partir des diversités <span class="math inline">\(\gamma\)</span> et <span class="math inline">\(\alpha\)</span>, c’est-à-dire en tant que mesure dérivée.
 Cette dernière approche est traitée dans ce chapitre, où il sera montré que la mesure dérivée est aussi une dissimilarité moyenne entre communautés et méta-communauté.</p>
 <p>Si la diversité est mesurée comme moyenne des dissimilarités, elle peut être analysée par des méthodes d’ordination indirectes (figure <a href="sec-betaCadre.html#fig:Anderson2011b">10.2</a>, V2) ou directes (V3). Elle peut aussi être comparée entre méta-communautés ou modélisée en fonction d’un gradient environnemental (V4), de façon similaire au modèle T6.</p>
 <p>La diversité <span class="math inline">\(\beta\)</span> peut être décomposée en niveaux hiérarchiques emboîtés (V5). Des tests statistiques sont nécessaires pour comparer les niveaux : par exemple, montrer que la diversité (inter) entre des communautés supposées différentes est significativement plus grande que celle (intra) des placettes d’échantillonnage de chacune d’entre elles, à la manière d’une analyse de variance (V6).
-D’autres analyses sont bien sûr envisageables, comme la comparaison de la forme de la courbe de dissimilarité moyenne entre paires de communautés en fonction de la distance à des patrons connus, issus de simulation de processus à identifier <span class="citation">(<a href="references.html#ref-Rejou-Mechain2011" role="doc-biblioref">Réjou-Méchain et al. 2011</a>)</span>.</p>
+D’autres analyses sont bien sûr envisageables, comme la comparaison de la forme de la courbe de dissimilarité moyenne entre paires de communautés en fonction de la distance à des patrons connus, issus de simulation de processus à identifier <span class="citation">(<a href="references.html#ref-Rejou-Mechain2011">Réjou-Méchain et al. 2011</a>)</span>.</p>
 </div>
 <div id="sec-betaTypo" class="section level2" number="10.2">
 <h2>
 <span class="header-section-number">10.2</span> Typologie des mesures<a class="anchor" aria-label="anchor" href="#sec-betaTypo"><i class="fas fa-link"></i></a>
 </h2>
-<p>Cette approche utilitaire est complétée par le cadre théorique de <span class="citation">Jurasinski, Retzer, et Beierkuhnlein (<a href="references.html#ref-Jurasinski2009" role="doc-biblioref">2009</a>)</span> qui distinguent plusieurs types de mesures de diversité :</p>
+<p>Cette approche utilitaire est complétée par le cadre théorique de <span class="citation">Jurasinski, Retzer, et Beierkuhnlein (<a href="references.html#ref-Jurasinski2009">2009</a>)</span> qui distinguent plusieurs types de mesures de diversité :</p>
 <ul>
-<li>La diversité d’inventaire (<em>inventory diversity</em>), qui traite des données récoltées sur une unité spatiale, ce qui correspond à la définition des diversités<span class="math inline">\(\ \alpha\)</span> et <span class="math inline">\(\gamma\)</span>;</li>
+<li>La diversité d’inventaire (<em>inventory diversity</em>), qui traite des données récoltées sur une unité spatiale, ce qui correspond à la définition des diversités<span class="math inline">\(\ \alpha\)</span> et <span class="math inline">\(\gamma\)</span><span style="white-space:nowrap"> ;</span>
+</li>
 <li>La diversité de différenciation (<em>differentiation diversity</em>), qui mesure à quel point les unités spatiales sont différentes, ce qui correspond à la définition littérale de la diversité <span class="math inline">\(\beta\)</span> de <span style="white-space:nowrap">Whittaker ;</span>
 </li>
-<li>La diversité proportionnelle (<em>proportional diversity</em>), diversité <span class="math inline">\(\beta\)</span> qui se construit par différence ou rapport des diversités <span class="math inline">\(\gamma\)</span> et <span class="math inline">\(\alpha\)</span>. <span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2014a" role="doc-biblioref">2014</a>)</span> ont montré qu’avec une décomposition appropriée de la diversité, la diversité proportionnelle est aussi la divergence entre la distribution des communautés locales et celle de la méta-communauté : la diversité <span class="math inline">\(\beta\)</span> mesure alors à quel point les unités spatiales sont différentes de leur assemblage plutôt qu’entre elles.</li>
+<li>La diversité proportionnelle (<em>proportional diversity</em>), diversité <span class="math inline">\(\beta\)</span> qui se construit par différence ou rapport des diversités <span class="math inline">\(\gamma\)</span> et <span class="math inline">\(\alpha\)</span>. <span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2014a">2014</a>)</span> ont montré qu’avec une décomposition appropriée de la diversité, la diversité proportionnelle est aussi la divergence entre la distribution des communautés locales et celle de la méta-communauté : la diversité <span class="math inline">\(\beta\)</span> mesure alors à quel point les unités spatiales sont différentes de leur assemblage plutôt qu’entre elles.</li>
 </ul>
-<p>Dans son article fondateur, <span class="citation">Whittaker (<a href="references.html#ref-Whittaker1960" role="doc-biblioref">1960</a>)</span> définit la diversité <span class="math inline">\(\beta\)</span> comme le niveau de changement dans la composition des communautés, la nomme “diversité secondaire” et lui attribue la lettre <span class="math inline">\(\beta\)</span> en référence à la diversité “primaire” mesurable par l’indice <span class="math inline">\(\alpha\)</span> de Fisher <span class="citation">(<a href="references.html#ref-Fisher1943" role="doc-biblioref">Fisher, Corbet, et Williams 1943</a>)</span>, voir le chapitre <a href="chap-Fisher.html#chap-Fisher">20</a>.
+<p>Dans son article fondateur, <span class="citation">Whittaker (<a href="references.html#ref-Whittaker1960">1960</a>)</span> définit la diversité <span class="math inline">\(\beta\)</span> comme le niveau de changement dans la composition des communautés, la nomme “diversité secondaire” et lui attribue la lettre <span class="math inline">\(\beta\)</span> en référence à la diversité “primaire” mesurable par l’indice <span class="math inline">\(\alpha\)</span> de Fisher <span class="citation">(<a href="references.html#ref-Fisher1943">Fisher, Corbet, et Williams 1943</a>)</span>, voir le chapitre <a href="chap-Fisher.html#chap-Fisher">20</a>.
 Il illustre cette définition par une mesure de différentiation : l’indice de Jaccard, mais utilise ensuite une mesure proportionnelle : le rapport des indice <span class="math inline">\(\alpha\)</span> de l’assemblage des communautés à sa moyenne sur les communautés.
 La conciliation des deux approches n’est pas simple.
-<span class="citation">Gregorius (<a href="references.html#ref-Gregorius2016" role="doc-biblioref">2016</a>)</span> montre notamment que les mesures habituelles de diversité proportionnelle ne rendent pas compte correctement de la différentiation.</p>
+<span class="citation">Gregorius (<a href="references.html#ref-Gregorius2016">2016</a>)</span> montre notamment que les mesures habituelles de diversité proportionnelle ne rendent pas compte correctement de la différentiation.</p>
 </div>
 <div id="sec-betaDecomposition" class="section level2" number="10.3">
 <h2>
@@ -274,7 +276,7 @@ Les éléments du débat sont présentés ici.</p>
 <h3>
 <span class="header-section-number">10.3.1</span> Définitions de la diversité <span class="math inline">\(\beta\)</span>, mesure dérivée<a class="anchor" aria-label="anchor" href="#d%C3%A9finitions-de-la-diversit%C3%A9-beta-mesure-d%C3%A9riv%C3%A9e"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Tuomisto (<a href="references.html#ref-Tuomisto2010a" role="doc-biblioref">2010a</a>)</span> passe en revue l’ensemble des définitions de la diversité <span class="math inline">\(\beta\)</span> dérivée des diversités <span class="math inline">\(\gamma\)</span> et <span class="math inline">\(\alpha\)</span>.
+<p><span class="citation">Tuomisto (<a href="references.html#ref-Tuomisto2010a">2010a</a>)</span> passe en revue l’ensemble des définitions de la diversité <span class="math inline">\(\beta\)</span> dérivée des diversités <span class="math inline">\(\gamma\)</span> et <span class="math inline">\(\alpha\)</span>.
 Toutes ont en commun :</p>
 <ul>
 <li>Une définition de la mesure de diversité, appliquée à la diversité <span class="math inline">\(\gamma\)</span>, qui est généralement une des mesures vues dans le chapitre <span style="white-space:nowrap"><a href="chap-MesuresNeutres.html#chap-MesuresNeutres">3</a> ;</span>
@@ -287,7 +289,8 @@ Toutes ont en commun :</p>
 <li>Une façon de combiner les diversités <span class="math inline">\(\gamma\)</span> et <span class="math inline">\(\alpha\)</span> pour obtenir la diversité <span class="math inline">\(\beta\)</span>, par exemple :
 <ul>
 <li>
-<span class="math inline">\(\beta={\gamma}/{\alpha}\)</span>;</li>
+<span class="math inline">\(\beta={\gamma}/{\alpha}\)</span><span style="white-space:nowrap"> ;</span>
+</li>
 <li>
 <span class="math inline">\(\beta=\gamma-\alpha\)</span>.</li>
 </ul>
@@ -295,43 +298,43 @@ Toutes ont en commun :</p>
 </ul>
 </li>
 </ul>
-<p>L’utilisation des nombres de Hill, la mesure locale de la diversité <span class="math inline">\(\alpha\)</span> et la définition de la diversité <span class="math inline">\(\beta\)</span> comme rapport des diversités <span class="math inline">\(\gamma\)</span> et <span class="math inline">\(\alpha\)</span> permet de définir la “vraie diversité” <span class="citation">(<a href="references.html#ref-Jost2006" role="doc-biblioref">Jost 2006</a>, <a href="references.html#ref-Jost2007" role="doc-biblioref">2007</a>)</span> <span class="math inline">\(\beta\)</span> qui est un nombre de communautés équivalentes (<em>compositionnal units</em>) similaire au nombre d’espèces équivalentes des diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span>.
-<span class="citation">Tuomisto (<a href="references.html#ref-Tuomisto2011" role="doc-biblioref">2011</a>)</span> milite pour que le terme diversité soit réservé à la vraie diversité (homogène à un nombre d’espèces) et que les autres mesures soient appelées différemment : “entropie” de Shannon ou “probabilité” de Gini-Simpson notamment.</p>
+<p>L’utilisation des nombres de Hill, la mesure locale de la diversité <span class="math inline">\(\alpha\)</span> et la définition de la diversité <span class="math inline">\(\beta\)</span> comme rapport des diversités <span class="math inline">\(\gamma\)</span> et <span class="math inline">\(\alpha\)</span> permet de définir la “vraie diversité” <span class="citation">(<a href="references.html#ref-Jost2006">Jost 2006</a>, <a href="references.html#ref-Jost2007">2007</a>)</span> <span class="math inline">\(\beta\)</span> qui est un nombre de communautés équivalentes (<em>compositionnal units</em>) similaire au nombre d’espèces équivalentes des diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span>.
+<span class="citation">Tuomisto (<a href="references.html#ref-Tuomisto2011">2011</a>)</span> milite pour que le terme diversité soit réservé à la vraie diversité (homogène à un nombre d’espèces) et que les autres mesures soient appelées différemment : “entropie” de Shannon ou “probabilité” de Gini-Simpson notamment.</p>
 </div>
 <div id="sec-DebatDecomposition" class="section level3" number="10.3.2">
 <h3>
 <span class="header-section-number">10.3.2</span> Le débat sur la décomposition<a class="anchor" aria-label="anchor" href="#sec-DebatDecomposition"><i class="fas fa-link"></i></a>
 </h3>
 <p>L’objectif est de décomposer la diversité totale, notée <span class="math inline">\(\gamma\)</span> en une composante inter-groupes, notée <span class="math inline">\(\beta\)</span> et une composante intra-groupes notée <span class="math inline">\(\alpha\)</span>.</p>
-<p>Whittaker <span class="citation">(<a href="references.html#ref-Whittaker1960" role="doc-biblioref">1960</a>, <a href="references.html#ref-Whittaker1972" role="doc-biblioref">1972</a>)</span> est l’auteur de ce concept.
+<p>Whittaker <span class="citation">(<a href="references.html#ref-Whittaker1960">1960</a>, <a href="references.html#ref-Whittaker1972">1972</a>)</span> est l’auteur de ce concept.
 Il a posé le principe que la diversité <span class="math inline">\(\gamma\)</span> devait être le produit des diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span>.</p>
-<p><span class="citation">Lande (<a href="references.html#ref-Lande1996" role="doc-biblioref">1996</a>)</span> a une approche additive et postule que les mesures de diversité doivent être concaves : la diversité d’un jeu de données regroupant plusieurs communautés doit être supérieure ou égale à la somme pondérée des diversités dans chaque communauté.
+<p><span class="citation">Lande (<a href="references.html#ref-Lande1996">1996</a>)</span> a une approche additive et postule que les mesures de diversité doivent être concaves : la diversité d’un jeu de données regroupant plusieurs communautés doit être supérieure ou égale à la somme pondérée des diversités dans chaque communauté.
 De cette façon, il est possible de définir une diversité totale égale à la somme pondérée des diversités <span class="math inline">\(\alpha\)</span> (intra-communautés) et <span class="math inline">\(\beta\)</span> (inter-communautés), toutes les diversités étant positives ou nulles.
 Il note que “la partition serait plus facilement interprétable si les différentes composantes de la diversité pouvaient être exprimés au moyen de la même formule” (ce qui n’est en fait jamais le cas).
-Une revue sur les avantages de la décomposition additive est proposée par <span class="citation">Veech et al. (<a href="references.html#ref-Veech2002" role="doc-biblioref">2002</a>)</span>.</p>
-<p>Un débat assez stérile a découlé de l’opposition entre les deux approches, principalement dû à la transformation logarithmique <span class="citation">(<a href="references.html#ref-Ricotta2005a" role="doc-biblioref">Ricotta 2009b</a>)</span>, à des définitions imprécises et des démonstrations empiriques remises en question <span class="citation">(<a href="references.html#ref-Baselga2010a" role="doc-biblioref">Baselga 2010a</a>; <a href="references.html#ref-Veech2010a" role="doc-biblioref">Veech et Crist 2010</a>)</span>.
-Il reste que la décomposition multiplicative permet seule la définition de la diversité <span class="math inline">\(\beta\)</span> en tant que diversité au sens strict <span class="citation">(<a href="references.html#ref-Chao2012a" role="doc-biblioref">Chao, Chiu, et Hsieh 2012</a>)</span>.</p>
-<p><span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2012a" role="doc-biblioref">2012</a>)</span> montrent que l’entropie de Shannon <span class="math inline">\(H_{\beta}\)</span> est une mesure de diversité de différenciation en donnant sa définition indépendamment de <span class="math inline">\(H_{\alpha}\)</span> et <span class="math inline">\(H_{\gamma}\)</span>, comme l’avaient fait Ricotta et Marignani pour l’entropie quadratique de Rao <span class="citation">(<a href="references.html#ref-Ricotta2007a" role="doc-biblioref">Ricotta et Marignani 2007</a>)</span>.
+Une revue sur les avantages de la décomposition additive est proposée par <span class="citation">Veech et al. (<a href="references.html#ref-Veech2002">2002</a>)</span>.</p>
+<p>Un débat assez stérile a découlé de l’opposition entre les deux approches, principalement dû à la transformation logarithmique <span class="citation">(<a href="references.html#ref-Ricotta2005a">Ricotta 2009b</a>)</span>, à des définitions imprécises et des démonstrations empiriques remises en question <span class="citation">(<a href="references.html#ref-Baselga2010a">Baselga 2010a</a>; <a href="references.html#ref-Veech2010a">Veech et Crist 2010</a>)</span>.
+Il reste que la décomposition multiplicative permet seule la définition de la diversité <span class="math inline">\(\beta\)</span> en tant que diversité au sens strict <span class="citation">(<a href="references.html#ref-Chao2012a">Chao, Chiu, et Hsieh 2012</a>)</span>.</p>
+<p><span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2012a">2012</a>)</span> montrent que l’entropie de Shannon <span class="math inline">\(H_{\beta}\)</span> est une mesure de diversité de différenciation en donnant sa définition indépendamment de <span class="math inline">\(H_{\alpha}\)</span> et <span class="math inline">\(H_{\gamma}\)</span>, comme l’avaient fait Ricotta et Marignani pour l’entropie quadratique de Rao <span class="citation">(<a href="references.html#ref-Ricotta2007a">Ricotta et Marignani 2007</a>)</span>.
 C’est également une diversité proportionnelle, comme toutes les mesures passées en revue par Tuomisto : la diversité de Shannon permet d’unifier les deux approches.</p>
 <p>L’indice de Shannon, couplé à son expression sous forme de nombre de Hill, respecte finalement tous les critères imposés ou souhaités.
 Sa décomposition est détaillée ci-dessous.
-Enfin, <span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2014a" role="doc-biblioref">2014</a>)</span> généralisent ce résultat à toutes les mesures de diversités dérivées de l’entropie généralisée de Tsallis.</p>
+Enfin, <span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2014a">2014</a>)</span> généralisent ce résultat à toutes les mesures de diversités dérivées de l’entropie généralisée de Tsallis.</p>
 </div>
 <div id="décomposition-multiplicative-de-la-diversité" class="section level3" number="10.3.3">
 <h3>
 <span class="header-section-number">10.3.3</span> Décomposition multiplicative de la diversité<a class="anchor" aria-label="anchor" href="#d%C3%A9composition-multiplicative-de-la-diversit%C3%A9"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Jost (<a href="references.html#ref-Jost2007" role="doc-biblioref">2007</a>)</span> et <span class="citation">Chao, Chiu, et Hsieh (<a href="references.html#ref-Chao2012a" role="doc-biblioref">2012</a>)</span> ont montré que la décomposition des nombres de Hill en éléments indépendants est multiplicative :</p>
+<p><span class="citation">Jost (<a href="references.html#ref-Jost2007">2007</a>)</span> et <span class="citation">Chao, Chiu, et Hsieh (<a href="references.html#ref-Chao2012a">2012</a>)</span> ont montré que la décomposition des nombres de Hill en éléments indépendants est multiplicative :</p>
 <p><span class="math display" id="eq:DecompDq">\[\begin{equation}
   \tag{10.1}
   ^{q}\!D_{\gamma} = ^{q}\!D_{\alpha} ^{q}\!D_{\beta}.
 \end{equation}\]</span></p>
 <p><span class="math inline">\(^{q}\!D_{\alpha}\)</span> et <span class="math inline">\(^{q}\!D_{\gamma}\)</span> sont les nombres de Hill d’ordre <span class="math inline">\(q\)</span> égaux aux diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\gamma\)</span>.
 Ce sont des nombres équivalents d’espèces.
-<span class="math inline">\(^{q}\!D_{\beta}\)</span> est le “nombre de communautés effectives” ou “nombre équivalent de communautés”, c’est-à-dire le nombre de communautés de poids égal ne possédant aucune espèce en commun (et dont la dissimilarité entre les espèces de communautés différentes est maximale quand la diversité est phylogénétique ou fonctionnelle) <span class="citation">(<a href="references.html#ref-Pavoine2015a" role="doc-biblioref">Pavoine, Marcon, et Ricotta 2016</a>)</span>, qui fourniraient la même valeur de diversité <span class="math inline">\(\beta\)</span>.</p>
+<span class="math inline">\(^{q}\!D_{\beta}\)</span> est le “nombre de communautés effectives” ou “nombre équivalent de communautés”, c’est-à-dire le nombre de communautés de poids égal ne possédant aucune espèce en commun (et dont la dissimilarité entre les espèces de communautés différentes est maximale quand la diversité est phylogénétique ou fonctionnelle) <span class="citation">(<a href="references.html#ref-Pavoine2015a">Pavoine, Marcon, et Ricotta 2016</a>)</span>, qui fourniraient la même valeur de diversité <span class="math inline">\(\beta\)</span>.</p>
 <p>La diversité <span class="math inline">\(\beta\)</span> est indépendante de la diversité <span class="math inline">\(\alpha\)</span> si les poids des communautés sont égaux.
 L’<em>indépendance</em> signifie que la valeur de <span class="math inline">\(^{q}\!D_{\beta}\)</span> n’est pas contrainte par celle de <span class="math inline">\(^{q}\!D_{\alpha}\)</span>.
-Cette propriété est souvent considérée comme importante <span class="citation">(<a href="references.html#ref-Wilson1984" role="doc-biblioref">M. V. Wilson et Shmida 1984</a>; <a href="references.html#ref-Gregorius2010" role="doc-biblioref">Gregorius 2010</a>)</span>, et sera discutée largement ici.</p>
+Cette propriété est souvent considérée comme importante <span class="citation">(<a href="references.html#ref-Wilson1984">M. V. Wilson et Shmida 1984</a>; <a href="references.html#ref-Gregorius2010">Gregorius 2010</a>)</span>, et sera discutée largement ici.</p>
 </div>
 <div id="sec-defalpha" class="section level3" number="10.3.4">
 <h3>
@@ -341,8 +344,8 @@ Cette propriété est souvent considérée comme importante <span class="citatio
 La diversité <span class="math inline">\(\alpha\)</span> de la méta-communauté est intuitivement la moyenne de celle des communautés.
 En raison de leurs propriétés mathématiques, il est plus simple de considérer la moyenne des entropies <span class="math inline">\(\alpha\)</span>.</p>
 <p>Le poids de chaque groupe est <span class="math inline">\(w_i\)</span>, souvent choisi égal au nombre d’individus de la communauté divisé par le nombre total ou à la surface de chaque groupe, mais qui peut être arbitraire, tant que <span class="math inline">\(p_s=\sum_i{w_i p_{s|i}}\)</span>.
-Deux façons de pondérer la somme émergent de la littérature <span class="citation">(<a href="references.html#ref-Chao2012a" role="doc-biblioref">Chao, Chiu, et Hsieh 2012</a>)</span>.
-La définition classique est selon <span class="citation">Routledge (<a href="references.html#ref-Routledge1979" role="doc-biblioref">1979</a>)</span></p>
+Deux façons de pondérer la somme émergent de la littérature <span class="citation">(<a href="references.html#ref-Chao2012a">Chao, Chiu, et Hsieh 2012</a>)</span>.
+La définition classique est selon <span class="citation">Routledge (<a href="references.html#ref-Routledge1979">1979</a>)</span></p>
 <p><span class="math display" id="eq:RoutledgeHalpha">\[\begin{equation}
   \tag{10.2}
   ^{q}\!H_{\alpha} = \sum_i{w_i {^{q}_{i}\!H_{\alpha}}};
@@ -351,7 +354,7 @@ La définition classique est selon <span class="citation">Routledge (<a href="re
   \tag{10.3}
   ^{q}\!D_{\alpha}={\left(\sum_s{\sum_i{w_i p^q_{s|i}}}\right)}^{1/{\left(1-q\right)}}.
 \end{equation}\]</span></p>
-<p>La pondération proposée par <span class="citation">Jost (<a href="references.html#ref-Jost2007" role="doc-biblioref">2007</a>)</span> est</p>
+<p>La pondération proposée par <span class="citation">Jost (<a href="references.html#ref-Jost2007">2007</a>)</span> est</p>
 <p><span class="math display" id="eq:JostHalpha">\[\begin{equation}
   \tag{10.4}
   ^{q}\!H_{\alpha} = \sum_i{\frac{w^q_i}{\sum_i{w^q_i}} {^{q}_{i}\!H_{\alpha}}};
@@ -363,18 +366,18 @@ La définition classique est selon <span class="citation">Routledge (<a href="re
 <p>La première est la pondération naturelle.
 La seconde, qui utilise les poids à la puissance <span class="math inline">\(q\)</span>, donne donc d’autant moins d’importance que <span class="math inline">\(q\)</span> est grand aux communautés dont le poids est faible.
 Les deux définitions se confondent pour <span class="math inline">\(q=1\)</span>.</p>
-<p>Si les poids sont différents, <span class="citation">Jost (<a href="references.html#ref-Jost2007" role="doc-biblioref">2007</a>)</span> a montré que l’indépendance n’est possible que si la diversité <span class="math inline">\(\alpha\)</span> est définie selon sa pondération.
+<p>Si les poids sont différents, <span class="citation">Jost (<a href="references.html#ref-Jost2007">2007</a>)</span> a montré que l’indépendance n’est possible que si la diversité <span class="math inline">\(\alpha\)</span> est définie selon sa pondération.
 En revanche, cette pondération ne garantit pas que la diversité <span class="math inline">\(\gamma\)</span> soit supérieure à la diversité <span class="math inline">\(\alpha\)</span> si <span class="math inline">\(q\)</span> n’est égal ni à 0 ni à 1.
 Jost conclut donc que la décomposition n’est possible que pour des communautés de même poids ou pour <span class="math inline">\(q=0\)</span> ou <span class="math inline">\(q=1\)</span>.
-<span class="citation">Ricotta (<a href="references.html#ref-Ricotta2009b" role="doc-biblioref">2009a</a>)</span> contourne cette difficulté en proposant une méthode de ré-échantillonnage qui permet d’égaliser les poids.</p>
-<p><span class="citation">Chiu, Jost, et Chao (<a href="references.html#ref-Chiu2014" role="doc-biblioref">2014</a>)</span> établissent une nouvelle définition de la diversité <span class="math inline">\(\alpha\)</span> qui permet d’assurer l’indépendance et garantit que la diversité <span class="math inline">\(\beta\)</span> est positive quels que soient les poids des communautés :</p>
+<span class="citation">Ricotta (<a href="references.html#ref-Ricotta2009b">2009a</a>)</span> contourne cette difficulté en proposant une méthode de ré-échantillonnage qui permet d’égaliser les poids.</p>
+<p><span class="citation">Chiu, Jost, et Chao (<a href="references.html#ref-Chiu2014">2014</a>)</span> établissent une nouvelle définition de la diversité <span class="math inline">\(\alpha\)</span> qui permet d’assurer l’indépendance et garantit que la diversité <span class="math inline">\(\beta\)</span> est positive quels que soient les poids des communautés :</p>
 <p><span class="math display" id="eq:Chiualpha">\[\begin{equation}
   \tag{10.6}
   ^{q}\!D_{\alpha}=\frac{1}{I}{\left(\sum_s{\sum_i{{\left(w_ip_{s|i}\right)}^q}}\right)}^{{1}/{\left(1-q\right)}}.
 \end{equation}\]</span></p>
 <p>Cette définition pose problème : alors que le choix de <span class="math inline">\(q\)</span> a pour but de donner une importance plus ou moins grande aux espèces rares, son effet est le même sur la taille des communautés La diversité dépendra essentiellement des espèces rares dans les communautés de faible poids si <span class="math inline">\(q\)</span> est petit, définissant une diversité bi-dimensionnelle.
 Cette question est traitée en détail au chapitre <a href="chap-DiversiteJointe.html#chap-DiversiteJointe">18</a>.</p>
-<p><span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2014a" role="doc-biblioref">2014</a>)</span> préfèrent la définition de Routledge qui est plus intuitive et garantit que la diversité <span class="math inline">\(\gamma\)</span> est supérieure à la diversité <span class="math inline">\(\alpha\)</span>.
+<p><span class="citation">Marcon et al. (<a href="references.html#ref-Marcon2014a">2014</a>)</span> préfèrent la définition de Routledge qui est plus intuitive et garantit que la diversité <span class="math inline">\(\gamma\)</span> est supérieure à la diversité <span class="math inline">\(\alpha\)</span>.
 La dépendance entre <span class="math inline">\(^{q}\!D_{\beta}\)</span> et <span class="math inline">\(^{q}\!D_{\alpha}\)</span> est le prix à payer.</p>
 </div>
 </div>
@@ -413,7 +416,7 @@ La dépendance entre <span class="math inline">\(^{q}\!D_{\beta}\)</span> et <sp
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

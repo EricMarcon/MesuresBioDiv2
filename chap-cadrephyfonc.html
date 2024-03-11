@@ -7,7 +7,7 @@
 <title>6 Cadre | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="La diversité fonctionnelle ou phylogénétique prend en compte la proximité des espèces entre elles. Généralement, la distance entre espèces est évaluée dans l’espace des traits, approximation de...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="6 Cadre | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-cadrephyfonc.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -128,12 +129,12 @@ Généralement, la distance entre espèces est évaluée dans l’espace des tra
 <p>Les mesures neutres de la diversité considèrent que toutes les classes auxquelles les objets appartiennent sont différentes, sans que certaines soient plus différentes que d’autres.
 Par exemple, toutes les espèces sont équidistantes les unes des autres, qu’elles appartiennent au même genre ou à des familles différentes.
 Intuitivement, l’idée qu’une communauté de <span class="math inline">\(S\)</span> espèces toutes de genres différents est plus diverse qu’une communauté de <span class="math inline">\(S\)</span> espèces du même genre est satisfaisante.
-<span class="citation">B. H. Walker (<a href="references.html#ref-Walker1992" role="doc-biblioref">1992</a>)</span> argumente en faveur de la protection de groupes fonctionnels plutôt que de celle de chacune des espèces qui les constitue pour maintenir le bon état des écosystèmes.</p>
-<p>Il s’agit donc de caractériser la différence entre deux classes d’objets, puis de construire des mesures de diversité en rapport <span class="citation">(<a href="references.html#ref-Pielou1975" role="doc-biblioref">Pielou 1975</a>; <a href="references.html#ref-May1990a" role="doc-biblioref">May 1990</a>; <a href="references.html#ref-Cousins1991" role="doc-biblioref">Cousins 1991</a>)</span>.
-En écologie, ces différences sont fonctionnelles ou phylogénétiques, définissant la diversité fonctionnelle <span class="citation">(<a href="references.html#ref-Tilman1997" role="doc-biblioref">Tilman et al. 1997</a>)</span> ou la diversité phylogénétique (<em>phylodiversity</em>) <span class="citation">(<a href="references.html#ref-Webb2006" role="doc-biblioref">Webb, Losos, et Agrawal 2006</a>)</span>.</p>
-<p>Les premières propositions de ce type d’indices sont dues à <span class="citation">Rao (<a href="references.html#ref-Rao1982" role="doc-biblioref">1982</a>)</span> (voir section <a href="mesures-particuli%C3%A8res.html#sec-Rao">7.6</a>) puis, avec nettement moins de succès, <span class="citation">Vane-Wright, Humphries, et Williams (<a href="references.html#ref-Vane-Wright1991" role="doc-biblioref">1991</a>)</span> et <span class="citation">Warwick et Clarke (<a href="references.html#ref-Warwick1995" role="doc-biblioref">1995</a>)</span>.
-<span class="citation">Chave, Chust, et Thébaud (<a href="references.html#ref-Chave2007" role="doc-biblioref">2007</a>)</span> montrent que la diversité neutre prédit mal la diversité phylogénétique (calculée par l’entropie quadratique de Rao).</p>
-<p>De nombreuses mesures de diversité ont été créées et plusieurs revues permettent d’en faire le tour. <span class="citation">(<a href="references.html#ref-Ricotta2007" role="doc-biblioref">Ricotta 2007</a>; <a href="references.html#ref-Vellend2010" role="doc-biblioref">Vellend et al. 2010</a>)</span>
+<span class="citation">B. H. Walker (<a href="references.html#ref-Walker1992">1992</a>)</span> argumente en faveur de la protection de groupes fonctionnels plutôt que de celle de chacune des espèces qui les constitue pour maintenir le bon état des écosystèmes.</p>
+<p>Il s’agit donc de caractériser la différence entre deux classes d’objets, puis de construire des mesures de diversité en rapport <span class="citation">(<a href="references.html#ref-Pielou1975">Pielou 1975</a>; <a href="references.html#ref-May1990a">May 1990</a>; <a href="references.html#ref-Cousins1991">Cousins 1991</a>)</span>.
+En écologie, ces différences sont fonctionnelles ou phylogénétiques, définissant la diversité fonctionnelle <span class="citation">(<a href="references.html#ref-Tilman1997">Tilman et al. 1997</a>)</span> ou la diversité phylogénétique (<em>phylodiversity</em>) <span class="citation">(<a href="references.html#ref-Webb2006">Webb, Losos, et Agrawal 2006</a>)</span>.</p>
+<p>Les premières propositions de ce type d’indices sont dues à <span class="citation">Rao (<a href="references.html#ref-Rao1982">1982</a>)</span> (voir section <a href="mesures-particuli%C3%A8res.html#sec-Rao">7.6</a>) puis, avec nettement moins de succès, <span class="citation">Vane-Wright, Humphries, et Williams (<a href="references.html#ref-Vane-Wright1991">1991</a>)</span> et <span class="citation">Warwick et Clarke (<a href="references.html#ref-Warwick1995">1995</a>)</span>.
+<span class="citation">Chave, Chust, et Thébaud (<a href="references.html#ref-Chave2007">2007</a>)</span> montrent que la diversité neutre prédit mal la diversité phylogénétique (calculée par l’entropie quadratique de Rao).</p>
+<p>De nombreuses mesures de diversité ont été créées et plusieurs revues permettent d’en faire le tour. <span class="citation">(<a href="references.html#ref-Ricotta2007">Ricotta 2007</a>; <a href="references.html#ref-Vellend2010">Vellend et al. 2010</a>)</span>
 Les mesures présentées ici sont les plus utilisées, et notamment celles qui peuvent être ramenées aux mesures classiques en fixant une distance égale entre toutes les espèces.
 Le cadre méthodologique dans lequel ces mesures ont été développées est présenté dans ce chapitre, suivi par une revue des nombreuses mesures de diversité fonctionnelles et phylogénétiques de la littérature.
 L’entropie phylogénétique et la diversité de Leinster et Cobbold sont ensuite développées en détail, suivies d’une synthèse et de considérations sur la mesure de la diversité individuelle plutôt que spécifique.</p>
@@ -153,18 +154,21 @@ Le package contient les données d’inventaire de deux hectares du dispositif d
 Pour une similarité le lien est d’autant plus fort que sa valeur est grande.</p>
 <p>Une dissimilarité vérifie (<span class="math inline">\(k\)</span>, <span class="math inline">\(l\)</span> et <span class="math inline">\(m\)</span> sont trois individus) :</p>
 <ul>
-<li>La dissimilarité d’un individu avec lui-même est nulle : <span class="math inline">\(d\left(k,k\right)=0\)</span>;</li>
-<li>La dissimilarité entre deux individus différents est positive : <span class="math inline">\(d\left(k,l\right)\ge 0\)</span>;</li>
+<li>La dissimilarité d’un individu avec lui-même est nulle : <span class="math inline">\(d\left(k,k\right)=0\)</span><span style="white-space:nowrap"> ;</span>
+</li>
+<li>La dissimilarité entre deux individus différents est positive : <span class="math inline">\(d\left(k,l\right)\ge 0\)</span><span style="white-space:nowrap"> ;</span>
+</li>
 <li>La dissimilarité est symétrique : <span class="math inline">\(d\left(k,l\right)=d\left(l,k\right)\)</span>.</li>
 </ul>
 <p>Une distance vérifie en plus :</p>
 <ul>
-<li>La distance entre deux individus différents est strictement positive : <span class="math inline">\(d\left(k,l\right)=0\Rightarrow k=l\)</span>;</li>
+<li>La distance entre deux individus différents est strictement positive : <span class="math inline">\(d\left(k,l\right)=0\Rightarrow k=l\)</span><span style="white-space:nowrap"> ;</span>
+</li>
 <li>L’inégalité triangulaire : <span class="math inline">\(d\left(k,m\right)\le d\left(k,l\right)+d\left(l,m\right)\)</span>.
 De nombreux indices de dissimilarité ne vérifient pas cette propriété.</li>
 </ul>
 <p>Une distance est euclidienne si elle peut être représentée par des figures géométriques.
-On peut rendre toute distance euclidienne par ajout d’une constante <span class="citation">(<a href="references.html#ref-Lingoes1971" role="doc-biblioref">Lingoes 1971</a>; <a href="references.html#ref-Cailliez1983" role="doc-biblioref">Cailliez 1983</a>)</span>.
+On peut rendre toute distance euclidienne par ajout d’une constante <span class="citation">(<a href="references.html#ref-Lingoes1971">Lingoes 1971</a>; <a href="references.html#ref-Cailliez1983">Cailliez 1983</a>)</span>.
 Dans R, utiliser <code>is.euclid()</code> pour vérifier qu’une distance est euclidienne, et <code>cailliez()</code> ou <code>lingoes()</code> pour la transformation.</p>
 <p>Enfin, une distance est ultramétrique si <span class="math inline">\(d\left(k,m\right) \le \max\left(d\left(k,l\right),d\left(l,m\right)\right)\)</span>.
 Les distances obtenues en mesurant les longueurs des branches d’un dendrogramme (arbre) résultant d’une classification hiérarchique sont ultramétriques.</p>
@@ -184,17 +188,17 @@ La distance est la hauteur du premier noeud commun.</p>
 <h2>
 <span class="header-section-number">6.2</span> Distance phylogénétique<a class="anchor" aria-label="anchor" href="#sec-Dphylo"><i class="fas fa-link"></i></a>
 </h2>
-<p>La façon la plus évidente de définir une distance entre espèces est d’utiliser la taxonomie <span class="citation">(<a href="references.html#ref-Clarke2001" role="doc-biblioref">Clarke et Warwick 2001, Warwick2001</a>)</span>, en attribuant une distance arbitraire (par exemple 1) à deux espèces du même genre, une autre (par exemple 2) à deux espèces de la même famille, etc.
+<p>La façon la plus évidente de définir une distance entre espèces est d’utiliser la taxonomie <span class="citation">(<a href="references.html#ref-Clarke2001">Clarke et Warwick 2001, Warwick2001</a>)</span>, en attribuant une distance arbitraire (par exemple 1) à deux espèces du même genre, une autre (par exemple 2) à deux espèces de la même famille, etc.
 La distance définie est ultramétrique.</p>
 <p>La taxonomie peut être remplacée avantageusement par une phylogénie.
 La phylogénie idéale contiendrait l’histoire évolutive de toutes les espèces et les distances seraient les temps de divergence depuis le premier ancêtre commun.
 En pratique, les phylogénies sont établies à partir d’un nombre de marqueurs génétiques limités, sans datation précise (mais avec des calages partiels à partir de fossiles), et ne sont pas toujours ultramétriques.
 Elles peuvent prendre en compte chaque individu, sans regroupement par espèce.
-Une méthode pour dater une phylogénie est fournie par <span class="citation">Chave, Chust, et Thébaud (<a href="references.html#ref-Chave2007" role="doc-biblioref">2007</a>)</span>
-<span class="citation">Zanne et al. (<a href="references.html#ref-Zanne2014" role="doc-biblioref">2014</a>)</span> fournissent une phylogénie datée de plus de 32000 espèces.
-<span class="citation">Ricotta et al. (<a href="references.html#ref-Ricotta2012a" role="doc-biblioref">2012</a>)</span> montrent sur des exemples que la diversité calculée à partir de phylogénies datées est très corrélée à celle calculée à partir de simples taxonomies.</p>
+Une méthode pour dater une phylogénie est fournie par <span class="citation">Chave, Chust, et Thébaud (<a href="references.html#ref-Chave2007">2007</a>)</span>
+<span class="citation">Zanne et al. (<a href="references.html#ref-Zanne2014">2014</a>)</span> fournissent une phylogénie datée de plus de 32000 espèces.
+<span class="citation">Ricotta et al. (<a href="references.html#ref-Ricotta2012a">2012</a>)</span> montrent sur des exemples que la diversité calculée à partir de phylogénies datées est très corrélée à celle calculée à partir de simples taxonomies.</p>
 <p>Dans tous les cas, la distance est une mesure de la divergence évolutive.
-Du point de vue de la biologie de la conservation, chaque espèce accumule une quantité d’évolution, interprétée comme une quantité d’information <span class="citation">(<a href="references.html#ref-Crozier1997" role="doc-biblioref">Crozier 1997</a>)</span> dont le maximum doit être préservé.</p>
+Du point de vue de la biologie de la conservation, chaque espèce accumule une quantité d’évolution, interprétée comme une quantité d’information <span class="citation">(<a href="references.html#ref-Crozier1997">Crozier 1997</a>)</span> dont le maximum doit être préservé.</p>
 <p>L’entropie phylogénétique (voir chapitre <a href="chap-Phyloentropie.html#chap-Phyloentropie">8</a>) utilise un arbre phylogénétique pour mesurer la diversité.</p>
 </div>
 <div id="sec-DFonctionnelle" class="section level2" number="6.3">
@@ -203,14 +207,14 @@ Du point de vue de la biologie de la conservation, chaque espèce accumule une q
 </h2>
 <p>L’approche fonctionnelle est différente.
 Chaque espèce ou individu est représenté par ses valeurs de traits dans un espace multidimensionnel.
-Le vecteur de traits est considéré comme un proxy de la niche écologique <span class="citation">(<a href="references.html#ref-Westoby2002" role="doc-biblioref">Westoby et al. 2002</a>)</span>.
+Le vecteur de traits est considéré comme un proxy de la niche écologique <span class="citation">(<a href="references.html#ref-Westoby2002">Westoby et al. 2002</a>)</span>.
 Les individus proches dans l’espace des traits sont donc considérés comme proches écologiquement.
 Les distances entre les points peuvent être calculées directement dans l’espace des traits ou, fréquemment, un arbre est construit par classification automatique hiérarchique.</p>
-<p>La première étape consiste donc à choisir un ensemble de traits pertinents et à les mesurer de façon standardisée <span class="citation">(<a href="references.html#ref-Cornelissen2003" role="doc-biblioref">Cornelissen et al. 2003</a>)</span>.
-Toute la stratégie relative à la photosynthèse peut être par exemple assez bien résumée par la masse surfacique des feuilles <span class="citation">(<a href="references.html#ref-Wright2004" role="doc-biblioref">I. J. Wright et al. 2004</a>)</span>, mais, en forêt tropicale, ce trait est décorrélé de la densité du bois <span class="citation">(<a href="references.html#ref-Baraloto2010" role="doc-biblioref">Baraloto et al. 2010</a>)</span>.
-Les valeurs manquantes peuvent être complétées en utilisant toute l’information disponible par MICE (<em>multiple imputation by chained equations</em>) <span class="citation">(<a href="references.html#ref-VanBuuren2006" role="doc-biblioref">van Buuren et al. 2006</a>)</span>, disponible sous R dans le package <code>mice</code> <span class="citation">(<a href="references.html#ref-VanBuuren2011" role="doc-biblioref">van Buuren et Groothuis-Oudshoorn 2011</a>)</span>.</p>
-<p>La prise en compte de variables qualitatives ou de rang et la possibilité de données manquantes pose un problème pratique de construction de la matrice de dissimilarité, traité par <span class="citation">Gower (<a href="references.html#ref-Gower1971" role="doc-biblioref">1971</a>)</span>.
-La formule de Gower, étendue par <span class="citation">Podani (<a href="references.html#ref-Podani1999" role="doc-biblioref">1999</a>)</span> puis <span class="citation">Pavoine et al. (<a href="references.html#ref-Pavoine2009b" role="doc-biblioref">2009</a>)</span> à d’autres types de variables, calcule la dissimilarité entre deux espèces par la moyenne des dissimilarités calculées pour chaque trait, dont la valeur est comprise entre 0 et 1 :</p>
+<p>La première étape consiste donc à choisir un ensemble de traits pertinents et à les mesurer de façon standardisée <span class="citation">(<a href="references.html#ref-Cornelissen2003">Cornelissen et al. 2003</a>)</span>.
+Toute la stratégie relative à la photosynthèse peut être par exemple assez bien résumée par la masse surfacique des feuilles <span class="citation">(<a href="references.html#ref-Wright2004">I. J. Wright et al. 2004</a>)</span>, mais, en forêt tropicale, ce trait est décorrélé de la densité du bois <span class="citation">(<a href="references.html#ref-Baraloto2010">Baraloto et al. 2010</a>)</span>.
+Les valeurs manquantes peuvent être complétées en utilisant toute l’information disponible par MICE (<em>multiple imputation by chained equations</em>) <span class="citation">(<a href="references.html#ref-VanBuuren2006">van Buuren et al. 2006</a>)</span>, disponible sous R dans le package <code>mice</code> <span class="citation">(<a href="references.html#ref-VanBuuren2011">van Buuren et Groothuis-Oudshoorn 2011</a>)</span>.</p>
+<p>La prise en compte de variables qualitatives ou de rang et la possibilité de données manquantes pose un problème pratique de construction de la matrice de dissimilarité, traité par <span class="citation">Gower (<a href="references.html#ref-Gower1971">1971</a>)</span>.
+La formule de Gower, étendue par <span class="citation">Podani (<a href="references.html#ref-Podani1999">1999</a>)</span> puis <span class="citation">Pavoine et al. (<a href="references.html#ref-Pavoine2009b">2009</a>)</span> à d’autres types de variables, calcule la dissimilarité entre deux espèces par la moyenne des dissimilarités calculées pour chaque trait, dont la valeur est comprise entre 0 et 1 :</p>
 <ul>
 <li>Pour une variable quantitative, la différence de valeur entre deux espèces est normalisée par l’étendue des valeurs de la <span style="white-space:nowrap">variable ;</span>
 </li>
@@ -221,15 +225,15 @@ La formule de Gower, étendue par <span class="citation">Podani (<a href="refere
 <li>Les valeurs manquantes sont simplement ignorées et n’entrent pas dans la moyenne.</li>
 </ul>
 <p>Une matrice de distances entre espèces est construite de cette façon.
-<span class="citation">Podani et Schmera (<a href="references.html#ref-Podani2006" role="doc-biblioref">2006</a>)</span> suggèrent d’utiliser ensuite une classification hiérarchique par UPGMA <span class="citation">(<a href="references.html#ref-Sokal1958" role="doc-biblioref">Sokal et Michener 1958</a>)</span> qu’ils montrent être la plus robuste (pour le calcul de FD, voir section <a href="mesures-particuli%C3%A8res.html#sec-PDFD">7.5</a>) à l’ajout ou au retrait d’un trait ou d’une espèce.
-<span class="citation">Mouchet et al. (<a href="references.html#ref-Mouchet2008" role="doc-biblioref">2008</a>)</span> suggèrent plutôt d’appliquer toutes les méthodes de classification et de retenir à la fin l’arbre dont la distribution des distances entre espèces dans l’arbre est la plus proche de la distribution des distances dans la matrice de dissimilarités : cette proximité est mesurée par la corrélation cophénétique, c’est-à-dire le coefficient de corrélation entre les valeurs de distances <span class="citation">(<a href="references.html#ref-Sokal1962" role="doc-biblioref">Sokal et Rohlf 1962</a>; <a href="references.html#ref-Legendre2012" role="doc-biblioref">Legendre et Legendre 2012</a>)</span>.
-Un arbre consensus <span class="citation">(<a href="references.html#ref-Felsenstein2004" role="doc-biblioref">Felsenstein 2004</a>)</span> est souvent plus proche de la matrice de distance.</p>
+<span class="citation">Podani et Schmera (<a href="references.html#ref-Podani2006">2006</a>)</span> suggèrent d’utiliser ensuite une classification hiérarchique par UPGMA <span class="citation">(<a href="references.html#ref-Sokal1958">Sokal et Michener 1958</a>)</span> qu’ils montrent être la plus robuste (pour le calcul de FD, voir section <a href="mesures-particuli%C3%A8res.html#sec-PDFD">7.5</a>) à l’ajout ou au retrait d’un trait ou d’une espèce.
+<span class="citation">Mouchet et al. (<a href="references.html#ref-Mouchet2008">2008</a>)</span> suggèrent plutôt d’appliquer toutes les méthodes de classification et de retenir à la fin l’arbre dont la distribution des distances entre espèces dans l’arbre est la plus proche de la distribution des distances dans la matrice de dissimilarités : cette proximité est mesurée par la corrélation cophénétique, c’est-à-dire le coefficient de corrélation entre les valeurs de distances <span class="citation">(<a href="references.html#ref-Sokal1962">Sokal et Rohlf 1962</a>; <a href="references.html#ref-Legendre2012">Legendre et Legendre 2012</a>)</span>.
+Un arbre consensus <span class="citation">(<a href="references.html#ref-Felsenstein2004">Felsenstein 2004</a>)</span> est souvent plus proche de la matrice de distance.</p>
 <p>Un dendrogramme fonctionnel n’a pas d’interprétation aussi claire qu’un arbre phylogénétique qui représente le processus de l’évolution.
 Il peut être interprété comme la représentation à des échelles de plus en plus grossières en allant vers le haut de l’arbre de regroupements fonctionnels dans des niches de plus en plus vastes.</p>
-<p>La transformation d’une matrice (non ultramétrique) en dendrogramme déforme la topologie des espèces <span class="citation">(<a href="references.html#ref-Pavoine2005a" role="doc-biblioref">Pavoine, Ollier, et Dufour 2005</a>; <a href="references.html#ref-Podani2007" role="doc-biblioref">Podani et Schmera 2007</a>)</span> : une mesure de diversité qui utilise directement la matrice est préférable, c’est un intérêt de la diversité de Leinster et Cobbold (voir chapitre <a href="chap-LeinsterCobbold.html#chap-LeinsterCobbold">9</a>).
-<span class="citation">Maire et al. (<a href="references.html#ref-Maire2015" role="doc-biblioref">2015</a>)</span> ont défini une mesure de qualité d’un espace fonctionnel, <em>mSD</em>, comme l’écart quadratique moyen entre les distances fonctionnelles entre espèces dans l’espace utilisé (par exemple les distances cophénétiques dans un dendrogramme fonctionnel) et les distances originales (dans la matrice de distance à partir de laquelle l’arbre a été obtenu).
+<p>La transformation d’une matrice (non ultramétrique) en dendrogramme déforme la topologie des espèces <span class="citation">(<a href="references.html#ref-Pavoine2005a">Pavoine, Ollier, et Dufour 2005</a>; <a href="references.html#ref-Podani2007">Podani et Schmera 2007</a>)</span> : une mesure de diversité qui utilise directement la matrice est préférable, c’est un intérêt de la diversité de Leinster et Cobbold (voir chapitre <a href="chap-LeinsterCobbold.html#chap-LeinsterCobbold">9</a>).
+<span class="citation">Maire et al. (<a href="references.html#ref-Maire2015">2015</a>)</span> ont défini une mesure de qualité d’un espace fonctionnel, <em>mSD</em>, comme l’écart quadratique moyen entre les distances fonctionnelles entre espèces dans l’espace utilisé (par exemple les distances cophénétiques dans un dendrogramme fonctionnel) et les distances originales (dans la matrice de distance à partir de laquelle l’arbre a été obtenu).
 Dans la matrice originale, les valeurs de traits sont centrées et réduites, et la hauteur du dendrogramme est fixée pour que la distance cophénétique maximale soit égale à la distance originale maximale.</p>
-<p><span class="citation">Villéger, Maire, et Leprieur (<a href="references.html#ref-Villeger2017" role="doc-biblioref">2017</a>)</span> ont montré que l’utilisation de dendrogrammes fonctionnels dans une étude de <span class="citation">Sobral, Lees, et Cianciaruso (<a href="references.html#ref-Sobral2016" role="doc-biblioref">2016</a>)</span> amène à sous-estimer les changements de niveau de biodiversité liés à l’arrivée d’espèces invasives d’oiseaux.
+<p><span class="citation">Villéger, Maire, et Leprieur (<a href="references.html#ref-Villeger2017">2017</a>)</span> ont montré que l’utilisation de dendrogrammes fonctionnels dans une étude de <span class="citation">Sobral, Lees, et Cianciaruso (<a href="references.html#ref-Sobral2016">2016</a>)</span> amène à sous-estimer les changements de niveau de biodiversité liés à l’arrivée d’espèces invasives d’oiseaux.
 Dans la très grande majorité des dendrogrammes utilisés, la transformation de la matrice de distance a entraîné un écart moyen de plus de 10 % par rapport aux valeurs originales (une valeur de <em>mSD</em>, l’écart quadratique moyen, supérieure à <span style="white-space:nowrap">1 %)</span>
 Cette déformation est suffisante pour largement invalider les résultats obtenus.</p>
 </div>
@@ -239,18 +243,18 @@ Cette déformation est suffisante pour largement invalider les résultats obtenu
 </h2>
 <p>L’approche fonctionnelle étant particulièrement complexe et lourde à mettre en oeuvre (notamment pour la mesure des traits sur chaque individu), la tentation a été grande de considérer que la phylogénie contenait plus d’information fonctionnelle que ce qui pouvait être mesuré, et donc de considérer la diversité phylogénétique comme proxy de la diversité fonctionnelle.</p>
 <p>Du point de vue théorique, le modèle le plus simple de l’évolution de la valeur d’un trait hypothétique au cours du temps est le mouvement brownien : à chaque génération, la valeur du trait varie un peu, sans mémoire.
-Dans ce cadre <span class="citation">(<a href="references.html#ref-Felsenstein1985" role="doc-biblioref">Felsenstein 1985</a>)</span>, la variance de la valeur actuelle du trait pour une espèce donnée est proportionnelle à la durée de l’évolution et la covariance entre deux espèces à celle de l’âge de leur ancêtre commun.
+Dans ce cadre <span class="citation">(<a href="references.html#ref-Felsenstein1985">Felsenstein 1985</a>)</span>, la variance de la valeur actuelle du trait pour une espèce donnée est proportionnelle à la durée de l’évolution et la covariance entre deux espèces à celle de l’âge de leur ancêtre commun.
 Deux espèces proches dans l’arbre phylogénétique décrivant l’évolution doivent donc avoir des valeurs de trait corrélées.</p>
-<p><span class="citation">Webb (<a href="references.html#ref-Webb2000" role="doc-biblioref">2000</a>)</span> a montré que des communautés d’arbres tropicaux avaient une moins grande diversité phylogénétique locale qu’attendue sous l’hypothèse nulle d’une distribution aléatoire des espèces, et a supposé que la cause en était le filtrage environnemental local, agissant sur les traits et observables par la phylogénie, sous l’hypothèse de conservation phylogénétique des traits fonctionnels.
-La discipline appelée <em>écologie phylogénétique des communautés</em> cherche encore à comprendre quels traits sont conservés et lesquels sont convergents <span class="citation">(<a href="references.html#ref-Cavender-Bares2009" role="doc-biblioref">Cavender-Bares et al. 2009</a>)</span>.</p>
-<p><span class="citation">Swenson et Enquist (<a href="references.html#ref-Swenson2009" role="doc-biblioref">2009</a>)</span> ont montré que la relation entre les deux diversités était faible.
-L’utilisation de la diversité phylogénétique comme proxy de la diversité fonctionnelle n’est pas satisfaisante <span class="citation">(<a href="references.html#ref-Pavoine2011" role="doc-biblioref">Pavoine et Bonsall 2011</a>)</span>. Pour optimiser la conservation, les deux aspects de la diversité, souvent divergents, doivent être pris en compte <span class="citation">(<a href="references.html#ref-Devictor2010" role="doc-biblioref">Devictor et al. 2010</a>)</span>.</p>
+<p><span class="citation">Webb (<a href="references.html#ref-Webb2000">2000</a>)</span> a montré que des communautés d’arbres tropicaux avaient une moins grande diversité phylogénétique locale qu’attendue sous l’hypothèse nulle d’une distribution aléatoire des espèces, et a supposé que la cause en était le filtrage environnemental local, agissant sur les traits et observables par la phylogénie, sous l’hypothèse de conservation phylogénétique des traits fonctionnels.
+La discipline appelée <em>écologie phylogénétique des communautés</em> cherche encore à comprendre quels traits sont conservés et lesquels sont convergents <span class="citation">(<a href="references.html#ref-Cavender-Bares2009">Cavender-Bares et al. 2009</a>)</span>.</p>
+<p><span class="citation">Swenson et Enquist (<a href="references.html#ref-Swenson2009">2009</a>)</span> ont montré que la relation entre les deux diversités était faible.
+L’utilisation de la diversité phylogénétique comme proxy de la diversité fonctionnelle n’est pas satisfaisante <span class="citation">(<a href="references.html#ref-Pavoine2011">Pavoine et Bonsall 2011</a>)</span>. Pour optimiser la conservation, les deux aspects de la diversité, souvent divergents, doivent être pris en compte <span class="citation">(<a href="references.html#ref-Devictor2010">Devictor et al. 2010</a>)</span>.</p>
 </div>
 <div id="typologie-des-mesures" class="section level2" number="6.5">
 <h2>
 <span class="header-section-number">6.5</span> Typologie des mesures<a class="anchor" aria-label="anchor" href="#typologie-des-mesures"><i class="fas fa-link"></i></a>
 </h2>
-<p>À partir de la littérature <span class="citation">(<a href="references.html#ref-Ricotta2007" role="doc-biblioref">Ricotta 2007</a>; <a href="references.html#ref-Pavoine2011" role="doc-biblioref">Pavoine et Bonsall 2011</a>)</span>, une typologie des mesures de diversité émerge.
+<p>À partir de la littérature <span class="citation">(<a href="references.html#ref-Ricotta2007">Ricotta 2007</a>; <a href="references.html#ref-Pavoine2011">Pavoine et Bonsall 2011</a>)</span>, une typologie des mesures de diversité émerge.
 Elle étend les notions classiques de richesse et équitabilité.</p>
 <p>La richesse est l’accumulation de classes différentes dans les mesures classiques.
 Dans un arbre phylogénétique, la longueur des branches représente un temps d’évolution : la richesse en est la somme.
@@ -264,19 +268,19 @@ Figure 6.2: Régularité contre irrégularité. Les arbres de A à D sont de plu
 </p>
 </div>
 <p></p>
-<p>La régularité mesure la façon dont les espèces occupent uniformément l’espace des niches <span class="citation">(<a href="references.html#ref-Pavoine2011" role="doc-biblioref">Pavoine et Bonsall 2011</a>)</span>.
+<p>La régularité mesure la façon dont les espèces occupent uniformément l’espace des niches <span class="citation">(<a href="references.html#ref-Pavoine2011">Pavoine et Bonsall 2011</a>)</span>.
 Cette notion est simple dans un espace multidimensionnel (par exemple, l’espace des traits fonctionnels).
-Dans un arbre phylogénétique (figure <a href="chap-cadrephyfonc.html#fig:Pavoine2011">6.2</a>, <span class="citation">Pavoine et Bonsall (<a href="references.html#ref-Pavoine2011" role="doc-biblioref">2011</a>)</span>), la régularité de l’arbre <span class="citation">(<a href="references.html#ref-Mooers1997" role="doc-biblioref">Mooers et Heard 1997</a>)</span> est un premier critère, complété éventuellement par les abondances.
+Dans un arbre phylogénétique (figure <a href="chap-cadrephyfonc.html#fig:Pavoine2011">6.2</a>, <span class="citation">Pavoine et Bonsall (<a href="references.html#ref-Pavoine2011">2011</a>)</span>), la régularité de l’arbre <span class="citation">(<a href="references.html#ref-Mooers1997">Mooers et Heard 1997</a>)</span> est un premier critère, complété éventuellement par les abondances.
 Dans un arbre parfaitement régulier, la régularité se réduit à l’équitabilité.</p>
 <p>Les mesures de divergence sont des fonctions croissantes de la dissimilarité entre les espèces, généralement considérées par paires.
 Certaines sont pondérées par les abondances, d’autres non.
 Dans un arbre parfaitement régulier, l’indice de Simpson est une mesure de divergence pondérée.
 Ces mesures sont influencées par la richesse et la régularité.</p>
-<p>Face à la profusion des mesures de diversité fonctionnelle, <span class="citation">Ricotta (<a href="references.html#ref-Ricotta2005d" role="doc-biblioref">2005a</a>)</span>, en complément de <span class="citation">A. R. Solow et Polasky (<a href="references.html#ref-Solow1994" role="doc-biblioref">1994</a>)</span> établit un certain nombre d’axiomes :</p>
+<p>Face à la profusion des mesures de diversité fonctionnelle, <span class="citation">Ricotta (<a href="references.html#ref-Ricotta2005d">2005a</a>)</span>, en complément de <span class="citation">A. R. Solow et Polasky (<a href="references.html#ref-Solow1994">1994</a>)</span> établit un certain nombre d’axiomes :</p>
 <ol style="list-style-type: decimal">
 <li>Monotonicité d’ensemble : la diversité ne doit pas diminuer quand une espèce est ajoutée avec une faible probabilité (qui ne modifie pas la structure de la communauté existante), quelles que soient ses caractéristiques <span style="white-space:nowrap">fonctionnelles ;</span>
 </li>
-<li>Jumelage <span class="citation">(<a href="references.html#ref-Weitzman1992" role="doc-biblioref">Weitzman 1992</a>)</span> : l’introduction d’une espèce identique à une espèces existante ne doit pas augmenter la diversité. De façon moins triviale, une espèce infiniment proche ne doit pas augmenter la diversité : il s’agit donc d’un axiome de continuité dans l’espace des niches.</li>
+<li>Jumelage <span class="citation">(<a href="references.html#ref-Weitzman1992">Weitzman 1992</a>)</span> : l’introduction d’une espèce identique à une espèces existante ne doit pas augmenter la diversité. De façon moins triviale, une espèce infiniment proche ne doit pas augmenter la diversité : il s’agit donc d’un axiome de continuité dans l’espace des niches.</li>
 <li>Monotonicité de distance : la diversité ne doit pas diminuer quand la distance entre espèces est augmentée.</li>
 <li>Décomposabilité : les mesures de divergence doivent être décomposables en diversité <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> et <span class="math inline">\(\gamma\)</span>, ce qui implique leur concavité par rapport aux probabilités.</li>
 </ol>
@@ -313,7 +317,7 @@ Elles sont détaillées au chapitre suivant.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

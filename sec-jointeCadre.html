@@ -7,7 +7,7 @@
 <title>16 Cadre | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="Gregorius (2010, 2014) argumente en faveur de la prise en compte de ce qu’il définit comme la “diversité jointe” dans le cadre classique où les classes sont des communautés pour des raisons...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="16 Cadre | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/sec-jointeCadre.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -121,16 +122,16 @@
 <h1>
 <span class="header-section-number">16</span> Cadre<a class="anchor" aria-label="anchor" href="#sec-jointeCadre"><i class="fas fa-link"></i></a>
 </h1>
-<p>Gregorius <span class="citation">(<a href="references.html#ref-Gregorius2010" role="doc-biblioref">2010</a>, <a href="references.html#ref-Gregorius2014" role="doc-biblioref">2014</a>)</span> argumente en faveur de la prise en compte de ce qu’il définit comme la “diversité jointe” dans le cadre classique où les classes sont des communautés pour des raisons fondamentales de définition de la diversité.
+<p>Gregorius <span class="citation">(<a href="references.html#ref-Gregorius2010">2010</a>, <a href="references.html#ref-Gregorius2014">2014</a>)</span> argumente en faveur de la prise en compte de ce qu’il définit comme la “diversité jointe” dans le cadre classique où les classes sont des communautés pour des raisons fondamentales de définition de la diversité.
 Son approche consiste à traiter de façon symétrique l’appartenance à une classe ou à une espèce : contrairement aux chapitres précédents où l’échantillonnage des individus avait lieu séparément dans chaque communauté, l’échantillonnage a lieu ici globalement dans la méta-communauté et l’appartenance d’un individu à une communauté apporte autant d’information que son appartenance à une espèce.
-Cette approche convient bien à des questions de choix de localisation traités en économie (voir par exemple la définition de la localisation globale <span class="citation">(<a href="references.html#ref-Cutrini2010" role="doc-biblioref">Cutrini 2010</a>)</span>, qui traite de façon symétrique le secteur d’activité et la région d’implantation des firmes).
+Cette approche convient bien à des questions de choix de localisation traités en économie (voir par exemple la définition de la localisation globale <span class="citation">(<a href="references.html#ref-Cutrini2010">Cutrini 2010</a>)</span>, qui traite de façon symétrique le secteur d’activité et la région d’implantation des firmes).
 L’entropie des lignes est alors la diversité de localisation des <span style="white-space:nowrap">firmes ;</span> son complément à la valeur maximale est une mesure de concentration spatiale (l’indice de Theil pour <span class="math inline">\(q=1\)</span>).
 En écologie, cette entropie permet par exemple de caractériser le niveau de spécialisation d’une espèce si les communautés sont de même taille (plus précisément de même probabilité de choix <em>a priori</em>) et situées dans des environnements différents.</p>
 <p>La décomposition de la diversité jointe apporte en plus de la décomposition de la diversité <span class="math inline">\(\gamma\)</span> une information sur l’ubiquité des espèces.
-La décomposition de <span class="citation">Chiu, Jost, et Chao (<a href="references.html#ref-Chiu2014" role="doc-biblioref">2014</a>)</span> se situe en réalité dans ce cadre.</p>
-<p>La notion de diversité structurelle a été définie par les forestiers <span class="citation">(<a href="references.html#ref-Bacaro2013" role="doc-biblioref">Bacaro et al. 2014</a>)</span>.
+La décomposition de <span class="citation">Chiu, Jost, et Chao (<a href="references.html#ref-Chiu2014">2014</a>)</span> se situe en réalité dans ce cadre.</p>
+<p>La notion de diversité structurelle a été définie par les forestiers <span class="citation">(<a href="references.html#ref-Bacaro2013">Bacaro et al. 2014</a>)</span>.
 En plus des espèces, d’autres critères (par exemple les classes de diamètres) sont pris en compte pour définir la structure forestière.
-Une revue des approches utilisées pour décrire cette structure, et plus particulièrement sa complexité, est fournie par Bacaro et al. Certaines se sont attachées à définir une mesure de diversité structurelle : notamment, <span class="citation">Das et Nautiyal (<a href="references.html#ref-Das2004" role="doc-biblioref">2004</a>)</span> définissent un indice qui prend en compte la variabilité des diamètres.</p>
+Une revue des approches utilisées pour décrire cette structure, et plus particulièrement sa complexité, est fournie par Bacaro et al. Certaines se sont attachées à définir une mesure de diversité structurelle : notamment, <span class="citation">Das et Nautiyal (<a href="references.html#ref-Das2004">2004</a>)</span> définissent un indice qui prend en compte la variabilité des diamètres.</p>
 <p>Bacaro et al. suggèrent d’utiliser l’entropie de Shannon pour mesurer la diversité structurelle.
 Cette idée est explorée ici pour définir une mesure de diversité bidimensionnelle (croisant par exemple les espèces et les classes de diamètres) et étendue à la diversité HCDT.</p>
 <p>Pour la suite, les données sont organisées comme dans le tableau <a href="sec-jointeCadre.html#tab:Notations2">16.1</a> : les individus appartiennent à l’espèce <span class="math inline">\(s\)</span> et à la classe <span class="math inline">\(i\)</span> avec la probabilité <span class="math inline">\(p_{s,i}\)</span> telle que <span class="math inline">\(\sum_s{\sum_i{p_{s,i}}}=1\)</span> (au lieu de <span class="math inline">\(\sum_i{p_{s|i}}=1\)</span> dans les chapitres précédents).</p>
@@ -138,7 +139,7 @@ Cette idée est explorée ici pour définir une mesure de diversité bidimension
 <p></p>
 <div class="inline-table"><table class="table table-striped" style="font-size: 9px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:Notations2">Table 16.1: </span>Notations des effectifs, tableau espèces-classes.
+<span id="tab:Notations2">Table 16.1: </span><span id="tab:Notations2">Table 16.2: </span>Notations des effectifs, tableau espèces-classes.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -156,10 +157,10 @@ Classe <span class="math inline">\(i\)</span>
 Espèce <span class="math inline">\(s\)</span>
 </td>
 <td style="text-align:left;">
-<span class="math inline">\(n_{s,i}\)</span>: nombre d’individus de l’espèce <span class="math inline">\(s\)</span> dans la classe <span class="math inline">\(i\)</span>. <span class="math inline">\(\hat{p}_{s|i}=n_{s,i}/n_{+i}\)</span> est l’estimateur de la probabilité <span class="math inline">\(p_{s|i}\)</span> qu’un individu de la classe <span class="math inline">\(i\)</span> soit de l’espèce <span class="math inline">\(s\)</span>.
+<span class="math inline">\(n_{s,i}\)</span> : nombre d’individus de l’espèce <span class="math inline">\(s\)</span> dans la classe <span class="math inline">\(i\)</span>. <span class="math inline">\(\hat{p}_{s&amp;amp;#124;i}=n_{s,i}/n_{+i}\)</span> est l’estimateur de la probabilité <span class="math inline">\(p_{s&amp;amp;#124;i}\)</span> qu’un individu de la classe <span class="math inline">\(i\)</span> soit de l’espèce <span class="math inline">\(s\)</span>.
 </td>
 <td style="text-align:left;">
-<span class="math inline">\(n_{s+}=\sum_i{n_{s,i}}\)</span>. <span class="math inline">\(p_s=\sum_i{w_{i}p_{s|i}}\)</span>
+<span class="math inline">\(n_{s+}=\sum_i{n_{s,i}}\)</span>. <span class="math inline">\(p_s=\sum_i{w_{i}p_{s&amp;amp;#124;i}}\)</span>
 </td>
 </tr>
 <tr>
@@ -176,10 +177,10 @@ Espèce <span class="math inline">\(s\)</span>
 Total
 </td>
 <td style="text-align:left;">
-<span class="math inline">\(n_{+i}\)</span>: nombre d’individus de la classe. <span class="math inline">\({n_{+i}}/{n}=w_i\)</span>: poids de la classe
+<span class="math inline">\(n_{+i}\)</span> : nombre d’individus de la classe. <span class="math inline">\({n_{+i}}/{n}=w_i\)</span> : poids de la classe
 </td>
 <td style="text-align:left;">
-<span class="math inline">\(n\)</span>: nombre total d’individus échantillonnés
+<span class="math inline">\(n\)</span> : nombre total d’individus échantillonnés
 </td>
 </tr>
 </tbody>
@@ -208,7 +209,7 @@ Total
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

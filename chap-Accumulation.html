@@ -7,7 +7,7 @@
 <title>21 Accumulation de la diversité locale | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="La courbe d’accumulation (SAC) décrit comment la richesse, ou la diversité, augmente en fonction de l’effort d’échantillonnage. Sous l’hypothèse d’un tirage multinomial des individus observés, les...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="21 Accumulation de la diversité locale | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-Accumulation.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -143,10 +144,10 @@ Figure 21.1: Courbes d’accumulation et de raréfaction, obtenues par inventair
 </p>
 </div>
 <p></p>
-<p><span class="citation">Gotelli et Colwell (<a href="references.html#ref-Gotelli2001" role="doc-biblioref">2001</a>)</span> proposent une revue des problèmes les plus communément rencontrés dans l’estimation et la comparaison de la richesse spécifique.
+<p><span class="citation">Gotelli et Colwell (<a href="references.html#ref-Gotelli2001">2001</a>)</span> proposent une revue des problèmes les plus communément rencontrés dans l’estimation et la comparaison de la richesse spécifique.
 Ils suggèrent notamment de calculer la courbe de raréfaction (figure <a href="chap-Accumulation.html#fig:Gotelli2001">21.1</a>) plutôt que d’utiliser la courbe d’accumulation obtenue en traçant simplement le nombre d’espèces découvert en fonction de l’effort d’échantillonnage.
 La courbe de raréfaction est obtenue en sous-échantillonnant dans l’inventaire complet des effectifs de toutes tailles et en calculant le nombre moyen d’espèces trouvé pour chacun, ce qui permet de la lisser.
-La formulation exacte de la courbe de raréfaction et de sa variance est connue <span class="citation">(<a href="references.html#ref-Ugland2003" role="doc-biblioref">Ugland, Gray, et Ellingsen 2003</a>)</span>.</p>
+La formulation exacte de la courbe de raréfaction et de sa variance est connue <span class="citation">(<a href="references.html#ref-Ugland2003">Ugland, Gray, et Ellingsen 2003</a>)</span>.</p>
 
 <p></p>
 <div class="figure" style="text-align: center">
@@ -156,7 +157,7 @@ Figure 21.2: Courbe d’accumulation des espèces d’arbres de Barro Colorado I
 </p>
 </div>
 <p></p>
-<p>La fonction <code>specaccum</code> de la librairie <em>vegan</em> <span class="citation">(<a href="references.html#ref-Oksanen2012" role="doc-biblioref">Oksanen et al. 2012</a>)</span> permet de tracer les SAC (figure <a href="chap-Accumulation.html#fig:specaccumFig">21.2</a>) selon différentes méthodes, avec un intervalle de confiance obtenu par permutation de l’ordre d’ajout des données ou à partir des formules de raréfaction.</p>
+<p>La fonction <code>specaccum</code> de la librairie <em>vegan</em> <span class="citation">(<a href="references.html#ref-Oksanen2012">Oksanen et al. 2012</a>)</span> permet de tracer les SAC (figure <a href="chap-Accumulation.html#fig:specaccumFig">21.2</a>) selon différentes méthodes, avec un intervalle de confiance obtenu par permutation de l’ordre d’ajout des données ou à partir des formules de raréfaction.</p>
 <p>Le code R nécessaire pour réaliser la figure est :</p>
 <p></p>
 <div class="sourceCode" id="cb344"><pre class="downlit sourceCode r">
@@ -165,12 +166,12 @@ Figure 21.2: Courbe d’accumulation des espèces d’arbres de Barro Colorado I
 <span><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span><span class="op">(</span><span class="va">SAC</span>, ci.type <span class="op">=</span> <span class="st">"poly"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, ci.lty <span class="op">=</span> <span class="fl">0</span>, ci.col <span class="op">=</span> <span class="st">"lightgray"</span><span class="op">)</span></span></code></pre></div>
 <p></p>
 <p>Pour une surface donnée, le nombre d’individus est une variable aléatoire.
-Dans ce cas, la SAC (dépendant de la surface) est différente de la courbe de raréfaction (fonction du nombre d’individus) de Gotelli et Colwell, que <span class="citation">Coleman (<a href="references.html#ref-Coleman1981" role="doc-biblioref">1981</a>)</span> nomme “courbe du collecteur”.</p>
+Dans ce cas, la SAC (dépendant de la surface) est différente de la courbe de raréfaction (fonction du nombre d’individus) de Gotelli et Colwell, que <span class="citation">Coleman (<a href="references.html#ref-Coleman1981">1981</a>)</span> nomme “courbe du collecteur”.</p>
 <p>La SAC théorique en fonction de la surface contient une incertitude concernant le nombre d’individus.
-Si la densité <span class="math inline">\(\lambda_s\)</span> (nombre d’individus par unité de surface) des espèces peut être connue (estimée en comptant les individus) ou si les probabilités <span class="math inline">\(p_s\)</span> sont issues d’un modèle (log-séries, log-normal…), le nombre d’individus observés de l’espèce <span class="math inline">\(s\)</span> suit une loi de Poisson d’espérance <span class="math inline">\(A\hat{\lambda}_s\)</span> ou, de façon équivalente <span class="citation">(<a href="references.html#ref-Pielou1969" role="doc-biblioref">Pielou 1969, 204‑5</a>)</span>, <span class="math inline">\(np_s\)</span> (dans ce deuxième cas, <span class="math inline">\(n\)</span> est l’estimateur de <span class="math inline">\(N\)</span>, la variable aléatoire correspondant à la taille de l’échantillon).</p>
+Si la densité <span class="math inline">\(\lambda_s\)</span> (nombre d’individus par unité de surface) des espèces peut être connue (estimée en comptant les individus) ou si les probabilités <span class="math inline">\(p_s\)</span> sont issues d’un modèle (log-séries, log-normal…), le nombre d’individus observés de l’espèce <span class="math inline">\(s\)</span> suit une loi de Poisson d’espérance <span class="math inline">\(A\hat{\lambda}_s\)</span> ou, de façon équivalente <span class="citation">(<a href="references.html#ref-Pielou1969">Pielou 1969, 204‑5</a>)</span>, <span class="math inline">\(np_s\)</span> (dans ce deuxième cas, <span class="math inline">\(n\)</span> est l’estimateur de <span class="math inline">\(N\)</span>, la variable aléatoire correspondant à la taille de l’échantillon).</p>
 <p>La SAC théorique en fonction du nombre d’individus ne contient pas cet aléa.
 Le nombre d’individus de l’espèce <span class="math inline">\(s\)</span> suit alors une loi binomiale d’espérance <span class="math inline">\(np_s\)</span> et la distribution d’un échantillon de taille <span class="math inline">\(n\)</span> suit la loi multinomiale correspondante.
-Les deux approches se réconcilient en fixant arbitrairement le nombre d’individus échantillonnés dans la courbe aire-espèce : conditionnellement au nombre total d’individus, la distribution des abondances des espèces issues de lois de Poisson de paramètres <span class="math inline">\(\lambda_s\)</span> suit une loi multinomiale <span class="citation">(<a href="references.html#ref-Steel1953" role="doc-biblioref">Steel 1953</a>)</span> dont les probabilités sont proportionnelles à <span class="math inline">\(\lambda_s\)</span>.</p>
+Les deux approches se réconcilient en fixant arbitrairement le nombre d’individus échantillonnés dans la courbe aire-espèce : conditionnellement au nombre total d’individus, la distribution des abondances des espèces issues de lois de Poisson de paramètres <span class="math inline">\(\lambda_s\)</span> suit une loi multinomiale <span class="citation">(<a href="references.html#ref-Steel1953">Steel 1953</a>)</span> dont les probabilités sont proportionnelles à <span class="math inline">\(\lambda_s\)</span>.</p>
 <p>La SAC définie en fonction du nombre d’individus est au sens strict une succession de points (à chaque valeur de <span class="math inline">\(n\)</span>), pas une courbe continue.
 Elle est toutefois toujours présentée comme une courbe lissée passant par les points pour être continue et dérivable.</p>
 
@@ -182,10 +183,10 @@ Figure 21.3: Courbe d’accumulation des espèces d’arbres de Barro Colorado I
 </p>
 </div>
 <p></p>
-<p>Une difficulté supplémentaire consiste à prendre en compte les espèces non échantillonnées en appliquant des techniques statistiques pour réduire le biais qu’elles induisent <span class="citation">(<a href="references.html#ref-Colwell2012" role="doc-biblioref">Colwell et al. 2012</a>)</span>.
-Dans ce but, la SAC théorique peut être construite <span class="citation">(<a href="references.html#ref-Chao2013" role="doc-biblioref">Chao, Wang, et Jost 2013</a>)</span> comme la somme des entropies de Simpson généralisées <span class="citation">(<a href="references.html#ref-Zhang2010" role="doc-biblioref">Z. Zhang et Zhou 2010</a>)</span>, présentées en section <a href="entropie.html#sec-SimpsonG">4.7.3</a>.</p>
+<p>Une difficulté supplémentaire consiste à prendre en compte les espèces non échantillonnées en appliquant des techniques statistiques pour réduire le biais qu’elles induisent <span class="citation">(<a href="references.html#ref-Colwell2012">Colwell et al. 2012</a>)</span>.
+Dans ce but, la SAC théorique peut être construite <span class="citation">(<a href="references.html#ref-Chao2013">Chao, Wang, et Jost 2013</a>)</span> comme la somme des entropies de Simpson généralisées <span class="citation">(<a href="references.html#ref-Zhang2010">Z. Zhang et Zhou 2010</a>)</span>, présentées en section <a href="entropie.html#sec-SimpsonG">4.7.3</a>.</p>
 <p>La courbe obtenue (figure <a href="chap-Accumulation.html#fig:SACzetaFig">21.3</a>) est la même que par raréfaction, sans les problèmes d’estimation.
-Son intervalle de confiance n’est pas représenté : l’estimation est sans biais et a une variance très <span style="white-space:nowrap">petite ;</span> d’autre part, la variabilité de l’échantillonnage prise en compte dans la figure <a href="chap-Accumulation.html#fig:specaccumFig">21.2</a> est ignorée ici. La fonction <code>GenSimp.z</code> est fournie par le package <em>EntropyEstimation</em> <span class="citation">(<a href="references.html#ref-Cao2014" role="doc-biblioref">Cao et Grabchak 2014</a>)</span>.</p>
+Son intervalle de confiance n’est pas représenté : l’estimation est sans biais et a une variance très <span style="white-space:nowrap">petite ;</span> d’autre part, la variabilité de l’échantillonnage prise en compte dans la figure <a href="chap-Accumulation.html#fig:specaccumFig">21.2</a> est ignorée ici. La fonction <code>GenSimp.z</code> est fournie par le package <em>EntropyEstimation</em> <span class="citation">(<a href="references.html#ref-Cao2014">Cao et Grabchak 2014</a>)</span>.</p>
 <p>Code pour la figure :</p>
 <p></p>
 <div class="sourceCode" id="cb345"><pre class="downlit sourceCode r">
@@ -206,12 +207,12 @@ Son intervalle de confiance n’est pas représenté : l’estimation est sans 
 <span class="header-section-number">21.2</span> Extrapolation<a class="anchor" aria-label="anchor" href="#sec-Extrapolation"><i class="fas fa-link"></i></a>
 </h2>
 <p>L’extrapolation de la SAC est un cas particulier de celle de la diversité, déjà vue en section <a href="entropie.html#sec-RarExtrapol">4.6.8</a>.</p>
-<p><span class="citation">Béguinot (<a href="references.html#ref-Beguinot2015" role="doc-biblioref">2015b</a>)</span> a une approche différente.
+<p><span class="citation">Béguinot (<a href="references.html#ref-Beguinot2015">2015b</a>)</span> a une approche différente.
 Il considère la SAC comme une fonction continue et infiniment dérivable de la taille de l’échantillon.
 Le nombre d’espèces non observées dans un échantillon de taille <span class="math inline">\(n\)</span> est noté <span class="math inline">\(s^{n}_{0}\)</span>.
 Le nombre d’espèces observées dans la SAC est <span class="math inline">\(s^{n}_{&gt;0} = S - s^{n}_{0}\)</span>.
 Quand <span class="math inline">\(n\)</span> est assez grand, la pente de la SAC varie peu entre <span class="math inline">\(n-1\)</span> et <span class="math inline">\(n+1\)</span> individus.
-<span class="citation">Béguinot (<a href="references.html#ref-Beguinot2014" role="doc-biblioref">2014</a>)</span> approxime la dérivée de <span class="math inline">\(s^{n}_{0}\)</span> par <span class="math inline">\(s^{n}_{0}-s^{n-1}_{0}\)</span>.
+<span class="citation">Béguinot (<a href="references.html#ref-Beguinot2014">2014</a>)</span> approxime la dérivée de <span class="math inline">\(s^{n}_{0}\)</span> par <span class="math inline">\(s^{n}_{0}-s^{n-1}_{0}\)</span>.
 La dérivée est en réalité plus grande : la pente de la SAC, qui est l’opposée de la pente de <span class="math inline">\(s^{n}_{0}\)</span>, décroît avec <span class="math inline">\(n\)</span> mais l’approximation est acceptable quand <span class="math inline">\(n\)</span> est assez grand.
 De même, les dérivées successives, par exemple seconde, sont approchées par la variation de la dérivée d’ordre inférieur, par exemple première, entre <span class="math inline">\(n-1\)</span> et <span class="math inline">\(n\)</span>.
 En combinant ces approximations avec l’espérance du nombre d’espèces observées <span class="math inline">\(\nu\)</span> fois dans un échantillon de taille <span class="math inline">\(n\)</span>, équation <a href="chap-MesuresNeutres.html#eq:Esnnu">(3.2)</a>, on obtient :
@@ -221,7 +222,7 @@ En combinant ces approximations avec l’espérance du nombre d’espèces obser
   = \left(-1 \right)^{\nu-1} \binom{n}{\nu} \frac{\partial^\nu s^{n}_{&gt;0}}{\partial n^\nu}, \nu=1,2,\dots
 \end{equation}\]</span></p>
 <p>L’espérance du nombre d’espèces observées <span class="math inline">\(\nu\)</span> fois dépend directement de la dérivée <span class="math inline">\(\nu\)</span> de la SAC.</p>
-<p><span class="citation">Béguinot (<a href="references.html#ref-Beguinot2015" role="doc-biblioref">2015b</a>)</span> écrit l’accroissement du nombre d’espèces observées quand l’échantillon augmente de <span class="math inline">\(n\)</span> à <span class="math inline">\(n +\delta n\)</span> sous la forme d’une série entière, qu’il combine avec l’équation précédente pour en obtenir une approximation :
+<p><span class="citation">Béguinot (<a href="references.html#ref-Beguinot2015">2015b</a>)</span> écrit l’accroissement du nombre d’espèces observées quand l’échantillon augmente de <span class="math inline">\(n\)</span> à <span class="math inline">\(n +\delta n\)</span> sous la forme d’une série entière, qu’il combine avec l’équation précédente pour en obtenir une approximation :
 <span class="math display">\[\begin{equation}
   s^{n +\delta n}
   \approx s^{n} + \sum_\nu {\left(-1 \right)^{\nu-1} s^{n}_{\nu} \left(\frac{\delta n}{n}\right)^{\nu}}.
@@ -229,7 +230,7 @@ En combinant ces approximations avec l’espérance du nombre d’espèces obser
 <p>La somme est infinie mais ses termes décroissent rapidement.
 Le nombre de termes à prendre en compte est d’autant plus grand que <span class="math inline">\(\frac{\delta n}{n}\)</span>, le niveau d’extrapolation, est grand.
 L’auteur conseille de ne pas pousser l’extrapolation au delà du double de <span class="math inline">\(n\)</span>.</p>
-<p>Cette méthode est comparée à l’extrapolation de la diversité d’ordre 0 (section <a href="entropie.html#sec-RarExtrapol">4.6.8</a>) et à l’estimateur de <span class="citation">T.-J. Shen, Chao, et Lin (<a href="references.html#ref-Shen2003" role="doc-biblioref">2003</a>)</span> (section <a href="chap-MesuresNeutres.html#sec-Extrapol">3.1.1.8</a>) dans l’illustration suivante.</p>
+<p>Cette méthode est comparée à l’extrapolation de la diversité d’ordre 0 (section <a href="entropie.html#sec-RarExtrapol">4.6.8</a>) et à l’estimateur de <span class="citation">T.-J. Shen, Chao, et Lin (<a href="references.html#ref-Shen2003">2003</a>)</span> (section <a href="chap-MesuresNeutres.html#sec-Extrapol">3.1.1.8</a>) dans l’illustration suivante.</p>
 <p>Une communauté théorique log-normale de 300 espèces est créée.
 Des inventaires de 1000 individus sont simulés et les trois méthodes d’extrapolation de la richesse spécifique sont appliquées pour estimer la richesse d’un échantillon de 1800 individus.
 Les résultats obtenus sont comparés à des inventaires directs de 1800 individus.</p>
@@ -309,7 +310,7 @@ La distribution des 500 simulations d’extrapolation est proche de celle des 50
 <span>  <span class="fu">geom_density</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">eS</span><span class="op">)</span>, lty <span class="op">=</span> <span class="fl">4</span>, col <span class="op">=</span> <span class="st">"darkgreen"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="va">Xlab</span>, y <span class="op">=</span> <span class="va">Ylab</span><span class="op">)</span></span></code></pre></div>
 <p></p>
-<p><span class="citation">Béguinot (<a href="references.html#ref-Beguinot2015a" role="doc-biblioref">2015a</a>)</span> propose également une forme analytique de la SAC extrapolée en combinant l’équation <a href="chap-Accumulation.html#eq:Beguinot2014">(21.1)</a> à l’estimateur jackknife d’ordre 2.
+<p><span class="citation">Béguinot (<a href="references.html#ref-Beguinot2015a">2015a</a>)</span> propose également une forme analytique de la SAC extrapolée en combinant l’équation <a href="chap-Accumulation.html#eq:Beguinot2014">(21.1)</a> à l’estimateur jackknife d’ordre 2.
 Alors, dans le domaine de validité de l’estimateur jackknife 2, c’est-à-dire quand le nombre de singletons est supérieur à 0,6 fois le nombre de doubletons, la richesse pour <span class="math inline">\(n\)</span> individus est
 <span class="math display" id="eq:Beguinot2015a">\[\begin{equation}
   \tag{21.2}
@@ -398,27 +399,27 @@ En limitant l’inventaire à 1000 individus, l’information disponible est tro
 </h2>
 <p>Les modèles classiques de courbes aire-espèces supposent un tirage indépendant des individus.
 Sur le terrain, par exemple en forêt, l’échantillonnage est continu : s’il existe une structure spatiale comme des agrégats, la probabilité que l’arbre suivant soit d’une espèce donnée dépend de ses voisins, donc de l’arbre précédent.
-Intuitivement, on comprend bien que le nouvel arbre de la même espèce apporte moins d’information, ce qui revient à surestimer la taille de l’échantillon ou sous-estimer la richesse pour une taille d’échantillon fixée <span class="citation">(<a href="references.html#ref-Veech2005" role="doc-biblioref">Veech 2005</a>)</span>.</p>
-<p><span class="citation">Plotkin, Potts, Leslie, et al. (<a href="references.html#ref-Plotkin2000a" role="doc-biblioref">2000</a>)</span> traitent un problème un peu différent : connaissant le nombre total d’espèces dans les dispositifs de la figure <a href="diversit%C3%A9-r%C3%A9gionale.html#fig:CTFS">22.2</a>, ils tracent la courbe de raréfaction théorique qui considère simplement que la probabilité de ne pas rencontrer une espèce suit une loi binomiale, les tirages étant indépendants.
+Intuitivement, on comprend bien que le nouvel arbre de la même espèce apporte moins d’information, ce qui revient à surestimer la taille de l’échantillon ou sous-estimer la richesse pour une taille d’échantillon fixée <span class="citation">(<a href="references.html#ref-Veech2005">Veech 2005</a>)</span>.</p>
+<p><span class="citation">Plotkin, Potts, Leslie, et al. (<a href="references.html#ref-Plotkin2000a">2000</a>)</span> traitent un problème un peu différent : connaissant le nombre total d’espèces dans les dispositifs de la figure <a href="diversit%C3%A9-r%C3%A9gionale.html#fig:CTFS">22.2</a>, ils tracent la courbe de raréfaction théorique qui considère simplement que la probabilité de ne pas rencontrer une espèce suit une loi binomiale, les tirages étant indépendants.
 Ce modèle surestime largement la diversité pour les petites surfaces : la probabilité de ne pas rencontrer une espèce agrégative est sous-estimée.
 Le biais diminue quand la surface d’échantillonnage augmente, parce que la taille relative des agrégats diminue.</p>
 <p>Les effets de l’agrégation peuvent donc être opposés selon la question posée.
 Dans tous les cas, il suffit de considérer qu’un agrégat surestime le nombre d’arbres de son espèce qui devrait être pris en compte dans le cadre d’un modèle à tirages indépendants.</p>
 <p>Plotkin et al. proposent une méthode permettant de prendre en compte la structure spatiale pour fournir des modèles de courbes aire-espèces fiables, dans un cadre particulier où le nombre total d’espèces et leur structure spatiale sont connus.
 La méthode nécessite une carte des individus.
-Le semis de point est considéré comme le résultat d’un processus de Neyman-Scott <span class="citation">(<a href="references.html#ref-Neyman1958" role="doc-biblioref">Neyman et Scott 1958</a>)</span> : des centres d’agrégats sont tirés de façon complètement aléatoire et les individus sont répartis autour des centres selon une loi normale en deux dimensions.
+Le semis de point est considéré comme le résultat d’un processus de Neyman-Scott <span class="citation">(<a href="references.html#ref-Neyman1958">Neyman et Scott 1958</a>)</span> : des centres d’agrégats sont tirés de façon complètement aléatoire et les individus sont répartis autour des centres selon une loi normale en deux dimensions.
 Les paramètres du processus sont estimés à partir du semis de points, puis la courbe aire-espèces est obtenue par simulation du processus.</p>
-<p>Le problème est traité de façon plus approfondie par <span class="citation">Picard, Karembe, et Birnbaum (<a href="references.html#ref-Picard2004" role="doc-biblioref">2004</a>)</span> qui s’appuient sur la théorie des processus ponctuels.
+<p>Le problème est traité de façon plus approfondie par <span class="citation">Picard, Karembe, et Birnbaum (<a href="references.html#ref-Picard2004">2004</a>)</span> qui s’appuient sur la théorie des processus ponctuels.
 En supposant que la distribution spatiale des espèces est homogène (c’est-à-dire stationnaire et isotrope), la forme du domaine échantillonné n’a pas d’importance : l’aire <span class="math inline">\(A\)</span> peut être représentée par un cercle de rayon <span class="math inline">\(r=\sqrt{{A}/{\pi}}\)</span>.
 La probabilité d’observer l’espèce <span class="math inline">\(s\)</span> dans <span class="math inline">\(A\)</span> est identique à la probabilité que la distance entre un individu de l’espèce <span class="math inline">\(s\)</span> et un point arbitrairement choisi soit inférieure à <span class="math inline">\(r\)</span>.
-Cette probabilité a été largement étudiée et est connue sous le nom de fonction <span class="math inline">\(F\)</span> de <span class="citation">Diggle (<a href="references.html#ref-Diggle1983" role="doc-biblioref">1983</a>)</span>, ou <em>empty space function</em>.
+Cette probabilité a été largement étudiée et est connue sous le nom de fonction <span class="math inline">\(F\)</span> de <span class="citation">Diggle (<a href="references.html#ref-Diggle1983">1983</a>)</span>, ou <em>empty space function</em>.
 <span class="math inline">\(F_s(r)\)</span> est la fonction d’espace vide de l’espèce <span class="math inline">\(s\)</span>, dont l’argument est la distance <span class="math inline">\(r\)</span>.
-Le nombre d’espèces peut être écrit comme la somme des fonctions <span class="math inline">\(F_s\)</span>:</p>
+Le nombre d’espèces peut être écrit comme la somme des fonctions <span class="math inline">\(F_s\)</span> :</p>
 <p><span class="math display" id="eq:SARF">\[\begin{equation}
   \tag{21.3}
   {\mathbb E}\left( S^A \right)  = \sum_s{F_s\left( r \right) }.
 \end{equation}\]</span></p>
-<p>La fonction <span class="math inline">\(F_s(r)\)</span> est connue pour les processus ponctuels courants <span class="citation">(<a href="references.html#ref-Cressie1993" role="doc-biblioref">N. A. Cressie 1993</a>; <a href="references.html#ref-Stoyan1994" role="doc-biblioref">Stoyan et Stoyan 1994</a>)</span>.
+<p>La fonction <span class="math inline">\(F_s(r)\)</span> est connue pour les processus ponctuels courants <span class="citation">(<a href="references.html#ref-Cressie1993">N. A. Cressie 1993</a>; <a href="references.html#ref-Stoyan1994">Stoyan et Stoyan 1994</a>)</span>.
 Le processus de Poisson place les individus indépendamment les uns des autres avec la même probabilité partout.
 Son seul paramètre est l’intensité <span class="math inline">\(\lambda_s\)</span>, qui donne l’espérance du nombre d’individus de l’espèce <span class="math inline">\(s\)</span> par unité de surface.
 Si toutes les espèces sont distribuées selon un processus de Poisson, la courbe aire-espèce est décrite par</p>
@@ -427,7 +428,7 @@ Si toutes les espèces sont distribuées selon un processus de Poisson, la courb
   {\mathbb E}\left( S^A \right)  = S - \sum_s{e^{-\lambda_s A}}.
 \end{equation}\]</span></p>
 <p>L’équation <a href="chap-Accumulation.html#eq:SARPoisson">(21.4)</a> est identique au modèle de distribution aléatoire de Coleman en remplaçant la distribution observée des effectifs par espèce par l’intensité du processus de Poisson.
-Les formes de <span class="math inline">\(F_s\)</span> sont connues aussi pour des processus agrégatifs, notamment le processus de <span class="citation">Matérn (<a href="references.html#ref-Matern1960" role="doc-biblioref">1960</a>)</span> ou des distributions régulières.
+Les formes de <span class="math inline">\(F_s\)</span> sont connues aussi pour des processus agrégatifs, notamment le processus de <span class="citation">Matérn (<a href="references.html#ref-Matern1960">1960</a>)</span> ou des distributions régulières.
 La courbe aire-espèce peut donc être évaluée à partir d’inventaires fournissant la position des individus.
 Le processus ponctuel correspondant à chaque espèce peut être inféré pour fournir une forme analytique de la courbe comme dans l’équation <a href="chap-Accumulation.html#eq:SARPoisson">(21.4)</a> ou bien la fonction d’espace vide de chaque espèce peut être estimée à partir des données par la fonction <code>Fest</code> du package <em>spatstat</em> et sommée pour toutes les espèces selon l’équation <a href="chap-Accumulation.html#eq:SARF">(21.3)</a>.</p>
 <p>La relation aire-espèce contient au moins autant de paramètres que d’espèces : l’intensité <span class="math inline">\(\lambda_s\)</span> si l’espèce <span class="math inline">\(s\)</span> est distribuée spatialement selon un processus de Poisson, deux paramètres supplémentaires pour le processus de Matérn.
@@ -444,7 +445,7 @@ Elle peut être réécrite sous la forme
     + \sum_{s=S_{\ne 0}+1}^{S}{F_s\left( r \right)}.
 \end{equation}\]</span></p>
 <p>Le premier terme de la somme correspond aux espèces observées, le deuxième aux espèces non observées.
-La distribution des espèces non observées peut maintenant être estimée dans certains cas <span class="citation">(<a href="references.html#ref-Chao2014c" role="doc-biblioref">Chao, Hsieh, et al. 2015</a>)</span> et leur distribution spatiale être supposée poissonnienne puisque ce sont des espèces rares <span class="citation">(<a href="references.html#ref-Picard2004" role="doc-biblioref">Picard, Karembe, et Birnbaum 2004</a>)</span>, ce qui ouvre la voie à une meilleure estimation de la courbe.</p>
+La distribution des espèces non observées peut maintenant être estimée dans certains cas <span class="citation">(<a href="references.html#ref-Chao2014c">Chao, Hsieh, et al. 2015</a>)</span> et leur distribution spatiale être supposée poissonnienne puisque ce sont des espèces rares <span class="citation">(<a href="references.html#ref-Picard2004">Picard, Karembe, et Birnbaum 2004</a>)</span>, ce qui ouvre la voie à une meilleure estimation de la courbe.</p>
 </div>
 </div>
   <div class="chapter-nav">
@@ -474,7 +475,7 @@ La distribution des espèces non observées peut maintenant être estimée dans 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

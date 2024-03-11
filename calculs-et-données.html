@@ -7,7 +7,7 @@
 <title>Calculs et données | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="La présentation des mesures de diversité est donnée avec un usage intensif du formalisme mathématique. La liste des notations est fournie ci-dessous, on s’y référera autant que nécessaire. Les...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="Calculs et données | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/calculs-et-données.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -122,13 +123,13 @@
 </h1>
 <p>La présentation des mesures de diversité est donnée avec un usage intensif du formalisme mathématique.
 La liste des notations est fournie ci-dessous, on s’y référera autant que nécessaire.</p>
-<p>Les calculs sont réalisés dans R <span class="citation">(<a href="references.html#ref-R" role="doc-biblioref">R Core Team 2022</a>)</span>, essentiellement avec le package <em>entropart</em> <span class="citation">(<a href="references.html#ref-Marcon2014c" role="doc-biblioref">Marcon et Hérault 2015b</a>)</span>.
+<p>Les calculs sont réalisés dans R <span class="citation">(<a href="references.html#ref-R">R Core Team 2022</a>)</span>, essentiellement avec le package <em>entropart</em> <span class="citation">(<a href="references.html#ref-Marcon2014c">Marcon et Hérault 2015b</a>)</span>.
 L’ensemble du code est disponible sur GitHub<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="https://github.com/EricMarcon/MesuresBioDiv2/" class="uri"&gt;https://github.com/EricMarcon/MesuresBioDiv2/&lt;/a&gt;&lt;/p&gt;'><sup>1</sup></a> où se trouvent les mises à jour de ce document<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="https://ericmarcon.github.io/MesuresBioDiv2/" class="uri"&gt;https://ericmarcon.github.io/MesuresBioDiv2/&lt;/a&gt;&lt;/p&gt;'><sup>2</sup></a>.</p>
-<p>Les données sont souvent celles de la parcelle 6 de la forêt de Paracou (figure <a href="calculs-et-donn%C3%A9es.html#fig:Paracou6MapFig">0.1</a> en Guyane française <span class="citation">(<a href="references.html#ref-Gourlet-Fleury2004" role="doc-biblioref">Gourlet-Fleury, Guehl, et Laroussinie 2004</a>)</span>, d’une surface de 6.25 ha.
+<p>Les données sont souvent celles de la parcelle 6 de la forêt de Paracou (figure <a href="calculs-et-donn%C3%A9es.html#fig:Paracou6MapFig">0.1</a> en Guyane française <span class="citation">(<a href="references.html#ref-Gourlet-Fleury2004">Gourlet-Fleury, Guehl, et Laroussinie 2004</a>)</span>, d’une surface de 6.25 ha.
 Tous les arbres de plus de 10 cm de diamètre à hauteur de poitrine (DBH : <em>Diameter at Breast Height</em>) y ont été inventoriés en 2016.
 La position de chaque arbre, son espèce et sa surface terrière sont fournis dans le package <em>SpatDiv</em>.</p>
-<p>D’autres exemples utilisent la parcelle forestière permanente de Barro Colorado Island, souvent abrégée BCI <span class="citation">(<a href="references.html#ref-Condit2012" role="doc-biblioref">Condit, Chisholm, et Hubbell 2012</a>)</span> : 50 ha de forêt tropicale dont les arbres de plus de 1 cm de diamètre à hauteur de poitrine (DBH : <em>Diameter at Breast Height</em>) ont été inventoriés.
-Le jeu de données utilisé pour les exemples est une version réduite aux arbres de plus de 10 cm disponible dans le package <em>vegan</em> <span class="citation">(<a href="references.html#ref-Oksanen2012" role="doc-biblioref">Oksanen et al. 2012</a>)</span>, soient 21457 arbres dans 225 espèces.</p>
+<p>D’autres exemples utilisent la parcelle forestière permanente de Barro Colorado Island, souvent abrégée BCI <span class="citation">(<a href="references.html#ref-Condit2012">Condit, Chisholm, et Hubbell 2012</a>)</span> : 50 ha de forêt tropicale dont les arbres de plus de 1 cm de diamètre à hauteur de poitrine (DBH : <em>Diameter at Breast Height</em>) ont été inventoriés.
+Le jeu de données utilisé pour les exemples est une version réduite aux arbres de plus de 10 cm disponible dans le package <em>vegan</em> <span class="citation">(<a href="references.html#ref-Oksanen2012">Oksanen et al. 2012</a>)</span>, soient 21457 arbres dans 225 espèces.</p>
 <p>Enfin, les données fournies par le package <em>entropart</em> sous le nom “Paracou618” sont deux inventaires de l’année 2012 limités à un hectare chacun dans les parcelles 6 et 18 de la forêt de Paracou, soient 1124 arbres dans 229 espèces.</p>
 
 <p></p>
@@ -171,7 +172,7 @@ Figure 0.1: Carte de la parcelle 6 de Paracou. Les points représentent les arbr
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

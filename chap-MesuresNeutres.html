@@ -7,7 +7,7 @@
 <title>3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="Les indices classiques de diversité sont ceux de Shannon et de Simpson, et la richesse spécifique. Ils peuvent être estimés à partir des données d’inventaire. L’estimation de la richesse est...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-MesuresNeutres.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -126,16 +127,16 @@
 Ils peuvent être estimés à partir des données d’inventaire.
 L’estimation de la richesse est particulièrement difficile et fait l’objet d’une abondante littérature : les estimateurs non-paramétriques (Chao et Jackknife) sont les plus utilisés.</p>
 </div>
-<p>Les mesures classiques <span class="citation">(<a href="references.html#ref-Peet1974" role="doc-biblioref">Peet 1974</a>)</span> considèrent que chaque classe d’objets est différente de toutes les autres, sans que certaines soient plus ou moins semblables.
+<p>Les mesures classiques <span class="citation">(<a href="references.html#ref-Peet1974">Peet 1974</a>)</span> considèrent que chaque classe d’objets est différente de toutes les autres, sans que certaines soient plus ou moins semblables.
 Dans ce chapitre, les classes seront des espèces.
 Les mesures sont qualifiées de neutres (<em>species-neutral</em>) au sens où elles ne prennent en compte aucune caractéristique propre des espèces.
-La diversité neutre est souvent appelée diversité taxonomique <span class="citation">(<a href="references.html#ref-Devictor2010" role="doc-biblioref">Devictor et al. 2010</a>; <a href="references.html#ref-Stegen2011" role="doc-biblioref">Stegen et Hurlbert 2011</a>)</span>, même si le terme peut prêter à confusion avec la diversité phylogénétique, quand la phylogénie se réduit à une taxonomie <span class="citation">(<a href="references.html#ref-Clarke2001" role="doc-biblioref">Clarke et Warwick 2001</a>; <a href="references.html#ref-Ricotta2003c" role="doc-biblioref">Ricotta et Avena 2003b</a>)</span>.</p>
+La diversité neutre est souvent appelée diversité taxonomique <span class="citation">(<a href="references.html#ref-Devictor2010">Devictor et al. 2010</a>; <a href="references.html#ref-Stegen2011">Stegen et Hurlbert 2011</a>)</span>, même si le terme peut prêter à confusion avec la diversité phylogénétique, quand la phylogénie se réduit à une taxonomie <span class="citation">(<a href="references.html#ref-Clarke2001">Clarke et Warwick 2001</a>; <a href="references.html#ref-Ricotta2003c">Ricotta et Avena 2003b</a>)</span>.</p>
 <p>Ce type de mesure n’a de sens qu’à l’intérieur d’un taxocène bien défini : sommer un nombre d’espèces d’insectes à un nombre d’espèces de mammifères a peu d’intérêt.
-Ces méthodes ne sont donc pas forcément les plus adaptées à la conservation : à grande échelle, des indicateurs de biodiversité <span class="citation">(<a href="references.html#ref-Balmford2003" role="doc-biblioref">Balmford, Green, et Jenkins 2003</a>)</span> peuvent être plus pertinents.
+Ces méthodes ne sont donc pas forcément les plus adaptées à la conservation : à grande échelle, des indicateurs de biodiversité <span class="citation">(<a href="references.html#ref-Balmford2003">Balmford, Green, et Jenkins 2003</a>)</span> peuvent être plus pertinents.
 D’autre part, les communautés sont considérées comme limitées, avec un nombre d’espèces fini : la courbe d’accumulation des espèces atteint donc théoriquement une asymptote quand l’effort d’inventaire est suffisant.
-Cette approche est opposée à celle, traitée dans les chapitres <a href="chap-Fisher.html#chap-Fisher">20</a> et suivants, qui considère que la diversité augmente indéfiniment avec la surface <span class="citation">(<a href="references.html#ref-Williamson2001" role="doc-biblioref">Williamson, Gaston, et Lonsdale 2001</a>)</span>, que ce soit par changement d’échelle (élargir l’inventaire ajoute de nouvelles communautés) ou, plus théoriquement, parce que les communautés réelles sont considérées comme un tirage aléatoire parmi une infinités d’espèces <span class="citation">(<a href="references.html#ref-Fisher1943" role="doc-biblioref">Fisher, Corbet, et Williams 1943</a>)</span>.</p>
+Cette approche est opposée à celle, traitée dans les chapitres <a href="chap-Fisher.html#chap-Fisher">20</a> et suivants, qui considère que la diversité augmente indéfiniment avec la surface <span class="citation">(<a href="references.html#ref-Williamson2001">Williamson, Gaston, et Lonsdale 2001</a>)</span>, que ce soit par changement d’échelle (élargir l’inventaire ajoute de nouvelles communautés) ou, plus théoriquement, parce que les communautés réelles sont considérées comme un tirage aléatoire parmi une infinités d’espèces <span class="citation">(<a href="references.html#ref-Fisher1943">Fisher, Corbet, et Williams 1943</a>)</span>.</p>
 <p>Les mesures présentées ici sont les plus utilisées : richesse, indices de Shannon et de Simpson, et l’indice de Hurlbert.
-Elles sont sujettes à des biais d’estimation <span class="citation">(<a href="references.html#ref-Mouillot1999" role="doc-biblioref">Mouillot et Leprêtre 1999</a>)</span>, notamment (mais pas seulement) à cause des espèces non échantillonnées.</p>
+Elles sont sujettes à des biais d’estimation <span class="citation">(<a href="references.html#ref-Mouillot1999">Mouillot et Leprêtre 1999</a>)</span>, notamment (mais pas seulement) à cause des espèces non échantillonnées.</p>
 <p>Au chapitre suivant, l’entropie HCDT permettra d’unifier ces mesures et les nombres de Hill, et de leur donner un sens intuitif.</p>
 <div id="sec-Richesse" class="section level2" number="3.1">
 <h2>
@@ -144,10 +145,10 @@ Elles sont sujettes à des biais d’estimation <span class="citation">(<a href=
 <p>La richesse est tout simplement le nombre d’espèces présentes dans le taxocène considéré.
 C’est la mesure conceptuellement la plus simple mais pratiquement la plus délicate dans des systèmes très riches comme les forêts tropicales : même avec des efforts d’inventaire considérables, il n’est en général pas possible de relever toutes les espèces rares, ce qui implique de recourir à des modèles mathématiques pour en estimer le nombre.</p>
 <p>On ne fait pas de supposition sur la forme de la SAD quand on utilise des méthodes d’estimation non paramétriques.
-Les estimateurs les plus connus sont ceux de <span class="citation">Chao (<a href="references.html#ref-Chao1984" role="doc-biblioref">1984</a>)</span> et le <em>jackknife</em> <span class="citation">(<a href="references.html#ref-Burnham1979" role="doc-biblioref">Burnham et Overton 1979</a>)</span>.</p>
+Les estimateurs les plus connus sont ceux de <span class="citation">Chao (<a href="references.html#ref-Chao1984">1984</a>)</span> et le <em>jackknife</em> <span class="citation">(<a href="references.html#ref-Burnham1979">Burnham et Overton 1979</a>)</span>.</p>
 <p>Une alternative consiste à inférer à partir des données les paramètres d’une SAD choisie, et particulièrement le nombre total d’espèces.
 Cette approche est bien moins répandue parce qu’elle suppose le bon choix du modèle et est beaucoup plus intensive en calcul.
-Il n’existe pas de meilleur estimateur universel <span class="citation">(<a href="references.html#ref-OHara2005" role="doc-biblioref">O’Hara 2005</a>)</span> et il peut être efficace d’utiliser plusieurs méthodes d’estimation de façon concurrente sur les mêmes données <span class="citation">(<a href="references.html#ref-Basset2012" role="doc-biblioref">Basset et al. 2012</a>)</span>.</p>
+Il n’existe pas de meilleur estimateur universel <span class="citation">(<a href="references.html#ref-OHara2005">O’Hara 2005</a>)</span> et il peut être efficace d’utiliser plusieurs méthodes d’estimation de façon concurrente sur les mêmes données <span class="citation">(<a href="references.html#ref-Basset2012">Basset et al. 2012</a>)</span>.</p>
 <div id="techniques-destimation-non-paramétrique" class="section level3" number="3.1.1">
 <h3>
 <span class="header-section-number">3.1.1</span> Techniques d’estimation non paramétrique<a class="anchor" aria-label="anchor" href="#techniques-destimation-non-param%C3%A9trique"><i class="fas fa-link"></i></a>
@@ -161,12 +162,12 @@ La probabilité de ne pas observer l’espèce est <span class="math inline">\((
 La difficulté est due aux espèces pour lesquelles <span class="math inline">\(np_s\)</span>, l’espérance du nombre d’observations, est petit.
 La probabilité de les observer est donnée par la loi binomiale : si <span class="math inline">\(np_s\)</span> est proche de 0, la probabilité d’observer un individu est faible.</p>
 <p>Les estimateurs non paramétriques cherchent à tirer le maximum d’information de la distribution des abondances <span class="math inline">\(n_s\)</span> pour estimer le nombre d’espèces non observées.
-Une présentation détaillée du problème et des limites à sa résolution est fournie par <span class="citation">Mao et Colwell (<a href="references.html#ref-Mao2005" role="doc-biblioref">2005</a>)</span> qui concluent notamment que les estimateurs ne peuvent fournir qu’une borne inférieure de l’intervalle des possibles valeurs du nombre réel d’espèces.</p>
+Une présentation détaillée du problème et des limites à sa résolution est fournie par <span class="citation">Mao et Colwell (<a href="references.html#ref-Mao2005">2005</a>)</span> qui concluent notamment que les estimateurs ne peuvent fournir qu’une borne inférieure de l’intervalle des possibles valeurs du nombre réel d’espèces.</p>
 <div id="chao1-et-chao2" class="section level4" number="3.1.1.1">
 <h4>
 <span class="header-section-number">3.1.1.1</span> Chao1 et Chao2<a class="anchor" aria-label="anchor" href="#chao1-et-chao2"><i class="fas fa-link"></i></a>
 </h4>
-<p><span class="citation">Chao (<a href="references.html#ref-Chao1984" role="doc-biblioref">1984</a>)</span> estime le nombre d’espèces non observées à partir de celles observées 1 ou 2 fois.</p>
+<p><span class="citation">Chao (<a href="references.html#ref-Chao1984">1984</a>)</span> estime le nombre d’espèces non observées à partir de celles observées 1 ou 2 fois.</p>
 <p>Dans un échantillon de taille <span class="math inline">\(n\)</span> résultant d’un tirage indépendant des individus, la probabilité que l’espèce <span class="math inline">\(s\)</span> soit observée <span class="math inline">\(\nu\)</span> fois est obtenue en écrivant la probabilité de tirer dans l’ordre <span class="math inline">\(\nu\)</span> fois l’espèce <span class="math inline">\(s\)</span> puis <span class="math inline">\(n-\nu\)</span> fois une autre espèce, multiplié par le nombre de combinaisons possible pour prendre en compte l’ordre des tirages :
 <span class="math display" id="eq:psnu">\[\begin{equation}
   \tag{3.1}
@@ -204,7 +205,7 @@ Enfin, le produit scalaire des deux vecteurs vaut
 \end{equation}\]</span></p>
 <p>où <span class="math inline">\(s^{n}_{\ne 0}\)</span> est le nombre d’espèces différentes observé.</p>
 <p>Il s’agit d’un estimateur minimum : l’espérance du nombre d’espèces est supérieure ou égale au nombre estimé.</p>
-<p><span class="citation">Béguinot (<a href="references.html#ref-Beguinot2014" role="doc-biblioref">2014</a>)</span> a montré que l’estimateur est sans biais si le nombre d’espèces non observées décroît exponentiellement avec la taille de l’échantillon :
+<p><span class="citation">Béguinot (<a href="references.html#ref-Beguinot2014">2014</a>)</span> a montré que l’estimateur est sans biais si le nombre d’espèces non observées décroît exponentiellement avec la taille de l’échantillon :
 <span class="math display" id="eq:BiaisChao">\[\begin{equation}
   \tag{3.6}
   s^{n}_{0} = S e^{-kn},
@@ -222,7 +223,7 @@ Cette relation est cohérente avec un échantillonnage poissonien dans lequel la
   \hat{S}_\mathit{Chao1}
    = {s^{n}_{\ne 0}} + \frac{{\left(s^{n}_{1}\right)}^2}{2s^{n}_{2}}.
 \end{equation}\]</span></p>
-<p>Si aucune espèce n’est observée deux fois, l’estimateur est remplacé <span class="citation">(<a href="references.html#ref-Chao2004" role="doc-biblioref">Chao 2004</a>)</span> par</p>
+<p>Si aucune espèce n’est observée deux fois, l’estimateur est remplacé <span class="citation">(<a href="references.html#ref-Chao2004">Chao 2004</a>)</span> par</p>
 <p><span class="math display" id="eq:Chao1sansnf2">\[\begin{equation}
   \tag{3.9}
   {\hat{S}}_\mathit{Chao1}
@@ -242,7 +243,7 @@ Cette relation est cohérente avec un échantillonnage poissonien dans lequel la
   + \frac{s^{n}_{1}{\left(2s^{n}_{1} -1\right)}^2}{4}
   + \frac{{\left(s^{n}_{1}\right)}^4}{4s^{n}_{\ne 0}}.
 \end{equation}\]</span></p>
-<p><span class="citation">Chao (<a href="references.html#ref-Chao1987" role="doc-biblioref">1987</a>)</span> donne une approximation de l’intervalle de confiance à 95 % en assumant une distribution normale :</p>
+<p><span class="citation">Chao (<a href="references.html#ref-Chao1987">1987</a>)</span> donne une approximation de l’intervalle de confiance à 95 % en assumant une distribution normale :</p>
 <p><span class="math display" id="eq:ICChao1">\[\begin{equation}
   \tag{3.12}
   s^{n}_{\ne 0}+\frac{{\hat{S}}_\mathit{Chao1}-{s^{n}_{\ne 0}}}{c}\le S\le {s^{n}_{\ne 0}}+\left({\hat{S}}_\mathit{Chao1}-{s^{n}_{\ne 0}}\right)c,
@@ -252,9 +253,9 @@ Cette relation est cohérente avec un échantillonnage poissonien dans lequel la
   \tag{3.13}
   c=e^{t^{n}_{1-{\alpha}/{2}}\sqrt{\ln\left(1+\frac{\operatorname{Var}\left({\hat{S}}_\mathit{Chao1}\right)}{{\left({\hat{S}}_\mathit{Chao1}-{s^{n}_{\ne 0}}\right)}^2}\right)}}.
 \end{equation}\]</span></p>
-<p><span class="citation">Eren et al. (<a href="references.html#ref-Eren2012" role="doc-biblioref">2012</a>, eq. 8)</span> calculent un intervalle de confiance qui est plus petit quand la valeur maximum théorique du nombre d’espèces est connue, ce qui est rarement le cas en écologie.</p>
-<p><span class="citation">Chao (<a href="references.html#ref-Chao1987" role="doc-biblioref">1987</a>)</span> propose un estimateur du nombre d’espèces appliqué aux données de présence-absence (un certain nombre de relevés contiennent seulement l’information de présence ou absence de chaque espèce), appelé Chao2. Il est identique à Chao1 mais <span class="math inline">\(n\)</span> est le nombre de relevés, en général trop petit pour appliquer l’approximation de Chao1.</p>
-<p><span class="citation">Chiu et al. (<a href="references.html#ref-Chiu2014a" role="doc-biblioref">2014</a>)</span> améliorent l’estimateur en reprenant la démarche originale de Chao mais en utilisant un estimateur plus précis du taux de couverture, <a href="chap-Outils.html#eq:CChao">(2.9)</a> au lieu de <a href="chap-Outils.html#eq:CGood">(2.4)</a> :</p>
+<p><span class="citation">Eren et al. (<a href="references.html#ref-Eren2012">2012</a>, eq. 8)</span> calculent un intervalle de confiance qui est plus petit quand la valeur maximum théorique du nombre d’espèces est connue, ce qui est rarement le cas en écologie.</p>
+<p><span class="citation">Chao (<a href="references.html#ref-Chao1987">1987</a>)</span> propose un estimateur du nombre d’espèces appliqué aux données de présence-absence (un certain nombre de relevés contiennent seulement l’information de présence ou absence de chaque espèce), appelé Chao2. Il est identique à Chao1 mais <span class="math inline">\(n\)</span> est le nombre de relevés, en général trop petit pour appliquer l’approximation de Chao1.</p>
+<p><span class="citation">Chiu et al. (<a href="references.html#ref-Chiu2014a">2014</a>)</span> améliorent l’estimateur en reprenant la démarche originale de Chao mais en utilisant un estimateur plus précis du taux de couverture, <a href="chap-Outils.html#eq:CChao">(2.9)</a> au lieu de <a href="chap-Outils.html#eq:CGood">(2.4)</a> :</p>
 <p><span class="math display" id="eq:iChao1">\[\begin{equation}
   \tag{3.14}
   {\hat{S}}_\mathit{iChao1}
@@ -262,14 +263,14 @@ Cette relation est cohérente avec un échantillonnage poissonien dans lequel la
   + \frac{s^{n}_{3}}{4s^{n}_{4}}\,
   \max\left(s^{n}_{1}-\frac{s^{n}_{2}s^{n}_{3}}{2s^{n}_{4}};0\right).
 \end{equation}\]</span></p>
-<p><span class="citation">Chao et al. (<a href="references.html#ref-Chao2017" role="doc-biblioref">2017</a>)</span> étendent l’applicabilité de l’estimateur Chao2 à des données dans lesquelles les espèces sont notées uniquement comme singletons ou doubletons et plus, sans distinction entre doubletons et espèces plus fréquentes.
+<p><span class="citation">Chao et al. (<a href="references.html#ref-Chao2017">2017</a>)</span> étendent l’applicabilité de l’estimateur Chao2 à des données dans lesquelles les espèces sont notées uniquement comme singletons ou doubletons et plus, sans distinction entre doubletons et espèces plus fréquentes.
 Une relation entre le nombre de doubletons et les données disponibles est <span style="white-space:nowrap">fournie ;</span> sa résolution numérique (le code R nécessaire est disponible avec l’article) permet d’estimer <span class="math inline">\(s^{n}_{2}\)</span> et de l’injecter dans l’estimateur Chao2.</p>
 </div>
 <div id="lestimateur-ace" class="section level4" number="3.1.1.2">
 <h4>
 <span class="header-section-number">3.1.1.2</span> L’estimateur ACE<a class="anchor" aria-label="anchor" href="#lestimateur-ace"><i class="fas fa-link"></i></a>
 </h4>
-<p><span class="citation">Chao et Lee (<a href="references.html#ref-Chao1992" role="doc-biblioref">1992</a>)</span> développent l’estimateur ACE (<em>Abundance-based coverage estimator</em>) à travers l’estimation du taux de couverture <span class="math inline">\(C\)</span>.
+<p><span class="citation">Chao et Lee (<a href="references.html#ref-Chao1992">1992</a>)</span> développent l’estimateur ACE (<em>Abundance-based coverage estimator</em>) à travers l’estimation du taux de couverture <span class="math inline">\(C\)</span>.
 L’estimateur ACE utilise toutes les valeurs de <span class="math inline">\(^{\nu }s\)</span> correspondant aux espèces rares : concrètement, la valeur limite de <span class="math inline">\(\nu\)</span> notée <span class="math inline">\(\kappa\)</span> est fixée arbitrairement, généralement à 10.</p>
 <p>L’estimateur prend en compte le coefficient de variation de la distribution des fréquences (<span class="math inline">\({\hat{p}}_s\)</span>) : plus les probabilités sont hétérogènes, plus le nombre d’espèces non observées sera grand.
 Finalement :</p>
@@ -289,7 +290,7 @@ Finalement :</p>
   \tag{3.17}
   \tilde{\gamma}^{2}_\mathit{rares} = \max\left({\widehat{\gamma}}^2_\mathit{rares}\left(1+\frac{\left(1-{\hat{C}}_\mathit{rares}\right)\sum^{\kappa}_{\nu=1}{\nu\left(\nu -1\right){s^{n}_{\nu}}}}{{\hat{C}}_\mathit{rares}\left(\sum^{\kappa}_{\nu =1}{\nu s^{n}_{\nu}-1}\right)}\right); 0 \right).
 \end{equation}\]</span></p>
-<p><span class="citation">Chao et Shen (<a href="references.html#ref-Chao2010a" role="doc-biblioref">2010</a>)</span> conseillent d’utiliser le deuxième estimateur dès que <span class="math inline">\({\widehat{\gamma}}^2_\mathit{rares}\)</span> dépasse 0,8.
+<p><span class="citation">Chao et Shen (<a href="references.html#ref-Chao2010a">2010</a>)</span> conseillent d’utiliser le deuxième estimateur dès que <span class="math inline">\({\widehat{\gamma}}^2_\mathit{rares}\)</span> dépasse 0,8.
 L’estimateur ACE donne normalement une valeur plus grande que Chao1.
 Si ce n’est pas le cas, la limite des espèces rares <span class="math inline">\(\kappa\)</span> doit être augmentée.</p>
 </div>
@@ -298,7 +299,7 @@ Si ce n’est pas le cas, la limite des espèces rares <span class="math inline"
 <span class="header-section-number">3.1.1.3</span> L’estimateur jackknife<a class="anchor" aria-label="anchor" href="#lestimateur-jackknife"><i class="fas fa-link"></i></a>
 </h4>
 <p>La méthode jackknife a pour objectif de réduire le biais d’un estimateur en considérant des jeux de données dans lesquels on a supprimé un certain nombre d’observations (ce nombre est l’ordre de la méthode).
-Burnham et Overton <span class="citation">(<a href="references.html#ref-Burnham1978" role="doc-biblioref">1978</a>, <a href="references.html#ref-Burnham1979" role="doc-biblioref">1979</a>)</span> ont utilisé cette technique pour obtenir des estimateurs du nombre d’espèces, appelés jackknife à l’ordre <span class="math inline">\(j\)</span>, prenant en compte les valeurs de <span class="math inline">\(s^{n}_{1}\)</span> à <span class="math inline">\(s^{n}_{j}\)</span>.
+Burnham et Overton <span class="citation">(<a href="references.html#ref-Burnham1978">1978</a>, <a href="references.html#ref-Burnham1979">1979</a>)</span> ont utilisé cette technique pour obtenir des estimateurs du nombre d’espèces, appelés jackknife à l’ordre <span class="math inline">\(j\)</span>, prenant en compte les valeurs de <span class="math inline">\(s^{n}_{1}\)</span> à <span class="math inline">\(s^{n}_{j}\)</span>.
 Les estimateurs du premier et du deuxième ordre sont les plus utilisés en pratique :</p>
 <p><span class="math display" id="eq:Jack1">\[\begin{equation}
   \tag{3.18}
@@ -309,8 +310,8 @@ Les estimateurs du premier et du deuxième ordre sont les plus utilisés en prat
   \hat{S}_\mathit{J2} = {s^{n}_{\ne 0}} + \frac{\left(2n-3\right){s^{n}_{1}}}{n} - \frac{{\left(n-2\right)}^{2}s^{n}_{2}}{n\left(n-1\right)}.
 \end{equation}\]</span></p>
 <p>Augmenter l’ordre du jackknife diminue le biais mais augmente la variance de l’estimateur.</p>
-<p><span class="citation">Chao (<a href="references.html#ref-Chao1984" role="doc-biblioref">1984</a>)</span> a montré que les estimateurs jackknife pouvaient être retrouvés par approximation de l’indice Chao1.</p>
-<p>La variance du jackknife d’ordre 1 est <span class="citation">(<a href="references.html#ref-Heltshe1983" role="doc-biblioref">Heltshe et Forrester 1983</a>)</span>
+<p><span class="citation">Chao (<a href="references.html#ref-Chao1984">1984</a>)</span> a montré que les estimateurs jackknife pouvaient être retrouvés par approximation de l’indice Chao1.</p>
+<p>La variance du jackknife d’ordre 1 est <span class="citation">(<a href="references.html#ref-Heltshe1983">Heltshe et Forrester 1983</a>)</span>
 <span class="math display" id="eq:VarJack1">\[\begin{equation}
   \tag{3.20}
   \operatorname{Var}{\left( \hat{S}_\mathit{J1} \right)}
@@ -318,8 +319,8 @@ Les estimateurs du premier et du deuxième ordre sont les plus utilisés en prat
 \end{equation}\]</span></p>
 <p>L’estimateur est construit à partir de l’hypothèse selon laquelle le nombre d’espèces non observées est de la forme
 <span class="math display">\[s^{n}_{0} = \sum_{i=1}^{\infty}{\frac{a_i}{n^i}}.\]</span></p>
-<p>Pour cette raison, <span class="citation">Cormack (<a href="references.html#ref-Cormack1989" role="doc-biblioref">1989</a>)</span> affirme qu’il n’a pas de support théorique solide.
-L’espérance du nombre d’espèces non observées est <a href="chap-MesuresNeutres.html#eq:Esnnu">(3.2)</a> <span class="math inline">\(\sum_s{(1-p_s)^n}\)</span>, qui décroît beaucoup plus rapidement que <span class="math inline">\(\sum_{i}{{a_i}/{n^i}}\)</span>: l’hypothèse est bien fausse.
+<p>Pour cette raison, <span class="citation">Cormack (<a href="references.html#ref-Cormack1989">1989</a>)</span> affirme qu’il n’a pas de support théorique solide.
+L’espérance du nombre d’espèces non observées est <a href="chap-MesuresNeutres.html#eq:Esnnu">(3.2)</a> <span class="math inline">\(\sum_s{(1-p_s)^n}\)</span>, qui décroît beaucoup plus rapidement que <span class="math inline">\(\sum_{i}{{a_i}/{n^i}}\)</span> : l’hypothèse est bien fausse.
 En revanche, pour une gamme de <span class="math inline">\(n\)</span> fixée (de la taille de l’inventaire à une taille suffisante pour approcher la richesse asymptotique par exemple), il est toujours possible d’écrire le nombre d’espèces non observées sous la forme d’une série de puissances négatives de <span class="math inline">\(n\)</span>, comme dans l’illustration ci-dessous.</p>
 <p>Une communauté log-normale, similaire à BCI (300 espèces, écart-type égal à 2) est simulée et un échantillon de 1000 individus est tiré.</p>
 <p></p>
@@ -435,7 +436,7 @@ Figure 3.2: Nombre d’espèces non obervées dans un échantillon de taille cro
 </div>
 <p></p>
 <p>L’ajustement est possible pour des valeurs de <span class="math inline">\(n\)</span> différentes mais les coefficients <span class="math inline">\(a_i\)</span> sont alors différents : la forme du biais n’est valide que pour une gamme de valeurs de <span class="math inline">\(n\)</span> fixée.</p>
-<p><span class="citation">Béguinot (<a href="references.html#ref-Beguinot2016" role="doc-biblioref">2016</a>)</span> apporte un autre argument important en faveur du jackknife.
+<p><span class="citation">Béguinot (<a href="references.html#ref-Beguinot2016">2016</a>)</span> apporte un autre argument important en faveur du jackknife.
 À condition que <span class="math inline">\(n\)</span> soit suffisamment grand, l’estimateur du nombre d’espèces non observées est une fonction linéaire du nombre d’espèces observées <span class="math inline">\(\nu\)</span> fois : <span class="math inline">\(s^{n}_{1}\)</span> pour le jackknife 1, <span class="math inline">\(2 s^{n}_{1} - s^{n}_{2}\)</span> pour le jackknife 2 et ainsi de suite pour les ordres suivants, contrairement à l’estimateur de Chao.
 Grâce à cette propriété, l’estimateur du jackknife est additif quand plusieurs groupes d’espèces disjoints sont pris en compte : l’estimation du nombre d’espèces de papillons et de scarabées inventoriées ensemble est égale à la somme des estimations des deux groupes inventoriés séparément.
 Ce n’est pas le cas pour l’estimateur de Chao.</p>
@@ -445,18 +446,18 @@ Ce n’est pas le cas pour l’estimateur de Chao.</p>
 <h4>
 <span class="header-section-number">3.1.1.4</span> L’estimateur du bootstrap<a class="anchor" aria-label="anchor" href="#lestimateur-du-bootstrap"><i class="fas fa-link"></i></a>
 </h4>
-<p>L’estimateur du bootstrap <span class="citation">(<a href="references.html#ref-Smith1984" role="doc-biblioref">E. P. Smith et Belle 1984</a>)</span> est
+<p>L’estimateur du bootstrap <span class="citation">(<a href="references.html#ref-Smith1984">E. P. Smith et Belle 1984</a>)</span> est
 <span class="math display" id="eq:Smith1984">\[\begin{equation}
   \tag{3.21}
   \hat{S}_\mathit{b} = {s^{n}_{\ne 0}} + \sum_s{(1-p_s)^n}.
 \end{equation}\]</span></p>
-<p>Il est peu utilisé parce que le jackknife est plus performant <span class="citation">(<a href="references.html#ref-Colwell1994" role="doc-biblioref">Colwell et Coddington 1994</a>)</span>.</p>
+<p>Il est peu utilisé parce que le jackknife est plus performant <span class="citation">(<a href="references.html#ref-Colwell1994">Colwell et Coddington 1994</a>)</span>.</p>
 </div>
 <div id="calcul" class="section level4" number="3.1.1.5">
 <h4>
 <span class="header-section-number">3.1.1.5</span> Calcul<a class="anchor" aria-label="anchor" href="#calcul"><i class="fas fa-link"></i></a>
 </h4>
-<p>Ces estimateurs peuvent être calculés de façon relativement simple à l’aide du logiciel SPADE, dans sa version pour R <span class="citation">(<a href="references.html#ref-Chao2016c" role="doc-biblioref">Chao et al. 2016</a>)</span>.
+<p>Ces estimateurs peuvent être calculés de façon relativement simple à l’aide du logiciel SPADE, dans sa version pour R <span class="citation">(<a href="references.html#ref-Chao2016c">Chao et al. 2016</a>)</span>.
 Le guide de l’utilisateur présente quelques estimateurs supplémentaires et des directives pour choisir.
 Il est conseillé d’utiliser Chao1 pour une estimation minimale, et ACE pour une estimation moins biaisée de la richesse.</p>
 <p>Les intervalles de confiance de chaque estimateur sont calculés par bootstrap : même quand la variance d’un estimateur est connue, sa loi ne l’est généralement pas, et le calcul analytique de l’intervalle de confiance n’est pas possible.</p>
@@ -489,7 +490,7 @@ Le tableau d’entrée est un <code>dataframe</code> contenant, pour chaque esp�
 ## S.ACE    122.848959 117.317307
 ## se.ACE     5.736054   5.571998</code></pre>
 <p></p>
-<p>Le package <em>SPECIES</em> <span class="citation">(<a href="references.html#ref-Wang2011" role="doc-biblioref">Wang 2011</a>)</span> permet de calculer les estimateurs jackknife d’ordre supérieur à 2 et surtout choisit l’ordre qui fournit le meilleur compromis entre biais et variance.</p>
+<p>Le package <em>SPECIES</em> <span class="citation">(<a href="references.html#ref-Wang2011">Wang 2011</a>)</span> permet de calculer les estimateurs jackknife d’ordre supérieur à 2 et surtout choisit l’ordre qui fournit le meilleur compromis entre biais et variance.</p>
 <p>Comparaison des fonctions sur l’ensemble du dispositif BCI (<span class="math inline">\(s^{n}_{\ne 0}=225\)</span>, <span class="math inline">\(s_{1}=19\)</span>) :</p>
 <p></p>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
@@ -550,9 +551,9 @@ La fonction <code>jackknife</code> de <em>SPECIES</em> donne le bon résultat, a
 <h4>
 <span class="header-section-number">3.1.1.7</span> Choix de l’estimateur<a class="anchor" aria-label="anchor" href="#sec-ChoixEstimateur"><i class="fas fa-link"></i></a>
 </h4>
-<p>Des tests poussés ont été menés par <span class="citation">Brose, Martinez, et Williams (<a href="references.html#ref-Brose2003" role="doc-biblioref">2003</a>)</span> pour permettre le choix du meilleur estimateur de la richesse en fonction de la complétude de l’échantillonnage <span class="math inline">\(s^{n}_{\ne 0}/{S}\)</span>.
+<p>Des tests poussés ont été menés par <span class="citation">Brose, Martinez, et Williams (<a href="references.html#ref-Brose2003">2003</a>)</span> pour permettre le choix du meilleur estimateur de la richesse en fonction de la complétude de l’échantillonnage <span class="math inline">\(s^{n}_{\ne 0}/{S}\)</span>.
 Les auteurs appellent cette proportion couverture (<em>coverage</em>).
-Le terme <em>completeness</em> a été proposé par <span class="citation">J. Beck et Schwanghart (<a href="references.html#ref-Beck2010" role="doc-biblioref">2010</a>)</span> pour éviter la confusion avec le taux de couverture défini par Good (vu en section <a href="chap-Outils.html#sec-Couverture">2.3</a>).
+Le terme <em>completeness</em> a été proposé par <span class="citation">J. Beck et Schwanghart (<a href="references.html#ref-Beck2010">2010</a>)</span> pour éviter la confusion avec le taux de couverture défini par Good (vu en section <a href="chap-Outils.html#sec-Couverture">2.3</a>).
 La complétude est inférieure à la couverture : toutes les espèces ont le même poids alors que les espèces manquantes sont plus rares et pénalisent moins le taux de couverture.</p>
 
 <p></p>
@@ -564,7 +565,7 @@ Figure 3.3: Arbre de décision du meilleur estimateur du nombre d’espèces.
 </div>
 <p></p>
 <p>Dans tous les cas, les estimateurs jackknife sont les meilleurs.
-L’arbre de décision est en figure <a href="chap-MesuresNeutres.html#fig:Brose2003">3.3</a> <span class="citation">(<a href="references.html#ref-Brose2003" role="doc-biblioref">Brose, Martinez, et Williams 2003, fig. 6</a>)</span>.
+L’arbre de décision est en figure <a href="chap-MesuresNeutres.html#fig:Brose2003">3.3</a> <span class="citation">(<a href="references.html#ref-Brose2003">Brose, Martinez, et Williams 2003, fig. 6</a>)</span>.
 Le choix dépend principalement de la complétude (<em>coverage</em> sur la figure).
 Une première estimation est nécessaire par plusieurs estimateurs.
 Si les résultats sont cohérents, choisir un estimateur jackknife d’ordre d’autant plus faible que la complétude est grande.
@@ -600,21 +601,21 @@ La complétude est <span class="math inline">\({225}/{244}=92\%\)</span>, dans l
 <span>    Correction <span class="op">=</span> <span class="st">"Jackknife"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 0.7091295</code></pre>
 <p></p>
-<p><span class="citation">Chiu et al. (<a href="references.html#ref-Chiu2014a" role="doc-biblioref">2014</a>)</span>, à partir d’autres simulations, préfèrent l’utilisation de l’estimateur <em>iChao1</em>.
+<p><span class="citation">Chiu et al. (<a href="references.html#ref-Chiu2014a">2014</a>)</span>, à partir d’autres simulations, préfèrent l’utilisation de l’estimateur <em>iChao1</em>.
 Quand l’échantillonnage est suffisant, les estimateurs de Chao ont l’avantage de posséder une base théorique solide et de fournir une borne inférieure du nombre d’espèces possible.
 Dans ce cas, les estimations du jackknife d’ordre 1 sont cohérentes avec celles de Chao.
-En revanche, quand l’échantillonnage est insuffisant, l’estimateur jackknife d’ordre supérieur à 1 permet de réduire le biais d’estimation, au prix d’une variance accrue <span class="citation">(<a href="references.html#ref-Marcon2015a" role="doc-biblioref">Marcon 2015</a>)</span>.</p>
-<p>Enfin, Beguinot <span class="citation">(<a href="references.html#ref-Beguinot2015a" role="doc-biblioref">2015a</a>, <a href="references.html#ref-Beguinot2016" role="doc-biblioref">2016</a>)</span> suggère d’utiliser en règle générale le jackknife 2 (mais ne traite pas les cas dans lesquels l’échantillonnage est trop faible pour justifier un ordre supérieur) tant que le nombre de singletons est supérieur à <span class="math inline">\(2-\sqrt(2) \approx 0,6\)</span> fois le nombre de doubletons.
+En revanche, quand l’échantillonnage est insuffisant, l’estimateur jackknife d’ordre supérieur à 1 permet de réduire le biais d’estimation, au prix d’une variance accrue <span class="citation">(<a href="references.html#ref-Marcon2015a">Marcon 2015</a>)</span>.</p>
+<p>Enfin, Beguinot <span class="citation">(<a href="references.html#ref-Beguinot2015a">2015a</a>, <a href="references.html#ref-Beguinot2016">2016</a>)</span> suggère d’utiliser en règle générale le jackknife 2 (mais ne traite pas les cas dans lesquels l’échantillonnage est trop faible pour justifier un ordre supérieur) tant que le nombre de singletons est supérieur à <span class="math inline">\(2-\sqrt(2) \approx 0,6\)</span> fois le nombre de doubletons.
 Le ratio des singletons sur les doubletons diminue quand l’échantillonnage approche de l’exhaustivité.
 Quand le seuil de 0,6 est dépassé, la valeur de l’estimateur de Chao devient supérieur au jackknife 2 et doit être utilisé.
-Ce seuil est cohérent avec les règles de <span class="citation">Brose, Martinez, et Williams (<a href="references.html#ref-Brose2003" role="doc-biblioref">2003</a>)</span>.</p>
+Ce seuil est cohérent avec les règles de <span class="citation">Brose, Martinez, et Williams (<a href="references.html#ref-Brose2003">2003</a>)</span>.</p>
 </div>
 <div id="sec-Extrapol" class="section level4" number="3.1.1.8">
 <h4>
 <span class="header-section-number">3.1.1.8</span> Prédiction de la richesse d’un nouvel échantillon<a class="anchor" aria-label="anchor" href="#sec-Extrapol"><i class="fas fa-link"></i></a>
 </h4>
 <p>La prédiction du nombre d’espèces <span class="math inline">\(\hat{S'}\)</span> découvert dans une nouvelle placette d’un habitat dans lequel on a déjà échantillonné est une question importante, par exemple pour évaluer le nombre d’espèces préservées dans le cadre d’une mise en réserve, ou évaluer le nombre d’espèces perdues en réduisant la surface d’une forêt.</p>
-<p><span class="citation">T.-J. Shen, Chao, et Lin (<a href="references.html#ref-Shen2003" role="doc-biblioref">2003</a>)</span> proposent un estimateur et le confrontent avec succès à des estimateurs antérieurs.
+<p><span class="citation">T.-J. Shen, Chao, et Lin (<a href="references.html#ref-Shen2003">2003</a>)</span> proposent un estimateur et le confrontent avec succès à des estimateurs antérieurs.
 On note <span class="math inline">\(\hat{S}^{n}_{0}\)</span> l’estimateur du nombre d’espèces non observées dans le premier échantillon, et <span class="math inline">\(\hat{C}\)</span> l’estimateur de son taux de couverture.
 L’estimateur du nombre d’espèces du nouvel échantillon de <span class="math inline">\(n'\)</span> individus est</p>
 <p><span class="math display">\[\begin{equation}
@@ -667,7 +668,7 @@ La courbe obtenue est en figure <a href="chap-MesuresNeutres.html#fig:NonObsNFig
 <h4>
 <span class="header-section-number">3.1.2.1</span> Distribution de Preston<a class="anchor" aria-label="anchor" href="#distribution-de-preston"><i class="fas fa-link"></i></a>
 </h4>
-<p><span class="citation">Preston (<a href="references.html#ref-Preston1948" role="doc-biblioref">1948</a>)</span> fournit dès l’introduction de son modèle log-normal une technique d’estimation du nombre total d’espèces par la célèbre méthode des octaves.
+<p><span class="citation">Preston (<a href="references.html#ref-Preston1948">1948</a>)</span> fournit dès l’introduction de son modèle log-normal une technique d’estimation du nombre total d’espèces par la célèbre méthode des octaves.
 Elle est disponible dans le package <em>vegan</em> :</p>
 <p></p>
 <div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
@@ -675,7 +676,7 @@ Elle est disponible dans le package <em>vegan</em> :</p>
 <pre><code>## Extrapolated     Observed       Veiled 
 ##    235.40577    225.00000     10.40577</code></pre>
 <p></p>
-<p>L’ajustement direct du modèle aux données, sans regroupement par octaves <span class="citation">(<a href="references.html#ref-Williamson2005" role="doc-biblioref">Williamson et Gaston 2005</a>)</span>, est également possible (figure <a href="chap-MesuresNeutres.html#fig:PrestonSansOFig">3.5</a>) :</p>
+<p>L’ajustement direct du modèle aux données, sans regroupement par octaves <span class="citation">(<a href="references.html#ref-Williamson2005">Williamson et Gaston 2005</a>)</span>, est également possible (figure <a href="chap-MesuresNeutres.html#fig:PrestonSansOFig">3.5</a>) :</p>
 <p></p>
 <div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mod.ll</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/vegan/man/fisherfit.html">prestondistr</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span><span class="op">)</span></span>
@@ -702,7 +703,7 @@ Figure 3.5: Ajustement du modèle de Preston aux données de BCI.
 <h4>
 <span class="header-section-number">3.1.2.2</span> Maximum de vraisemblance d’une distribution de Fisher<a class="anchor" aria-label="anchor" href="#maximum-de-vraisemblance-dune-distribution-de-fisher"><i class="fas fa-link"></i></a>
 </h4>
-<p><span class="citation">Norris et Pollock (<a href="references.html#ref-Norris1998" role="doc-biblioref">1998</a>)</span> supposent que la distribution des espèces suit le modèle de Fisher (voir chapitre <a href="chap-Fisher.html#chap-Fisher">20</a>) et infèrent le nombre d’espèces par maximum de vraisemblance non paramétrique (ils ne cherchent pas à inférer les paramètres de la loi de probabilité de <span class="math inline">\(p_s\)</span> mais seulement à ajuster au mieux le modèle de Poisson aux valeurs de <span class="math inline">\({\hat{p}}_s\)</span> observées).</p>
+<p><span class="citation">Norris et Pollock (<a href="references.html#ref-Norris1998">1998</a>)</span> supposent que la distribution des espèces suit le modèle de Fisher (voir chapitre <a href="chap-Fisher.html#chap-Fisher">20</a>) et infèrent le nombre d’espèces par maximum de vraisemblance non paramétrique (ils ne cherchent pas à inférer les paramètres de la loi de probabilité de <span class="math inline">\(p_s\)</span> mais seulement à ajuster au mieux le modèle de Poisson aux valeurs de <span class="math inline">\({\hat{p}}_s\)</span> observées).</p>
 <p>Le calcul est possible avec la librairie <em>SPECIES</em> de R :</p>
 <p></p>
 <div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
@@ -723,16 +724,16 @@ Figure 3.5: Ajustement du modèle de Preston aux données de BCI.
 <pre><code>## Method: Unconditional NPMLE method by Norris and Pollock 1996, 1998, 
 ##         using algorithm by Wang and Lindsay 2005: 
 ## 
-##         MLE=                                225 
+##         MLE=                                239 
 ##         Estimated Poisson mixture components:       
-##         p=                                  5.815792 
-##         pi=                                 1</code></pre>
+##         p=                                  1.10372 3.595437 10.60832 
+##         pi=                                 0.402579 0.2525368 0.3448842</code></pre>
 <pre><code>## $Nhat
-## [1] 225</code></pre>
+## [1] 239</code></pre>
 <p></p>
 <p>Le problème de cette méthode d’estimation est qu’elle diverge fréquemment.
 Les calculs n’aboutissent pas si la queue de distribution n’est pas regroupée (il existe 108 valeurs différentes de <span class="math inline">\(n_s\)</span> dans l’exemple de BCI : aucune des fonctions de <em>SPECIES</em> ne fonctionne en l’état).</p>
-<p><span class="citation">Wang et al. (<a href="references.html#ref-Wang2005" role="doc-biblioref">2005</a>)</span> ont amélioré sa stabilité en pénalisant le calcul de la vraisemblance :</p>
+<p><span class="citation">Wang et al. (<a href="references.html#ref-Wang2005">2005</a>)</span> ont amélioré sa stabilité en pénalisant le calcul de la vraisemblance :</p>
 <p></p>
 <div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/pnpmle.html">pnpmle</a></span><span class="op">(</span><span class="va">DistNs.SPECIES</span><span class="op">)</span></span></code></pre></div>
@@ -745,7 +746,7 @@ Les calculs n’aboutissent pas si la queue de distribution n’est pas regroup�
 <pre><code>## $Nhat
 ## [1] 243</code></pre>
 <p></p>
-<p>Enfin, <span class="citation">Wang (<a href="references.html#ref-Wang2010" role="doc-biblioref">2010</a>)</span> perfectionne la technique d’estimation en supposant que les <span class="math inline">\(p_s\)</span> suivent une loi gamma et en estimant aussi ses paramètres.
+<p>Enfin, <span class="citation">Wang (<a href="references.html#ref-Wang2010">2010</a>)</span> perfectionne la technique d’estimation en supposant que les <span class="math inline">\(p_s\)</span> suivent une loi gamma et en estimant aussi ses paramètres.
 La souplesse de la loi gamma permet d’ajuster le modèle à des lois diverses et l’estimateur de Wang est très performant.</p>
 <p>Il est disponible dans <em>SPECIES</em> : fonction <code>pcg</code>.
 Son défaut est qu’il nécessite un très long temps de calcul (plusieurs heures selon les données).</p>
@@ -761,7 +762,7 @@ Son défaut est qu’il nécessite un très long temps de calcul (plusieurs heur
 <span class="header-section-number">3.1.3</span> Inférence du nombre d’espèces à partir de courbes d’accumulation<a class="anchor" aria-label="anchor" href="#sec-RichesseSAC"><i class="fas fa-link"></i></a>
 </h3>
 <p>Cette approche consiste à extrapoler la courbe d’accumulation observée.</p>
-<p>Le modèle le plus connu est celui de Michaelis-Menten <span class="citation">(<a href="references.html#ref-Michaelis1913" role="doc-biblioref">Michaelis et Menten 1913</a>)</span> proposé par <span class="citation">Clench (<a href="references.html#ref-Clench1979" role="doc-biblioref">1979</a>)</span>.
+<p>Le modèle le plus connu est celui de Michaelis-Menten <span class="citation">(<a href="references.html#ref-Michaelis1913">Michaelis et Menten 1913</a>)</span> proposé par <span class="citation">Clench (<a href="references.html#ref-Clench1979">1979</a>)</span>.
 En fonction de l’effort d’échantillonnage <span class="math inline">\(n\)</span>, évalué en temps (il s’agit de la collecte de papillons), le nombre d’espèces découvert augmente jusqu’à une asymptote égale au nombre d’espèces total :</p>
 <p><span class="math display">\[\begin{equation}
   S^{n} = S\frac{n}{K+n}.
@@ -800,8 +801,8 @@ Le résultat se trouve en figure <a href="chap-MesuresNeutres.html#fig:SobLLorFi
 ## Number of iterations to convergence: 6 
 ## Achieved convergence tolerance: 7.861e-06</code></pre>
 <p></p>
-<p>L’estimation précédente utilise la méthode des moindres carrés, qui suppose l’indépendance des résidus, hypothèses évidemment violée par une courbe d’accumulation <span class="citation">(<a href="references.html#ref-Colwell1994" role="doc-biblioref">Colwell et Coddington 1994</a>)</span>.
-L’estimation par le maximum de vraisemblance est plus convenable <span class="citation">(<a href="references.html#ref-Raaijmakers1987" role="doc-biblioref">Raaijmakers 1987</a>)</span>.
+<p>L’estimation précédente utilise la méthode des moindres carrés, qui suppose l’indépendance des résidus, hypothèses évidemment violée par une courbe d’accumulation <span class="citation">(<a href="references.html#ref-Colwell1994">Colwell et Coddington 1994</a>)</span>.
+L’estimation par le maximum de vraisemblance est plus convenable <span class="citation">(<a href="references.html#ref-Raaijmakers1987">Raaijmakers 1987</a>)</span>.
 Elle utilise la totalité des points de la courbe d’accumulation.
 La courbe d’accumulation de BCI est présentée en figure <a href="chap-Accumulation.html#fig:specaccumFig">21.2</a>.
 Ses données sont utilisées ici :</p>
@@ -841,7 +842,7 @@ Le paramètre <span class="math inline">\(K\)</span> peut être estimé plus pr�
 <pre><code>## [1] 223.6213</code></pre>
 <p></p>
 <p>Le nombre d’espèces estimé est 224, inférieur au nombre d’espèces observé.</p>
-<p>Pour calculer l’intervalle de confiance, il est plus simple de passer par une transformation linéaire du modèle <span class="citation">(<a href="references.html#ref-Lineweaver1934" role="doc-biblioref">Lineweaver et Burk 1934</a>)</span> :</p>
+<p>Pour calculer l’intervalle de confiance, il est plus simple de passer par une transformation linéaire du modèle <span class="citation">(<a href="references.html#ref-Lineweaver1934">Lineweaver et Burk 1934</a>)</span> :</p>
 <p><span class="math display" id="eq:Lineweaver1934">\[\begin{equation}
   \tag{3.22}
   \left[\frac{1}{\hat{S}^{n}}\right] = \frac{K}{\hat{S}}\left[\frac{1}{n}\right]+\frac{1}{\hat{S}}
@@ -866,7 +867,7 @@ Figure 3.6: Ajustement du même modèle de Michaelis-Menten transformé selon Li
 </p>
 </div>
 <p></p>
-<p>On voit assez clairement que le modèle (figure <a href="chap-MesuresNeutres.html#fig:LineweaverFig">3.6</a>) s’ajuste mal quand il est représenté sous cette forme <span class="citation">(<a href="references.html#ref-Raaijmakers1987" role="doc-biblioref">Raaijmakers 1987</a>)</span>.</p>
+<p>On voit assez clairement que le modèle (figure <a href="chap-MesuresNeutres.html#fig:LineweaverFig">3.6</a>) s’ajuste mal quand il est représenté sous cette forme <span class="citation">(<a href="references.html#ref-Raaijmakers1987">Raaijmakers 1987</a>)</span>.</p>
 <p>Le code R nécessaire pour réaliser la figure est :</p>
 <p></p>
 <div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
@@ -877,7 +878,7 @@ Figure 3.6: Ajustement du même modèle de Michaelis-Menten transformé selon Li
 <p></p>
 <p>Le nombre d’espèces estimé est inférieur au nombre observé, qui ne se trouve même pas dans l’intervalle de confiance à 95%.
 Le modèle de Michaelis-Menten ne convient pas.</p>
-<p><span class="citation">Soberón M. et Llorente B. (<a href="references.html#ref-Soberon1993" role="doc-biblioref">1993</a>)</span> développent un cadre théorique plus vaste qui permet d’ajuster la courbe d’accumulation à plusieurs modèles.
+<p><span class="citation">Soberón M. et Llorente B. (<a href="references.html#ref-Soberon1993">1993</a>)</span> développent un cadre théorique plus vaste qui permet d’ajuster la courbe d’accumulation à plusieurs modèles.
 Ces modèles sont efficaces empiriquement mais manquent de support théorique pour justifier leur forme.
 Le modèle le plus simple est exponentiel négatif.
 Si la probabilité de trouver une nouvelle espèce est proportionnelle au nombre d’espèces non encore découvertes, la courbe d’accumulation suit la relation</p>
@@ -900,7 +901,7 @@ Si la probabilité de trouver une nouvelle espèce est proportionnelle au nombre
 ## Number of iterations to convergence: 13 
 ## Achieved convergence tolerance: 8.047e-06</code></pre>
 <p></p>
-<p>Ce modèle, proposé par <span class="citation">Holdridge et al. (<a href="references.html#ref-Holdridge1971" role="doc-biblioref">1971</a>)</span>, sous-estime la richesse parce que la probabilité de découvrir une nouvelle espèce diminue plus vite que le nombre d’espèces restant à découvrir : les dernières espèces sont plus rares et donc plus difficiles à détecter.</p>
+<p>Ce modèle, proposé par <span class="citation">Holdridge et al. (<a href="references.html#ref-Holdridge1971">1971</a>)</span>, sous-estime la richesse parce que la probabilité de découvrir une nouvelle espèce diminue plus vite que le nombre d’espèces restant à découvrir : les dernières espèces sont plus rares et donc plus difficiles à détecter.</p>
 <p>Un modèle plus réaliste définit cette probabilité comme une fonction décroissante du nombre d’espèces manquantes.
 La fonction la plus simple est une exponentielle négative mais elle ne s’annule jamais et le nombre d’espèces n’a pas d’asymptote.
 Un paramètre supplémentaire pour obtenir l’asymptote est nécessaire et aboutir à la relation</p>
@@ -964,25 +965,25 @@ Elle est très peu utilisée.</p>
 <h3>
 <span class="header-section-number">3.1.4</span> Diversité générique<a class="anchor" aria-label="anchor" href="#diversit%C3%A9-g%C3%A9n%C3%A9rique"><i class="fas fa-link"></i></a>
 </h3>
-<p>La détermination des genres est plus facile et fiable que celle des espèces, le biais d’échantillonnage moins sensible (le nombre de singletons diminue rapidement en regroupant les données), et les coûts d’inventaire sont généralement largement réduits <span class="citation">(<a href="references.html#ref-Balmford1996b" role="doc-biblioref">Balmford, Jayasuriya, et Green 1996</a>)</span>.
-Le choix d’estimer la diversité de taxons de rang supérieur (genres ou même familles au lieu des espèces) est envisageable <span class="citation">(<a href="references.html#ref-Williams1994" role="doc-biblioref">P. H. Williams et Gaston 1994</a>)</span>.</p>
-<p>Empiriquement, la corrélation entre la richesse générique et la richesse spécifique (des angiospermes, des oiseaux et des mammifères) est bonne en forêt tropicale <span class="citation">(<a href="references.html#ref-Balmford1996a" role="doc-biblioref">Balmford, Green, et Murray 1996</a>)</span>, suffisante pour comparer les communautés, même si la prédiction de la richesse spécifique à partir de la richesse générique est très imprécise.</p>
-<p><span class="citation">Cartozo et al. (<a href="references.html#ref-Cartozo2008" role="doc-biblioref">2008</a>)</span> ont montré que le nombre de taxons de niveau supérieur (genre par rapport aux espèces, ordres par rapport aux sous-ordres) est universellement proportionnel au nombre de taxons du niveau immédiatement inférieur à la puissance 0,61. Cette relation est validée à l’échelle mondiale pour les systèmes végétaux. La loi de puissance reste valide pour des assemblages aléatoires, c’est donc la conséquence de propriétés mathématiques <span class="citation">(<a href="references.html#ref-Caldarelli2002" role="doc-biblioref">Caldarelli et al. 2002</a>)</span>, mais la puissance de la relation est plus élevée (les communautés réelles sont plus agrégées du point de vue phylogénétique que sous l’hypothèse nulle d’un assemblage aléatoire) et varie entre les niveaux.</p>
+<p>La détermination des genres est plus facile et fiable que celle des espèces, le biais d’échantillonnage moins sensible (le nombre de singletons diminue rapidement en regroupant les données), et les coûts d’inventaire sont généralement largement réduits <span class="citation">(<a href="references.html#ref-Balmford1996b">Balmford, Jayasuriya, et Green 1996</a>)</span>.
+Le choix d’estimer la diversité de taxons de rang supérieur (genres ou même familles au lieu des espèces) est envisageable <span class="citation">(<a href="references.html#ref-Williams1994">P. H. Williams et Gaston 1994</a>)</span>.</p>
+<p>Empiriquement, la corrélation entre la richesse générique et la richesse spécifique (des angiospermes, des oiseaux et des mammifères) est bonne en forêt tropicale <span class="citation">(<a href="references.html#ref-Balmford1996a">Balmford, Green, et Murray 1996</a>)</span>, suffisante pour comparer les communautés, même si la prédiction de la richesse spécifique à partir de la richesse générique est très imprécise.</p>
+<p><span class="citation">Cartozo et al. (<a href="references.html#ref-Cartozo2008">2008</a>)</span> ont montré que le nombre de taxons de niveau supérieur (genre par rapport aux espèces, ordres par rapport aux sous-ordres) est universellement proportionnel au nombre de taxons du niveau immédiatement inférieur à la puissance 0,61. Cette relation est validée à l’échelle mondiale pour les systèmes végétaux. La loi de puissance reste valide pour des assemblages aléatoires, c’est donc la conséquence de propriétés mathématiques <span class="citation">(<a href="references.html#ref-Caldarelli2002">Caldarelli et al. 2002</a>)</span>, mais la puissance de la relation est plus élevée (les communautés réelles sont plus agrégées du point de vue phylogénétique que sous l’hypothèse nulle d’un assemblage aléatoire) et varie entre les niveaux.</p>
 </div>
 <div id="combien-y-a-t-il-despèces-différentes-sur-terre" class="section level3" number="3.1.5">
 <h3>
 <span class="header-section-number">3.1.5</span> Combien y a-t-il d’espèces différentes sur <span style="white-space:nowrap">Terre ?</span><a class="anchor" aria-label="anchor" href="#combien-y-a-t-il-desp%C3%A8ces-diff%C3%A9rentes-sur-terre"><i class="fas fa-link"></i></a>
 </h3>
 <p>La question de l’estimation du nombre total d’espèces génère une abondante littérature.
-<span class="citation">Mora et al. (<a href="references.html#ref-Mora2011" role="doc-biblioref">2011</a>)</span> en font une revue et proposent une méthode nouvelle.</p>
+<span class="citation">Mora et al. (<a href="references.html#ref-Mora2011">2011</a>)</span> en font une revue et proposent une méthode nouvelle.</p>
 <p>Dans chaque règne, le nombre de taxons de niveaux supérieurs (phylums, classes, ordres, familles et même genres) est estimé par des modèles prolongeant jusqu’à leur asymptote les valeurs connues en fonction du temps.
 Cette méthode est applicable jusqu’au niveau du genre (figure <a href="chap-MesuresNeutres.html#fig:Mora2011">3.8</a>, A à E).
-Le nombre de taxon de chaque niveau est lié à celui du niveau précédent, ce qui est représenté par la figure <a href="chap-MesuresNeutres.html#fig:Mora2011">3.8</a>, G <span class="citation">(<a href="references.html#ref-Mora2011" role="doc-biblioref">Mora et al. 2011, fig. 1</a>)</span> sous la forme du relation linéaire entre le logarithme du logarithme du nombre de taxons et le rang (1 pour les phylums, 5 pour les genres).
+Le nombre de taxon de chaque niveau est lié à celui du niveau précédent, ce qui est représenté par la figure <a href="chap-MesuresNeutres.html#fig:Mora2011">3.8</a>, G <span class="citation">(<a href="references.html#ref-Mora2011">Mora et al. 2011, fig. 1</a>)</span> sous la forme du relation linéaire entre le logarithme du logarithme du nombre de taxons et le rang (1 pour les phylums, 5 pour les genres).
 La droite est prolongée jusqu’au rang 6 pour obtenir le nombre d’espèces.
 Une façon alternative de décrire la méthode est de dire que le nombre de taxons du niveau <span class="math inline">\(n+1\)</span> est égal à celui du niveau <span class="math inline">\(n\)</span> à la puissance <span class="math inline">\(k\)</span>.
 La pente de la droite de la figure est <span class="math inline">\(\ln{k}\)</span>.
 Aucune justification de ce résultat majeur n’est donnée par les auteurs, si ce n’est leur vérification empirique.</p>
-<p>Le nombre total d’espèces estimé est 8,7 millions, tous règnes confondus, dans la fourchette des estimations précédentes (de 3 à 100 millions), et nécessitant près de 500 ans d’inventaires au rythme actuel des découvertes <span class="citation">(<a href="references.html#ref-May2011" role="doc-biblioref">May 2011</a>)</span>.</p>
+<p>Le nombre total d’espèces estimé est 8,7 millions, tous règnes confondus, dans la fourchette des estimations précédentes (de 3 à 100 millions), et nécessitant près de 500 ans d’inventaires au rythme actuel des découvertes <span class="citation">(<a href="references.html#ref-May2011">May 2011</a>)</span>.</p>
 
 <p></p>
 <div class="figure" style="text-align: center">
@@ -992,11 +993,11 @@ Figure 3.8: Évolution du nombre de taxons connus en fonction du temps et valeur
 </p>
 </div>
 <p></p>
-<p>En se limitant aux arbres, l’estimation se monte à 16000 espèces pour l’Amazonie <span class="citation">(<a href="references.html#ref-TerSteege2013" role="doc-biblioref">ter Steege et al. 2013</a>)</span>, de l’ordre de 5000 pour l’Afrique et entre 40000 et 53000 pour l’ensemble des tropiques <span class="citation">(<a href="references.html#ref-Slik2015" role="doc-biblioref">Slik et al. 2015</a>)</span> (donc pour l’ensemble de la planète, le nombre d’espèces non-tropicales étant négligeable).
+<p>En se limitant aux arbres, l’estimation se monte à 16000 espèces pour l’Amazonie <span class="citation">(<a href="references.html#ref-TerSteege2013">ter Steege et al. 2013</a>)</span>, de l’ordre de 5000 pour l’Afrique et entre 40000 et 53000 pour l’ensemble des tropiques <span class="citation">(<a href="references.html#ref-Slik2015">Slik et al. 2015</a>)</span> (donc pour l’ensemble de la planète, le nombre d’espèces non-tropicales étant négligeable).
 Ces estimations sont obtenues par extrapolation du modèle en log-séries (chapitre <a href="chap-Fisher.html#chap-Fisher">20</a>) et sont sujettes au paradoxe de Fisher : les espèces représentées par un très petit nombre d’individu dans le modèle, notamment les singletons, sont les plus nombreuses.
-Une discussion approfondie est donnée par <span class="citation">Stephen P. Hubbell (<a href="references.html#ref-Hubbell2015" role="doc-biblioref">2015</a>)</span> : les espèces récemment apparues au sens du modèle ne sont pas détectables avant plusieurs générations, créant un décalage entre le nombre d’espèces reconnues par la taxonomie et le modèle.</p>
-<p><span class="citation">J. B. Wilson et al. (<a href="references.html#ref-Wilson2012" role="doc-biblioref">2012</a>)</span> compilent les relevés du nombre d’espèces de plantes vasculaires en fonction de la surface et retiennent uniquement les plus riches à chaque échelle spatiale (du millimètre carré à l’hectare).
-Ces relevés sont tous situés en forêt tropicale ou en prairie tempérée gérée (les perturbations régulières et modérées y favorisent la diversité, conformément à la théorie de la perturbation intermédiaire <span class="citation">(<a href="references.html#ref-Connell1978" role="doc-biblioref">Connell 1978</a>)</span>).
+Une discussion approfondie est donnée par <span class="citation">Stephen P. Hubbell (<a href="references.html#ref-Hubbell2015">2015</a>)</span> : les espèces récemment apparues au sens du modèle ne sont pas détectables avant plusieurs générations, créant un décalage entre le nombre d’espèces reconnues par la taxonomie et le modèle.</p>
+<p><span class="citation">J. B. Wilson et al. (<a href="references.html#ref-Wilson2012">2012</a>)</span> compilent les relevés du nombre d’espèces de plantes vasculaires en fonction de la surface et retiennent uniquement les plus riches à chaque échelle spatiale (du millimètre carré à l’hectare).
+Ces relevés sont tous situés en forêt tropicale ou en prairie tempérée gérée (les perturbations régulières et modérées y favorisent la diversité, conformément à la théorie de la perturbation intermédiaire <span class="citation">(<a href="references.html#ref-Connell1978">Connell 1978</a>)</span>).
 La relation entre le nombre d’espèces et la surface est celle d’Arrhenius.
 Son extrapolation à la surface terrestre donne environ 220000 espèces, comparables à l’estimation de 275000 espèces rapportée par Mora et al.</p>
 </div>
@@ -1010,7 +1011,7 @@ Son extrapolation à la surface terrestre donne environ 220000 espèces, compara
 <span class="header-section-number">3.2.1</span> Définition<a class="anchor" aria-label="anchor" href="#d%C3%A9finition"><i class="fas fa-link"></i></a>
 </h3>
 <p>On note <span class="math inline">\(p_s\)</span> la probabilité qu’un individu tiré au hasard appartienne à l’espèce <span class="math inline">\(s\)</span>.
-L’indice de <span class="citation">E. H. Simpson (<a href="references.html#ref-Simpson1949" role="doc-biblioref">1949</a>)</span>, ou Gini-Simpson, est</p>
+L’indice de <span class="citation">E. H. Simpson (<a href="references.html#ref-Simpson1949">1949</a>)</span>, ou Gini-Simpson, est</p>
 <p><span class="math display" id="eq:SimpsonE">\[\begin{equation}
   \tag{3.25}
   E =1-\sum^{S}_{s=1}{p^2_s}.
@@ -1025,8 +1026,8 @@ Tout d’abord, la probabilité que deux individus soient de la même espèce, s
   \tag{3.26}
   D =\sum^{S}_{s=1}{p^2_s}.
 \end{equation}\]</span></p>
-<p>L’indice de Simpson est parfois considéré comme une mesure d’équitabilité <span class="citation">(<a href="references.html#ref-Olszewski2004" role="doc-biblioref">Olszewski 2004</a>)</span> mais il varie avec la richesse : cette approche est donc erronnée.
-<span class="citation">Hurlbert (<a href="references.html#ref-Hurlbert1971" role="doc-biblioref">1971</a>)</span> l’a divisé par sa valeur maximale <span class="math inline">\(1-{1}/{S}\)</span> pour obtenir une mesure d’équitabilité valide généralisée plus tard par <span class="citation">Mendes et al. (<a href="references.html#ref-Mendes2008" role="doc-biblioref">2008</a>)</span>, voir section <a href="sec-Equitabilite.html#sec-Mendes">5.5.1</a>.
+<p>L’indice de Simpson est parfois considéré comme une mesure d’équitabilité <span class="citation">(<a href="references.html#ref-Olszewski2004">Olszewski 2004</a>)</span> mais il varie avec la richesse : cette approche est donc erronnée.
+<span class="citation">Hurlbert (<a href="references.html#ref-Hurlbert1971">1971</a>)</span> l’a divisé par sa valeur maximale <span class="math inline">\(1-{1}/{S}\)</span> pour obtenir une mesure d’équitabilité valide généralisée plus tard par <span class="citation">Mendes et al. (<a href="references.html#ref-Mendes2008">2008</a>)</span>, voir section <a href="sec-Equitabilite.html#sec-Mendes">5.5.1</a>.
 Le nombre d’espèces doit être estimé par les méthodes présentées plus haut, pour ne pas dépendre de la taille de l’échantillon.</p>
 <p>L’estimateur du maximum de vraisemblance de l’indice est</p>
 <p><span class="math display" id="eq:EstEML">\[\begin{equation}
@@ -1044,7 +1045,7 @@ Le nombre d’espèces doit être estimé par les méthodes présentées plus ha
 <pre><code>##      None 
 ## 0.9736755</code></pre>
 <p></p>
-<p>Un historique de la définition de l’indice, de <span class="citation">Gini (<a href="references.html#ref-Gini1912" role="doc-biblioref">1912</a>)</span> à Simpson, inspiré par Turing, est fourni par Ellerman <span class="citation">(<a href="references.html#ref-Ellerman2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Un historique de la définition de l’indice, de <span class="citation">Gini (<a href="references.html#ref-Gini1912">1912</a>)</span> à Simpson, inspiré par Turing, est fourni par Ellerman <span class="citation">(<a href="references.html#ref-Ellerman2013">2013</a>)</span>.</p>
 </div>
 <div id="estimation" class="section level3" number="3.2.2">
 <h3>
@@ -1055,7 +1056,7 @@ Le nombre d’espèces doit être estimé par les méthodes présentées plus ha
 <span class="math inline">\(E\)</span> est la somme sur toutes les espèces de cette variance.
 Un estimateur non biaisé d’une variance à partir d’un échantillon est la somme des écarts quadratiques divisée par le nombre d’observation moins une.
 L’estimateur <span class="math inline">\(\hat{E}\)</span> est légèrement biaisé parce qu’il est calculé à partir des <span class="math inline">\({\hat{p}}_s\)</span>, ce qui revient à diviser la somme des écarts par <span class="math inline">\(n\)</span>, et non <span class="math inline">\(n-1\)</span>.
-Un estimateur non biaisé est <span class="citation">(<a href="references.html#ref-Good1953" role="doc-biblioref">Good 1953</a>; <a href="references.html#ref-Lande1996" role="doc-biblioref">Lande 1996</a>)</span></p>
+Un estimateur non biaisé est <span class="citation">(<a href="references.html#ref-Good1953">Good 1953</a>; <a href="references.html#ref-Lande1996">Lande 1996</a>)</span></p>
 <p><span class="math display" id="eq:BiaisSimpson">\[\begin{equation}
   \tag{3.28}
   \tilde{E} = \left(\frac{n}{n-1}\right)\left(1-\sum^{s^{n}_{\ne 0}}_{s=1}{{\hat{p}}^2_s}\right).
@@ -1086,7 +1087,7 @@ Il est négligeable : si <span class="math inline">\(p_s\)</span> est petit, <s
 <h3>
 <span class="header-section-number">3.3.1</span> Définition<a class="anchor" aria-label="anchor" href="#d%C3%A9finition-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>L’indice de Shannon <span class="citation">(<a href="references.html#ref-Shannon1948" role="doc-biblioref">Shannon 1948</a>; <a href="references.html#ref-Shannon1963" role="doc-biblioref">Shannon et Weaver 1963</a>)</span>, aussi appelé indice de Shannon-Weaver ou Shannon-Wiener <span class="citation">(<a href="references.html#ref-Spellerberg2003" role="doc-biblioref">Spellerberg et Feder 2003</a>)</span>, ou simplement <em>entropie</em> est dérivé de la théorie de l’information :</p>
+<p>L’indice de Shannon <span class="citation">(<a href="references.html#ref-Shannon1948">Shannon 1948</a>; <a href="references.html#ref-Shannon1963">Shannon et Weaver 1963</a>)</span>, aussi appelé indice de Shannon-Weaver ou Shannon-Wiener <span class="citation">(<a href="references.html#ref-Spellerberg2003">Spellerberg et Feder 2003</a>)</span>, ou simplement <em>entropie</em> est dérivé de la théorie de l’information :</p>
 <p><span class="math display" id="eq:Shannon">\[\begin{equation}
   \tag{3.30}
   H = -\sum^S_{s=1}{p_s\ln{p_s}}.
@@ -1104,7 +1105,7 @@ On note <span class="math inline">\(L\)</span> le nombre de listes respectant ce
 Le nombre de positions pour la deuxième espèce est <span class="math inline">\(\binom{n-np_1}{np_2}\)</span>.
 Pour la <span class="math inline">\(S\)</span>-ième espèce, le nombre est <span class="math inline">\(\binom{n-np_1-\dots -np_{s-1}}{np_i}\)</span>.
 Les produits de combinaisons se simplifient pour donner l’équation <a href="chap-MesuresNeutres.html#eq:ShannonL">(3.31)</a>.</p>
-<p>On peut maintenant écrire le logarithme de <span class="math inline">\(L\)</span>:
+<p>On peut maintenant écrire le logarithme de <span class="math inline">\(L\)</span> :
 <span class="math display">\[\ln{L}=\ln{n!}-\sum^S_{s=1}{\ln{np_s}!}.\]</span>
 On utilise l’approximation de Stirling,
 <span class="math display">\[\ln{n!}\approx n\ln{n}-n,\]</span>
@@ -1114,10 +1115,10 @@ pour obtenir après simplifications :</p>
   \ln{L} = -n\sum^S_{s=1}{p_s \ln{p_s}}.
 \end{equation}\]</span></p>
 <p><span class="math inline">\(H=(\ln{L})/{n}\)</span> est l’indice de Shannon.
-Ce résultat est connu sous le nom de formule de <span class="citation">Brillouin (<a href="references.html#ref-Brillouin1962" role="doc-biblioref">1962</a>)</span>.
+Ce résultat est connu sous le nom de formule de <span class="citation">Brillouin (<a href="references.html#ref-Brillouin1962">1962</a>)</span>.
 À l’origine, Shannon a utilisé un logarithme de base 2 pour que <span class="math inline">\(H\)</span> soit le nombre moyen de questions binaires (réponse oui ou non) nécessaire pour identifier l’espèce d’une plante (un caractère utilisé dans une chaîne dans le contexte du travail de Shannon).
-Les logarithmes naturels, de base 2 ou 10 ont été utilisés par la suite <span class="citation">(<a href="references.html#ref-Pielou1966a" role="doc-biblioref">Pielou 1966b</a>)</span>.</p>
-<p>La formule <a href="chap-MesuresNeutres.html#eq:ShannonlnL">(3.32)</a> est celle de l’indice de <span class="citation">Theil (<a href="references.html#ref-Theil1967" role="doc-biblioref">1967</a>)</span>, présenté en détail par <span class="citation">Conceição et Ferreira (<a href="references.html#ref-Conceicao2000" role="doc-biblioref">2000</a>)</span>, à l’origine utilisé pour mesurer les inégalités de revenu puis pour caractériser les structures spatiales en économie.
+Les logarithmes naturels, de base 2 ou 10 ont été utilisés par la suite <span class="citation">(<a href="references.html#ref-Pielou1966a">Pielou 1966b</a>)</span>.</p>
+<p>La formule <a href="chap-MesuresNeutres.html#eq:ShannonlnL">(3.32)</a> est celle de l’indice de <span class="citation">Theil (<a href="references.html#ref-Theil1967">1967</a>)</span>, présenté en détail par <span class="citation">Conceição et Ferreira (<a href="references.html#ref-Conceicao2000">2000</a>)</span>, à l’origine utilisé pour mesurer les inégalités de revenu puis pour caractériser les structures spatiales en économie.
 L’indice est proportionnel au nombre de plantes choisies, on peut donc le diviser par <span class="math inline">\(n\)</span> et on obtient l’indice de biodiversité de Shannon.
 Ces indices ont été définis en choisissant des lettres au hasard pour former des chaînes de caractères.
 Leur valeur est le nombre de chaînes de caractères différentes que l’on peut obtenir avec l’ensemble des lettres disponibles, c’est-à-dire la quantité d’information contenue dans l’ensemble des lettres.
@@ -1135,8 +1136,8 @@ L’indice de Shannon donne une mesure de la biodiversité en tant que quantité
 <pre><code>##     None 
 ## 4.270409</code></pre>
 <p></p>
-<p>La distribution de l’estimateur est connue <span class="citation">(<a href="references.html#ref-Hutcheson1970" role="doc-biblioref">Hutcheson 1970</a>)</span> mais elle est inutile en pratique à cause du biais d’estimation.</p>
-<p><span class="citation">Bulmer (<a href="references.html#ref-Bulmer1974" role="doc-biblioref">1974</a>)</span> établit une relation entre l’indice de Shannon et l’indice <span class="math inline">\(\alpha\)</span> de Fisher, à condition que la distribution de l’abondance des espèces soit log-normale :</p>
+<p>La distribution de l’estimateur est connue <span class="citation">(<a href="references.html#ref-Hutcheson1970">Hutcheson 1970</a>)</span> mais elle est inutile en pratique à cause du biais d’estimation.</p>
+<p><span class="citation">Bulmer (<a href="references.html#ref-Bulmer1974">1974</a>)</span> établit une relation entre l’indice de Shannon et l’indice <span class="math inline">\(\alpha\)</span> de Fisher, à condition que la distribution de l’abondance des espèces soit log-normale :</p>
 <p><span class="math display" id="eq:Bulmer1974">\[\begin{equation}
   \tag{3.34}
   \hat{H} = \mathrm{\Psi}\left(\hat{\alpha}+1\right) - \mathrm{\Psi}\left(1\right).
@@ -1153,7 +1154,7 @@ L’indice de Shannon donne une mesure de la biodiversité en tant que quantité
 <h3>
 <span class="header-section-number">3.3.2</span> Estimation<a class="anchor" aria-label="anchor" href="#sec-BiaisShannon"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Basharin (<a href="references.html#ref-Basharin1959" role="doc-biblioref">1959</a>)</span> a montré que l’estimateur de l’indice de Shannon était biaisé parce que des espèces ne sont pas échantillonnées.
+<p><span class="citation">Basharin (<a href="references.html#ref-Basharin1959">1959</a>)</span> a montré que l’estimateur de l’indice de Shannon était biaisé parce que des espèces ne sont pas échantillonnées.
 Si <span class="math inline">\(S\)</span> est le nombre d’espèces réel et <span class="math inline">\(n\)</span> le nombre d’individus échantillonnés, le biais est</p>
 <p><span class="math display" id="eq:Basharin1959">\[\begin{equation}
   \tag{3.35}
@@ -1162,27 +1163,27 @@ Si <span class="math inline">\(S\)</span> est le nombre d’espèces réel et <s
 <p><span class="math inline">\(O\left(n^{-2}\right)\)</span> est un terme négligeable.
 La valeur estimée à partir des données est donc trop faible, d’autant plus que le nombre d’espèces total est grand mais d’autant moins que l’échantillonnage est important.
 Comme le nombre d’espèces <span class="math inline">\(S\)</span> n’est pas observable, le biais réel est inconnu.</p>
-<p>L’estimateur de Miller-Madow <span class="citation">(<a href="references.html#ref-Miller1955" role="doc-biblioref">Miller 1955</a>)</span> utilise l’information disponible, en sous-estimant le nombre d’espèces et donc l’entropie :
+<p>L’estimateur de Miller-Madow <span class="citation">(<a href="references.html#ref-Miller1955">Miller 1955</a>)</span> utilise l’information disponible, en sous-estimant le nombre d’espèces et donc l’entropie :
 <span class="math display" id="eq:MillerMadow">\[\begin{equation}
   \tag{3.36}
   \tilde{H} = -\sum^{s^{n}_{\ne 0}}_{s=1}{\hat{p}_s \ln{\hat{p}_s}} + \frac{s^{n}_{\ne 0}-1}{2n}.
 \end{equation}\]</span></p>
-<p><span class="citation">Chao et Shen (<a href="references.html#ref-Chao2003" role="doc-biblioref">2003</a>)</span> établissent un estimateur moins biaisé à partir du taux de couverture de l’échantillonnage <span class="math inline">\(\hat{C}\)</span>:</p>
+<p><span class="citation">Chao et Shen (<a href="references.html#ref-Chao2003">2003</a>)</span> établissent un estimateur moins biaisé à partir du taux de couverture de l’échantillonnage <span class="math inline">\(\hat{C}\)</span> :</p>
 <p><span class="math display" id="eq:ChaoShen">\[\begin{equation}
   \tag{3.37}
   \tilde{H} = -\sum_{s=1}^{s^{n}_{\ne 0}}{\frac{\hat{C}{\hat{p}}_s \ln\left(\hat{C}{\hat{p}}_s\right)}{1-\left(1-\hat{C}{\hat{p}}_s\right)^n}}.
 \end{equation}\]</span></p>
-<p>Multiplier les fréquences observées par le taux de couverture permet d’obtenir un estimateur non biaisé des probabilités conditionnellement aux espèces non observées <span class="citation">(<a href="references.html#ref-Ashbridge2000" role="doc-biblioref">Ashbridge et Goudie 2000</a>)</span>.</p>
-<p>Le terme au dénominateur est la correction de <span class="citation">Horvitz et Thompson (<a href="references.html#ref-Horvitz1952" role="doc-biblioref">1952</a>)</span> : chaque terme de la somme est divisé par la probabilité d’observer au moins une fois l’espèce correspondante.
+<p>Multiplier les fréquences observées par le taux de couverture permet d’obtenir un estimateur non biaisé des probabilités conditionnellement aux espèces non observées <span class="citation">(<a href="references.html#ref-Ashbridge2000">Ashbridge et Goudie 2000</a>)</span>.</p>
+<p>Le terme au dénominateur est la correction de <span class="citation">Horvitz et Thompson (<a href="references.html#ref-Horvitz1952">1952</a>)</span> : chaque terme de la somme est divisé par la probabilité d’observer au moins une fois l’espèce correspondante.
 Il tend vers 1 quand la taille de l’échantillon augmente.</p>
-<p><span class="citation">J. Beck et Schwanghart (<a href="references.html#ref-Beck2010" role="doc-biblioref">2010</a>)</span> montrent que la correction du biais est efficace, même à des niveaux de complétude de l’échantillonnage (voir section <a href="chap-MesuresNeutres.html#sec-ChoixEstimateur">3.1.1.7</a>) très faibles. <span class="citation">Vu, Yu, et Kass (<a href="references.html#ref-Vu2007" role="doc-biblioref">2007</a>)</span> étudient la vitesse de convergence de l’estimateur.</p>
-<p><span class="citation">Z. Zhang (<a href="references.html#ref-Zhang2012" role="doc-biblioref">2012</a>)</span> définit l’indice de Simpson généralisé :</p>
+<p><span class="citation">J. Beck et Schwanghart (<a href="references.html#ref-Beck2010">2010</a>)</span> montrent que la correction du biais est efficace, même à des niveaux de complétude de l’échantillonnage (voir section <a href="chap-MesuresNeutres.html#sec-ChoixEstimateur">3.1.1.7</a>) très faibles. <span class="citation">Vu, Yu, et Kass (<a href="references.html#ref-Vu2007">2007</a>)</span> étudient la vitesse de convergence de l’estimateur.</p>
+<p><span class="citation">Z. Zhang (<a href="references.html#ref-Zhang2012">2012</a>)</span> définit l’indice de Simpson généralisé :</p>
 <p><span class="math display" id="eq:zeta">\[\begin{equation}
   \tag{3.38}
   \zeta_{u,v} = \sum^S_{s=1}{p^u_s{\left(1-p_s\right)}^v},
 \end{equation}\]</span></p>
 <p>où <span class="math inline">\(\zeta_{u,v}\)</span> est la somme sur toutes les espèces de la probabilité de rencontrer <span class="math inline">\(u\)</span> fois l’espèce dans un échantillon de taille <span class="math inline">\(u+v\)</span>.
-L’indice de Shannon peut s’exprimer en fonction de <span class="math inline">\(\zeta_{1,v}\)</span>:</p>
+L’indice de Shannon peut s’exprimer en fonction de <span class="math inline">\(\zeta_{1,v}\)</span> :</p>
 <p><span class="math display" id="eq:HzetaInf">\[\begin{equation}
   \tag{3.39}
   H = \sum^{\infty}_{v=1}{\frac{1}{v} \zeta_{1,v}}.
@@ -1192,15 +1193,15 @@ L’indice de Shannon peut s’exprimer en fonction de <span class="math inline"
   \tag{3.40}
   H_z = \sum^{n-1}_{v=1}{\frac{1}{v}\left\{\frac{n^{v+1}\left[n-\left(v+1\right)\right]!}{n!}\sum^{s^{n}_{\ne 0}}_{s=1}{p_s\prod^{v-1}_{j=0}{\left(1-{\hat{p}}_s-\frac{j}{n}\right)}}\right\}}.
 \end{equation}\]</span></p>
-<p><span class="citation">Z. Zhang (<a href="references.html#ref-Zhang2013a" role="doc-biblioref">2013</a>)</span> montre que le biais de l’estimateur <span class="math inline">\(H_z\)</span> est asymptotiquement normal et calcule sa variance.
-<span class="citation">Z. Zhang et Grabchak (<a href="references.html#ref-Zhang2013" role="doc-biblioref">2013</a>)</span> améliorent l’estimateur en le complétant par un estimateur de son biais, mais les calculs deviennent excessivement complexes.
-<span class="citation">Vinck et al. (<a href="references.html#ref-Vinck2012" role="doc-biblioref">2012</a>)</span> appliquent la même démarche avec un estimateur bayesien du biais, utilisant un prior aussi plat que possible pour la valeur de l’entropie (et non un prior plat sur les probabilités, qui tire l’estimateur vers l’entropie maximale).
+<p><span class="citation">Z. Zhang (<a href="references.html#ref-Zhang2013a">2013</a>)</span> montre que le biais de l’estimateur <span class="math inline">\(H_z\)</span> est asymptotiquement normal et calcule sa variance.
+<span class="citation">Z. Zhang et Grabchak (<a href="references.html#ref-Zhang2013">2013</a>)</span> améliorent l’estimateur en le complétant par un estimateur de son biais, mais les calculs deviennent excessivement complexes.
+<span class="citation">Vinck et al. (<a href="references.html#ref-Vinck2012">2012</a>)</span> appliquent la même démarche avec un estimateur bayesien du biais, utilisant un prior aussi plat que possible pour la valeur de l’entropie (et non un prior plat sur les probabilités, qui tire l’estimateur vers l’entropie maximale).
 Cet estimateur nécessite de connaître le nombre d’espèces, ce qui empêche son utilisation sur des données d’écologie.</p>
-<p><span class="citation">Pielou (<a href="references.html#ref-Pielou1966" role="doc-biblioref">1966a</a>)</span> a développé une autre méthode de correction de biais lorsque de nombreux relevés de petite taille sont disponibles.
+<p><span class="citation">Pielou (<a href="references.html#ref-Pielou1966">1966a</a>)</span> a développé une autre méthode de correction de biais lorsque de nombreux relevés de petite taille sont disponibles.
 <span class="math inline">\(\ln{L}\)</span> est calculé pour un relevé choisi aléatoirement puis les données du premier relevé sont ajoutées à celles d’un autre, puis un autre jusqu’à ce que <span class="math inline">\(H=(\ln{L})/{n}\)</span> n’augmente plus : la diversité augmente dans un premier temps mais se stabilise quand l’effet des espèces ajoutées est compensé par celui de la diminution de l’équitabilité due aux espèces présentes dans tous les relevés.
 À partir de ce seuil, l’augmentation de <span class="math inline">\(\ln{L}\)</span> par individu ajouté est calculée pour chaque relevé supplémentaire.
 Son espérance, estimée par sa moyenne calculée en ajoutant tous les relevés disponibles, est <span class="math inline">\(\tilde{H}\)</span>.</p>
-<p><span class="citation">Chao, Wang, et Jost (<a href="references.html#ref-Chao2013" role="doc-biblioref">2013</a>)</span> utilisent l’estimateur de la pente de la courbe de raréfaction, calculé précédemment <span class="citation">(<a href="references.html#ref-Chao2012b" role="doc-biblioref">Chao et Jost 2012</a>)</span> pour estimer la richesse spécifique, pour fournir un estimateur extrêmement performant :</p>
+<p><span class="citation">Chao, Wang, et Jost (<a href="references.html#ref-Chao2013">2013</a>)</span> utilisent l’estimateur de la pente de la courbe de raréfaction, calculé précédemment <span class="citation">(<a href="references.html#ref-Chao2012b">Chao et Jost 2012</a>)</span> pour estimer la richesse spécifique, pour fournir un estimateur extrêmement performant :</p>
 <p><span class="math display" id="eq:Chao2013">\[\begin{align}
   \tag{3.41}
   \tilde{H}
@@ -1219,11 +1220,11 @@ Son espérance, estimée par sa moyenne calculée en ajoutant tous les relevés 
 <li>
 <span class="math inline">\(1\)</span> en absence de singletons et doubletons.</li>
 </ul>
-<p>Enfin, la littérature de physique statistique s’est abondamment intéressée à cette question (<span class="citation">Bonachela, Hinrichsen, et Muñoz (<a href="references.html#ref-Bonachela2008" role="doc-biblioref">2008</a>)</span> en font une revue).
+<p>Enfin, la littérature de physique statistique s’est abondamment intéressée à cette question (<span class="citation">Bonachela, Hinrichsen, et Muñoz (<a href="references.html#ref-Bonachela2008">2008</a>)</span> en font une revue).
 Le problème traité est la non-linéarité de l’indice de Shannon par rapport aux probabilités qui entraine un biais d’estimation.
 La fonction logarithme fournit un exemple simple : l’espérance de <span class="math inline">\(\ln(p_s)\)</span> n’est pas le logarithme de l’espérance de <span class="math inline">\(p_s\)</span> parce que la fonction <span class="math inline">\(\ln\)</span> est concave.
 Chaque estimateur <span class="math inline">\({\hat{p}}_s\)</span> fluctue autour de <span class="math inline">\(p_s\)</span> mais vaut <span class="math inline">\(p_s\)</span> en moyenne.
-À cause de la concavité, <span class="math inline">\(\ln({\hat{p}}_s)\)</span> est en moyenne inférieur à <span class="math inline">\(\ln(p_s)\)</span>: cette relation est connue sous le nom d’inégalité de <span class="citation">Jensen (<a href="references.html#ref-Jensen1906" role="doc-biblioref">1906</a>)</span>.
+À cause de la concavité, <span class="math inline">\(\ln({\hat{p}}_s)\)</span> est en moyenne inférieur à <span class="math inline">\(\ln(p_s)\)</span> : cette relation est connue sous le nom d’inégalité de <span class="citation">Jensen (<a href="references.html#ref-Jensen1906">1906</a>)</span>.
 L’indice de Shannon est concave (figure <a href="chap-MesuresNeutres.html#fig:ShannonFig">3.9</a>) donc son estimateur <a href="chap-MesuresNeutres.html#eq:Shannon">(3.30)</a> est biaisé négativement, même sans prendre en considération les espèces non observées.</p>
 
 <p></p>
@@ -1242,7 +1243,7 @@ Figure 3.9: Courbe de <span class="math inline">\(x\ln x\)</span> entre 0 et 1.
 <span>    <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"p"</span>, y <span class="op">=</span> <span class="st">"H(p)"</span><span class="op">)</span></span></code></pre></div>
 <p></p>
 <p>Le biais peut être évalué par simulation : 10000 tirages sont réalisés dans une loi normale d’espérance <span class="math inline">\(p_s\)</span> choisie et d’écart-type 0.01.
-Le biais est la différence entre <span class="math inline">\({-p}_s{\ln p_s}\)</span> (connu) et la moyenne des 1000 valeurs de <span class="math inline">\(-\hat{p}_s{\ln{\hat{p}}_s}\)</span> (la probabilité est estimée par sa réalisation à chaque tirage).
+Le biais est la différence entre <span class="math inline">\({-p}_s{\ln  p_s}\)</span> (connu) et la moyenne des 1000 valeurs de <span class="math inline">\(-\hat{p}_s{\ln{\hat{p}}_s}\)</span> (la probabilité est estimée par sa réalisation à chaque tirage).
 La valeur du biais en fonction de <span class="math inline">\(p_s\)</span> est en figure <a href="chap-MesuresNeutres.html#fig:ShannonBiaisFig">3.10</a>.
 Le biais de l’indice de Shannon est la somme des biais pour toutes les probabilités spécifiques de la communauté étudiée, et son calcul est toujours l’objet de recherches.</p>
 
@@ -1270,21 +1271,21 @@ Figure 3.10: Biais de <span class="math inline">\(\hat{p}_s \ln\hat{p}_s\)</span
 <span>    <span class="fu">geom_hline</span><span class="op">(</span>yintercept <span class="op">=</span> <span class="fl">0</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"p"</span>, y <span class="op">=</span> <span class="st">"Biais"</span><span class="op">)</span></span></code></pre></div>
 <p></p>
-<p><span class="citation">Grassberger (<a href="references.html#ref-Grassberger1988" role="doc-biblioref">1988</a>)</span> a fourni la correction de référence :</p>
+<p><span class="citation">Grassberger (<a href="references.html#ref-Grassberger1988">1988</a>)</span> a fourni la correction de référence :</p>
 <p><span class="math display" id="eq:Grassberger1988">\[\begin{equation}
   \tag{3.42}
   \tilde{H}
   = -\sum^{s^{n}_{\ne 0}}_{s=1}
   {\frac{n_s}{n}\left(\ln\left(n\right)-\mathrm{\Psi}\left(n_s\right)-\frac{{\left(-1\right)}^{n_s}}{n_s+1}\right)}.
 \end{equation}\]</span></p>
-<p><span class="citation">Grassberger (<a href="references.html#ref-Grassberger2003" role="doc-biblioref">2003</a>)</span> l’a perfectionnée :</p>
+<p><span class="citation">Grassberger (<a href="references.html#ref-Grassberger2003">2003</a>)</span> l’a perfectionnée :</p>
 <p><span class="math display" id="eq:Grassberger2003">\[\begin{equation}
   \tag{3.43}
   \tilde{H}
   = -\sum^{s^{n}_{\ne 0}}_{s=1}
     {\frac{n_s}{n} \left(\mathrm{\Psi}\left(n\right)-\mathrm{\Psi}\left(n_s\right)-{\left(-1\right)}^{n_s}\int^1_0{\frac{t^{n_s-1}}{1+t}\mathop{dt}}\right)}.
 \end{equation}\]</span></p>
-<p>Enfin, <span class="citation">Schürmann (<a href="references.html#ref-Schurmann2004" role="doc-biblioref">2004</a>)</span> l’a généralisée pour définir une famille de corrections dépendant d’un paramètre <span class="math inline">\(\xi\)</span>:</p>
+<p>Enfin, <span class="citation">Schürmann (<a href="references.html#ref-Schurmann2004">2004</a>)</span> l’a généralisée pour définir une famille de corrections dépendant d’un paramètre <span class="math inline">\(\xi\)</span> :</p>
 <p><span class="math display" id="eq:Schurmann2004">\[\begin{equation}
   \tag{3.44}
   \tilde{H} = -\sum^{s^{n}_{\ne 0}}_{s=1}
@@ -1316,8 +1317,8 @@ Elle accepte comme argument un vecteur d’abondances (et non de probabilités)�
 <pre><code>##  ZhangHz 
 ## 4.272529</code></pre>
 <p></p>
-<p>D’autres estimateurs peu utilisés en écologie sont disponibles dans le package <em>entropy</em> <span class="citation">(<a href="references.html#ref-Hausser2009" role="doc-biblioref">Hausser et Strimmer 2009</a>)</span>.
-La contraction de Stein <span class="citation">(<a href="references.html#ref-James1961" role="doc-biblioref">James et Stein 1961</a>)</span> consiste à estimer la distribution des probabilités d’occurence des espèces par la pondération optimale entre un estimateur à faible biais et un estimateur à faible variance.
+<p>D’autres estimateurs peu utilisés en écologie sont disponibles dans le package <em>entropy</em> <span class="citation">(<a href="references.html#ref-Hausser2009">Hausser et Strimmer 2009</a>)</span>.
+La contraction de Stein <span class="citation">(<a href="references.html#ref-James1961">James et Stein 1961</a>)</span> consiste à estimer la distribution des probabilités d’occurence des espèces par la pondération optimale entre un estimateur à faible biais et un estimateur à faible variance.
 L’estimateur <span class="math inline">\(\hat{p}_s\)</span> est sans biais mais a une variance importante.
 L’estimateur <span class="math inline">\({1}/{S}\)</span>, si <span class="math inline">\(S\)</span> est connu, est de variance nulle mais est très biaisé.
 Comme le nombre d’espèces est en général inconnu, il doit être estimé par une méthode quelconque, mais de préférence le surestimant plutôt que le sous-estimant.
@@ -1371,7 +1372,7 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat :</p>
 <pre><code>##     None 
 ## 4.276543</code></pre>
 <p></p>
-<p>Appliqué à des données de biodiversité aquatique, l’estimateur de James-Stein obtient de meilleurs résultats que celui de Chao et Shen <span class="citation">(<a href="references.html#ref-Liu2015" role="doc-biblioref">D. Liu et al. 2016</a>)</span> quand l’échantillonnage est réduit.</p>
+<p>Appliqué à des données de biodiversité aquatique, l’estimateur de James-Stein obtient de meilleurs résultats que celui de Chao et Shen <span class="citation">(<a href="references.html#ref-Liu2015">D. Liu et al. 2016</a>)</span> quand l’échantillonnage est réduit.</p>
 </div>
 </div>
 <div id="sec-Hurlbert" class="section level2" number="3.4">
@@ -1382,32 +1383,32 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat :</p>
 <h3>
 <span class="header-section-number">3.4.1</span> Définition<a class="anchor" aria-label="anchor" href="#d%C3%A9finition-2"><i class="fas fa-link"></i></a>
 </h3>
-<p>L’indice de <span class="citation">Hurlbert (<a href="references.html#ref-Hurlbert1971" role="doc-biblioref">1971</a>)</span> est l’espérance du nombre d’espèces observées dans un échantillon de taille <span class="math inline">\(k\)</span> choisie :</p>
+<p>L’indice de <span class="citation">Hurlbert (<a href="references.html#ref-Hurlbert1971">1971</a>)</span> est l’espérance du nombre d’espèces observées dans un échantillon de taille <span class="math inline">\(k\)</span> choisie :</p>
 <p><span class="math display" id="eq:HurlbertSk">\[\begin{equation}
   \tag{3.47}
   _{k}S = \sum^S_{s=1}{\left[1-{\left(1-p_s\right)}^k\right]}.
 \end{equation}\]</span></p>
 <p>Chaque terme de la somme est la probabilité d’observer au moins une fois l’espèce correspondante.</p>
 <p>L’augmentation de la valeur de <span class="math inline">\(k\)</span> permet de donner plus d’importance aux espèces rares.</p>
-<p>L’indice peut être converti en nombre équivalent d’espèces <span class="citation">(<a href="references.html#ref-Dauby2012" role="doc-biblioref">Dauby et Hardy 2012</a>)</span>, c’est-à-dire le nombre d’espèces équiprobables nécessaire pour obtenir la même diversité, notés <span class="math inline">\(_{k}D\)</span> à partir de la relation</p>
+<p>L’indice peut être converti en nombre équivalent d’espèces <span class="citation">(<a href="references.html#ref-Dauby2012">Dauby et Hardy 2012</a>)</span>, c’est-à-dire le nombre d’espèces équiprobables nécessaire pour obtenir la même diversité, notés <span class="math inline">\(_{k}D\)</span> à partir de la relation</p>
 <p><span class="math display" id="eq:HurlbertD">\[\begin{equation}
   \tag{3.48}
   _{k}S = {_{k}D} \left[1-{\left(1-\frac{1}{_{k}D}\right)}^k\right].
 \end{equation}\]</span></p>
 <p>L’équation doit être résolue pour obtenir <span class="math inline">\(_{k}D\)</span> à partir de la valeur de <span class="math inline">\(_{k}S\)</span> estimée, numériquement pour <span class="math inline">\(k&gt;3\)</span>.</p>
 <p>Dans deux cas particuliers, les nombres équivalents d’espèces de Hurlbert sont identiques aux nombres de Hill : <span class="math inline">\(_{2}D ={^{2}\!D}\)</span> et <span class="math inline">\(_{\infty}D={^{0}\!D}\)</span>.</p>
-<p>Pour les autres ordres entiers de diversité, il existe une correspondance parfaite entre les deux mesures <span class="citation">(<a href="references.html#ref-Chao2014" role="doc-biblioref">Chao et al. 2014</a>, Annexe S2)</span> : la connaissance de l’une permet d’obtenir l’autre. Pour <span class="math inline">\(k&gt;1\)</span>, on a <span class="citation">(<a href="references.html#ref-Leinster2012" role="doc-biblioref">Leinster et Cobbold 2012</a>)</span></p>
+<p>Pour les autres ordres entiers de diversité, il existe une correspondance parfaite entre les deux mesures <span class="citation">(<a href="references.html#ref-Chao2014">Chao et al. 2014</a>, Annexe S2)</span> : la connaissance de l’une permet d’obtenir l’autre. Pour <span class="math inline">\(k&gt;1\)</span>, on a <span class="citation">(<a href="references.html#ref-Leinster2012">Leinster et Cobbold 2012</a>)</span></p>
 <p><span class="math display" id="eq:HurlbertDq">\[\begin{equation}
   \tag{3.49}
   _{k}S = k + \sum_{q=2}^{k}{\binom{k}{q} (-1)^{q+1} (^{q}\!D)^{1-q}}.
 \end{equation}\]</span></p>
 <p>On a vu que <span class="math inline">\(^{0}\!D\)</span> égale <span class="math inline">\(_{\infty}D\)</span>, donc <span class="math inline">\(_{\infty}S={^{0}\!D}\)</span> <a href="chap-MesuresNeutres.html#eq:HurlbertD">(3.48)</a>.</p>
-<p>Inversement, pour <span class="math inline">\(q&gt;1\)</span>:</p>
+<p>Inversement, pour <span class="math inline">\(q&gt;1\)</span> :</p>
 <p><span class="math display" id="eq:DqHurlbert">\[\begin{equation}
   \tag{3.50}
   (^{q}\!D)^{1-q} = q + \sum_{k=2}^{q}{\binom{q}{k} (-1)^{k+1} {_{k}S}}.
 \end{equation}\]</span></p>
-<p>Pour <span class="math inline">\(q=1\)</span>, la relation est <span class="citation">(<a href="references.html#ref-Mao2007" role="doc-biblioref">Mao 2007</a>)</span>
+<p>Pour <span class="math inline">\(q=1\)</span>, la relation est <span class="citation">(<a href="references.html#ref-Mao2007">Mao 2007</a>)</span>
 <span class="math display" id="eq:Mao2007">\[\begin{equation}
   \tag{3.51}
   ^{1}\!H = -1 + \sum_{k=2}^{\infty}{\frac{_{k}S}{k(k-1)}}.
@@ -1423,8 +1424,8 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat :</p>
   _k{\tilde{S}}
   = \sum_{s=1}^{s^{n}_{\ne 0}}{\left[1-{\binom{n-n_s}{k}}/{\binom{n}{k}}\right]}.
 \end{equation}\]</span></p>
-<p><span class="citation">Dauby et Hardy (<a href="references.html#ref-Dauby2012" role="doc-biblioref">2012</a>)</span> montrent que cet estimateur est très peu sensible à la taille de l’échantillon, et obtient de meilleurs résultats sur ce point que les estimateurs de Chao et Shen pour l’indice de Shannon ou du nombre d’espèces.
-<span class="citation">W. Smith et Grassle (<a href="references.html#ref-Smith1977" role="doc-biblioref">1977</a>)</span> ont calculé sa variance.</p>
+<p><span class="citation">Dauby et Hardy (<a href="references.html#ref-Dauby2012">2012</a>)</span> montrent que cet estimateur est très peu sensible à la taille de l’échantillon, et obtient de meilleurs résultats sur ce point que les estimateurs de Chao et Shen pour l’indice de Shannon ou du nombre d’espèces.
+<span class="citation">W. Smith et Grassle (<a href="references.html#ref-Smith1977">1977</a>)</span> ont calculé sa variance.</p>
 <p>Le calcul de la diversité de Hurlbert est possible dans <em>entropart</em> :</p>
 <p></p>
 <div class="sourceCode" id="cb141"><pre class="downlit sourceCode r">
@@ -1498,7 +1499,7 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat :</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

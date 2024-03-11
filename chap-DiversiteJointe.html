@@ -7,7 +7,7 @@
 <title>18 Décomposition de la diversité jointe | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="La diversité jointe peut être décomposée en diversité \(\gamma\) (elle-même décomposable en diversités \(\alpha\) et \(\beta\)) et réplication, égale au nombre effectif de répétitions de...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="18 Décomposition de la diversité jointe | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-DiversiteJointe.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -124,14 +125,14 @@
 <div class="Summary">
 <p>La diversité jointe peut être décomposée en diversité <span class="math inline">\(\gamma\)</span> (elle-même décomposable en diversités <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\beta\)</span>) et réplication, égale au nombre effectif de répétitions de l’assemblage des communautés nécessaire pour obtenir la diversité jointe réelle.</p>
 </div>
-<p>La décomposition de la diversité jointe <span class="citation">(<a href="references.html#ref-Gregorius2009a" role="doc-biblioref">Gregorius 2009</a>, <a href="references.html#ref-Gregorius2010" role="doc-biblioref">2010</a>)</span> complète celle de la diversité <span class="math inline">\(\gamma\)</span> vue dans les parties précédentes.
+<p>La décomposition de la diversité jointe <span class="citation">(<a href="references.html#ref-Gregorius2009a">Gregorius 2009</a>, <a href="references.html#ref-Gregorius2010">2010</a>)</span> complète celle de la diversité <span class="math inline">\(\gamma\)</span> vue dans les parties précédentes.
 On se place dans le cadre d’un échantillonnage global de la méta-communauté, dans lequel le poids de chaque communauté est égal à la probabilité qu’un individu lui appartienne, et non un choix arbitraire.</p>
 <div id="sec-Definitions" class="section level2" number="18.1">
 <h2>
 <span class="header-section-number">18.1</span> Définitions<a class="anchor" aria-label="anchor" href="#sec-Definitions"><i class="fas fa-link"></i></a>
 </h2>
 <p>La diversité <span class="math inline">\(\beta\)</span> mesure la divergence entre la distribution moyenne des espèces dans les communautés et leur distribution dans la méta-communauté.
-Gregorius la qualifie de “diversité de répartition” (<em>apportionment</em>) <span class="citation">(<a href="references.html#ref-Gregorius2014" role="doc-biblioref">Gregorius 2014</a>)</span>.
+Gregorius la qualifie de “diversité de répartition” (<em>apportionment</em>) <span class="citation">(<a href="references.html#ref-Gregorius2014">Gregorius 2014</a>)</span>.
 L’exemple suivant mesure la diversité <span class="math inline">\(\beta\)</span> dans une méta-communauté très simple (figure <a href="chap-DiversiteJointe.html#fig:Repartition1Fig">18.1</a>) :</p>
 <p></p>
 <div class="sourceCode" id="cb308"><pre class="downlit sourceCode r">
@@ -231,7 +232,8 @@ En résumé :</p>
 <li>Le nombre effectif d’espèces <span class="math inline">\(^{q}_{i}\!D\)</span> de la communauté {i} est le nombre d’espèces équifréquentes nécessaires pour obtenir la diversité observée dans la communauté.
 La diversité <span class="math inline">\(\alpha\)</span> est le nombre d’espèces équifréquentes nécessaires dans chaque communauté pour obtenir la diversité <span style="white-space:nowrap">observée ;</span>
 </li>
-<li>La diversité <span class="math inline">\(\beta\)</span> est le nombre de communautés totalement distinctes (chaque espèce n’est présente que dans une seule communauté), de même poids et de même diversité (cette diversité étant égale à la diversité <span class="math inline">\(\alpha\)</span>), égal au rapport entre la diversité <span class="math inline">\(\gamma\)</span> et la diversité <span class="math inline">\(\alpha\)</span>;</li>
+<li>La diversité <span class="math inline">\(\beta\)</span> est le nombre de communautés totalement distinctes (chaque espèce n’est présente que dans une seule communauté), de même poids et de même diversité (cette diversité étant égale à la diversité <span class="math inline">\(\alpha\)</span>), égal au rapport entre la diversité <span class="math inline">\(\gamma\)</span> et la diversité <span class="math inline">\(\alpha\)</span><span style="white-space:nowrap"> ;</span>
+</li>
 <li>La diversité <span class="math inline">\(\gamma\)</span> est le nombre effectif d’espèces de l’assemblage des <span style="white-space:nowrap">communautés ;</span>
 </li>
 <li>La réplication des communautés est le nombre effectif d’assemblages identiques constituant la méta-communauté.</li>
@@ -289,7 +291,7 @@ Figure 18.3: Méta-communauté illustrant la décomposition complète de la dive
 <pre><code>## None 
 ##    3</code></pre>
 <p></p>
-<p>La définition de la diversité <span class="math inline">\(\alpha\)</span> de <span class="citation">Chiu, Jost, et Chao (<a href="references.html#ref-Chiu2014" role="doc-biblioref">2014</a>)</span>, équation <a href="sec-betaCadre.html#eq:Chiualpha">(10.6)</a>, est la diversité jointe, normalisée par le nombre de communautés :</p>
+<p>La définition de la diversité <span class="math inline">\(\alpha\)</span> de <span class="citation">Chiu, Jost, et Chao (<a href="references.html#ref-Chiu2014">2014</a>)</span>, équation <a href="sec-betaCadre.html#eq:Chiualpha">(10.6)</a>, est la diversité jointe, normalisée par le nombre de communautés :</p>
 <p><span class="math display" id="eq:Chiualphajointe">\[\begin{equation}
   \tag{18.2}
   ^{q}\!D_{\alpha}
@@ -354,7 +356,7 @@ Ce n’est pas une mesure de diversité <span class="math inline">\(\beta\)</spa
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

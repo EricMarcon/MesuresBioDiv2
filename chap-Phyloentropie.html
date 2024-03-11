@@ -7,7 +7,7 @@
 <title>8 Entropie phylogénétique | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="L’entropie phylogénétique est la moyenne de l’entropie HCDT le long d’un arbre phylogénétique. Son estimation est simplement celle de l’entropie HCDT à chaque période de l’arbre. Elle va de pair...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="8 Entropie phylogénétique | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-Phyloentropie.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -132,11 +133,11 @@ Dans un tel arbre, la diversité phylogénétique se réduit à la diversité ne
 <h2>
 <span class="header-section-number">8.1</span> Généralisation de l’entropie HCDT<a class="anchor" aria-label="anchor" href="#g%C3%A9n%C3%A9ralisation-de-lentropie-hcdt"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Pavoine et Bonsall (<a href="references.html#ref-Pavoine2009" role="doc-biblioref">2009</a>)</span> découpent l’arbre phylogénétique en périodes.
+<p><span class="citation">Pavoine et Bonsall (<a href="references.html#ref-Pavoine2009">2009</a>)</span> découpent l’arbre phylogénétique en périodes.
 À partir de la racine de l’arbre, une nouvelle période est définie à chaque ramification d’une branche quelconque.
 Les débuts et fins de périodes sont notés <span class="math inline">\(t_k\)</span>, la racine de l’arbre est fixée à <span class="math inline">\(t_0=0\)</span>.
 L’arbre est ultramétrique.</p>
-<p>Nous suivrons plutôt les notations de <span class="citation">Chao, Chiu, et Jost (<a href="references.html#ref-Chao2010" role="doc-biblioref">2010</a>)</span> en numérotant les périodes à partir du présent et en notant <span class="math inline">\(T_k\)</span> leur durée.
+<p>Nous suivrons plutôt les notations de <span class="citation">Chao, Chiu, et Jost (<a href="references.html#ref-Chao2010">2010</a>)</span> en numérotant les périodes à partir du présent et en notant <span class="math inline">\(T_k\)</span> leur durée.
 Figure <a href="mesures-particuli%C3%A8res.html#fig:Arbre">7.7</a>, la première période se termine quand les branches des espèces 3 à 5 se rejoignent.
 L’arbre comprend <span class="math inline">\(K=3\)</span> périodes.</p>
 
@@ -153,13 +154,13 @@ Figure <a href="chap-Phyloentropie.html#fig:ArbreA5">8.1</a>, à la deuxième p�
 <span class="math inline">\(^{q}\!H\)</span> peut être calculée avec ces valeurs de probabilités.
 On notera cette valeur d’entropie <span class="math inline">\(^{q}_{k}\!H\)</span> où <span class="math inline">\(k\)</span> est le quantième de la période.</p>
 <p>L’indice <span class="math inline">\(I_q\)</span> de Pavoine et al. est la somme des <span class="math inline">\(^{q}_{k}\!H\)</span> pondérée par la durée de chaque période.
-Nous le normalisons par la hauteur totale de l’arbre (<span class="math inline">\(T\)</span>) pour définir <span class="math inline">\(^{q}\!\bar{H}(T)\)</span>:</p>
+Nous le normalisons par la hauteur totale de l’arbre (<span class="math inline">\(T\)</span>) pour définir <span class="math inline">\(^{q}\!\bar{H}(T)\)</span> :</p>
 <p><span class="math display" id="eq:Hbarq">\[\begin{equation}
   \tag{8.1}
   ^{q}\!\bar{H} \left( T \right)=\sum_{k=1}^K{\frac{T_k}{T}^{q}_{k}\!H}.
 \end{equation}\]</span></p>
 <p>Dans un arbre parfaitement régulier, toutes les branches sont de longueur 1, il n’y a qu’une seule période, et <span class="math inline">\(I_q={^{q}\!H}\)</span>.</p>
-<p><span class="citation">Shimatani (<a href="references.html#ref-Shimatani2001" role="doc-biblioref">2001a</a>)</span> puis <span class="citation">Ricotta (<a href="references.html#ref-Ricotta2005e" role="doc-biblioref">2005b</a>)</span> avaient montré que l’indice de Rao est la somme pondérée sur chaque période de l’indice de Simpson, c’est-à-dire l’égalité <a href="chap-Phyloentropie.html#eq:Hbarq">(8.1)</a> pour le cas particulier <span class="math inline">\(q=2\)</span>.</p>
+<p><span class="citation">Shimatani (<a href="references.html#ref-Shimatani2001">2001a</a>)</span> puis <span class="citation">Ricotta (<a href="references.html#ref-Ricotta2005e">2005b</a>)</span> avaient montré que l’indice de Rao est la somme pondérée sur chaque période de l’indice de Simpson, c’est-à-dire l’égalité <a href="chap-Phyloentropie.html#eq:Hbarq">(8.1)</a> pour le cas particulier <span class="math inline">\(q=2\)</span>.</p>
 <p>Les indices <span class="math inline">\(^{q}\!\bar{H}(T)\)</span> généralisent les mesures d’entropie classique à la diversité phylogénétique : <span class="math inline">\(T[^{0}\!\bar{H}(T)+1]\)</span> est égal à PD ou FD, <span class="math inline">\(^{1}\!\bar{H}(T)\)</span> est <span class="math inline">\(H_p\)</span> et <span class="math inline">\(^2{\bar{H}(T)}\)</span> est l’indice de Rao.
 On peut les interpréter intuitivement comme une somme pondérée par la longueur des périodes des valeurs de l’entropie à chaque période.
 À la dernière période (près des feuilles), toutes les classes sont présentes, la diversité est donc maximale.
@@ -222,20 +223,20 @@ Le calcul de l’indice de Rao, corrigé du biais d’estimation utilise le code
 <span class="header-section-number">8.3</span> Entropie et diversité<a class="anchor" aria-label="anchor" href="#sec-phyloEntopieDiv"><i class="fas fa-link"></i></a>
 </h2>
 <p>La diversité phylogénétique est le nombre d’espèces équifréquentes et dont la distance à toutes les autres dans la phylogénie est maximale, dont l’entropie serait égale à l’entropie observée.</p>
-<p>La possibilité de choisir comme distance de référence entre espèces une valeur inférieure à la distance maximale est discutée par <span class="citation">Ricotta et Acosta (<a href="references.html#ref-Ricotta2014a" role="doc-biblioref">2014</a>)</span> pour la diversité fonctionnelle : sa signification biologique est liée à l’espace fonctionnel disponible pour la communauté, qui peut être trop réduit pour permettre la coexistence d’espèces dont la dissimilarité serait maximale.</p>
-<p>L’entropie <span class="math inline">\(^{q}\!\bar{H}(T)\)</span> peut être transformée en diversité <span class="citation">(<a href="references.html#ref-Marcon2014a" role="doc-biblioref">Marcon et al. 2014</a>)</span> de la même façon que <span class="math inline">\(^{q}\!D = e^{^{q}\!H}\)</span>:</p>
+<p>La possibilité de choisir comme distance de référence entre espèces une valeur inférieure à la distance maximale est discutée par <span class="citation">Ricotta et Acosta (<a href="references.html#ref-Ricotta2014a">2014</a>)</span> pour la diversité fonctionnelle : sa signification biologique est liée à l’espace fonctionnel disponible pour la communauté, qui peut être trop réduit pour permettre la coexistence d’espèces dont la dissimilarité serait maximale.</p>
+<p>L’entropie <span class="math inline">\(^{q}\!\bar{H}(T)\)</span> peut être transformée en diversité <span class="citation">(<a href="references.html#ref-Marcon2014a">Marcon et al. 2014</a>)</span> de la même façon que <span class="math inline">\(^{q}\!D = e^{^{q}\!H}\)</span> :</p>
 <p><span class="math display" id="eq:DbarqT">\[\begin{equation}
   \tag{8.2}
   ^{q}\!\bar{D}\left(T\right)=e^{^{q}\!\bar{H}\left(T\right)}_q.
 \end{equation}\]</span></p>
-<p>Le nombre effectif d’espèces de l’entropie de Rao, <span class="math inline">\({^{2}\!\bar{D}}(T)=\frac{1}{[1-{^{2}\!\bar{H}}(T)]}\)</span> a été établi par <span class="citation">Ricotta et Szeidl (<a href="references.html#ref-Ricotta2009" role="doc-biblioref">2009</a>)</span>.</p>
-<p><span class="citation">Chao, Chiu, et Jost (<a href="references.html#ref-Chao2010" role="doc-biblioref">2010</a>)</span> obtiennent ce résultat sans recourir explicitement à l’entropie, mais en faisant le même calcul :</p>
+<p>Le nombre effectif d’espèces de l’entropie de Rao, <span class="math inline">\({^{2}\!\bar{D}}(T)=\frac{1}{[1-{^{2}\!\bar{H}}(T)]}\)</span> a été établi par <span class="citation">Ricotta et Szeidl (<a href="references.html#ref-Ricotta2009">2009</a>)</span>.</p>
+<p><span class="citation">Chao, Chiu, et Jost (<a href="references.html#ref-Chao2010">2010</a>)</span> obtiennent ce résultat sans recourir explicitement à l’entropie, mais en faisant le même calcul :</p>
 <p><span class="math display" id="eq:DbarqChao">\[\begin{equation}
   \tag{8.3}
   {^{q}\!\bar{D}} \left( T \right)
   =\left( \sum_b{\frac{l(b)}{T} p(b)^q} \right)^{\frac{1}{1-q}}.
 \end{equation}\]</span></p>
-<p>La somme est sur l’ensemble des branches de l’arbre, défini de façon identique à celle de <span class="citation">Allen, Kon, et Bar-Yam (<a href="references.html#ref-Allen2009" role="doc-biblioref">2009</a>)</span> <a href="mesures-particuli%C3%A8res.html#sec-HpI1">7.10</a>.</p>
+<p>La somme est sur l’ensemble des branches de l’arbre, défini de façon identique à celle de <span class="citation">Allen, Kon, et Bar-Yam (<a href="references.html#ref-Allen2009">2009</a>)</span> <a href="mesures-particuli%C3%A8res.html#sec-HpI1">7.10</a>.</p>
 <p>Les entropies ont un comportement linéaire : elles s’additionnent tout au long de l’arbre pour donner <span class="math inline">\(^{q}\!\bar{H}(T)\)</span>.
 Les diversités <span class="math inline">\(^{q}_{k}\!D\)</span> calculées à chaque période ne peuvent pas être sommées sur le modèle de l’équation <a href="chap-Phyloentropie.html#eq:Hbarq">(8.1)</a> : <span class="math inline">\(^{q}\!\bar{D}(T)\)</span> n’est <em>pas</em> la moyenne pondérée des diversités aux différentes périodes, sauf dans le cas particulier <span class="math inline">\(q=1\)</span> où, comme pour la décomposition de l’indice de Shannon, il en est la moyenne géométrique pondérée.</p>
 <p>La fonction <code>PhyloDiversity</code> de <em>entropart</em> permet de calculer <span class="math inline">\(^{q}\!\bar{D}(T)\)</span> avec ou sans correction de biais, selon qu’elle traite un vecteur d’abondances ou de probabilités.
@@ -300,12 +301,12 @@ Figure 8.2: Arbre phylogénétique hypothétique non ultramétrique
 </p>
 </div>
 <p></p>
-<p><span class="citation">Chao, Chiu, et Jost (<a href="references.html#ref-Chao2010" role="doc-biblioref">2010</a>)</span> définissent la diversité phylogénétique selon l’équation <a href="chap-Phyloentropie.html#eq:DbarqChao">(8.3)</a> quelle que soit la forme de l’arbre, y compris s’il n’est pas ultramétrique.
+<p><span class="citation">Chao, Chiu, et Jost (<a href="references.html#ref-Chao2010">2010</a>)</span> définissent la diversité phylogénétique selon l’équation <a href="chap-Phyloentropie.html#eq:DbarqChao">(8.3)</a> quelle que soit la forme de l’arbre, y compris s’il n’est pas ultramétrique.
 Dans ce cas, <span class="math inline">\(T\)</span> est remplacé par <span class="math inline">\(\bar{T}\)</span>, la longueur moyenne des branches pondérée par la fréquence des espèces.
 Cette généralisation est très discutable : son sens n’est pas clair sur le plan de la mesure de la diversité au-delà du parallélisme de la forme mathématique.</p>
-<p>L’arbre de la figure <a href="chap-Phyloentropie.html#fig:Chao2010">8.2</a> <span class="citation">(<a href="references.html#ref-Chao2010" role="doc-biblioref">Chao, Chiu, et Jost 2010, fig. 1b</a>)</span> peut être découpé en périodes mais les deux premières (<span class="math inline">\(T_1\)</span>: seule l’espèce 2 est <span style="white-space:nowrap">présente ;</span> <span class="math inline">\(T_2\)</span>: les espèces 1 et 2 sont présentes) sont incomplètes au sens où la somme des probabilités n’y est pas égale à 1 donc <span class="math inline">\({\left(\sum{p^q_i}\right)}^{\frac{1}{1-q}}\)</span> ne définit pas une diversité à ces périodes.</p>
-<p><span class="citation">Pavoine et Bonsall (<a href="references.html#ref-Pavoine2009" role="doc-biblioref">2009</a>)</span> traitent en détail les résultats aberrants que cause un arbre non ultramétrique dans le cas particulier de l’entropie de Rao.
-<span class="citation">Leinster et Cobbold (<a href="references.html#ref-Leinster2012" role="doc-biblioref">2012</a>)</span> montrent qu’un arbre non ultramétrique implique que la dissimilarité entre les espèces dépende de leur fréquence, ce qui est contradictoire avec le cadre dans lequel la diversité phylogénétique a été définie.</p>
+<p>L’arbre de la figure <a href="chap-Phyloentropie.html#fig:Chao2010">8.2</a> <span class="citation">(<a href="references.html#ref-Chao2010">Chao, Chiu, et Jost 2010, fig. 1b</a>)</span> peut être découpé en périodes mais les deux premières (<span class="math inline">\(T_1\)</span> : seule l’espèce 2 est <span style="white-space:nowrap">présente ;</span> <span class="math inline">\(T_2\)</span> : les espèces 1 et 2 sont présentes) sont incomplètes au sens où la somme des probabilités n’y est pas égale à 1 donc <span class="math inline">\({\left(\sum{p^q_i}\right)}^{\frac{1}{1-q}}\)</span> ne définit pas une diversité à ces périodes.</p>
+<p><span class="citation">Pavoine et Bonsall (<a href="references.html#ref-Pavoine2009">2009</a>)</span> traitent en détail les résultats aberrants que cause un arbre non ultramétrique dans le cas particulier de l’entropie de Rao.
+<span class="citation">Leinster et Cobbold (<a href="references.html#ref-Leinster2012">2012</a>)</span> montrent qu’un arbre non ultramétrique implique que la dissimilarité entre les espèces dépende de leur fréquence, ce qui est contradictoire avec le cadre dans lequel la diversité phylogénétique a été définie.</p>
 <p>Dans l’état actuel des connaissances, aucune méthode n’est applicable de façon satisfaisante aux arbres non ultramétriques.</p>
 </div>
 </div>
@@ -338,7 +339,7 @@ Cette généralisation est très discutable : son sens n’est pas clair sur le
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

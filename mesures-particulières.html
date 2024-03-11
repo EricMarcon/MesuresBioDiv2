@@ -7,7 +7,7 @@
 <title>7 Mesures particulières | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="De nombreuses mesures de diversité fonctionnelle ou phylogénétique ont été développées pour combiner le mieux possible la richesse et la régularité de la distribution des espèces dans l’espace des...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="7 Mesures particulières | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/mesures-particulières.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -132,15 +133,15 @@ Les sections suivantes envisagent les espèces dans un arbre phylogénétique.</
 <h2>
 <span class="header-section-number">7.1</span> Richesse, équitabilité et divergence fonctionnelle<a class="anchor" aria-label="anchor" href="#richesse-%C3%A9quitabilit%C3%A9-et-divergence-fonctionnelle"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Mason et al. (<a href="references.html#ref-Mason2005" role="doc-biblioref">2005</a>)</span> postulent que la diversité fonctionnelle peut être abordée dans trois dimensions indépendantes (<span class="citation">Jost (<a href="references.html#ref-Jost2010" role="doc-biblioref">2010b</a>)</span> montrera que l’indépendance n’est pas assurée) :</p>
+<p><span class="citation">Mason et al. (<a href="references.html#ref-Mason2005">2005</a>)</span> postulent que la diversité fonctionnelle peut être abordée dans trois dimensions indépendantes (<span class="citation">Jost (<a href="references.html#ref-Jost2010">2010b</a>)</span> montrera que l’indépendance n’est pas assurée) :</p>
 <ul>
 <li>la richesse fonctionnelle, qui indique l’étendue de l’espace des niches fonctionnelles occupé par la <span style="white-space:nowrap">communauté ;</span>
 </li>
-<li>l’équitabilité de la distribution des espèces dans ces niches (appelée régularité par <span class="citation">Pavoine et Bonsall (<a href="references.html#ref-Pavoine2011" role="doc-biblioref">2011</a>)</span><span style="white-space:nowrap">) ;</span>
+<li>l’équitabilité de la distribution des espèces dans ces niches (appelée régularité par <span class="citation">Pavoine et Bonsall (<a href="references.html#ref-Pavoine2011">2011</a>)</span><span style="white-space:nowrap">) ;</span>
 </li>
 <li>la divergence fonctionnelle, qui mesure comment la distribution des espèces dans l’espace des niches maximise la variabilité des caractéristiques fonctionnelles dans la communauté et combine richesse et équitabilité.</li>
 </ul>
-<p><span class="citation">Schleuter et al. (<a href="references.html#ref-Schleuter2010" role="doc-biblioref">2010</a>)</span> font une revue des mesures utilisées dans ce cadre.
+<p><span class="citation">Schleuter et al. (<a href="references.html#ref-Schleuter2010">2010</a>)</span> font une revue des mesures utilisées dans ce cadre.
 Les notations des indices utilisées ici sont les leurs.</p>
 <p>Différents traits numériques sont connus pour toutes les espèces de la communauté.
 La matrice <span class="math inline">\(\mathbf{X}\)</span> les contient : l’élément <span class="math inline">\(x_{t,s}\)</span> est la valeur moyenne du trait <span class="math inline">\(t\)</span> pour l’espèce <span class="math inline">\(s\)</span>.
@@ -153,7 +154,7 @@ On note <span class="math inline">\(\mathbf{T}_s\)</span> le vecteur des valeurs
 <h4>
 <span class="header-section-number">7.1.1.1</span> Étendue fonctionnelle<a class="anchor" aria-label="anchor" href="#%C3%A9tendue-fonctionnelle"><i class="fas fa-link"></i></a>
 </h4>
-<p>L’étendue fonctionnelle <span class="citation">(<a href="references.html#ref-Mason2005" role="doc-biblioref">Mason et al. 2005</a>)</span> mesure l’étendue des valeurs d’un trait occupée par une communauté, normalisée par l’étendue maximale possible :
+<p>L’étendue fonctionnelle <span class="citation">(<a href="references.html#ref-Mason2005">Mason et al. 2005</a>)</span> mesure l’étendue des valeurs d’un trait occupée par une communauté, normalisée par l’étendue maximale possible :
 <span class="math display" id="eq:FRR">\[\begin{equation}
   \tag{7.1}
   \mathit{FR}_R = \dfrac{\max_s(x_{t,s}) - \min_s(x_{t,s})}{X_{t,max} - X_{t,min}},
@@ -178,12 +179,12 @@ Figure 7.1: Fonction d’appartenance de l’espace des niches de Schleuter et a
 <h4>
 <span class="header-section-number">7.1.1.2</span> Volume de niches<a class="anchor" aria-label="anchor" href="#volume-de-niches"><i class="fas fa-link"></i></a>
 </h4>
-<p>La définition de la niche écologique de <span class="citation">Hutchinson (<a href="references.html#ref-Hutchinson1957" role="doc-biblioref">1957</a>)</span> est l’hypervolume, dans l’espace des ressources environnementales, qu’une espèce peut occuper.
+<p>La définition de la niche écologique de <span class="citation">Hutchinson (<a href="references.html#ref-Hutchinson1957">1957</a>)</span> est l’hypervolume, dans l’espace des ressources environnementales, qu’une espèce peut occuper.
 L’espace des traits fonctionnels peut être considéré comme une approximation de l’espace des ressources.
 Le volume de l’enveloppe convexe de l’espace des traits occupé par la communauté (<em>convex hull volume</em>) est donc une mesure de richesse fonctionnelle multidimensionnelle.
-La prise en compte des trous, c’est-à-dire la restriction du volume à l’espace réellement occupé à l’intérieur de cette enveloppe, est possible grâce à une méthode d’estimation d’hypervolume plus élaborée, implémentée dans le package <em>hypervolume</em> pour R <span class="citation">(<a href="references.html#ref-Blonder2014" role="doc-biblioref">Blonder et al. 2014</a>)</span>.</p>
+La prise en compte des trous, c’est-à-dire la restriction du volume à l’espace réellement occupé à l’intérieur de cette enveloppe, est possible grâce à une méthode d’estimation d’hypervolume plus élaborée, implémentée dans le package <em>hypervolume</em> pour R <span class="citation">(<a href="references.html#ref-Blonder2014">Blonder et al. 2014</a>)</span>.</p>
 <p>De même que pour l’étendue fonctionnelle, Schleuter et al. développent une mesure proche, <span class="math inline">\(\mathit{FR}_{Im}\)</span>, prenant en compte la variabilité intraspécifique et les espaces non occupés.
-Chaque espèce est supposée occuper un espace autour de sa position moyenne dans l’espace des traits, avec une fonction d’appartenance <span class="citation">(<a href="references.html#ref-Zadeh1965" role="doc-biblioref">Zadeh 1965</a>)</span> gaussienne multidimensionnelle (une représentation unidimensionnelle se trouve en figure <a href="mesures-particuli%C3%A8res.html#fig:Schleuter2010">7.1</a>, <span class="citation">Schleuter et al. (<a href="references.html#ref-Schleuter2010" role="doc-biblioref">2010</a>)</span>) : la fonction d’appartenance, issue de la logique floue, peut être vue comme une densité de probabilité non normalisée.</p>
+Chaque espèce est supposée occuper un espace autour de sa position moyenne dans l’espace des traits, avec une fonction d’appartenance <span class="citation">(<a href="references.html#ref-Zadeh1965">Zadeh 1965</a>)</span> gaussienne multidimensionnelle (une représentation unidimensionnelle se trouve en figure <a href="mesures-particuli%C3%A8res.html#fig:Schleuter2010">7.1</a>, <span class="citation">Schleuter et al. (<a href="references.html#ref-Schleuter2010">2010</a>)</span>) : la fonction d’appartenance, issue de la logique floue, peut être vue comme une densité de probabilité non normalisée.</p>
 <p>Les variances et covariances intraspécifiques des traits (rassemblés dans la matrice carrée <span class="math inline">\(\mathbf{\Sigma}_s\)</span> de dimension <span class="math inline">\(t\)</span> pour chaque espèce <span class="math inline">\(s\)</span>) sont nécessaires.
 La fonction d’appartenance de l’espèce <span class="math inline">\(s\)</span> dans l’espace des traits est, pour le vecteur <span class="math inline">\(\mathbf{T}\)</span> de valeur de l’ensemble des traits :
 <span class="math display">\[\begin{equation}
@@ -194,20 +195,20 @@ La fonction d’appartenance de l’espèce <span class="math inline">\(s\)</spa
   \tag{7.2}
   \mathit{FR}_{Im} = \int \max_s\left(f_s(\mathbf{T}) \right) \mathop{d\mathbf{T}}.
 \end{equation}\]</span></p>
-<p>Après transformation de la matrice de distance en dendrogramme fonctionnel, éventuellement sous la forme d’un arbre-consensus <span class="citation">(<a href="references.html#ref-Mouchet2008" role="doc-biblioref">Mouchet et al. 2008</a>)</span>, la longueur totale des branches, FD <span class="citation">(<a href="references.html#ref-Petchey2002" role="doc-biblioref">Petchey et Gaston 2002</a>)</span>, est une autre mesure de richesse multidimensionnelle.</p>
+<p>Après transformation de la matrice de distance en dendrogramme fonctionnel, éventuellement sous la forme d’un arbre-consensus <span class="citation">(<a href="references.html#ref-Mouchet2008">Mouchet et al. 2008</a>)</span>, la longueur totale des branches, FD <span class="citation">(<a href="references.html#ref-Petchey2002">Petchey et Gaston 2002</a>)</span>, est une autre mesure de richesse multidimensionnelle.</p>
 </div>
 </div>
 <div id="equitabilité-fonctionnelle" class="section level3" number="7.1.2">
 <h3>
 <span class="header-section-number">7.1.2</span> Equitabilité fonctionnelle<a class="anchor" aria-label="anchor" href="#equitabilit%C3%A9-fonctionnelle"><i class="fas fa-link"></i></a>
 </h3>
-<p>L’équitabilité fonctionnelle, ou régularité <span class="citation">(<a href="references.html#ref-Pavoine2011" role="doc-biblioref">Pavoine et Bonsall 2011</a>)</span>, rend compte de l’homogénéité de l’occupation des niches.</p>
-<p>L’indice d’équitabilité de <span class="citation">Mouillot, Mason, et al. (<a href="references.html#ref-Mouillot2005a" role="doc-biblioref">2005</a>)</span>, que les auteurs nomment “indice de régularité fonctionnelle”, est inspiré de l’indice d’équitabilité de Bulla <a href="sec-Equitabilite.html#eq:Bulla">(5.1)</a>.
+<p>L’équitabilité fonctionnelle, ou régularité <span class="citation">(<a href="references.html#ref-Pavoine2011">Pavoine et Bonsall 2011</a>)</span>, rend compte de l’homogénéité de l’occupation des niches.</p>
+<p>L’indice d’équitabilité de <span class="citation">Mouillot, Mason, et al. (<a href="references.html#ref-Mouillot2005a">2005</a>)</span>, que les auteurs nomment “indice de régularité fonctionnelle”, est inspiré de l’indice d’équitabilité de Bulla <a href="sec-Equitabilite.html#eq:Bulla">(5.1)</a>.
 C’est un indice unidimensionnel : un seul trait est pris en compte.
 Les espèces sont classées par valeur croissante du trait.
 L’équitabilité maximale est obtenue si l’écart entre deux valeurs de traits est proportionnel aux abondances cumulées des deux espèces.
 La statistique fondamentale est appelée équitabilité pondérée (<em>weighted evenness</em>).
-Pour l’intervalle entre l’espèce <span class="math inline">\(s\)</span> et l’espèce <span class="math inline">\(s+1\)</span>:</p>
+Pour l’intervalle entre l’espèce <span class="math inline">\(s\)</span> et l’espèce <span class="math inline">\(s+1\)</span> :</p>
 <p><span class="math display" id="eq:EWs">\[\begin{equation}
   \tag{7.3}
   \mathit{EW}_{s} = \frac{T_{s+1}-T_{s}}{N_{s+1}+N_{s}}.
@@ -219,15 +220,15 @@ L’indice est celui de Bulla, appliqué aux <span class="math inline">\(S-1\)</
   \tag{7.4}
   \mathit{FE}_{s} = \sum_{s=1}^{S-1}{\min(\mathit{PEW}_{s},\frac{1}{S-1})}.
 \end{equation}\]</span></p>
-<p>L’indice <span class="math inline">\(\mathit{FE}_{s}\)</span> a été étendu pour être multidimensionnel par <span class="citation">Villéger, Mason, et Mouillot (<a href="references.html#ref-Villeger2008a" role="doc-biblioref">2008</a>)</span>.
+<p>L’indice <span class="math inline">\(\mathit{FE}_{s}\)</span> a été étendu pour être multidimensionnel par <span class="citation">Villéger, Mason, et Mouillot (<a href="references.html#ref-Villeger2008a">2008</a>)</span>.
 L’arbre recouvrant de longueur minimum (<em>minimum spanning tree</em>) est d’abord calculé à partir des distances euclidiennes entre les espèces dans l’espace des traits : il s’agit de l’arbre de longueur totale minimale reliant tous les points.
 La longueur des branches est ensuite traitée de la même façon que <span class="math inline">\(\delta T_s\)</span> précédemment.</p>
-<p>Un autre indice, <span class="math inline">\({\Lambda}^+\)</span> <span class="citation">(<a href="references.html#ref-Clarke2001" role="doc-biblioref">Clarke et Warwick 2001</a>)</span>, mesure la variance des distances entre paires d’espèces :</p>
+<p>Un autre indice, <span class="math inline">\({\Lambda}^+\)</span> <span class="citation">(<a href="references.html#ref-Clarke2001">Clarke et Warwick 2001</a>)</span>, mesure la variance des distances entre paires d’espèces :</p>
 <p><span class="math display" id="eq:Clarke2001">\[\begin{equation}
   \tag{7.5}
   {\Lambda}^+ =\frac{\sum_s{\sum_t{{\left(d_{s,t}-\hat{d}\right)}^2}}}{S\left(S-1\right)}.
 \end{equation}\]</span></p>
-<p>Comme le montrent <span class="citation">Mérigot et Gaertner (<a href="references.html#ref-Merigot2011" role="doc-biblioref">2011</a>)</span>, les mesures de régularité n’ont absolument pas les mêmes propriétés que les mesures de diversité : elles peuvent par exemple augmenter quand on retire des espèces originales.</p>
+<p>Comme le montrent <span class="citation">Mérigot et Gaertner (<a href="references.html#ref-Merigot2011">2011</a>)</span>, les mesures de régularité n’ont absolument pas les mêmes propriétés que les mesures de diversité : elles peuvent par exemple augmenter quand on retire des espèces originales.</p>
 </div>
 <div id="divergence-fonctionnelle" class="section level3" number="7.1.3">
 <h3>
@@ -236,17 +237,17 @@ La longueur des branches est ensuite traitée de la même façon que <span class
 <p>Les mesures de divergence fonctionnelle décrivent la variabilité de position des espèces dans l’espace des traits.
 Ce sont tout simplement des mesures de diversité au sens classique du terme.</p>
 <p>Quand un seul trait est considéré, la mesure la plus simple est sa variance.
-<span class="citation">Mason et al. (<a href="references.html#ref-Mason2003" role="doc-biblioref">2003</a>)</span> effectuent une transformation logarithmique de la valeur du trait et pondèrent le calcul de la variance par les probabilités <span class="math inline">\(p_s\)</span>.
+<span class="citation">Mason et al. (<a href="references.html#ref-Mason2003">2003</a>)</span> effectuent une transformation logarithmique de la valeur du trait et pondèrent le calcul de la variance par les probabilités <span class="math inline">\(p_s\)</span>.
 Ils transforment finalement le résultat en son arc-tangente pour qu’il soit compris entre 0 et 1.</p>
 <p>Schleuter et al. proposent d’utiliser la différence entre le troisième et le premier quartile de la valeur du trait, normalisée par son étendue maximale possible.</p>
-<p>FAD a été proposé par <span class="citation">B. Walker, Kinzig, et Langridge (<a href="references.html#ref-Walker1999" role="doc-biblioref">1999</a>)</span>, à partir d’une matrice de distances dans l’espace des traits.
+<p>FAD a été proposé par <span class="citation">B. Walker, Kinzig, et Langridge (<a href="references.html#ref-Walker1999">1999</a>)</span>, à partir d’une matrice de distances dans l’espace des traits.
 <span class="math inline">\(d_{s,t}\)</span> est la distance entre deux espèces indicées par <span class="math inline">\(s\)</span> et <span class="math inline">\(t\)</span>, alors :</p>
 <p><span class="math display" id="eq:FAD">\[\begin{equation}
   \tag{7.6}
   \mathit{FAD}=\sum_s{\sum_t{d_{s,t}}}.
 \end{equation}\]</span></p>
 <p>FAD est très sensible au nombre d’espèces.
-Sa version normalisée, MFAD <span class="citation">(<a href="references.html#ref-Schmera2009" role="doc-biblioref">Schmera, Erős, et Podani 2009</a>)</span> est</p>
+Sa version normalisée, MFAD <span class="citation">(<a href="references.html#ref-Schmera2009">Schmera, Erős, et Podani 2009</a>)</span> est</p>
 <p><span class="math display" id="eq:MFAD">\[\begin{equation}
   \tag{7.7}
   \mathit{MFAD}=\frac{\sum_s{\sum_t{d_{s,t}}}}{S}.
@@ -289,10 +290,10 @@ Un arbre au format <code>phylo</code> du package <em>ape</em> nécessite une con
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">MFAD</span> <span class="op">&lt;-</span> <span class="va">FAD</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">Tree</span><span class="op">$</span><span class="va">leaves</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 621.5506</code></pre>
 <p></p>
-<p><span class="citation">Kader et Perry (<a href="references.html#ref-Kader2007" role="doc-biblioref">2007</a>)</span> regroupent les valeurs de trait par catégories et calculent l’entropie de Simpson des catégories.</p>
-<p>Enfin, <span class="citation">Villéger, Mason, et Mouillot (<a href="references.html#ref-Villeger2008a" role="doc-biblioref">2008</a>)</span> utilisent la distance euclidienne moyenne des espèces au centre de gravité de la communauté plutôt que la variance.
+<p><span class="citation">Kader et Perry (<a href="references.html#ref-Kader2007">2007</a>)</span> regroupent les valeurs de trait par catégories et calculent l’entropie de Simpson des catégories.</p>
+<p>Enfin, <span class="citation">Villéger, Mason, et Mouillot (<a href="references.html#ref-Villeger2008a">2008</a>)</span> utilisent la distance euclidienne moyenne des espèces au centre de gravité de la communauté plutôt que la variance.
 Précisément, le centre de gravité de la communauté (sans pondération par les fréquences) est calculé.
-La distance euclidienne de l’espèce <span class="math inline">\(s\)</span> au centre de gravité est <span class="math inline">\(dG_s\)</span>; la moyenne pour toutes les espèces <span class="math inline">\(\bar{dG}\)</span>.
+La distance euclidienne de l’espèce <span class="math inline">\(s\)</span> au centre de gravité est <span class="math inline">\(dG_s\)</span><span style="white-space:nowrap"> ;</span> la moyenne pour toutes les espèces <span class="math inline">\(\bar{dG}\)</span>.
 L’écart moyen des individus de la communauté à la distance moyenne est <span class="math inline">\(\Delta d=\sum_s{p_s(dG_s - \bar{dG})}\)</span>.
 L’écart moyen absolu est <span class="math inline">\(\Delta |d|=\sum_s{p_s|dG_s - \bar{dG}|}\)</span>.</p>
 <p>L’indice est
@@ -301,21 +302,21 @@ L’écart moyen absolu est <span class="math inline">\(\Delta |d|=\sum_s{p_s|dG
   \mathit{FD}_{m} = \frac{\Delta d + \bar{dG}}{\Delta |d| +\bar{dG}}.
 \end{equation}\]</span></p>
 <p>Sa forme lui permet d’être compris entre 0 et 1.</p>
-<p><span class="citation">Laliberté et Legendre (<a href="references.html#ref-Laliberte2010" role="doc-biblioref">2010</a>)</span> généralisent <span class="math inline">\(\mathit{FD}_{m}\)</span> en proposant l’usage de n’importe quelle dissimilarité entre espèces, obtenue à partir de la méthode de Gower (vue en section <a href="chap-cadrephyfonc.html#sec-DFonctionnelle">6.3</a>), autorisant des variables qualitatives et des données manquantes, au-delà de la seule distance euclidienne entre traits quantitatifs.
+<p><span class="citation">Laliberté et Legendre (<a href="references.html#ref-Laliberte2010">2010</a>)</span> généralisent <span class="math inline">\(\mathit{FD}_{m}\)</span> en proposant l’usage de n’importe quelle dissimilarité entre espèces, obtenue à partir de la méthode de Gower (vue en section <a href="chap-cadrephyfonc.html#sec-DFonctionnelle">6.3</a>), autorisant des variables qualitatives et des données manquantes, au-delà de la seule distance euclidienne entre traits quantitatifs.
 Ils fournissent le package <em>FD</em> pour calculer leur indice <span class="math inline">\(\mathit{FDis}\)</span> et ceux de
-<span class="citation">Villéger, Mason, et Mouillot (<a href="references.html#ref-Villeger2008a" role="doc-biblioref">2008</a>)</span>.</p>
+<span class="citation">Villéger, Mason, et Mouillot (<a href="references.html#ref-Villeger2008a">2008</a>)</span>.</p>
 </div>
 </div>
 <div id="originalité-richesse-et-équitabilité-phylogénétique" class="section level2" number="7.2">
 <h2>
 <span class="header-section-number">7.2</span> Originalité, richesse et équitabilité phylogénétique<a class="anchor" aria-label="anchor" href="#originalit%C3%A9-richesse-et-%C3%A9quitabilit%C3%A9-phylog%C3%A9n%C3%A9tique"><i class="fas fa-link"></i></a>
 </h2>
-<p>La littérature de la diversité phylogénétique s’est intéressée tôt à l’originalité taxonomique des espèces parce que les questions traitées concernaient la conservation, concernée par la valeur de l’héritage évolutif <span class="citation">(<a href="references.html#ref-Faith2008" role="doc-biblioref">Faith 2008</a>)</span>.</p>
+<p>La littérature de la diversité phylogénétique s’est intéressée tôt à l’originalité taxonomique des espèces parce que les questions traitées concernaient la conservation, concernée par la valeur de l’héritage évolutif <span class="citation">(<a href="references.html#ref-Faith2008">Faith 2008</a>)</span>.</p>
 <div id="mesures-spécifiques-doriginalité" class="section level3" number="7.2.1">
 <h3>
 <span class="header-section-number">7.2.1</span> Mesures spécifiques d’originalité<a class="anchor" aria-label="anchor" href="#mesures-sp%C3%A9cifiques-doriginalit%C3%A9"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Vane-Wright, Humphries, et Williams (<a href="references.html#ref-Vane-Wright1991" role="doc-biblioref">1991</a>)</span> définissent la distinction taxonomique (<em>taxonomic distinctness</em>) <span class="math inline">\(\mathit{TD}_s\)</span> de chaque espèce comme l’inverse du nombre de noeuds entre elle et la racine de l’arbre phylogénétique, normalisé pour que <span class="math inline">\(\sum_s{\mathit{TD}_s} = 1\)</span>.
+<p><span class="citation">Vane-Wright, Humphries, et Williams (<a href="references.html#ref-Vane-Wright1991">1991</a>)</span> définissent la distinction taxonomique (<em>taxonomic distinctness</em>) <span class="math inline">\(\mathit{TD}_s\)</span> de chaque espèce comme l’inverse du nombre de noeuds entre elle et la racine de l’arbre phylogénétique, normalisé pour que <span class="math inline">\(\sum_s{\mathit{TD}_s} = 1\)</span>.
 Dans l’arbre de la figure <a href="mesures-particuli%C3%A8res.html#fig:ArbreA4">7.2</a>, les valeurs de TD non normalisées sont <span class="math inline">\({1}/{2}\)</span> pour les deux premières espèces et <span class="math inline">\({1}/{3}\)</span> pour les trois autres : la racine de l’arbre est comptabilisée dans le nombre de noeuds.
 Les valeurs de <span class="math inline">\(\mathit{TD}_s\)</span> sont respectivement <span class="math inline">\({1}/{4}\)</span> et <span class="math inline">\({1}/{6}\)</span> après normalisation.</p>
 
@@ -327,7 +328,7 @@ Figure 7.2: Arbre phylogénétique ou fonctionnel hypothétique. L’arbre compr
 </p>
 </div>
 <p></p>
-<p>La particularité évolutive <span class="citation">(<a href="references.html#ref-Isaac2007" role="doc-biblioref">Isaac et al. 2007</a>)</span> (<em>evolutive distinctiveness</em>, <span class="math inline">\(\mathit{ED}_s\)</span>) de l’espèce <span class="math inline">\(s\)</span> est la somme de la longueur des branches qui la relient à la racine de l’arbre, partagées entre tous les descendants de chaque branche.
+<p>La particularité évolutive <span class="citation">(<a href="references.html#ref-Isaac2007">Isaac et al. 2007</a>)</span> (<em>evolutive distinctiveness</em>, <span class="math inline">\(\mathit{ED}_s\)</span>) de l’espèce <span class="math inline">\(s\)</span> est la somme de la longueur des branches qui la relient à la racine de l’arbre, partagées entre tous les descendants de chaque branche.
 Pour l’espèce 3 de la figure <a href="mesures-particuli%C3%A8res.html#fig:ArbreA4">7.2</a>, <span class="math inline">\(\mathit{ED}_3\)</span> est égal à <span class="math inline">\(l(b_{1,3})\)</span>, la longueur de la branche terminale propre à l’espèce 3, plus un tiers de la longueur de la branche qui relie la racine de l’arbre à la polytomie dont l’espèce 3 est issue.
 Clairement, la diversité phylogénétique PD (section <a href="mesures-particuli%C3%A8res.html#sec-PDFD">7.5</a>) est la somme des particularités évolutives de toutes les espèces de l’arbre.</p>
 </div>
@@ -339,12 +340,12 @@ Clairement, la diversité phylogénétique PD (section <a href="mesures-particul
 <p></p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:HurlbertCFig"></span>
-<img src="MesuresBD_files/figure-html/HurlbertCFig-1.png" alt="Contribution des espèces à l’indice de Hurlbert. Les contributions de 4 espèces d’une communauté à l’indice sont représentées en fonction de la taille de l’échantillon \(n\). Les fréquences des espèces sont lisibles pour \(n = 1\): une espèce fréquente (probabilité égale à 0,7, supérieure à \(1/S\)), deux espèces peu fréquentes (0,19 et 0,1), et une espèce rare (0,01). Quand \(n\) est assez grand, toutes les contributions tendent vers \(1/S = 1/4\) (ligne horizontale)." width="80%"><p class="caption">
-Figure 7.3: Contribution des espèces à l’indice de Hurlbert. Les contributions de 4 espèces d’une communauté à l’indice sont représentées en fonction de la taille de l’échantillon <span class="math inline">\(n\)</span>. Les fréquences des espèces sont lisibles pour <span class="math inline">\(n = 1\)</span>: une espèce fréquente (probabilité égale à 0,7, supérieure à <span class="math inline">\(1/S\)</span>), deux espèces peu fréquentes (0,19 et 0,1), et une espèce rare (0,01). Quand <span class="math inline">\(n\)</span> est assez grand, toutes les contributions tendent vers <span class="math inline">\(1/S = 1/4\)</span> (ligne horizontale).
+<img src="MesuresBD_files/figure-html/HurlbertCFig-1.png" alt="Contribution des espèces à l’indice de Hurlbert. Les contributions de 4 espèces d’une communauté à l’indice sont représentées en fonction de la taille de l’échantillon \(n\). Les fréquences des espèces sont lisibles pour \(n = 1\) : une espèce fréquente (probabilité égale à 0,7, supérieure à \(1/S\)), deux espèces peu fréquentes (0,19 et 0,1), et une espèce rare (0,01). Quand \(n\) est assez grand, toutes les contributions tendent vers \(1/S = 1/4\) (ligne horizontale)." width="80%"><p class="caption">
+Figure 7.3: Contribution des espèces à l’indice de Hurlbert. Les contributions de 4 espèces d’une communauté à l’indice sont représentées en fonction de la taille de l’échantillon <span class="math inline">\(n\)</span>. Les fréquences des espèces sont lisibles pour <span class="math inline">\(n = 1\)</span> : une espèce fréquente (probabilité égale à 0,7, supérieure à <span class="math inline">\(1/S\)</span>), deux espèces peu fréquentes (0,19 et 0,1), et une espèce rare (0,01). Quand <span class="math inline">\(n\)</span> est assez grand, toutes les contributions tendent vers <span class="math inline">\(1/S = 1/4\)</span> (ligne horizontale).
 </p>
 </div>
 <p></p>
-<p><span class="citation">Ricotta (<a href="references.html#ref-Ricotta2004a" role="doc-biblioref">2004a</a>)</span> construit un indice paramétrique (permettant de donner plus ou moins d’importance aux espèces rares) à partir de l’espérance du nombre d’espèces tirées dans un échantillon de taille <span class="math inline">\(n\)</span> fixée (l’indice de <span class="citation">Hurlbert (<a href="references.html#ref-Hurlbert1971" role="doc-biblioref">1971</a>)</span>) :</p>
+<p><span class="citation">Ricotta (<a href="references.html#ref-Ricotta2004a">2004a</a>)</span> construit un indice paramétrique (permettant de donner plus ou moins d’importance aux espèces rares) à partir de l’espérance du nombre d’espèces tirées dans un échantillon de taille <span class="math inline">\(n\)</span> fixée (l’indice de <span class="citation">Hurlbert (<a href="references.html#ref-Hurlbert1971">1971</a>)</span>) :</p>
 <p><span class="math display" id="eq:ESn">\[\begin{equation}
   \tag{7.9}
   {\mathbb E}\left( S^n \right)
@@ -357,8 +358,8 @@ Figure 7.3: Contribution des espèces à l’indice de Hurlbert. Les contributio
   = \frac{\sum_s{w_s \left[ 1-\left( 1-p_s \right)^n  \right]}}{{\mathbb E}\left( S^n \right)}.
 \end{equation}\]</span></p>
 <p>L’originalité taxonomique est définie comme la distance phylogénétique moyenne entre l’espèce <span class="math inline">\(s\)</span> et les autres : <span class="math inline">\(w_s={\sum_s{d_{s,t}}}/{(S-1)}\)</span>.</p>
-<p><span class="citation">Weikard, Punt, et Wesseler (<a href="references.html#ref-Weikard2006" role="doc-biblioref">2006</a>)</span> montrent que cette définition de <span class="math inline">\(w_s\)</span> ne permet pas de satisfaire l’axiome de monotonicité d’ensemble.
-La définition correcte de <span class="math inline">\(w_s=\sum_s{d_{s,t}}\)</span>, validée par <span class="citation">Ricotta (<a href="references.html#ref-Ricotta2006" role="doc-biblioref">2006</a>)</span>.</p>
+<p><span class="citation">Weikard, Punt, et Wesseler (<a href="references.html#ref-Weikard2006">2006</a>)</span> montrent que cette définition de <span class="math inline">\(w_s\)</span> ne permet pas de satisfaire l’axiome de monotonicité d’ensemble.
+La définition correcte de <span class="math inline">\(w_s=\sum_s{d_{s,t}}\)</span>, validée par <span class="citation">Ricotta (<a href="references.html#ref-Ricotta2006">2006</a>)</span>.</p>
 <p>L’interprétation de <span class="math inline">\(^n{T}\)</span> est plus intuitive en inversant la logique de sa construction.</p>
 <p><span class="math inline">\(w_s\)</span> est l’originalité de l’espèce <span class="math inline">\(s\)</span>.
 <span class="math inline">\({[1-(1-p_s)^n]}/{{\mathbb E}(S^n)}\)</span> est la contribution de l’espèce <span class="math inline">\(s\)</span> à l’espérance du nombre d’espèces, comprise entre 0 et 1.
@@ -400,9 +401,9 @@ Il baisse ensuite alors que les espèces rares atteignent à leur tour progressi
 <h3>
 <span class="header-section-number">7.2.3</span> Richesse phylogénétique<a class="anchor" aria-label="anchor" href="#richesse-phylog%C3%A9n%C3%A9tique"><i class="fas fa-link"></i></a>
 </h3>
-<p>La particularité taxonomique moyenne <span class="citation">(<a href="references.html#ref-Warwick1995" role="doc-biblioref">Warwick et Clarke 1995</a>)</span> (<em>Average Taxonomic Distinctiveness, AvTD</em>) est la distance moyenne dans l’arbre entre deux espèces choisies au hasard.
+<p>La particularité taxonomique moyenne <span class="citation">(<a href="references.html#ref-Warwick1995">Warwick et Clarke 1995</a>)</span> (<em>Average Taxonomic Distinctiveness, AvTD</em>) est la distance moyenne dans l’arbre entre deux espèces choisies au hasard.
 C’est donc l’équivalent taxonomique de MFAD.
-La variabilité phylogénétique des espèces <span class="citation">(<a href="references.html#ref-Helmus2007" role="doc-biblioref">Helmus et al. 2007</a>)</span> (<em>Phylogenetic Species Variability, PSV</em>) est la même mesure, obtenue à partir du modèle d’évolution suivant un mouvement brownien <span class="citation">(<a href="references.html#ref-Felsenstein1985" role="doc-biblioref">Felsenstein 1985</a>)</span>.
+La variabilité phylogénétique des espèces <span class="citation">(<a href="references.html#ref-Helmus2007">Helmus et al. 2007</a>)</span> (<em>Phylogenetic Species Variability, PSV</em>) est la même mesure, obtenue à partir du modèle d’évolution suivant un mouvement brownien <span class="citation">(<a href="references.html#ref-Felsenstein1985">Felsenstein 1985</a>)</span>.
 La distance moyenne entre deux espèces est dans ce cadre proportionnelle à la covariance de leurs traits fonctionnels.
 La richesse phylogénétique des espèces, PSR, est PSV multipliée par le nombre d’espèces : c’est l’équivalent taxonomique de FAD.</p>
 <p>La diversité FD de Faith (section <a href="mesures-particuli%C3%A8res.html#sec-PDFD">7.5</a>), égale à la somme des longueurs des branches de l’arbre, semble avoir fait consensus, d’où un moindre développement des mesures de richesse que dans la littérature fonctionnelle.</p>
@@ -411,7 +412,7 @@ La richesse phylogénétique des espèces, PSR, est PSV multipliée par le nombr
 <h3>
 <span class="header-section-number">7.2.4</span> Indices de Cadotte<a class="anchor" aria-label="anchor" href="#indices-de-cadotte"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Cadotte et al. (<a href="references.html#ref-Cadotte2010" role="doc-biblioref">2010</a>)</span> proposent un ensemble de mesure phylogénétiques : équitabilité, déséquilibre d’abondance et diversité de la particularité evolutive.</p>
+<p><span class="citation">Cadotte et al. (<a href="references.html#ref-Cadotte2010">2010</a>)</span> proposent un ensemble de mesure phylogénétiques : équitabilité, déséquilibre d’abondance et diversité de la particularité evolutive.</p>
 <div id="equitabilité-phylogénétique" class="section level4" number="7.2.4.1">
 <h4>
 <span class="header-section-number">7.2.4.1</span> Equitabilité phylogénétique<a class="anchor" aria-label="anchor" href="#equitabilit%C3%A9-phylog%C3%A9n%C3%A9tique"><i class="fas fa-link"></i></a>
@@ -494,7 +495,7 @@ Dans cet exemple, les espèces ont une divergence évolutive nulle, mais <span c
 <h2>
 <span class="header-section-number">7.3</span> Diversité de Scheiner<a class="anchor" aria-label="anchor" href="#diversit%C3%A9-de-scheiner"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Scheiner (<a href="references.html#ref-Scheiner2012" role="doc-biblioref">2012</a>)</span> développe un cadre unifié pour mesurer la diversité spécifique, phylogénétique ou fonctionnelle, séparément ou simultanément.
+<p><span class="citation">Scheiner (<a href="references.html#ref-Scheiner2012">2012</a>)</span> développe un cadre unifié pour mesurer la diversité spécifique, phylogénétique ou fonctionnelle, séparément ou simultanément.
 L’idée générale est que toute quantité partagée par les espèces (le nombre d’individus, le temps d’évolution accumulé, la taille des niches écologique) peut être traduite en nombre de Hill.</p>
 <p>La diversité spécifique est simplement <span class="math inline">\(^{q}\!D\)</span>. Scheiner la note <span class="math inline">\(^{q}\!D(A)\)</span>, pour diversité d’abondance.</p>
 <p>La diversité phylogénétique <span class="math inline">\(^{q}\!D(P)\)</span> ne prend pas en compte les abondances mais mesure la diversité de la divergence évolutive des espèces.
@@ -509,7 +510,7 @@ La diversité phylogénétique est le nombre de Hill des divergences :</p>
   ^{q}\!D = {\left(\sum^S_{s=1}{l_s^q}\right)}^{\frac{1}{1-q}}.
 \end{equation}\]</span></p>
 <p>La diversité fonctionnelle <span class="math inline">\(^{q}\!D(F)\)</span> est la diversité des tailles des niches. La taille de la niche est définie par Scheiner comme le volume de l’hypersphère (dans l’espace des traits fonctionnels de dimension <span class="math inline">\(m\)</span>) centrée sur chaque espèce dont le rayon est la moitié de la distance à l’espèce la plus proche pour que les sphères ne se superposent pas.
-Une meilleure définition <span class="citation">(<a href="references.html#ref-Presley2014" role="doc-biblioref">Presley, Scheiner, et Willig 2014</a>)</span> de la taille de la niche est la somme des distances aux autres espèces : <span class="math inline">\(t_s = \sum_t{d_{s,t}}\)</span>. La part de chaque espèce est <span class="math inline">\(f_s={t_s}/{\sum_t{t_t}}\)</span> et la définition de la diversité fonctionnelle est</p>
+Une meilleure définition <span class="citation">(<a href="references.html#ref-Presley2014">Presley, Scheiner, et Willig 2014</a>)</span> de la taille de la niche est la somme des distances aux autres espèces : <span class="math inline">\(t_s = \sum_t{d_{s,t}}\)</span>. La part de chaque espèce est <span class="math inline">\(f_s={t_s}/{\sum_t{t_t}}\)</span> et la définition de la diversité fonctionnelle est</p>
 <p><span class="math display" id="eq:DqT">\[\begin{equation}
   \tag{7.17}
   ^{q}\!D(T) = {\left(\sum^S_{s=1}{f_s^q}\right)}^{\frac{1}{1-q}}.
@@ -604,7 +605,7 @@ Si <span class="math inline">\(q\)</span> est grand, les espèces dont le produi
 <h2>
 <span class="header-section-number">7.4</span> Diversité de Solow et Polasky<a class="anchor" aria-label="anchor" href="#diversit%C3%A9-de-solow-et-polasky"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">A. R. Solow et Polasky (<a href="references.html#ref-Solow1994" role="doc-biblioref">1994</a>)</span> relient la richesse fonctionnelle ou phylogénétique à la probabilité de trouver au moins une espèce intéressante (par exemple, capable de fournir une molécule utile) dans une communauté.</p>
+<p><span class="citation">A. R. Solow et Polasky (<a href="references.html#ref-Solow1994">1994</a>)</span> relient la richesse fonctionnelle ou phylogénétique à la probabilité de trouver au moins une espèce intéressante (par exemple, capable de fournir une molécule utile) dans une communauté.</p>
 <p>Les distances entre espèces sont supposées connues, qu’elles soient fonctionnelle, phylogénétique ou autre.
 La probabilité qu’une espèce quelconque soit intéressante est fixée à <span class="math inline">\(p\)</span>, par exemple à partir de l’expérience passée (si une espèce criblée sur 100 fournit une molécule utile, <span class="math inline">\(p=1\%\)</span>).
 En absence d’information sur les espèces, <span class="math inline">\(p\)</span> est <em>a priori</em> identique pour toutes mais on suppose une corrélation entre les probabilités dépendant de la distance entre les espèces.
@@ -612,7 +613,7 @@ Formellement, une fonction de similarité entre les espèces <span class="math i
 Cette fonction est décroissante entre 1 (quand la distance est nulle) et 0 (à distance <span style="white-space:nowrap">infinie) ;</span> par exemple <span class="math inline">\(f(d_{s,t}) = e^{-u d_{s,t}}\)</span> où <span class="math inline">\(u\)</span> est une constante strictement positive.
 La matrice <span class="math inline">\(\mathbf{Z}\)</span> réunit les éléments <span class="math inline">\(z_{s,t}\)</span>.</p>
 <p>On définit ensuite la variable de Bernoulli <span class="math inline">\(B_s\)</span> (d’espérance <span class="math inline">\(p_s\)</span>) qui vaut 1 si l’espèce <span class="math inline">\(s\)</span> est intéressante.
-<span class="math inline">\(z_{s,t}\)</span> est, par construction du modèle, la corrélation entre <span class="math inline">\(B_s\)</span> et <span class="math inline">\(B_t\)</span>: deux espèces très proches ont la même probabilité d’être intéressante, deux espèces très éloignées ont des probabilités indépendantes.
+<span class="math inline">\(z_{s,t}\)</span> est, par construction du modèle, la corrélation entre <span class="math inline">\(B_s\)</span> et <span class="math inline">\(B_t\)</span> : deux espèces très proches ont la même probabilité d’être intéressante, deux espèces très éloignées ont des probabilités indépendantes.
 La probabilité qu’au moins une espèce soit intéressante est minorée par <span class="math inline">\(p^2 \mathbf{1}_S' \mathbf{Z}^{-1} \mathbf{1}_S\)</span>, où <span class="math inline">\(\mathbf{1}_S\)</span> est le vecteur de longueur <span class="math inline">\(S\)</span> ne contenant que des 1, <span class="math inline">\('\)</span> indique la transposée et <span class="math inline">\(\mathbf{Z}^{-1}\)</span> est la matrice inverse de <span class="math inline">\(\mathbf{Z}\)</span> (son existence est garantie puisque <span class="math inline">\(\mathbf{Z}\)</span> est une matrice de variance-covariance).
 La valeur de <span class="math inline">\(p\)</span> est incertaine et sans grand intérêt.</p>
 <p><span class="math inline">\(V = \mathbf{1}_S' \mathbf{Z}^{-1} \mathbf{1}_S\)</span> est la mesure de diversité de Solow et Polasky.
@@ -633,9 +634,9 @@ Figure 7.7: Arbre phylogénétique ou fonctionnel hypothétique. (a) Arbre compl
 </p>
 </div>
 <p></p>
-<p>Si la dissimilarité entre les espèces est représentée par un dendrogramme, les indices de diversité les plus simples sont la diversité phylogénétique <span class="citation">(<a href="references.html#ref-Faith1992" role="doc-biblioref">Faith 1992</a>)</span> et sa transposition, la diversité fonctionnelle <span class="citation">(<a href="references.html#ref-Petchey2002" role="doc-biblioref">Petchey et Gaston 2002</a>)</span>.</p>
+<p>Si la dissimilarité entre les espèces est représentée par un dendrogramme, les indices de diversité les plus simples sont la diversité phylogénétique <span class="citation">(<a href="references.html#ref-Faith1992">Faith 1992</a>)</span> et sa transposition, la diversité fonctionnelle <span class="citation">(<a href="references.html#ref-Petchey2002">Petchey et Gaston 2002</a>)</span>.</p>
 <p>Étant donné un arbre contenant toutes les espèces ou tous les individus étudiés, PD ou FD sont égaux à la somme de la longueur des branches (figure <a href="mesures-particuli%C3%A8res.html#fig:Arbre">7.7</a> : <span class="math inline">\(\mathit{PD}=5\times T_1 + 3\times T_2 + 2\times T_3)\)</span>.
-Si les noeuds de l’arbre phylogénétique sont datés, PD peut être considéré comme une accumulation de temps d’évolution par la communauté étudiée : <span class="citation">Sol et al. (<a href="references.html#ref-Sol2017" role="doc-biblioref">2017</a>)</span> montrent par exemple que les milieux urbanisés ont un déficit de 450 millions d’années d’évolution dans les communautés d’oiseaux relativement aux environnements naturels voisins.</p>
+Si les noeuds de l’arbre phylogénétique sont datés, PD peut être considéré comme une accumulation de temps d’évolution par la communauté étudiée : <span class="citation">Sol et al. (<a href="references.html#ref-Sol2017">2017</a>)</span> montrent par exemple que les milieux urbanisés ont un déficit de 450 millions d’années d’évolution dans les communautés d’oiseaux relativement aux environnements naturels voisins.</p>
 <p>Dans le cas particulier ou toutes les branches sont de longueur 1, c’est-à-dire que toutes les espèces sont liées à la même racine (on dira que l’arbre est parfaitement régulier), PD et FD sont égales à la richesse spécifique.</p>
 <p>Le package <em>entropart</em> fournit la fonction <code>PDFD</code> :</p>
 <p></p>
@@ -646,8 +647,8 @@ Si les noeuds de l’arbre phylogénétique sont datés, PD peut être considér
 <pre><code>## None 
 ##  395</code></pre>
 <p></p>
-<p><span class="citation">Chao, Chiu, et al. (<a href="references.html#ref-Chao2014b" role="doc-biblioref">2015</a>)</span> fournissent un estimateur de PD (ou FD) permettant de l’estimer sans biais pour un échantillon plus petit que celui observé et de façon fiable pour un échantillon de taille double au maximum. Ces estimateurs permettent de tracer des courbes de raréfaction et d’extrapolation.</p>
-<p>En même temps que Faith, <span class="citation">Weitzman (<a href="references.html#ref-Weitzman1992" role="doc-biblioref">1992</a>)</span> a établi une fonction de diversité identique à PD.
+<p><span class="citation">Chao, Chiu, et al. (<a href="references.html#ref-Chao2014b">2015</a>)</span> fournissent un estimateur de PD (ou FD) permettant de l’estimer sans biais pour un échantillon plus petit que celui observé et de façon fiable pour un échantillon de taille double au maximum. Ces estimateurs permettent de tracer des courbes de raréfaction et d’extrapolation.</p>
+<p>En même temps que Faith, <span class="citation">Weitzman (<a href="references.html#ref-Weitzman1992">1992</a>)</span> a établi une fonction de diversité identique à PD.
 À partir d’une matrice de dissimilarités entre espèces, un arbre est construit par la méthode suivante.
 Les deux espèces les plus proches sont rassemblées.
 L’une d’elles, celle qui diminue le moins la longueur totale des branches de l’arbre final en la retirant, est l’espèce de <em>lien</em>, l’autre est l’espèce <em>représentative</em> du clade.
@@ -658,20 +659,20 @@ La diversité est la somme des distances entre les espèces de lien et leur esp�
 L’application à la conservation est que les espèces représentatives doivent être favorisées par rapport aux espèces de <span style="white-space:nowrap">lien ;</span> en d’autres termes, les espèces dont les branches sont les plus courtes dans l’arbre sont celles qui apportent le moins de diversité.
 Ce résultat est assez évident quand on dispose d’un arbre phylogénétique.
 L’originalité de la méthode de Weitzman est de fournir un algorithme pour créer l’arbre à partir d’une matrice de distances qui est cohérent avec la mesure de diversité appliquée.</p>
-<p>La mesure de diversité peut être combinée avec une probabilité d’extinction de chaque espèce (à dire d’expert) pour calculer l’espérance de la diversité à une échéance donnée <span class="citation">(<a href="references.html#ref-Weitzman1993" role="doc-biblioref">Weitzman 1993</a>)</span> : <span class="math inline">\(2^S\)</span> arbres peuvent être construit en faisant disparaître certaines des <span class="math inline">\(S\)</span> espèces de la communauté, la probabilité de chaque arbre est calculable à partir des probabilités d’extinction de chaque espèce (supposées indépendantes) et l’espérance de diversité est simplement la moyenne des diversités de chaque arbre pondérée par sa probabilité.
-L’espérance de la perte de diversité peut être calculée de façon plus simple <span class="citation">(<a href="references.html#ref-Witting1995" role="doc-biblioref">Witting et Loeschcke 1995</a>)</span>, comme la moyenne de la longueur des branches pondérée par la probabilité de leur disparition, qui est le produit de la probabilité de disparition de toutes les espèces descendant de la branche.</p>
+<p>La mesure de diversité peut être combinée avec une probabilité d’extinction de chaque espèce (à dire d’expert) pour calculer l’espérance de la diversité à une échéance donnée <span class="citation">(<a href="references.html#ref-Weitzman1993">Weitzman 1993</a>)</span> : <span class="math inline">\(2^S\)</span> arbres peuvent être construit en faisant disparaître certaines des <span class="math inline">\(S\)</span> espèces de la communauté, la probabilité de chaque arbre est calculable à partir des probabilités d’extinction de chaque espèce (supposées indépendantes) et l’espérance de diversité est simplement la moyenne des diversités de chaque arbre pondérée par sa probabilité.
+L’espérance de la perte de diversité peut être calculée de façon plus simple <span class="citation">(<a href="references.html#ref-Witting1995">Witting et Loeschcke 1995</a>)</span>, comme la moyenne de la longueur des branches pondérée par la probabilité de leur disparition, qui est le produit de la probabilité de disparition de toutes les espèces descendant de la branche.</p>
 <p>Diverses optimisations économiques sont possibles, dont le choix des espèces à protéger à partir de l’élasticité de la diversité, c’est-à-dire le gain de diversité entraîné par la diminution de la probabilité de disparition de chaque espèce : les espèces ayant la plus grande élasticité sont celles sur lesquelles les efforts auront les plus grands résultats.</p>
 </div>
 <div id="sec-Rao" class="section level2" number="7.6">
 <h2>
 <span class="header-section-number">7.6</span> Indice de Rao<a class="anchor" aria-label="anchor" href="#sec-Rao"><i class="fas fa-link"></i></a>
 </h2>
-<p>L’indice de Rao est une mesure de divergence pondérée. Son utilisation s’est largement développée depuis le début des années 2000 <span class="citation">(<a href="references.html#ref-Izsak2000" role="doc-biblioref">Izsák et Papp 2000</a>; <a href="references.html#ref-Shimatani2001a" role="doc-biblioref">Shimatani 2001b</a>; <a href="references.html#ref-Botta-Dukat2005" role="doc-biblioref">Botta-Dukát 2005</a>; <a href="references.html#ref-Escalas2013" role="doc-biblioref">Escalas et al. 2013</a>)</span> en raison de ses propriétés particulièrement intéressantes.</p>
+<p>L’indice de Rao est une mesure de divergence pondérée. Son utilisation s’est largement développée depuis le début des années 2000 <span class="citation">(<a href="references.html#ref-Izsak2000">Izsák et Papp 2000</a>; <a href="references.html#ref-Shimatani2001a">Shimatani 2001b</a>; <a href="references.html#ref-Botta-Dukat2005">Botta-Dukát 2005</a>; <a href="references.html#ref-Escalas2013">Escalas et al. 2013</a>)</span> en raison de ses propriétés particulièrement intéressantes.</p>
 <div id="principe" class="section level3" number="7.6.1">
 <h3>
 <span class="header-section-number">7.6.1</span> Principe<a class="anchor" aria-label="anchor" href="#principe"><i class="fas fa-link"></i></a>
 </h3>
-<p>À partir de relevés fournissant la fréquence de chaque espèce par communauté et d’une matrice de dissimilarité entre paires d’espèces, l’indice de <span class="citation">Rao (<a href="references.html#ref-Rao1982" role="doc-biblioref">1982</a>)</span> donne la dissimilarité moyenne entre deux individus choisis au hasard.</p>
+<p>À partir de relevés fournissant la fréquence de chaque espèce par communauté et d’une matrice de dissimilarité entre paires d’espèces, l’indice de <span class="citation">Rao (<a href="references.html#ref-Rao1982">1982</a>)</span> donne la dissimilarité moyenne entre deux individus choisis au hasard.</p>
 <p>L’indice de Rao est souvent appelé “entropie quadratique” en raison de sa forme mathématique.</p>
 </div>
 <div id="formalisation" class="section level3" number="7.6.2">
@@ -699,12 +700,12 @@ Sa valeur peut être interprétée comme la probabilité qu’une paire d’indi
 </li>
 <li>Dans un espace unidimensionnel où la valeur <span class="math inline">\(y_s\)</span> associée à l’espèce <span class="math inline">\(s\)</span> est une variable quantitative <span class="math inline">\(Y\)</span>, choisir <span class="math inline">\(\delta_{s's''}={{\left(y_k-y_l\right)}^2}/{2}\)</span> rend l’indice de Rao égal à la variance de <span class="math inline">\(Y\)</span>.</li>
 </ul>
-<p><span class="citation">Pavoine, Ollier, et Pontier (<a href="references.html#ref-Pavoine2005c" role="doc-biblioref">2005</a>)</span> ont montré que l’utilisation de distances ordinaires fait que la valeur maximale de l’entropie quadratique pour un effectif donné est obtenue en éliminant les espèces intermédiaires en ne retenant que les espèces extrêmes (le résultat est évident en une dimension : la variance est maximale en ne retenant que les valeurs extrêmes d’un échantillon).
+<p><span class="citation">Pavoine, Ollier, et Pontier (<a href="references.html#ref-Pavoine2005c">2005</a>)</span> ont montré que l’utilisation de distances ordinaires fait que la valeur maximale de l’entropie quadratique pour un effectif donné est obtenue en éliminant les espèces intermédiaires en ne retenant que les espèces extrêmes (le résultat est évident en une dimension : la variance est maximale en ne retenant que les valeurs extrêmes d’un échantillon).
 Ce résultat est contraire aux propriétés attendues d’un indice de diversité.
 Les auteurs ont établi que l’utilisation de distances ultramétriques corrige ce défaut.
-L’indice atteint alors son maximum pour des fréquences d’autant plus grandes que l’espèce est originale <span class="citation">(<a href="references.html#ref-Pavoine2005a" role="doc-biblioref">Pavoine, Ollier, et Dufour 2005</a>)</span>.</p>
+L’indice atteint alors son maximum pour des fréquences d’autant plus grandes que l’espèce est originale <span class="citation">(<a href="references.html#ref-Pavoine2005a">Pavoine, Ollier, et Dufour 2005</a>)</span>.</p>
 <p>L’estimation empirique de l’indice se fait simplement en estimant les probabilités par les fréquences.
-Le biais d’estimation est très faible <span class="citation">(<a href="references.html#ref-Marcon2014a" role="doc-biblioref">Marcon et al. 2014</a>)</span> : par analogie avec l’estimateur de l’indice de Simpson, les espèces rares interviennent peu.</p>
+Le biais d’estimation est très faible <span class="citation">(<a href="references.html#ref-Marcon2014a">Marcon et al. 2014</a>)</span> : par analogie avec l’estimateur de l’indice de Simpson, les espèces rares interviennent peu.</p>
 </div>
 <div id="calcul-sous-r" class="section level3" number="7.6.4">
 <h3>
@@ -720,9 +721,9 @@ Le biais d’estimation est très faible <span class="citation">(<a href="refere
 ## 2.878133</code></pre>
 <p></p>
 <p>Le package <em>ADE4</em> permet le calcul avec la fonction <code>divc</code> qui utilise un format différent pour les probabilités et surtout la matrice des racines carrées du double des distances de l’objet <code>phylog</code> (chaque élément de <code>\$Wdist</code> vaut <span class="math inline">\(\sqrt{2\delta_{s's''}}\)</span>.
-Cette particularité d’<em>ADE4</em> vient de l’analyse multivariée <span class="citation">(<a href="references.html#ref-Champely2002" role="doc-biblioref">Champely et Chessel 2002</a>)</span> : l’entropie quadratique de Rao peut être représentée dans l’espace euclidien engendré par une matrice de distances <span class="math inline">\(\mathbf{D}\)</span> entre espèces (par une Analyse en Coordonnées Principales, PCoA).
-L’inertie des points représentants les espèces, précisément la moyenne des carrés des distances entre les espèces et leur centre de gravité (les probabilités <span class="math inline">\(\mathbf{p}\)</span> des espèces constituent leur poids), est alors égale à l’entropie de Rao <span class="math inline">\(H_{\mathbf{\Delta}}\left(\mathbf{p}\right)\)</span>, où la matrice de distances <span class="math inline">\(\mathbf{\Delta}\)</span> est <span class="math inline">\({\mathbf{D}^{\circ2}}/{2}\)</span>: les valeurs de <span class="math inline">\(\mathbf{\Delta}\)</span> valent la moitié du carré de celles de <span class="math inline">\(\mathbf{D}\)</span>.
-Cette représentation est étendue dans la double analyse en composantes principales de <span class="citation">Pavoine, Dufour, et Chessel (<a href="references.html#ref-Pavoine2004" role="doc-biblioref">2004</a>)</span>, section <a href="chap-DedompHCDT.html#sec-RaoDisc">12.5</a>.</p>
+Cette particularité d’<em>ADE4</em> vient de l’analyse multivariée <span class="citation">(<a href="references.html#ref-Champely2002">Champely et Chessel 2002</a>)</span> : l’entropie quadratique de Rao peut être représentée dans l’espace euclidien engendré par une matrice de distances <span class="math inline">\(\mathbf{D}\)</span> entre espèces (par une Analyse en Coordonnées Principales, PCoA).
+L’inertie des points représentants les espèces, précisément la moyenne des carrés des distances entre les espèces et leur centre de gravité (les probabilités <span class="math inline">\(\mathbf{p}\)</span> des espèces constituent leur poids), est alors égale à l’entropie de Rao <span class="math inline">\(H_{\mathbf{\Delta}}\left(\mathbf{p}\right)\)</span>, où la matrice de distances <span class="math inline">\(\mathbf{\Delta}\)</span> est <span class="math inline">\({\mathbf{D}^{\circ2}}/{2}\)</span> : les valeurs de <span class="math inline">\(\mathbf{\Delta}\)</span> valent la moitié du carré de celles de <span class="math inline">\(\mathbf{D}\)</span>.
+Cette représentation est étendue dans la double analyse en composantes principales de <span class="citation">Pavoine, Dufour, et Chessel (<a href="references.html#ref-Pavoine2004">2004</a>)</span>, section <a href="chap-DedompHCDT.html#sec-RaoDisc">12.5</a>.</p>
 <p>Dans <em>ADE4</em>, les arbres phylogénétiques sont donc stockés sous la forme d’objets de type <code>phylog</code> où la matrice des distances (<code>\$Wdist</code>) est <span class="math inline">\(\mathbf{D}\)</span> mais les longueurs des branches de l’arbre (<code>\$droot</code>) correspondent aux valeurs de <span class="math inline">\(\mathbf{\Delta}\)</span>.</p>
 <p></p>
 <div class="sourceCode" id="cb197"><pre class="downlit sourceCode r">
@@ -748,7 +749,7 @@ Cette représentation est étendue dans la double analyse en composantes princip
 <h3>
 <span class="header-section-number">7.6.5</span> Maximum théorique<a class="anchor" aria-label="anchor" href="#sec-MaxTheorique"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Pavoine, Ollier, et Dufour (<a href="references.html#ref-Pavoine2005a" role="doc-biblioref">2005</a>)</span> ont défini l’originalité d’une espèce comme sa fréquence maximisant l’entropie quadratique, sachant la matrice de distances entre espèces.
+<p><span class="citation">Pavoine, Ollier, et Dufour (<a href="references.html#ref-Pavoine2005a">2005</a>)</span> ont défini l’originalité d’une espèce comme sa fréquence maximisant l’entropie quadratique, sachant la matrice de distances entre espèces.
 Les espèces les plus originales sont celles ayant le moins d’espèces proches dans la classification.</p>
 <p>L’originalité n’est pas intéressante dans une taxonomie : une phylogénie doit être créée pour illustrer cette notion.
 Le fichier <code>rao.traits.csv</code> contient une espèce par ligne, identifiée par le champ <code>Code</code>, et un certain nombre de valeurs de traits en colonnes.</p>
@@ -829,7 +830,7 @@ Figure 7.10: Présentation de l’arbre phylogénétique avec la contribution de
 <div class="sourceCode" id="cb211"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ade4/man/table.phylog.html">table.phylog</a></span><span class="op">(</span><span class="va">pcaf</span><span class="op">$</span><span class="va">tab</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">phyf</span><span class="op">$</span><span class="va">leaves</span><span class="op">)</span>, <span class="op">]</span>, <span class="va">phyf</span><span class="op">)</span></span></code></pre></div>
 <p></p>
-<p>La limite des distances ultramétriques est leur tendance à déformer le jeu de points <span class="citation">(<a href="references.html#ref-Pavoine2005a" role="doc-biblioref">Pavoine, Ollier, et Dufour 2005</a>)</span>.
+<p>La limite des distances ultramétriques est leur tendance à déformer le jeu de points <span class="citation">(<a href="references.html#ref-Pavoine2005a">Pavoine, Ollier, et Dufour 2005</a>)</span>.
 Dans cet exemple, les deux premiers axes de l’ACP rendent compte de presque toute l’inertie.
 Le nuage de points est pratiquement contenu dans un plan alors que sa représentation en distance ultramétrique est une hypersphère en 7 dimensions.</p>
 <p>Le calcul de l’originalité des espèces utilise la fonction <code>originality</code> (figure <a href="mesures-particuli%C3%A8res.html#fig:originalityFig">7.11</a>).</p>
@@ -849,29 +850,29 @@ Figure 7.11: Originalité des espèces.
 <p>La fonction a pour paramètres l’objet <code>phylog</code> contenant la classification et le numéro de la méthode de calcul à utiliser, 5 pour l’entropie quadratique.
 Sa représentation graphique est faite par <code>dotchart.phylog</code> :</p>
 <p>L’originalité ne repose que sur l’arbre, pas sur la fréquence des espèces.</p>
-<p>Si la distance utilisée n’est pas ultramétrique, il existe plusieurs distributions possibles d’espèces qui maximisent la diversité <span class="citation">(<a href="references.html#ref-Pavoine2009" role="doc-biblioref">Pavoine et Bonsall 2009</a>)</span>, le concept d’originalité n’a pas de sens dans ce cas.</p>
+<p>Si la distance utilisée n’est pas ultramétrique, il existe plusieurs distributions possibles d’espèces qui maximisent la diversité <span class="citation">(<a href="references.html#ref-Pavoine2009">Pavoine et Bonsall 2009</a>)</span>, le concept d’originalité n’a pas de sens dans ce cas.</p>
 <p>La valeur de l’entropie quadratique dépend de la hauteur de l’arbre.
-Plusieurs normalisations ont été proposées : par sa valeur maximale ou par la diversité de Simpson (correspondant à un arbre dont toutes les espèces seraient équidistantes) <span class="citation">(<a href="references.html#ref-Ricotta2005c" role="doc-biblioref">Ricotta et Avena 2005</a>)</span>, ou en fixant la hauteur de l’arbre à 1 <span class="citation">(<a href="references.html#ref-Marcon2014b" role="doc-biblioref">Marcon et Hérault 2015a</a>)</span>.</p>
+Plusieurs normalisations ont été proposées : par sa valeur maximale ou par la diversité de Simpson (correspondant à un arbre dont toutes les espèces seraient équidistantes) <span class="citation">(<a href="references.html#ref-Ricotta2005c">Ricotta et Avena 2005</a>)</span>, ou en fixant la hauteur de l’arbre à 1 <span class="citation">(<a href="references.html#ref-Marcon2014b">Marcon et Hérault 2015a</a>)</span>.</p>
 </div>
 </div>
 <div id="diversité-et-moyenne" class="section level2" number="7.7">
 <h2>
 <span class="header-section-number">7.7</span> Diversité et moyenne<a class="anchor" aria-label="anchor" href="#diversit%C3%A9-et-moyenne"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Garnier et al. (<a href="references.html#ref-Garnier2004" role="doc-biblioref">2004</a>)</span> définissent la moyenne pondérée d’un trait à l’échelle de la communauté (CWM : <em>Community Weigthed Mean</em>), simplement égal à la moyenne de la valeur du trait pondérée par la fréquence des espèces :</p>
+<p><span class="citation">Garnier et al. (<a href="references.html#ref-Garnier2004">2004</a>)</span> définissent la moyenne pondérée d’un trait à l’échelle de la communauté (CWM : <em>Community Weigthed Mean</em>), simplement égal à la moyenne de la valeur du trait pondérée par la fréquence des espèces :</p>
 <p><span class="math display" id="eq:CWM">\[\begin{equation}
   \tag{7.21}
   \mathit{CWM} = \sum_s{p_s y_s}.
 \end{equation}\]</span></p>
-<p>CWM n’est pas une mesure de diversité fonctionnelle, bien qu’il ait été utilisé parfois en tant que tel <span class="citation">(<a href="references.html#ref-Lavorel2008" role="doc-biblioref">Lavorel et al. 2008</a>)</span>, mais une mesure de la composition de la communauté.
+<p>CWM n’est pas une mesure de diversité fonctionnelle, bien qu’il ait été utilisé parfois en tant que tel <span class="citation">(<a href="references.html#ref-Lavorel2008">Lavorel et al. 2008</a>)</span>, mais une mesure de la composition de la communauté.
 CWM peut être étendu à plusieurs traits : le vecteur formé par les valeurs de CWM pour chaque trait correspond au centre de gravité de la communauté représentée dans l’espace des traits.
-L’entropie quadratique de Rao mesure la dispersion des espèces autour de ce point : les deux mesures se complètent donc <span class="citation">(<a href="references.html#ref-Ricotta2011" role="doc-biblioref">Ricotta et Moretti 2011</a>)</span>.</p>
+L’entropie quadratique de Rao mesure la dispersion des espèces autour de ce point : les deux mesures se complètent donc <span class="citation">(<a href="references.html#ref-Ricotta2011">Ricotta et Moretti 2011</a>)</span>.</p>
 </div>
 <div id="variations-sur-lentropie-quadratique" class="section level2" number="7.8">
 <h2>
 <span class="header-section-number">7.8</span> Variations sur l’entropie quadratique<a class="anchor" aria-label="anchor" href="#variations-sur-lentropie-quadratique"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Izsák et Pavoine (<a href="references.html#ref-Izsak2011" role="doc-biblioref">2011</a>)</span> proposent deux variantes de l’indice de Rao dans lesquelles la distance entre espèces dépend de leurs probabilités :</p>
+<p><span class="citation">Izsák et Pavoine (<a href="references.html#ref-Izsak2011">2011</a>)</span> proposent deux variantes de l’indice de Rao dans lesquelles la distance entre espèces dépend de leurs probabilités :</p>
 <p><span class="math display" id="eq:L1">\[\begin{equation}
   \tag{7.22}
   L_1 = \sum_{s}{\sum_{t}{p_{s}p_{t}{\left(p_{s}-p_{t}\right)}^2}};
@@ -882,7 +883,7 @@ L’entropie quadratique de Rao mesure la dispersion des espèces autour de ce p
 \end{equation}\]</span></p>
 <p>Ces indices sont proposés pour leurs propriétés mathématiques, assurant l’existence de sa décomposition, sans support écologique bien établi.</p>
 <p><span class="math inline">\(\mathbf{\Delta}\)</span> est la matrice de dissimilarité dont les éléments sont <span class="math inline">\(\delta_{s,t}\)</span>, la dissimilarité entre l’espèce <span class="math inline">\(s\)</span> et l’espèce <span class="math inline">\(t\)</span>.
-R. C. Guiasu et S. Guiasu <span class="citation">(<a href="references.html#ref-Guiasu2011" role="doc-biblioref">2011</a>, <a href="references.html#ref-Guiasu2012" role="doc-biblioref">2012</a>)</span> proposent l’indice <span class="math inline">\(\mathit{{GS}_{D}}\)</span> pour ses propriétés mathématiques et fournissent sa décomposition :</p>
+R. C. Guiasu et S. Guiasu <span class="citation">(<a href="references.html#ref-Guiasu2011">2011</a>, <a href="references.html#ref-Guiasu2012">2012</a>)</span> proposent l’indice <span class="math inline">\(\mathit{{GS}_{D}}\)</span> pour ses propriétés mathématiques et fournissent sa décomposition :</p>
 <p><span class="math display" id="eq:Guiasu">\[\begin{equation}
   \tag{7.24}
   \mathit{{GS}_{D}}=\sum_{s}{\sum_{t}{\delta_{s,t}p_{s}}}p_{t}\left(1-p_{s}p_{t}\right).
@@ -892,7 +893,7 @@ R. C. Guiasu et S. Guiasu <span class="citation">(<a href="references.html#ref-G
 <h2>
 <span class="header-section-number">7.9</span> Diversité fonctionnelle de Chiu et Chao<a class="anchor" aria-label="anchor" href="#diversit%C3%A9-fonctionnelle-de-chiu-et-chao"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Chiu et Chao (<a href="references.html#ref-Chiu2014b" role="doc-biblioref">2014</a>)</span> proposent de pondérer l’entropie quadratique par la distance entre les paires d’espèces et obtiennent un nombre de Hill permettant de mesurer la diversité fonctionnelle à partir d’une matrice de dissimilarité :</p>
+<p><span class="citation">Chiu et Chao (<a href="references.html#ref-Chiu2014b">2014</a>)</span> proposent de pondérer l’entropie quadratique par la distance entre les paires d’espèces et obtiennent un nombre de Hill permettant de mesurer la diversité fonctionnelle à partir d’une matrice de dissimilarité :</p>
 <p><span class="math display" id="eq:Chiu2014bDq">\[\begin{equation}
   \tag{7.25}
   ^{q}\!D\left(Q\right)
@@ -913,13 +914,13 @@ pour <span class="math inline">\(q \ne 1\)</span> et
 pour <span class="math inline">\(q=1\)</span>.
 Le nombre effectif de paires est <span class="math inline">\([^{q}\!D(Q)]^2\)</span>. Le nombre effectif d’espèces est donc <span class="math inline">\(^{q}\!D(Q)\)</span>.</p>
 <p>Le nombre effectif de paires est le nombres de paires équifréquentes dont la distance entre les deux espèces est <span class="math inline">\(Q\)</span>. Le problème de cette approche est que les paires constituées de la même espèce doivent aussi avoir une distance <span class="math inline">\(\delta_{s,s}\)</span> égale à <span class="math inline">\(Q\)</span>. Chiu et Chao considèrent ce point comme la possibilité de prendre en compte la variabilité intraspécifique, mais elle doit être identique à la variabilité interspécifique, ce qui n’est pas très convaincant. En absence de variabilité intraspécifique, Chiu et Chao redéfinissent la distance de référence : <span class="math inline">\(\delta_{s,s}=0\)</span> et <span class="math inline">\(\delta_{s,t}=(\frac{D}{D-1})Q\)</span>. Il n’est donc pas possible de comparer le nombre effectif d’espèces de deux communautés différentes puisque la définition même du nombre effectif dépend de la diversité, ce qui invalide cette définition de la diversité fonctionnelle.</p>
-<p>Enfin, cette définition de la diversité ne respecte pas le principe de <span class="citation">A. Solow, Polasky, et Broadus (<a href="references.html#ref-Solow1993" role="doc-biblioref">1993</a>)</span> selon lequel le remplacement d’une partie des effectifs d’une espèce par le même nombre d’individus d’une espèce différente mais fonctionnellement identique ne doit pas faire varier la diversité <span class="citation">(<a href="references.html#ref-Botta-Dukat2017" role="doc-biblioref">Botta-Dukát 2018</a>)</span>.</p>
+<p>Enfin, cette définition de la diversité ne respecte pas le principe de <span class="citation">A. Solow, Polasky, et Broadus (<a href="references.html#ref-Solow1993">1993</a>)</span> selon lequel le remplacement d’une partie des effectifs d’une espèce par le même nombre d’individus d’une espèce différente mais fonctionnellement identique ne doit pas faire varier la diversité <span class="citation">(<a href="references.html#ref-Botta-Dukat2017">Botta-Dukát 2018</a>)</span>.</p>
 </div>
 <div id="sec-HpI1" class="section level2" number="7.10">
 <h2>
 <span class="header-section-number">7.10</span> <span class="math inline">\(H_p\)</span> et <span class="math inline">\(I_1\)</span><a class="anchor" aria-label="anchor" href="#sec-HpI1"><i class="fas fa-link"></i></a>
 </h2>
-<p>Simultanément, <span class="citation">Pavoine, Love, et Bonsall (<a href="references.html#ref-Pavoine2009a" role="doc-biblioref">2009</a>)</span> et <span class="citation">Allen, Kon, et Bar-Yam (<a href="references.html#ref-Allen2009" role="doc-biblioref">2009</a>)</span> ont proposé la généralisation de l’indice de Shannon à la diversité phylogénétique.
+<p>Simultanément, <span class="citation">Pavoine, Love, et Bonsall (<a href="references.html#ref-Pavoine2009a">2009</a>)</span> et <span class="citation">Allen, Kon, et Bar-Yam (<a href="references.html#ref-Allen2009">2009</a>)</span> ont proposé la généralisation de l’indice de Shannon à la diversité phylogénétique.
 La présentation de Allen et al. est donnée ici, celle de Pavoine et al., plus générale, sera détaillée dans le paragraphe suivant.</p>
 <p></p>
 <div class="figure" style="text-align: center">
@@ -999,7 +1000,7 @@ L’arbre possède 7 branches.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -7,7 +7,7 @@
 <title>20 Indice \(\alpha\) de Fisher | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="L’Indice \(\alpha\) de Fisher est la pente de la relation linéaire entre le nombre d’espèces observées et le logarithme du nombre d’individus inventoriés. Cette relation correspond à une...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="20 Indice \(\alpha\) de Fisher | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-Fisher.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -126,8 +127,8 @@
 Cette relation correspond à une distribution d’abondance des espèces en log-séries, valide à l’échelle de la méta-communauté.
 Son utilisation à l’échelle locale est discutable.</p>
 </div>
-<p>Le modèle de Fisher <span class="citation">(<a href="references.html#ref-Fisher1943" role="doc-biblioref">Fisher, Corbet, et Williams 1943</a>)</span> aboutissant à la SAD en log-séries, a marqué l’histoire de l’écologie.
-Il lie le nombre d’espèces au logarithme du nombre d’individus de façon linéaire dès que l’effectif est suffisant : la pente de la droite est le bien connu indice <span class="math inline">\(\alpha\)</span>, tombé en désuétude pendant quelques décennies mais remis en vedette par la théorie neutre de <span class="citation">Stephen P. Hubbell (<a href="references.html#ref-Hubbell2001" role="doc-biblioref">2001</a>)</span>.
+<p>Le modèle de Fisher <span class="citation">(<a href="references.html#ref-Fisher1943">Fisher, Corbet, et Williams 1943</a>)</span> aboutissant à la SAD en log-séries, a marqué l’histoire de l’écologie.
+Il lie le nombre d’espèces au logarithme du nombre d’individus de façon linéaire dès que l’effectif est suffisant : la pente de la droite est le bien connu indice <span class="math inline">\(\alpha\)</span>, tombé en désuétude pendant quelques décennies mais remis en vedette par la théorie neutre de <span class="citation">Stephen P. Hubbell (<a href="references.html#ref-Hubbell2001">2001</a>)</span>.
 Il est utilisé à l’échelle locale (probablement à tort) et à l’échelle régionale, c’est pourquoi il est présenté en premier.</p>
 <div id="construction" class="section level2" number="20.1">
 <h2>
@@ -138,12 +139,17 @@ Il est utilisé à l’échelle locale (probablement à tort) et à l’échelle
 <ul>
 <li>Le nombre d’individus <span class="math inline">\(N\)</span> de l’échantillon suit une loi de Poisson de paramètre <span class="math inline">\(\lambda\)</span> par hypothèse : la surface est fixée, égale à 1, et les individus sont distribués totalement aléatoirement (avec la même probabilité partout, et indépendamment les uns des <span style="white-space:nowrap">autres) ;</span>
 </li>
-<li>Étant donné la taille de l’échantillon <span class="math inline">\(N\)</span> et la probabilité <span class="math inline">\(p_s\)</span> d’échantillonner l’espèce <span class="math inline">\(s\)</span>, l’espérance du nombre d’individus échantillonnés dans l’espèce <span class="math inline">\(s\)</span> est <span class="math inline">\(Np_s\)</span>;</li>
+<li>Étant donné la taille de l’échantillon <span class="math inline">\(N\)</span> et la probabilité <span class="math inline">\(p_s\)</span> d’échantillonner l’espèce <span class="math inline">\(s\)</span>, l’espérance du nombre d’individus échantillonnés dans l’espèce <span class="math inline">\(s\)</span> est <span class="math inline">\(Np_s\)</span><span style="white-space:nowrap"> ;</span>
+</li>
 <li>Le nombre d’individus réellement observé fluctue aléatoirement.
-Il suit une loi de Poisson d’espérance <span class="math inline">\(\lambda_s\)</span>, où <span class="math inline">\(\lambda_s=\lambda p_s\)</span>;</li>
-<li>La probabilité d’observer <span class="math inline">\(\nu\)</span> individus de l’espèce <span class="math inline">\(s\)</span> est notée <span class="math inline">\({\pi}_{s,\nu}\)</span>;</li>
-<li>La distribution de <span class="math inline">\(\lambda_s\)</span> retenue par Fisher est une loi gamma de paramètres <span class="math inline">\(k\)</span> et <span class="math inline">\(p\)</span>, choisie pour ses propriétés mathématiques qui impliquent que <span class="math inline">\({\pi}_{s,\nu}\)</span> suit une loi binomiale négative de paramètres <span class="math inline">\(k\)</span> et <span class="math inline">\(1/(p+1)\)</span>;</li>
-<li>L’espérance du nombre d’espèces observées <span class="math inline">\(\nu\)</span> fois est <span class="math inline">\(\sum_s{{\pi}_{s,\nu}}\)</span>;</li>
+Il suit une loi de Poisson d’espérance <span class="math inline">\(\lambda_s\)</span>, où <span class="math inline">\(\lambda_s=\lambda p_s\)</span><span style="white-space:nowrap"> ;</span>
+</li>
+<li>La probabilité d’observer <span class="math inline">\(\nu\)</span> individus de l’espèce <span class="math inline">\(s\)</span> est notée <span class="math inline">\({\pi}_{s,\nu}\)</span><span style="white-space:nowrap"> ;</span>
+</li>
+<li>La distribution de <span class="math inline">\(\lambda_s\)</span> retenue par Fisher est une loi gamma de paramètres <span class="math inline">\(k\)</span> et <span class="math inline">\(p\)</span>, choisie pour ses propriétés mathématiques qui impliquent que <span class="math inline">\({\pi}_{s,\nu}\)</span> suit une loi binomiale négative de paramètres <span class="math inline">\(k\)</span> et <span class="math inline">\(1/(p+1)\)</span><span style="white-space:nowrap"> ;</span>
+</li>
+<li>L’espérance du nombre d’espèces observées <span class="math inline">\(\nu\)</span> fois est <span class="math inline">\(\sum_s{{\pi}_{s,\nu}}\)</span><span style="white-space:nowrap"> ;</span>
+</li>
 <li>Le paramètre <span class="math inline">\(k=0\)</span> décrit bien les données de Fisher et permet de calculer l’espérance du nombre d’espèces dans un échantillon de taille <span class="math inline">\(n\)</span>.</li>
 </ul>
 <p>Le raisonnement est détaillé ici.
@@ -175,7 +181,7 @@ Figure 20.1: Densité de probabilité d’une loi gamma de paramètres <span cla
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="va">lambda</span><span class="op">[</span><span class="va">s</span><span class="op">]</span><span class="op">)</span>, y <span class="op">=</span> <span class="st">"Densité de probablité"</span><span class="op">)</span></span></code></pre></div>
 <p></p>
 <p>Les effectifs de la communauté sont un mélange de lois de Poisson de paramètres aléatoires suivant tous la même loi gamma.
-La distribution des probabilités qui en résulte est une loi binomiale négative <span class="citation">(<a href="references.html#ref-Greenwood1920" role="doc-biblioref">Greenwood et Yule 1920</a>)</span>.
+La distribution des probabilités qui en résulte est une loi binomiale négative <span class="citation">(<a href="references.html#ref-Greenwood1920">Greenwood et Yule 1920</a>)</span>.
 La probabilité qu’une espèce soit représentée par <span class="math inline">\(\nu\)</span> individus, notée <span class="math inline">\({\pi}_{s,\nu}\)</span>, suit donc une loi binomiale négative de paramètres <span class="math inline">\(k\)</span> et <span class="math inline">\({1}/{p+1}\)</span> représentée sur la figure <a href="chap-Fisher.html#fig:nbinFig">20.2</a>.</p>
 
 <p></p>
@@ -197,7 +203,7 @@ Figure 20.2: Réalisation d’une loi gamma de paramètres <span class="math inl
 <p></p>
 <p>On notera que la distribution de <span class="math inline">\({\pi}_{s,\nu}\)</span> décrit, pour une espèce, la probabilité d’être représentée par <span class="math inline">\(\nu\)</span> individus.
 Ce n’est pas la distribution des probabilités <span class="math inline">\(p_s\)</span>, qui donnent la probabilité qu’un individu appartienne à l’espèce <span class="math inline">\(s\)</span>.
-Une courbe représentant les valeurs de <span class="math inline">\({\pi}_{s,\nu}\)</span> en fonction de leur rang n’est donc pas un diagramme rang-abondance, mais un “pseudo-RAC” <span class="citation">(<a href="references.html#ref-Izsak2012" role="doc-biblioref">Izsák et Pavoine 2012</a>)</span>.</p>
+Une courbe représentant les valeurs de <span class="math inline">\({\pi}_{s,\nu}\)</span> en fonction de leur rang n’est donc pas un diagramme rang-abondance, mais un “pseudo-RAC” <span class="citation">(<a href="references.html#ref-Izsak2012">Izsák et Pavoine 2012</a>)</span>.</p>
 <p>La variance de la loi binomiale négative varie en sens inverse du paramètre <span class="math inline">\(k\)</span>.
 En appliquant son modèle à des données, Fisher remarque que <span class="math inline">\(k \to 0\)</span>, ce qui correspond à une distribution comprenant de nombreuses espèces de fréquences très variables, donc un pseudo-RAC décroissant rapidement, et retient cette propriété pour la suite de son raisonnement.
 La valeur nulle de <span class="math inline">\(k\)</span> simplifie les calculs et permet de calculer pour une valeur arbitraire de <span class="math inline">\(\nu\)</span> la somme sur toutes les espèces des valeurs de <span class="math inline">\({\pi}_{s,\nu}\)</span>.
@@ -206,7 +212,7 @@ Dans ce cas, l’espérance du nombre d’espèces représentées par <span clas
   \tag{20.1}
   {\mathbb E}\left(S^{n}_{\nu}\right) = \frac{\alpha}{\nu} x^\nu.
 \end{equation}\]</span></p>
-<p>L’espérance du nombre d’espèces en est la somme pour toutes les valeurs de <span class="math inline">\(\nu\)</span>:
+<p>L’espérance du nombre d’espèces en est la somme pour toutes les valeurs de <span class="math inline">\(\nu\)</span> :
 <span class="math display" id="eq:EspSn">\[\begin{equation}
   \tag{20.2}
   {\mathbb E}\left(S^{n}\right)
@@ -226,13 +232,13 @@ Dans ce cas, l’espérance du nombre d’espèces représentées par <span clas
   \tag{20.4}
   {\mathbb E}\left( S^n \right) = \alpha\ln \left( 1 + \frac{n}{\alpha} \right).
 \end{equation}\]</span></p>
-<p><span class="math inline">\(\alpha\)</span> est un indicateur de la biodiversité qui peut être interprété comme le nombre d’espèces nouvelles découvertes quand le nombre d’individus échantillonnés est multiplié par <span class="math inline">\(e\)</span>: c’est en effet la pente de la courbe de <span class="math inline">\(S^{n}\)</span> en fonction de <span class="math inline">\(\ln n\)</span>, qui se stabilise à partir d’une valeur de <span class="math inline">\(n\)</span> suffisante.
+<p><span class="math inline">\(\alpha\)</span> est un indicateur de la biodiversité qui peut être interprété comme le nombre d’espèces nouvelles découvertes quand le nombre d’individus échantillonnés est multiplié par <span class="math inline">\(e\)</span> : c’est en effet la pente de la courbe de <span class="math inline">\(S^{n}\)</span> en fonction de <span class="math inline">\(\ln n\)</span>, qui se stabilise à partir d’une valeur de <span class="math inline">\(n\)</span> suffisante.
 C’est aussi le nombre de singletons attendus dans l’échantillon de taille <span class="math inline">\(n\)</span> comme le montre l’équation <a href="chap-Fisher.html#eq:nalpha">(20.1)</a>, sachant que <span class="math inline">\(x \approx 1\)</span>.</p>
-<p><span class="math inline">\(\alpha\)</span> est aussi égal à <span class="math inline">\(\theta\)</span>, le nombre fondamental de la biodiversité de Hubbell quand le nombre d’espèces est grand <span class="citation">(<a href="references.html#ref-Alonso2004" role="doc-biblioref">Alonso et McKane 2004</a>)</span> : la SAD de la méta-communauté (pas celle de la communauté locale si la dispersion est limitée) du modèle neutre est en log-séries.
+<p><span class="math inline">\(\alpha\)</span> est aussi égal à <span class="math inline">\(\theta\)</span>, le nombre fondamental de la biodiversité de Hubbell quand le nombre d’espèces est grand <span class="citation">(<a href="references.html#ref-Alonso2004">Alonso et McKane 2004</a>)</span> : la SAD de la méta-communauté (pas celle de la communauté locale si la dispersion est limitée) du modèle neutre est en log-séries.
 <span class="math inline">\(\alpha\)</span> est le produit du nombre total d’individus de la méta-communauté, noté classiquement <span class="math inline">\(J_m\)</span>, et du taux de spéciation individuel noté <span class="math inline">\(\nu\)</span>.
 <span class="math inline">\(x\)</span> est le rapport entre les taux de naissance <span class="math inline">\(b\)</span> et de mortalité <span class="math inline">\(d\)</span> dans la méta-communauté, très légèrement inférieur à 1 parce que les espèces existantes sont appelées à disparaître par dérive, et remplacées par les nouvelles espèces : <span class="math inline">\({(b+\nu)}/{d}=1\)</span>.</p>
-<p>Dans R, les fonctions <code>fisher.alpha</code> de la librairie <em>vegan</em> et <code>fishers.alpha</code> de la librairie <em>untb</em> <span class="citation">(<a href="references.html#ref-Hankin2007" role="doc-biblioref">Hankin 2007</a>)</span> effectuent une résolution numérique de l’équation <a href="chap-Fisher.html#eq:AlphaFisher">(20.4)</a> pour estimer <span class="math inline">\(\alpha\)</span>.
-La fonction <code>optimal.theta</code> dans <em>untb</em> évalue la valeur de <span class="math inline">\(\theta\)</span> par la méthode du maximum de vraisemblance <span class="citation">(<a href="references.html#ref-Hubbell2001" role="doc-biblioref">Stephen P. Hubbell 2001, 122</a>)</span>, en utilisant toute l’information de la distribution.
+<p>Dans R, les fonctions <code>fisher.alpha</code> de la librairie <em>vegan</em> et <code>fishers.alpha</code> de la librairie <em>untb</em> <span class="citation">(<a href="references.html#ref-Hankin2007">Hankin 2007</a>)</span> effectuent une résolution numérique de l’équation <a href="chap-Fisher.html#eq:AlphaFisher">(20.4)</a> pour estimer <span class="math inline">\(\alpha\)</span>.
+La fonction <code>optimal.theta</code> dans <em>untb</em> évalue la valeur de <span class="math inline">\(\theta\)</span> par la méthode du maximum de vraisemblance <span class="citation">(<a href="references.html#ref-Hubbell2001">Stephen P. Hubbell 2001, 122</a>)</span>, en utilisant toute l’information de la distribution.
 Le résultat est très différent parce que l’approximation de l’égalité de <span class="math inline">\(\alpha\)</span> et <span class="math inline">\(\theta\)</span> ne tient pas dans ce cas :</p>
 <p></p>
 <div class="sourceCode" id="cb330"><pre class="downlit sourceCode r">
@@ -262,15 +268,15 @@ Le résultat est très différent parce que l’approximation de l’égalité d
 <pre><code>## [1] 80.95173</code></pre>
 <p></p>
 <p>Le modèle de Fisher <a href="chap-Fisher.html#eq:AlphaFisher">(20.4)</a> peut être écrit sous la forme <span class="math inline">\(\hat{S}^{n} = \alpha{\ln\left(\alpha+n\right)}-\alpha\ln\left(\alpha\right)\)</span>.
-Pour <span class="math inline">\(n\)</span> assez grand et sous l’hypothèse de saturation de Hubbell<span class="citation">(<a href="references.html#ref-Hubbell2001" role="doc-biblioref">Stephen P. Hubbell 2001</a>)</span>, <span class="math inline">\(A\)</span> est proportionnel à <span class="math inline">\(\alpha+n\)</span> et le modèle de Fisher est équivalent au modèle de Gleason <span class="citation">(<a href="references.html#ref-Engen1977" role="doc-biblioref">Engen 1977</a>)</span>.</p>
-<p>Bordenave <span class="citation">(<a href="references.html#ref-Bordenave1998" role="doc-biblioref">Bordenave et De Granville 1998</a>; <a href="references.html#ref-Bordenave2011" role="doc-biblioref">Bordenave, De Granville, et Steyn 2011</a>)</span> propose un indice de richesse spécifique (IRS, ou SDI : <em>Species Diversity Index</em>) égal à la pente de la relation de Gleason.
+Pour <span class="math inline">\(n\)</span> assez grand et sous l’hypothèse de saturation de Hubbell<span class="citation">(<a href="references.html#ref-Hubbell2001">Stephen P. Hubbell 2001</a>)</span>, <span class="math inline">\(A\)</span> est proportionnel à <span class="math inline">\(\alpha+n\)</span> et le modèle de Fisher est équivalent au modèle de Gleason <span class="citation">(<a href="references.html#ref-Engen1977">Engen 1977</a>)</span>.</p>
+<p>Bordenave <span class="citation">(<a href="references.html#ref-Bordenave1998">Bordenave et De Granville 1998</a>; <a href="references.html#ref-Bordenave2011">Bordenave, De Granville, et Steyn 2011</a>)</span> propose un indice de richesse spécifique (IRS, ou SDI : <em>Species Diversity Index</em>) égal à la pente de la relation de Gleason.
 Dans le cadre de l’approximation précédente, il est égal à <span class="math inline">\(\alpha\)</span>.</p>
 </div>
 <div id="variantes" class="section level2" number="20.2">
 <h2>
 <span class="header-section-number">20.2</span> Variantes<a class="anchor" aria-label="anchor" href="#variantes"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Schulte, Lantinga, et Hawkins (<a href="references.html#ref-Schulte2005" role="doc-biblioref">2005</a>)</span> ont étendu le modèle de Fisher pour prendre en compte un nombre d’espèces fini <span class="math inline">\(S\)</span> et une distribution non indépendante des individus, prise en compte par un paramètre d’agrégation spatiale <span class="math inline">\(c\)</span> valable pour toutes les espèces :</p>
+<p><span class="citation">Schulte, Lantinga, et Hawkins (<a href="references.html#ref-Schulte2005">2005</a>)</span> ont étendu le modèle de Fisher pour prendre en compte un nombre d’espèces fini <span class="math inline">\(S\)</span> et une distribution non indépendante des individus, prise en compte par un paramètre d’agrégation spatiale <span class="math inline">\(c\)</span> valable pour toutes les espèces :</p>
 <p><span class="math display" id="eq:Schulte">\[\begin{equation}
   \tag{20.5}
   S^{n} = \frac{\alpha}{c} \ln\left(\frac{1+ n^c\,q}{1+ n^c\,q\,e^{-cS/\alpha}}\right),
@@ -303,8 +309,8 @@ Figure 20.4: Comparaison entre le modèle de Fisher et le modèle étendu dans t
 <p>Appliqué à des données réelles (figure <a href="chap-Fisher.html#fig:Schulte2005a">20.4</a>), le modèle de Fisher étendu s’ajuste forcément mieux (il possède trois paramètres au lieu d’un).
 L’approximation du nombre d’espèces infini paraît être la plus pénalisante parce qu’elle exclut l’inflexion de la courbe pour les grandes valeurs de <span class="math inline">\(N\)</span>, même si ces valeurs sont rarement atteinte dans les faits (<span class="math inline">\(e^{10}&gt;20000)\)</span>.</p>
 <p>L’indice de Fisher repose lourdement sur l’hypothèse que la distribution réelle des espèces est conforme au modèle.
-<span class="citation">Jost (<a href="references.html#ref-Jost2007" role="doc-biblioref">2007</a>)</span> montre par un exemple que des interprétations absurdes de l’indice peuvent être faites si l’hypothèse n’est pas respectée.</p>
-<p><span class="citation">Kempton et Taylor (<a href="references.html#ref-Kempton1976" role="doc-biblioref">1976</a>)</span> et <span class="citation">Kempton et Wedderburn (<a href="references.html#ref-Kempton1978" role="doc-biblioref">1978</a>)</span> ont défini l’indice <span class="math inline">\(Q\)</span> comme la pente de la courbe de <span class="math inline">\(\hat{S}^{n}\)</span> en fonction de <span class="math inline">\(\log{n}\)</span> mesurée entre le premier et le troisième quartile du nombre d’espèces observées, quelle que soit la distribution des espèces.
+<span class="citation">Jost (<a href="references.html#ref-Jost2007">2007</a>)</span> montre par un exemple que des interprétations absurdes de l’indice peuvent être faites si l’hypothèse n’est pas respectée.</p>
+<p><span class="citation">Kempton et Taylor (<a href="references.html#ref-Kempton1976">1976</a>)</span> et <span class="citation">Kempton et Wedderburn (<a href="references.html#ref-Kempton1978">1978</a>)</span> ont défini l’indice <span class="math inline">\(Q\)</span> comme la pente de la courbe de <span class="math inline">\(\hat{S}^{n}\)</span> en fonction de <span class="math inline">\(\log{n}\)</span> mesurée entre le premier et le troisième quartile du nombre d’espèces observées, quelle que soit la distribution des espèces.
 <span class="math inline">\(Q = \alpha\)</span> si la distribution est en log-séries, et <span class="math inline">\(Q = {c S}/{\sigma}\)</span> si elle est log-normale (<span class="math inline">\(c\)</span> est une constante dépendant de la proportion des espèces échantillonnée, <span class="math inline">\(S\)</span> le nombre d’espèces total et <span class="math inline">\(\sigma\)</span> l’écart-type de la distribution du logarithme des probabilités).</p>
 <p>La simulation suivante tire 10000 arbres dans le jeu de données BCI indépendamment et selon les fréquences des espèces.
 L’indice Q est calculé :</p>
@@ -379,7 +385,7 @@ Figure 20.5: SAC d’un inventaire simulé de 10000 arbres de BCI. Le nombre d�
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

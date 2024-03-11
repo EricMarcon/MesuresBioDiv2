@@ -7,7 +7,7 @@
 <title>4 Entropie | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="L’entropie est la surprise moyenne apportée par l’observation des individus d’une communauté, d’autant plus grande qu’un individu appartient à une espèce plus rare. L’entropie HCDT permet...">
-<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
 <meta property="og:title" content="4 Entropie | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/entropie.html">
@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -131,14 +132,14 @@ Les profils de diversité représentent la diversité en fonction de son ordre e
 <p>L’estimation de la diversité est difficile pour des ordres inférieurs à <span class="math inline">\(0,5\)</span> dans des taxocènes très divers comme les arbres des forêts tropicales.</p>
 </div>
 <p>L’entropie peut être entendue comme la surprise moyenne fournie par l’observation d’un échantillon.
-C’est intuitivement une bonne mesure de diversité <span class="citation">(<a href="references.html#ref-Pielou1975" role="doc-biblioref">Pielou 1975</a>)</span>.
+C’est intuitivement une bonne mesure de diversité <span class="citation">(<a href="references.html#ref-Pielou1975">Pielou 1975</a>)</span>.
 Ses propriétés mathématiques permettent d’unifier les mesures de diversité dans un cadre général.</p>
 <div id="définition-de-lentropie" class="section level2" number="4.1">
 <h2>
 <span class="header-section-number">4.1</span> Définition de l’entropie<a class="anchor" aria-label="anchor" href="#d%C3%A9finition-de-lentropie"><i class="fas fa-link"></i></a>
 </h2>
-<p>Les textes fondateurs sont <span class="citation">Davis (<a href="references.html#ref-Davis1941" role="doc-biblioref">1941</a>)</span> et surtout <span class="citation">Theil (<a href="references.html#ref-Theil1967" role="doc-biblioref">1967</a>)</span> en économétrie, et Shannon <span class="citation">(<a href="references.html#ref-Shannon1948" role="doc-biblioref">1948</a>; <a href="references.html#ref-Shannon1963" role="doc-biblioref">1963</a>)</span> pour la mesure de la diversité.
-Une revue est fournie par <span class="citation">Maasoumi (<a href="references.html#ref-Maasoumi1993" role="doc-biblioref">1993</a>)</span>.</p>
+<p>Les textes fondateurs sont <span class="citation">Davis (<a href="references.html#ref-Davis1941">1941</a>)</span> et surtout <span class="citation">Theil (<a href="references.html#ref-Theil1967">1967</a>)</span> en économétrie, et Shannon <span class="citation">(<a href="references.html#ref-Shannon1948">1948</a>; <a href="references.html#ref-Shannon1963">1963</a>)</span> pour la mesure de la diversité.
+Une revue est fournie par <span class="citation">Maasoumi (<a href="references.html#ref-Maasoumi1993">1993</a>)</span>.</p>
 <p>Considérons une expérience dont les résultats possibles sont <span class="math inline">\(\left\{r_1,r_2,\dots ,\ r_S\right\}\)</span>.
 La probabilité d’obtenir <span class="math inline">\(r_s\)</span> est <span class="math inline">\(p_s\)</span>, et <span class="math inline">\(\mathbf{p}=(p_1,p_2,\dots,p_S)\)</span> est le vecteur composé des probabilités d’obtenir chaque résultat.
 Les probabilités sont connues <em>a priori</em>.
@@ -148,14 +149,14 @@ La présence de <span class="math inline">\(r_s\)</span> dans l’échantillon e
 En revanche, si <span class="math inline">\(p_s\)</span> est petite, la présence de <span class="math inline">\(r_s\)</span> est surprenante.
 On définit donc une fonction d’information, <span class="math inline">\(I(p_s)\)</span>, décroissante quand la probabilité augmente, de <span class="math inline">\(I(0)&gt;0\)</span> (éventuellement <span class="math inline">\(+\infty\)</span>) à <span class="math inline">\(I(1)=0\)</span>.
 Chaque valeur observée dans l’échantillon apporte une certaine quantité d’information, dont la somme est l’information de l’échantillon.
-<span class="citation">Patil et Taillie (<a href="references.html#ref-Patil1982" role="doc-biblioref">1982</a>)</span> appellent l’information “rareté”.</p>
+<span class="citation">Patil et Taillie (<a href="references.html#ref-Patil1982">1982</a>)</span> appellent l’information “rareté”.</p>
 <p>La quantité d’information attendue de l’expérience est <span class="math inline">\(\sum^S_{s=1}{p_s I(p_s) = H(\mathbf{p})}\)</span>.
 Si on choisit <span class="math inline">\(I\left(p_s\right)=-\ln\left(p_s\right)\)</span>, <span class="math inline">\(H\left(\mathbf{p}\right)\)</span> est l’indice de Shannon, mais bien d’autres formes de <span class="math inline">\(I\left(p_s\right)\)</span> sont possibles.
 <span class="math inline">\(H\left(\mathbf{p}\right)\)</span> est appelée <em>entropie</em>.
 C’est une mesure de l’incertitude (de la volatilité) du résultat de l’expérience.
 Si le résultat est certain (une seule valeur <span class="math inline">\(p_S\)</span> vaut 1), l’entropie est nulle.
 L’entropie est maximale quand les résultats sont équiprobables.</p>
-<p>Si <span class="math inline">\(\mathbf{p}\)</span> est la distribution des probabilité des espèces dans une communauté, <span class="citation">Patil et Taillie (<a href="references.html#ref-Patil1982" role="doc-biblioref">1982</a>)</span> montrent que :</p>
+<p>Si <span class="math inline">\(\mathbf{p}\)</span> est la distribution des probabilité des espèces dans une communauté, <span class="citation">Patil et Taillie (<a href="references.html#ref-Patil1982">1982</a>)</span> montrent que :</p>
 <ul>
 <li>Si <span class="math inline">\(I\left(p_s\right) = (1-p_s)/{p_s}\)</span>, alors <span class="math inline">\(H\left(\mathbf{p}\right)\)</span> est le nombre d’espèces <span class="math inline">\(S\)</span> moins <span style="white-space:nowrap">1 ;</span>
 </li>
@@ -216,13 +217,13 @@ Elle peut être vue comme une distance entre la distribution <em>a priori</em> e
 Il est possible que les distributions <span class="math inline">\(\mathbf{p}\)</span> et <span class="math inline">\(\mathbf{q}\)</span> soit identiques, que le gain d’information soit donc nul, mais les estimateurs empiriques n’étant pas exactement égaux entre eux, des tests de significativité de la valeur de <span class="math inline">\(\hat{H}(\mathbf{q},\mathbf{p})\)</span> seront nécessaires.</p>
 <p>Quelques formes possibles de <span class="math inline">\(H(\mathbf{q},\mathbf{p})\)</span> sont :</p>
 <ul>
-<li>La divergence de Kullback-Leibler <span class="citation">(<a href="references.html#ref-Kullback1951" role="doc-biblioref">Kullback et Leibler 1951</a>)</span> connue par les économistes comme l’indice de dissimilarité de <span class="citation">Theil (<a href="references.html#ref-Theil1967" role="doc-biblioref">1967</a>)</span> :
+<li>La divergence de Kullback-Leibler <span class="citation">(<a href="references.html#ref-Kullback1951">Kullback et Leibler 1951</a>)</span> connue par les économistes comme l’indice de dissimilarité de <span class="citation">Theil (<a href="references.html#ref-Theil1967">1967</a>)</span> :
 <span class="math display" id="eq:Theil">\[\begin{equation}
 \tag{4.1}
 T = \sum^S_{s=1}{q_{s}\ln\frac{q_s}{p_s}};
 \end{equation}\]</span>
 </li>
-<li>Sa proche parente, appelée parfois deuxième mesure de Theil <span class="citation">(<a href="references.html#ref-Conceicao2000" role="doc-biblioref">Conceição et Ferreira 2000</a>)</span>, qui inverse simplement les rôles de <span class="math inline">\(p\)</span> et <span class="math inline">\(q\)</span>:
+<li>Sa proche parente, appelée parfois deuxième mesure de Theil <span class="citation">(<a href="references.html#ref-Conceicao2000">Conceição et Ferreira 2000</a>)</span>, qui inverse simplement les rôles de <span class="math inline">\(p\)</span> et <span class="math inline">\(q\)</span> :
 <span class="math display" id="eq:Theil2">\[\begin{equation}
 \tag{4.2}
 L = \sum^S_{s=1}{p_{s}\ln\frac{p_s}{q_s}}.
@@ -238,7 +239,7 @@ Figure 4.3: Valeur de <span class="math inline">\(q\ln(q/p)\)</span> en fonction
 </div>
 <p></p>
 <p>L’entropie relative est essentielle pour la définition de la diversité <span class="math inline">\(\beta\)</span> présentée dans le chapitre <a href="chap-DedompHCDT.html#chap-DedompHCDT">12</a>.
-En se limitant à la diversité <span class="math inline">\(\alpha\)</span>, on peut remarquer que l’indice de Shannon est la divergence de Kullback-Leibler entre la distribution observée et l’équiprobabilité des espèces <span class="citation">(<a href="references.html#ref-Marcon2012a" role="doc-biblioref">Marcon et al. 2012</a>)</span>.
+En se limitant à la diversité <span class="math inline">\(\alpha\)</span>, on peut remarquer que l’indice de Shannon est la divergence de Kullback-Leibler entre la distribution observée et l’équiprobabilité des espèces <span class="citation">(<a href="references.html#ref-Marcon2012a">Marcon et al. 2012</a>)</span>.
 Les valeurs de chaque terme de la divergence sont représentées en figure <a href="entropie.html#fig:KullbackLeiblerFig">4.3</a>.</p>
 <p>Le code R nécessaire pour réaliser la figure est :</p>
 <p></p>
@@ -257,16 +258,16 @@ Les valeurs de chaque terme de la divergence sont représentées en figure <a hr
 <h2>
 <span class="header-section-number">4.3</span> L’appropriation de l’entropie par la biodiversité<a class="anchor" aria-label="anchor" href="#lappropriation-de-lentropie-par-la-biodiversit%C3%A9"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">MacArthur (<a href="references.html#ref-MacArthur1955" role="doc-biblioref">1955</a>)</span> est le premier à avoir introduit la théorie de l’information en écologie <span class="citation">(<a href="references.html#ref-Ulanowicz2001" role="doc-biblioref">Ulanowicz 2001</a>)</span>.
+<p><span class="citation">MacArthur (<a href="references.html#ref-MacArthur1955">1955</a>)</span> est le premier à avoir introduit la théorie de l’information en écologie <span class="citation">(<a href="references.html#ref-Ulanowicz2001">Ulanowicz 2001</a>)</span>.
 MacArthur s’intéressait aux réseaux trophiques et cherchait à mesurer leur stabilité : l’indice de Shannon qui comptabilise le nombre de relations possibles lui paraissait une bonne façon de l’évaluer.
 Mais l’efficacité implique la spécialisation, ignorée dans <span class="math inline">\(H\)</span> qui est une mesure neutre (toutes les espèces y jouent le même rôle).
 MacArthur a abandonné cette voie.</p>
-<p>Les premiers travaux consistant à généraliser l’indice de Shannon sont dus à <span class="citation">Rényi (<a href="references.html#ref-Renyi1961" role="doc-biblioref">1961</a>)</span>.
+<p>Les premiers travaux consistant à généraliser l’indice de Shannon sont dus à <span class="citation">Rényi (<a href="references.html#ref-Renyi1961">1961</a>)</span>.
 L’entropie d’ordre <span class="math inline">\(q\)</span> de Rényi est</p>
 <p><span class="math display">\[\begin{equation}
 ^{q}\!R =\frac{1}{1-q\ln\sum^S_{q=1}{p^q_s}}.
 \end{equation}\]</span></p>
-<p>Rényi pose également les axiomes pour une mesure d’entropie <span class="math inline">\(R\left(\mathbf{p}\right)\)</span>, où <span class="math inline">\(\mathbf{p}=(p_1,p_2,\dots,p_S)\)</span>:</p>
+<p>Rényi pose également les axiomes pour une mesure d’entropie <span class="math inline">\(R\left(\mathbf{p}\right)\)</span>, où <span class="math inline">\(\mathbf{p}=(p_1,p_2,\dots,p_S)\)</span> :</p>
 <ul>
 <li>La symétrie : les espèces doivent être interchangeables, aucune n’a de rôle particulier et leur ordre est <span style="white-space:nowrap">indifférent ;</span>
 </li>
@@ -275,19 +276,19 @@ L’entropie d’ordre <span class="math inline">\(q\)</span> de Rényi est</p>
 <li>La valeur maximale est atteinte si toutes les probabilités sont égales.</li>
 </ul>
 <p>Il montre que <span class="math inline">\(^{q}\!R\)</span> respecte les 3 axiomes.</p>
-<p><span class="citation">Patil et Taillie (<a href="references.html#ref-Patil1982" role="doc-biblioref">1982</a>)</span> ont montré de plus que :</p>
+<p><span class="citation">Patil et Taillie (<a href="references.html#ref-Patil1982">1982</a>)</span> ont montré de plus que :</p>
 <ul>
 <li>L’introduction d’une espèce dans une communauté augmente sa diversité (conséquence de la décroissance de <span class="math inline">\(g(p_s)\)</span><span style="white-space:nowrap">) ;</span>
 </li>
 <li>Le remplacement d’un individu d’une espèce fréquente par un individu d’une espèce plus rare augmente l’entropie à condition que <span class="math inline">\(R(\mathbf{p})\)</span> soit concave.
-Dans la littérature économique sur les inégalités, cette propriété est connue sous le nom de Pigou-Dalton <span class="citation">(<a href="references.html#ref-Dalton1920" role="doc-biblioref">Dalton 1920</a>)</span>.</li>
+Dans la littérature économique sur les inégalités, cette propriété est connue sous le nom de Pigou-Dalton <span class="citation">(<a href="references.html#ref-Dalton1920">Dalton 1920</a>)</span>.</li>
 </ul>
-<p><span class="citation">Hill (<a href="references.html#ref-Hill1973" role="doc-biblioref">1973</a>)</span> transforme l’entropie de Rényi en <em>nombres de Hill</em>, qui en sont simplement l’exponentielle :</p>
+<p><span class="citation">Hill (<a href="references.html#ref-Hill1973">1973</a>)</span> transforme l’entropie de Rényi en <em>nombres de Hill</em>, qui en sont simplement l’exponentielle :</p>
 <p><span class="math display" id="eq:Hill1973">\[\begin{equation}
   \tag{4.3}
   ^{q}\!D = {\left(\sum^S_{s=1}{p^q_s}\right)}^{\frac{1}{1-q}}.
 \end{equation}\]</span></p>
-<p>Le souci de Hill était de rendre les indices de diversité intelligibles après l’article remarqué de <span class="citation">Hurlbert (<a href="references.html#ref-Hurlbert1971" role="doc-biblioref">1971</a>)</span> intitulé “le non-concept de diversité spécifique”.
+<p>Le souci de Hill était de rendre les indices de diversité intelligibles après l’article remarqué de <span class="citation">Hurlbert (<a href="references.html#ref-Hurlbert1971">1971</a>)</span> intitulé “le non-concept de diversité spécifique”.
 Hurlbert reprochait à la littérature sur la diversité sa trop grande abstraction et son éloignement des réalités biologiques, notamment en fournissant des exemples dans lesquels l’ordre des communautés n’est pas le même selon l’indice de diversité choisi.
 Les nombres de Hill sont le nombre d’espèces équiprobables donnant la même valeur de diversité que la distribution observée.
 Ils sont des transformations simples des indices classiques :</p>
@@ -299,12 +300,12 @@ Ils sont des transformations simples des indices classiques :</p>
 <span class="math inline">\(^{1}\!D=e^H\)</span>, l’exponentielle de l’indice de <span style="white-space:nowrap">Shannon ;</span>
 </li>
 <li>
-<span class="math inline">\(^{2}\!D={1}/{\left(1-E\right)}\)</span>, l’inverse de l’indice de concentration de Simpson, connu sous le nom d’indice de <span class="citation">Stoddart (<a href="references.html#ref-Stoddart1983" role="doc-biblioref">1983</a>)</span>.</li>
+<span class="math inline">\(^{2}\!D={1}/{\left(1-E\right)}\)</span>, l’inverse de l’indice de concentration de Simpson, connu sous le nom d’indice de <span class="citation">Stoddart (<a href="references.html#ref-Stoddart1983">1983</a>)</span>.</li>
 </ul>
-<p>Ces résultats avaient déjà été obtenus avec une autre approche par <span class="citation">MacArthur (<a href="references.html#ref-MacArthur1965" role="doc-biblioref">1965</a>)</span> et repris par <span class="citation">Adelman (<a href="references.html#ref-Adelman1969" role="doc-biblioref">1969</a>)</span> dans la littérature économique.</p>
+<p>Ces résultats avaient déjà été obtenus avec une autre approche par <span class="citation">MacArthur (<a href="references.html#ref-MacArthur1965">1965</a>)</span> et repris par <span class="citation">Adelman (<a href="references.html#ref-Adelman1969">1969</a>)</span> dans la littérature économique.</p>
 <p>Les nombres de Hill sont des “nombres effectifs” ou “nombres équivalents”.
-Le concept a été défini rigoureusement par <span class="citation">Gregorius (<a href="references.html#ref-Gregorius1991" role="doc-biblioref">1991</a>)</span>, d’après <span class="citation">S. Wright (<a href="references.html#ref-Wright1931" role="doc-biblioref">1931</a>)</span> (qui avait le premier défini la taille effective d’une population) : étant donné une variable caractéristique (ici, l’entropie) fonction seulement d’une variable numérique (ici, le nombre d’espèces) dans un cas idéal (ici, l’équiprobabilité des espèces), le nombre effectif est la valeur de la variable numérique pour laquelle la variable caractéristique est celle du jeu de données.</p>
-<p><span class="citation">Gregorius (<a href="references.html#ref-Gregorius2014" role="doc-biblioref">2014</a>)</span> montre que de nombreux autres indices de diversité sont acceptables dans le sens où ils vérifient les axiomes précédents et, de plus, que la diversité d’un assemblage de communautés est obligatoirement supérieure à la diversité moyenne de ces communautés (l’égalité n’étant possible que si les communautés sont toutes identiques).
+Le concept a été défini rigoureusement par <span class="citation">Gregorius (<a href="references.html#ref-Gregorius1991">1991</a>)</span>, d’après <span class="citation">S. Wright (<a href="references.html#ref-Wright1931">1931</a>)</span> (qui avait le premier défini la taille effective d’une population) : étant donné une variable caractéristique (ici, l’entropie) fonction seulement d’une variable numérique (ici, le nombre d’espèces) dans un cas idéal (ici, l’équiprobabilité des espèces), le nombre effectif est la valeur de la variable numérique pour laquelle la variable caractéristique est celle du jeu de données.</p>
+<p><span class="citation">Gregorius (<a href="references.html#ref-Gregorius2014">2014</a>)</span> montre que de nombreux autres indices de diversité sont acceptables dans le sens où ils vérifient les axiomes précédents et, de plus, que la diversité d’un assemblage de communautés est obligatoirement supérieure à la diversité moyenne de ces communautés (l’égalité n’étant possible que si les communautés sont toutes identiques).
 Cette dernière propriété sera traitée en détail dans la partie consacrée à la décomposition de la diversité.
 Ces indices doivent vérifier deux propriétés : leur fonction d’information doit être décroissante, et ils doivent être une fonction strictement concave de <span class="math inline">\(p_s\)</span>.
 Parmi les possibilités, <span class="math inline">\(I(p_s) = \cos{(p_s {\pi}/{2})}\)</span> est envisageable par exemple : le choix de la fonction d’information est virtuellement illimité, mais seules quelques unes seront interprétables clairement.</p>
@@ -314,26 +315,28 @@ Parmi les possibilités, <span class="math inline">\(I(p_s) = \cos{(p_s {\pi}/{2
   D = \frac{1}{I^{-1}\left(\sum^S_{s=1}{p_s I(p_s)}\right)}.
 \end{equation}\]</span></p>
 <p>D’autres entropies ont été utlisées, avec plus ou moins de succès.
-Par exemple, <span class="citation">Ricotta et Avena (<a href="references.html#ref-Ricotta2003c" role="doc-biblioref">2003b</a>)</span> proposent d’utiliser la fonction d’information <span class="math inline">\(I(p_s)=-\ln(k_s)\)</span> où <span class="math inline">\(k_s\)</span> est la dissimilarité totale de l’espèce <span class="math inline">\(s\)</span> avec les autres (par exemple, la somme des distances aux autres espèces dans un arbre phylogénétique, voir section <a href="chap-cadrephyfonc.html#sec-Dphylo">6.2</a>), normalisée pour que <span class="math inline">\(\sum_s{k_s}=1\)</span>.
+Par exemple, <span class="citation">Ricotta et Avena (<a href="references.html#ref-Ricotta2003c">2003b</a>)</span> proposent d’utiliser la fonction d’information <span class="math inline">\(I(p_s)=-\ln(k_s)\)</span> où <span class="math inline">\(k_s\)</span> est la dissimilarité totale de l’espèce <span class="math inline">\(s\)</span> avec les autres (par exemple, la somme des distances aux autres espèces dans un arbre phylogénétique, voir section <a href="chap-cadrephyfonc.html#sec-Dphylo">6.2</a>), normalisée pour que <span class="math inline">\(\sum_s{k_s}=1\)</span>.
 Ainsi, les espèces les plus originales apportent peu d’information, ce qui n’est pas très intuitif.
 Les auteurs montrent que leur mesure est la somme de l’entropie de Shannon et de la divergence de Kullback-Leibler entre les probabilités et les dissimilarités des espèces.
-<span class="citation">Ricotta et Szeidl (<a href="references.html#ref-Ricotta2006b" role="doc-biblioref">2006</a>)</span> ont défini plus tard une entropie augmentant avec l’originalité de chaque espèce, présentée au chapitre <a href="chap-LeinsterCobbold.html#chap-LeinsterCobbold">9</a>.</p>
+<span class="citation">Ricotta et Szeidl (<a href="references.html#ref-Ricotta2006b">2006</a>)</span> ont défini plus tard une entropie augmentant avec l’originalité de chaque espèce, présentée au chapitre <a href="chap-LeinsterCobbold.html#chap-LeinsterCobbold">9</a>.</p>
 </div>
 <div id="entropie-hcdt" class="section level2" number="4.4">
 <h2>
 <span class="header-section-number">4.4</span> Entropie HCDT<a class="anchor" aria-label="anchor" href="#entropie-hcdt"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Tsallis (<a href="references.html#ref-Tsallis1988" role="doc-biblioref">1988</a>)</span> propose une classe de mesures appelée entropie généralisée, définie par <span class="citation">Havrda et Charvát (<a href="references.html#ref-Havrda1967" role="doc-biblioref">1967</a>)</span> pour la première fois et redécouverte plusieurs fois, notamment par <span class="citation">Daróczy (<a href="references.html#ref-Daroczy1970" role="doc-biblioref">1970</a>)</span>, d’où son nom <em>entropie HCDT</em> (voir <span class="citation">Mendes et al. (<a href="references.html#ref-Mendes2008" role="doc-biblioref">2008</a>)</span>, page 451, pour un historique complet) :</p>
+<p><span class="citation">Tsallis (<a href="references.html#ref-Tsallis1988">1988</a>)</span> propose une classe de mesures appelée entropie généralisée, définie par <span class="citation">Havrda et Charvát (<a href="references.html#ref-Havrda1967">1967</a>)</span> pour la première fois et redécouverte plusieurs fois, notamment par <span class="citation">Daróczy (<a href="references.html#ref-Daroczy1970">1970</a>)</span>, d’où son nom <em>entropie HCDT</em> (voir <span class="citation">Mendes et al. (<a href="references.html#ref-Mendes2008">2008</a>)</span>, page 451, pour un historique complet) :</p>
 <p><span class="math display" id="eq:HCDT">\[\begin{equation}
   \tag{4.5}
   ^{q}\!H = \frac{1}{q-1}\left(1-\sum^S_{s=1}{p^q_s}\right).
 \end{equation}\]</span></p>
-<p>Tsallis a montré que les indices de Simpson et de Shannon étaient des cas particuliers d’entropie généralisée, retrouvant, sans faire le rapprochement <span class="citation">(<a href="references.html#ref-Ricotta2005" role="doc-biblioref">Ricotta 2005c</a>)</span>, la définition d’un indice de diversité de <span class="citation">Patil et Taillie (<a href="references.html#ref-Patil1982" role="doc-biblioref">1982</a>)</span>.</p>
-<p>Ces résultats ont été complétés par d’autres et repris en écologie par <span class="citation">Keylock (<a href="references.html#ref-Keylock2005" role="doc-biblioref">2005</a>)</span> et Jost <span class="citation">(<a href="references.html#ref-Jost2006" role="doc-biblioref">2006</a>, <a href="references.html#ref-Jost2007" role="doc-biblioref">2007</a>)</span>.
+<p>Tsallis a montré que les indices de Simpson et de Shannon étaient des cas particuliers d’entropie généralisée, retrouvant, sans faire le rapprochement <span class="citation">(<a href="references.html#ref-Ricotta2005">Ricotta 2005c</a>)</span>, la définition d’un indice de diversité de <span class="citation">Patil et Taillie (<a href="references.html#ref-Patil1982">1982</a>)</span>.</p>
+<p>Ces résultats ont été complétés par d’autres et repris en écologie par <span class="citation">Keylock (<a href="references.html#ref-Keylock2005">2005</a>)</span> et Jost <span class="citation">(<a href="references.html#ref-Jost2006">2006</a>, <a href="references.html#ref-Jost2007">2007</a>)</span>.
 Là encore :</p>
 <ul>
-<li>Le nombre d’espèces moins 1 est <span class="math inline">\(^{0}\!H\)</span>;</li>
-<li>L’indice de Shannon est <span class="math inline">\(^{1}\!H\)</span>;</li>
+<li>Le nombre d’espèces moins 1 est <span class="math inline">\(^{0}\!H\)</span><span style="white-space:nowrap"> ;</span>
+</li>
+<li>L’indice de Shannon est <span class="math inline">\(^{1}\!H\)</span><span style="white-space:nowrap"> ;</span>
+</li>
 <li>L’indice de Gini-Simpson est <span class="math inline">\(^{2}\!H\)</span>.</li>
 </ul>
 <p>L’entropie HCDT est particulièrement attractive parce que sa relation avec la diversité au sens strict est simple, après introduction du formalisme adapté (les logarithmes déformés).
@@ -343,13 +346,13 @@ Enfin, sa décomposition sera présentée en détail dans le chapitre <a href="c
 <h3>
 <span class="header-section-number">4.4.1</span> Logarithmes déformés<a class="anchor" aria-label="anchor" href="#logarithmes-d%C3%A9form%C3%A9s"><i class="fas fa-link"></i></a>
 </h3>
-<p>L’écriture de l’entropie HCDT est largement simplifiée en introduisant le formalisme des logarithmes déformés <span class="citation">(<a href="references.html#ref-Tsallis1994" role="doc-biblioref">Tsallis 1994</a>)</span>.
+<p>L’écriture de l’entropie HCDT est largement simplifiée en introduisant le formalisme des logarithmes déformés <span class="citation">(<a href="references.html#ref-Tsallis1994">Tsallis 1994</a>)</span>.
 Le logarithme d’ordre <span class="math inline">\(q\)</span> est défini par
 <span class="math display" id="eq:lnq">\[\begin{equation}
   \tag{4.6}
   \ln_q{x} = \frac{x^{1-q}-1}{1-q},
 \end{equation}\]</span>
-dont la forme est identique à la transformation de <span class="citation">Box et Cox (<a href="references.html#ref-Box1964" role="doc-biblioref">1964</a>)</span> utilisée en statistiques pour normaliser une variable.</p>
+dont la forme est identique à la transformation de <span class="citation">Box et Cox (<a href="references.html#ref-Box1964">1964</a>)</span> utilisée en statistiques pour normaliser une variable.</p>
 <p>Le logarithme déformé converge vers le logarithme naturel quand <span class="math inline">\(q\to 1\)</span> (figure <a href="entropie.html#fig:lnqFig">4.4</a>).</p>
 <p>Le code R nécessaire pour réaliser la figure est :</p>
 <p></p>
@@ -365,7 +368,7 @@ dont la forme est identique à la transformation de <span class="citation">Box e
 <span>    <span class="fu">coord_cartesian</span><span class="op">(</span>ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"p"</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="va">ln</span><span class="op">[</span><span class="va">q</span><span class="op">]</span><span class="op">(</span><span class="va">p</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p></p>
-<p>Sa fonction inverse est l’exponentielle d’ordre <span class="math inline">\(q\)</span>:</p>
+<p>Sa fonction inverse est l’exponentielle d’ordre <span class="math inline">\(q\)</span> :</p>
 <p><span class="math display" id="eq:expq">\[\begin{equation}
   \tag{4.7}
   e^x_q = \left[ 1+\left( 1-q \right)x \right]^{\frac{1}{1-q}}.
@@ -374,8 +377,8 @@ dont la forme est identique à la transformation de <span class="citation">Box e
 <p></p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:lnqFig"></span>
-<img src="MesuresBD_files/figure-html/lnqFig-1.png" alt="Valeur du logarithme d’ordre \(q\) de probabilités entre 0 et 1 pour différentes valeurs de \(q\): \(q = 0\) (pointillés longs rouges), la courbe est une droite ; \(q = 1\) (trait plein) : logarithme naturel ; \(q = 2\) (pointillés courts bleus) : la courbe a la même forme que le logarithme naturel pour les valeurs positives de \(q\); \(q =-1\) (pointillés alternés verts) : la courbe est convexe pour les valeurs négatives de \(q\)." width="80%"><p class="caption">
-Figure 4.4: Valeur du logarithme d’ordre <span class="math inline">\(q\)</span> de probabilités entre 0 et 1 pour différentes valeurs de <span class="math inline">\(q\)</span>: <span class="math inline">\(q = 0\)</span> (pointillés longs rouges), la courbe est une <span style="white-space:nowrap">droite ;</span> <span class="math inline">\(q = 1\)</span> (trait plein) : logarithme <span style="white-space:nowrap">naturel ;</span> <span class="math inline">\(q = 2\)</span> (pointillés courts bleus) : la courbe a la même forme que le logarithme naturel pour les valeurs positives de <span class="math inline">\(q\)</span>; <span class="math inline">\(q =-1\)</span> (pointillés alternés verts) : la courbe est convexe pour les valeurs négatives de <span class="math inline">\(q\)</span>.
+<img src="MesuresBD_files/figure-html/lnqFig-1.png" alt="Valeur du logarithme d’ordre \(q\) de probabilités entre 0 et 1 pour différentes valeurs de \(q\) : \(q = 0\) (pointillés longs rouges), la courbe est une droite ; \(q = 1\) (trait plein) : logarithme naturel ; \(q = 2\) (pointillés courts bleus) : la courbe a la même forme que le logarithme naturel pour les valeurs positives de \(q\) ; \(q =-1\) (pointillés alternés verts) : la courbe est convexe pour les valeurs négatives de \(q\)." width="80%"><p class="caption">
+Figure 4.4: Valeur du logarithme d’ordre <span class="math inline">\(q\)</span> de probabilités entre 0 et 1 pour différentes valeurs de <span class="math inline">\(q\)</span> : <span class="math inline">\(q = 0\)</span> (pointillés longs rouges), la courbe est une <span style="white-space:nowrap">droite ;</span> <span class="math inline">\(q = 1\)</span> (trait plein) : logarithme <span style="white-space:nowrap">naturel ;</span> <span class="math inline">\(q = 2\)</span> (pointillés courts bleus) : la courbe a la même forme que le logarithme naturel pour les valeurs positives de <span class="math inline">\(q\)</span><span style="white-space:nowrap"> ;</span> <span class="math inline">\(q =-1\)</span> (pointillés alternés verts) : la courbe est convexe pour les valeurs négatives de <span class="math inline">\(q\)</span>.
 </p>
 </div>
 <p></p>
@@ -408,7 +411,7 @@ Figure 4.4: Valeur du logarithme d’ordre <span class="math inline">\(q\)</span
   \tag{4.13}
   \ln'_q\left(x\right) = x^{-q}.
 \end{equation}\]</span></p>
-<p>Les dérivées première et seconde de l’exponentielle déformée sont, quel que soit <span class="math inline">\(q\)</span>:
+<p>Les dérivées première et seconde de l’exponentielle déformée sont, quel que soit <span class="math inline">\(q\)</span> :
 <span class="math display" id="eq:expqprime">\[\begin{equation}
   \tag{4.14}
   \exp'_q\left(x\right) = \left( e_q^x \right)^{q};
@@ -423,7 +426,7 @@ Figure 4.4: Valeur du logarithme d’ordre <span class="math inline">\(q\)</span
   \tag{4.16}
   ^{q}\!H = \frac{1}{q-1}\left(1-\sum^S_{s=1}{p^q_s}\right)=-\sum_s{p^q_s}\ln_q{p_s}=\sum_s{p_s}\ln_q\frac{1}{p_s}.
 \end{equation}\]</span></p>
-<p>Ces trois formes sont équivalentes mais les deux dernières s’interprètent comme une généralisation de l’entropie de Shannon <span class="citation">(<a href="references.html#ref-Marcon2014a" role="doc-biblioref">Marcon et al. 2014</a>)</span>.</p>
+<p>Ces trois formes sont équivalentes mais les deux dernières s’interprètent comme une généralisation de l’entropie de Shannon <span class="citation">(<a href="references.html#ref-Marcon2014a">Marcon et al. 2014</a>)</span>.</p>
 <p>Le calcul de <span class="math inline">\(^{q}\!H\)</span> peut se faire avec la fonction <code>Tsallis</code> de la librairie <em>entropart</em> :</p>
 <p></p>
 <div class="sourceCode" id="cb151"><pre class="downlit sourceCode r">
@@ -448,12 +451,12 @@ Figure 4.4: Valeur du logarithme d’ordre <span class="math inline">\(q\)</span
   ^{q}\!D = e_q^{^{q}\!H}.
 \end{equation}\]</span></p>
 <p>L’entropie est utile pour les calculs : la correction des biais d’estimation notamment.
-Les nombres de Hill, ou <em>nombres équivalents d’espèces</em> ou <em>nombres effectif d’espèces</em> permettent une appréhension plus intuitive de la notion de biodiversité <span class="citation">(<a href="references.html#ref-Jost2006" role="doc-biblioref">Jost 2006</a>)</span>.
-En raison de leurs propriétés, notamment de décomposition (voir le chapitre <a href="chap-DedompHCDT.html#chap-DedompHCDT">12</a>), <span class="citation">Jost (<a href="references.html#ref-Jost2007" role="doc-biblioref">2007</a>)</span> les appelle “vraie diversité”.
-<span class="citation">Hoffmann et Hoffmann (<a href="references.html#ref-Hoffmann2008" role="doc-biblioref">2008</a>)</span> critiquent cette définition totalitaire et fournissent une revue historique plus lointaine sur les origines de ces mesures.
-<span class="citation">Jost (<a href="references.html#ref-Jost2009" role="doc-biblioref">2009b</a>)</span> reconnaît qu’un autre terme aurait pu être choisi (“diversité neutre” ou “diversité mathématique” par exemple).</p>
-<p><span class="citation">Dauby et Hardy (<a href="references.html#ref-Dauby2012" role="doc-biblioref">2012</a>)</span> écrivent “diversité au sens strict”<span style="white-space:nowrap"> ;</span> <span class="citation">Gregorius (<a href="references.html#ref-Gregorius2010" role="doc-biblioref">2010</a>)</span> “diversité explicite”.</p>
-<p>Quoi qu’il en soit, les nombres de Hill respectent le principe de réplication (voir <span class="citation">Chao, Chiu, et Jost (<a href="references.html#ref-Chao2010" role="doc-biblioref">2010</a>)</span>, section 3 pour une discussion et un historique) : si <span class="math inline">\(I\)</span> communautés de même taille, de même niveau de diversité <span class="math inline">\(D\)</span>, mais sans espèces en commun sont regroupées dans une méta-communauté, la diversité de la méta-communauté doit être <span class="math inline">\(I\times D\)</span>.</p>
+Les nombres de Hill, ou <em>nombres équivalents d’espèces</em> ou <em>nombres effectif d’espèces</em> permettent une appréhension plus intuitive de la notion de biodiversité <span class="citation">(<a href="references.html#ref-Jost2006">Jost 2006</a>)</span>.
+En raison de leurs propriétés, notamment de décomposition (voir le chapitre <a href="chap-DedompHCDT.html#chap-DedompHCDT">12</a>), <span class="citation">Jost (<a href="references.html#ref-Jost2007">2007</a>)</span> les appelle “vraie diversité”.
+<span class="citation">Hoffmann et Hoffmann (<a href="references.html#ref-Hoffmann2008">2008</a>)</span> critiquent cette définition totalitaire et fournissent une revue historique plus lointaine sur les origines de ces mesures.
+<span class="citation">Jost (<a href="references.html#ref-Jost2009">2009b</a>)</span> reconnaît qu’un autre terme aurait pu être choisi (“diversité neutre” ou “diversité mathématique” par exemple).</p>
+<p><span class="citation">Dauby et Hardy (<a href="references.html#ref-Dauby2012">2012</a>)</span> écrivent “diversité au sens strict”<span style="white-space:nowrap"> ;</span> <span class="citation">Gregorius (<a href="references.html#ref-Gregorius2010">2010</a>)</span> “diversité explicite”.</p>
+<p>Quoi qu’il en soit, les nombres de Hill respectent le principe de réplication (voir <span class="citation">Chao, Chiu, et Jost (<a href="references.html#ref-Chao2010">2010</a>)</span>, section 3 pour une discussion et un historique) : si <span class="math inline">\(I\)</span> communautés de même taille, de même niveau de diversité <span class="math inline">\(D\)</span>, mais sans espèces en commun sont regroupées dans une méta-communauté, la diversité de la méta-communauté doit être <span class="math inline">\(I\times D\)</span>.</p>
 <p>L’intérêt de ces approches est de fournir une définition paramétrique de la diversité, qui donne plus ou moins d’importance aux espèces rares :</p>
 <ul>
 <li>
@@ -472,12 +475,12 @@ Le biais d’estimation est <span style="white-space:nowrap">sensible ;</span>
 </li>
 <li>
 <span class="math inline">\(^{2}\!D\)</span> est l’inverse de l’indice de concentration de Gini-Simpson donne moins d’importance aux espèces rares.
-<span class="citation">Hill (<a href="references.html#ref-Hill1973" role="doc-biblioref">1973</a>)</span> l’appelle “le nombre d’espèces très abondantes”.
+<span class="citation">Hill (<a href="references.html#ref-Hill1973">1973</a>)</span> l’appelle “le nombre d’espèces très abondantes”.
 Il comptabilise les interactions possibles entre paires d’individus : les espèces rares interviennent dans peu de paires, et influent peu sur l’indice.
 En conséquence, le biais d’estimation est très <span style="white-space:nowrap">petit ;</span> de plus, un estimateur non biaisé <span style="white-space:nowrap">existe ;</span>
 </li>
 <li>
-<span class="math inline">\(^{\infty}\!D={1}/{d}\)</span> est l’inverse de l’indice de Berger-Parker <span class="citation">(<a href="references.html#ref-Berger1970" role="doc-biblioref">Berger et Parker 1970</a>)</span> qui est la proportion de la communauté représentée par l’espèce la plus abondante : <span class="math inline">\(d=\max(\mathbf{p})\)</span>.
+<span class="math inline">\(^{\infty}\!D={1}/{d}\)</span> est l’inverse de l’indice de Berger-Parker <span class="citation">(<a href="references.html#ref-Berger1970">Berger et Parker 1970</a>)</span> qui est la proportion de la communauté représentée par l’espèce la plus abondante : <span class="math inline">\(d=\max(\mathbf{p})\)</span>.
 Toutes les autres espèces sont ignorées.</li>
 </ul>
 <p>Le calcul de <span class="math inline">\(^{q}\!D\)</span> peut se faire avec la fonction <code>Diversity</code> de la librairie <em>entropart</em> :</p>
@@ -490,7 +493,7 @@ Toutes les autres espèces sont ignorées.</li>
 ## 49.57724</code></pre>
 <p></p>
 <p>Les propriétés mathématiques de la diversité ne sont pas celles de l’entropie.
-L’entropie doit être une fonction concave des probabilités comme on l’a vu plus haut, mais pas la diversité (un exemple de confusion est fourni par <span class="citation">Gadagkar (<a href="references.html#ref-Gadagkar1989" role="doc-biblioref">1989</a>)</span>, qui reproche à <span class="math inline">\(^{2}\!D\)</span> de ne pas être concave).
+L’entropie doit être une fonction concave des probabilités comme on l’a vu plus haut, mais pas la diversité (un exemple de confusion est fourni par <span class="citation">Gadagkar (<a href="references.html#ref-Gadagkar1989">1989</a>)</span>, qui reproche à <span class="math inline">\(^{2}\!D\)</span> de ne pas être concave).
 L’entropie est une moyenne pondérée par les probabilités de la fonction d’information, c’est donc une fonction linéaire des probabilités, propriété importante pour définir l’entropie <span class="math inline">\(\alpha\)</span> (section <a href="sec-betaCadre.html#sec-defalpha">10.3.4</a>) comme la moyenne des entropies de plusieurs communautés, ou l’entropie phylogénétique (chapitre <a href="chap-Phyloentropie.html#chap-Phyloentropie">8</a>) comme la moyenne de l’entropie sur les périodes d’un arbre.
 La diversité n’est pas une fonction linéaire des probabilités : la diversité moyenne n’est en général pas la moyenne des diversités.</p>
 </div>
@@ -515,10 +518,10 @@ L’entropie est la moyenne du logarithme de la rareté :</p>
 <h2>
 <span class="header-section-number">4.5</span> Profils de diversité<a class="anchor" aria-label="anchor" href="#profils-de-diversit%C3%A9"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">Leinster et Cobbold (<a href="references.html#ref-Leinster2012" role="doc-biblioref">2012</a>)</span>, après <span class="citation">Hill (<a href="references.html#ref-Hill1973" role="doc-biblioref">1973</a>)</span>, <span class="citation">Patil et Taillie (<a href="references.html#ref-Patil1982" role="doc-biblioref">1982</a>)</span>, <span class="citation">Tothmeresz (<a href="references.html#ref-Tothmeresz1995" role="doc-biblioref">1995</a>)</span> et <span class="citation">Kindt, Van Damme, et Simons (<a href="references.html#ref-Kindt2006" role="doc-biblioref">2006</a>)</span>, recommandent de tracer des profils de diversité, c’est-à-dire la valeur de la diversité <span class="math inline">\(^{q}\!D\)</span> en fonction de l’ordre <span class="math inline">\(q\)</span> (figure <a href="entropie.html#fig:ProfilDivFig">4.5</a>) pour comparer plusieurs communautés.
+<p><span class="citation">Leinster et Cobbold (<a href="references.html#ref-Leinster2012">2012</a>)</span>, après <span class="citation">Hill (<a href="references.html#ref-Hill1973">1973</a>)</span>, <span class="citation">Patil et Taillie (<a href="references.html#ref-Patil1982">1982</a>)</span>, <span class="citation">Tothmeresz (<a href="references.html#ref-Tothmeresz1995">1995</a>)</span> et <span class="citation">Kindt, Van Damme, et Simons (<a href="references.html#ref-Kindt2006">2006</a>)</span>, recommandent de tracer des profils de diversité, c’est-à-dire la valeur de la diversité <span class="math inline">\(^{q}\!D\)</span> en fonction de l’ordre <span class="math inline">\(q\)</span> (figure <a href="entropie.html#fig:ProfilDivFig">4.5</a>) pour comparer plusieurs communautés.
 Une communauté peut être déclarée plus diverse qu’une autre si son profil de diversité est au-dessus de l’autre pour toutes les valeurs de <span class="math inline">\(q\)</span>.
-Si les courbes se croisent, il n’y a pas de relation d’ordre <span class="citation">(<a href="references.html#ref-Tothmeresz1995" role="doc-biblioref">Tothmeresz 1995</a>)</span>.</p>
-<p><span class="citation">Lande, DeVries, et Walla (<a href="references.html#ref-Lande2000" role="doc-biblioref">2000</a>)</span> montrent que si la diversité de Simpson et la richesse de deux communautés n’ont pas le même ordre, alors les courbes d’accumulation du nombre d’espèces en fonction du nombre d’individus échantillonnés se croisent aussi.</p>
+Si les courbes se croisent, il n’y a pas de relation d’ordre <span class="citation">(<a href="references.html#ref-Tothmeresz1995">Tothmeresz 1995</a>)</span>.</p>
+<p><span class="citation">Lande, DeVries, et Walla (<a href="references.html#ref-Lande2000">2000</a>)</span> montrent que si la diversité de Simpson et la richesse de deux communautés n’ont pas le même ordre, alors les courbes d’accumulation du nombre d’espèces en fonction du nombre d’individus échantillonnés se croisent aussi.</p>
 
 <p></p>
 <div class="figure" style="text-align: center">
@@ -537,10 +540,10 @@ Figure 4.5: Profil de diversité calculé pour deux parcelles de Paracou (Parcel
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">P6D</span>, xlab <span class="op">=</span> <span class="st">"q"</span>, ylab <span class="op">=</span> <span class="st">"Diversité"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame.list</a></span><span class="op">(</span><span class="va">P18D</span><span class="op">)</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <p></p>
-<p><span class="citation">Pallmann et al. (<a href="references.html#ref-Pallmann2012" role="doc-biblioref">2012</a>)</span> ont développé un test statistique pour comparer la diversité de deux communautés pour plusieurs valeurs de <span class="math inline">\(q\)</span> simultanément.</p>
-<p><span class="citation">C. Liu et al. (<a href="references.html#ref-Liu2006" role="doc-biblioref">2006</a>)</span> nomment <em>séparables</em> des communautés dont les profils ne se croisent pas.
+<p><span class="citation">Pallmann et al. (<a href="references.html#ref-Pallmann2012">2012</a>)</span> ont développé un test statistique pour comparer la diversité de deux communautés pour plusieurs valeurs de <span class="math inline">\(q\)</span> simultanément.</p>
+<p><span class="citation">C. Liu et al. (<a href="references.html#ref-Liu2006">2006</a>)</span> nomment <em>séparables</em> des communautés dont les profils ne se croisent pas.
 Ils montrent que des communautés peuvent être séparables en selon un profil de diversité de <span class="math inline">\(^{q}\!D\)</span> sans l’être forcément selon un profil de diversité de Hurlbert (section <a href="chap-MesuresNeutres.html#sec-Hurlbert">3.4</a>), et inversement.
-Ils montrent que les communautés séparables selon un troisième type de profil, celui de la queue de distribution <span class="citation">(<a href="references.html#ref-Patil1982" role="doc-biblioref">Patil et Taillie 1982</a>)</span>, le sont dans tous les cas.
+Ils montrent que les communautés séparables selon un troisième type de profil, celui de la queue de distribution <span class="citation">(<a href="references.html#ref-Patil1982">Patil et Taillie 1982</a>)</span>, le sont dans tous les cas.
 Le profil de la queue de distribution est construit en classant les espèces de la plus fréquente à la plus rare et en traçant la probabilité qu’un individu appartienne à une espèce plus rare que l’espèce en abscisse (figure <a href="entropie.html#fig:ProfilQueueFig">4.6</a>).</p>
 
 <p></p>
@@ -574,10 +577,10 @@ Figure 4.6: Profil de queue de distribution calculé pour les deux parcelles de 
   \tag{4.21}
   y(x) = \sum_{s=x+1}^{S}{p_{[s]}},\ x\in \{0, 1, \dots, S\}.
 \end{equation}\]</span></p>
-<p><span class="math inline">\(p_{[s]}\)</span> est la probabilité de l’espèce <span class="math inline">\(s\)</span>; les espèces sont classées par probabilité décroissante.</p>
+<p><span class="math inline">\(p_{[s]}\)</span> est la probabilité de l’espèce <span class="math inline">\(s\)</span><span style="white-space:nowrap"> ;</span> les espèces sont classées par probabilité décroissante.</p>
 <p>Ce profil est exhaustif (toutes les espèces sont représentées) alors que les autres profils de diversité ne sont représentés que pour un intervalle restreint du paramètre et qu’un croisement de courbes peut se produire au-delà.
 En revanche, il ne prend pas en compte les espèces non observées.</p>
-<p><span class="citation">Fattorini et Marcheselli (<a href="references.html#ref-Fattorini1999" role="doc-biblioref">1999</a>)</span> proposent un test pour comparer deux profils de queue de distribution à partir d’échantillonnages multiples (nécessaires pour évaluer la variance de chacune des probabilités) mais qui néglige les espèces non observées.</p>
+<p><span class="citation">Fattorini et Marcheselli (<a href="references.html#ref-Fattorini1999">1999</a>)</span> proposent un test pour comparer deux profils de queue de distribution à partir d’échantillonnages multiples (nécessaires pour évaluer la variance de chacune des probabilités) mais qui néglige les espèces non observées.</p>
 </div>
 <div id="estimation-de-lentropie" class="section level2" number="4.6">
 <h2>
@@ -587,8 +590,8 @@ En revanche, il ne prend pas en compte les espèces non observées.</p>
 <h3>
 <span class="header-section-number">4.6.1</span> Zhang et Grabchak<a class="anchor" aria-label="anchor" href="#zhang-et-grabchak"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Z. Zhang et Grabchak (<a href="references.html#ref-Zhang2014" role="doc-biblioref">2016</a>)</span> montrent que toutes les mesures d’entropie usuelles sont des combinaisons linéaires de <span class="math inline">\({\zeta}_{u,v}\)</span> <a href="chap-MesuresNeutres.html#eq:zeta">(3.38)</a>.
-À partir des estimateurs de <span class="math inline">\({\zeta}_{u,v}\)</span> <span class="citation">(<a href="references.html#ref-Zhang2010" role="doc-biblioref">Z. Zhang et Zhou 2010</a>)</span>, l’estimateur suivant est proposé pour <span class="math inline">\(h_q=\sum^S_{s=1}{p^q_s}\)</span>:</p>
+<p><span class="citation">Z. Zhang et Grabchak (<a href="references.html#ref-Zhang2014">2016</a>)</span> montrent que toutes les mesures d’entropie usuelles sont des combinaisons linéaires de <span class="math inline">\({\zeta}_{u,v}\)</span> <a href="chap-MesuresNeutres.html#eq:zeta">(3.38)</a>.
+À partir des estimateurs de <span class="math inline">\({\zeta}_{u,v}\)</span> <span class="citation">(<a href="references.html#ref-Zhang2010">Z. Zhang et Zhou 2010</a>)</span>, l’estimateur suivant est proposé pour <span class="math inline">\(h_q=\sum^S_{s=1}{p^q_s}\)</span> :</p>
 <p><span class="math display" id="eq:Zhang2014hq">\[\begin{equation}
   \tag{4.22}
   \tilde{h}_q = 1+\sum^{s^{n}_{\ne 0}}_{s=1}{\frac{n_s}{n}\sum^{n-n_s}_{v=1}{\left[\prod^v_{i=1}{\frac{i-q}{i}}\right]\left[\prod^v_{j=1}{\left(1-\frac{n_s-1}{n-j}\right)}\right]}}.
@@ -606,8 +609,8 @@ L’estimateur corrigé de <span class="math inline">\(^{1}\!H\)</span> est</p>
   \tag{4.24}
   ^1\!{\tilde{H}} =\sum^{s^{n}_{\ne 0}}_{s=1}{\frac{n_s}{n}\sum^{n-n_s}_{v=1}{\frac{1}{v}\left[\prod^v_{j=1}{1-\frac{n_s-1}{n-j}}\right]}}.
 \end{equation}\]</span></p>
-<p>Cet estimateur est différent de <span class="math inline">\(H_z\)</span> <span class="citation">(<a href="references.html#ref-Zhang2012" role="doc-biblioref">Z. Zhang 2012</a>)</span>.
-Il a été également obtenu par d’autres auteurs <span class="citation">(<a href="references.html#ref-Mao2007" role="doc-biblioref">Mao 2007</a>; <a href="references.html#ref-Vinck2012" role="doc-biblioref">Vinck et al. 2012</a>; <a href="references.html#ref-Chao2013" role="doc-biblioref">Chao, Wang, et Jost 2013</a>, Annexe S1)</span> avec d’autres approches.</p>
+<p>Cet estimateur est différent de <span class="math inline">\(H_z\)</span> <span class="citation">(<a href="references.html#ref-Zhang2012">Z. Zhang 2012</a>)</span>.
+Il a été également obtenu par d’autres auteurs <span class="citation">(<a href="references.html#ref-Mao2007">Mao 2007</a>; <a href="references.html#ref-Vinck2012">Vinck et al. 2012</a>; <a href="references.html#ref-Chao2013">Chao, Wang, et Jost 2013</a>, Annexe S1)</span> avec d’autres approches.</p>
 <p>Dans <em>entropart</em>, utiliser <code>Tsallis</code> et <code>Diversity</code> :</p>
 <p></p>
 <div class="sourceCode" id="cb157"><pre class="downlit sourceCode r">
@@ -624,9 +627,9 @@ Il a été également obtenu par d’autres auteurs <span class="citation">(<a h
 <h3>
 <span class="header-section-number">4.6.2</span> Chao et Jost<a class="anchor" aria-label="anchor" href="#sec-BiaisHCDT"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Chao et Jost (<a href="references.html#ref-Chao2015" role="doc-biblioref">2015</a>)</span> complètent cet estimateur par une estimation du biais résiduel, selon la même démarche que pour l’entropie de Shannon <span class="citation">(<a href="references.html#ref-Chao2013" role="doc-biblioref">Chao, Wang, et Jost 2013</a>)</span>.
+<p><span class="citation">Chao et Jost (<a href="references.html#ref-Chao2015">2015</a>)</span> complètent cet estimateur par une estimation du biais résiduel, selon la même démarche que pour l’entropie de Shannon <span class="citation">(<a href="references.html#ref-Chao2013">Chao, Wang, et Jost 2013</a>)</span>.
 <span class="math inline">\(h_q\)</span> s’écrit sous la forme de la somme infinie des entropies de Simpson généralisées : <span class="math inline">\(h_q = \sum_{k=0}^{\infty}{\binom{q-1}{k}(-1)^k\zeta_{1,k}}\)</span>.
-Alors que l’estimateur de Zhang et Grabchak ne prend en compte que les <span class="math inline">\(n-1\)</span> premiers termes de la somme pour un estimateur sans <span style="white-space:nowrap">biais ;</span> <span class="citation">Chao et Jost (<a href="references.html#ref-Chao2015" role="doc-biblioref">2015</a>)</span>, eqn 5, le complètent par une estimation, forcément biaisée, des termes suivants pour obtenir :</p>
+Alors que l’estimateur de Zhang et Grabchak ne prend en compte que les <span class="math inline">\(n-1\)</span> premiers termes de la somme pour un estimateur sans <span style="white-space:nowrap">biais ;</span> <span class="citation">Chao et Jost (<a href="references.html#ref-Chao2015">2015</a>)</span>, eqn 5, le complètent par une estimation, forcément biaisée, des termes suivants pour obtenir :</p>
 <p><span class="math display" id="eq:HqChaoJost">\[\begin{align}
   \tag{4.25}
   ^q\!{\tilde{H}} =
@@ -644,9 +647,9 @@ Alors que l’estimateur de Zhang et Grabchak ne prend en compte que les <span c
 <li>
 <span class="math inline">\(1\)</span> en absence de singletons et doubletons.</li>
 </ul>
-<p>Cet estimateur est le plus performant. Quand <span class="math inline">\(q \to 1\)</span>, il tend vers l’estimateur de l’entropie de Shannon de <span class="citation">Chao, Wang, et Jost (<a href="references.html#ref-Chao2013" role="doc-biblioref">2013</a>)</span>, équation <a href="chap-MesuresNeutres.html#eq:Chao2013">(3.41)</a>.
+<p>Cet estimateur est le plus performant. Quand <span class="math inline">\(q \to 1\)</span>, il tend vers l’estimateur de l’entropie de Shannon de <span class="citation">Chao, Wang, et Jost (<a href="references.html#ref-Chao2013">2013</a>)</span>, équation <a href="chap-MesuresNeutres.html#eq:Chao2013">(3.41)</a>.
 Quand <span class="math inline">\(q=0\)</span>, l’estimateur se réduit à Chao1. Pour toutes les valeurs entières de <span class="math inline">\(q\)</span> supérieures ou égales à 2, il se réduit à l’estimateur <a href="entropie.html#eq:HqZhang">(4.23)</a>, identique à l’estimateur de Lande pour <span class="math inline">\(q=2\)</span>, et est sans biais.</p>
-<p>L’estimateur est obtenu à partir de celui du taux de couverture extrapolé (section <a href="chap-Outils.html#sec-Couverture">2.3</a>) fourni par <span class="citation">Chao et Jost (<a href="references.html#ref-Chao2012b" role="doc-biblioref">2012</a>)</span>, annexe E, sans le détail de la démonstration présenté ici.
+<p>L’estimateur est obtenu à partir de celui du taux de couverture extrapolé (section <a href="chap-Outils.html#sec-Couverture">2.3</a>) fourni par <span class="citation">Chao et Jost (<a href="references.html#ref-Chao2012b">2012</a>)</span>, annexe E, sans le détail de la démonstration présenté ici.
 L’espérance conditionnelle du taux de couverture dans un échantillon de taille <span class="math inline">\(n+m\)</span> compte-tenu des effectifs observés, notés <span class="math inline">\(\{n_s\}\)</span>, est</p>
 <p><span class="math display" id="eq:EspCnm">\[\begin{equation}
   \tag{4.26}
@@ -666,19 +669,19 @@ On obtient</p>
     \left[ \frac{\left(n-1\right)s^{n}_{1}}{\left(n-1\right)s^{n}_{1}+2s^{n}_{2}} \right]^{n+m} \\
   &amp;= 1-\frac{s^{n}_{1}}{n} \left( 1-A \right)^{m+1}.
 \end{align}\]</span></p>
-<p>L’espérance du taux de couverture est directement liée à l’indice de Simpson généralisé <span class="citation">(<a href="references.html#ref-Good1953" role="doc-biblioref">Good 1953</a>)</span> : <span class="math inline">\({\mathbb E}(C^{n+m}) = 1 - \zeta_{1,n+m}\)</span>.
+<p>L’espérance du taux de couverture est directement liée à l’indice de Simpson généralisé <span class="citation">(<a href="references.html#ref-Good1953">Good 1953</a>)</span> : <span class="math inline">\({\mathbb E}(C^{n+m}) = 1 - \zeta_{1,n+m}\)</span>.
 L’estimateur de <span class="math inline">\(h_q\)</span> est obtenu en remplaçant les termes <span class="math inline">\(\zeta_{1,k}\)</span> de la somme infinie <span class="math inline">\(\sum_{k=n}^{\infty}{\binom{q-1}{k}(-1)^k \zeta_{1,k}}\)</span> par la valeur de <span class="math inline">\(1 -{\mathbb E}(C^{n+m})\)</span> calculée dans l’équation <a href="entropie.html#eq:Cnm">(4.27)</a>.
-La formule obtenue contient le développement en série entière de <span class="math inline">\([1 - (1-A)^{q-1}]\)</span>, ce qui permet d’éliminer la somme infinie et d’obtenir l’estimateur de l’équation <a href="entropie.html#eq:HqChaoJost">(4.25)</a> après simplifications <span class="citation">(<a href="references.html#ref-Chao2015" role="doc-biblioref">Chao et Jost 2015</a>, Appendix S1, Theorem S1.2d)</span>.</p>
+La formule obtenue contient le développement en série entière de <span class="math inline">\([1 - (1-A)^{q-1}]\)</span>, ce qui permet d’éliminer la somme infinie et d’obtenir l’estimateur de l’équation <a href="entropie.html#eq:HqChaoJost">(4.25)</a> après simplifications <span class="citation">(<a href="references.html#ref-Chao2015">Chao et Jost 2015</a>, Appendix S1, Theorem S1.2d)</span>.</p>
 </div>
 <div id="autres-méthodes" class="section level3" number="4.6.3">
 <h3>
 <span class="header-section-number">4.6.3</span> Autres méthodes<a class="anchor" aria-label="anchor" href="#autres-m%C3%A9thodes"><i class="fas fa-link"></i></a>
 </h3>
-<p>Deux autres approches sont possibles <span class="citation">(<a href="references.html#ref-Marcon2014a" role="doc-biblioref">Marcon et al. 2014</a>)</span> :</p>
+<p>Deux autres approches sont possibles <span class="citation">(<a href="references.html#ref-Marcon2014a">Marcon et al. 2014</a>)</span> :</p>
 <ul>
-<li>Celle de <span class="citation">Chao et Shen (<a href="references.html#ref-Chao2003" role="doc-biblioref">2003</a>)</span>, étendue au-delà de l’entropie de Shannon qui prend en compte les espèces non <span style="white-space:nowrap">observées ;</span>
+<li>Celle de <span class="citation">Chao et Shen (<a href="references.html#ref-Chao2003">2003</a>)</span>, étendue au-delà de l’entropie de Shannon qui prend en compte les espèces non <span style="white-space:nowrap">observées ;</span>
 </li>
-<li>Celle de <span class="citation">Grassberger (<a href="references.html#ref-Grassberger1988" role="doc-biblioref">1988</a>)</span> qui prend en compte la non-linéarité de l’estimateur.</li>
+<li>Celle de <span class="citation">Grassberger (<a href="references.html#ref-Grassberger1988">1988</a>)</span> qui prend en compte la non-linéarité de l’estimateur.</li>
 </ul>
 <p>Le domaine de validité des deux corrections est différent.
 Quand <span class="math inline">\(q\)</span> est petit, les espèces rares non observées ont une grande importance alors que <span class="math inline">\(^{q}\!H\)</span> est presque linéaire : la correction de Grassberger disparaît quand <span class="math inline">\(q=0\)</span>.
@@ -704,14 +707,14 @@ Un compromis raisonnable consiste à utiliser le plus grand des deux estimateurs
     + \frac{{\left(-1\right)}^n \mathrm{\Gamma}\left(1+q\right)\sin{\pi q}}{\pi\left(n+1\right)}  \right).
 \end{equation}\]</span></p>
 <p><span class="math inline">\(\mathrm{\Gamma}\left(\cdot\right)\)</span> est la fonction gamma.
-L’estimateur est linéaire par rapport à <span class="math inline">\(\widetilde{p^q_s}\)</span>: le problème original est donc résolu par la construction de l’estimateur de <span class="math inline">\(p^q_s\)</span>, mais celui-ci est biaisé également.</p>
-<p>L’estimateur de Chao et Shen peut être amélioré <span class="citation">(<a href="references.html#ref-Marcon2015a" role="doc-biblioref">Marcon 2015</a>)</span> en estimant mieux les probabilités.
-<span class="citation">Chao, Hsieh, et al. (<a href="references.html#ref-Chao2014c" role="doc-biblioref">2015</a>)</span> ont développé un estimateur de la distribution des probabilités à partir de l’estimation du taux de couverture généralisé.
+L’estimateur est linéaire par rapport à <span class="math inline">\(\widetilde{p^q_s}\)</span> : le problème original est donc résolu par la construction de l’estimateur de <span class="math inline">\(p^q_s\)</span>, mais celui-ci est biaisé également.</p>
+<p>L’estimateur de Chao et Shen peut être amélioré <span class="citation">(<a href="references.html#ref-Marcon2015a">Marcon 2015</a>)</span> en estimant mieux les probabilités.
+<span class="citation">Chao, Hsieh, et al. (<a href="references.html#ref-Chao2014c">2015</a>)</span> ont développé un estimateur de la distribution des probabilités à partir de l’estimation du taux de couverture généralisé.
 <span class="math inline">\(\hat{C}{\hat{p}}_s\)</span> peut être remplacé par cet estimateur pour réduire le biais de l’estimateur de Chao et Shen.</p>
 <p>Enfin, la distribution des espèces non échantillonnées peut être ajoutée en estimant leur nombre et en choisissant une loi.
-<span class="citation">Chao, Hsieh, et al. (<a href="references.html#ref-Chao2014c" role="doc-biblioref">2015</a>)</span> ont utilisé l’estimateur Chao1 et une distribution géométrique.
-L’estimateur jackknife <span class="citation">(<a href="references.html#ref-Burnham1979" role="doc-biblioref">Burnham et Overton 1979</a>)</span> est plus versatile parce que son ordre peut être adapté aux données quand l’effort d’échantillonnage est trop faible pour que l’estimateur Chao1 soit performant <span class="citation">(<a href="references.html#ref-Brose2003" role="doc-biblioref">Brose, Martinez, et Williams 2003</a>)</span>.
-Un simple estimateur plug-in, appelé “estimateur révélé”, peut ensuite être appliqué à cette distribution révélée <span class="citation">(<a href="references.html#ref-Marcon2015a" role="doc-biblioref">Marcon 2015</a>)</span>.</p>
+<span class="citation">Chao, Hsieh, et al. (<a href="references.html#ref-Chao2014c">2015</a>)</span> ont utilisé l’estimateur Chao1 et une distribution géométrique.
+L’estimateur jackknife <span class="citation">(<a href="references.html#ref-Burnham1979">Burnham et Overton 1979</a>)</span> est plus versatile parce que son ordre peut être adapté aux données quand l’effort d’échantillonnage est trop faible pour que l’estimateur Chao1 soit performant <span class="citation">(<a href="references.html#ref-Brose2003">Brose, Martinez, et Williams 2003</a>)</span>.
+Un simple estimateur plug-in, appelé “estimateur révélé”, peut ensuite être appliqué à cette distribution révélée <span class="citation">(<a href="references.html#ref-Marcon2015a">Marcon 2015</a>)</span>.</p>
 <p>L’estimateur du taux de couverture généralisé ne fait aucune hypothèse sur les espèces non observées, et n’utilise que le taux de couverture et la technique de Horvitz-Thompson pour estimer leur contribution.
 L’estimateur révélé ne tente aucune correction mais utilise l’estimation la meilleure possible pour la distribution des probabilités.</p>
 </div>
@@ -724,8 +727,8 @@ inventorié peut être considéré comme un tirage dans une loi multinomiale, qu
 Par simulation à partir d’une distribution connue, il est possible de tirer un grand nombre d’échantillons et de répéter l’estimation de la diversité sur chacun d’eux.
 La distribution de la valeur de l’échantillon permet de juger ses performances : son biais moyen (mesuré par rapport à la valeur de référence calculée à partir des probabilités choisies), et sa variabilité (évaluée par sa variance empirique sur les simulations).
 Un estimateur performant doit être peu biaisé mais aussi peu variable.
-L’erreur quadratique moyenne, somme du carré du biais et de la variance, ou sa racine carrée dont la dimension est celle des données (<em>root mean square error</em> : RMSE), est un bon critère de test <span class="citation">(voir par exemple <a href="references.html#ref-Chao2013" role="doc-biblioref">Chao, Wang, et Jost 2013, fig. 1</a>)</span>.</p>
-<p><span class="citation">Haegeman et al. (<a href="references.html#ref-Haegeman2013" role="doc-biblioref">2013</a>)</span> proposent deux estimateurs de la diversité <span class="math inline">\(^{q}\!D\)</span> à partir des courbes de raréfaction et d’extrapolation du nombre d’espèces.
+L’erreur quadratique moyenne, somme du carré du biais et de la variance, ou sa racine carrée dont la dimension est celle des données (<em>root mean square error</em> : RMSE), est un bon critère de test <span class="citation">(voir par exemple <a href="references.html#ref-Chao2013">Chao, Wang, et Jost 2013, fig. 1</a>)</span>.</p>
+<p><span class="citation">Haegeman et al. (<a href="references.html#ref-Haegeman2013">2013</a>)</span> proposent deux estimateurs de la diversité <span class="math inline">\(^{q}\!D\)</span> à partir des courbes de raréfaction et d’extrapolation du nombre d’espèces.
 Les deux estimateurs bornent la vraie valeur de <span class="math inline">\(^{q}\!D\)</span> (leur variabilité n’est pas prise en compte, mais elle est négligeable dans le cadre utilisé).
 L’estimateur minimal est très proche de celui de Chao et Jost, à la différence que les termes estimant le biais résiduel sont évalués par une approximation numérique.
 L’estimateur maximal suppose que tous les individus non échantillonnés appartiennent à une espèce nouvelle, ce qui est effectivement le pire cas possible.
@@ -734,7 +737,7 @@ Les deux estimateurs sont appliqués à la diversité de communautés microbienn
 L’estimateur minimal, qui correspond à l’état de l’art, sous-estime sévèrement la diversité quand l’échantillonnage est faible.
 L’estimateur maximal est excessivement conservateur (il est conçu pour borner l’estimation dans la pire hypothèse).</p>
 <p>Aux ordres de diversité supérieurs, les estimateurs convergent : même avec de petits échantillons, même en supposant que la richesse de la communauté est la plus grande possible, l’estimation de la diversité est précise dès <span class="math inline">\(q=1\)</span>.</p>
-<p>Dans des conditions moins difficiles, correspondant à des communautés moins riches (typiquement des forêts tropicales), l’estimation est précise dès <span class="math inline">\(q=0,5\)</span> <span class="citation">(<a href="references.html#ref-Marcon2015a" role="doc-biblioref">Marcon 2015</a>)</span>.
+<p>Dans des conditions moins difficiles, correspondant à des communautés moins riches (typiquement des forêts tropicales), l’estimation est précise dès <span class="math inline">\(q=0,5\)</span> <span class="citation">(<a href="references.html#ref-Marcon2015a">Marcon 2015</a>)</span>.
 Ces résultats sont développés plus loin.</p>
 </div>
 <div id="intervalle-de-confiance-des-estimateurs" class="section level3" number="4.6.5">
@@ -743,14 +746,14 @@ Ces résultats sont développés plus loin.</p>
 </h3>
 <p>À partir de données d’inventaire, l’estimation du biais est impossible (sinon, le biais serait simplement ajouté à l’estimateur pour le rendre sans biais).
 La variabilité de l’estimateur peut être évaluée en générant des communautés par bootstrap et en estimant leur diversité comme dans la méthode précédente.
-Les communautés peuvent être simulées par tirage dans une loi multinomiale respectant les probabilités observées <span class="citation">(<a href="references.html#ref-Marcon2012a" role="doc-biblioref">Marcon et al. 2012</a>, <a href="references.html#ref-Marcon2014a" role="doc-biblioref">2014</a>)</span>.
+Les communautés peuvent être simulées par tirage dans une loi multinomiale respectant les probabilités observées <span class="citation">(<a href="references.html#ref-Marcon2012a">Marcon et al. 2012</a>, <a href="references.html#ref-Marcon2014a">2014</a>)</span>.
 L’inconvénient est que les espèces dont les probabilités sont petites ne sont pas tirées, ce qui entraîne un nouveau biais d’estimation.
 L’estimateur le corrige en partie, le biais d’estimation dû au non échantillonnage des espèces rares de la communauté (corrigé par l’estimateur appliqué aux données réelles) n’est pas accessible.
 Il est donc nécessaire de recentrer les valeurs obtenues par simulation autour de la valeur obtenue sur les données.</p>
-<p><span class="citation">Chao et Jost (<a href="references.html#ref-Chao2015" role="doc-biblioref">2015</a>)</span> proposent une méthode plus élaborée qui consiste à reconstituer la distribution des probabilités de la communauté réelle le mieux possible avant d’en tirer les échantillons simulés.
+<p><span class="citation">Chao et Jost (<a href="references.html#ref-Chao2015">2015</a>)</span> proposent une méthode plus élaborée qui consiste à reconstituer la distribution des probabilités de la communauté réelle le mieux possible avant d’en tirer les échantillons simulés.
 L’estimateur naïf de la probabilité d’une espèce observée <span class="math inline">\(s\)</span> est <span class="math inline">\(\hat{p}_s = {n_s}/{n}\)</span>.
 <span class="math inline">\(\hat{p}_s\)</span> est sans biais mais comme on ne dispose que d’une réalisation de la loi, il est préférable de chercher un estimateur sans biais conditionnellement aux espèces observées.
-Il est obtenu par <span class="citation">Chao, Wang, et Jost (<a href="references.html#ref-Chao2013" role="doc-biblioref">2013</a>)</span> à partir de l’espérance conditionnelle de <span class="math inline">\({N_s}/{n}\)</span>:</p>
+Il est obtenu par <span class="citation">Chao, Wang, et Jost (<a href="references.html#ref-Chao2013">2013</a>)</span> à partir de l’espérance conditionnelle de <span class="math inline">\({N_s}/{n}\)</span> :</p>
 <p><span class="math display" id="eq:Chao2013ENs">\[\begin{equation}
   \tag{4.31}
   {\mathbb E} \left( \frac{N_s}{n} | n_s&gt;0 \right)
@@ -769,7 +772,7 @@ Il est obtenu par <span class="citation">Chao, Wang, et Jost (<a href="reference
   = \frac{1-\hat{C}}{\sum_{s=1}^{s^{n}_{\ne 0}} {\frac{n_s}{n} \left(1-\frac{n_s}{n}\right)^n}}.
 \end{equation}\]</span></p>
 <p><span class="math inline">\(\lambda\)</span> est un paramètre d’un modèle permettant d’estimer les valeurs de <span class="math inline">\(p_i\)</span> à partir de leur espérance conditionnelle et des données.
-Le modèle complet est présenté par <span class="citation">Chao, Hsieh, et al. (<a href="references.html#ref-Chao2014c" role="doc-biblioref">2015</a>)</span>.</p>
+Le modèle complet est présenté par <span class="citation">Chao, Hsieh, et al. (<a href="references.html#ref-Chao2014c">2015</a>)</span>.</p>
 <p>Les probabilités des espèces non observées sont considérées comme égales par souci de simplification et parce qu’elles influencent peu la variance des estimateurs.
 Leur somme est égale au déficit de couverture, et leur nombre estimé par Chao1.</p>
 <p>L’intervalle de confiance de l’estimateur obtenu par cette technique à partir des données permet de connaître sa variabilité, mais pas son biais.
@@ -780,8 +783,8 @@ Il n’est absolument pas garanti (et peu probable si l’échantillonnage est f
 <span class="header-section-number">4.6.6</span> Pratique de l’estimation<a class="anchor" aria-label="anchor" href="#pratique-de-lestimation"><i class="fas fa-link"></i></a>
 </h3>
 <p>La conversion de l’estimateur de l’entropie en estimateur de la diversité pose un nouveau problème puisque <span class="math inline">\(^{q}\!D\)</span> n’est pas une transformation linéaire de <span class="math inline">\(^{q}\!H\)</span>.
-Ce dernier biais peut être négligé <span class="citation">(<a href="references.html#ref-Grassberger1988" role="doc-biblioref">Grassberger 1988</a>)</span> parce que <span class="math inline">\(^{q}\!H\)</span>, l’entropie, est la valeur moyenne de l’information de nombreuses espèces indépendantes et fluctue donc peu à cause de l’échantillonnage, contrairement aux estimateurs des probabilités.</p>
-<p>Des simulations menées sur des distributions log-normale ou géométrique de richesse diverses avec des efforts d’échantillonnage variés permettent de tester les estimateurs dans des cas théoriques réalistes <span class="citation">(<a href="references.html#ref-Marcon2015a" role="doc-biblioref">Marcon 2015</a>)</span>.
+Ce dernier biais peut être négligé <span class="citation">(<a href="references.html#ref-Grassberger1988">Grassberger 1988</a>)</span> parce que <span class="math inline">\(^{q}\!H\)</span>, l’entropie, est la valeur moyenne de l’information de nombreuses espèces indépendantes et fluctue donc peu à cause de l’échantillonnage, contrairement aux estimateurs des probabilités.</p>
+<p>Des simulations menées sur des distributions log-normale ou géométrique de richesse diverses avec des efforts d’échantillonnage variés permettent de tester les estimateurs dans des cas théoriques réalistes <span class="citation">(<a href="references.html#ref-Marcon2015a">Marcon 2015</a>)</span>.
 Un résultat représentatif est donné ici.</p>
 
 <p></p>
@@ -822,20 +825,20 @@ Son biais est alors bien inférieur, au prix d’une variance plus grande.</p>
 <span class="header-section-number">4.6.7</span> MSOM et MSAM<a class="anchor" aria-label="anchor" href="#msom-et-msam"><i class="fas fa-link"></i></a>
 </h3>
 <p>L’utilisation de modèles hiérarchiques bayesiens fondés sur des modèles d’occupation multispécifiques (MSOM) ou des modèles d’abondance multispécifiques (MSAM) progresse dans la littérature récente.
-Ils nécessitent de choisir une loi de probabilité d’observation des espèces compatible avec un échantillonnage non exhaustif, par exemple une loi ZIP (<em>zero-inflated Poisson</em>) <span class="citation">(<a href="references.html#ref-Zhang2014c" role="doc-biblioref">J. Zhang, Crist, et Hou 2014</a>)</span>, dans laquelle l’espérance de la présence de chaque espèce peut être modélisée à son tour comme la conséquence de variables environnementales.
-Une approche alternative consiste à modéliser la probabilité d’observation comme la combinaison d’une probabilité de présence et d’une probabilité de détection <span class="citation">(<a href="references.html#ref-Broms2014" role="doc-biblioref">Broms, Hooten, et Fitzpatrick 2014</a>)</span>.
-Ces méthodes ont l’avantage de fournir une distribution de probabilité des paramètres des modèles, et donc de la diversité qui est calculée comme une quantité dérivée. Leur faiblesse est qu’ils dépendent de la loi choisie. Une revue complète est fournie par <span class="citation">Iknayan et al. (<a href="references.html#ref-Iknayan2014" role="doc-biblioref">2014</a>)</span></p>
+Ils nécessitent de choisir une loi de probabilité d’observation des espèces compatible avec un échantillonnage non exhaustif, par exemple une loi ZIP (<em>zero-inflated Poisson</em>) <span class="citation">(<a href="references.html#ref-Zhang2014c">J. Zhang, Crist, et Hou 2014</a>)</span>, dans laquelle l’espérance de la présence de chaque espèce peut être modélisée à son tour comme la conséquence de variables environnementales.
+Une approche alternative consiste à modéliser la probabilité d’observation comme la combinaison d’une probabilité de présence et d’une probabilité de détection <span class="citation">(<a href="references.html#ref-Broms2014">Broms, Hooten, et Fitzpatrick 2014</a>)</span>.
+Ces méthodes ont l’avantage de fournir une distribution de probabilité des paramètres des modèles, et donc de la diversité qui est calculée comme une quantité dérivée. Leur faiblesse est qu’ils dépendent de la loi choisie. Une revue complète est fournie par <span class="citation">Iknayan et al. (<a href="references.html#ref-Iknayan2014">2014</a>)</span></p>
 </div>
 <div id="sec-RarExtrapol" class="section level3" number="4.6.8">
 <h3>
 <span class="header-section-number">4.6.8</span> Raréfaction et extrapolation<a class="anchor" aria-label="anchor" href="#sec-RarExtrapol"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Chao et al. (<a href="references.html#ref-Chao2014" role="doc-biblioref">2014</a>)</span> étendent l’approche de <span class="citation">Gotelli et Colwell (<a href="references.html#ref-Gotelli2001" role="doc-biblioref">2001</a>)</span> aux nombres de Hill et fournissent les méthodes nécessaires au calcul de courbes de raréfaction et d’extrapolation de l’estimateur de <span class="math inline">\(^{q}\!D\)</span> en fonction de la taille de l’échantillon ou du taux de couverture.</p>
+<p><span class="citation">Chao et al. (<a href="references.html#ref-Chao2014">2014</a>)</span> étendent l’approche de <span class="citation">Gotelli et Colwell (<a href="references.html#ref-Gotelli2001">2001</a>)</span> aux nombres de Hill et fournissent les méthodes nécessaires au calcul de courbes de raréfaction et d’extrapolation de l’estimateur de <span class="math inline">\(^{q}\!D\)</span> en fonction de la taille de l’échantillon ou du taux de couverture.</p>
 <p>Les courbes de raréfaction sont obtenues à partir de l’échantillon disponible en simulant la diminution de sa taille.
 Les courbes d’extrapolation simulent l’augmentation de la taille de l’échantillon.
 Elles sont en réalité calculées par raréfaction d’un échantillon hypothétique de taille infinie : un estimateur de <span class="math inline">\(^{q}\!D\)</span> corrigé du biais d’estimation est nécessaire.
 L’article se limite aux valeurs de <span class="math inline">\(q\)</span> égales à 0, 1 ou 2 ou non entières mais supérieures à 2.
-Le package <em>iNEXT</em> <span class="citation">(<a href="references.html#ref-Hsieh2014" role="doc-biblioref">Hsieh, Ma, et Chao 2016</a>)</span> implémente ces calculs dans R comme le package <em>entropart</em> qui améliore l’estimation des ordres non entiers de diversité.</p>
+Le package <em>iNEXT</em> <span class="citation">(<a href="references.html#ref-Hsieh2014">Hsieh, Ma, et Chao 2016</a>)</span> implémente ces calculs dans R comme le package <em>entropart</em> qui améliore l’estimation des ordres non entiers de diversité.</p>
 </div>
 </div>
 <div id="autres-approches" class="section level2" number="4.7">
@@ -846,14 +849,14 @@ Le package <em>iNEXT</em> <span class="citation">(<a href="references.html#ref-H
 <h3>
 <span class="header-section-number">4.7.1</span> L’entropie de Rényi<a class="anchor" aria-label="anchor" href="#lentropie-de-r%C3%A9nyi"><i class="fas fa-link"></i></a>
 </h3>
-<p>L’entropie d’ordre <span class="math inline">\(q\)</span> de <span class="citation">Rényi (<a href="references.html#ref-Renyi1961" role="doc-biblioref">1961</a>)</span> est</p>
+<p>L’entropie d’ordre <span class="math inline">\(q\)</span> de <span class="citation">Rényi (<a href="references.html#ref-Renyi1961">1961</a>)</span> est</p>
 <p><span class="math display" id="eq:Renyi">\[\begin{equation}
   \tag{4.34}
   ^{q}\!R =\frac{1}{1-q\ln\sum^S_{q=1}{p^q_s}}.
 \end{equation}\]</span></p>
-<p>C’est le logarithme naturel des nombres de <span class="citation">Hill (<a href="references.html#ref-Hill1973" role="doc-biblioref">1973</a>)</span> qui ont été définis à partir d’elle.
+<p>C’est le logarithme naturel des nombres de <span class="citation">Hill (<a href="references.html#ref-Hill1973">1973</a>)</span> qui ont été définis à partir d’elle.
 L’entropie de Rényi a connu un succès important en tant que seule mesure d’entropie généralisée jusqu’à la diffusion de l’entropie HCDT.
-Son défaut est qu’elle n’est pas forcément concave <span class="citation">(<a href="references.html#ref-Beck2009" role="doc-biblioref">C. Beck 2009</a>)</span>, ce qui empêche sa décomposition (voir chapitre <a href="chap-DedompHCDT.html#chap-DedompHCDT">12</a>).</p>
+Son défaut est qu’elle n’est pas forcément concave <span class="citation">(<a href="references.html#ref-Beck2009">C. Beck 2009</a>)</span>, ce qui empêche sa décomposition (voir chapitre <a href="chap-DedompHCDT.html#chap-DedompHCDT">12</a>).</p>
 </div>
 <div id="lentropie-généralisée-des-mesures-dinégalité" class="section level3" number="4.7.2">
 <h3>
@@ -865,16 +868,16 @@ Son défaut est qu’elle n’est pas forcément concave <span class="citation">
   H_q = \frac{1}{q\left(q-1\right)} \left[\frac{1}{S}\sum^S_{s=1}{\left(\frac{n_s}{\bar{n_s}}\right)^{q}}-1\right].
 \end{equation}\]</span></p>
 <p>C’est en réalité une entropie relative, qui mesure l’écart entre la distribution observée <span class="math inline">\(\{n_s\}\)</span> et sa valeur moyenne. Elle tend vers l’entropie de Theil quand <span class="math inline">\(q \to 1\)</span> et la moyenne des <span class="math inline">\(\ln(\frac{n_s}{\bar{n_s}})\)</span> quand <span class="math inline">\(q \to 0\)</span>.
-Elle a été conçue pour mesurer les inégalités <span class="citation">(<a href="references.html#ref-Cowell2000" role="doc-biblioref">Cowell 2000</a>)</span>, puis utilisée par exemple pour mesurer la concentration spatiale <span class="citation">(<a href="references.html#ref-Brulhart2005" role="doc-biblioref">Brülhart et Traeger 2005</a>)</span>.</p>
-<p><span class="citation">Maasoumi (<a href="references.html#ref-Maasoumi1993" role="doc-biblioref">1993</a>)</span> explicite cet usage et pour comparer la distribution de probabilité observée <span class="math inline">\(\{q_s\}\)</span> à une distribution attendue <span class="math inline">\(\{p_s\}\)</span>, plutôt qu’à la distribution uniforme dont toutes les valeurs seraient <span class="math inline">\(\frac{1}{S}\)</span>. En posant <span class="math inline">\(r=q-1\)</span>, en transformant les abondances <span class="math inline">\(\{n_s\}\)</span> en probabilités <span class="math inline">\(\{q_s\}\)</span> et en choisissant <span class="math inline">\(\{p_s\}\)</span> arbitrairement, on obtient</p>
+Elle a été conçue pour mesurer les inégalités <span class="citation">(<a href="references.html#ref-Cowell2000">Cowell 2000</a>)</span>, puis utilisée par exemple pour mesurer la concentration spatiale <span class="citation">(<a href="references.html#ref-Brulhart2005">Brülhart et Traeger 2005</a>)</span>.</p>
+<p><span class="citation">Maasoumi (<a href="references.html#ref-Maasoumi1993">1993</a>)</span> explicite cet usage et pour comparer la distribution de probabilité observée <span class="math inline">\(\{q_s\}\)</span> à une distribution attendue <span class="math inline">\(\{p_s\}\)</span>, plutôt qu’à la distribution uniforme dont toutes les valeurs seraient <span class="math inline">\(\frac{1}{S}\)</span>. En posant <span class="math inline">\(r=q-1\)</span>, en transformant les abondances <span class="math inline">\(\{n_s\}\)</span> en probabilités <span class="math inline">\(\{q_s\}\)</span> et en choisissant <span class="math inline">\(\{p_s\}\)</span> arbitrairement, on obtient</p>
 <p><span class="math display" id="eq:Maasoumi1993">\[\begin{equation}
   \tag{4.36}
   H_r\left(\mathbf{q},\mathbf{p}\right) = \frac{1}{r\left(r+1\right)}\left[\sum^S_{s=1}{q_s{\left(\frac{q_s}{p_s}\right)}^{r}}-1\right].
 \end{equation}\]</span></p>
-<p><span class="citation">N. Cressie et Read (<a href="references.html#ref-Cressie1984" role="doc-biblioref">1984</a>)</span> ont défini une mesure généralisée de qualité d’ajustement (<em>Goodness of Fit</em>) de la distribution <span class="math inline">\(\{q_s\}\)</span> à celle de <span class="math inline">\(\{p_s\}\)</span>.
+<p><span class="citation">N. Cressie et Read (<a href="references.html#ref-Cressie1984">1984</a>)</span> ont défini une mesure généralisée de qualité d’ajustement (<em>Goodness of Fit</em>) de la distribution <span class="math inline">\(\{q_s\}\)</span> à celle de <span class="math inline">\(\{p_s\}\)</span>.
 Elle est identique à l’entropie généralisée (à un coefficient 2 près) bien que développée indépendamment pour d’autres motivations.
-La statistique de Cressie et Read d’ordre 1 est la divergence de <span class="citation">Kullback et Leibler (<a href="references.html#ref-Kullback1951" role="doc-biblioref">1951</a>)</span>, celle d’ordre 2 le <span class="math inline">\(\chi^2\)</span> de <span class="citation">Pearson (<a href="references.html#ref-Pearson1900" role="doc-biblioref">1900</a>)</span>.</p>
-<p><span class="citation">Studeny et al. (<a href="references.html#ref-Studeny2011" role="doc-biblioref">2011</a>)</span> définissent une mesure d’équitabilité comme la divergence entre la distribution observée <span class="math inline">\(\{p_s\}\)</span> et la distribution uniforme, ce qui les ramène à l’entropie de Cowell :</p>
+La statistique de Cressie et Read d’ordre 1 est la divergence de <span class="citation">Kullback et Leibler (<a href="references.html#ref-Kullback1951">1951</a>)</span>, celle d’ordre 2 le <span class="math inline">\(\chi^2\)</span> de <span class="citation">Pearson (<a href="references.html#ref-Pearson1900">1900</a>)</span>.</p>
+<p><span class="citation">Studeny et al. (<a href="references.html#ref-Studeny2011">2011</a>)</span> définissent une mesure d’équitabilité comme la divergence entre la distribution observée <span class="math inline">\(\{p_s\}\)</span> et la distribution uniforme, ce qui les ramène à l’entropie de Cowell :</p>
 <p><span class="math display" id="eq:Studeny2011">\[\begin{equation}
   \tag{4.37}
   I_r
@@ -882,7 +885,7 @@ La statistique de Cressie et Read d’ordre 1 est la divergence de <span class="
 \end{equation}\]</span></p>
 <p>Cette mesure inclut à la fois l’équitabilité et la richesse de la distribution.
 Il s’agit donc d’une mesure de diversité, qui est, à une normalisation près, l’écart entre la valeur de l’entropie HCDT d’ordre <span class="math inline">\(q=r+1\)</span> et sa valeur maximale.
-Elle généralise donc l’indice de <span class="citation">Theil (<a href="references.html#ref-Theil1967" role="doc-biblioref">1967</a>)</span> :</p>
+Elle généralise donc l’indice de <span class="citation">Theil (<a href="references.html#ref-Theil1967">1967</a>)</span> :</p>
 <p><span class="math display" id="eq:TheilGen">\[\begin{equation}
   \tag{4.38}
   I_r = \frac{1}{q S^{1-q}}\left( \ln_q{S} - ^{q}\!H \right).
@@ -892,18 +895,18 @@ Elle généralise donc l’indice de <span class="citation">Theil (<a href="refe
 <h3>
 <span class="header-section-number">4.7.3</span> L’entropie de Simpson généralisée<a class="anchor" aria-label="anchor" href="#sec-SimpsonG"><i class="fas fa-link"></i></a>
 </h3>
-<p>L’entropie de Simpson généralisée a été introduite dans une classe d’indices plus générale <a href="chap-MesuresNeutres.html#eq:zeta">(3.38)</a> par <span class="citation">Z. Zhang et Zhou (<a href="references.html#ref-Zhang2010" role="doc-biblioref">2010</a>)</span> et étudiée en détail par <span class="citation">Z. Zhang et Grabchak (<a href="references.html#ref-Zhang2014" role="doc-biblioref">2016</a>)</span>.
+<p>L’entropie de Simpson généralisée a été introduite dans une classe d’indices plus générale <a href="chap-MesuresNeutres.html#eq:zeta">(3.38)</a> par <span class="citation">Z. Zhang et Zhou (<a href="references.html#ref-Zhang2010">2010</a>)</span> et étudiée en détail par <span class="citation">Z. Zhang et Grabchak (<a href="references.html#ref-Zhang2014">2016</a>)</span>.
 L’entropie d’ordre <span class="math inline">\(r&gt;0\)</span> est
 <span class="math display" id="eq:zetar">\[\begin{equation}
   \tag{4.39}
   \zeta_r = \sum_{s=1}^S p_s (1-p_s)^r.
 \end{equation}\]</span></p>
 <p>Elle se réduit à l’entropie de Simpson pour <span class="math inline">\(r=1\)</span>.</p>
-<p>La fonction d’information de l’entropie de Simpson généralisée <span class="math inline">\(I(p)=(1-p)^r\)</span> représente la probabilité de n’observer aucun individu de l’espèce de probabilité <span class="math inline">\(p\)</span> dans un échantillon de taille <span class="math inline">\(r\)</span>: c’est une mesure intuitive de la rareté.
-<span class="citation">Chao, Wang, et Jost (<a href="references.html#ref-Chao2013" role="doc-biblioref">2013</a>)</span> ont interprété <span class="math inline">\(\zeta_r\)</span> comme la probabilité qu’un individu échantillonné au rang <span class="math inline">\(r+1\)</span> appartienne à une espèce nouvelle dans une SAC.
+<p>La fonction d’information de l’entropie de Simpson généralisée <span class="math inline">\(I(p)=(1-p)^r\)</span> représente la probabilité de n’observer aucun individu de l’espèce de probabilité <span class="math inline">\(p\)</span> dans un échantillon de taille <span class="math inline">\(r\)</span> : c’est une mesure intuitive de la rareté.
+<span class="citation">Chao, Wang, et Jost (<a href="references.html#ref-Chao2013">2013</a>)</span> ont interprété <span class="math inline">\(\zeta_r\)</span> comme la probabilité qu’un individu échantillonné au rang <span class="math inline">\(r+1\)</span> appartienne à une espèce nouvelle dans une SAC.
 <span class="math inline">\((r+1)\zeta_r\)</span> est aussi l’espérance du nombre de singletons dans un échantillon de taille <span class="math inline">\((r+1)\)</span>.</p>
 <p>L’intérêt majeur de cette entropie est qu’elle dispose d’un estimateur non biaisé pour toutes les valeurs de <span class="math inline">\(r\)</span> strictement inférieures à la taille de l’échantillon.
-C’est une mesure de diversité valide pour les ordres <span class="math inline">\(r\)</span> strictement inférieurs au nombre d’espèces <span class="citation">(<a href="references.html#ref-Grabchak2016" role="doc-biblioref">Grabchak et al. 2017</a>)</span>.
+C’est une mesure de diversité valide pour les ordres <span class="math inline">\(r\)</span> strictement inférieurs au nombre d’espèces <span class="citation">(<a href="references.html#ref-Grabchak2016">Grabchak et al. 2017</a>)</span>.
 Au-delà, elle ne respecte plus l’axiome d’équitabilité : sa valeur maximale n’est pas obtenue quand les espèces sont équiprobables.</p>
 <p>Son nombre effectif d’espèces est
 <span class="math display" id="eq:Dzeta">\[\begin{equation}
@@ -1020,14 +1023,14 @@ Figure 4.9: Différence entre les entropies de Simpson généralisées des parce
 <p>La prise en compte des espèces rares est limitée par la valeur maximale de l’ordre <span class="math inline">\(r\)</span> (limité à <span class="math inline">\(S-1\)</span>).
 Les espèces plus rares ne peuvent pas être prises en compte : le profil de diversité s’arrête là.
 Le nombre effectif d’espèces maximum correspond au nombre de Hill d’ordre 0,5 environ.
-Les espèces plus rares sont prises en compte dans la partie du profil de diversité HCDT d’ordre inférieur à 0,5 mais son incertitude est grande et son biais très important quand l’échantillonnage est aussi réduit <span class="citation">(<a href="references.html#ref-Marcon2015a" role="doc-biblioref">Marcon 2015</a>)</span>.</p>
+Les espèces plus rares sont prises en compte dans la partie du profil de diversité HCDT d’ordre inférieur à 0,5 mais son incertitude est grande et son biais très important quand l’échantillonnage est aussi réduit <span class="citation">(<a href="references.html#ref-Marcon2015a">Marcon 2015</a>)</span>.</p>
 <p>L’entropie de Simpson généralisée est donc l’outil le plus approprié pour comparer des profils de diversité de communautés riches et sous-échantillonnées.</p>
 </div>
 <div id="lentropie-par-cas" class="section level3" number="4.7.4">
 <h3>
 <span class="header-section-number">4.7.4</span> L’entropie par cas<a class="anchor" aria-label="anchor" href="#lentropie-par-cas"><i class="fas fa-link"></i></a>
 </h3>
-<p><span class="citation">Rajaram et Castellani (<a href="references.html#ref-Rajaram2016" role="doc-biblioref">2016</a>)</span> décomposent la diversité de Shannon en produit des contributions de chaque catégorie et proposent une mesure cumulative de la diversité d’une communauté prenant en compte une partie des espèces classées selon un critère pertinent, décrivant leur complexité : par exemple, la diversité des mammifères classés par taille croissante, ou la position dans l’évolution.</p>
+<p><span class="citation">Rajaram et Castellani (<a href="references.html#ref-Rajaram2016">2016</a>)</span> décomposent la diversité de Shannon en produit des contributions de chaque catégorie et proposent une mesure cumulative de la diversité d’une communauté prenant en compte une partie des espèces classées selon un critère pertinent, décrivant leur complexité : par exemple, la diversité des mammifères classés par taille croissante, ou la position dans l’évolution.</p>
 <p>La fraction de la communauté dont le cumul des probabilités égale <span class="math inline">\(c\)</span> est prise en compte.
 La diversité cumulée est :
 <span class="math display" id="eq:Rajaram2016Dc">\[\begin{equation}
@@ -1040,7 +1043,7 @@ La diversité cumulée est :
   \mathit{C_c} = \frac{100 D_c}{^{1}\!D}.
 \end{equation}\]</span></p>
 <p><span class="math inline">\(\mathit{D_c}={^{1}\!D}\)</span> quand toute la communauté est prise en compte (<span class="math inline">\(c=1\)</span>).
-Les auteurs s’intéressent principalement à la courbe de <span class="math inline">\(C_c\)</span> en fonction de <span class="math inline">\(c\)</span> pour montrer <span class="citation">(<a href="references.html#ref-Castellani2016" role="doc-biblioref">Castellani et Rajaram 2016</a>)</span> que la contribution à la diversité totale des 40 % des composants les moints complexes de systèmes très divers (“des galaxies au gènes”) atteint toujours au moins 60%, ce résultat étant interprété comme une loi universelle de limitation de la complexité.</p>
+Les auteurs s’intéressent principalement à la courbe de <span class="math inline">\(C_c\)</span> en fonction de <span class="math inline">\(c\)</span> pour montrer <span class="citation">(<a href="references.html#ref-Castellani2016">Castellani et Rajaram 2016</a>)</span> que la contribution à la diversité totale des 40 % des composants les moints complexes de systèmes très divers (“des galaxies au gènes”) atteint toujours au moins 60%, ce résultat étant interprété comme une loi universelle de limitation de la complexité.</p>
 <p>Cette mesure peut être étendue à l’entropie HCDT sans difficulté :
 <span class="math display" id="eq:Ccq">\[\begin{equation}
   \tag{4.43}
@@ -1106,7 +1109,7 @@ Il ne s’agit pas d’une décomposition de la diversité au sens classique du 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 22/12/2023.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
