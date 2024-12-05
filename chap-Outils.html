@@ -7,7 +7,7 @@
 <title>2 Outils | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="La diversité peut être décrite localement par une courbe d’accumulation (SAC) qui représente le nombre d’espèces échantillonnées en fonction de l’effort. À une échelle plus large, cette courbe...">
-<meta name="generator" content="bookdown 0.38 with bs4_book()">
+<meta name="generator" content="bookdown 0.41 with bs4_book()">
 <meta property="og:title" content="2 Outils | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-Outils.html">
@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-C1B3PLBCM6"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -272,9 +272,9 @@ Alors :</p>
 <p>Dans le package <em>entropart</em>, la fonction <code>Coverage</code> calcule les trois estimateurs (celui de Zhang et Huang par défaut) :</p>
 <p></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/EricMarcon/entropart">"entropart"</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://ericmarcon.github.io/entropart/">"entropart"</a></span><span class="op">)</span></span>
 <span><span class="va">Ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Coverage.html">Coverage</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Coverage.html">Coverage</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## ZhangHuang 
 ##  0.9991146</code></pre>
 <p></p>
@@ -283,7 +283,7 @@ Il est moindre sur les 6.25 ha de la parcelle 6 de Paracou :</p>
 <p></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/EricMarcon/SpatDiv">"SpatDiv"</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Coverage.html">Coverage</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/SpeciesDistribution.html">as.AbdVector</a></span><span class="op">(</span><span class="va">Paracou6</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Coverage.html">Coverage</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/SpeciesDistribution.html">as.AbdVector</a></span><span class="op">(</span><span class="va">Paracou6</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## ZhangHuang 
 ##  0.9723258</code></pre>
 <p></p>
@@ -307,12 +307,12 @@ Elle compte simplement les espèces et ne doit pas être confondue avec la couve
 <p></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Espèces observées</span></span>
-<span><span class="op">(</span><span class="va">Obs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Richness.html">Richness</a></span><span class="op">(</span><span class="va">Ns</span>, Correction <span class="op">=</span> <span class="st">"None"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="op">(</span><span class="va">Obs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Richness.html">Richness</a></span><span class="op">(</span><span class="va">Ns</span>, Correction <span class="op">=</span> <span class="st">"None"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## None 
 ##  225</code></pre>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Richesse estimée</span></span>
-<span><span class="op">(</span><span class="va">Est</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Richness.html">Richness</a></span><span class="op">(</span><span class="va">Ns</span>, Correction <span class="op">=</span> <span class="st">"Jackknife"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="op">(</span><span class="va">Est</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Richness.html">Richness</a></span><span class="op">(</span><span class="va">Ns</span>, Correction <span class="op">=</span> <span class="st">"Jackknife"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Jackknife 1 
 ##         244</code></pre>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
@@ -324,12 +324,12 @@ Elle compte simplement les espèces et ne doit pas être confondue avec la couve
 <p></p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Espèces observées</span></span>
-<span><span class="op">(</span><span class="va">Obs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Richness.html">Richness</a></span><span class="op">(</span><span class="va">Paracou6</span>, Correction <span class="op">=</span> <span class="st">"None"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="op">(</span><span class="va">Obs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Richness.html">Richness</a></span><span class="op">(</span><span class="va">Paracou6</span>, Correction <span class="op">=</span> <span class="st">"None"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## None 
 ##  334</code></pre>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Richesse estimée</span></span>
-<span><span class="op">(</span><span class="va">Est</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Richness.html">Richness</a></span><span class="op">(</span><span class="va">Paracou6</span>, Correction <span class="op">=</span> <span class="st">"Jackknife"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="op">(</span><span class="va">Est</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Richness.html">Richness</a></span><span class="op">(</span><span class="va">Paracou6</span>, Correction <span class="op">=</span> <span class="st">"Jackknife"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Jackknife 2 
 ##         471</code></pre>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
@@ -382,8 +382,8 @@ Figure 2.3: Diagramme rang-abondance (diagramme de Whittaker) des arbres du disp
 <p>Code de la figure <a href="chap-Outils.html#fig:RACFig">2.3</a> :</p>
 <p></p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/EricMarcon/entropart">"entropart"</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/SpeciesDistribution.html">as.AbdVector</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span>, Distribution <span class="op">=</span> <span class="st">"lnorm"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://ericmarcon.github.io/entropart/">"entropart"</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/SpeciesDistribution.html">as.AbdVector</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span>, Distribution <span class="op">=</span> <span class="st">"lnorm"</span><span class="op">)</span></span></code></pre></div>
 <p></p>
 <p>Les SAD sont traitées en détail par <span class="citation">Magurran (<a href="references.html#ref-Magurran1988">1988</a>)</span> ou <span class="citation">McGill et al. (<a href="references.html#ref-McGill2007">2007</a>)</span>.
 Les principales distributions, nécessaires à la compréhension de la suite sont présentées ici :</p>
@@ -448,7 +448,7 @@ Les abondances successives sont proportionnelles à <span class="math inline">\(
 Ses propriétés ont été étudiées par <span class="citation">Whittaker (<a href="references.html#ref-Whittaker1972">1972</a>)</span>.</p>
 <p>C’est la distribution qui traduit l’absence de relation entre la taille de l’échantillon et l’abondance des espèces <span class="citation">(<a href="references.html#ref-Pueyo2007">Pueyo, He, et Zillio 2007</a>)</span> : la distribution du logarithme de ses probabilités est uniforme.
 En d’autre termes, l’ordre de grandeur de l’abondance d’une espèce est uniformément distribué.</p>
-<p>La distribution est observée dans les communautés pionnières <span class="citation">(<a href="references.html#ref-Bazzaz1975">Bazzaz 1975</a>)</span>, peu diverses, ou les communautés microbiennes <span class="citation">(<a href="references.html#ref-Haegeman2013">Haegeman et al. 2013</a>)</span>.</p>
+<p>La distribution est observée dans les communautés pionnières <span class="citation">(<a href="#ref-Bazzaz1975"><strong>Bazzaz1975?</strong></a>)</span>, peu diverses, ou les communautés microbiennes <span class="citation">(<a href="references.html#ref-Haegeman2013">Haegeman et al. 2013</a>)</span>.</p>
 </div>
 <div id="synthèse" class="section level3" number="2.4.5">
 <h3>
@@ -472,9 +472,9 @@ Une valeur supérieure augmenterait sa décroissance.</p>
 <p>Le code utilisé pour produire la figure <a href="chap-Outils.html#fig:DistributionsFig">2.4</a> est le suivant :</p>
 <p></p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/EricMarcon/entropart">"entropart"</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://ericmarcon.github.io/entropart/">"entropart"</a></span><span class="op">)</span></span>
 <span><span class="co"># Tirage d'une communauté en log-séries</span></span>
-<span><span class="va">lseries</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/rCommunity.html">rCommunity</a></span><span class="op">(</span><span class="fl">1</span>, size<span class="op">=</span><span class="fl">1E5</span>, Distribution<span class="op">=</span><span class="st">"lseries"</span>, alpha<span class="op">=</span><span class="fl">11</span><span class="op">)</span></span>
+<span><span class="va">lseries</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/rCommunity.html">rCommunity</a></span><span class="op">(</span><span class="fl">1</span>, size<span class="op">=</span><span class="fl">1E5</span>, Distribution<span class="op">=</span><span class="st">"lseries"</span>, alpha<span class="op">=</span><span class="fl">11</span><span class="op">)</span></span>
 <span><span class="co"># Nombre d'espèces de référence</span></span>
 <span><span class="va">S</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">lseries</span><span class="op">)</span></span>
 <span><span class="co"># Part des ressources accaparées dans la distribution géométrique</span></span>
@@ -501,9 +501,9 @@ Une valeur supérieure augmenterait sa décroissance.</p>
 <span>  <span class="fu">scale_y_log10</span><span class="op">(</span>limits<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1E-6</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>y<span class="op">=</span><span class="st">"Probabilité"</span>, color<span class="op">=</span><span class="st">"Distribution"</span><span class="op">)</span></span></code></pre></div>
 <p></p>
-<p>La simulation de ces quatre distributions peut être réalisée par la fonction <code><a href="https://rdrr.io/pkg/entropart/man/rCommunity.html">rCommunity()</a></code> du package <em>entropart</em>, où l’argument <code>Distribution</code> peut valoir “bstick”, “lnorm”, “geom” ou “lseries”.
+<p>La simulation de ces quatre distributions peut être réalisée par la fonction <code><a href="https://ericmarcon.github.io/entropart/reference/rCommunity.html">rCommunity()</a></code> du package <em>entropart</em>, où l’argument <code>Distribution</code> peut valoir “bstick”, “lnorm”, “geom” ou “lseries”.
 La simulation des communautés autres que log-séries passe par le tirage des probabilités des espèces (le calcul est déterministe dans le cas de la distribution géométrique) puis le tirage d’un nombre d’individus dans une loi multinomiale respectant ces probabilités et l’effectif total.</p>
-<p>Les fonction <code><a href="https://rdrr.io/pkg/entropart/man/RAC.html">RACbstick()</a></code>, <code><a href="https://rdrr.io/pkg/entropart/man/RAC.html">RAClnorm()</a></code>, <code><a href="https://rdrr.io/pkg/entropart/man/RAC.html">RACgeom()</a></code> et <code><a href="https://rdrr.io/pkg/entropart/man/RAC.html">RAClseries()</a></code> permettent d’inférer à partir d’un vecteur d’abondance les paramètres d’une distribution.
+<p>Les fonction <code><a href="https://ericmarcon.github.io/entropart/reference/RAC.html">RACbstick()</a></code>, <code><a href="https://ericmarcon.github.io/entropart/reference/RAC.html">RAClnorm()</a></code>, <code><a href="https://ericmarcon.github.io/entropart/reference/RAC.html">RACgeom()</a></code> et <code><a href="https://ericmarcon.github.io/entropart/reference/RAC.html">RAClseries()</a></code> permettent d’inférer à partir d’un vecteur d’abondance les paramètres d’une distribution.
 La distribution correspondant au modèle estimé peut être affichée sur la figure Rang-Abondance (figure <a href="chap-Outils.html#fig:SADFig">2.2</a>).</p>
 <p>Le package <em>sads</em> fournit les fonctions classiques de R (densité de probabilité, cumulative, quantile, simulation) pour les distributions utiles en écologie, au-delà de celles présentées ici.
 La distribution de Volkov notamment peut être simulée.
@@ -512,8 +512,8 @@ Les fonctions <code>fitxxx()</code> complètent les fonctions <code>RACxxx()</co
 <p></p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># entropart</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/EricMarcon/entropart">"entropart"</a></span><span class="op">)</span></span>
-<span><span class="va">fit_entropart_lnorm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/RAC.html">RAClnorm</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://ericmarcon.github.io/entropart/">"entropart"</a></span><span class="op">)</span></span>
+<span><span class="va">fit_entropart_lnorm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/RAC.html">RAClnorm</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span></span>
 <span><span class="co"># Affichage des paramètres estimés</span></span>
 <span><span class="va">fit_entropart_lnorm</span><span class="op">$</span><span class="va">mu</span></span></code></pre></div>
 <pre><code>## [1] 3.142695</code></pre>
@@ -537,14 +537,14 @@ Les fonctions <code>fitxxx()</code> complètent les fonctions <code>RACxxx()</co
 <span><span class="va">fit_volkov</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/sads/man/fitsad.html">fitvolkov</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span></span>
 <span><span class="va">fit_volkov</span><span class="op">@</span><span class="va">fullcoef</span></span></code></pre></div>
 <pre><code>##        theta            m            J 
-## 4.767129e+01 9.238201e-02 2.145700e+04</code></pre>
+## 4.796210e+01 9.180496e-02 2.145700e+04</code></pre>
 <p></p>
 <p>Graphiquement, l’ajustement est très proche mais la distribution de Volkov prévoit explicitement des effectifs égaux parce qu’entiers.</p>
 <p></p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Comparaison graphique des deux modèles. Log-normal en</span></span>
 <span><span class="co"># rouge.</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/SpeciesDistribution.html">as.AbdVector</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span>, Distribution <span class="op">=</span> <span class="st">"lnorm"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/SpeciesDistribution.html">as.AbdVector</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span>, Distribution <span class="op">=</span> <span class="st">"lnorm"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## $mu
 ## [1] 3.142695
 ## 
@@ -618,7 +618,7 @@ L’ajustement est donc meilleur mais la différence est petite et la complexit�
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 05/12/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

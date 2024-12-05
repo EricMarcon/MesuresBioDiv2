@@ -7,7 +7,7 @@
 <title>9 Diversité de Leinster et Cobbold | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="La diversité de Leinster et Cobbold est l’inverse de la banalité moyenne des espèces, qui est elle-même la similarité moyenne d’une espèce aux autres. Elle va de pair avec l’entropie de Ricotta et...">
-<meta name="generator" content="bookdown 0.38 with bs4_book()">
+<meta name="generator" content="bookdown 0.41 with bs4_book()">
 <meta property="og:title" content="9 Diversité de Leinster et Cobbold | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-LeinsterCobbold.html">
@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-C1B3PLBCM6"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -247,14 +247,14 @@ Une transformation simple est 1 moins la dissimilarité (préalablement normalis
 ## Dg  98 14 95 14</code></pre>
 <div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">Ps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="va">effectifs</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">effectifs</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Dqz.html">Dqz</a></span><span class="op">(</span><span class="va">Ps</span>, q <span class="op">=</span> <span class="fl">2</span>, <span class="va">Z</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Dqz.html">Dqz</a></span><span class="op">(</span><span class="va">Ps</span>, q <span class="op">=</span> <span class="fl">2</span>, <span class="va">Z</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     None 
 ## 2.520938</code></pre>
 <p></p>
 <p>Dans le cas particulier <span class="math inline">\(q=2\)</span>, <span class="math inline">\(^2\!D^{\mathbf{Z}}\)</span> est égal à <span class="math inline">\(^{2}\!\bar{D}(T)\)</span> :</p>
 <p></p>
 <div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/PhyloDiversity.html">PhyloDiversity</a></span><span class="op">(</span><span class="va">Ps</span>, q <span class="op">=</span> <span class="fl">2</span>, <span class="va">phyf</span><span class="op">)</span><span class="op">$</span><span class="va">Total</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/PhyloDiversity.html">PhyloDiversity</a></span><span class="op">(</span><span class="va">Ps</span>, q <span class="op">=</span> <span class="fl">2</span>, <span class="va">phyf</span><span class="op">)</span><span class="op">$</span><span class="va">Total</span></span></code></pre></div>
 <pre><code>##     None 
 ## 2.520938</code></pre>
 <p></p>
@@ -439,7 +439,7 @@ L’estimateur de <span class="math inline">\(^q\!D^{\mathbf{Z}}\)</span> est, p
 <span><span class="co"># Matrice de similarité</span></span>
 <span><span class="va">Z</span> <span class="op">&lt;-</span> <span class="fl">1</span> <span class="op">-</span> <span class="va">DistanceMatrix</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">DistanceMatrix</span><span class="op">)</span></span>
 <span><span class="co"># Calcul de la diversité</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Dqz.html">Dqz</a></span><span class="op">(</span><span class="va">Paracou618.MC</span><span class="op">$</span><span class="va">Ns</span>, q <span class="op">=</span> <span class="fl">1</span>, <span class="va">Z</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Dqz.html">Dqz</a></span><span class="op">(</span><span class="va">Paracou618.MC</span><span class="op">$</span><span class="va">Ns</span>, q <span class="op">=</span> <span class="fl">1</span>, <span class="va">Z</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     Best 
 ## 1.488083</code></pre>
 <p></p>
@@ -917,7 +917,7 @@ Se limiter à <span class="math inline">\(q=2\)</span> simplifie le problème.</
 <pre><code>## [1] 0.2 0.2 0.6</code></pre>
 <div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Diversité</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Dqz.html">Dqz</a></span><span class="op">(</span><span class="va">P2s</span>, <span class="fl">2</span>, <span class="va">Z2s</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Dqz.html">Dqz</a></span><span class="op">(</span><span class="va">P2s</span>, <span class="fl">2</span>, <span class="va">Z2s</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     None 
 ## 1.329787</code></pre>
 <div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
@@ -936,7 +936,7 @@ Se limiter à <span class="math inline">\(q=2\)</span> simplifie le problème.</
 <pre><code>## [1] 0.4 0.6</code></pre>
 <div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Diversité</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Dqz.html">Dqz</a></span><span class="op">(</span><span class="va">P1s</span>, <span class="fl">2</span>, <span class="va">Z1s</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Dqz.html">Dqz</a></span><span class="op">(</span><span class="va">P1s</span>, <span class="fl">2</span>, <span class="va">Z1s</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     None 
 ## 1.329787</code></pre>
 <p></p>
@@ -997,17 +997,17 @@ Le carré de la norme du vecteur de l’espèce <span class="math inline">\(s\)<
 <span><span class="va">Lambda</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/svd.html">svd</a></span><span class="op">(</span><span class="va">Sp</span><span class="op">)</span><span class="op">$</span><span class="va">d</span></span>
 <span><span class="va">Mu</span> <span class="op">&lt;-</span> <span class="va">Lambda</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Lambda</span><span class="op">)</span></span>
 <span><span class="co"># Comparaison des valeurs à q=2</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Diversity.html">Diversity</a></span><span class="op">(</span><span class="va">Mu</span>, <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Diversity.html">Diversity</a></span><span class="op">(</span><span class="va">Mu</span>, <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     None 
 ## 1.540061</code></pre>
 <div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Diversité de Rao</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Dqz.html">Dqz</a></span><span class="op">(</span><span class="va">Ps</span>, <span class="fl">2</span>, <span class="va">Z</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Dqz.html">Dqz</a></span><span class="op">(</span><span class="va">Ps</span>, <span class="fl">2</span>, <span class="va">Z</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     None 
 ## 1.490786</code></pre>
 <div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># La valeur à q=0 est le nombre d'espèces</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Diversity.html">Diversity</a></span><span class="op">(</span><span class="va">Mu</span>, <span class="fl">0</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Diversity.html">Diversity</a></span><span class="op">(</span><span class="va">Mu</span>, <span class="fl">0</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## None 
 ##  229</code></pre>
 <div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
@@ -1015,7 +1015,7 @@ Le carré de la norme du vecteur de l’espèce <span class="math inline">\(s\)<
 <pre><code>## [1] 229</code></pre>
 <p></p>
 <p>La valeur de la diversité des valeurs propres est différente de celle de la diversité de Rao à cause des approximations numériques liées au calcul des valeurs propres (qui nécessitent l’inversion d’une matrice carrée de dimension <span class="math inline">\(S\)</span>).
-La valeur exacte est celle donnée par <code><a href="https://rdrr.io/pkg/entropart/man/Dqz.html">Dqz()</a></code>.</p>
+La valeur exacte est celle donnée par <code><a href="https://ericmarcon.github.io/entropart/reference/Dqz.html">Dqz()</a></code>.</p>
 <p>Le profil de diversité se trouve en figure <a href="chap-LeinsterCobbold.html#fig:DqZLambdaFig">9.6</a>.</p>
 
 <p></p>
@@ -1029,7 +1029,7 @@ Figure 9.6: Profil de diversité des valeurs propres de la méta-communauté <co
 <p>Code R pour la figure :</p>
 <p></p>
 <div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">DqZLambda</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/CommunityProfile.html">CommunityProfile</a></span><span class="op">(</span><span class="va">Diversity</span>, <span class="va">Mu</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">DqZLambda</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/CommunityProfile.html">CommunityProfile</a></span><span class="op">(</span><span class="va">Diversity</span>, <span class="va">Mu</span><span class="op">)</span></span>
 <span><span class="va">Xlab</span> <span class="op">&lt;-</span> <span class="st">"Ordre de diversité"</span></span>
 <span><span class="va">Ylab</span> <span class="op">&lt;-</span> <span class="st">"Diversité"</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">DqZLambda</span>, xlab <span class="op">=</span> <span class="va">Xlab</span>, ylab <span class="op">=</span> <span class="va">Ylab</span><span class="op">)</span> <span class="op">+</span> <span class="fu">scale_y_log10</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -1077,8 +1077,8 @@ Figure 9.7: Diversité phylogénétique (l’arbre est une taxonomie) d’ordre 
 <span><span class="co"># (cf. calcul de FAD)</span></span>
 <span><span class="va">DistanceMatrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span><span class="op">(</span><span class="va">Tree</span><span class="op">$</span><span class="va">Wdist</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="va">Z</span> <span class="op">&lt;-</span> <span class="fl">1</span> <span class="op">-</span> <span class="va">DistanceMatrix</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">DistanceMatrix</span><span class="op">)</span></span>
-<span><span class="va">Divqz</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">q</span>, <span class="kw">function</span><span class="op">(</span><span class="va">q</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Dqz.html">Dqz</a></span><span class="op">(</span><span class="va">Paracou618.MC</span><span class="op">$</span><span class="va">Ps</span>, <span class="va">q</span>, <span class="va">Z</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">Divq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">q</span>, <span class="kw">function</span><span class="op">(</span><span class="va">q</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/ChaoPD.html">ChaoPD</a></span><span class="op">(</span><span class="va">Paracou618.MC</span><span class="op">$</span><span class="va">Ps</span>, q <span class="op">=</span> <span class="va">q</span>,</span>
+<span><span class="va">Divqz</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">q</span>, <span class="kw">function</span><span class="op">(</span><span class="va">q</span><span class="op">)</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Dqz.html">Dqz</a></span><span class="op">(</span><span class="va">Paracou618.MC</span><span class="op">$</span><span class="va">Ps</span>, <span class="va">q</span>, <span class="va">Z</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">Divq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">q</span>, <span class="kw">function</span><span class="op">(</span><span class="va">q</span><span class="op">)</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/ChaoPD.html">ChaoPD</a></span><span class="op">(</span><span class="va">Paracou618.MC</span><span class="op">$</span><span class="va">Ps</span>, q <span class="op">=</span> <span class="va">q</span>,</span>
 <span>    PhyloTree <span class="op">=</span> <span class="va">Paracou618.Taxonomy</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu">ggplot</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">q</span>, <span class="va">Divq</span>, <span class="va">Divqz</span><span class="op">)</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">q</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y <span class="op">=</span> <span class="va">Divqz</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y <span class="op">=</span> <span class="va">Divq</span><span class="op">)</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span> <span class="fu">labs</span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Diversité"</span><span class="op">)</span></span></code></pre></div>
@@ -1130,7 +1130,7 @@ En revanche, la prise en compte de la variabilité intraspécifique par une simi
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 05/12/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

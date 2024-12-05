@@ -7,7 +7,7 @@
 <title>5 Équitabilité | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="L’équitabilité mesure l’écart entre la distribution observée et une distribution uniforme. L’indice de Pielou est la mesure d’équitabilité la plus connue. Il a été généralisé pour permettre de...">
-<meta name="generator" content="bookdown 0.38 with bs4_book()">
+<meta name="generator" content="bookdown 0.41 with bs4_book()">
 <meta property="og:title" content="5 Équitabilité | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/sec-Equitabilite.html">
@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-C1B3PLBCM6"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -319,9 +319,9 @@ En revanche, la richesse peut être partitionnée de façon indépendante en div
 <div class="sourceCode" id="cb172"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Estimation du nombre d'espèces</span></span>
 <span><span class="va">Ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span></span>
-<span><span class="va">UBNs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/jackknife.html">jackknife</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span>, k <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">$</span><span class="va">Nhat</span></span>
+<span><span class="va">UBNs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/jackknife.html">jackknife</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span>, k <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">$</span><span class="va">Nhat</span></span>
 <span><span class="co"># Profil</span></span>
-<span><span class="va">Inq</span> <span class="op">&lt;-</span> <span class="va">DivPrf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/CommunityProfile.html">CommunityProfile</a></span><span class="op">(</span><span class="va">Diversity</span>, <span class="va">Ns</span><span class="op">)</span></span>
+<span><span class="va">Inq</span> <span class="op">&lt;-</span> <span class="va">DivPrf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/CommunityProfile.html">CommunityProfile</a></span><span class="op">(</span><span class="va">Diversity</span>, <span class="va">Ns</span><span class="op">)</span></span>
 <span><span class="va">Inq</span><span class="op">$</span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">UBNs</span><span class="op">/</span><span class="va">DivPrf</span><span class="op">$</span><span class="va">y</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">Inq</span>, xlab <span class="op">=</span> <span class="st">"Ordre de diversité"</span>, ylab <span class="op">=</span> <span class="st">"Inéquitabilité"</span><span class="op">)</span></span></code></pre></div>
 <p></p>
@@ -398,7 +398,7 @@ Figure 5.4: Relations entre l’entropie de Shannon (a), l’indice d’équitab
 <code class="sourceCode R"><span><span class="co"># Communautés de 30 à 300 espèces</span></span>
 <span><span class="va">S</span> <span class="op">&lt;-</span> <span class="fl">30</span><span class="op">:</span><span class="fl">300</span></span>
 <span><span class="co"># Tirage de communautés log-normales de 10000 individus</span></span>
-<span><span class="va">rcl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">S</span>, <span class="kw">function</span><span class="op">(</span><span class="va">S</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/rCommunity.html">rCommunity</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10000</span>, S<span class="op">=</span><span class="va">S</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">rcl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">S</span>, <span class="kw">function</span><span class="op">(</span><span class="va">S</span><span class="op">)</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/rCommunity.html">rCommunity</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10000</span>, S<span class="op">=</span><span class="va">S</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co"># Richesse et Shannon</span></span>
 <span><span class="va">Sobs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">rcl</span>, <span class="va">Richness</span><span class="op">)</span></span>
 <span><span class="va">H</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">rcl</span>, <span class="va">Shannon</span><span class="op">)</span></span>
@@ -434,7 +434,7 @@ Figure 5.5: Relations entre l’entropie de Shannon (a), l’indice d’équitab
 <p></p>
 <div class="sourceCode" id="cb175"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Communautés de taille 10 à 1000 individus; 300 sp.</span></span>
-<span><span class="va">rmc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/MetaCommunity.html">MetaCommunity</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">1000</span>, <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/rCommunity.html">rCommunity</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">n</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">rmc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/MetaCommunity.html">MetaCommunity</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">1000</span>, <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/rCommunity.html">rCommunity</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">n</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co"># Richesse et Shannon</span></span>
 <span><span class="va">S</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span><span class="op">(</span><span class="va">rmc</span><span class="op">$</span><span class="va">Psi</span>, <span class="fl">2</span>, <span class="va">Richness</span><span class="op">)</span></span>
 <span><span class="va">H</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span><span class="op">(</span><span class="va">rmc</span><span class="op">$</span><span class="va">Psi</span>, <span class="fl">2</span>, <span class="va">Shannon</span><span class="op">)</span></span>
@@ -512,7 +512,7 @@ Les résultats sont similaires avec des communautés en log-séries : la corré
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 05/12/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

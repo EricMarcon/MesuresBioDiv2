@@ -7,7 +7,7 @@
 <title>21 Accumulation de la diversité locale | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="La courbe d’accumulation (SAC) décrit comment la richesse, ou la diversité, augmente en fonction de l’effort d’échantillonnage. Sous l’hypothèse d’un tirage multinomial des individus observés, les...">
-<meta name="generator" content="bookdown 0.38 with bs4_book()">
+<meta name="generator" content="bookdown 0.41 with bs4_book()">
 <meta property="og:title" content="21 Accumulation de la diversité locale | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-Accumulation.html">
@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-C1B3PLBCM6"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -160,7 +160,7 @@ Figure 21.2: Courbe d’accumulation des espèces d’arbres de Barro Colorado I
 <p>La fonction <code>specaccum</code> de la librairie <em>vegan</em> <span class="citation">(<a href="references.html#ref-Oksanen2012">Oksanen et al. 2012</a>)</span> permet de tracer les SAC (figure <a href="chap-Accumulation.html#fig:specaccumFig">21.2</a>) selon différentes méthodes, avec un intervalle de confiance obtenu par permutation de l’ordre d’ajout des données ou à partir des formules de raréfaction.</p>
 <p>Le code R nécessaire pour réaliser la figure est :</p>
 <p></p>
-<div class="sourceCode" id="cb344"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb343"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span></span>
 <span><span class="va">SAC</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/vegan/man/specaccum.html">specaccum</a></span><span class="op">(</span><span class="va">BCI</span>, <span class="st">"random"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span><span class="op">(</span><span class="va">SAC</span>, ci.type <span class="op">=</span> <span class="st">"poly"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, ci.lty <span class="op">=</span> <span class="fl">0</span>, ci.col <span class="op">=</span> <span class="st">"lightgray"</span><span class="op">)</span></span></code></pre></div>
@@ -189,7 +189,7 @@ Dans ce but, la SAC théorique peut être construite <span class="citation">(<a 
 Son intervalle de confiance n’est pas représenté : l’estimation est sans biais et a une variance très <span style="white-space:nowrap">petite ;</span> d’autre part, la variabilité de l’échantillonnage prise en compte dans la figure <a href="chap-Accumulation.html#fig:specaccumFig">21.2</a> est ignorée ici. La fonction <code>GenSimp.z</code> est fournie par le package <em>EntropyEstimation</em> <span class="citation">(<a href="references.html#ref-Cao2014">Cao et Grabchak 2014</a>)</span>.</p>
 <p>Code pour la figure :</p>
 <p></p>
-<div class="sourceCode" id="cb345"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb344"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"EntropyEstimation"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span></span>
 <span><span class="va">Ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span></span>
@@ -247,13 +247,13 @@ Figure 21.4: Distribution de la richesse obtenue par extrapolation à 1800 indiv
 La distribution des 500 simulations d’extrapolation est proche de celle des 500 inventaires, avec une plus grande variabilité due à la quantité plus faible de données disponibles.</p>
 <p>Le code R nécessaire pour réaliser la figure est :</p>
 <p></p>
-<div class="sourceCode" id="cb346"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb345"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Ecart-type de la communauté log-normale</span></span>
 <span><span class="va">sdlog</span> <span class="op">&lt;-</span> <span class="fl">2</span></span>
 <span><span class="co"># Nombre d'espèces</span></span>
 <span><span class="va">S</span> <span class="op">&lt;-</span> <span class="fl">300</span></span>
 <span><span class="co"># Tirage des probabilités log-normales (l'espérance est sans importance)</span></span>
-<span><span class="va">Ps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/SpeciesDistribution.html">as.ProbaVector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Lognormal.html">rlnorm</a></span><span class="op">(</span><span class="va">S</span>, <span class="fl">0</span>, <span class="va">sdlog</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">Ps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/SpeciesDistribution.html">as.ProbaVector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Lognormal.html">rlnorm</a></span><span class="op">(</span><span class="va">S</span>, <span class="fl">0</span>, <span class="va">sdlog</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co"># Taille de l'inventaire</span></span>
 <span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">1000</span></span>
 <span><span class="co"># Niveau d'extrapolation</span></span>
@@ -267,7 +267,7 @@ La distribution des 500 simulations d’extrapolation est proche de celle des 50
 <span><span class="co"># Fonction d'extrapolation selon Béguinot</span></span>
 <span><span class="va">ExtrapolateB</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="co"># Création d'un tableau contenant le nombre d'espèces par abondance</span></span>
-<span>  <span class="va">f</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span></span>
+<span>  <span class="va">f</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span></span>
 <span>  <span class="co"># Calcul des termes de la somme</span></span>
 <span>  <span class="va">s</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">f</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">i</span><span class="op">)</span> </span>
 <span>              <span class="op">(</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">^</span><span class="op">(</span><span class="va">f</span><span class="op">[</span><span class="va">i</span>, <span class="fl">1</span><span class="op">]</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span> <span class="op">*</span> <span class="va">f</span><span class="op">[</span><span class="va">i</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">*</span> <span class="va">extra</span><span class="op">^</span><span class="va">f</span><span class="op">[</span><span class="va">i</span>, <span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
@@ -283,10 +283,10 @@ La distribution des 500 simulations d’extrapolation est proche de celle des 50
 <span><span class="va">ExtrapolateS</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="co"># Nombre d'espèces non observées</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/sink.html">sink</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempfile</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="co"># Suppression des messages de jackknife()</span></span>
-<span>  <span class="va">S0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/jackknife.html">jackknife</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">Nhat</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Ns</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span></span>
+<span>  <span class="va">S0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/jackknife.html">jackknife</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">Nhat</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Ns</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/sink.html">sink</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># restauration de l'affichage normal</span></span>
 <span>  <span class="co"># Taux de couverture</span></span>
-<span>  <span class="va">C</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Coverage.html">Coverage</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span></span>
+<span>  <span class="va">C</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Coverage.html">Coverage</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span></span>
 <span>  <span class="co"># Espèces nouvelles</span></span>
 <span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">S0</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span><span class="va">C</span><span class="op">)</span><span class="op">/</span><span class="va">S0</span><span class="op">)</span><span class="op">^</span><span class="op">(</span><span class="va">n</span><span class="op">*</span><span class="va">extra</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
@@ -324,7 +324,7 @@ où <span class="math inline">\(n_0\)</span> est la taille de l’inventaire de 
 <p>La méthode est testée ici sur la même communauté log-normale.
 500 inventaires de 5000 individus sont réalisés et chacun est extrapolé jusqu’à 25000 individus.</p>
 <p></p>
-<div class="sourceCode" id="cb347"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb346"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Extrapolation jusqu'à</span></span>
 <span><span class="va">Nmax</span> <span class="op">&lt;-</span> <span class="fl">25000</span></span>
 <span><span class="co"># SAC réelle, obtenue par la somme des entropies de Simpson</span></span>
@@ -381,7 +381,7 @@ Avec un inventaire de 5000 individus dans cet exemple, l’estimation de la rich
 En limitant l’inventaire à 1000 individus, l’information disponible est trop limitée.</p>
 <p>Le code R nécessaire pour réaliser la figure est :</p>
 <p></p>
-<div class="sourceCode" id="cb348"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb347"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_ribbon</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">x</span>, ymin <span class="op">=</span> <span class="va">Min</span>, ymax <span class="op">=</span> <span class="va">Max</span><span class="op">)</span>, </span>
 <span>              <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">n</span><span class="op">:</span><span class="va">Nmax</span>, <span class="va">Min</span>, <span class="va">Max</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span> <span class="op">+</span></span>
@@ -412,14 +412,14 @@ Les paramètres du processus sont estimés à partir du semis de points, puis la
 <p>Le problème est traité de façon plus approfondie par <span class="citation">Picard, Karembe, et Birnbaum (<a href="references.html#ref-Picard2004">2004</a>)</span> qui s’appuient sur la théorie des processus ponctuels.
 En supposant que la distribution spatiale des espèces est homogène (c’est-à-dire stationnaire et isotrope), la forme du domaine échantillonné n’a pas d’importance : l’aire <span class="math inline">\(A\)</span> peut être représentée par un cercle de rayon <span class="math inline">\(r=\sqrt{{A}/{\pi}}\)</span>.
 La probabilité d’observer l’espèce <span class="math inline">\(s\)</span> dans <span class="math inline">\(A\)</span> est identique à la probabilité que la distance entre un individu de l’espèce <span class="math inline">\(s\)</span> et un point arbitrairement choisi soit inférieure à <span class="math inline">\(r\)</span>.
-Cette probabilité a été largement étudiée et est connue sous le nom de fonction <span class="math inline">\(F\)</span> de <span class="citation">Diggle (<a href="references.html#ref-Diggle1983">1983</a>)</span>, ou <em>empty space function</em>.
+Cette probabilité a été largement étudiée et est connue sous le nom de fonction <span class="math inline">\(F\)</span> de <span class="citation">(<a href="#ref-Diggle1983"><strong>Diggle1983?</strong></a>)</span>, ou <em>empty space function</em>.
 <span class="math inline">\(F_s(r)\)</span> est la fonction d’espace vide de l’espèce <span class="math inline">\(s\)</span>, dont l’argument est la distance <span class="math inline">\(r\)</span>.
 Le nombre d’espèces peut être écrit comme la somme des fonctions <span class="math inline">\(F_s\)</span> :</p>
 <p><span class="math display" id="eq:SARF">\[\begin{equation}
   \tag{21.3}
   {\mathbb E}\left( S^A \right)  = \sum_s{F_s\left( r \right) }.
 \end{equation}\]</span></p>
-<p>La fonction <span class="math inline">\(F_s(r)\)</span> est connue pour les processus ponctuels courants <span class="citation">(<a href="references.html#ref-Cressie1993">N. A. Cressie 1993</a>; <a href="references.html#ref-Stoyan1994">Stoyan et Stoyan 1994</a>)</span>.
+<p>La fonction <span class="math inline">\(F_s(r)\)</span> est connue pour les processus ponctuels courants <span class="citation">(<a href="references.html#ref-Cressie1993">N. A. Cressie 1993</a>; <a href="#ref-Stoyan1994"><strong>Stoyan1994?</strong></a>)</span>.
 Le processus de Poisson place les individus indépendamment les uns des autres avec la même probabilité partout.
 Son seul paramètre est l’intensité <span class="math inline">\(\lambda_s\)</span>, qui donne l’espérance du nombre d’individus de l’espèce <span class="math inline">\(s\)</span> par unité de surface.
 Si toutes les espèces sont distribuées selon un processus de Poisson, la courbe aire-espèce est décrite par</p>
@@ -475,7 +475,7 @@ La distribution des espèces non observées peut maintenant être estimée dans 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 05/12/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -7,7 +7,7 @@
 <title>13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="L’entropie phylogénétique et l’entropie de Ricotta et Szeidl se décomposent comme l’entropie HCDT. La diversité \(\beta\) phylogénétique et la diversité \(\beta\) de Leinster et Cobbold sont des...">
-<meta name="generator" content="bookdown 0.38 with bs4_book()">
+<meta name="generator" content="bookdown 0.41 with bs4_book()">
 <meta property="og:title" content="13 Décomposition de la diversité phylogénétique et fonctionnelle | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/décomposition-de-la-diversité-phylogénétique-et-fonctionnelle.html">
@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-C1B3PLBCM6"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -159,7 +159,7 @@ Les résultats contiennent la valeur de la diversité :</p>
 <p></p>
 <div class="sourceCode" id="cb302"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Paracou618</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/DivPart.html">DivPart</a></span><span class="op">(</span>q <span class="op">=</span> <span class="fl">1</span>, <span class="va">Paracou618.MC</span>, Biased <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/DivPart.html">DivPart</a></span><span class="op">(</span>q <span class="op">=</span> <span class="fl">1</span>, <span class="va">Paracou618.MC</span>, Biased <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>                Tree <span class="op">=</span> <span class="va">Paracou618.Taxonomy</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## HCDT diversity partitioning of order 1 of metaCommunity 
 ## Paracou618.MC
@@ -197,7 +197,7 @@ Si les communautés étaient de même poids et complètement différentes, c’e
 <p></p>
 <div class="sourceCode" id="cb304"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">q</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
-<span><span class="va">Neutre</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/DivPart.html">DivPart</a></span><span class="op">(</span><span class="va">q</span>, <span class="va">Paracou618.MC</span>, Biased <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">Neutre</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/DivPart.html">DivPart</a></span><span class="op">(</span><span class="va">q</span>, <span class="va">Paracou618.MC</span>, Biased <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="va">Neutre</span><span class="op">$</span><span class="va">GammaDiversity</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="va">Paracou618.MC</span><span class="op">$</span><span class="va">Ncommunities</span><span class="op">)</span>,</span>
 <span>     type <span class="op">=</span> <span class="st">"n"</span>, </span>
 <span>     xlab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">alpha</span>, <span class="st">" / "</span>, <span class="va">gamma</span>, <span class="st">" diversity"</span><span class="op">)</span><span class="op">)</span>, </span>
@@ -205,7 +205,7 @@ Si les communautés étaient de même poids et complètement différentes, c’e
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/rect.html">rect</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="va">Neutre</span><span class="op">$</span><span class="va">GammaDiversity</span>, <span class="fl">1</span>, lty<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/rect.html">rect</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="va">Neutre</span><span class="op">$</span><span class="va">TotalAlphaDiversity</span>, <span class="va">Neutre</span><span class="op">$</span><span class="va">TotalBetaDiversity</span>, </span>
 <span>     lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="va">Phylo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/DivPart.html">DivPart</a></span><span class="op">(</span><span class="va">q</span>, <span class="va">Paracou618.MC</span>, Biased <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span><span class="va">Phylo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/DivPart.html">DivPart</a></span><span class="op">(</span><span class="va">q</span>, <span class="va">Paracou618.MC</span>, Biased <span class="op">=</span> <span class="cn">FALSE</span>, </span>
 <span>                 Tree <span class="op">=</span> <span class="va">Paracou618.Taxonomy</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/rect.html">rect</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="va">Phylo</span><span class="op">$</span><span class="va">GammaDiversity</span>, <span class="fl">1</span>, angle<span class="op">=</span><span class="fl">135</span>, density<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/rect.html">rect</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="va">Phylo</span><span class="op">$</span><span class="va">TotalAlphaDiversity</span>, <span class="va">Phylo</span><span class="op">$</span><span class="va">TotalBetaDiversity</span>,</span>
@@ -265,7 +265,7 @@ Formellement :</p>
 <span><span class="co"># Transformation en matrice de similarité</span></span>
 <span><span class="va">Z</span> <span class="op">&lt;-</span> <span class="fl">1</span> <span class="op">-</span> <span class="va">DistanceMatrix</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">DistanceMatrix</span><span class="op">)</span></span>
 <span><span class="co"># Partition de la diversité</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/DivPart.html">DivPart</a></span><span class="op">(</span>q <span class="op">=</span> <span class="fl">1</span>, <span class="va">Paracou618.MC</span>, Z <span class="op">=</span> <span class="va">Z</span>, Biased <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/DivPart.html">DivPart</a></span><span class="op">(</span>q <span class="op">=</span> <span class="fl">1</span>, <span class="va">Paracou618.MC</span>, Z <span class="op">=</span> <span class="va">Z</span>, Biased <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Similarity-based diversity partitioning of order 1 
 ## of metaCommunity Paracou618.MC
 ##  with correction: Best
@@ -314,7 +314,7 @@ Formellement :</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 05/12/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

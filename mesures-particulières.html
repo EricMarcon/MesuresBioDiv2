@@ -7,7 +7,7 @@
 <title>7 Mesures particulières | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="De nombreuses mesures de diversité fonctionnelle ou phylogénétique ont été développées pour combiner le mieux possible la richesse et la régularité de la distribution des espèces dans l’espace des...">
-<meta name="generator" content="bookdown 0.38 with bs4_book()">
+<meta name="generator" content="bookdown 0.41 with bs4_book()">
 <meta property="og:title" content="7 Mesures particulières | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/mesures-particulières.html">
@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-C1B3PLBCM6"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -262,7 +262,7 @@ Un arbre au format <code>phylo</code> du package <em>ape</em> nécessite une con
 <span><span class="co"># La conversion as.hclust() double les distances. Il faut</span></span>
 <span><span class="co"># donc les diviser par deux.</span></span>
 <span><span class="va">phyTree</span><span class="op">$</span><span class="va">edge.length</span> <span class="op">&lt;-</span> <span class="va">phyTree</span><span class="op">$</span><span class="va">edge.length</span><span class="op">/</span><span class="fl">2</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://ape-package.ird.fr/">"ape"</a></span><span class="op">)</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/emmanuelparadis/ape">"ape"</a></span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ## Attaching package: 'ape'</code></pre>
 <pre><code>## The following objects are masked from 'package:spatstat.geom':
@@ -377,7 +377,7 @@ Il baisse ensuite alors que les espèces rares atteignent à leur tour progressi
 <span><span class="va">S</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">Ps</span><span class="op">)</span></span>
 <span><span class="va">nRange</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">500</span></span>
 <span><span class="co"># Indice de Hurlbert</span></span>
-<span><span class="va">ESn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">nRange</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Hurlbert.html">Hurlbert</a></span><span class="op">(</span><span class="va">Ps</span>, <span class="va">n</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">ESn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">nRange</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Hurlbert.html">Hurlbert</a></span><span class="op">(</span><span class="va">Ps</span>, <span class="va">n</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co"># Préparation du graphique</span></span>
 <span><span class="va">Xlab</span> <span class="op">&lt;-</span> <span class="st">"Taille de l'échantillon"</span></span>
 <span><span class="va">Ylab</span> <span class="op">&lt;-</span> <span class="st">"Contribution des espèces"</span></span>
@@ -574,7 +574,7 @@ Figure 7.5: Rectangles de surface fréquence <span class="math inline">\(\times\
 <div class="sourceCode" id="cb190"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">Surface</span> <span class="op">&lt;-</span> <span class="va">Ps</span> <span class="op">*</span> <span class="va">fs</span></span>
 <span><span class="va">Rs</span> <span class="op">&lt;-</span> <span class="va">Surface</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Surface</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Diversity.html">Diversity</a></span><span class="op">(</span><span class="va">Rs</span>, q <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Diversity.html">Diversity</a></span><span class="op">(</span><span class="va">Rs</span>, q <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     None 
 ## 71.72482</code></pre>
 <p></p>
@@ -591,11 +591,11 @@ Figure 7.6: Profil de diversité d’abondance et fonctionnelle de Scheiner de l
 <p>Code R :</p>
 <p></p>
 <div class="sourceCode" id="cb192"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/CommunityProfile.html">CommunityProfile</a></span><span class="op">(</span><span class="va">Diversity</span>, <span class="va">Rs</span><span class="op">)</span>, </span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/CommunityProfile.html">CommunityProfile</a></span><span class="op">(</span><span class="va">Diversity</span>, <span class="va">Rs</span><span class="op">)</span>, </span>
 <span>         xlab<span class="op">=</span><span class="st">"Ordre de diversité"</span>, ylab<span class="op">=</span><span class="st">"Diversité"</span><span class="op">)</span> <span class="op">+</span></span>
-<span><span class="fu">geom_line</span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame.list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/CommunityProfile.html">CommunityProfile</a></span><span class="op">(</span><span class="va">Diversity</span>, <span class="va">Ps</span><span class="op">)</span><span class="op">)</span>, </span>
+<span><span class="fu">geom_line</span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame.list</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/CommunityProfile.html">CommunityProfile</a></span><span class="op">(</span><span class="va">Diversity</span>, <span class="va">Ps</span><span class="op">)</span><span class="op">)</span>, </span>
 <span>          mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
-<span><span class="fu">geom_line</span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame.list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/CommunityProfile.html">CommunityProfile</a></span><span class="op">(</span><span class="va">Diversity</span>, <span class="va">fs</span><span class="op">)</span><span class="op">)</span>,</span>
+<span><span class="fu">geom_line</span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame.list</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/CommunityProfile.html">CommunityProfile</a></span><span class="op">(</span><span class="va">Diversity</span>, <span class="va">fs</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>          mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span>, lty<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <p></p>
 <p>La notion de diversité phylogénétique ou fonctionnelle traitée par Scheiner est assez différente de celles vues précédemment parce qu’elle considère toutes les dimensions de façon symétrique : l’ordre de diversité, <span class="math inline">\(q\)</span>, s’applique à toutes les dimensions.
@@ -605,7 +605,7 @@ Si <span class="math inline">\(q\)</span> est grand, les espèces dont le produi
 <h2>
 <span class="header-section-number">7.4</span> Diversité de Solow et Polasky<a class="anchor" aria-label="anchor" href="#diversit%C3%A9-de-solow-et-polasky"><i class="fas fa-link"></i></a>
 </h2>
-<p><span class="citation">A. R. Solow et Polasky (<a href="references.html#ref-Solow1994">1994</a>)</span> relient la richesse fonctionnelle ou phylogénétique à la probabilité de trouver au moins une espèce intéressante (par exemple, capable de fournir une molécule utile) dans une communauté.</p>
+<p><span class="citation">Solow et Polasky (<a href="references.html#ref-Solow1994">1994</a>)</span> relient la richesse fonctionnelle ou phylogénétique à la probabilité de trouver au moins une espèce intéressante (par exemple, capable de fournir une molécule utile) dans une communauté.</p>
 <p>Les distances entre espèces sont supposées connues, qu’elles soient fonctionnelle, phylogénétique ou autre.
 La probabilité qu’une espèce quelconque soit intéressante est fixée à <span class="math inline">\(p\)</span>, par exemple à partir de l’expérience passée (si une espèce criblée sur 100 fournit une molécule utile, <span class="math inline">\(p=1\%\)</span>).
 En absence d’information sur les espèces, <span class="math inline">\(p\)</span> est <em>a priori</em> identique pour toutes mais on suppose une corrélation entre les probabilités dépendant de la distance entre les espèces.
@@ -643,7 +643,7 @@ Si les noeuds de l’arbre phylogénétique sont datés, PD peut être considér
 <div class="sourceCode" id="cb193"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Vecteur des probabilités</span></span>
 <span><span class="va">Ps</span> <span class="op">&lt;-</span> <span class="va">Paracou618.MC</span><span class="op">$</span><span class="va">Ps</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/PDFD.html">PDFD</a></span><span class="op">(</span><span class="va">Ps</span>, <span class="va">Paracou618.Taxonomy</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/PDFD.html">PDFD</a></span><span class="op">(</span><span class="va">Ps</span>, <span class="va">Paracou618.Taxonomy</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## None 
 ##  395</code></pre>
 <p></p>
@@ -716,7 +716,7 @@ Le biais d’estimation est très faible <span class="citation">(<a href="refere
 <div class="sourceCode" id="cb195"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Vecteur des probabilités</span></span>
 <span><span class="va">Ps</span> <span class="op">&lt;-</span> <span class="va">Paracou618.MC</span><span class="op">$</span><span class="va">Ps</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Rao.html">Rao</a></span><span class="op">(</span><span class="va">Ps</span>, <span class="va">Paracou618.Taxonomy</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Rao.html">Rao</a></span><span class="op">(</span><span class="va">Ps</span>, <span class="va">Paracou618.Taxonomy</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     None 
 ## 2.878133</code></pre>
 <p></p>
@@ -914,7 +914,7 @@ pour <span class="math inline">\(q \ne 1\)</span> et
 pour <span class="math inline">\(q=1\)</span>.
 Le nombre effectif de paires est <span class="math inline">\([^{q}\!D(Q)]^2\)</span>. Le nombre effectif d’espèces est donc <span class="math inline">\(^{q}\!D(Q)\)</span>.</p>
 <p>Le nombre effectif de paires est le nombres de paires équifréquentes dont la distance entre les deux espèces est <span class="math inline">\(Q\)</span>. Le problème de cette approche est que les paires constituées de la même espèce doivent aussi avoir une distance <span class="math inline">\(\delta_{s,s}\)</span> égale à <span class="math inline">\(Q\)</span>. Chiu et Chao considèrent ce point comme la possibilité de prendre en compte la variabilité intraspécifique, mais elle doit être identique à la variabilité interspécifique, ce qui n’est pas très convaincant. En absence de variabilité intraspécifique, Chiu et Chao redéfinissent la distance de référence : <span class="math inline">\(\delta_{s,s}=0\)</span> et <span class="math inline">\(\delta_{s,t}=(\frac{D}{D-1})Q\)</span>. Il n’est donc pas possible de comparer le nombre effectif d’espèces de deux communautés différentes puisque la définition même du nombre effectif dépend de la diversité, ce qui invalide cette définition de la diversité fonctionnelle.</p>
-<p>Enfin, cette définition de la diversité ne respecte pas le principe de <span class="citation">A. Solow, Polasky, et Broadus (<a href="references.html#ref-Solow1993">1993</a>)</span> selon lequel le remplacement d’une partie des effectifs d’une espèce par le même nombre d’individus d’une espèce différente mais fonctionnellement identique ne doit pas faire varier la diversité <span class="citation">(<a href="references.html#ref-Botta-Dukat2017">Botta-Dukát 2018</a>)</span>.</p>
+<p>Enfin, cette définition de la diversité ne respecte pas le principe de <span class="citation">Solow, Polasky, et Broadus (<a href="references.html#ref-Solow1993">1993</a>)</span> selon lequel le remplacement d’une partie des effectifs d’une espèce par le même nombre d’individus d’une espèce différente mais fonctionnellement identique ne doit pas faire varier la diversité <span class="citation">(<a href="references.html#ref-Botta-Dukat2017">Botta-Dukát 2018</a>)</span>.</p>
 </div>
 <div id="sec-HpI1" class="section level2" number="7.10">
 <h2>
@@ -1000,7 +1000,7 @@ L’arbre possède 7 branches.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 05/12/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

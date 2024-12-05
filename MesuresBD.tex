@@ -383,7 +383,7 @@
 
 \author{Eric Marcon}
 
-\date{11/03/2024}
+\date{05/12/2024}
 
 
 % Include headers (preamble.tex) here
@@ -1372,7 +1372,7 @@ L'ajustement du modèle de Volkov peut être comparé à celui d'une distributio
 
 \begin{verbatim}
 ##        theta            m            J 
-## 4.767129e+01 9.238201e-02 2.145700e+04
+## 4.796210e+01 9.180496e-02 2.145700e+04
 \end{verbatim}
 
 \normalsize
@@ -2362,15 +2362,15 @@ Les calculs n'aboutissent pas si la queue de distribution n'est pas regroupée (
 \begin{verbatim}
 ## Method: Penalized NPMLE method by  Wang and Lindsay 2005. 
 ## 
-##         MLE=                                243 
+##         MLE=                                134 
 ##         Estimated zero-truncated Poisson mixture components:       
-##         p=                                  0.9033625 3.397048 10.59029 
-##         pi=                                 0.2771211 0.3208847 0.4019942
+##         p=                                  4.802198 
+##         pi=                                 NaN
 \end{verbatim}
 
 \begin{verbatim}
 ## $Nhat
-## [1] 243
+## [1] 134
 \end{verbatim}
 
 \normalsize
@@ -2450,7 +2450,7 @@ Le résultat se trouve en figure \ref{fig:SobLLorFig}.
 ##  residual sum-of-squares: 3066
 ## 
 ## Number of iterations to convergence: 6 
-## Achieved convergence tolerance: 7.861e-06
+## Achieved convergence tolerance: 7.866e-06
 \end{verbatim}
 
 \normalsize
@@ -2627,7 +2627,7 @@ Les paramètres peuvent être estimés par la méthode des moindres carrés:
 ##  residual sum-of-squares: 10664
 ## 
 ## Number of iterations to convergence: 13 
-## Achieved convergence tolerance: 8.047e-06
+## Achieved convergence tolerance: 8.057e-06
 \end{verbatim}
 
 \normalsize
@@ -2664,7 +2664,7 @@ Les paramètres à estimer sont \(z\), \(a\) et \(c\).
 ##  residual sum-of-squares: 446.1
 ## 
 ## Number of iterations to convergence: 4 
-## Achieved convergence tolerance: 4.366e-06
+## Achieved convergence tolerance: 4.754e-06
 \end{verbatim}
 
 \begin{Shaded}
@@ -2677,7 +2677,7 @@ Les paramètres à estimer sont \(z\), \(a\) et \(c\).
 
 \begin{verbatim}
 ##        a 
-## 259.3128
+## 259.3127
 \end{verbatim}
 
 \normalsize
@@ -2972,7 +2972,7 @@ La distribution de l'estimateur est connue \autocite{Hutcheson1970} mais elle es
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.148322
+## [1] 4.148323
 \end{verbatim}
 
 \normalsize
@@ -5253,7 +5253,7 @@ Deux espèces proches dans l'arbre phylogénétique décrivant l'évolution doiv
 \textcite{Webb2000} a montré que des communautés d'arbres tropicaux avaient une moins grande diversité phylogénétique locale qu'attendue sous l'hypothèse nulle d'une distribution aléatoire des espèces, et a supposé que la cause en était le filtrage environnemental local, agissant sur les traits et observables par la phylogénie, sous l'hypothèse de conservation phylogénétique des traits fonctionnels.
 La discipline appelée \emph{écologie phylogénétique des communautés} cherche encore à comprendre quels traits sont conservés et lesquels sont convergents \autocite{Cavender-Bares2009}.
 
-\textcite{Swenson2009} ont montré que la relation entre les deux diversités était faible.
+\textcite{Swenson2009} puis \textcite{Hahn2024} ont montré que la corrélation entre les deux diversités était faible, voire négative.
 L'utilisation de la diversité phylogénétique comme proxy de la diversité fonctionnelle n'est pas satisfaisante \autocite{Pavoine2011}. Pour optimiser la conservation, les deux aspects de la diversité, souvent divergents, doivent être pris en compte \autocite{Devictor2010}.
 
 \section{Typologie des mesures}\label{typologie-des-mesures}
@@ -10502,7 +10502,7 @@ Le résultat est très différent parce que l'approximation de l'égalité de \(
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 35.05475
+## [1] 35.05477
 \end{verbatim}
 
 \begin{Shaded}
@@ -10510,10 +10510,6 @@ Le résultat est très différent parce que l'approximation de l'égalité de \(
 \FunctionTok{library}\NormalTok{(}\StringTok{"untb"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-## No methods found in package 'Brobdingnag' for request: 'sum' when loading 'untb'
-\end{verbatim}
 
 \begin{verbatim}
 ## Registered S3 method overwritten by 'untb':
@@ -10647,7 +10643,7 @@ L'indice Q est calculé:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 33.71977
+## [1] 33.72253
 \end{verbatim}
 
 \normalsize

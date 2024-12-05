@@ -7,7 +7,7 @@
 <title>3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="Les indices classiques de diversité sont ceux de Shannon et de Simpson, et la richesse spécifique. Ils peuvent être estimés à partir des données d’inventaire. L’estimation de la richesse est...">
-<meta name="generator" content="bookdown 0.38 with bs4_book()">
+<meta name="generator" content="bookdown 0.41 with bs4_book()">
 <meta property="og:title" content="3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-MesuresNeutres.html">
@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-C1B3PLBCM6"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -325,17 +325,17 @@ En revanche, pour une gamme de <span class="math inline">\(n\)</span> fixée (de
 <p>Une communauté log-normale, similaire à BCI (300 espèces, écart-type égal à 2) est simulée et un échantillon de 1000 individus est tiré.</p>
 <p></p>
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/EricMarcon/entropart">"entropart"</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://ericmarcon.github.io/entropart/">"entropart"</a></span><span class="op">)</span></span>
 <span><span class="co"># Ecart-type</span></span>
 <span><span class="va">sdlog</span> <span class="op">&lt;-</span> <span class="fl">2</span></span>
 <span><span class="co"># Nombre d'espèces</span></span>
 <span><span class="va">S</span> <span class="op">&lt;-</span> <span class="fl">300</span></span>
 <span><span class="co"># Tirage des probabilités log-normales</span></span>
-<span><span class="va">Ps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/SpeciesDistribution.html">as.ProbaVector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Lognormal.html">rlnorm</a></span><span class="op">(</span><span class="va">S</span>, <span class="fl">0</span>, <span class="va">sdlog</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">Ps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/SpeciesDistribution.html">as.ProbaVector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Lognormal.html">rlnorm</a></span><span class="op">(</span><span class="va">S</span>, <span class="fl">0</span>, <span class="va">sdlog</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co"># Taille de l'échantillon</span></span>
 <span><span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">1000</span></span>
 <span><span class="co"># Tirage d'un échantillon</span></span>
-<span><span class="va">Ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/rCommunity.html">rCommunity</a></span><span class="op">(</span><span class="fl">1</span>, size <span class="op">=</span> <span class="va">N</span>, NorP <span class="op">=</span> <span class="va">Ps</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">Ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/rCommunity.html">rCommunity</a></span><span class="op">(</span><span class="fl">1</span>, size <span class="op">=</span> <span class="va">N</span>, NorP <span class="op">=</span> <span class="va">Ps</span><span class="op">)</span></span></code></pre></div>
 <p></p>
 <p>L’échantillon est présenté en figure <a href="chap-MesuresNeutres.html#fig:BiaisJack1Fig">3.1</a>.</p>
 <p>Code de la figure <a href="chap-MesuresNeutres.html#fig:BiaisJack1Fig">3.1</a> :</p>
@@ -509,7 +509,7 @@ Le tableau d’entrée est un <code>dataframe</code> contenant, pour chaque esp�
 <span><span class="co"># colonne 1 = nombre d'individus</span></span>
 <span><span class="co"># colonne 2 = nombres d'espèces ayant ce nombre d'individus)</span></span>
 <span><span class="co"># par la fonction AbdFreqCount dans entropart</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/jackknife.html">jackknife</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/jackknife.html">jackknife</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ## Your specified order is larger than that determined by the test, 
 ## Therefore the order from the test is used.</code></pre>
@@ -579,7 +579,7 @@ La complétude est <span class="math inline">\({225}/{244}=92\%\)</span>, dans l
 <p></p>
 <div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/EricMarcon/SpatDiv">"SpatDiv"</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/jackknife.html">jackknife</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/SpeciesDistribution.html">as.AbdVector</a></span><span class="op">(</span><span class="va">Paracou6</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/jackknife.html">jackknife</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/SpeciesDistribution.html">as.AbdVector</a></span><span class="op">(</span><span class="va">Paracou6</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ## Your specified order is larger than that determined by the test, 
 ## Therefore the order from the test is used.</code></pre>
@@ -597,7 +597,7 @@ La complétude est <span class="math inline">\({225}/{244}=92\%\)</span>, dans l
 ## [1,] 423 519</code></pre>
 <div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Complétude</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Richness.html">Richness</a></span><span class="op">(</span><span class="va">Paracou6</span>, Correction <span class="op">=</span> <span class="st">"None"</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Richness.html">Richness</a></span><span class="op">(</span><span class="va">Paracou6</span>,</span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Richness.html">Richness</a></span><span class="op">(</span><span class="va">Paracou6</span>, Correction <span class="op">=</span> <span class="st">"None"</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Richness.html">Richness</a></span><span class="op">(</span><span class="va">Paracou6</span>,</span>
 <span>    Correction <span class="op">=</span> <span class="st">"Jackknife"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 0.7091295</code></pre>
 <p></p>
@@ -626,14 +626,14 @@ L’estimateur du nombre d’espèces du nouvel échantillon de <span class="mat
 <p></p>
 <div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Espèces non observées</span></span>
-<span><span class="op">(</span><span class="va">NonObs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/jackknife.html">jackknife</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">Nhat</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="op">(</span><span class="va">NonObs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/jackknife.html">jackknife</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">Nhat</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ## Your specified order is larger than that determined by the test, 
 ## Therefore the order from the test is used.</code></pre>
 <pre><code>## [1] 19</code></pre>
 <div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Taux de couverture</span></span>
-<span><span class="op">(</span><span class="va">C</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Coverage.html">Coverage</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="op">(</span><span class="va">C</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Coverage.html">Coverage</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## ZhangHuang 
 ##  0.9991146</code></pre>
 <p></p>
@@ -714,7 +714,7 @@ Figure 3.5: Ajustement du modèle de Preston aux données de BCI.
 <span><span class="co"># Mise au format requis (matrice: colonne 1 = nombre</span></span>
 <span><span class="co"># d'individus colonne 2 = nombres d'espèces ayant ce nombre</span></span>
 <span><span class="co"># d'individus)</span></span>
-<span><span class="va">DistNs.SPECIES</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span></span>
+<span><span class="va">DistNs.SPECIES</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span></span>
 <span><span class="co"># Regroupement de la queue de distribution: la longueur du</span></span>
 <span><span class="co"># vecteur est limitée à 25 pour alléger les calculs.</span></span>
 <span><span class="va">DistNs.SPECIES</span><span class="op">[</span><span class="fl">25</span>, <span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">DistNs.SPECIES</span><span class="op">[</span><span class="fl">25</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">DistNs.SPECIES</span><span class="op">)</span>,</span>
@@ -739,12 +739,12 @@ Les calculs n’aboutissent pas si la queue de distribution n’est pas regroup�
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/pnpmle.html">pnpmle</a></span><span class="op">(</span><span class="va">DistNs.SPECIES</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Method: Penalized NPMLE method by  Wang and Lindsay 2005. 
 ## 
-##         MLE=                                243 
+##         MLE=                                134 
 ##         Estimated zero-truncated Poisson mixture components:       
-##         p=                                  0.9033625 3.397048 10.59029 
-##         pi=                                 0.2771211 0.3208847 0.4019942</code></pre>
+##         p=                                  4.802198 
+##         pi=                                 NaN</code></pre>
 <pre><code>## $Nhat
-## [1] 243</code></pre>
+## [1] 134</code></pre>
 <p></p>
 <p>Enfin, <span class="citation">Wang (<a href="references.html#ref-Wang2010">2010</a>)</span> perfectionne la technique d’estimation en supposant que les <span class="math inline">\(p_s\)</span> suivent une loi gamma et en estimant aussi ses paramètres.
 La souplesse de la loi gamma permet d’ajuster le modèle à des lois diverses et l’estimateur de Wang est très performant.</p>
@@ -799,7 +799,7 @@ Le résultat se trouve en figure <a href="chap-MesuresNeutres.html#fig:SobLLorFi
 ##  residual sum-of-squares: 3066
 ## 
 ## Number of iterations to convergence: 6 
-## Achieved convergence tolerance: 7.861e-06</code></pre>
+## Achieved convergence tolerance: 7.866e-06</code></pre>
 <p></p>
 <p>L’estimation précédente utilise la méthode des moindres carrés, qui suppose l’indépendance des résidus, hypothèses évidemment violée par une courbe d’accumulation <span class="citation">(<a href="references.html#ref-Colwell1994">Colwell et Coddington 1994</a>)</span>.
 L’estimation par le maximum de vraisemblance est plus convenable <span class="citation">(<a href="references.html#ref-Raaijmakers1987">Raaijmakers 1987</a>)</span>.
@@ -899,7 +899,7 @@ Si la probabilité de trouver une nouvelle espèce est proportionnelle au nombre
 ##  residual sum-of-squares: 10664
 ## 
 ## Number of iterations to convergence: 13 
-## Achieved convergence tolerance: 8.047e-06</code></pre>
+## Achieved convergence tolerance: 8.057e-06</code></pre>
 <p></p>
 <p>Ce modèle, proposé par <span class="citation">Holdridge et al. (<a href="references.html#ref-Holdridge1971">1971</a>)</span>, sous-estime la richesse parce que la probabilité de découvrir une nouvelle espèce diminue plus vite que le nombre d’espèces restant à découvrir : les dernières espèces sont plus rares et donc plus difficiles à détecter.</p>
 <p>Un modèle plus réaliste définit cette probabilité comme une fonction décroissante du nombre d’espèces manquantes.
@@ -923,13 +923,13 @@ Un paramètre supplémentaire pour obtenir l’asymptote est nécessaire et abou
 ##  residual sum-of-squares: 446.1
 ## 
 ## Number of iterations to convergence: 4 
-## Achieved convergence tolerance: 4.366e-06</code></pre>
+## Achieved convergence tolerance: 4.754e-06</code></pre>
 <div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Nombre d'espèces</span></span>
 <span><span class="va">coefs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">nlslog</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="st">"a"</span><span class="op">]</span><span class="op">/</span><span class="va">coefs</span><span class="op">[</span><span class="st">"c"</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="va">coefs</span><span class="op">[</span><span class="st">"z"</span><span class="op">]</span></span></code></pre></div>
 <pre><code>##        a 
-## 259.3128</code></pre>
+## 259.3127</code></pre>
 <p></p>
 
 <p></p>
@@ -1040,8 +1040,8 @@ Le nombre d’espèces doit être estimé par les méthodes présentées plus ha
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span></span>
 <span><span class="co"># as.ProbaVector() transforme les abondances en</span></span>
 <span><span class="co"># probabilités</span></span>
-<span><span class="va">Ps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/SpeciesDistribution.html">as.ProbaVector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Simpson.html">Simpson</a></span><span class="op">(</span><span class="va">Ps</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">Ps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/SpeciesDistribution.html">as.ProbaVector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Simpson.html">Simpson</a></span><span class="op">(</span><span class="va">Ps</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##      None 
 ## 0.9736755</code></pre>
 <p></p>
@@ -1073,7 +1073,7 @@ Il est négligeable : si <span class="math inline">\(p_s\)</span> est petit, <s
 <p>La fonction <code>Simpson</code> de <em>entropart</em> accepte comme argument un vecteur d’abondances et propose par défaut la correction de Lande :</p>
 <p></p>
 <div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Simpson.html">Simpson</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Simpson.html">Simpson</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     Lande 
 ## 0.9737209</code></pre>
 <p></p>
@@ -1131,8 +1131,8 @@ L’indice de Shannon donne une mesure de la biodiversité en tant que quantité
 <p>Le calcul de l’indice de Shannon peut se faire avec la fonction <code>diversity</code> disponible dans le package <em>vegan</em> de R ou avec la fonction <code>Shannon</code> de <em>entropart</em> :</p>
 <p></p>
 <div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">Ps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropart/man/SpeciesDistribution.html">as.ProbaVector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Shannon.html">Shannon</a></span><span class="op">(</span><span class="va">Ps</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">Ps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/SpeciesDistribution.html">as.ProbaVector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Shannon.html">Shannon</a></span><span class="op">(</span><span class="va">Ps</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     None 
 ## 4.270409</code></pre>
 <p></p>
@@ -1146,7 +1146,7 @@ L’indice de Shannon donne une mesure de la biodiversité en tant que quantité
 <p></p>
 <div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Special.html">digamma</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/vegan/man/diversity.html">fisher.alpha</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Special.html">digamma</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## [1] 4.148322</code></pre>
+<pre><code>## [1] 4.148323</code></pre>
 <p></p>
 <p>La sous-estimation est assez sévère sur cet exemple.</p>
 </div>
@@ -1297,23 +1297,23 @@ Schürmann suggère d’utiliser <span class="math inline">\(\xi=e^{-{1}/{2}}\)<
 Elle accepte comme argument un vecteur d’abondances (et non de probabilités) :</p>
 <p></p>
 <div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Shannon.html">Shannon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, Correction <span class="op">=</span> <span class="st">"ChaoWangJost"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Shannon.html">Shannon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, Correction <span class="op">=</span> <span class="st">"ChaoWangJost"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## ChaoJost 
 ## 4.276193</code></pre>
 <div class="sourceCode" id="cb120"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Shannon.html">Shannon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, Correction <span class="op">=</span> <span class="st">"Grassberger"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Shannon.html">Shannon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, Correction <span class="op">=</span> <span class="st">"Grassberger"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Grassberger 
 ##    4.276599</code></pre>
 <div class="sourceCode" id="cb122"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Shannon.html">Shannon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, Correction <span class="op">=</span> <span class="st">"Grassberger2003"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Shannon.html">Shannon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, Correction <span class="op">=</span> <span class="st">"Grassberger2003"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Grassberger2003 
 ##        4.276491</code></pre>
 <div class="sourceCode" id="cb124"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Shannon.html">Shannon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, Correction <span class="op">=</span> <span class="st">"Schurmann"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Shannon.html">Shannon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, Correction <span class="op">=</span> <span class="st">"Schurmann"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Schurmann 
 ##  4.276094</code></pre>
 <div class="sourceCode" id="cb126"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Shannon.html">Shannon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, Correction <span class="op">=</span> <span class="st">"ZhangHz"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Shannon.html">Shannon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, Correction <span class="op">=</span> <span class="st">"ZhangHz"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##  ZhangHz 
 ## 4.272529</code></pre>
 <p></p>
@@ -1349,7 +1349,7 @@ L’estimation précédente ignore les espèces non observées.
 Pour les inclure, le vecteur des abondance doit être allongé par autant de zéros que d’espèces estimées :</p>
 <p></p>
 <div class="sourceCode" id="cb131"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="op">(</span><span class="va">S0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/jackknife.html">jackknife</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">Nhat</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="op">(</span><span class="va">S0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/jackknife.html">jackknife</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/AbdFreqCount.html">AbdFreqCount</a></span><span class="op">(</span><span class="va">Ns</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">Nhat</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ## Your specified order is larger than that determined by the test, 
 ## Therefore the order from the test is used.</code></pre>
@@ -1368,7 +1368,7 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat :</p>
 <code class="sourceCode R"><span><span class="va">PsJS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/entropy/man/entropy.shrink.html">freqs.shrink</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">0</span>, <span class="va">S0</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Estimating optimal shrinkage intensity lambda.freq (frequencies): 0.002</code></pre>
 <div class="sourceCode" id="cb139"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Shannon.html">Shannon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/SpeciesDistribution.html">as.ProbaVector</a></span><span class="op">(</span><span class="va">PsJS</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Shannon.html">Shannon</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/SpeciesDistribution.html">as.ProbaVector</a></span><span class="op">(</span><span class="va">PsJS</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     None 
 ## 4.276543</code></pre>
 <p></p>
@@ -1430,17 +1430,17 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat :</p>
 <p></p>
 <div class="sourceCode" id="cb141"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Indice de Hurlbert (probabilités)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Hurlbert.html">Hurlbert</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/SpeciesDistribution.html">as.ProbaVector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span><span class="op">)</span>, k <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Hurlbert.html">Hurlbert</a></span><span class="op">(</span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/SpeciesDistribution.html">as.ProbaVector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span><span class="op">)</span>, k <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   Biased 
 ## 1.973676</code></pre>
 <div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Estimateur sans biais (abondances)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Hurlbert.html">Hurlbert</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, k <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Hurlbert.html">Hurlbert</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, k <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Unbiased 
 ## 1.973721</code></pre>
 <div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Nombre effectif d'espèces</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/entropart/man/Hurlbert.html">HurlbertD</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, k <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://ericmarcon.github.io/entropart/reference/Hurlbert.html">HurlbertD</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">BCI</span><span class="op">)</span>, k <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Unbiased 
 ## 38.05308</code></pre>
 <p></p>
@@ -1499,7 +1499,7 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat :</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 11/03/2024.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 05/12/2024.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
