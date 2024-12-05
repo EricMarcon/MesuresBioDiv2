@@ -142,7 +142,7 @@ Deux espèces proches dans l'arbre phylogénétique décrivant l'évolution doiv
 @Webb2000 a montré que des communautés d'arbres tropicaux avaient une moins grande diversité phylogénétique locale qu'attendue sous l'hypothèse nulle d'une distribution aléatoire des espèces, et a supposé que la cause en était le filtrage environnemental local, agissant sur les traits et observables par la phylogénie, sous l'hypothèse de conservation phylogénétique des traits fonctionnels. 
 La discipline appelée *écologie phylogénétique des communautés* cherche encore à comprendre quels traits sont conservés et lesquels sont convergents [@Cavender-Bares2009].
 
-@Swenson2009 ont montré que la relation entre les deux diversités était faible. 
+@Swenson2009 puis @Hahn2024 ont montré que la corrélation entre les deux diversités était faible, voire négative. 
 L'utilisation de la diversité phylogénétique comme proxy de la diversité fonctionnelle n'est pas satisfaisante [@Pavoine2011]. Pour optimiser la conservation, les deux aspects de la diversité, souvent divergents, doivent être pris en compte [@Devictor2010].
 
 ## Typologie des mesures
