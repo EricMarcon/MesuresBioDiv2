@@ -7,7 +7,7 @@
 <title>3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité</title>
 <meta name="author" content="Eric Marcon">
 <meta name="description" content="Les indices classiques de diversité sont ceux de Shannon et de Simpson, et la richesse spécifique. Ils peuvent être estimés à partir des données d’inventaire. L’estimation de la richesse est...">
-<meta name="generator" content="bookdown 0.41 with bs4_book()">
+<meta name="generator" content="bookdown 0.42 with bs4_book()">
 <meta property="og:title" content="3 Mesures neutres de la diversité \(\alpha\) ou \(\gamma\) | Mesures de la Biodiversité">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/EricMarcon/MesuresBioDiv2/chap-MesuresNeutres.html">
@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://github.com/EricMarcon/MesuresBioDiv2/images/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-C1B3PLBCM6"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -739,12 +739,12 @@ Les calculs n’aboutissent pas si la queue de distribution n’est pas regroup�
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/SPECIES/man/pnpmle.html">pnpmle</a></span><span class="op">(</span><span class="va">DistNs.SPECIES</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Method: Penalized NPMLE method by  Wang and Lindsay 2005. 
 ## 
-##         MLE=                                134 
+##         MLE=                                243 
 ##         Estimated zero-truncated Poisson mixture components:       
-##         p=                                  4.802198 
-##         pi=                                 NaN</code></pre>
+##         p=                                  0.9033625 3.397048 10.59029 
+##         pi=                                 0.2771211 0.3208847 0.4019942</code></pre>
 <pre><code>## $Nhat
-## [1] 134</code></pre>
+## [1] 243</code></pre>
 <p></p>
 <p>Enfin, <span class="citation">Wang (<a href="references.html#ref-Wang2010">2010</a>)</span> perfectionne la technique d’estimation en supposant que les <span class="math inline">\(p_s\)</span> suivent une loi gamma et en estimant aussi ses paramètres.
 La souplesse de la loi gamma permet d’ajuster le modèle à des lois diverses et l’estimateur de Wang est très performant.</p>
@@ -1499,7 +1499,7 @@ Leur utilisation dans l’estimateur plug-in donne le même résultat :</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 05/12/2024.</p>
+    <p>"<strong>Mesures de la Biodiversité</strong>" was written by Eric Marcon. It was last built on 01/02/2025.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
